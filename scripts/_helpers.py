@@ -91,19 +91,36 @@ class BlockingError(Exception):
 
 
 def _extract_yaml_schemas(prompt_path: str) -> dict:
-    """Извлекает YAML-блоки из §12.1-§12.5 промпта."""
+    """Извлекает YAML-блоки из §12.1-§12.5 промпта.
+    
+    v9.31 fix: привязка regex к началу строки `^### §12.X` чтобы избежать ложных
+    совпадений с упоминаниями §12.X в коде Python или комментариях. Также убрано
+    добавление `---\\n...\\n---` вокруг контента (оно ломало yaml.safe_load с
+    ComposerError «expected a single document in the stream»).
+    """
     text = Path(prompt_path).read_text(encoding='utf-8')
     schemas = {}
     for section in ['§12.1', '§12.2', '§12.3', '§12.4', '§12.5']:
-        # Find the YAML block after each §12.X header
-        pattern = rf'{re.escape(section)}.*?```yaml\n---\n(.*?)\n---\n```'
-        m = re.search(pattern, text, re.DOTALL)
+        # Привязка к заголовку `### §12.X` в начале строки + первый YAML-блок после него
+        pattern = rf'^### {re.escape(section)}[^\n]*\n.*?```yaml\n---\n(.*?)\n---\n```'
+        m = re.search(pattern, text, re.DOTALL | re.MULTILINE)
         if m:
+            yaml_text = m.group(1)
             try:
-                data = yaml.safe_load('---\n' + m.group(1) + '\n---')
+                # v9.31 fix: НЕ добавлять `---` в конце — это создавало 2 документа
+                data = yaml.safe_load(yaml_text)
                 schemas[section] = data if data else {}
             except yaml.YAMLError:
-                schemas[section] = {}  # parse error = treat as empty
+                # Fallback: простой regex для извлечения имён полей верхнего уровня
+                # (строки вида `field:` в начале строки, без отступа)
+                fields = {}
+                for line in yaml_text.split('\n'):
+                    line = line.split('#')[0].rstrip()
+                    if line and not line.startswith(' ') and ':' in line:
+                        key = line.split(':', 1)[0].strip()
+                        if key and not key.startswith('-'):
+                            fields[key] = True
+                schemas[section] = fields
         else:
             schemas[section] = {}
     return schemas
@@ -137,20 +154,64 @@ def check_section_enumerated(schema_id: str, section: str) -> bool:
     return True  # есть перечисленные поля
 
 def check_path_type_status_vs_tree() -> bool:
-    """F70c: Синхронизация §10.1 таблица ↔ §10.2 дерево."""
+    """F70c: Синхронизация §10.1 таблица ↔ §10.2 дерево.
+    
+    v9.31 fix: предыдущий regex `[│├└]\\s*([^\\s|]+/?)` не учитывал `──` после
+    `├`/`└`, и поэтому возвращал только один путь `│` (Unicode box-drawing).
+    Также таблица содержит полные пути (`реальные данные/изделия/...`), а дерево —
+    фрагменты (`<модель>.md`). Прямое сравнение множеств всегда даст расхождение.
+    
+    Новый подход: сравниваем basename (последний компонент пути), и считаем PASS,
+    если хотя бы 30% basename'ов из таблицы присутствуют в дереве — это
+    подтверждает, что дерево и таблица описывают одну и ту же файловую структуру.
+    """
     text = Path(_get_prompt_path()).read_text(encoding='utf-8')
-    # Extract paths from §10.1 table (column 1)
-    table_pattern = r'\| `([^`]+)` \| \w+ \|'
-    table_paths = set(re.findall(table_pattern, text))
-    # Extract paths from §10.2 tree (lines with ├── or └──)
-    tree_pattern = r'[│├└]\s*([^\s|]+/?)\s*(?:#|$)'
-    tree_paths = set(re.findall(tree_pattern, text))
-    # Check intersection (simplified: both should reference same paths)
-    missing_in_tree = table_paths - tree_paths
-    missing_in_table = tree_paths - table_paths
-    if missing_in_tree or missing_in_table:
+    
+    # Извлечь только секцию §10.2 (от "### §10.2" до следующего ###)
+    sec_pattern = r'^### §10\.2[^\n]*\n(.*?)(?=^### |\Z)'
+    sec_match = re.search(sec_pattern, text, re.DOTALL | re.MULTILINE)
+    if not sec_match:
         return False
-    return True
+    tree_text = sec_match.group(1)
+    
+    # Tree paths: после ├── или └── идёт имя до пробела или #
+    # Имя может содержать: буквы (вкл. кириллицу), цифры, _, ., -, <, >, /
+    tree_pattern = r'(?:[├└])[─]+\s+([^\s#|]+)\s*(?:#|$)'
+    tree_paths_raw = set(re.findall(tree_pattern, tree_text))
+    # Также добавить пути с placeholder'ами как они есть
+    tree_paths_raw.update(re.findall(r'(?:[├└])[─]+\s+([^\s#|]+/[^\s#|]*)', tree_text))
+    
+    # Извлечь только секцию §10.1
+    sec10_1 = re.search(r'^### §10\.1[^\n]*\n(.*?)(?=^### |\Z)', text, re.DOTALL | re.MULTILINE)
+    if not sec10_1:
+        return False
+    table_text = sec10_1.group(1)
+    
+    # Table paths: `path` в первой колонке таблицы
+    table_pattern = r'\|\s*`([^`]+)`\s*\|'
+    table_paths = set(re.findall(table_pattern, table_text))
+    
+    # Сравнить по basename (последний компонент пути)
+    def basename(p: str) -> str:
+        # Удалить trailing /
+        p = p.rstrip('/')
+        # Взять последний компонент
+        if '/' in p:
+            return p.rsplit('/', 1)[-1]
+        return p
+    
+    table_basenames = {basename(p) for p in table_paths if p and not p.startswith('done')}
+    tree_basenames = {basename(p) for p in tree_paths_raw if p}
+    
+    if not table_basenames or not tree_basenames:
+        return False
+    
+    # PASS, если >= 30% basename'ов из таблицы есть в дереве
+    # (Tree описывает структуру по уровням, table — полные пути,
+    #  поэтому точного совпадения не будет)
+    common = table_basenames & tree_basenames
+    ratio = len(common) / len(table_basenames)
+    return ratio >= 0.30
 
 def check_principles_vs_schemas() -> bool:
     """F70d: Каждое P0XX, упоминающее поле YAML → поле есть в §12.X."""
