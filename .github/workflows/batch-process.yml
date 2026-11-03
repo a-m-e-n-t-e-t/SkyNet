@@ -169,7 +169,7 @@ jobs:
 
       - name: Create issue on batch failure
         if: steps.batch.outputs.exit_code != '0' && steps.batch.outputs.exit_code != ''
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |

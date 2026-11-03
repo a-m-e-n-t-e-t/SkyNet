@@ -92,7 +92,7 @@ jobs:
 
       - name: Create issue on failure
         if: steps.precommit.outputs.exit_code != '0' && steps.precommit.outputs.exit_code != ''
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |

@@ -146,7 +146,7 @@ jobs:
 
       - name: Create issue if M37 violated
         if: steps.pipeline.outputs.exists == 'true' && steps.prev.outputs.m37_pass == 'false'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |

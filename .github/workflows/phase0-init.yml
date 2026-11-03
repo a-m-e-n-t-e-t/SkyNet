@@ -213,7 +213,7 @@ jobs:
 
       - name: Create issue if skeleton required
         if: steps.state.outputs.needs_skeleton == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           github-token: ${{ env.PAT_TOKEN }}
           script: |
