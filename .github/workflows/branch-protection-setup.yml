@@ -36,9 +36,14 @@ on:
   schedule:
     # Daily at 02:00 UTC (08:00 Asia/Omsk) — drift detection
     - cron: '0 2 * * *'
-  # v9.31 fix: НЕ добавляем `on: push` — этот workflow только для ручного
-  # запуска и daily drift detection. Запуск на каждом push создавал empty
-  # run с conclusion=failure (24 раза подряд), засоряя CI статус.
+  push:
+    # v9.31 fix: запускаем ТОЛЬКО при изменении самого файла workflow.
+    # Без этого GitHub создаёт empty run с conclusion=failure на КАЖДЫЙ push
+    # в main (потому что workflow с schedule/dispatch триггерами всё равно
+    # валидируется GitHub при пуше). С paths фильтром запуск будет только
+    # при релевантном изменении.
+    paths:
+      - '.github/workflows/branch-protection-setup.yml'
   # Branch Protection API требует GitHub Pro для приватных репо (или
   # публичного репо) — поэтому все шаги, вызывающие protection API,
   # помечены continue-on-error: true ниже.
@@ -57,6 +62,10 @@ jobs:
     name: Setup/verify branch protection on main
     runs-on: ubuntu-latest
     timeout-minutes: 3
+    # v9.31 fix: не запускаем на push — только schedule (daily) и workflow_dispatch.
+    # Push triggers нужен только для валидации YAML (GitHub требует хотя бы один
+    # trigger в `on:` чтобы не создавать empty runs).
+    if: github.event_name != 'push'
 
     steps:
       - name: Check current protection status
