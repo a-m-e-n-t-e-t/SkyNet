@@ -78,6 +78,16 @@ jobs:
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         id: analyze
+        continue-on-error: true
+        # v9.31 fix: continue-on-error — GitHub Free private repos don't have
+        # Advanced Security license, so SARIF upload fails with:
+        # "Code scanning is not enabled for this repository.
+        #  Please enable code scanning in the repository settings."
+        # / "Advanced security has not been purchased."
+        # CodeQL analysis itself completes successfully (174 queries evaluated);
+        # only the SARIF upload to GitHub is blocked. We let the workflow
+        # succeed so it doesn't block commits — actual alerts can be viewed
+        # in the workflow log if needed.
         with:
           category: "/language:${{ matrix.language }}"
 
