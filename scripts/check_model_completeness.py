@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-SkyNet Model Completeness Checker — v9.24 (v9.31.1: актуализировано)
+SkyNet Model Completeness Checker — v9.31 (v9.31.1: актуализировано)
 Self-аудит полноты подсистем для каждой модели (F86).
 
-Урок из v9.17: AI не делал эту проверку сам — пользователь должен был попросить
+Урок из v9.31: AI не делал эту проверку сам — пользователь должен был попросить
 «проверь содержат ли подсистемы каждой модели все необходимые изделия».
 После этого нашлось 3 пробела: маскировка, навигация, система_связи.
 
@@ -136,7 +136,7 @@ def check_model_completeness(model_path):
     missing_ii = set(expected) - ii_subs
     missing_both = set(expected) - covered
     
-    # Check подтип_модели for exemptions (v9.24)
+    # Check подтип_модели for exemptions (v9.31)
     podtip = yaml_data.get('подтип_модели', 'стандартный')
     exempt = set()
     if podtip == 'жидкий_металл':
@@ -195,7 +195,7 @@ def check_all_models():
 def main():
     """Главная функция — проверяет все модели и выводит отчёт."""
     print("=" * 70)
-    print("SkyNet Model Completeness Checker v9.24 (F86)")
+    print("SkyNet Model Completeness Checker v9.31 (F86)")
     print("=" * 70)
     
     result = check_all_models()
