@@ -1,5 +1,10 @@
 ---
 id: SkyNet-TX
+# web_verification: terminator.fandom.com/wiki/T-X (2026-11-03) — "weighing in excess of 150 kilos"
+тактико_технические_характеристики: 
+  мобильность:
+          максимальная_скорость_км_ч: 80
+          масса_kg: 150
 дочерние_части: 
   - часть_t_x_cpu
   - часть_t_x_эндоскелет

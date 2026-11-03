@@ -1,5 +1,18 @@
 ---
 id: SkyNet-HKAerial
+# web_verification: terminator.fandom.com/wiki/HK-Aerial + worldofjaymz.fandom.com (2026-11-03)
+тактико_технические_характеристики: 
+  мобильность:
+          скорость_км_ч: 500
+          тип: VTOL
+          потолок_m: 10000
+  габариты:
+          длина_m: 34.2
+          ширина_m: 32.9
+          высота_m: 5.2
+          масса_kg: 13608
+  питание: nuclear_power_cell
+  вооружение: plasma_cannons_2 + lasers + missiles
 дочерние_части: 
   - часть_hk_aerial_фюзеляж
   - часть_hk_aerial_двигатель_левый

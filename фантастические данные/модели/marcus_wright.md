@@ -1,5 +1,10 @@
 ---
 id: SkyNet-MarcusWright
+# web_verification: terminator.fandom.com/wiki/Marcus_Wright + robots.fandom.com (2026-11-03)
+тактико_технические_характеристики: 
+  мобильность:
+          максимальная_скорость_км_ч: 30
+          масса_kg: 90
 дочерние_части: 
   - часть_marcus_человеческий_мозг
   - часть_marcus_эндоскелет

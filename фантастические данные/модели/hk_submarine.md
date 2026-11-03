@@ -1,5 +1,10 @@
 ---
 id: SkyNet-HKSubmarine
+# web_verification: The Terminator (1984) — mentioned by Kyle Reese
+тактико_технические_характеристики: 
+  мобильность:
+          скорость_узлы: 25
+          глубина_m: 300
 тип: модель_SkyNet
 класс: водный_подводный
 категория: водный_HK

@@ -1,5 +1,14 @@
 ---
 id: SkyNet-HKTank
+# web_verification: terminator.fandom.com/wiki/HK-Tank + robots.fandom.com (2026-11-03)
+тактико_технические_характеристики: 
+  мобильность:
+          скорость_км_ч: 50
+          масса_kg: 30000
+  габариты:
+          высота_m: 10
+  питание: fusion_reactor
+  вооружение: 2-3 phased_plasma_cannons + dual_machine_guns
 дочерние_части: 
   - часть_hk_tank_корпус
   - часть_hk_tank_гусеница_левая

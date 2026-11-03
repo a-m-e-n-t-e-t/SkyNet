@@ -1,5 +1,10 @@
 ---
 id: SkyNet-HKDrone
+# web_verification: terminator.fandom.com/wiki/HK-Drone (2026-11-03)
+тактико_технические_характеристики: 
+  мобильность:
+          скорость_км_ч: 400
+          тип: VTOL
 тип: модель_SkyNet
 класс: воздушный
 категория: воздушный_HK

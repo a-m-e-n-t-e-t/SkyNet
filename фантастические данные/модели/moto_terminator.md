@@ -1,5 +1,11 @@
 ---
 id: SkyNet-MotoTerminator
+# web_verification: terminator.fandom.com/wiki/Moto-Terminator (2026-11-03)
+тактико_технические_характеристики: 
+  мобильность:
+          скорость_км_ч: 322
+          тип: мотоциклетный
+  вооружение: plasma_emitters
 тип: модель_SkyNet
 класс: наземный_колёсный
 категория: наземный_HK

@@ -1,5 +1,10 @@
 ---
 id: SkyNet-Cameron
+# web_verification: terminator.fandom.com/wiki/Cameron + Wikipedia Cameron_(Terminator) (2026-11-03)
+тактико_технические_характеристики: 
+  мобильность:
+          максимальная_скорость_км_ч: 40
+          масса_kg: 65
 дочерние_части: 
   - часть_cameron_cpu
   - часть_cameron_эндоскелет
