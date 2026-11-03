@@ -1,0 +1,68 @@
+# SkyNet Reusable Workflow — скачивание PAT с Яндекс.Диска
+# v9.31: устраняет дублирование в 3 workflows (~60 строк)
+# Использование:
+#   jobs:
+#     download-pat:
+#       uses: ./.github/workflows/_download-pat.yml
+#     batch:
+#       needs: download-pat
+#       env:
+#         PAT_TOKEN: ${{ needs.download-pat.outputs.pat }}
+
+name: _Download PAT (reusable)
+
+on:
+  workflow_call:
+    outputs:
+      pat:
+        description: 'PAT token from Yandex Disk'
+        value: ${{ jobs.download.outputs.pat }}
+
+jobs:
+  download:
+    name: Download PAT
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      pat: ${{ steps.pat.outputs.pat }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Download PAT from Yandex Disk
+        id: pat
+        env:
+          YANDEX_PUBLIC_KEY: https://disk.yandex.ru/i/3RiKQucdvHI2Sg
+        run: |
+          python << 'PYEOF'
+          import os, json, urllib.request, zipfile, xml.etree.ElementTree as ET, re, tempfile, pathlib
+          public_key = os.environ["YANDEX_PUBLIC_KEY"]
+          api = "https://cloud-api.yandex.net/v1/disk/public/resources/download"
+          url = f"{api}?public_key={urllib.parse.quote(public_key, safe='')}"
+          with urllib.request.urlopen(url, timeout=15) as r:
+              data = json.load(r)
+          download_url = data["href"]
+          tmp = pathlib.Path(tempfile.gettempdir()) / "token.docx"
+          urllib.request.urlretrieve(download_url, tmp)
+          with zipfile.ZipFile(tmp, 'r') as z:
+              with z.open('word/document.xml') as f:
+                  tree = ET.parse(f)
+                  root = tree.getroot()
+                  ns = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
+                  texts = [t.text for t in root.iter(f'{ns}t') if t.text]
+                  full = ''.join(texts)
+          tmp.unlink(missing_ok=True)
+          m = re.search(r'github_pat_[A-Za-z0-9_]+', full)
+          if not m:
+              print("::error::PAT not found")
+              sys.exit(1)
+          pat = m.group(0)
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"pat={pat}\n")
+          print(f"::notice::PAT downloaded (length={len(pat)})")
+          PYEOF

@@ -1,0 +1,30 @@
+# SkyNet Composite Action — checkout + setup-python + install deps
+# v9.31: устраняет дублирование в 6 workflows (~35 строк)
+# Использование:
+#   steps:
+#     - uses: ./.github/actions/setup-skynet
+
+name: Setup SkyNet
+description: Checkout + Python 3.12 + pip deps + cache
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Cache pip
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: ${{ runner.os }}-pip-
+
+    - name: Install deps
+      run: pip install pyyaml requests
+      shell: bash

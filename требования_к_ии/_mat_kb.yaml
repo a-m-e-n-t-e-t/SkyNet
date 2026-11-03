@@ -1,0 +1,166 @@
+# SkyNet Material Knowledge Base (MAT_KB)
+# §20.4 — kb_lookup для материалов
+# Обновляется при KB miss → web-search → добавить
+# Версия: 9.17
+
+materials:
+  - id: mat_kb_001
+    name: "Ti-6Al-4V"
+    chemical_formula: "Ti6Al4V"
+    density_kg_m3: 4430
+    tensile_strength_MPa: 900
+    melting_point_C: 1660
+    producer: "AP&C (GE Aviation)"
+    crystal_structure: "поликристаллический"
+    optimal_structure_by_application: {каркас: "поликристаллический", лопатки_турбин: "монокристаллический"}
+    fatigue_strength_MPa_at_1e7: 560
+    creep_MPa_at_850C_100h: 35
+    mono_available: false
+    poly_available: true
+  - id: mat_kb_002
+    name: "AISI 4340"
+    chemical_formula: "Fe-C-Ni-Cr-Mo"
+    density_kg_m3: 7850
+    tensile_strength_MPa: 1280
+    melting_point_C: 1427
+    producer: "Multiple"
+    crystal_structure: "поликристаллический"
+    fatigue_strength_MPa_at_1e7: 660
+    mono_available: false
+    poly_available: true
+  - id: mat_kb_003
+    name: "Al 7075-T6"
+    chemical_formula: "Al-Zn-Mg-Cu"
+    density_kg_m3: 2810
+    tensile_strength_MPa: 572
+    melting_point_C: 477
+    producer: "Multiple"
+    crystal_structure: "поликристаллический"
+    fatigue_strength_MPa_at_1e7: 159
+    mono_available: false
+    poly_available: true
+  - id: mat_kb_004
+    name: "SS 316L"
+    chemical_formula: "Fe-Cr-Ni-Mo"
+    density_kg_m3: 7990
+    tensile_strength_MPa: 580
+    melting_point_C: 1390
+    producer: "Multiple"
+    crystal_structure: "поликристаллический"
+    mono_available: false
+    poly_available: true
+  - id: mat_kb_005
+    name: "Inconel 718"
+    chemical_formula: "Ni-Cr-Fe-Nb-Mo"
+    density_kg_m3: 8190
+    tensile_strength_MPa: 1240
+    melting_point_C: 1340
+    producer: "Special Metals"
+    crystal_structure: "поликристаллический"
+    fatigue_strength_MPa_at_1e7: 480
+    creep_MPa_at_850C_100h: 120
+    mono_available: true
+    poly_available: true
+  - id: mat_kb_006
+    name: "Beryllium Copper C17200"
+    chemical_formula: "Cu-Be"
+    density_kg_m3: 8250
+    tensile_strength_MPa: 1200
+    melting_point_C: 870
+    producer: "Materion"
+    crystal_structure: "поликристаллический"
+    fatigue_strength_MPa_at_1e7: 400
+    mono_available: false
+    poly_available: true
+  - id: mat_kb_007
+    name: "UHMWPE"
+    chemical_formula: "(C2H4)n"
+    density_kg_m3: 930
+    tensile_strength_MPa: 40
+    melting_point_C: 135
+    producer: "Multiple"
+    crystal_structure: "аморфный"
+    mono_available: false
+    poly_available: false
+  - id: mat_kb_008
+    name: "B4C (Boron Carbide)"
+    chemical_formula: "B4C"
+    density_kg_m3: 2520
+    tensile_strength_MPa: 350
+    melting_point_C: 2763
+    producer: "Multiple"
+    crystal_structure: "поликристаллический"
+    mono_available: false
+    poly_available: true
+  - id: mat_kb_009
+    name: "Silicon (monocrystalline CZ)"
+    chemical_formula: "Si"
+    density_kg_m3: 2329
+    tensile_strength_MPa: 130
+    melting_point_C: 1414
+    producer: "Multiple"
+    crystal_structure: "монокристаллический"
+    mono_available: true
+    poly_available: false
+  - id: mat_kb_010
+    name: "Sapphire (Al2O3)"
+    chemical_formula: "Al2O3"
+    density_kg_m3: 3980
+    tensile_strength_MPa: 400
+    melting_point_C: 2072
+    producer: "Multiple"
+    crystal_structure: "монокристаллический"
+    mono_available: true
+    poly_available: false
+  - id: mat_kb_011
+    name: "Metglas 2605SA1"
+    chemical_formula: "Fe-Si-B"
+    density_kg_m3: 7180
+    tensile_strength_MPa: 1500
+    melting_point_C: 950
+    producer: "Metglas Inc"
+    crystal_structure: "аморфный"
+    mono_available: false
+    poly_available: false
+  - id: mat_kb_012
+    name: "Grain-oriented Si steel"
+    chemical_formula: "Fe-Si3%"
+    density_kg_m3: 7650
+    tensile_strength_MPa: 380
+    melting_point_C: 1500
+    producer: "Multiple"
+    crystal_structure: "поликристаллический"
+    mono_available: false
+    poly_available: true
+  - id: mat_kb_013
+    name: "CMSX-4"
+    chemical_formula: "Ni-Cr-Co-W-Mo-Al-Ti-Ta"
+    density_kg_m3: 8700
+    tensile_strength_MPa: 1180
+    melting_point_C: 1380
+    producer: "Cannon Muskegon"
+    crystal_structure: "монокристаллический"
+    fatigue_strength_MPa_at_1e7: 95
+    creep_MPa_at_850C_100h: 150
+    mono_available: true
+    poly_available: false
+  - id: mat_kb_014
+    name: "Tungsten (W)"
+    chemical_formula: "W"
+    density_kg_m3: 19300
+    tensile_strength_MPa: 980
+    melting_point_C: 3422
+    producer: "Multiple"
+    crystal_structure: "поликристаллический"
+    mono_available: false
+    poly_available: true
+  - id: mat_kb_015
+    name: "Carbon Fiber T1100"
+    chemical_formula: "C"
+    density_kg_m3: 1790
+    tensile_strength_MPa: 7000
+    melting_point_C: 3550
+    producer: "Toray"
+    crystal_structure: "аморфный"
+    mono_available: false
+    poly_available: false

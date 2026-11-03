@@ -1,0 +1,67 @@
+# SkyNet CODEOWNERS — auto-assign reviewers
+# v9.21: каждый раздел репо имеет owner, который автоматически ревьюит PR
+# Документация: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# Формат: <path> <owner1> <owner2> ...
+# Используются GitHub usernames (с @) или team names (для orgs)
+
+# ====== Корень репо ======
+*                           @a-m-e-n-t-e-t
+
+# ====== Workflows (CI/CD) ======
+/.github/                   @a-m-e-n-t-e-t
+/.github/workflows/         @a-m-e-n-t-e-t
+
+# ====== Промпт (главный документ) ======
+/SkyNet_PROMPT_v*.md        @a-m-e-n-t-e-t
+/README.md                  @a-m-e-n-t-e-t
+
+# ====== Скрипты (Python) ======
+/scripts/                   @a-m-e-n-t-e-t
+/scripts/pipeline.py        @a-m-e-n-t-e-t
+/scripts/pre-commit-hook.py @a-m-e-n-t-e-t
+/scripts/_helpers.py         @a-m-e-n-t-e-t
+/scripts/_CATALOG.md         @a-m-e-n-t-e-t
+
+# ====== Требования к ИИ (принципы, схемы, метрики) ======
+/требования к ии/            @a-m-e-n-t-e-t
+/требования к ии/_принципы.md           @a-m-e-n-t-e-t
+/требования к ии/_версия_правил.yaml    @a-m-e-n-t-e-t
+/требования к ии/_field_contracts.yaml  @a-m-e-n-t-e-t
+/требования к ии/_alice_assets.yaml    @a-m-e-n-t-e-t
+/требования к ии/_credentials.yaml      @a-m-e-n-t-e-t
+
+# ====== Фантастические данные (канон моделей) ======
+/фантастические данные/     @a-m-e-n-t-e-t
+
+# ====== Реальные данные (материалы, технологии, изделия) ======
+/реальные данные/           @a-m-e-n-t-e-t
+/реальные данные/материалы/    @a-m-e-n-t-e-t
+/реальные данные/технологии/   @a-m-e-n-t-e-t
+/реальные данные/изделия/      @a-m-e-n-t-e-t
+
+# ====== Работа и И (улучшенные версии) ======
+/работа и и/                @a-m-e-n-t-e-t
+
+# ====== Результаты (метрики, отчёты, статья) ======
+/результаты/                @a-m-e-n-t-e-t
+/результаты/_telemetry.json @a-m-e-n-t-e-t
+/результаты/_статья.md      @a-m-e-n-t-e-t
+
+# ====== Концепции Alice (вдохновение, НЕ истина) ======
+/концепции/                 @a-m-e-n-t-e-t
+
+# ====== Диалоги (история сообщений) ======
+/диалог/                    @a-m-e-n-t-e-t
+
+# ====== Гипотезы и улучшения ======
+/гипотезы/                  @a-m-e-n-t-e-t
+/улучшения/                 @a-m-e-n-t-e-t
+
+# ====== Архив (бэкапы) ======
+/архив/                     @a-m-e-n-t-e-t
+
+# ====== GitHub configs ======
+/.github/dependabot.yml     @a-m-e-n-t-e-t
+/.github/CODEOWNERS         @a-m-e-n-t-e-t
+/.github/PULL_REQUEST_TEMPLATE.md  @a-m-e-n-t-e-t

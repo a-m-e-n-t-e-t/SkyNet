@@ -1,0 +1,57 @@
+# SkyNet Subsystem Type Knowledge Base (TYP_KB)
+# §20.4 — typ_default backfill
+# Версия: 9.17
+
+subsystem_types:
+  - id: typ_kb_001
+    name: "вычислительная"
+    default_materials: [silicon_mono_cz, siC, gaAs]
+    default_technologies: [slm, photonic_computing]
+  - id: typ_kb_002
+    name: "энергетическая"
+    default_materials: [ss316l, inconel_718, hastelloy_n]
+    default_technologies: [ebw, fsw, tpv]
+  - id: typ_kb_003
+    name: "каркас"
+    default_materials: [ti6al4v, aisi_4340, al_7075_t6]
+    default_technologies: [slm, hip]
+  - id: typ_kb_004
+    name: "броня"
+    default_materials: [b4c, uhmwpe, rha_steel]
+    default_technologies: [ceramic_processing]
+  - id: typ_kb_005
+    name: "маскировка"
+    default_materials: [metglas_2605sa1, vantalloy]
+    default_technologies: [metamaterial_fabrication]
+  - id: typ_kb_006
+    name: "встроенное_оружие"
+    default_materials: [tungsten, hastelloy_n, ceramic_composite]
+    default_technologies: [precision_machining, ebw]
+  - id: typ_kb_007
+    name: "сенсоры"
+    default_materials: [sapphire_al2o3, silicon_mono_cz, siC]
+    default_technologies: [thin_film_deposition, wafer_bonding]
+  - id: typ_kb_008
+    name: "приводная_система"
+    default_materials: [beryllium_copper_c17200, ss316l, ndfeb_magnet]
+    default_technologies: [precision_machining, hip]
+  - id: typ_kb_009
+    name: "система_связи"
+    default_materials: [sapphire_al2o3, pt_rh_wire, gold_plating]
+    default_technologies: [thin_film_deposition, pcb_fabrication]
+  - id: typ_kb_010
+    name: "навигация"
+    default_materials: [silicon_mono_cz, sapphire_al2o3]
+    default_technologies: [mems_fabrication, wafer_bonding]
+  - id: typ_kb_011
+    name: "система_охлаждения"
+    default_materials: [copper_c11000, ss316l, aluminum_6061]
+    default_technologies: [brazing, extrusion]
+  - id: typ_kb_012
+    name: "система_питания"
+    default_materials: [ss316l, aluminum_6061, copper_c11000]
+    default_technologies: [brazing, welding]
+  - id: typ_kb_013
+    name: "система_передвижения"
+    default_materials: [ti6al4v, aisi_4340, rubber_compound]
+    default_technologies: [precision_machining, injection_molding]

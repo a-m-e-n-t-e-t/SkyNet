@@ -1,0 +1,181 @@
+# SkyNet Workflow 10/14 — Auto-release on tags
+# Промпт-версия: v9.21
+# Соответствует: §15a.2 (Conventional Commits), §18 (final requirements)
+#
+# Триггеры:
+#   - push тегов v* (например v9.21, v9.22, v10.0)
+#   - workflow_dispatch
+#
+# Что делает:
+#   1. Парсит CHANGELOG.md → извлекает секцию соответствующей версии
+#   2. Создаёт GitHub Release с описанием
+#   3. Прикрепляет SkyNet_PROMPT_v<X>_package.zip как asset
+#   4. Уведомляет watchers
+
+name: Release Creator — auto-release on version tags
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release (e.g. v9.21)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+env:
+  PYTHON_VERSION: '3.12'
+
+jobs:
+  release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout SkyNet
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Determine tag
+        id: tag
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            TAG="${{ github.event.inputs.tag }}"
+          else
+            TAG="${GITHUB_REF#refs/tags/}"
+          fi
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "::notice::Releasing $TAG"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Extract changelog for this version
+        id: notes
+        run: |
+          python << 'PYEOF'
+          import re, os, sys
+          tag = os.environ['TAG']
+          version = tag.lstrip('v')
+          # Read CHANGELOG.md
+          try:
+              with open("требования к ии/_CHANGELOG.md", "r", encoding="utf-8") as f:
+                  changelog = f.read()
+          except FileNotFoundError:
+              try:
+                  with open("CHANGELOG.md", "r", encoding="utf-8") as f:
+                      changelog = f.read()
+              except FileNotFoundError:
+                  changelog = f"No CHANGELOG.md found for version {version}."
+          
+          # Find section for this version (## v9.21 or ## 9.21 or ## [v9.21])
+          patterns = [
+              rf'## (?:v)?{re.escape(version)}\b.*?(?=\n## (?:v)?\d+\.\d+|\Z)',
+              rf'# (?:v)?{re.escape(version)}\b.*?(?=\n# (?:v)?\d+\.\d+|\Z)',
+          ]
+          section = None
+          for pat in patterns:
+              m = re.search(pat, changelog, re.DOTALL)
+              if m:
+                  section = m.group(0).strip()
+                  break
+          
+          if not section:
+              section = f"## v{version}\n\nNo detailed changelog found. See git log:\n\n```\n"
+          
+          # Write to file for release notes
+          with open("release_notes.md", "w", encoding="utf-8") as f:
+              f.write(f"# SkyNet v{version}\n\n")
+              f.write(section)
+              f.write("\n\n## Assets\n\n")
+              f.write("- `SkyNet_PROMPT_v" + version + "_package.zip` — full package with workflows\n")
+              f.write("- `SkyNet_PROMPT_v" + version + ".md` — prompt only\n")
+              f.write(f"\n## Installation\n\n")
+              f.write(f"```bash\n")
+              f.write(f"unzip SkyNet_PROMPT_v{version}_package.zip -d SkyNet\n")
+              f.write(f"cd SkyNet\n")
+              f.write(f"git init && git add . && git commit -m 'init v{version}'\n")
+              f.write(f"```\n")
+          
+          print(f"::notice::Release notes generated ({len(section)} chars)")
+          PYEOF
+
+      - name: Find package assets
+        id: assets
+        run: |
+          # Look for matching .zip and .md files
+          VERSION=${TAG#v}  # remove 'v' prefix
+          ZIP_FILE=""
+          MD_FILE=""
+          
+          # Try multiple patterns
+          for pat in "SkyNet_PROMPT_v${VERSION}_package.zip" "SkyNet_PROMPT_v${VERSION}.zip" "v${VERSION}_pack/SkyNet_PROMPT_v${VERSION}_package.zip"; do
+            if [ -f "$pat" ]; then
+              ZIP_FILE="$pat"
+              break
+            fi
+          done
+          
+          for pat in "SkyNet_PROMPT_v${VERSION}.md" "v${VERSION}_pack/SkyNet_PROMPT_v${VERSION}.md"; do
+            if [ -f "$pat" ]; then
+              MD_FILE="$pat"
+              break
+            fi
+          done
+          
+          echo "zip_file=$ZIP_FILE" >> $GITHUB_OUTPUT
+          echo "md_file=$MD_FILE" >> $GITHUB_OUTPUT
+          echo "::notice::Found ZIP: $ZIP_FILE"
+          echo "::notice::Found MD: $MD_FILE"
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          # Check if release already exists
+          EXISTING=$(gh release view "$TAG" --repo "${{ github.repository }}" --json url -q .url 2>/dev/null || echo "")
+          if [ -n "$EXISTING" ]; then
+            echo "::notice::Release $TAG already exists — updating notes"
+            gh release edit "$TAG" \
+              --repo "${{ github.repository }}" \
+              --notes-file release_notes.md
+          else
+            gh release create "$TAG" \
+              --repo "${{ github.repository }}" \
+              --title "SkyNet $TAG" \
+              --notes-file release_notes.md \
+              --generate-notes
+          fi
+
+      - name: Upload assets
+        if: steps.assets.outputs.zip_file != '' || steps.assets.outputs.md_file != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          if [ -n "${{ steps.assets.outputs.zip_file }}" ]; then
+            gh release upload "$TAG" "${{ steps.assets.outputs.zip_file }}" --clobber --repo "${{ github.repository }}"
+          fi
+          if [ -n "${{ steps.assets.outputs.md_file }}" ]; then
+            gh release upload "$TAG" "${{ steps.assets.outputs.md_file }}" --clobber --repo "${{ github.repository }}"
+          fi
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## GitHub Release ${{ steps.tag.outputs.tag }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Tag:** ${{ steps.tag.outputs.tag }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **ZIP asset:** ${{ steps.assets.outputs.zip_file || 'not found' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **MD asset:** ${{ steps.assets.outputs.md_file || 'not found' }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Release URL:** ${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ steps.tag.outputs.tag }}" >> $GITHUB_STEP_SUMMARY

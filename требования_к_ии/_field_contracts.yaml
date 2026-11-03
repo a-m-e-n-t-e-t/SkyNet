@@ -1,0 +1,160 @@
+# SkyNet Field Contracts Registry
+# §20.1 — полный реестр field_contracts
+# Версия: 9.17
+# Генерируется при первом запуске; ключевые контракты предзаполнены
+
+field_contracts:
+  # === ИЗДЕЛИЕ (§12.1) ===
+  - id: fc_изделие_подсистема
+    schema: §12.1
+    поле: подсистема
+    tier: 1
+    executor_type: deterministic
+    source_kind: source_section_id
+    executor: scripts/classify_subsystem.py::classify
+    algorithm: "match keywords → 13 подсистем §11.1"
+    verifies: [F3]
+    blocker_if_unfilled: true
+    is_orphan: false
+
+  - id: fc_изделие_подтип
+    schema: §12.1
+    поле: подтип
+    tier: 1
+    executor_type: deterministic
+    source_kind: derived_from_subtype_list
+    executor: scripts/classify_subsystem.py
+    algorithm: "match against 146 подтипов §11.4"
+    verifies: [F8]
+    blocker_if_unfilled: true
+    is_orphan: false
+
+  - id: fc_изделие_стандарты
+    schema: §12.1
+    поле: стандарты
+    tier: 2
+    executor_type: semantic
+    source_kind: web_search
+    executor: scripts/extract_from_sources.py
+    algorithm: "web-search standards for item type"
+    verifies: [F6]
+    blocker_if_unfilled: false
+    is_orphan: false
+
+  - id: fc_изделие_исследовательская_группа
+    schema: §12.1
+    поле: исследовательская_группа
+    tier: 2
+    executor_type: semantic
+    source_kind: web_search
+    executor: scripts/extract_from_sources.py
+    verifies: [F7]
+    blocker_if_unfilled: false
+    is_orphan: false
+
+  - id: fc_изделие_масса
+    schema: §12.1
+    поле: основные.масса_kg
+    tier: 8
+    executor_type: computed
+    source_kind: computed_by_formula
+    executor: scripts/compute_model_parameters.py
+    algorithm: "mass = Σ(дочерних.масса × доля_массы)"
+    verifies: [F31]
+    blocker_if_unfilled: true
+    is_orphan: false
+
+  # === МАТЕРИАЛ (§12.3) ===
+  - id: fc_материал_кристалл_структура
+    schema: §12.3
+    поле: кристаллическая_структура
+    tier: 1
+    executor_type: deterministic
+    source_kind: web_search
+    executor: scripts/pipeline.py::phase_3.5_cycle
+    algorithm: "веб-поиск ВСЕХ вариантов → выбор по применению (P019+P062)"
+    verifies: [F5]
+    blocker_if_unfilled: true
+    is_orphan: false
+
+  - id: fc_материал_оптимальная_структура
+    schema: §12.3
+    поле: оптимальная_структура
+    tier: 2
+    executor_type: hybrid
+    source_kind: web_search_or_kb_lookup
+    executor: scripts/pipeline.py::phase_3.5_cycle
+    verifies: [F62]
+    blocker_if_unfilled: false
+    is_orphan: false
+
+  - id: fc_материал_варианты_по_применению
+    schema: §12.3
+    поле: варианты_по_применению
+    tier: 3
+    executor_type: derived
+    source_kind: derived_from_application_context
+    executor: scripts/pipeline.py::phase_3.5_cycle
+    verifies: [F62c]
+    blocker_if_unfilled: false
+    is_orphan: false
+
+  - id: fc_материал_предел_текучести
+    schema: §12.3
+    поле: основные.предел_текучести_МПа
+    tier: 6
+    executor_type: web_enriched
+    source_kind: web_search
+    executor: scripts/extract_from_sources.py
+    verifies: [F5, P022.5]
+    blocker_if_unfilled: false
+    is_orphan: false
+
+  - id: fc_материал_усталостная_прочность
+    schema: §12.3
+    поле: основные.усталостная_прочность_МПа
+    tier: 6
+    executor_type: web_enriched
+    source_kind: web_search
+    executor: scripts/extract_from_sources.py
+    verifies: [F5, P022.5]
+    blocker_if_unfilled: false
+    is_orphan: false
+
+  # === МОДЕЛЬ (§12.4) ===
+  - id: fc_модель_applied_patterns
+    schema: §12.4
+    поле: applied_patterns
+    tier: 1
+    executor_type: deterministic
+    source_kind: derived_from_pattern_list
+    executor: scripts/check_applied_patterns.py
+    algorithm: "модель ссылается на applicable паттерны из §14.0"
+    verifies: [F52]
+    blocker_if_unfilled: true
+    is_orphan: false
+
+  # === ТЕХНОЛОГИЯ (§12.2) ===
+  - id: fc_технология_температура_режима
+    schema: §12.2
+    поле: основные.температура_режима_C
+    tier: 6
+    executor_type: web_enriched
+    source_kind: web_search
+    executor: scripts/extract_from_sources.py
+    verifies: [F57]
+    blocker_if_unfilled: false
+    is_orphan: false
+
+  # === РЕАЛИЗАЦИЯ (§12.5) ===
+  - id: fc_реализация_покрытие_функций
+    schema: §12.5
+    поле: покрытие_функций
+    tier: 8
+    executor_type: computed
+    source_kind: computed_by_formula
+    executor: scripts/compute_model_parameters.py
+    algorithm: "covered_functions / total_functions × 100"
+    verifies: [F49]
+    blocker_if_unfilled: true
+    is_orphan: false
