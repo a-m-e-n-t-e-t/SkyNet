@@ -1,5 +1,4 @@
 ---
-
 id: tekhnologia_sborka_v_termoizolyatsionnoi_opravke
 тип: технология
 категория: обработка
@@ -48,6 +47,7 @@ id: tekhnologia_sborka_v_termoizolyatsionnoi_opravke
   ограничения: null
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03# Технология: Сборка в термоизоляционной оправке
+---
 
 ## Описание
 

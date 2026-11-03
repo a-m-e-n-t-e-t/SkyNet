@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_bldc_+_enkoder
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_bldc_+_enkoder
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_bldc_+_enkoder_core
+  - часть_bldc_+_enkoder_housing
+  - часть_bldc_+_enkoder_connectors
+  - часть_bldc_+_enkoder_mounting
+материалы_частей:
+  - часть: часть_bldc_+_enkoder_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_bldc_+_enkoder_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: BLDC + энкодер
+источник_разбора: пользовательский ввод
+---
+# Изделие: BLDC + энкодер
 
 ## Описание
 
@@ -82,3 +93,21 @@ BLDC + энкодер
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    bldc_+_enkoder["izdelie_bldc_+_enkoder"]
+    bldc_+_enkoder_core["часть_bldc_+_enkoder_core"]
+    bldc_+_enkoder --> bldc_+_enkoder_core
+    bldc_+_enkoder_housing["часть_bldc_+_enkoder_housing"]
+    bldc_+_enkoder --> bldc_+_enkoder_housing
+    bldc_+_enkoder_connectors["часть_bldc_+_enkoder_connectors"]
+    bldc_+_enkoder --> bldc_+_enkoder_connectors
+    bldc_+_enkoder_mounting["часть_bldc_+_enkoder_mounting"]
+    bldc_+_enkoder --> bldc_+_enkoder_mounting
+```

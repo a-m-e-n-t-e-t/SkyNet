@@ -1,5 +1,4 @@
 ---
-
 id: tekhnologia_lazernaya_udarnaya_obrabotka
 тип: технология
 категория: обработка
@@ -49,6 +48,7 @@ id: tekhnologia_lazernaya_udarnaya_obrabotka
   ограничения: null
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03# Технология: Лазерная ударная обработка
+---
 
 ## Описание
 

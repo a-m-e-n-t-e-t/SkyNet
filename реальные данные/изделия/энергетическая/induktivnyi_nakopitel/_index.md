@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_induktivnyi_nakopitel
 тип: изделие
 категория: энергетика
@@ -11,8 +10,22 @@ id: izdelie_induktivnyi_nakopitel
   - IEEE C57.16
 исследовательская_группа: general_electric
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_induktivnyi_nakopitel_coil
+  - часть_induktivnyi_nakopitel_core
+  - часть_induktivnyi_nakopitel_housing
+  - часть_induktivnyi_nakopitel_switch
+  - часть_induktivnyi_nakopitel_cooling
+материалы_частей:
+  - часть: часть_induktivnyi_nakopitel_coil
+    материал: copper_wire
+    доля_массы: 0.475
+  - часть: часть_induktivnyi_nakopitel_core
+    материал: electrical_steel
+    доля_массы: 0.285
+  - часть: часть_induktivnyi_nakopitel_housing
+    материал: aluminum
+    доля_массы: 0.095
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +60,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Индуктивный накопитель
+источник_разбора: пользовательский ввод
+---
+# Изделие: Индуктивный накопитель
 
 ## Описание
 
@@ -83,3 +98,23 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    induktivnyi_nakopite["izdelie_induktivnyi_nakopitel"]
+    induktivnyi_nakopitel_coi["часть_induktivnyi_nakopitel_coil"]
+    induktivnyi_nakopite --> induktivnyi_nakopitel_coi
+    induktivnyi_nakopitel_cor["часть_induktivnyi_nakopitel_core"]
+    induktivnyi_nakopite --> induktivnyi_nakopitel_cor
+    induktivnyi_nakopitel_hou["часть_induktivnyi_nakopitel_housing"]
+    induktivnyi_nakopite --> induktivnyi_nakopitel_hou
+    induktivnyi_nakopitel_swi["часть_induktivnyi_nakopitel_switch"]
+    induktivnyi_nakopite --> induktivnyi_nakopitel_swi
+    induktivnyi_nakopitel_coo["часть_induktivnyi_nakopitel_cooling"]
+    induktivnyi_nakopite --> induktivnyi_nakopitel_coo
+```

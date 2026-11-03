@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_kapillyarnaya_teplovaya_trubka
 тип: изделие
 категория: машиностроение
@@ -11,8 +10,18 @@ id: izdelie_kapillyarnaya_teplovaya_trubka
   - ASHRAE 15
 исследовательская_группа: boyd_corp
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_kapillyarnaya_teplovaya_trubka_core
+  - часть_kapillyarnaya_teplovaya_trubka_housing
+  - часть_kapillyarnaya_teplovaya_trubka_connectors
+  - часть_kapillyarnaya_teplovaya_trubka_mounting
+материалы_частей:
+  - часть: часть_kapillyarnaya_teplovaya_trubka_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_kapillyarnaya_teplovaya_trubka_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +54,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: капиллярная тепловая трубка
+источник_разбора: пользовательский ввод
+---
+# Изделие: капиллярная тепловая трубка
 
 ## Описание
 
@@ -81,3 +92,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    kapillyarnaya_teplov["izdelie_kapillyarnaya_teplovaya_trubka"]
+    kapillyarnaya_teplovaya_t["часть_kapillyarnaya_teplovaya_trubka_core"]
+    kapillyarnaya_teplov --> kapillyarnaya_teplovaya_t
+    kapillyarnaya_teplovaya_t["часть_kapillyarnaya_teplovaya_trubka_housing"]
+    kapillyarnaya_teplov --> kapillyarnaya_teplovaya_t
+    kapillyarnaya_teplovaya_t["часть_kapillyarnaya_teplovaya_trubka_connectors"]
+    kapillyarnaya_teplov --> kapillyarnaya_teplovaya_t
+    kapillyarnaya_teplovaya_t["часть_kapillyarnaya_teplovaya_trubka_mounting"]
+    kapillyarnaya_teplov --> kapillyarnaya_teplovaya_t
+```

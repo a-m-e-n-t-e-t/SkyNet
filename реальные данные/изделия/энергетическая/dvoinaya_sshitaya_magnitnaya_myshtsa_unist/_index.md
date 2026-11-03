@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist
 тип: изделие
 категория: машиностроение
@@ -10,8 +9,21 @@ id: izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist
 стандарты: []
 исследовательская_группа: brigham_young_university
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_magnets
+  - часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_coil
+  - часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_spring
+  - часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_housing
+материалы_частей:
+  - часть: часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_magnets
+    материал: ndfeb
+    доля_массы: 0.475
+  - часть: часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_coil
+    материал: copper_wire
+    доля_массы: 0.18
+  - часть: часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_spring
+    материал: spring_steel
+    доля_массы: 0.19
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +58,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: двойная сшитая магнитная мышца UNIST
+источник_разбора: пользовательский ввод
+---
+# Изделие: двойная сшитая магнитная мышца UNIST
 
 ## Описание
 
@@ -82,3 +96,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    dvoinaya_sshitaya_ma["izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist"]
+    dvoinaya_sshitaya_magnitn["часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_magnets"]
+    dvoinaya_sshitaya_ma --> dvoinaya_sshitaya_magnitn
+    dvoinaya_sshitaya_magnitn["часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_coil"]
+    dvoinaya_sshitaya_ma --> dvoinaya_sshitaya_magnitn
+    dvoinaya_sshitaya_magnitn["часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_spring"]
+    dvoinaya_sshitaya_ma --> dvoinaya_sshitaya_magnitn
+    dvoinaya_sshitaya_magnitn["часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_housing"]
+    dvoinaya_sshitaya_ma --> dvoinaya_sshitaya_magnitn
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_gibkii_pcb
 тип: изделие
 категория: прочее
@@ -11,8 +10,18 @@ id: izdelie_gibkii_pcb
   - ISO 9001
 исследовательская_группа: various
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_gibkii_pcb_core
+  - часть_gibkii_pcb_housing
+  - часть_gibkii_pcb_connectors
+  - часть_gibkii_pcb_mounting
+материалы_частей:
+  - часть: часть_gibkii_pcb_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_gibkii_pcb_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +54,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Гибкий PCB
+источник_разбора: пользовательский ввод
+---
+# Изделие: Гибкий PCB
 
 ## Описание
 
@@ -81,3 +92,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    gibkii_pcb["izdelie_gibkii_pcb"]
+    gibkii_pcb_core["часть_gibkii_pcb_core"]
+    gibkii_pcb --> gibkii_pcb_core
+    gibkii_pcb_housing["часть_gibkii_pcb_housing"]
+    gibkii_pcb --> gibkii_pcb_housing
+    gibkii_pcb_connectors["часть_gibkii_pcb_connectors"]
+    gibkii_pcb --> gibkii_pcb_connectors
+    gibkii_pcb_mounting["часть_gibkii_pcb_mounting"]
+    gibkii_pcb --> gibkii_pcb_mounting
+```

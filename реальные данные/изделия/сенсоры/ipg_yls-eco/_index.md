@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_ipg_yls-eco
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_ipg_yls-eco
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_ipg_yls-eco_core
+  - часть_ipg_yls-eco_housing
+  - часть_ipg_yls-eco_connectors
+  - часть_ipg_yls-eco_mounting
+материалы_частей:
+  - часть: часть_ipg_yls-eco_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_ipg_yls-eco_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: IPG YLS-ECO
+источник_разбора: пользовательский ввод
+---
+# Изделие: IPG YLS-ECO
 
 ## Описание
 
@@ -82,3 +93,21 @@ IPG YLS-ECO — волоконный лазер
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    ipg_yls-eco["izdelie_ipg_yls-eco"]
+    ipg_yls-eco_core["часть_ipg_yls-eco_core"]
+    ipg_yls-eco --> ipg_yls-eco_core
+    ipg_yls-eco_housing["часть_ipg_yls-eco_housing"]
+    ipg_yls-eco --> ipg_yls-eco_housing
+    ipg_yls-eco_connectors["часть_ipg_yls-eco_connectors"]
+    ipg_yls-eco --> ipg_yls-eco_connectors
+    ipg_yls-eco_mounting["часть_ipg_yls-eco_mounting"]
+    ipg_yls-eco --> ipg_yls-eco_mounting
+```

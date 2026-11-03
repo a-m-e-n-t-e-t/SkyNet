@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core
+  - часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing
+  - часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors
+  - часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting
+материалы_частей:
+  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: оплётку из токопроводящих изолированных проводов
+источник_разбора: пользовательский ввод
+---
+# Изделие: оплётку из токопроводящих изолированных проводов
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    opletku_iz_tokoprovo["izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov"]
+    opletku_iz_tokoprovodyasc["часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core"]
+    opletku_iz_tokoprovo --> opletku_iz_tokoprovodyasc
+    opletku_iz_tokoprovodyasc["часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing"]
+    opletku_iz_tokoprovo --> opletku_iz_tokoprovodyasc
+    opletku_iz_tokoprovodyasc["часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors"]
+    opletku_iz_tokoprovo --> opletku_iz_tokoprovodyasc
+    opletku_iz_tokoprovodyasc["часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting"]
+    opletku_iz_tokoprovo --> opletku_iz_tokoprovodyasc
+```

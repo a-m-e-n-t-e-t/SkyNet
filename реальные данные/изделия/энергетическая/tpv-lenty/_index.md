@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_tpv-lenty
 тип: изделие
 категория: энергетика
@@ -10,8 +9,21 @@ id: izdelie_tpv-lenty
 стандарты: []
 исследовательская_группа: university_research
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_tpv-lenty_emitter_ribbon
+  - часть_tpv-lenty_pv_cells
+  - часть_tpv-lenty_reflector
+  - часть_tpv-lenty_cooling
+материалы_частей:
+  - часть: часть_tpv-lenty_emitter_ribbon
+    материал: tungsten
+    доля_массы: 0.285
+  - часть: часть_tpv-lenty_pv_cells
+    материал: gaSb
+    доля_массы: 0.27
+  - часть: часть_tpv-lenty_reflector
+    материал: gold_coating
+    доля_массы: 0.24
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +57,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: TPV-ленты
+источник_разбора: пользовательский ввод
+---
+# Изделие: TPV-ленты
 
 ## Описание
 
@@ -81,3 +95,21 @@ TPV-ленты
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    tpv-lenty["izdelie_tpv-lenty"]
+    tpv-lenty_emitter_ribbon["часть_tpv-lenty_emitter_ribbon"]
+    tpv-lenty --> tpv-lenty_emitter_ribbon
+    tpv-lenty_pv_cells["часть_tpv-lenty_pv_cells"]
+    tpv-lenty --> tpv-lenty_pv_cells
+    tpv-lenty_reflector["часть_tpv-lenty_reflector"]
+    tpv-lenty --> tpv-lenty_reflector
+    tpv-lenty_cooling["часть_tpv-lenty_cooling"]
+    tpv-lenty --> tpv-lenty_cooling
+```

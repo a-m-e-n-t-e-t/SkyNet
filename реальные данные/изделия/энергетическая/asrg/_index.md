@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_asrg
 тип: изделие
 категория: энергетика
@@ -11,8 +10,30 @@ id: izdelie_asrg
   - NASA-STD-8729.1
 исследовательская_группа: nasa_glenn
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_asrg_isotope
+  - часть_asrg_heater_head
+  - часть_asrg_regenerator
+  - часть_asrg_cooler
+  - часть_asrg_piston
+  - часть_asrg_alternator
+  - часть_asrg_housing
+материалы_частей:
+  - часть: часть_asrg_isotope
+    материал: pu238_oxide
+    доля_массы: 0.2375
+  - часть: часть_asrg_heater_head
+    материал: inconel_625
+    доля_массы: 0.19
+  - часть: часть_asrg_regenerator
+    материал: stainless_steel_mesh
+    доля_массы: 0.095
+  - часть: часть_asrg_piston
+    материал: inconel_718
+    доля_массы: 0.1425
+  - часть: часть_asrg_alternator
+    материал: copper_wire
+    доля_массы: 0.12
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -48,7 +69,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: ASRG
+источник_разбора: пользовательский ввод
+---
+# Изделие: ASRG
 
 ## Описание
 
@@ -84,3 +107,27 @@ ASRG — Стирлинг-радиоизотопный генератор
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    asrg["izdelie_asrg"]
+    asrg_isotope["часть_asrg_isotope"]
+    asrg --> asrg_isotope
+    asrg_heater_head["часть_asrg_heater_head"]
+    asrg --> asrg_heater_head
+    asrg_regenerator["часть_asrg_regenerator"]
+    asrg --> asrg_regenerator
+    asrg_cooler["часть_asrg_cooler"]
+    asrg --> asrg_cooler
+    asrg_piston["часть_asrg_piston"]
+    asrg --> asrg_piston
+    asrg_alternator["часть_asrg_alternator"]
+    asrg --> asrg_alternator
+    asrg_housing["часть_asrg_housing"]
+    asrg --> asrg_housing
+```

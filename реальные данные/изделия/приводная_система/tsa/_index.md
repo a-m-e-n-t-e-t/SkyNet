@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_tsa
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_tsa
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_tsa_core
+  - часть_tsa_housing
+  - часть_tsa_connectors
+  - часть_tsa_mounting
+материалы_частей:
+  - часть: часть_tsa_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_tsa_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: TSA
+источник_разбора: пользовательский ввод
+---
+# Изделие: TSA
 
 ## Описание
 
@@ -82,3 +93,21 @@ TSA (Twisted String Actuator)
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    tsa["izdelie_tsa"]
+    tsa_core["часть_tsa_core"]
+    tsa --> tsa_core
+    tsa_housing["часть_tsa_housing"]
+    tsa --> tsa_housing
+    tsa_connectors["часть_tsa_connectors"]
+    tsa --> tsa_connectors
+    tsa_mounting["часть_tsa_mounting"]
+    tsa --> tsa_mounting
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_granatomet_m320
 тип: изделие
 категория: машиностроение
@@ -11,8 +10,18 @@ id: izdelie_granatomet_m320
   - MIL-STD-810
 исследовательская_группа: general_dynamics
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_granatomet_m320_core
+  - часть_granatomet_m320_housing
+  - часть_granatomet_m320_connectors
+  - часть_granatomet_m320_mounting
+материалы_частей:
+  - часть: часть_granatomet_m320_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_granatomet_m320_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +54,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Гранатомёт M320
+источник_разбора: пользовательский ввод
+---
+# Изделие: Гранатомёт M320
 
 ## Описание
 
@@ -81,3 +92,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    granatomet_m320["izdelie_granatomet_m320"]
+    granatomet_m320_core["часть_granatomet_m320_core"]
+    granatomet_m320 --> granatomet_m320_core
+    granatomet_m320_housing["часть_granatomet_m320_housing"]
+    granatomet_m320 --> granatomet_m320_housing
+    granatomet_m320_connector["часть_granatomet_m320_connectors"]
+    granatomet_m320 --> granatomet_m320_connector
+    granatomet_m320_mounting["часть_granatomet_m320_mounting"]
+    granatomet_m320 --> granatomet_m320_mounting
+```

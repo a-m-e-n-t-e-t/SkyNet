@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_lt-sofc
 тип: изделие
 категория: энергетика
@@ -11,8 +10,26 @@ id: izdelie_lt-sofc
   - IEC 62282
 исследовательская_группа: ceres_power
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_lt-sofc_anode
+  - часть_lt-sofc_electrolyte
+  - часть_lt-sofc_cathode
+  - часть_lt-sofc_interconnect
+  - часть_lt-sofc_seal
+  - часть_lt-sofc_manifold
+материалы_частей:
+  - часть: часть_lt-sofc_anode
+    материал: ni_ysz_cermet
+    доля_массы: 0.18
+  - часть: часть_lt-sofc_electrolyte
+    материал: ysz_electrolyte
+    доля_массы: 0.095
+  - часть: часть_lt-sofc_cathode
+    материал: lsm_cathode
+    доля_массы: 0.18
+  - часть: часть_lt-sofc_interconnect
+    материал: crofer_22_apu
+    доля_массы: 0.285
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -48,7 +65,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: LT-SOFC
+источник_разбора: пользовательский ввод
+---
+# Изделие: LT-SOFC
 
 ## Описание
 
@@ -84,3 +103,25 @@ LT-SOFC (low-temperature SOFC, 300 °C)
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    lt-sofc["izdelie_lt-sofc"]
+    lt-sofc_anode["часть_lt-sofc_anode"]
+    lt-sofc --> lt-sofc_anode
+    lt-sofc_electrolyte["часть_lt-sofc_electrolyte"]
+    lt-sofc --> lt-sofc_electrolyte
+    lt-sofc_cathode["часть_lt-sofc_cathode"]
+    lt-sofc --> lt-sofc_cathode
+    lt-sofc_interconnect["часть_lt-sofc_interconnect"]
+    lt-sofc --> lt-sofc_interconnect
+    lt-sofc_seal["часть_lt-sofc_seal"]
+    lt-sofc --> lt-sofc_seal
+    lt-sofc_manifold["часть_lt-sofc_manifold"]
+    lt-sofc --> lt-sofc_manifold
+```

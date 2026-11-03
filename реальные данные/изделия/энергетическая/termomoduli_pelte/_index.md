@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_termomoduli_pelte
 тип: изделие
 категория: энергетика
@@ -11,8 +10,26 @@ id: izdelie_termomoduli_pelte
   - JEDEC JESD47
 исследовательская_группа: marlow_industries
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_termomoduli_pelte_peltier_couples
+  - часть_termomoduli_pelte_ceramic_top
+  - часть_termomoduli_pelte_ceramic_bottom
+  - часть_termomoduli_pelte_electrodes
+  - часть_termomoduli_pelte_solder
+  - часть_termomoduli_pelte_wires
+материалы_частей:
+  - часть: часть_termomoduli_pelte_peltier_couples
+    материал: bi2te3
+    доля_массы: 0.38
+  - часть: часть_termomoduli_pelte_ceramic_top
+    материал: alumina
+    доля_массы: 0.19
+  - часть: часть_termomoduli_pelte_ceramic_bottom
+    материал: alumina
+    доля_массы: 0.19
+  - часть: часть_termomoduli_pelte_electrodes
+    материал: copper
+    доля_массы: 0.095
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +64,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: термомодули Пельтье
+источник_разбора: пользовательский ввод
+---
+# Изделие: термомодули Пельтье
 
 ## Описание
 
@@ -83,3 +102,25 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    termomoduli_pelte["izdelie_termomoduli_pelte"]
+    termomoduli_pelte_peltier["часть_termomoduli_pelte_peltier_couples"]
+    termomoduli_pelte --> termomoduli_pelte_peltier
+    termomoduli_pelte_ceramic["часть_termomoduli_pelte_ceramic_top"]
+    termomoduli_pelte --> termomoduli_pelte_ceramic
+    termomoduli_pelte_ceramic["часть_termomoduli_pelte_ceramic_bottom"]
+    termomoduli_pelte --> termomoduli_pelte_ceramic
+    termomoduli_pelte_electro["часть_termomoduli_pelte_electrodes"]
+    termomoduli_pelte --> termomoduli_pelte_electro
+    termomoduli_pelte_solder["часть_termomoduli_pelte_solder"]
+    termomoduli_pelte --> termomoduli_pelte_solder
+    termomoduli_pelte_wires["часть_termomoduli_pelte_wires"]
+    termomoduli_pelte --> termomoduli_pelte_wires
+```

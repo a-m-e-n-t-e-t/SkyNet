@@ -1,5 +1,4 @@
 ---
-
 id: tekhnologia_edge-on_lamellyarnaya_struktura
 тип: технология
 категория: обработка
@@ -47,6 +46,7 @@ id: tekhnologia_edge-on_lamellyarnaya_struktura
   ограничения: null
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03# Технология: Edge-on ламеллярная структура
+---
 
 ## Описание
 

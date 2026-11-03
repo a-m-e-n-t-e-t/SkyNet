@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_perovskite_tandem
 тип: изделие
 категория: энергетика
@@ -12,8 +11,29 @@ id: izdelie_perovskite_tandem
   - IEC 61730
 исследовательская_группа: oxford_pv
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_perovskite_tandem_cells
+  - часть_perovskite_tandem_front_glass
+  - часть_perovskite_tandem_backsheet
+  - часть_perovskite_tandem_frame
+  - часть_perovskite_tandem_junction_box
+  - часть_perovskite_tandem_encapsulant
+материалы_частей:
+  - часть: часть_perovskite_tandem_cells
+    материал: monocrystalline_si
+    доля_массы: 0.38
+  - часть: часть_perovskite_tandem_front_glass
+    материал: low_iron_glass
+    доля_массы: 0.285
+  - часть: часть_perovskite_tandem_backsheet
+    материал: tedlar_pet
+    доля_массы: 0.095
+  - часть: часть_perovskite_tandem_frame
+    материал: aluminum_6063
+    доля_массы: 0.19
+  - часть: часть_perovskite_tandem_encapsulant
+    материал: eva
+    доля_массы: 0.095
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +67,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Perovskite tandem
+источник_разбора: пользовательский ввод
+---
+# Изделие: Perovskite tandem
 
 ## Описание
 
@@ -83,3 +105,25 @@ Perovskite tandem (солнечная ячейка)
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    perovskite_tandem["izdelie_perovskite_tandem"]
+    perovskite_tandem_cells["часть_perovskite_tandem_cells"]
+    perovskite_tandem --> perovskite_tandem_cells
+    perovskite_tandem_front_g["часть_perovskite_tandem_front_glass"]
+    perovskite_tandem --> perovskite_tandem_front_g
+    perovskite_tandem_backshe["часть_perovskite_tandem_backsheet"]
+    perovskite_tandem --> perovskite_tandem_backshe
+    perovskite_tandem_frame["часть_perovskite_tandem_frame"]
+    perovskite_tandem --> perovskite_tandem_frame
+    perovskite_tandem_junctio["часть_perovskite_tandem_junction_box"]
+    perovskite_tandem --> perovskite_tandem_junctio
+    perovskite_tandem_encapsu["часть_perovskite_tandem_encapsulant"]
+    perovskite_tandem --> perovskite_tandem_encapsu
+```

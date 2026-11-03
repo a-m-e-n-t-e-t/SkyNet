@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_akusticheskaya_linza
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_akusticheskaya_linza
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_akusticheskaya_linza_core
+  - часть_akusticheskaya_linza_housing
+  - часть_akusticheskaya_linza_connectors
+  - часть_akusticheskaya_linza_mounting
+материалы_частей:
+  - часть: часть_akusticheskaya_linza_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_akusticheskaya_linza_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Акустическая линза
+источник_разбора: пользовательский ввод
+---
+# Изделие: Акустическая линза
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    akusticheskaya_linza["izdelie_akusticheskaya_linza"]
+    akusticheskaya_linza_core["часть_akusticheskaya_linza_core"]
+    akusticheskaya_linza --> akusticheskaya_linza_core
+    akusticheskaya_linza_hous["часть_akusticheskaya_linza_housing"]
+    akusticheskaya_linza --> akusticheskaya_linza_hous
+    akusticheskaya_linza_conn["часть_akusticheskaya_linza_connectors"]
+    akusticheskaya_linza --> akusticheskaya_linza_conn
+    akusticheskaya_linza_moun["часть_akusticheskaya_linza_mounting"]
+    akusticheskaya_linza --> akusticheskaya_linza_moun
+```

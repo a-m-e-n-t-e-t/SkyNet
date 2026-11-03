@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_elektroflyuidnye_volokna_mit
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_elektroflyuidnye_volokna_mit
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_elektroflyuidnye_volokna_mit_core
+  - часть_elektroflyuidnye_volokna_mit_housing
+  - часть_elektroflyuidnye_volokna_mit_connectors
+  - часть_elektroflyuidnye_volokna_mit_mounting
+материалы_частей:
+  - часть: часть_elektroflyuidnye_volokna_mit_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_elektroflyuidnye_volokna_mit_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Электрофлюидные волокна MIT
+источник_разбора: пользовательский ввод
+---
+# Изделие: Электрофлюидные волокна MIT
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    elektroflyuidnye_vol["izdelie_elektroflyuidnye_volokna_mit"]
+    elektroflyuidnye_volokna_["часть_elektroflyuidnye_volokna_mit_core"]
+    elektroflyuidnye_vol --> elektroflyuidnye_volokna_
+    elektroflyuidnye_volokna_["часть_elektroflyuidnye_volokna_mit_housing"]
+    elektroflyuidnye_vol --> elektroflyuidnye_volokna_
+    elektroflyuidnye_volokna_["часть_elektroflyuidnye_volokna_mit_connectors"]
+    elektroflyuidnye_vol --> elektroflyuidnye_volokna_
+    elektroflyuidnye_volokna_["часть_elektroflyuidnye_volokna_mit_mounting"]
+    elektroflyuidnye_vol --> elektroflyuidnye_volokna_
+```

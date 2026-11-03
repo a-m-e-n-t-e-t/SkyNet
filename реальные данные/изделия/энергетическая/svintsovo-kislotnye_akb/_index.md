@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_svintsovo-kislotnye_akb
 тип: изделие
 категория: энергетика
@@ -12,8 +11,34 @@ id: izdelie_svintsovo-kislotnye_akb
   - JIS D5301
 исследовательская_группа: exide
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_svintsovo-kislotnye_akb_anode
+  - часть_svintsovo-kislotnye_akb_cathode
+  - часть_svintsovo-kislotnye_akb_electrolyte
+  - часть_svintsovo-kislotnye_akb_separator
+  - часть_svintsovo-kislotnye_akb_grid_pos
+  - часть_svintsovo-kislotnye_akb_grid_neg
+  - часть_svintsovo-kislotnye_akb_case
+  - часть_svintsovo-kislotnye_akb_terminal
+материалы_частей:
+  - часть: часть_svintsovo-kislotnye_akb_anode
+    материал: pbo2
+    доля_массы: 0.19
+  - часть: часть_svintsovo-kislotnye_akb_cathode
+    материал: spongy_lead
+    доля_массы: 0.19
+  - часть: часть_svintsovo-kislotnye_akb_electrolyte
+    материал: h2so4_aqueous
+    доля_массы: 0.285
+  - часть: часть_svintsovo-kislotnye_akb_separator
+    материал: pe_separator
+    доля_массы: 0.019
+  - часть: часть_svintsovo-kislotnye_akb_grid_pos
+    материал: pb_sb_alloy
+    доля_массы: 0.095
+  - часть: часть_svintsovo-kislotnye_akb_case
+    материал: polypropylene
+    доля_массы: 0.095
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -49,7 +74,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: свинцово-кислотные АКБ
+источник_разбора: пользовательский ввод
+---
+# Изделие: свинцово-кислотные АКБ
 
 ## Описание
 
@@ -85,3 +112,29 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    svintsovo-kislotnye_["izdelie_svintsovo-kislotnye_akb"]
+    svintsovo-kislotnye_akb_a["часть_svintsovo-kislotnye_akb_anode"]
+    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_a
+    svintsovo-kislotnye_akb_c["часть_svintsovo-kislotnye_akb_cathode"]
+    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_c
+    svintsovo-kislotnye_akb_e["часть_svintsovo-kislotnye_akb_electrolyte"]
+    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_e
+    svintsovo-kislotnye_akb_s["часть_svintsovo-kislotnye_akb_separator"]
+    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_s
+    svintsovo-kislotnye_akb_g["часть_svintsovo-kislotnye_akb_grid_pos"]
+    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_g
+    svintsovo-kislotnye_akb_g["часть_svintsovo-kislotnye_akb_grid_neg"]
+    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_g
+    svintsovo-kislotnye_akb_c["часть_svintsovo-kislotnye_akb_case"]
+    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_c
+    svintsovo-kislotnye_akb_t["часть_svintsovo-kislotnye_akb_terminal"]
+    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_t
+```

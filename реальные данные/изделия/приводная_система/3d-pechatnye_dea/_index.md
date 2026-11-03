@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_3d-pechatnye_dea
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_3d-pechatnye_dea
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_3d-pechatnye_dea_core
+  - часть_3d-pechatnye_dea_housing
+  - часть_3d-pechatnye_dea_connectors
+  - часть_3d-pechatnye_dea_mounting
+материалы_частей:
+  - часть: часть_3d-pechatnye_dea_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_3d-pechatnye_dea_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: 3D-печатные DEA
+источник_разбора: пользовательский ввод
+---
+# Изделие: 3D-печатные DEA
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    3d-pechatnye_dea["izdelie_3d-pechatnye_dea"]
+    3d-pechatnye_dea_core["часть_3d-pechatnye_dea_core"]
+    3d-pechatnye_dea --> 3d-pechatnye_dea_core
+    3d-pechatnye_dea_housing["часть_3d-pechatnye_dea_housing"]
+    3d-pechatnye_dea --> 3d-pechatnye_dea_housing
+    3d-pechatnye_dea_connecto["часть_3d-pechatnye_dea_connectors"]
+    3d-pechatnye_dea --> 3d-pechatnye_dea_connecto
+    3d-pechatnye_dea_mounting["часть_3d-pechatnye_dea_mounting"]
+    3d-pechatnye_dea --> 3d-pechatnye_dea_mounting
+```

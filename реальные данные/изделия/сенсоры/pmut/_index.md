@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_pmut
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_pmut
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_pmut_core
+  - часть_pmut_housing
+  - часть_pmut_connectors
+  - часть_pmut_mounting
+материалы_частей:
+  - часть: часть_pmut_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_pmut_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: pMUT
+источник_разбора: пользовательский ввод
+---
+# Изделие: pMUT
 
 ## Описание
 
@@ -82,3 +93,21 @@ pMUT — Piezoelectric Micromachined Ultrasonic Transducer
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    pmut["izdelie_pmut"]
+    pmut_core["часть_pmut_core"]
+    pmut --> pmut_core
+    pmut_housing["часть_pmut_housing"]
+    pmut --> pmut_housing
+    pmut_connectors["часть_pmut_connectors"]
+    pmut --> pmut_connectors
+    pmut_mounting["часть_pmut_mounting"]
+    pmut --> pmut_mounting
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_usb-c
 тип: изделие
 категория: электроника
@@ -12,8 +11,18 @@ id: izdelie_usb-c
   - ETSI EN 301 489
 исследовательская_группа: harris_thales
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_usb-c_core
+  - часть_usb-c_housing
+  - часть_usb-c_connectors
+  - часть_usb-c_mounting
+материалы_частей:
+  - часть: часть_usb-c_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_usb-c_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: USB-C
+источник_разбора: пользовательский ввод
+---
+# Изделие: USB-C
 
 ## Описание
 
@@ -82,3 +93,21 @@ USB-C
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    usb-c["izdelie_usb-c"]
+    usb-c_core["часть_usb-c_core"]
+    usb-c --> usb-c_core
+    usb-c_housing["часть_usb-c_housing"]
+    usb-c --> usb-c_housing
+    usb-c_connectors["часть_usb-c_connectors"]
+    usb-c --> usb-c_connectors
+    usb-c_mounting["часть_usb-c_mounting"]
+    usb-c --> usb-c_mounting
+```

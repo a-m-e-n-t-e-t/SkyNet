@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_reversivnye_pelte
 тип: изделие
 категория: энергетика
@@ -11,8 +10,22 @@ id: izdelie_reversivnye_pelte
   - JEDEC JESD47
 исследовательская_группа: ferrotec
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_reversivnye_pelte_peltier_couples
+  - часть_reversivnye_pelte_ceramic_top
+  - часть_reversivnye_pelte_ceramic_bottom
+  - часть_reversivnye_pelte_electrodes
+  - часть_reversivnye_pelte_solder
+материалы_частей:
+  - часть: часть_reversivnye_pelte_peltier_couples
+    материал: bi2te3
+    доля_массы: 0.38
+  - часть: часть_reversivnye_pelte_ceramic_top
+    материал: alumina
+    доля_массы: 0.19
+  - часть: часть_reversivnye_pelte_ceramic_bottom
+    материал: alumina
+    доля_массы: 0.19
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +59,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Реверсивные Пельтье
+источник_разбора: пользовательский ввод
+---
+# Изделие: Реверсивные Пельтье
 
 ## Описание
 
@@ -82,3 +97,23 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    reversivnye_pelte["izdelie_reversivnye_pelte"]
+    reversivnye_pelte_peltier["часть_reversivnye_pelte_peltier_couples"]
+    reversivnye_pelte --> reversivnye_pelte_peltier
+    reversivnye_pelte_ceramic["часть_reversivnye_pelte_ceramic_top"]
+    reversivnye_pelte --> reversivnye_pelte_ceramic
+    reversivnye_pelte_ceramic["часть_reversivnye_pelte_ceramic_bottom"]
+    reversivnye_pelte --> reversivnye_pelte_ceramic
+    reversivnye_pelte_electro["часть_reversivnye_pelte_electrodes"]
+    reversivnye_pelte --> reversivnye_pelte_electro
+    reversivnye_pelte_solder["часть_reversivnye_pelte_solder"]
+    reversivnye_pelte --> reversivnye_pelte_solder
+```

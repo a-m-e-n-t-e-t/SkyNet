@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_pezo-sensor
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_pezo-sensor
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_pezo-sensor_core
+  - часть_pezo-sensor_housing
+  - часть_pezo-sensor_connectors
+  - часть_pezo-sensor_mounting
+материалы_частей:
+  - часть: часть_pezo-sensor_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_pezo-sensor_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: пьезо-сенсор
+источник_разбора: пользовательский ввод
+---
+# Изделие: пьезо-сенсор
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    pezo-sensor["izdelie_pezo-sensor"]
+    pezo-sensor_core["часть_pezo-sensor_core"]
+    pezo-sensor --> pezo-sensor_core
+    pezo-sensor_housing["часть_pezo-sensor_housing"]
+    pezo-sensor --> pezo-sensor_housing
+    pezo-sensor_connectors["часть_pezo-sensor_connectors"]
+    pezo-sensor --> pezo-sensor_connectors
+    pezo-sensor_mounting["часть_pezo-sensor_mounting"]
+    pezo-sensor --> pezo-sensor_mounting
+```

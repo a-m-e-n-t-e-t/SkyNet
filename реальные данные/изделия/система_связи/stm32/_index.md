@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_stm32
 тип: изделие
 категория: электроника
@@ -12,8 +11,18 @@ id: izdelie_stm32
   - ETSI EN 301 489
 исследовательская_группа: harris_thales
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_stm32_core
+  - часть_stm32_housing
+  - часть_stm32_connectors
+  - часть_stm32_mounting
+материалы_частей:
+  - часть: часть_stm32_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_stm32_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: STM32
+источник_разбора: пользовательский ввод
+---
+# Изделие: STM32
 
 ## Описание
 
@@ -82,3 +93,21 @@ STM32
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    stm32["izdelie_stm32"]
+    stm32_core["часть_stm32_core"]
+    stm32 --> stm32_core
+    stm32_housing["часть_stm32_housing"]
+    stm32 --> stm32_housing
+    stm32_connectors["часть_stm32_connectors"]
+    stm32 --> stm32_connectors
+    stm32_mounting["часть_stm32_mounting"]
+    stm32 --> stm32_mounting
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_ultrakorotkoimpulsnye_lazery
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_ultrakorotkoimpulsnye_lazery
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_ultrakorotkoimpulsnye_lazery_core
+  - часть_ultrakorotkoimpulsnye_lazery_housing
+  - часть_ultrakorotkoimpulsnye_lazery_connectors
+  - часть_ultrakorotkoimpulsnye_lazery_mounting
+материалы_частей:
+  - часть: часть_ultrakorotkoimpulsnye_lazery_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_ultrakorotkoimpulsnye_lazery_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Ультракороткоимпульсные лазеры
+источник_разбора: пользовательский ввод
+---
+# Изделие: Ультракороткоимпульсные лазеры
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    ultrakorotkoimpulsny["izdelie_ultrakorotkoimpulsnye_lazery"]
+    ultrakorotkoimpulsnye_laz["часть_ultrakorotkoimpulsnye_lazery_core"]
+    ultrakorotkoimpulsny --> ultrakorotkoimpulsnye_laz
+    ultrakorotkoimpulsnye_laz["часть_ultrakorotkoimpulsnye_lazery_housing"]
+    ultrakorotkoimpulsny --> ultrakorotkoimpulsnye_laz
+    ultrakorotkoimpulsnye_laz["часть_ultrakorotkoimpulsnye_lazery_connectors"]
+    ultrakorotkoimpulsny --> ultrakorotkoimpulsnye_laz
+    ultrakorotkoimpulsnye_laz["часть_ultrakorotkoimpulsnye_lazery_mounting"]
+    ultrakorotkoimpulsny --> ultrakorotkoimpulsnye_laz
+```

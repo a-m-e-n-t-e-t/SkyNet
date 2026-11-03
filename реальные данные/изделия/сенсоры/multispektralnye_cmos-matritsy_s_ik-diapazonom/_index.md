@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_multispektralnye_cmos-matritsy_s_ik-diapazonom
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_multispektralnye_cmos-matritsy_s_ik-diapazonom
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_core
+  - часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_housing
+  - часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_connectors
+  - часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_mounting
+материалы_частей:
+  - часть: часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: мультиспектральные CMOS-матрицы с ИК-диапазоном
+источник_разбора: пользовательский ввод
+---
+# Изделие: мультиспектральные CMOS-матрицы с ИК-диапазоном
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    multispektralnye_cmo["izdelie_multispektralnye_cmos-matritsy_s_ik-diapazonom"]
+    multispektralnye_cmos-mat["часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_core"]
+    multispektralnye_cmo --> multispektralnye_cmos-mat
+    multispektralnye_cmos-mat["часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_housing"]
+    multispektralnye_cmo --> multispektralnye_cmos-mat
+    multispektralnye_cmos-mat["часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_connectors"]
+    multispektralnye_cmo --> multispektralnye_cmos-mat
+    multispektralnye_cmos-mat["часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_mounting"]
+    multispektralnye_cmo --> multispektralnye_cmos-mat
+```

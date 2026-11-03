@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_cw-lazer
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_cw-lazer
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_cw-lazer_core
+  - часть_cw-lazer_housing
+  - часть_cw-lazer_connectors
+  - часть_cw-lazer_mounting
+материалы_частей:
+  - часть: часть_cw-lazer_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_cw-lazer_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: CW-лазер
+источник_разбора: пользовательский ввод
+---
+# Изделие: CW-лазер
 
 ## Описание
 
@@ -82,3 +93,21 @@ CW-лазер
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    cw-lazer["izdelie_cw-lazer"]
+    cw-lazer_core["часть_cw-lazer_core"]
+    cw-lazer --> cw-lazer_core
+    cw-lazer_housing["часть_cw-lazer_housing"]
+    cw-lazer --> cw-lazer_housing
+    cw-lazer_connectors["часть_cw-lazer_connectors"]
+    cw-lazer --> cw-lazer_connectors
+    cw-lazer_mounting["часть_cw-lazer_mounting"]
+    cw-lazer --> cw-lazer_mounting
+```

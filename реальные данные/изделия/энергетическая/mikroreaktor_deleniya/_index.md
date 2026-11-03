@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_mikroreaktor_deleniya
 тип: изделие
 категория: энергетика
@@ -12,8 +11,33 @@ id: izdelie_mikroreaktor_deleniya
   - 10 CFR 50
 исследовательская_группа: westinghouse_oklo
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_mikroreaktor_deleniya_fuel
+  - часть_mikroreaktor_deleniya_moderator
+  - часть_mikroreaktor_deleniya_heat_exchanger
+  - часть_mikroreaktor_deleniya_control_rods
+  - часть_mikroreaktor_deleniya_shielding
+  - часть_mikroreaktor_deleniya_vessel
+  - часть_mikroreaktor_deleniya_coolant
+материалы_частей:
+  - часть: часть_mikroreaktor_deleniya_fuel
+    материал: uo2_pellets
+    доля_массы: 0.095
+  - часть: часть_mikroreaktor_deleniya_moderator
+    материал: graphite
+    доля_массы: 0.38
+  - часть: часть_mikroreaktor_deleniya_heat_exchanger
+    материал: inconel_625
+    доля_массы: 0.15
+  - часть: часть_mikroreaktor_deleniya_shielding
+    материал: concrete_barite
+    доля_массы: 0.38
+  - часть: часть_mikroreaktor_deleniya_vessel
+    материал: stainless_steel_316
+    доля_массы: 0.19
+  - часть: часть_mikroreaktor_deleniya_coolant
+    материал: sodium
+    доля_массы: 0.0475
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -48,7 +72,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Микрореактор деления
+источник_разбора: пользовательский ввод
+---
+# Изделие: Микрореактор деления
 
 ## Описание
 
@@ -84,3 +110,27 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    mikroreaktor_deleniy["izdelie_mikroreaktor_deleniya"]
+    mikroreaktor_deleniya_fue["часть_mikroreaktor_deleniya_fuel"]
+    mikroreaktor_deleniy --> mikroreaktor_deleniya_fue
+    mikroreaktor_deleniya_mod["часть_mikroreaktor_deleniya_moderator"]
+    mikroreaktor_deleniy --> mikroreaktor_deleniya_mod
+    mikroreaktor_deleniya_hea["часть_mikroreaktor_deleniya_heat_exchanger"]
+    mikroreaktor_deleniy --> mikroreaktor_deleniya_hea
+    mikroreaktor_deleniya_con["часть_mikroreaktor_deleniya_control_rods"]
+    mikroreaktor_deleniy --> mikroreaktor_deleniya_con
+    mikroreaktor_deleniya_shi["часть_mikroreaktor_deleniya_shielding"]
+    mikroreaktor_deleniy --> mikroreaktor_deleniya_shi
+    mikroreaktor_deleniya_ves["часть_mikroreaktor_deleniya_vessel"]
+    mikroreaktor_deleniy --> mikroreaktor_deleniya_ves
+    mikroreaktor_deleniya_coo["часть_mikroreaktor_deleniya_coolant"]
+    mikroreaktor_deleniy --> mikroreaktor_deleniya_coo
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_kompensatory
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_kompensatory
   - ISO 630
 исследовательская_группа: boeing_lockheed
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_kompensatory_core
+  - часть_kompensatory_housing
+  - часть_kompensatory_connectors
+  - часть_kompensatory_mounting
+материалы_частей:
+  - часть: часть_kompensatory_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_kompensatory_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Компенсаторы
+источник_разбора: пользовательский ввод
+---
+# Изделие: Компенсаторы
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    kompensatory["izdelie_kompensatory"]
+    kompensatory_core["часть_kompensatory_core"]
+    kompensatory --> kompensatory_core
+    kompensatory_housing["часть_kompensatory_housing"]
+    kompensatory --> kompensatory_housing
+    kompensatory_connectors["часть_kompensatory_connectors"]
+    kompensatory --> kompensatory_connectors
+    kompensatory_mounting["часть_kompensatory_mounting"]
+    kompensatory --> kompensatory_mounting
+```

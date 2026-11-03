@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_tcp
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_tcp
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_tcp_core
+  - часть_tcp_housing
+  - часть_tcp_connectors
+  - часть_tcp_mounting
+материалы_частей:
+  - часть: часть_tcp_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_tcp_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: TCP
+источник_разбора: пользовательский ввод
+---
+# Изделие: TCP
 
 ## Описание
 
@@ -82,3 +93,21 @@ TCP (Twisted and Coiled Polymer)
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    tcp["izdelie_tcp"]
+    tcp_core["часть_tcp_core"]
+    tcp --> tcp_core
+    tcp_housing["часть_tcp_housing"]
+    tcp --> tcp_housing
+    tcp_connectors["часть_tcp_connectors"]
+    tcp --> tcp_connectors
+    tcp_mounting["часть_tcp_mounting"]
+    tcp --> tcp_mounting
+```

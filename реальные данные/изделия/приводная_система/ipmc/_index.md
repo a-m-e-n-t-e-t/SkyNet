@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_ipmc
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_ipmc
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_ipmc_core
+  - часть_ipmc_housing
+  - часть_ipmc_connectors
+  - часть_ipmc_mounting
+материалы_частей:
+  - часть: часть_ipmc_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_ipmc_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: IPMC
+источник_разбора: пользовательский ввод
+---
+# Изделие: IPMC
 
 ## Описание
 
@@ -82,3 +93,21 @@ IPMC (ионный полимер-металл)
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    ipmc["izdelie_ipmc"]
+    ipmc_core["часть_ipmc_core"]
+    ipmc --> ipmc_core
+    ipmc_housing["часть_ipmc_housing"]
+    ipmc --> ipmc_housing
+    ipmc_connectors["часть_ipmc_connectors"]
+    ipmc --> ipmc_connectors
+    ipmc_mounting["часть_ipmc_mounting"]
+    ipmc --> ipmc_mounting
+```

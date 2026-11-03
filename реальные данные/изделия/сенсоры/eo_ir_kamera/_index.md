@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_eo_ir_kamera
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_eo_ir_kamera
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_eo_ir_kamera_core
+  - часть_eo_ir_kamera_housing
+  - часть_eo_ir_kamera_connectors
+  - часть_eo_ir_kamera_mounting
+материалы_частей:
+  - часть: часть_eo_ir_kamera_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_eo_ir_kamera_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: EO/IR камера
+источник_разбора: пользовательский ввод
+---
+# Изделие: EO/IR камера
 
 ## Описание
 
@@ -82,3 +93,21 @@ EO/IR камера (двойная)
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    eo_ir_kamera["izdelie_eo_ir_kamera"]
+    eo_ir_kamera_core["часть_eo_ir_kamera_core"]
+    eo_ir_kamera --> eo_ir_kamera_core
+    eo_ir_kamera_housing["часть_eo_ir_kamera_housing"]
+    eo_ir_kamera --> eo_ir_kamera_housing
+    eo_ir_kamera_connectors["часть_eo_ir_kamera_connectors"]
+    eo_ir_kamera --> eo_ir_kamera_connectors
+    eo_ir_kamera_mounting["часть_eo_ir_kamera_mounting"]
+    eo_ir_kamera --> eo_ir_kamera_mounting
+```

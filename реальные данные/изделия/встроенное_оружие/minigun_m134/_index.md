@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_minigun_m134
 тип: изделие
 категория: машиностроение
@@ -11,8 +10,18 @@ id: izdelie_minigun_m134
   - MIL-STD-810
 исследовательская_группа: general_dynamics
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_minigun_m134_core
+  - часть_minigun_m134_housing
+  - часть_minigun_m134_connectors
+  - часть_minigun_m134_mounting
+материалы_частей:
+  - часть: часть_minigun_m134_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_minigun_m134_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +54,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Minigun M134
+источник_разбора: пользовательский ввод
+---
+# Изделие: Minigun M134
 
 ## Описание
 
@@ -81,3 +92,21 @@ Minigun M134
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    minigun_m134["izdelie_minigun_m134"]
+    minigun_m134_core["часть_minigun_m134_core"]
+    minigun_m134 --> minigun_m134_core
+    minigun_m134_housing["часть_minigun_m134_housing"]
+    minigun_m134 --> minigun_m134_housing
+    minigun_m134_connectors["часть_minigun_m134_connectors"]
+    minigun_m134 --> minigun_m134_connectors
+    minigun_m134_mounting["часть_minigun_m134_mounting"]
+    minigun_m134 --> minigun_m134_mounting
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik
 тип: изделие
 категория: энергетика
@@ -10,8 +9,21 @@ id: izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik
 стандарты: []
 исследовательская_группа: university_research
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_3d_sic-mikropillarnyi_tritii-betavoltaik_isotope
+  - часть_3d_sic-mikropillarnyi_tritii-betavoltaik_micropillars
+  - часть_3d_sic-mikropillarnyi_tritii-betavoltaik_substrate
+  - часть_3d_sic-mikropillarnyi_tritii-betavoltaik_case
+материалы_частей:
+  - часть: часть_3d_sic-mikropillarnyi_tritii-betavoltaik_isotope
+    материал: tritium_gas
+    доля_массы: 0.19
+  - часть: часть_3d_sic-mikropillarnyi_tritii-betavoltaik_micropillars
+    материал: silicon_carbide
+    доля_массы: 0.38
+  - часть: часть_3d_sic-mikropillarnyi_tritii-betavoltaik_substrate
+    материал: silicon_carbide
+    доля_массы: 0.297
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +58,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: 3D SiC-микропилларный тритий-бетавольтаик
+источник_разбора: пользовательский ввод
+---
+# Изделие: 3D SiC-микропилларный тритий-бетавольтаик
 
 ## Описание
 
@@ -82,3 +96,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    3d_sic-mikropillarny["izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik"]
+    3d_sic-mikropillarnyi_tri["часть_3d_sic-mikropillarnyi_tritii-betavoltaik_isotope"]
+    3d_sic-mikropillarny --> 3d_sic-mikropillarnyi_tri
+    3d_sic-mikropillarnyi_tri["часть_3d_sic-mikropillarnyi_tritii-betavoltaik_micropillars"]
+    3d_sic-mikropillarny --> 3d_sic-mikropillarnyi_tri
+    3d_sic-mikropillarnyi_tri["часть_3d_sic-mikropillarnyi_tritii-betavoltaik_substrate"]
+    3d_sic-mikropillarny --> 3d_sic-mikropillarnyi_tri
+    3d_sic-mikropillarnyi_tri["часть_3d_sic-mikropillarnyi_tritii-betavoltaik_case"]
+    3d_sic-mikropillarny --> 3d_sic-mikropillarnyi_tri
+```

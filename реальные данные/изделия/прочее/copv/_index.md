@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_copv
 тип: изделие
 категория: прочее
@@ -11,8 +10,18 @@ id: izdelie_copv
   - ISO 9001
 исследовательская_группа: various
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_copv_core
+  - часть_copv_housing
+  - часть_copv_connectors
+  - часть_copv_mounting
+материалы_частей:
+  - часть: часть_copv_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_copv_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +54,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: COPV
+источник_разбора: пользовательский ввод
+---
+# Изделие: COPV
 
 ## Описание
 
@@ -81,3 +92,21 @@ COPV (Composite Overwrapped Pressure Vessel)
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    copv["izdelie_copv"]
+    copv_core["часть_copv_core"]
+    copv --> copv_core
+    copv_housing["часть_copv_housing"]
+    copv --> copv_housing
+    copv_connectors["часть_copv_connectors"]
+    copv --> copv_connectors
+    copv_mounting["часть_copv_mounting"]
+    copv --> copv_mounting
+```

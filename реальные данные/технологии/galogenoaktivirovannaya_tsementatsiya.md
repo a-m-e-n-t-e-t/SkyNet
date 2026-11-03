@@ -1,5 +1,4 @@
 ---
-
 id: tekhnologia_galogenoaktivirovannaya_tsementatsiya
 тип: технология
 категория: обработка
@@ -49,6 +48,7 @@ id: tekhnologia_galogenoaktivirovannaya_tsementatsiya
   ограничения: null
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03# Технология: галогеноактивированная цементация
+---
 
 ## Описание
 

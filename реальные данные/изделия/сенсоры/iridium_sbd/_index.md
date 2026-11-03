@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_iridium_sbd
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_iridium_sbd
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_iridium_sbd_core
+  - часть_iridium_sbd_housing
+  - часть_iridium_sbd_connectors
+  - часть_iridium_sbd_mounting
+материалы_частей:
+  - часть: часть_iridium_sbd_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_iridium_sbd_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Iridium SBD
+источник_разбора: пользовательский ввод
+---
+# Изделие: Iridium SBD
 
 ## Описание
 
@@ -82,3 +93,21 @@ Iridium SBD (Short Burst Data)
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    iridium_sbd["izdelie_iridium_sbd"]
+    iridium_sbd_core["часть_iridium_sbd_core"]
+    iridium_sbd --> iridium_sbd_core
+    iridium_sbd_housing["часть_iridium_sbd_housing"]
+    iridium_sbd --> iridium_sbd_housing
+    iridium_sbd_connectors["часть_iridium_sbd_connectors"]
+    iridium_sbd --> iridium_sbd_connectors
+    iridium_sbd_mounting["часть_iridium_sbd_mounting"]
+    iridium_sbd --> iridium_sbd_mounting
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_sot-mram
 тип: изделие
 категория: электроника
@@ -11,8 +10,22 @@ id: izdelie_sot-mram
   - JEDEC JESD47
 исследовательская_группа: imec
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_sot-mram_cell_array
+  - часть_sot-mram_periphery
+  - часть_sot-mram_sense_amplifiers
+  - часть_sot-mram_row_decoders
+  - часть_sot-mram_io_interface
+материалы_частей:
+  - часть: часть_sot-mram_cell_array
+    материал: silicon_wafer
+    доля_массы: 0.36
+  - часть: часть_sot-mram_periphery
+    материал: silicon_wafer
+    доля_массы: 0.18
+  - часть: часть_sot-mram_sense_amplifiers
+    материал: silicon_wafer
+    доля_массы: 0.09
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +60,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: SOT-MRAM
+источник_разбора: пользовательский ввод
+---
+# Изделие: SOT-MRAM
 
 ## Описание
 
@@ -83,3 +98,23 @@ SOT-MRAM
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    sot-mram["izdelie_sot-mram"]
+    sot-mram_cell_array["часть_sot-mram_cell_array"]
+    sot-mram --> sot-mram_cell_array
+    sot-mram_periphery["часть_sot-mram_periphery"]
+    sot-mram --> sot-mram_periphery
+    sot-mram_sense_amplifiers["часть_sot-mram_sense_amplifiers"]
+    sot-mram --> sot-mram_sense_amplifiers
+    sot-mram_row_decoders["часть_sot-mram_row_decoders"]
+    sot-mram --> sot-mram_row_decoders
+    sot-mram_io_interface["часть_sot-mram_io_interface"]
+    sot-mram --> sot-mram_io_interface
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_sensora_volnovogo_fronta
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_sensora_volnovogo_fronta
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_sensora_volnovogo_fronta_core
+  - часть_sensora_volnovogo_fronta_housing
+  - часть_sensora_volnovogo_fronta_connectors
+  - часть_sensora_volnovogo_fronta_mounting
+материалы_частей:
+  - часть: часть_sensora_volnovogo_fronta_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_sensora_volnovogo_fronta_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: сенсора волнового фронта
+источник_разбора: пользовательский ввод
+---
+# Изделие: сенсора волнового фронта
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    sensora_volnovogo_fr["izdelie_sensora_volnovogo_fronta"]
+    sensora_volnovogo_fronta_["часть_sensora_volnovogo_fronta_core"]
+    sensora_volnovogo_fr --> sensora_volnovogo_fronta_
+    sensora_volnovogo_fronta_["часть_sensora_volnovogo_fronta_housing"]
+    sensora_volnovogo_fr --> sensora_volnovogo_fronta_
+    sensora_volnovogo_fronta_["часть_sensora_volnovogo_fronta_connectors"]
+    sensora_volnovogo_fr --> sensora_volnovogo_fronta_
+    sensora_volnovogo_fronta_["часть_sensora_volnovogo_fronta_mounting"]
+    sensora_volnovogo_fr --> sensora_volnovogo_fronta_
+```

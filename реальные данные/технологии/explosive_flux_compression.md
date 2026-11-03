@@ -1,5 +1,4 @@
 ---
-
 id: tekhnologia_explosive_flux_compression
 тип: технология
 категория: обработка
@@ -48,6 +47,7 @@ id: tekhnologia_explosive_flux_compression
   ограничения: null
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03# Технология: Explosive flux compression
+---
 
 ## Описание
 

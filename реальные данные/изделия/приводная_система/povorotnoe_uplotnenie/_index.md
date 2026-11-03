@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_povorotnoe_uplotnenie
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_povorotnoe_uplotnenie
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_povorotnoe_uplotnenie_core
+  - часть_povorotnoe_uplotnenie_housing
+  - часть_povorotnoe_uplotnenie_connectors
+  - часть_povorotnoe_uplotnenie_mounting
+материалы_частей:
+  - часть: часть_povorotnoe_uplotnenie_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_povorotnoe_uplotnenie_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Поворотное уплотнение
+источник_разбора: пользовательский ввод
+---
+# Изделие: Поворотное уплотнение
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    povorotnoe_uplotneni["izdelie_povorotnoe_uplotnenie"]
+    povorotnoe_uplotnenie_cor["часть_povorotnoe_uplotnenie_core"]
+    povorotnoe_uplotneni --> povorotnoe_uplotnenie_cor
+    povorotnoe_uplotnenie_hou["часть_povorotnoe_uplotnenie_housing"]
+    povorotnoe_uplotneni --> povorotnoe_uplotnenie_hou
+    povorotnoe_uplotnenie_con["часть_povorotnoe_uplotnenie_connectors"]
+    povorotnoe_uplotneni --> povorotnoe_uplotnenie_con
+    povorotnoe_uplotnenie_mou["часть_povorotnoe_uplotnenie_mounting"]
+    povorotnoe_uplotneni --> povorotnoe_uplotnenie_mou
+```

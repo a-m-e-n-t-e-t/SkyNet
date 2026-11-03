@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_kaskadnyi_stirling-kriokuler
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_kaskadnyi_stirling-kriokuler
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_kaskadnyi_stirling-kriokuler_core
+  - часть_kaskadnyi_stirling-kriokuler_housing
+  - часть_kaskadnyi_stirling-kriokuler_connectors
+  - часть_kaskadnyi_stirling-kriokuler_mounting
+материалы_частей:
+  - часть: часть_kaskadnyi_stirling-kriokuler_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_kaskadnyi_stirling-kriokuler_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: каскадный Стирлинг-криокулер
+источник_разбора: пользовательский ввод
+---
+# Изделие: каскадный Стирлинг-криокулер
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    kaskadnyi_stirling-k["izdelie_kaskadnyi_stirling-kriokuler"]
+    kaskadnyi_stirling-krioku["часть_kaskadnyi_stirling-kriokuler_core"]
+    kaskadnyi_stirling-k --> kaskadnyi_stirling-krioku
+    kaskadnyi_stirling-krioku["часть_kaskadnyi_stirling-kriokuler_housing"]
+    kaskadnyi_stirling-k --> kaskadnyi_stirling-krioku
+    kaskadnyi_stirling-krioku["часть_kaskadnyi_stirling-kriokuler_connectors"]
+    kaskadnyi_stirling-k --> kaskadnyi_stirling-krioku
+    kaskadnyi_stirling-krioku["часть_kaskadnyi_stirling-kriokuler_mounting"]
+    kaskadnyi_stirling-k --> kaskadnyi_stirling-krioku
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_reshetchatyi_karkas
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_reshetchatyi_karkas
   - ISO 630
 исследовательская_группа: boeing_lockheed
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_reshetchatyi_karkas_core
+  - часть_reshetchatyi_karkas_housing
+  - часть_reshetchatyi_karkas_connectors
+  - часть_reshetchatyi_karkas_mounting
+материалы_частей:
+  - часть: часть_reshetchatyi_karkas_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_reshetchatyi_karkas_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Решётчатый каркас
+источник_разбора: пользовательский ввод
+---
+# Изделие: Решётчатый каркас
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    reshetchatyi_karkas["izdelie_reshetchatyi_karkas"]
+    reshetchatyi_karkas_core["часть_reshetchatyi_karkas_core"]
+    reshetchatyi_karkas --> reshetchatyi_karkas_core
+    reshetchatyi_karkas_housi["часть_reshetchatyi_karkas_housing"]
+    reshetchatyi_karkas --> reshetchatyi_karkas_housi
+    reshetchatyi_karkas_conne["часть_reshetchatyi_karkas_connectors"]
+    reshetchatyi_karkas --> reshetchatyi_karkas_conne
+    reshetchatyi_karkas_mount["часть_reshetchatyi_karkas_mounting"]
+    reshetchatyi_karkas --> reshetchatyi_karkas_mount
+```

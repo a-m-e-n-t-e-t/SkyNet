@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_lidar
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_lidar
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_lidar_core
+  - часть_lidar_housing
+  - часть_lidar_connectors
+  - часть_lidar_mounting
+материалы_частей:
+  - часть: часть_lidar_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_lidar_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: LIDAR
+источник_разбора: пользовательский ввод
+---
+# Изделие: LIDAR
 
 ## Описание
 
@@ -82,3 +93,21 @@ LIDAR
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    lidar["izdelie_lidar"]
+    lidar_core["часть_lidar_core"]
+    lidar --> lidar_core
+    lidar_housing["часть_lidar_housing"]
+    lidar --> lidar_housing
+    lidar_connectors["часть_lidar_connectors"]
+    lidar --> lidar_connectors
+    lidar_mounting["часть_lidar_mounting"]
+    lidar --> lidar_mounting
+```

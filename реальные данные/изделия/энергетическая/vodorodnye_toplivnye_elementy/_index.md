@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_vodorodnye_toplivnye_elementy
 тип: изделие
 категория: энергетика
@@ -12,8 +11,34 @@ id: izdelie_vodorodnye_toplivnye_elementy
   - ISO 14687
 исследовательская_группа: ballard_power
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_vodorodnye_toplivnye_elementy_membrane
+  - часть_vodorodnye_toplivnye_elementy_catalyst_anode
+  - часть_vodorodnye_toplivnye_elementy_catalyst_cathode
+  - часть_vodorodnye_toplivnye_elementy_gdl_anode
+  - часть_vodorodnye_toplivnye_elementy_gdl_cathode
+  - часть_vodorodnye_toplivnye_elementy_bipolar_plate
+  - часть_vodorodnye_toplivnye_elementy_gasket
+  - часть_vodorodnye_toplivnye_elementy_end_plate
+материалы_частей:
+  - часть: часть_vodorodnye_toplivnye_elementy_membrane
+    материал: nafion_117
+    доля_массы: 0.095
+  - часть: часть_vodorodnye_toplivnye_elementy_catalyst_anode
+    материал: pt_carbon
+    доля_массы: 0.01
+  - часть: часть_vodorodnye_toplivnye_elementy_catalyst_cathode
+    материал: pt_carbon
+    доля_массы: 0.01
+  - часть: часть_vodorodnye_toplivnye_elementy_gdl_anode
+    материал: carbon_paper
+    доля_массы: 0.095
+  - часть: часть_vodorodnye_toplivnye_elementy_bipolar_plate
+    материал: stainless_steel_316
+    доля_массы: 0.38
+  - часть: часть_vodorodnye_toplivnye_elementy_end_plate
+    материал: aluminum
+    доля_массы: 0.285
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -48,7 +73,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Водородные топливные элементы
+источник_разбора: пользовательский ввод
+---
+# Изделие: Водородные топливные элементы
 
 ## Описание
 
@@ -84,3 +111,29 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    vodorodnye_toplivnye["izdelie_vodorodnye_toplivnye_elementy"]
+    vodorodnye_toplivnye_elem["часть_vodorodnye_toplivnye_elementy_membrane"]
+    vodorodnye_toplivnye --> vodorodnye_toplivnye_elem
+    vodorodnye_toplivnye_elem["часть_vodorodnye_toplivnye_elementy_catalyst_anode"]
+    vodorodnye_toplivnye --> vodorodnye_toplivnye_elem
+    vodorodnye_toplivnye_elem["часть_vodorodnye_toplivnye_elementy_catalyst_cathode"]
+    vodorodnye_toplivnye --> vodorodnye_toplivnye_elem
+    vodorodnye_toplivnye_elem["часть_vodorodnye_toplivnye_elementy_gdl_anode"]
+    vodorodnye_toplivnye --> vodorodnye_toplivnye_elem
+    vodorodnye_toplivnye_elem["часть_vodorodnye_toplivnye_elementy_gdl_cathode"]
+    vodorodnye_toplivnye --> vodorodnye_toplivnye_elem
+    vodorodnye_toplivnye_elem["часть_vodorodnye_toplivnye_elementy_bipolar_plate"]
+    vodorodnye_toplivnye --> vodorodnye_toplivnye_elem
+    vodorodnye_toplivnye_elem["часть_vodorodnye_toplivnye_elementy_gasket"]
+    vodorodnye_toplivnye --> vodorodnye_toplivnye_elem
+    vodorodnye_toplivnye_elem["часть_vodorodnye_toplivnye_elementy_end_plate"]
+    vodorodnye_toplivnye --> vodorodnye_toplivnye_elem
+```

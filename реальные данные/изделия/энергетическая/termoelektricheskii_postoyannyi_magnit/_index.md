@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_termoelektricheskii_postoyannyi_magnit
 тип: изделие
 категория: энергетика
@@ -11,8 +10,22 @@ id: izdelie_termoelektricheskii_postoyannyi_magnit
   - ASTM E1289
 исследовательская_группа: ii_vi_marlow
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_termoelektricheskii_postoyannyi_magnit_teg_modules
+  - часть_termoelektricheskii_postoyannyi_magnit_heat_sink_hot
+  - часть_termoelektricheskii_postoyannyi_magnit_heat_sink_cold
+  - часть_termoelektricheskii_postoyannyi_magnit_clamping
+  - часть_termoelektricheskii_postoyannyi_magnit_insulation
+материалы_частей:
+  - часть: часть_termoelektricheskii_postoyannyi_magnit_teg_modules
+    материал: bi2te3
+    доля_массы: 0.36
+  - часть: часть_termoelektricheskii_postoyannyi_magnit_heat_sink_hot
+    материал: copper
+    доля_массы: 0.19
+  - часть: часть_termoelektricheskii_postoyannyi_magnit_heat_sink_cold
+    материал: aluminum
+    доля_массы: 0.19
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +60,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: термоэлектрический постоянный магнит
+источник_разбора: пользовательский ввод
+---
+# Изделие: термоэлектрический постоянный магнит
 
 ## Описание
 
@@ -83,3 +98,23 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    termoelektricheskii_["izdelie_termoelektricheskii_postoyannyi_magnit"]
+    termoelektricheskii_posto["часть_termoelektricheskii_postoyannyi_magnit_teg_modules"]
+    termoelektricheskii_ --> termoelektricheskii_posto
+    termoelektricheskii_posto["часть_termoelektricheskii_postoyannyi_magnit_heat_sink_hot"]
+    termoelektricheskii_ --> termoelektricheskii_posto
+    termoelektricheskii_posto["часть_termoelektricheskii_postoyannyi_magnit_heat_sink_cold"]
+    termoelektricheskii_ --> termoelektricheskii_posto
+    termoelektricheskii_posto["часть_termoelektricheskii_postoyannyi_magnit_clamping"]
+    termoelektricheskii_ --> termoelektricheskii_posto
+    termoelektricheskii_posto["часть_termoelektricheskii_postoyannyi_magnit_insulation"]
+    termoelektricheskii_ --> termoelektricheskii_posto
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_pcm
 тип: изделие
 категория: электроника
@@ -11,8 +10,19 @@ id: izdelie_pcm
   - JEDEC JESD47
 исследовательская_группа: intel_micron
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_pcm_cell_array
+  - часть_pcm_selector
+  - часть_pcm_periphery
+  - часть_pcm_io_interface
+  - часть_pcm_controller
+материалы_частей:
+  - часть: часть_pcm_cell_array
+    материал: gst_chalcogenide
+    доля_массы: 0.24
+  - часть: часть_pcm_selector
+    материал: silicon_wafer
+    доля_массы: 0.09
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +57,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: PCM
+источник_разбора: пользовательский ввод
+---
+# Изделие: PCM
 
 ## Описание
 
@@ -83,3 +95,23 @@ PCM (Phase Change Memory, радиационно-стойкая)
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    pcm["izdelie_pcm"]
+    pcm_cell_array["часть_pcm_cell_array"]
+    pcm --> pcm_cell_array
+    pcm_selector["часть_pcm_selector"]
+    pcm --> pcm_selector
+    pcm_periphery["часть_pcm_periphery"]
+    pcm --> pcm_periphery
+    pcm_io_interface["часть_pcm_io_interface"]
+    pcm --> pcm_io_interface
+    pcm_controller["часть_pcm_controller"]
+    pcm --> pcm_controller
+```

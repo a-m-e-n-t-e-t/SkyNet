@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_halve
 тип: изделие
 категория: электроника
@@ -10,8 +9,36 @@ id: izdelie_halve
 стандарты: []
 исследовательская_группа: advanced_research
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_halve_die
+  - часть_halve_substrate
+  - часть_halve_pins_balls
+  - часть_halve_thermal_spreader
+  - часть_halve_encapsulant
+  - часть_halve_capacitors
+  - часть_halve_pcb
+материалы_частей:
+  - часть: часть_halve_die
+    материал: silicon_wafer
+    доля_массы: 0.1
+  - часть: часть_halve_substrate
+    материал: bt_resin
+    доля_массы: 0.14
+  - часть: часть_halve_pins_balls
+    материал: copper_alloy
+    доля_массы: 0.1
+  - часть: часть_halve_thermal_spreader
+    материал: copper
+    доля_массы: 0.18
+  - часть: часть_halve_encapsulant
+    материал: epoxy_molding
+    доля_массы: 0.1
+  - часть: часть_halve_capacitors
+    материал: ceramic_mlcc
+    доля_массы: 0.1
+  - часть: часть_halve_pcb
+    материал: fr4
+    доля_массы: 0.16
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -44,7 +71,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: HALVE
+источник_разбора: пользовательский ввод
+---
+# Изделие: HALVE
 
 ## Описание
 
@@ -80,3 +109,27 @@ HALVE
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    halve["izdelie_halve"]
+    halve_die["часть_halve_die"]
+    halve --> halve_die
+    halve_substrate["часть_halve_substrate"]
+    halve --> halve_substrate
+    halve_pins_balls["часть_halve_pins_balls"]
+    halve --> halve_pins_balls
+    halve_thermal_spreader["часть_halve_thermal_spreader"]
+    halve --> halve_thermal_spreader
+    halve_encapsulant["часть_halve_encapsulant"]
+    halve --> halve_encapsulant
+    halve_capacitors["часть_halve_capacitors"]
+    halve --> halve_capacitors
+    halve_pcb["часть_halve_pcb"]
+    halve --> halve_pcb
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_quantum_cascade_laser
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_quantum_cascade_laser
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_quantum_cascade_laser_core
+  - часть_quantum_cascade_laser_housing
+  - часть_quantum_cascade_laser_connectors
+  - часть_quantum_cascade_laser_mounting
+материалы_частей:
+  - часть: часть_quantum_cascade_laser_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_quantum_cascade_laser_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Quantum Cascade Laser
+источник_разбора: пользовательский ввод
+---
+# Изделие: Quantum Cascade Laser
 
 ## Описание
 
@@ -82,3 +93,21 @@ Quantum Cascade Laser
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    quantum_cascade_lase["izdelie_quantum_cascade_laser"]
+    quantum_cascade_laser_cor["часть_quantum_cascade_laser_core"]
+    quantum_cascade_lase --> quantum_cascade_laser_cor
+    quantum_cascade_laser_hou["часть_quantum_cascade_laser_housing"]
+    quantum_cascade_lase --> quantum_cascade_laser_hou
+    quantum_cascade_laser_con["часть_quantum_cascade_laser_connectors"]
+    quantum_cascade_lase --> quantum_cascade_laser_con
+    quantum_cascade_laser_mou["часть_quantum_cascade_laser_mounting"]
+    quantum_cascade_lase --> quantum_cascade_laser_mou
+```

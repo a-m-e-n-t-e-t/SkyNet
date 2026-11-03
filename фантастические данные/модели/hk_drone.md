@@ -32,8 +32,9 @@ relations:
   - izdelie_tverdooksidnyi_toplivnyi_element
   - izdelie_nasa_asc-e_srsc
   - izdelie_superkondensatory
-  - izdelie_reshetchatyi_karkas
-  - izdelie_kompensatory
+  - izdelie_SkyNet-HKAerial
+  - izdelie_SkyNet-Rev9
+  - izdelie_SkyNet-Cameron
   - izdelie_metalinza
   - izdelie_mwir_nbn_640
   - izdelie_lidar_robosense_ac1
@@ -49,6 +50,7 @@ relations:
 ии_перепроектирован:
   статус: false
   верификация: []
+---
 # v9.31: структурные поля §12.4.1-§12.4.X — добавлены как placeholder
 # Реальные значения будут заполнены через web_search для каждой модели.
 требования_выживаемости: 

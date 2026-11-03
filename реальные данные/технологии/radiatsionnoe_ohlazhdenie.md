@@ -1,5 +1,4 @@
 ---
-
 id: tekhnologia_radiatsionnoe_ohlazhdenie
 тип: технология
 категория: обработка
@@ -48,6 +47,7 @@ id: tekhnologia_radiatsionnoe_ohlazhdenie
   ограничения: null
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03# Технология: Радиационное охлаждение
+---
 
 ## Описание
 

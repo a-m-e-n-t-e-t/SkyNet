@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_ni-63_betavoltaik_4h-sic
 тип: изделие
 категория: энергетика
@@ -11,8 +10,28 @@ id: izdelie_ni-63_betavoltaik_4h-sic
   - ISO 2919
 исследовательская_группа: widetronix
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_ni-63_betavoltaik_4h-sic_isotope
+  - часть_ni-63_betavoltaik_4h-sic_sic_diode
+  - часть_ni-63_betavoltaik_4h-sic_substrate
+  - часть_ni-63_betavoltaik_4h-sic_encapsulant
+  - часть_ni-63_betavoltaik_4h-sic_case
+материалы_частей:
+  - часть: часть_ni-63_betavoltaik_4h-sic_isotope
+    материал: ni63_metal
+    доля_массы: 0.2375
+  - часть: часть_ni-63_betavoltaik_4h-sic_sic_diode
+    материал: silicon_carbide
+    доля_массы: 0.475
+  - часть: часть_ni-63_betavoltaik_4h-sic_substrate
+    материал: silicon_carbide
+    доля_массы: 0.198
+  - часть: часть_ni-63_betavoltaik_4h-sic_encapsulant
+    материал: epoxy
+    доля_массы: 0.095
+  - часть: часть_ni-63_betavoltaik_4h-sic_case
+    материал: titanium_alloy
+    доля_массы: 0.285
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +66,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Ni-63 бетавольтаик 4H-SiC
+источник_разбора: пользовательский ввод
+---
+# Изделие: Ni-63 бетавольтаик 4H-SiC
 
 ## Описание
 
@@ -83,3 +104,23 @@ Ni-63 бетавольтаик 4H-SiC
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    ni-63_betavoltaik_4h["izdelie_ni-63_betavoltaik_4h-sic"]
+    ni-63_betavoltaik_4h-sic_["часть_ni-63_betavoltaik_4h-sic_isotope"]
+    ni-63_betavoltaik_4h --> ni-63_betavoltaik_4h-sic_
+    ni-63_betavoltaik_4h-sic_["часть_ni-63_betavoltaik_4h-sic_sic_diode"]
+    ni-63_betavoltaik_4h --> ni-63_betavoltaik_4h-sic_
+    ni-63_betavoltaik_4h-sic_["часть_ni-63_betavoltaik_4h-sic_substrate"]
+    ni-63_betavoltaik_4h --> ni-63_betavoltaik_4h-sic_
+    ni-63_betavoltaik_4h-sic_["часть_ni-63_betavoltaik_4h-sic_encapsulant"]
+    ni-63_betavoltaik_4h --> ni-63_betavoltaik_4h-sic_
+    ni-63_betavoltaik_4h-sic_["часть_ni-63_betavoltaik_4h-sic_case"]
+    ni-63_betavoltaik_4h --> ni-63_betavoltaik_4h-sic_
+```

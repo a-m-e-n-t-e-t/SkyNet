@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_mems-imu
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_mems-imu
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_mems-imu_core
+  - часть_mems-imu_housing
+  - часть_mems-imu_connectors
+  - часть_mems-imu_mounting
+материалы_частей:
+  - часть: часть_mems-imu_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_mems-imu_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: MEMS-IMU
+источник_разбора: пользовательский ввод
+---
+# Изделие: MEMS-IMU
 
 ## Описание
 
@@ -82,3 +93,21 @@ MEMS-IMU
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    mems-imu["izdelie_mems-imu"]
+    mems-imu_core["часть_mems-imu_core"]
+    mems-imu --> mems-imu_core
+    mems-imu_housing["часть_mems-imu_housing"]
+    mems-imu --> mems-imu_housing
+    mems-imu_connectors["часть_mems-imu_connectors"]
+    mems-imu --> mems-imu_connectors
+    mems-imu_mounting["часть_mems-imu_mounting"]
+    mems-imu --> mems-imu_mounting
+```

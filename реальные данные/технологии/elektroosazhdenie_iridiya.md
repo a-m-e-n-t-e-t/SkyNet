@@ -1,5 +1,4 @@
 ---
-
 id: tekhnologia_elektroosazhdenie_iridiya
 тип: технология
 категория: обработка
@@ -47,6 +46,7 @@ id: tekhnologia_elektroosazhdenie_iridiya
   ограничения: null
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03# Технология: Электроосаждение иридия
+---
 
 ## Описание
 

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_bldc
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_bldc
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_bldc_core
+  - часть_bldc_housing
+  - часть_bldc_connectors
+  - часть_bldc_mounting
+материалы_частей:
+  - часть: часть_bldc_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_bldc_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: BLDC
+источник_разбора: пользовательский ввод
+---
+# Изделие: BLDC
 
 ## Описание
 
@@ -82,3 +93,21 @@ BLDC, 15 кВт
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    bldc["izdelie_bldc"]
+    bldc_core["часть_bldc_core"]
+    bldc --> bldc_core
+    bldc_housing["часть_bldc_housing"]
+    bldc --> bldc_housing
+    bldc_connectors["часть_bldc_connectors"]
+    bldc --> bldc_connectors
+    bldc_mounting["часть_bldc_mounting"]
+    bldc --> bldc_mounting
+```

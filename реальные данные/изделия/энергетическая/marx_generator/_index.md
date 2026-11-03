@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_marx_generator
 тип: изделие
 категория: энергетика
@@ -11,8 +10,23 @@ id: izdelie_marx_generator
   - IEEE C57.12.00
 исследовательская_группа: general_electric
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_marx_generator_capacitors
+  - часть_marx_generator_spark_gaps
+  - часть_marx_generator_resistors
+  - часть_marx_generator_housing
+  - часть_marx_generator_output_terminal
+  - часть_marx_generator_insulator
+материалы_частей:
+  - часть: часть_marx_generator_capacitors
+    материал: ceramic_capacitors
+    доля_массы: 0.475
+  - часть: часть_marx_generator_spark_gaps
+    материал: tungsten_electrodes
+    доля_массы: 0.1
+  - часть: часть_marx_generator_housing
+    материал: aluminum
+    доля_массы: 0.285
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +61,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Marx generator
+источник_разбора: пользовательский ввод
+---
+# Изделие: Marx generator
 
 ## Описание
 
@@ -83,3 +99,25 @@ Marx generator
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    marx_generator["izdelie_marx_generator"]
+    marx_generator_capacitors["часть_marx_generator_capacitors"]
+    marx_generator --> marx_generator_capacitors
+    marx_generator_spark_gaps["часть_marx_generator_spark_gaps"]
+    marx_generator --> marx_generator_spark_gaps
+    marx_generator_resistors["часть_marx_generator_resistors"]
+    marx_generator --> marx_generator_resistors
+    marx_generator_housing["часть_marx_generator_housing"]
+    marx_generator --> marx_generator_housing
+    marx_generator_output_ter["часть_marx_generator_output_terminal"]
+    marx_generator --> marx_generator_output_ter
+    marx_generator_insulator["часть_marx_generator_insulator"]
+    marx_generator --> marx_generator_insulator
+```

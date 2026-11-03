@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_dielektricheskie_elastomernye_datchiki
 тип: изделие
 категория: прочее
@@ -11,8 +10,18 @@ id: izdelie_dielektricheskie_elastomernye_datchiki
   - ISO 9001
 исследовательская_группа: various
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_dielektricheskie_elastomernye_datchiki_core
+  - часть_dielektricheskie_elastomernye_datchiki_housing
+  - часть_dielektricheskie_elastomernye_datchiki_connectors
+  - часть_dielektricheskie_elastomernye_datchiki_mounting
+материалы_частей:
+  - часть: часть_dielektricheskie_elastomernye_datchiki_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_dielektricheskie_elastomernye_datchiki_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +54,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: диэлектрические эластомерные датчики
+источник_разбора: пользовательский ввод
+---
+# Изделие: диэлектрические эластомерные датчики
 
 ## Описание
 
@@ -81,3 +92,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    dielektricheskie_ela["izdelie_dielektricheskie_elastomernye_datchiki"]
+    dielektricheskie_elastome["часть_dielektricheskie_elastomernye_datchiki_core"]
+    dielektricheskie_ela --> dielektricheskie_elastome
+    dielektricheskie_elastome["часть_dielektricheskie_elastomernye_datchiki_housing"]
+    dielektricheskie_ela --> dielektricheskie_elastome
+    dielektricheskie_elastome["часть_dielektricheskie_elastomernye_datchiki_connectors"]
+    dielektricheskie_ela --> dielektricheskie_elastome
+    dielektricheskie_elastome["часть_dielektricheskie_elastomernye_datchiki_mounting"]
+    dielektricheskie_ela --> dielektricheskie_elastome
+```

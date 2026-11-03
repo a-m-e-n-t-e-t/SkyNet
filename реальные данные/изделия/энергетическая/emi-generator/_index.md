@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_emi-generator
 тип: изделие
 категория: энергетика
@@ -11,8 +10,26 @@ id: izdelie_emi-generator
   - MIL-STD-461
 исследовательская_группа: lockheed_martin
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_emi-generator_capacitor_bank
+  - часть_emi-generator_antenna
+  - часть_emi-generator_switch
+  - часть_emi-generator_source
+  - часть_emi-generator_waveguide
+  - часть_emi-generator_housing
+материалы_частей:
+  - часть: часть_emi-generator_capacitor_bank
+    материал: ceramic_capacitors
+    доля_массы: 0.38
+  - часть: часть_emi-generator_antenna
+    материал: aluminum
+    доля_массы: 0.19
+  - часть: часть_emi-generator_waveguide
+    материал: aluminum
+    доля_массы: 0.285
+  - часть: часть_emi-generator_housing
+    материал: aluminum
+    доля_массы: 0.38
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +63,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: ЭМИ-генератор
+источник_разбора: пользовательский ввод
+---
+# Изделие: ЭМИ-генератор
 
 ## Описание
 
@@ -82,3 +101,25 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    emi-generator["izdelie_emi-generator"]
+    emi-generator_capacitor_b["часть_emi-generator_capacitor_bank"]
+    emi-generator --> emi-generator_capacitor_b
+    emi-generator_antenna["часть_emi-generator_antenna"]
+    emi-generator --> emi-generator_antenna
+    emi-generator_switch["часть_emi-generator_switch"]
+    emi-generator --> emi-generator_switch
+    emi-generator_source["часть_emi-generator_source"]
+    emi-generator --> emi-generator_source
+    emi-generator_waveguide["часть_emi-generator_waveguide"]
+    emi-generator --> emi-generator_waveguide
+    emi-generator_housing["часть_emi-generator_housing"]
+    emi-generator --> emi-generator_housing
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_zeno_power_am-241
 тип: изделие
 категория: энергетика
@@ -11,8 +10,24 @@ id: izdelie_zeno_power_am-241
   - ISO 2919
 исследовательская_группа: zeno_power
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_zeno_power_am-241_isotope
+  - часть_zeno_power_am-241_thermocouples
+  - часть_zeno_power_am-241_shielding
+  - часть_zeno_power_am-241_housing
+материалы_частей:
+  - часть: часть_zeno_power_am-241_isotope
+    материал: am241_oxide
+    доля_массы: 0.38
+  - часть: часть_zeno_power_am-241_thermocouples
+    материал: pbte_teg
+    доля_массы: 0.27
+  - часть: часть_zeno_power_am-241_shielding
+    материал: tungsten_alloy
+    доля_массы: 0.475
+  - часть: часть_zeno_power_am-241_housing
+    материал: stainless_steel_316
+    доля_массы: 0.285
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +62,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Zeno Power Am-241
+источник_разбора: пользовательский ввод
+---
+# Изделие: Zeno Power Am-241
 
 ## Описание
 
@@ -83,3 +100,21 @@ Zeno Power Am-241 — коммерческий РИТЭГ
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    zeno_power_am-241["izdelie_zeno_power_am-241"]
+    zeno_power_am-241_isotope["часть_zeno_power_am-241_isotope"]
+    zeno_power_am-241 --> zeno_power_am-241_isotope
+    zeno_power_am-241_thermoc["часть_zeno_power_am-241_thermocouples"]
+    zeno_power_am-241 --> zeno_power_am-241_thermoc
+    zeno_power_am-241_shieldi["часть_zeno_power_am-241_shielding"]
+    zeno_power_am-241 --> zeno_power_am-241_shieldi
+    zeno_power_am-241_housing["часть_zeno_power_am-241_housing"]
+    zeno_power_am-241 --> zeno_power_am-241_housing
+```

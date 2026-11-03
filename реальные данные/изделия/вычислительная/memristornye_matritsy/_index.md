@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_memristornye_matritsy
 тип: изделие
 категория: электроника
@@ -10,8 +9,19 @@ id: izdelie_memristornye_matritsy
 стандарты: []
 исследовательская_группа: hp_labs
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_memristornye_matritsy_crossbar
+  - часть_memristornye_matritsy_word_drivers
+  - часть_memristornye_matritsy_bit_sense
+  - часть_memristornye_matritsy_adc
+  - часть_memristornye_matritsy_controller
+материалы_частей:
+  - часть: часть_memristornye_matritsy_crossbar
+    материал: tio2_memristor
+    доля_массы: 0.28
+  - часть: часть_memristornye_matritsy_word_drivers
+    материал: silicon_wafer
+    доля_массы: 0.18
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: мемристорные матрицы
+источник_разбора: пользовательский ввод
+---
+# Изделие: мемристорные матрицы
 
 ## Описание
 
@@ -81,3 +93,23 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    memristornye_matrits["izdelie_memristornye_matritsy"]
+    memristornye_matritsy_cro["часть_memristornye_matritsy_crossbar"]
+    memristornye_matrits --> memristornye_matritsy_cro
+    memristornye_matritsy_wor["часть_memristornye_matritsy_word_drivers"]
+    memristornye_matrits --> memristornye_matritsy_wor
+    memristornye_matritsy_bit["часть_memristornye_matritsy_bit_sense"]
+    memristornye_matrits --> memristornye_matritsy_bit
+    memristornye_matritsy_adc["часть_memristornye_matritsy_adc"]
+    memristornye_matrits --> memristornye_matritsy_adc
+    memristornye_matritsy_con["часть_memristornye_matritsy_controller"]
+    memristornye_matrits --> memristornye_matritsy_con
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_svobodnoporshnevoi_stirling
 тип: изделие
 категория: энергетика
@@ -10,8 +9,23 @@ id: izdelie_svobodnoporshnevoi_stirling
 стандарты: []
 исследовательская_группа: sunpower_infinia
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_svobodnoporshnevoi_stirling_heater
+  - часть_svobodnoporshnevoi_stirling_regenerator
+  - часть_svobodnoporshnevoi_stirling_cooler
+  - часть_svobodnoporshnevoi_stirling_piston
+  - часть_svobodnoporshnevoi_stirling_alternator
+  - часть_svobodnoporshnevoi_stirling_gas_spring
+материалы_частей:
+  - часть: часть_svobodnoporshnevoi_stirling_heater
+    материал: inconel_625
+    доля_массы: 0.19
+  - часть: часть_svobodnoporshnevoi_stirling_piston
+    материал: inconel_718
+    доля_массы: 0.27
+  - часть: часть_svobodnoporshnevoi_stirling_alternator
+    материал: copper_wire
+    доля_массы: 0.24
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +60,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Свободнопоршневой Стирлинг
+источник_разбора: пользовательский ввод
+---
+# Изделие: Свободнопоршневой Стирлинг
 
 ## Описание
 
@@ -82,3 +98,25 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    svobodnoporshnevoi_s["izdelie_svobodnoporshnevoi_stirling"]
+    svobodnoporshnevoi_stirli["часть_svobodnoporshnevoi_stirling_heater"]
+    svobodnoporshnevoi_s --> svobodnoporshnevoi_stirli
+    svobodnoporshnevoi_stirli["часть_svobodnoporshnevoi_stirling_regenerator"]
+    svobodnoporshnevoi_s --> svobodnoporshnevoi_stirli
+    svobodnoporshnevoi_stirli["часть_svobodnoporshnevoi_stirling_cooler"]
+    svobodnoporshnevoi_s --> svobodnoporshnevoi_stirli
+    svobodnoporshnevoi_stirli["часть_svobodnoporshnevoi_stirling_piston"]
+    svobodnoporshnevoi_s --> svobodnoporshnevoi_stirli
+    svobodnoporshnevoi_stirli["часть_svobodnoporshnevoi_stirling_alternator"]
+    svobodnoporshnevoi_s --> svobodnoporshnevoi_stirli
+    svobodnoporshnevoi_stirli["часть_svobodnoporshnevoi_stirling_gas_spring"]
+    svobodnoporshnevoi_s --> svobodnoporshnevoi_stirli
+```

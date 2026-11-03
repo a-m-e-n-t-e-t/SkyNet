@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_flat-face_couplings_iso_16028
 тип: изделие
 категория: электроника
@@ -12,8 +11,18 @@ id: izdelie_flat-face_couplings_iso_16028
   - ETSI EN 301 489
 исследовательская_группа: harris_thales
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_flat-face_couplings_iso_16028_core
+  - часть_flat-face_couplings_iso_16028_housing
+  - часть_flat-face_couplings_iso_16028_connectors
+  - часть_flat-face_couplings_iso_16028_mounting
+материалы_частей:
+  - часть: часть_flat-face_couplings_iso_16028_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_flat-face_couplings_iso_16028_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Flat-face couplings ISO 16028
+источник_разбора: пользовательский ввод
+---
+# Изделие: Flat-face couplings ISO 16028
 
 ## Описание
 
@@ -82,3 +93,21 @@ Flat-face couplings ISO 16028
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    flat-face_couplings_["izdelie_flat-face_couplings_iso_16028"]
+    flat-face_couplings_iso_1["часть_flat-face_couplings_iso_16028_core"]
+    flat-face_couplings_ --> flat-face_couplings_iso_1
+    flat-face_couplings_iso_1["часть_flat-face_couplings_iso_16028_housing"]
+    flat-face_couplings_ --> flat-face_couplings_iso_1
+    flat-face_couplings_iso_1["часть_flat-face_couplings_iso_16028_connectors"]
+    flat-face_couplings_ --> flat-face_couplings_iso_1
+    flat-face_couplings_iso_1["часть_flat-face_couplings_iso_16028_mounting"]
+    flat-face_couplings_ --> flat-face_couplings_iso_1
+```

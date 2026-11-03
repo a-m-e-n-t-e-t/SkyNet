@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_betavoltaiki
 тип: изделие
 категория: энергетика
@@ -11,8 +10,25 @@ id: izdelie_betavoltaiki
   - ISO 2919
 исследовательская_группа: widetronix
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_betavoltaiki_isotope
+  - часть_betavoltaiki_semiconductor
+  - часть_betavoltaiki_encapsulant
+  - часть_betavoltaiki_case
+  - часть_betavoltaiki_terminal
+материалы_частей:
+  - часть: часть_betavoltaiki_isotope
+    материал: ni63_metal
+    доля_массы: 0.285
+  - часть: часть_betavoltaiki_semiconductor
+    материал: silicon_carbide
+    доля_массы: 0.475
+  - часть: часть_betavoltaiki_encapsulant
+    материал: epoxy
+    доля_массы: 0.095
+  - часть: часть_betavoltaiki_case
+    материал: titanium_alloy
+    доля_массы: 0.285
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +63,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Бетавольтаики
+источник_разбора: пользовательский ввод
+---
+# Изделие: Бетавольтаики
 
 ## Описание
 
@@ -83,3 +101,23 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    betavoltaiki["izdelie_betavoltaiki"]
+    betavoltaiki_isotope["часть_betavoltaiki_isotope"]
+    betavoltaiki --> betavoltaiki_isotope
+    betavoltaiki_semiconducto["часть_betavoltaiki_semiconductor"]
+    betavoltaiki --> betavoltaiki_semiconducto
+    betavoltaiki_encapsulant["часть_betavoltaiki_encapsulant"]
+    betavoltaiki --> betavoltaiki_encapsulant
+    betavoltaiki_case["часть_betavoltaiki_case"]
+    betavoltaiki --> betavoltaiki_case
+    betavoltaiki_terminal["часть_betavoltaiki_terminal"]
+    betavoltaiki --> betavoltaiki_terminal
+```

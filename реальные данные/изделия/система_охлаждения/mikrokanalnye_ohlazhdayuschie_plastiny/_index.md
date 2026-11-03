@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_mikrokanalnye_ohlazhdayuschie_plastiny
 тип: изделие
 категория: машиностроение
@@ -11,8 +10,18 @@ id: izdelie_mikrokanalnye_ohlazhdayuschie_plastiny
   - ASHRAE 15
 исследовательская_группа: boyd_corp
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_mikrokanalnye_ohlazhdayuschie_plastiny_core
+  - часть_mikrokanalnye_ohlazhdayuschie_plastiny_housing
+  - часть_mikrokanalnye_ohlazhdayuschie_plastiny_connectors
+  - часть_mikrokanalnye_ohlazhdayuschie_plastiny_mounting
+материалы_частей:
+  - часть: часть_mikrokanalnye_ohlazhdayuschie_plastiny_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_mikrokanalnye_ohlazhdayuschie_plastiny_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +54,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Микроканальные охлаждающие пластины
+источник_разбора: пользовательский ввод
+---
+# Изделие: Микроканальные охлаждающие пластины
 
 ## Описание
 
@@ -81,3 +92,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    mikrokanalnye_ohlazh["izdelie_mikrokanalnye_ohlazhdayuschie_plastiny"]
+    mikrokanalnye_ohlazhdayus["часть_mikrokanalnye_ohlazhdayuschie_plastiny_core"]
+    mikrokanalnye_ohlazh --> mikrokanalnye_ohlazhdayus
+    mikrokanalnye_ohlazhdayus["часть_mikrokanalnye_ohlazhdayuschie_plastiny_housing"]
+    mikrokanalnye_ohlazh --> mikrokanalnye_ohlazhdayus
+    mikrokanalnye_ohlazhdayus["часть_mikrokanalnye_ohlazhdayuschie_plastiny_connectors"]
+    mikrokanalnye_ohlazh --> mikrokanalnye_ohlazhdayus
+    mikrokanalnye_ohlazhdayus["часть_mikrokanalnye_ohlazhdayuschie_plastiny_mounting"]
+    mikrokanalnye_ohlazh --> mikrokanalnye_ohlazhdayus
+```

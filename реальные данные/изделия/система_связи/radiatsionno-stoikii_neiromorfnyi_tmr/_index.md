@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
 тип: изделие
 категория: электроника
@@ -12,8 +11,18 @@ id: izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
   - ETSI EN 301 489
 исследовательская_группа: harris_thales
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_radiatsionno-stoikii_neiromorfnyi_tmr_core
+  - часть_radiatsionno-stoikii_neiromorfnyi_tmr_housing
+  - часть_radiatsionno-stoikii_neiromorfnyi_tmr_connectors
+  - часть_radiatsionno-stoikii_neiromorfnyi_tmr_mounting
+материалы_частей:
+  - часть: часть_radiatsionno-stoikii_neiromorfnyi_tmr_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_radiatsionno-stoikii_neiromorfnyi_tmr_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: радиационно-стойкий нейроморфный TMR
+источник_разбора: пользовательский ввод
+---
+# Изделие: радиационно-стойкий нейроморфный TMR
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    radiatsionno-stoikii["izdelie_radiatsionno-stoikii_neiromorfnyi_tmr"]
+    radiatsionno-stoikii_neir["часть_radiatsionno-stoikii_neiromorfnyi_tmr_core"]
+    radiatsionno-stoikii --> radiatsionno-stoikii_neir
+    radiatsionno-stoikii_neir["часть_radiatsionno-stoikii_neiromorfnyi_tmr_housing"]
+    radiatsionno-stoikii --> radiatsionno-stoikii_neir
+    radiatsionno-stoikii_neir["часть_radiatsionno-stoikii_neiromorfnyi_tmr_connectors"]
+    radiatsionno-stoikii --> radiatsionno-stoikii_neir
+    radiatsionno-stoikii_neir["часть_radiatsionno-stoikii_neiromorfnyi_tmr_mounting"]
+    radiatsionno-stoikii --> radiatsionno-stoikii_neir
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_belleville_shaiby
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_belleville_shaiby
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_belleville_shaiby_core
+  - часть_belleville_shaiby_housing
+  - часть_belleville_shaiby_connectors
+  - часть_belleville_shaiby_mounting
+материалы_частей:
+  - часть: часть_belleville_shaiby_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_belleville_shaiby_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Belleville шайбы
+источник_разбора: пользовательский ввод
+---
+# Изделие: Belleville шайбы
 
 ## Описание
 
@@ -82,3 +93,21 @@ Belleville шайбы
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    belleville_shaiby["izdelie_belleville_shaiby"]
+    belleville_shaiby_core["часть_belleville_shaiby_core"]
+    belleville_shaiby --> belleville_shaiby_core
+    belleville_shaiby_housing["часть_belleville_shaiby_housing"]
+    belleville_shaiby --> belleville_shaiby_housing
+    belleville_shaiby_connect["часть_belleville_shaiby_connectors"]
+    belleville_shaiby --> belleville_shaiby_connect
+    belleville_shaiby_mountin["часть_belleville_shaiby_mounting"]
+    belleville_shaiby --> belleville_shaiby_mountin
+```

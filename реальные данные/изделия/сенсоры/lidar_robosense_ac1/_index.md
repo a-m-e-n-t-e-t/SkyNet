@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_lidar_robosense_ac1
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_lidar_robosense_ac1
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_lidar_robosense_ac1_core
+  - часть_lidar_robosense_ac1_housing
+  - часть_lidar_robosense_ac1_connectors
+  - часть_lidar_robosense_ac1_mounting
+материалы_частей:
+  - часть: часть_lidar_robosense_ac1_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_lidar_robosense_ac1_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: LIDAR RoboSense AC1
+источник_разбора: пользовательский ввод
+---
+# Изделие: LIDAR RoboSense AC1
 
 ## Описание
 
@@ -82,3 +93,21 @@ LIDAR RoboSense AC1
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    lidar_robosense_ac1["izdelie_lidar_robosense_ac1"]
+    lidar_robosense_ac1_core["часть_lidar_robosense_ac1_core"]
+    lidar_robosense_ac1 --> lidar_robosense_ac1_core
+    lidar_robosense_ac1_housi["часть_lidar_robosense_ac1_housing"]
+    lidar_robosense_ac1 --> lidar_robosense_ac1_housi
+    lidar_robosense_ac1_conne["часть_lidar_robosense_ac1_connectors"]
+    lidar_robosense_ac1 --> lidar_robosense_ac1_conne
+    lidar_robosense_ac1_mount["часть_lidar_robosense_ac1_mounting"]
+    lidar_robosense_ac1 --> lidar_robosense_ac1_mount
+```

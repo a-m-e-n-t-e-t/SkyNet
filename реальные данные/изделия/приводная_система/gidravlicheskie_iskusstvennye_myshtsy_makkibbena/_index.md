@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
+  - часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
+  - часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors
+  - часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
+материалы_частей:
+  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: гидравлические искусственные мышцы МакКиббена
+источник_разбора: пользовательский ввод
+---
+# Изделие: гидравлические искусственные мышцы МакКиббена
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    gidravlicheskie_isku["izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena"]
+    gidravlicheskie_iskusstve["часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core"]
+    gidravlicheskie_isku --> gidravlicheskie_iskusstve
+    gidravlicheskie_iskusstve["часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing"]
+    gidravlicheskie_isku --> gidravlicheskie_iskusstve
+    gidravlicheskie_iskusstve["часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors"]
+    gidravlicheskie_isku --> gidravlicheskie_iskusstve
+    gidravlicheskie_iskusstve["часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting"]
+    gidravlicheskie_isku --> gidravlicheskie_iskusstve
+```

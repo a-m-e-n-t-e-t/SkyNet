@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_slm_eos_m290
 тип: изделие
 категория: прочее
@@ -11,8 +10,18 @@ id: izdelie_slm_eos_m290
   - ISO 9001
 исследовательская_группа: various
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_slm_eos_m290_core
+  - часть_slm_eos_m290_housing
+  - часть_slm_eos_m290_connectors
+  - часть_slm_eos_m290_mounting
+материалы_частей:
+  - часть: часть_slm_eos_m290_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_slm_eos_m290_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +54,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: SLM EOS M290
+источник_разбора: пользовательский ввод
+---
+# Изделие: SLM EOS M290
 
 ## Описание
 
@@ -81,3 +92,21 @@ SLM EOS M290
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    slm_eos_m290["izdelie_slm_eos_m290"]
+    slm_eos_m290_core["часть_slm_eos_m290_core"]
+    slm_eos_m290 --> slm_eos_m290_core
+    slm_eos_m290_housing["часть_slm_eos_m290_housing"]
+    slm_eos_m290 --> slm_eos_m290_housing
+    slm_eos_m290_connectors["часть_slm_eos_m290_connectors"]
+    slm_eos_m290 --> slm_eos_m290_connectors
+    slm_eos_m290_mounting["часть_slm_eos_m290_mounting"]
+    slm_eos_m290 --> slm_eos_m290_mounting
+```

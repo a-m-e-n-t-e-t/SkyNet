@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_alyuminievo-vozdushnye_toplivnye_elementy
 тип: изделие
 категория: энергетика
@@ -11,8 +10,23 @@ id: izdelie_alyuminievo-vozdushnye_toplivnye_elementy
   - IEC 62282
 исследовательская_группа: phiotech
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_alyuminievo-vozdushnye_toplivnye_elementy_anode
+  - часть_alyuminievo-vozdushnye_toplivnye_elementy_cathode
+  - часть_alyuminievo-vozdushnye_toplivnye_elementy_electrolyte
+  - часть_alyuminievo-vozdushnye_toplivnye_elementy_separator
+  - часть_alyuminievo-vozdushnye_toplivnye_elementy_air_electrode
+  - часть_alyuminievo-vozdushnye_toplivnye_elementy_housing
+материалы_частей:
+  - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_anode
+    материал: aluminum_1100
+    доля_массы: 0.38
+  - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_cathode
+    материал: carbon_ptfe
+    доля_массы: 0.18
+  - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_electrolyte
+    материал: koh_aqueous
+    доля_массы: 0.19
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +61,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Алюминиево-воздушные топливные элементы
+источник_разбора: пользовательский ввод
+---
+# Изделие: Алюминиево-воздушные топливные элементы
 
 ## Описание
 
@@ -83,3 +99,25 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    alyuminievo-vozdushn["izdelie_alyuminievo-vozdushnye_toplivnye_elementy"]
+    alyuminievo-vozdushnye_to["часть_alyuminievo-vozdushnye_toplivnye_elementy_anode"]
+    alyuminievo-vozdushn --> alyuminievo-vozdushnye_to
+    alyuminievo-vozdushnye_to["часть_alyuminievo-vozdushnye_toplivnye_elementy_cathode"]
+    alyuminievo-vozdushn --> alyuminievo-vozdushnye_to
+    alyuminievo-vozdushnye_to["часть_alyuminievo-vozdushnye_toplivnye_elementy_electrolyte"]
+    alyuminievo-vozdushn --> alyuminievo-vozdushnye_to
+    alyuminievo-vozdushnye_to["часть_alyuminievo-vozdushnye_toplivnye_elementy_separator"]
+    alyuminievo-vozdushn --> alyuminievo-vozdushnye_to
+    alyuminievo-vozdushnye_to["часть_alyuminievo-vozdushnye_toplivnye_elementy_air_electrode"]
+    alyuminievo-vozdushn --> alyuminievo-vozdushnye_to
+    alyuminievo-vozdushnye_to["часть_alyuminievo-vozdushnye_toplivnye_elementy_housing"]
+    alyuminievo-vozdushn --> alyuminievo-vozdushnye_to
+```

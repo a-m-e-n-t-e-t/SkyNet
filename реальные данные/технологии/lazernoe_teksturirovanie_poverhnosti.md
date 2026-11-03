@@ -1,5 +1,4 @@
 ---
-
 id: tekhnologia_lazernoe_teksturirovanie_poverhnosti
 тип: технология
 категория: обработка
@@ -48,6 +47,7 @@ id: tekhnologia_lazernoe_teksturirovanie_poverhnosti
   ограничения: null
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03# Технология: лазерное текстурирование поверхности
+---
 
 ## Описание
 

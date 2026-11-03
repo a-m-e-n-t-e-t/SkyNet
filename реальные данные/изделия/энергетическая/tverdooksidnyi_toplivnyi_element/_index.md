@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_tverdooksidnyi_toplivnyi_element
 тип: изделие
 категория: энергетика
@@ -11,8 +10,26 @@ id: izdelie_tverdooksidnyi_toplivnyi_element
   - IEC 62282
 исследовательская_группа: bloom_energy
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_tverdooksidnyi_toplivnyi_element_anode
+  - часть_tverdooksidnyi_toplivnyi_element_electrolyte
+  - часть_tverdooksidnyi_toplivnyi_element_cathode
+  - часть_tverdooksidnyi_toplivnyi_element_interconnect
+  - часть_tverdooksidnyi_toplivnyi_element_seal
+  - часть_tverdooksidnyi_toplivnyi_element_manifold
+материалы_частей:
+  - часть: часть_tverdooksidnyi_toplivnyi_element_anode
+    материал: ni_ysz_cermet
+    доля_массы: 0.18
+  - часть: часть_tverdooksidnyi_toplivnyi_element_electrolyte
+    материал: ysz_electrolyte
+    доля_массы: 0.095
+  - часть: часть_tverdooksidnyi_toplivnyi_element_cathode
+    материал: lsm_cathode
+    доля_массы: 0.18
+  - часть: часть_tverdooksidnyi_toplivnyi_element_interconnect
+    материал: crofer_22_apu
+    доля_массы: 0.285
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +64,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Твёрдооксидный топливный элемент
+источник_разбора: пользовательский ввод
+---
+# Изделие: Твёрдооксидный топливный элемент
 
 ## Описание
 
@@ -83,3 +102,25 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    tverdooksidnyi_topli["izdelie_tverdooksidnyi_toplivnyi_element"]
+    tverdooksidnyi_toplivnyi_["часть_tverdooksidnyi_toplivnyi_element_anode"]
+    tverdooksidnyi_topli --> tverdooksidnyi_toplivnyi_
+    tverdooksidnyi_toplivnyi_["часть_tverdooksidnyi_toplivnyi_element_electrolyte"]
+    tverdooksidnyi_topli --> tverdooksidnyi_toplivnyi_
+    tverdooksidnyi_toplivnyi_["часть_tverdooksidnyi_toplivnyi_element_cathode"]
+    tverdooksidnyi_topli --> tverdooksidnyi_toplivnyi_
+    tverdooksidnyi_toplivnyi_["часть_tverdooksidnyi_toplivnyi_element_interconnect"]
+    tverdooksidnyi_topli --> tverdooksidnyi_toplivnyi_
+    tverdooksidnyi_toplivnyi_["часть_tverdooksidnyi_toplivnyi_element_seal"]
+    tverdooksidnyi_topli --> tverdooksidnyi_toplivnyi_
+    tverdooksidnyi_toplivnyi_["часть_tverdooksidnyi_toplivnyi_element_manifold"]
+    tverdooksidnyi_topli --> tverdooksidnyi_toplivnyi_
+```

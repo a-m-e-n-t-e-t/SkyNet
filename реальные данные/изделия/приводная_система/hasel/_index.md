@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_hasel
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_hasel
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_hasel_core
+  - часть_hasel_housing
+  - часть_hasel_connectors
+  - часть_hasel_mounting
+материалы_частей:
+  - часть: часть_hasel_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_hasel_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: HASEL
+источник_разбора: пользовательский ввод
+---
+# Изделие: HASEL
 
 ## Описание
 
@@ -82,3 +93,21 @@ HASEL
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    hasel["izdelie_hasel"]
+    hasel_core["часть_hasel_core"]
+    hasel --> hasel_core
+    hasel_housing["часть_hasel_housing"]
+    hasel --> hasel_housing
+    hasel_connectors["часть_hasel_connectors"]
+    hasel --> hasel_connectors
+    hasel_mounting["часть_hasel_mounting"]
+    hasel --> hasel_mounting
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_nasa_asc-e_srsc
 тип: изделие
 категория: энергетика
@@ -11,8 +10,29 @@ id: izdelie_nasa_asc-e_srsc
   - NASA-STD-8729.1
 исследовательская_группа: nasa_glenn
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_nasa_asc-e_srsc_heater_head
+  - часть_nasa_asc-e_srsc_regenerator
+  - часть_nasa_asc-e_srsc_cooler
+  - часть_nasa_asc-e_srsc_displacer_piston
+  - часть_nasa_asc-e_srsc_power_piston
+  - часть_nasa_asc-e_srsc_alternator
+материалы_частей:
+  - часть: часть_nasa_asc-e_srsc_heater_head
+    материал: inconel_625
+    доля_массы: 0.19
+  - часть: часть_nasa_asc-e_srsc_regenerator
+    материал: stainless_steel_mesh
+    доля_массы: 0.095
+  - часть: часть_nasa_asc-e_srsc_displacer_piston
+    материал: inconel_718
+    доля_массы: 0.18
+  - часть: часть_nasa_asc-e_srsc_power_piston
+    материал: inconel_718
+    доля_массы: 0.18
+  - часть: часть_nasa_asc-e_srsc_alternator
+    материал: copper_wire
+    доля_массы: 0.18
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +67,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: NASA ASC-e / SRSC
+источник_разбора: пользовательский ввод
+---
+# Изделие: NASA ASC-e / SRSC
 
 ## Описание
 
@@ -83,3 +105,25 @@ NASA ASC-e / SRSC — компактный FPSE
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    nasa_asc-e_srsc["izdelie_nasa_asc-e_srsc"]
+    nasa_asc-e_srsc_heater_he["часть_nasa_asc-e_srsc_heater_head"]
+    nasa_asc-e_srsc --> nasa_asc-e_srsc_heater_he
+    nasa_asc-e_srsc_regenerat["часть_nasa_asc-e_srsc_regenerator"]
+    nasa_asc-e_srsc --> nasa_asc-e_srsc_regenerat
+    nasa_asc-e_srsc_cooler["часть_nasa_asc-e_srsc_cooler"]
+    nasa_asc-e_srsc --> nasa_asc-e_srsc_cooler
+    nasa_asc-e_srsc_displacer["часть_nasa_asc-e_srsc_displacer_piston"]
+    nasa_asc-e_srsc --> nasa_asc-e_srsc_displacer
+    nasa_asc-e_srsc_power_pis["часть_nasa_asc-e_srsc_power_piston"]
+    nasa_asc-e_srsc --> nasa_asc-e_srsc_power_pis
+    nasa_asc-e_srsc_alternato["часть_nasa_asc-e_srsc_alternator"]
+    nasa_asc-e_srsc --> nasa_asc-e_srsc_alternato
+```

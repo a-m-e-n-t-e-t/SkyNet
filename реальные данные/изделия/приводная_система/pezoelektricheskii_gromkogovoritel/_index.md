@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_pezoelektricheskii_gromkogovoritel
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_pezoelektricheskii_gromkogovoritel
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_pezoelektricheskii_gromkogovoritel_core
+  - часть_pezoelektricheskii_gromkogovoritel_housing
+  - часть_pezoelektricheskii_gromkogovoritel_connectors
+  - часть_pezoelektricheskii_gromkogovoritel_mounting
+материалы_частей:
+  - часть: часть_pezoelektricheskii_gromkogovoritel_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_pezoelektricheskii_gromkogovoritel_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: пьезоэлектрический громкоговоритель
+источник_разбора: пользовательский ввод
+---
+# Изделие: пьезоэлектрический громкоговоритель
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    pezoelektricheskii_g["izdelie_pezoelektricheskii_gromkogovoritel"]
+    pezoelektricheskii_gromko["часть_pezoelektricheskii_gromkogovoritel_core"]
+    pezoelektricheskii_g --> pezoelektricheskii_gromko
+    pezoelektricheskii_gromko["часть_pezoelektricheskii_gromkogovoritel_housing"]
+    pezoelektricheskii_g --> pezoelektricheskii_gromko
+    pezoelektricheskii_gromko["часть_pezoelektricheskii_gromkogovoritel_connectors"]
+    pezoelektricheskii_g --> pezoelektricheskii_gromko
+    pezoelektricheskii_gromko["часть_pezoelektricheskii_gromkogovoritel_mounting"]
+    pezoelektricheskii_g --> pezoelektricheskii_gromko
+```

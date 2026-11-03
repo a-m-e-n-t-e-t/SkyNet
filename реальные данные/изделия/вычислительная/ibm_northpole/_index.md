@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_ibm_northpole
 тип: изделие
 категория: электроника
@@ -11,8 +10,29 @@ id: izdelie_ibm_northpole
   - IBM 2nm
 исследовательская_группа: ibm_research
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_ibm_northpole_die
+  - часть_ibm_northpole_package
+  - часть_ibm_northpole_hbm
+  - часть_ibm_northpole_substrate
+  - часть_ibm_northpole_thermal_spreader
+  - часть_ibm_northpole_capacitors
+материалы_частей:
+  - часть: часть_ibm_northpole_die
+    материал: silicon_wafer
+    доля_массы: 0.15
+  - часть: часть_ibm_northpole_package
+    материал: bt_resin
+    доля_массы: 0.18
+  - часть: часть_ibm_northpole_hbm
+    материал: silicon_wafer
+    доля_массы: 0.15
+  - часть: часть_ibm_northpole_substrate
+    материал: bt_resin
+    доля_массы: 0.154
+  - часть: часть_ibm_northpole_thermal_spreader
+    материал: copper
+    доля_массы: 0.135
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +67,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: IBM NorthPole
+источник_разбора: пользовательский ввод
+---
+# Изделие: IBM NorthPole
 
 ## Описание
 
@@ -83,3 +105,25 @@ IBM NorthPole
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    ibm_northpole["izdelie_ibm_northpole"]
+    ibm_northpole_die["часть_ibm_northpole_die"]
+    ibm_northpole --> ibm_northpole_die
+    ibm_northpole_package["часть_ibm_northpole_package"]
+    ibm_northpole --> ibm_northpole_package
+    ibm_northpole_hbm["часть_ibm_northpole_hbm"]
+    ibm_northpole --> ibm_northpole_hbm
+    ibm_northpole_substrate["часть_ibm_northpole_substrate"]
+    ibm_northpole --> ibm_northpole_substrate
+    ibm_northpole_thermal_spr["часть_ibm_northpole_thermal_spreader"]
+    ibm_northpole --> ibm_northpole_thermal_spr
+    ibm_northpole_capacitors["часть_ibm_northpole_capacitors"]
+    ibm_northpole --> ibm_northpole_capacitors
+```

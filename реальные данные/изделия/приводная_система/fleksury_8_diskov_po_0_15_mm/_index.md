@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_fleksury_8_diskov_po_0_15_mm
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_fleksury_8_diskov_po_0_15_mm
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_fleksury_8_diskov_po_0_15_mm_core
+  - часть_fleksury_8_diskov_po_0_15_mm_housing
+  - часть_fleksury_8_diskov_po_0_15_mm_connectors
+  - часть_fleksury_8_diskov_po_0_15_mm_mounting
+материалы_частей:
+  - часть: часть_fleksury_8_diskov_po_0_15_mm_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_fleksury_8_diskov_po_0_15_mm_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: флексуры 8 дисков по 0,15 мм
+источник_разбора: пользовательский ввод
+---
+# Изделие: флексуры 8 дисков по 0,15 мм
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    fleksury_8_diskov_po["izdelie_fleksury_8_diskov_po_0_15_mm"]
+    fleksury_8_diskov_po_0_15["часть_fleksury_8_diskov_po_0_15_mm_core"]
+    fleksury_8_diskov_po --> fleksury_8_diskov_po_0_15
+    fleksury_8_diskov_po_0_15["часть_fleksury_8_diskov_po_0_15_mm_housing"]
+    fleksury_8_diskov_po --> fleksury_8_diskov_po_0_15
+    fleksury_8_diskov_po_0_15["часть_fleksury_8_diskov_po_0_15_mm_connectors"]
+    fleksury_8_diskov_po --> fleksury_8_diskov_po_0_15
+    fleksury_8_diskov_po_0_15["часть_fleksury_8_diskov_po_0_15_mm_mounting"]
+    fleksury_8_diskov_po --> fleksury_8_diskov_po_0_15
+```

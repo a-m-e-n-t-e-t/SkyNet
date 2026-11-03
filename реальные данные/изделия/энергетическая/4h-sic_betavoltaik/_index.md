@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_4h-sic_betavoltaik
 тип: изделие
 категория: энергетика
@@ -11,8 +10,28 @@ id: izdelie_4h-sic_betavoltaik
   - ISO 2919
 исследовательская_группа: widetronix
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_4h-sic_betavoltaik_isotope
+  - часть_4h-sic_betavoltaik_sic_diode
+  - часть_4h-sic_betavoltaik_substrate
+  - часть_4h-sic_betavoltaik_encapsulant
+  - часть_4h-sic_betavoltaik_case
+материалы_частей:
+  - часть: часть_4h-sic_betavoltaik_isotope
+    материал: ni63_metal
+    доля_массы: 0.2375
+  - часть: часть_4h-sic_betavoltaik_sic_diode
+    материал: silicon_carbide
+    доля_массы: 0.475
+  - часть: часть_4h-sic_betavoltaik_substrate
+    материал: silicon_carbide
+    доля_массы: 0.198
+  - часть: часть_4h-sic_betavoltaik_encapsulant
+    материал: epoxy
+    доля_массы: 0.095
+  - часть: часть_4h-sic_betavoltaik_case
+    материал: titanium_alloy
+    доля_массы: 0.285
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +66,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: 4H-SiC бетавольтаик
+источник_разбора: пользовательский ввод
+---
+# Изделие: 4H-SiC бетавольтаик
 
 ## Описание
 
@@ -83,3 +104,23 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    4h-sic_betavoltaik["izdelie_4h-sic_betavoltaik"]
+    4h-sic_betavoltaik_isotop["часть_4h-sic_betavoltaik_isotope"]
+    4h-sic_betavoltaik --> 4h-sic_betavoltaik_isotop
+    4h-sic_betavoltaik_sic_di["часть_4h-sic_betavoltaik_sic_diode"]
+    4h-sic_betavoltaik --> 4h-sic_betavoltaik_sic_di
+    4h-sic_betavoltaik_substr["часть_4h-sic_betavoltaik_substrate"]
+    4h-sic_betavoltaik --> 4h-sic_betavoltaik_substr
+    4h-sic_betavoltaik_encaps["часть_4h-sic_betavoltaik_encapsulant"]
+    4h-sic_betavoltaik --> 4h-sic_betavoltaik_encaps
+    4h-sic_betavoltaik_case["часть_4h-sic_betavoltaik_case"]
+    4h-sic_betavoltaik --> 4h-sic_betavoltaik_case
+```

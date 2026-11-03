@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_loop_heat_pipe
 тип: изделие
 категория: машиностроение
@@ -11,8 +10,18 @@ id: izdelie_loop_heat_pipe
   - ASHRAE 15
 исследовательская_группа: boyd_corp
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_loop_heat_pipe_core
+  - часть_loop_heat_pipe_housing
+  - часть_loop_heat_pipe_connectors
+  - часть_loop_heat_pipe_mounting
+материалы_частей:
+  - часть: часть_loop_heat_pipe_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_loop_heat_pipe_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +54,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Loop Heat Pipe
+источник_разбора: пользовательский ввод
+---
+# Изделие: Loop Heat Pipe
 
 ## Описание
 
@@ -81,3 +92,21 @@ Loop Heat Pipe (LHP)
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    loop_heat_pipe["izdelie_loop_heat_pipe"]
+    loop_heat_pipe_core["часть_loop_heat_pipe_core"]
+    loop_heat_pipe --> loop_heat_pipe_core
+    loop_heat_pipe_housing["часть_loop_heat_pipe_housing"]
+    loop_heat_pipe --> loop_heat_pipe_housing
+    loop_heat_pipe_connectors["часть_loop_heat_pipe_connectors"]
+    loop_heat_pipe --> loop_heat_pipe_connectors
+    loop_heat_pipe_mounting["часть_loop_heat_pipe_mounting"]
+    loop_heat_pipe --> loop_heat_pipe_mounting
+```

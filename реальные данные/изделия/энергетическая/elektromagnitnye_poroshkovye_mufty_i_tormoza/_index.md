@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza
 тип: изделие
 категория: машиностроение
@@ -11,8 +10,29 @@ id: izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza
   - DIN VDE 0580
 исследовательская_группа: kendrion_mayr
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil
+  - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor
+  - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator
+  - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_powder
+  - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_bearings
+  - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_housing
+материалы_частей:
+  - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil
+    материал: copper_wire
+    доля_массы: 0.18
+  - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor
+    материал: steel_1045
+    доля_массы: 0.285
+  - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator
+    материал: steel_1045
+    доля_массы: 0.285
+  - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_powder
+    материал: iron_powder
+    доля_массы: 0.057
+  - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_bearings
+    материал: stainless_steel_440c
+    доля_массы: 0.054
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +66,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: электромагнитные порошковые муфты и тормоза
+источник_разбора: пользовательский ввод
+---
+# Изделие: электромагнитные порошковые муфты и тормоза
 
 ## Описание
 
@@ -82,3 +104,25 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    elektromagnitnye_por["izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza"]
+    elektromagnitnye_poroshko["часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil"]
+    elektromagnitnye_por --> elektromagnitnye_poroshko
+    elektromagnitnye_poroshko["часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor"]
+    elektromagnitnye_por --> elektromagnitnye_poroshko
+    elektromagnitnye_poroshko["часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator"]
+    elektromagnitnye_por --> elektromagnitnye_poroshko
+    elektromagnitnye_poroshko["часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_powder"]
+    elektromagnitnye_por --> elektromagnitnye_poroshko
+    elektromagnitnye_poroshko["часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_bearings"]
+    elektromagnitnye_por --> elektromagnitnye_poroshko
+    elektromagnitnye_poroshko["часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_housing"]
+    elektromagnitnye_por --> elektromagnitnye_poroshko
+```

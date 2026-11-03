@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_tverdotelnye_akkumulyatory
 тип: изделие
 категория: энергетика
@@ -12,8 +11,36 @@ id: izdelie_tverdotelnye_akkumulyatory
   - UN 38.3
 исследовательская_группа: panasonic_lg
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_tverdotelnye_akkumulyatory_anode
+  - часть_tverdotelnye_akkumulyatory_cathode
+  - часть_tverdotelnye_akkumulyatory_electrolyte
+  - часть_tverdotelnye_akkumulyatory_separator
+  - часть_tverdotelnye_akkumulyatory_current_collector_cu
+  - часть_tverdotelnye_akkumulyatory_current_collector_al
+  - часть_tverdotelnye_akkumulyatory_case
+материалы_частей:
+  - часть: часть_tverdotelnye_akkumulyatory_anode
+    материал: graphite
+    доля_массы: 0.18
+  - часть: часть_tverdotelnye_akkumulyatory_cathode
+    материал: lini_mn_co_o2
+    доля_массы: 0.34
+  - часть: часть_tverdotelnye_akkumulyatory_electrolyte
+    материал: lipf6_ec_dmc
+    доля_массы: 0.19
+  - часть: часть_tverdotelnye_akkumulyatory_separator
+    материал: pe_pp
+    доля_массы: 0.038
+  - часть: часть_tverdotelnye_akkumulyatory_current_collector_cu
+    материал: copper
+    доля_массы: 0.0792
+  - часть: часть_tverdotelnye_akkumulyatory_current_collector_al
+    материал: aluminum
+    доля_массы: 0.0792
+  - часть: часть_tverdotelnye_akkumulyatory_case
+    материал: aluminum
+    доля_массы: 0.19
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -49,7 +76,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Твердотельные аккумуляторы
+источник_разбора: пользовательский ввод
+---
+# Изделие: Твердотельные аккумуляторы
 
 ## Описание
 
@@ -85,3 +114,27 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    tverdotelnye_akkumul["izdelie_tverdotelnye_akkumulyatory"]
+    tverdotelnye_akkumulyator["часть_tverdotelnye_akkumulyatory_anode"]
+    tverdotelnye_akkumul --> tverdotelnye_akkumulyator
+    tverdotelnye_akkumulyator["часть_tverdotelnye_akkumulyatory_cathode"]
+    tverdotelnye_akkumul --> tverdotelnye_akkumulyator
+    tverdotelnye_akkumulyator["часть_tverdotelnye_akkumulyatory_electrolyte"]
+    tverdotelnye_akkumul --> tverdotelnye_akkumulyator
+    tverdotelnye_akkumulyator["часть_tverdotelnye_akkumulyatory_separator"]
+    tverdotelnye_akkumul --> tverdotelnye_akkumulyator
+    tverdotelnye_akkumulyator["часть_tverdotelnye_akkumulyatory_current_collector_cu"]
+    tverdotelnye_akkumul --> tverdotelnye_akkumulyator
+    tverdotelnye_akkumulyator["часть_tverdotelnye_akkumulyatory_current_collector_al"]
+    tverdotelnye_akkumul --> tverdotelnye_akkumulyator
+    tverdotelnye_akkumulyator["часть_tverdotelnye_akkumulyatory_case"]
+    tverdotelnye_akkumul --> tverdotelnye_akkumulyator
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_dea
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_dea
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_dea_core
+  - часть_dea_housing
+  - часть_dea_connectors
+  - часть_dea_mounting
+материалы_частей:
+  - часть: часть_dea_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_dea_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: DEA
+источник_разбора: пользовательский ввод
+---
+# Изделие: DEA
 
 ## Описание
 
@@ -82,3 +93,21 @@ DEA
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    dea["izdelie_dea"]
+    dea_core["часть_dea_core"]
+    dea --> dea_core
+    dea_housing["часть_dea_housing"]
+    dea --> dea_housing
+    dea_connectors["часть_dea_connectors"]
+    dea --> dea_connectors
+    dea_mounting["часть_dea_mounting"]
+    dea --> dea_mounting
+```

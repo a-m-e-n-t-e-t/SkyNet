@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_mptm
 тип: изделие
 категория: энергетика
@@ -10,8 +9,22 @@ id: izdelie_mptm
 стандарты: []
 исследовательская_группа: doe_arpa_e
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_mptm_engine
+  - часть_mptm_generator
+  - часть_mptm_heat_exchanger
+  - часть_mptm_controls
+  - часть_mptm_housing
+материалы_частей:
+  - часть: часть_mptm_engine
+    материал: cast_iron
+    доля_массы: 0.28
+  - часть: часть_mptm_generator
+    материал: copper_wire
+    доля_массы: 0.15
+  - часть: часть_mptm_heat_exchanger
+    материал: stainless_steel_316
+    доля_массы: 0.14
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -44,7 +57,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: MPTM
+источник_разбора: пользовательский ввод
+---
+# Изделие: MPTM
 
 ## Описание
 
@@ -80,3 +95,23 @@ MPTM
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    mptm["izdelie_mptm"]
+    mptm_engine["часть_mptm_engine"]
+    mptm --> mptm_engine
+    mptm_generator["часть_mptm_generator"]
+    mptm --> mptm_generator
+    mptm_heat_exchanger["часть_mptm_heat_exchanger"]
+    mptm --> mptm_heat_exchanger
+    mptm_controls["часть_mptm_controls"]
+    mptm --> mptm_controls
+    mptm_housing["часть_mptm_housing"]
+    mptm --> mptm_housing
+```

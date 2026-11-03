@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_starlink_mini
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_starlink_mini
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_starlink_mini_core
+  - часть_starlink_mini_housing
+  - часть_starlink_mini_connectors
+  - часть_starlink_mini_mounting
+материалы_частей:
+  - часть: часть_starlink_mini_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_starlink_mini_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Starlink Mini
+источник_разбора: пользовательский ввод
+---
+# Изделие: Starlink Mini
 
 ## Описание
 
@@ -82,3 +93,21 @@ Starlink Mini
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    starlink_mini["izdelie_starlink_mini"]
+    starlink_mini_core["часть_starlink_mini_core"]
+    starlink_mini --> starlink_mini_core
+    starlink_mini_housing["часть_starlink_mini_housing"]
+    starlink_mini --> starlink_mini_housing
+    starlink_mini_connectors["часть_starlink_mini_connectors"]
+    starlink_mini --> starlink_mini_connectors
+    starlink_mini_mounting["часть_starlink_mini_mounting"]
+    starlink_mini --> starlink_mini_mounting
+```

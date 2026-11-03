@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_aesa_radar
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_aesa_radar
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_aesa_radar_core
+  - часть_aesa_radar_housing
+  - часть_aesa_radar_connectors
+  - часть_aesa_radar_mounting
+материалы_частей:
+  - часть: часть_aesa_radar_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_aesa_radar_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: AESA радар
+источник_разбора: пользовательский ввод
+---
+# Изделие: AESA радар
 
 ## Описание
 
@@ -82,3 +93,21 @@ AESA радар
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    aesa_radar["izdelie_aesa_radar"]
+    aesa_radar_core["часть_aesa_radar_core"]
+    aesa_radar --> aesa_radar_core
+    aesa_radar_housing["часть_aesa_radar_housing"]
+    aesa_radar --> aesa_radar_housing
+    aesa_radar_connectors["часть_aesa_radar_connectors"]
+    aesa_radar --> aesa_radar_connectors
+    aesa_radar_mounting["часть_aesa_radar_mounting"]
+    aesa_radar --> aesa_radar_mounting
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_provodnikovaya_nanoreshetka
 тип: изделие
 категория: прочее
@@ -11,8 +10,18 @@ id: izdelie_provodnikovaya_nanoreshetka
   - ISO 9001
 исследовательская_группа: various
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_provodnikovaya_nanoreshetka_core
+  - часть_provodnikovaya_nanoreshetka_housing
+  - часть_provodnikovaya_nanoreshetka_connectors
+  - часть_provodnikovaya_nanoreshetka_mounting
+материалы_частей:
+  - часть: часть_provodnikovaya_nanoreshetka_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_provodnikovaya_nanoreshetka_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +54,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Проводниковая нанорешётка
+источник_разбора: пользовательский ввод
+---
+# Изделие: Проводниковая нанорешётка
 
 ## Описание
 
@@ -81,3 +92,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    provodnikovaya_nanor["izdelie_provodnikovaya_nanoreshetka"]
+    provodnikovaya_nanoreshet["часть_provodnikovaya_nanoreshetka_core"]
+    provodnikovaya_nanor --> provodnikovaya_nanoreshet
+    provodnikovaya_nanoreshet["часть_provodnikovaya_nanoreshetka_housing"]
+    provodnikovaya_nanor --> provodnikovaya_nanoreshet
+    provodnikovaya_nanoreshet["часть_provodnikovaya_nanoreshetka_connectors"]
+    provodnikovaya_nanor --> provodnikovaya_nanoreshet
+    provodnikovaya_nanoreshet["часть_provodnikovaya_nanoreshetka_mounting"]
+    provodnikovaya_nanor --> provodnikovaya_nanoreshet
+```

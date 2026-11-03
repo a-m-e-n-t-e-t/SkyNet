@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_kondensatory_keramicheskie
 тип: изделие
 категория: электроника
@@ -12,8 +11,28 @@ id: izdelie_kondensatory_keramicheskie
   - AEC-Q200
 исследовательская_группа: Murata_TDK
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_kondensatory_keramicheskie_ceramic_layers
+  - часть_kondensatory_keramicheskie_inner_electrodes
+  - часть_kondensatory_keramicheskie_outer_electrodes
+  - часть_kondensatory_keramicheskie_termination
+  - часть_kondensatory_keramicheskie_plating
+материалы_частей:
+  - часть: часть_kondensatory_keramicheskie_ceramic_layers
+    материал: barium_titanate
+    доля_массы: 0.475
+  - часть: часть_kondensatory_keramicheskie_inner_electrodes
+    материал: nickel
+    доля_массы: 0.19
+  - часть: часть_kondensatory_keramicheskie_outer_electrodes
+    материал: copper
+    доля_массы: 0.08
+  - часть: часть_kondensatory_keramicheskie_termination
+    материал: copper
+    доля_массы: 0.09
+  - часть: часть_kondensatory_keramicheskie_plating
+    материал: tin
+    доля_массы: 0.09
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -48,7 +67,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Конденсаторы: керамические
+источник_разбора: пользовательский ввод
+---
+# Изделие: Конденсаторы: керамические
 
 ## Описание
 
@@ -84,3 +105,23 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    kondensatory_keramic["izdelie_kondensatory_keramicheskie"]
+    kondensatory_keramicheski["часть_kondensatory_keramicheskie_ceramic_layers"]
+    kondensatory_keramic --> kondensatory_keramicheski
+    kondensatory_keramicheski["часть_kondensatory_keramicheskie_inner_electrodes"]
+    kondensatory_keramic --> kondensatory_keramicheski
+    kondensatory_keramicheski["часть_kondensatory_keramicheskie_outer_electrodes"]
+    kondensatory_keramic --> kondensatory_keramicheski
+    kondensatory_keramicheski["часть_kondensatory_keramicheskie_termination"]
+    kondensatory_keramic --> kondensatory_keramicheski
+    kondensatory_keramicheski["часть_kondensatory_keramicheskie_plating"]
+    kondensatory_keramic --> kondensatory_keramicheski
+```

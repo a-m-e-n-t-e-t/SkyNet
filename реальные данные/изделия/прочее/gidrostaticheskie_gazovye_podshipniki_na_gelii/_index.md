@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_gidrostaticheskie_gazovye_podshipniki_na_gelii
 тип: изделие
 категория: прочее
@@ -11,8 +10,18 @@ id: izdelie_gidrostaticheskie_gazovye_podshipniki_na_gelii
   - ISO 9001
 исследовательская_группа: various
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_core
+  - часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_housing
+  - часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_connectors
+  - часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_mounting
+материалы_частей:
+  - часть: часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +54,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Гидростатические газовые подшипники на гелии
+источник_разбора: пользовательский ввод
+---
+# Изделие: Гидростатические газовые подшипники на гелии
 
 ## Описание
 
@@ -81,3 +92,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    gidrostaticheskie_ga["izdelie_gidrostaticheskie_gazovye_podshipniki_na_gelii"]
+    gidrostaticheskie_gazovye["часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_core"]
+    gidrostaticheskie_ga --> gidrostaticheskie_gazovye
+    gidrostaticheskie_gazovye["часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_housing"]
+    gidrostaticheskie_ga --> gidrostaticheskie_gazovye
+    gidrostaticheskie_gazovye["часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_connectors"]
+    gidrostaticheskie_ga --> gidrostaticheskie_gazovye
+    gidrostaticheskie_gazovye["часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_mounting"]
+    gidrostaticheskie_ga --> gidrostaticheskie_gazovye
+```

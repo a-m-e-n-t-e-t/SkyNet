@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_litii-tionilhloridnye_batarei
 тип: изделие
 категория: энергетика
@@ -12,8 +11,29 @@ id: izdelie_litii-tionilhloridnye_batarei
   - UN 3090
 исследовательская_группа: saft_tadiran
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_litii-tionilhloridnye_batarei_anode
+  - часть_litii-tionilhloridnye_batarei_cathode
+  - часть_litii-tionilhloridnye_batarei_electrolyte
+  - часть_litii-tionilhloridnye_batarei_separator
+  - часть_litii-tionilhloridnye_batarei_case
+  - часть_litii-tionilhloridnye_batarei_terminal
+материалы_частей:
+  - часть: часть_litii-tionilhloridnye_batarei_anode
+    материал: lithium_metal
+    доля_массы: 0.19
+  - часть: часть_litii-tionilhloridnye_batarei_cathode
+    материал: carbon_black
+    доля_массы: 0.18
+  - часть: часть_litii-tionilhloridnye_batarei_electrolyte
+    материал: socl2
+    доля_массы: 0.38
+  - часть: часть_litii-tionilhloridnye_batarei_separator
+    материал: pp_membrane
+    доля_массы: 0.019
+  - часть: часть_litii-tionilhloridnye_batarei_case
+    материал: stainless_steel_304
+    доля_массы: 0.19
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -49,7 +69,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Литий-тионилхлоридные батареи
+источник_разбора: пользовательский ввод
+---
+# Изделие: Литий-тионилхлоридные батареи
 
 ## Описание
 
@@ -85,3 +107,25 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    litii-tionilhloridny["izdelie_litii-tionilhloridnye_batarei"]
+    litii-tionilhloridnye_bat["часть_litii-tionilhloridnye_batarei_anode"]
+    litii-tionilhloridny --> litii-tionilhloridnye_bat
+    litii-tionilhloridnye_bat["часть_litii-tionilhloridnye_batarei_cathode"]
+    litii-tionilhloridny --> litii-tionilhloridnye_bat
+    litii-tionilhloridnye_bat["часть_litii-tionilhloridnye_batarei_electrolyte"]
+    litii-tionilhloridny --> litii-tionilhloridnye_bat
+    litii-tionilhloridnye_bat["часть_litii-tionilhloridnye_batarei_separator"]
+    litii-tionilhloridny --> litii-tionilhloridnye_bat
+    litii-tionilhloridnye_bat["часть_litii-tionilhloridnye_batarei_case"]
+    litii-tionilhloridny --> litii-tionilhloridnye_bat
+    litii-tionilhloridnye_bat["часть_litii-tionilhloridnye_batarei_terminal"]
+    litii-tionilhloridny --> litii-tionilhloridnye_bat
+```

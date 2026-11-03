@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_obd-ii
 тип: изделие
 категория: электроника
@@ -12,8 +11,18 @@ id: izdelie_obd-ii
   - ETSI EN 301 489
 исследовательская_группа: harris_thales
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_obd-ii_core
+  - часть_obd-ii_housing
+  - часть_obd-ii_connectors
+  - часть_obd-ii_mounting
+материалы_частей:
+  - часть: часть_obd-ii_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_obd-ii_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: OBD-II
+источник_разбора: пользовательский ввод
+---
+# Изделие: OBD-II
 
 ## Описание
 
@@ -82,3 +93,21 @@ OBD-II
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    obd-ii["izdelie_obd-ii"]
+    obd-ii_core["часть_obd-ii_core"]
+    obd-ii --> obd-ii_core
+    obd-ii_housing["часть_obd-ii_housing"]
+    obd-ii --> obd-ii_housing
+    obd-ii_connectors["часть_obd-ii_connectors"]
+    obd-ii --> obd-ii_connectors
+    obd-ii_mounting["часть_obd-ii_mounting"]
+    obd-ii --> obd-ii_mounting
+```

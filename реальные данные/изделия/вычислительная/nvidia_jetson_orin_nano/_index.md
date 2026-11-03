@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_nvidia_jetson_orin_nano
 тип: изделие
 категория: электроника
@@ -12,8 +11,35 @@ id: izdelie_nvidia_jetson_orin_nano
   - PCIe 3.0
 исследовательская_группа: nvidia
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_nvidia_jetson_orin_nano_soc
+  - часть_nvidia_jetson_orin_nano_memory
+  - часть_nvidia_jetson_orin_nano_storage
+  - часть_nvidia_jetson_orin_nano_pmic
+  - часть_nvidia_jetson_orin_nano_wifi_bt
+  - часть_nvidia_jetson_orin_nano_connectors
+  - часть_nvidia_jetson_orin_nano_heat_sink
+  - часть_nvidia_jetson_orin_nano_pcb
+  - часть_nvidia_jetson_orin_nano_enclosure
+материалы_частей:
+  - часть: часть_nvidia_jetson_orin_nano_soc
+    материал: silicon_wafer
+    доля_массы: 0.09
+  - часть: часть_nvidia_jetson_orin_nano_memory
+    материал: silicon_wafer
+    доля_массы: 0.045
+  - часть: часть_nvidia_jetson_orin_nano_storage
+    материал: silicon_wafer
+    доля_массы: 0.045
+  - часть: часть_nvidia_jetson_orin_nano_heat_sink
+    материал: aluminum
+    доля_массы: 0.285
+  - часть: часть_nvidia_jetson_orin_nano_pcb
+    материал: fr4
+    доля_массы: 0.32
+  - часть: часть_nvidia_jetson_orin_nano_enclosure
+    материал: aluminum
+    доля_массы: 0.45
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -50,7 +76,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: NVIDIA Jetson Orin Nano
+источник_разбора: пользовательский ввод
+---
+# Изделие: NVIDIA Jetson Orin Nano
 
 ## Описание
 
@@ -86,3 +114,31 @@ NVIDIA Jetson Orin Nano
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    nvidia_jetson_orin_n["izdelie_nvidia_jetson_orin_nano"]
+    nvidia_jetson_orin_nano_s["часть_nvidia_jetson_orin_nano_soc"]
+    nvidia_jetson_orin_n --> nvidia_jetson_orin_nano_s
+    nvidia_jetson_orin_nano_m["часть_nvidia_jetson_orin_nano_memory"]
+    nvidia_jetson_orin_n --> nvidia_jetson_orin_nano_m
+    nvidia_jetson_orin_nano_s["часть_nvidia_jetson_orin_nano_storage"]
+    nvidia_jetson_orin_n --> nvidia_jetson_orin_nano_s
+    nvidia_jetson_orin_nano_p["часть_nvidia_jetson_orin_nano_pmic"]
+    nvidia_jetson_orin_n --> nvidia_jetson_orin_nano_p
+    nvidia_jetson_orin_nano_w["часть_nvidia_jetson_orin_nano_wifi_bt"]
+    nvidia_jetson_orin_n --> nvidia_jetson_orin_nano_w
+    nvidia_jetson_orin_nano_c["часть_nvidia_jetson_orin_nano_connectors"]
+    nvidia_jetson_orin_n --> nvidia_jetson_orin_nano_c
+    nvidia_jetson_orin_nano_h["часть_nvidia_jetson_orin_nano_heat_sink"]
+    nvidia_jetson_orin_n --> nvidia_jetson_orin_nano_h
+    nvidia_jetson_orin_nano_p["часть_nvidia_jetson_orin_nano_pcb"]
+    nvidia_jetson_orin_n --> nvidia_jetson_orin_nano_p
+    nvidia_jetson_orin_nano_e["часть_nvidia_jetson_orin_nano_enclosure"]
+    nvidia_jetson_orin_n --> nvidia_jetson_orin_nano_e
+```

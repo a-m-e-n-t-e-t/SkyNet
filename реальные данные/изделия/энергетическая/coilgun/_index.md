@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_coilgun
 тип: изделие
 категория: энергетика
@@ -10,8 +9,23 @@ id: izdelie_coilgun
 стандарты: []
 исследовательская_группа: sandia_labs
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_coilgun_coil
+  - часть_coilgun_capacitor_bank
+  - часть_coilgun_barrel
+  - часть_coilgun_switch
+  - часть_coilgun_projectile
+  - часть_coilgun_housing
+материалы_частей:
+  - часть: часть_coilgun_coil
+    материал: copper_wire
+    доля_массы: 0.38
+  - часть: часть_coilgun_capacitor_bank
+    материал: aluminum_electrolytic
+    доля_массы: 0.36
+  - часть: часть_coilgun_barrel
+    материал: composite_material
+    доля_массы: 0.09
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,7 +59,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Coilgun
+источник_разбора: пользовательский ввод
+---
+# Изделие: Coilgun
 
 ## Описание
 
@@ -81,3 +97,25 @@ Coilgun (электромагнитная катапульта) — рельсо
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    coilgun["izdelie_coilgun"]
+    coilgun_coil["часть_coilgun_coil"]
+    coilgun --> coilgun_coil
+    coilgun_capacitor_bank["часть_coilgun_capacitor_bank"]
+    coilgun --> coilgun_capacitor_bank
+    coilgun_barrel["часть_coilgun_barrel"]
+    coilgun --> coilgun_barrel
+    coilgun_switch["часть_coilgun_switch"]
+    coilgun --> coilgun_switch
+    coilgun_projectile["часть_coilgun_projectile"]
+    coilgun --> coilgun_projectile
+    coilgun_housing["часть_coilgun_housing"]
+    coilgun --> coilgun_housing
+```

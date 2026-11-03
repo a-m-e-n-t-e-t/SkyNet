@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_poristyi_gazovyi_podshipnik_iz_sic
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_poristyi_gazovyi_podshipnik_iz_sic
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_poristyi_gazovyi_podshipnik_iz_sic_core
+  - часть_poristyi_gazovyi_podshipnik_iz_sic_housing
+  - часть_poristyi_gazovyi_podshipnik_iz_sic_connectors
+  - часть_poristyi_gazovyi_podshipnik_iz_sic_mounting
+материалы_частей:
+  - часть: часть_poristyi_gazovyi_podshipnik_iz_sic_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_poristyi_gazovyi_podshipnik_iz_sic_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: пористый газовый подшипник из SiC
+источник_разбора: пользовательский ввод
+---
+# Изделие: пористый газовый подшипник из SiC
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    poristyi_gazovyi_pod["izdelie_poristyi_gazovyi_podshipnik_iz_sic"]
+    poristyi_gazovyi_podshipn["часть_poristyi_gazovyi_podshipnik_iz_sic_core"]
+    poristyi_gazovyi_pod --> poristyi_gazovyi_podshipn
+    poristyi_gazovyi_podshipn["часть_poristyi_gazovyi_podshipnik_iz_sic_housing"]
+    poristyi_gazovyi_pod --> poristyi_gazovyi_podshipn
+    poristyi_gazovyi_podshipn["часть_poristyi_gazovyi_podshipnik_iz_sic_connectors"]
+    poristyi_gazovyi_pod --> poristyi_gazovyi_podshipn
+    poristyi_gazovyi_podshipn["часть_poristyi_gazovyi_podshipnik_iz_sic_mounting"]
+    poristyi_gazovyi_pod --> poristyi_gazovyi_podshipn
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_optovolokonnaya_shina
 тип: изделие
 категория: электроника
@@ -12,8 +11,18 @@ id: izdelie_optovolokonnaya_shina
   - ETSI EN 301 489
 исследовательская_группа: harris_thales
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_optovolokonnaya_shina_core
+  - часть_optovolokonnaya_shina_housing
+  - часть_optovolokonnaya_shina_connectors
+  - часть_optovolokonnaya_shina_mounting
+материалы_частей:
+  - часть: часть_optovolokonnaya_shina_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_optovolokonnaya_shina_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: оптоволоконная шина
+источник_разбора: пользовательский ввод
+---
+# Изделие: оптоволоконная шина
 
 ## Описание
 
@@ -82,3 +93,21 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    optovolokonnaya_shin["izdelie_optovolokonnaya_shina"]
+    optovolokonnaya_shina_cor["часть_optovolokonnaya_shina_core"]
+    optovolokonnaya_shin --> optovolokonnaya_shina_cor
+    optovolokonnaya_shina_hou["часть_optovolokonnaya_shina_housing"]
+    optovolokonnaya_shin --> optovolokonnaya_shina_hou
+    optovolokonnaya_shina_con["часть_optovolokonnaya_shina_connectors"]
+    optovolokonnaya_shin --> optovolokonnaya_shina_con
+    optovolokonnaya_shina_mou["часть_optovolokonnaya_shina_mounting"]
+    optovolokonnaya_shin --> optovolokonnaya_shina_mou
+```

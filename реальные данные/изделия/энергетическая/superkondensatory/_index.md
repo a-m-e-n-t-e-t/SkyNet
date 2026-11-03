@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_superkondensatory
 тип: изделие
 категория: энергетика
@@ -11,8 +10,33 @@ id: izdelie_superkondensatory
   - IEC 62391
 исследовательская_группа: maxwell_technologies
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_superkondensatory_electrode_pos
+  - часть_superkondensatory_electrode_neg
+  - часть_superkondensatory_separator
+  - часть_superkondensatory_electrolyte
+  - часть_superkondensatory_current_collector
+  - часть_superkondensatory_terminal
+  - часть_superkondensatory_case
+материалы_частей:
+  - часть: часть_superkondensatory_electrode_pos
+    материал: activated_carbon
+    доля_массы: 0.27
+  - часть: часть_superkondensatory_electrode_neg
+    материал: activated_carbon
+    доля_массы: 0.27
+  - часть: часть_superkondensatory_separator
+    материал: cellulose
+    доля_массы: 0.0475
+  - часть: часть_superkondensatory_electrolyte
+    материал: tebabf4_acn
+    доля_массы: 0.1425
+  - часть: часть_superkondensatory_current_collector
+    материал: aluminum
+    доля_массы: 0.1425
+  - часть: часть_superkondensatory_case
+    материал: aluminum
+    доля_массы: 0.1425
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +71,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: Суперконденсаторы
+источник_разбора: пользовательский ввод
+---
+# Изделие: Суперконденсаторы
 
 ## Описание
 
@@ -83,3 +109,27 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    superkondensatory["izdelie_superkondensatory"]
+    superkondensatory_electro["часть_superkondensatory_electrode_pos"]
+    superkondensatory --> superkondensatory_electro
+    superkondensatory_electro["часть_superkondensatory_electrode_neg"]
+    superkondensatory --> superkondensatory_electro
+    superkondensatory_separat["часть_superkondensatory_separator"]
+    superkondensatory --> superkondensatory_separat
+    superkondensatory_electro["часть_superkondensatory_electrolyte"]
+    superkondensatory --> superkondensatory_electro
+    superkondensatory_current["часть_superkondensatory_current_collector"]
+    superkondensatory --> superkondensatory_current
+    superkondensatory_termina["часть_superkondensatory_terminal"]
+    superkondensatory --> superkondensatory_termina
+    superkondensatory_case["часть_superkondensatory_case"]
+    superkondensatory --> superkondensatory_case
+```

@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_flir_lwir_2
 тип: изделие
 категория: оптика
@@ -12,8 +11,18 @@ id: izdelie_flir_lwir_2
   - IEC 60068
 исследовательская_группа: flir_l3
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_flir_lwir_2_core
+  - часть_flir_lwir_2_housing
+  - часть_flir_lwir_2_connectors
+  - часть_flir_lwir_2_mounting
+материалы_частей:
+  - часть: часть_flir_lwir_2_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_flir_lwir_2_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: FLIR LWIR ×2
+источник_разбора: пользовательский ввод
+---
+# Изделие: FLIR LWIR ×2
 
 ## Описание
 
@@ -82,3 +93,21 @@ FLIR LWIR ×2
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    flir_lwir_2["izdelie_flir_lwir_2"]
+    flir_lwir_2_core["часть_flir_lwir_2_core"]
+    flir_lwir_2 --> flir_lwir_2_core
+    flir_lwir_2_housing["часть_flir_lwir_2_housing"]
+    flir_lwir_2 --> flir_lwir_2_housing
+    flir_lwir_2_connectors["часть_flir_lwir_2_connectors"]
+    flir_lwir_2 --> flir_lwir_2_connectors
+    flir_lwir_2_mounting["часть_flir_lwir_2_mounting"]
+    flir_lwir_2 --> flir_lwir_2_mounting
+```

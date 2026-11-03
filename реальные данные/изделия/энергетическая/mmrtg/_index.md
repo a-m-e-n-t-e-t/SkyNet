@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_mmrtg
 тип: изделие
 категория: энергетика
@@ -12,8 +11,30 @@ id: izdelie_mmrtg
   - DOE 10 CFR 71
 исследовательская_группа: nasa_glenn
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_mmrtg_isotope
+  - часть_mmrtg_thermocouples
+  - часть_mmrtg_cold_side
+  - часть_mmrtg_hot_side
+  - часть_mmrtg_housing
+  - часть_mmrtg_thermal_insulation
+  - часть_mmrtg_connector
+материалы_частей:
+  - часть: часть_mmrtg_isotope
+    материал: pu238_oxide
+    доля_массы: 0.38
+  - часть: часть_mmrtg_thermocouples
+    материал: pbte_teg
+    доля_массы: 0.27
+  - часть: часть_mmrtg_cold_side
+    материал: aluminum
+    доля_массы: 0.1425
+  - часть: часть_mmrtg_housing
+    материал: titanium_alloy
+    доля_массы: 0.285
+  - часть: часть_mmrtg_thermal_insulation
+    материал: aerogel
+    доля_массы: 0.09
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -48,7 +69,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: MMRTG
+источник_разбора: пользовательский ввод
+---
+# Изделие: MMRTG
 
 ## Описание
 
@@ -84,3 +107,27 @@ MMRTG
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    mmrtg["izdelie_mmrtg"]
+    mmrtg_isotope["часть_mmrtg_isotope"]
+    mmrtg --> mmrtg_isotope
+    mmrtg_thermocouples["часть_mmrtg_thermocouples"]
+    mmrtg --> mmrtg_thermocouples
+    mmrtg_cold_side["часть_mmrtg_cold_side"]
+    mmrtg --> mmrtg_cold_side
+    mmrtg_hot_side["часть_mmrtg_hot_side"]
+    mmrtg --> mmrtg_hot_side
+    mmrtg_housing["часть_mmrtg_housing"]
+    mmrtg --> mmrtg_housing
+    mmrtg_thermal_insulation["часть_mmrtg_thermal_insulation"]
+    mmrtg --> mmrtg_thermal_insulation
+    mmrtg_connector["часть_mmrtg_connector"]
+    mmrtg --> mmrtg_connector
+```

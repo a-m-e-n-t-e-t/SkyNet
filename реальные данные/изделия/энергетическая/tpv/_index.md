@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_tpv
 тип: изделие
 категория: энергетика
@@ -11,8 +10,23 @@ id: izdelie_tpv
   - IEC 60904
 исследовательская_группа: mit_lincoln
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_tpv_emitter
+  - часть_tpv_filter
+  - часть_tpv_pv_cell
+  - часть_tpv_heat_source
+  - часть_tpv_housing
+  - часть_tpv_cooling
+материалы_частей:
+  - часть: часть_tpv_emitter
+    материал: tungsten
+    доля_массы: 0.285
+  - часть: часть_tpv_pv_cell
+    материал: gaSb
+    доля_массы: 0.135
+  - часть: часть_tpv_heat_source
+    материал: silicon_carbide
+    доля_массы: 0.36
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +61,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: TPV
+источник_разбора: пользовательский ввод
+---
+# Изделие: TPV
 
 ## Описание
 
@@ -83,3 +99,25 @@ TPV — Термофотovoltaический преобразователь на
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    tpv["izdelie_tpv"]
+    tpv_emitter["часть_tpv_emitter"]
+    tpv --> tpv_emitter
+    tpv_filter["часть_tpv_filter"]
+    tpv --> tpv_filter
+    tpv_pv_cell["часть_tpv_pv_cell"]
+    tpv --> tpv_pv_cell
+    tpv_heat_source["часть_tpv_heat_source"]
+    tpv --> tpv_heat_source
+    tpv_housing["часть_tpv_housing"]
+    tpv --> tpv_housing
+    tpv_cooling["часть_tpv_cooling"]
+    tpv --> tpv_cooling
+```

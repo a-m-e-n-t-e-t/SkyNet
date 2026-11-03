@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_apa
 тип: изделие
 категория: машиностроение
@@ -12,8 +11,18 @@ id: izdelie_apa
   - ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_apa_core
+  - часть_apa_housing
+  - часть_apa_connectors
+  - часть_apa_mounting
+материалы_частей:
+  - часть: часть_apa_core
+    материал: generic_material
+    доля_массы: 0.45
+  - часть: часть_apa_housing
+    материал: aluminum
+    доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -46,7 +55,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: APA
+источник_разбора: пользовательский ввод
+---
+# Изделие: APA
 
 ## Описание
 
@@ -82,3 +93,21 @@ APA (Amplified Piezo Actuator)
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    apa["izdelie_apa"]
+    apa_core["часть_apa_core"]
+    apa --> apa_core
+    apa_housing["часть_apa_housing"]
+    apa --> apa_housing
+    apa_connectors["часть_apa_connectors"]
+    apa --> apa_connectors
+    apa_mounting["часть_apa_mounting"]
+    apa --> apa_mounting
+```

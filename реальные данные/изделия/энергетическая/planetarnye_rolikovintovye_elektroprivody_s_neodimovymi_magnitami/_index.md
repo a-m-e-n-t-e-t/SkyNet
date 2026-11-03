@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami
 тип: изделие
 категория: машиностроение
@@ -11,8 +10,26 @@ id: izdelie_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami
   - DIN 69051
 исследовательская_группа: gsk_rollvis
 родитель: null
-дочерние_части: []
-материалы_частей: []
+дочерние_части:
+  - часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_screw
+  - часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_rollers
+  - часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_nut
+  - часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_bearings
+  - часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_seals
+  - часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_housing
+материалы_частей:
+  - часть: часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_screw
+    материал: bearing_steel_52100
+    доля_массы: 0.38
+  - часть: часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_rollers
+    материал: bearing_steel_52100
+    доля_массы: 0.19
+  - часть: часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_nut
+    материал: bearing_steel_52100
+    доля_массы: 0.38
+  - часть: часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_bearings
+    материал: stainless_steel_440c
+    доля_массы: 0.09
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -47,7 +64,9 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: user_input
-источник_разбора: пользовательский ввод# Изделие: планетарные роликовинтовые электроприводы с неодимовыми магнитами
+источник_разбора: пользовательский ввод
+---
+# Изделие: планетарные роликовинтовые электроприводы с неодимовыми магнитами
 
 ## Описание
 
@@ -83,3 +102,25 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    planetarnye_rolikovi["izdelie_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami"]
+    planetarnye_rolikovintovy["часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_screw"]
+    planetarnye_rolikovi --> planetarnye_rolikovintovy
+    planetarnye_rolikovintovy["часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_rollers"]
+    planetarnye_rolikovi --> planetarnye_rolikovintovy
+    planetarnye_rolikovintovy["часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_nut"]
+    planetarnye_rolikovi --> planetarnye_rolikovintovy
+    planetarnye_rolikovintovy["часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_bearings"]
+    planetarnye_rolikovi --> planetarnye_rolikovintovy
+    planetarnye_rolikovintovy["часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_seals"]
+    planetarnye_rolikovi --> planetarnye_rolikovintovy
+    planetarnye_rolikovintovy["часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_housing"]
+    planetarnye_rolikovi --> planetarnye_rolikovintovy
+```
