@@ -1,8 +1,11 @@
 ---
+
 id: tekhnologia_explosive_flux_compression
 тип: технология
 категория: обработка
-область_применения: []
+область_применения: 
+  - энергетика
+  - взрывное_сжатие_магнитного_потока_FCG
 версия: реальная
 статус_реальности: real
 доступность: промышленный
@@ -12,14 +15,29 @@ id: tekhnologia_explosive_flux_compression
   верификация: []
 источник: user_input
 источник_разбора: пользовательский ввод
-основные:
-  температура_режима_C: {min: null, max: null, nominal: null}
-  давление_Pa: {min: null, max: null, nominal: null}
-  время_цикла_s: {min: null, max: null, nominal: null}
-  кпд_процента: {min: null, max: null, nominal: null}
-  производительность_шт_ч: {min: null, max: null, nominal: null}
-  потребление_энергии_kWh: null
-  потребление_воды_L: null
+основные: 
+  температура_режима_C:
+          min: 20
+          max: 3000
+          nominal: 1500
+  давление_Pa:
+          min: 1000000000
+          max: 50000000000
+          nominal: 10000000000
+  время_цикла_s:
+          min: 1e-06
+          max: 0.001
+          nominal: 0.0001
+  кпд_процента:
+          min: 5
+          max: 25
+          nominal: 15
+  производительность_шт_ч:
+          min: 1
+          max: 10
+          nominal: 1
+  потребление_энергии_kWh: 0.1
+  потребление_воды_L: 0
 наследуемые:
   стандартные_параметры: {computed_from: прототип}
   сертификация: {computed_from: прототип}
@@ -29,10 +47,7 @@ id: tekhnologia_explosive_flux_compression
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
----
-
-# Технология: Explosive flux compression
+дата_обновления: 2026-11-03# Технология: Explosive flux compression
 
 ## Описание
 

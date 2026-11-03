@@ -1,8 +1,12 @@
 ---
+
 id: tekhnologia_dc_magnetron_sputtering
 тип: технология
 категория: обработка
-область_применения: []
+область_применения: 
+  - микроэлектроника
+  - PVD_распыление
+  - магнетронное_напыление
 версия: реальная
 статус_реальности: real
 доступность: промышленный
@@ -12,14 +16,29 @@ id: tekhnologia_dc_magnetron_sputtering
   верификация: []
 источник: user_input
 источник_разбора: пользовательский ввод
-основные:
-  температура_режима_C: {min: null, max: null, nominal: null}
-  давление_Pa: {min: null, max: null, nominal: null}
-  время_цикла_s: {min: null, max: null, nominal: null}
-  кпд_процента: {min: null, max: null, nominal: null}
-  производительность_шт_ч: {min: null, max: null, nominal: null}
-  потребление_энергии_kWh: null
-  потребление_воды_L: null
+основные: 
+  температура_режима_C:
+          min: 20
+          max: 400
+          nominal: 200
+  давление_Pa:
+          min: 0.1
+          max: 5
+          nominal: 1
+  время_цикла_s:
+          min: 300
+          max: 14400
+          nominal: 7200
+  кпд_процента:
+          min: 60
+          max: 90
+          nominal: 75
+  производительность_шт_ч:
+          min: 1
+          max: 20
+          nominal: 5
+  потребление_энергии_kWh: 10
+  потребление_воды_L: 100
 наследуемые:
   стандартные_параметры: {computed_from: прототип}
   сертификация: {computed_from: прототип}
@@ -29,10 +48,7 @@ id: tekhnologia_dc_magnetron_sputtering
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
----
-
-# Технология: DC magnetron sputtering
+дата_обновления: 2026-11-03# Технология: DC magnetron sputtering
 
 ## Описание
 

@@ -1,8 +1,11 @@
 ---
+
 id: tekhnologia_bare-die_integration
 тип: технология
 категория: обработка
-область_применения: []
+область_применения: 
+  - микроэлектроника
+  - bare_die_интеграция_без_корпуса
 версия: реальная
 статус_реальности: real
 доступность: промышленный
@@ -12,14 +15,29 @@ id: tekhnologia_bare-die_integration
   верификация: []
 источник: user_input
 источник_разбора: пользовательский ввод
-основные:
-  температура_режима_C: {min: null, max: null, nominal: null}
-  давление_Pa: {min: null, max: null, nominal: null}
-  время_цикла_s: {min: null, max: null, nominal: null}
-  кпд_процента: {min: null, max: null, nominal: null}
-  производительность_шт_ч: {min: null, max: null, nominal: null}
-  потребление_энергии_kWh: null
-  потребление_воды_L: null
+основные: 
+  температура_режима_C:
+          min: 20
+          max: 260
+          nominal: 150
+  давление_Pa:
+          min: 100000
+          max: 1000000
+          nominal: 200000
+  время_цикла_s:
+          min: 1
+          max: 60
+          nominal: 10
+  кпд_процента:
+          min: 80
+          max: 95
+          nominal: 90
+  производительность_шт_ч:
+          min: 100
+          max: 1000
+          nominal: 500
+  потребление_энергии_kWh: 1
+  потребление_воды_L: 5
 наследуемые:
   стандартные_параметры: {computed_from: прототип}
   сертификация: {computed_from: прототип}
@@ -29,10 +47,7 @@ id: tekhnologia_bare-die_integration
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
----
-
-# Технология: Bare-die integration
+дата_обновления: 2026-11-03# Технология: Bare-die integration
 
 ## Описание
 

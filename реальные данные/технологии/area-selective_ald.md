@@ -1,8 +1,11 @@
 ---
+
 id: tekhnologia_area-selective_ald
 тип: технология
 категория: обработка
-область_применения: []
+область_применения: 
+  - микроэлектроника
+  - area_selective_ALD_самовыравнивание
 версия: реальная
 статус_реальности: real
 доступность: промышленный
@@ -12,14 +15,29 @@ id: tekhnologia_area-selective_ald
   верификация: []
 источник: user_input
 источник_разбора: пользовательский ввод
-основные:
-  температура_режима_C: {min: null, max: null, nominal: null}
-  давление_Pa: {min: null, max: null, nominal: null}
-  время_цикла_s: {min: null, max: null, nominal: null}
-  кпд_процента: {min: null, max: null, nominal: null}
-  производительность_шт_ч: {min: null, max: null, nominal: null}
-  потребление_энергии_kWh: null
-  потребление_воды_L: null
+основные: 
+  температура_режима_C:
+          min: 100
+          max: 350
+          nominal: 250
+  давление_Pa:
+          min: 1
+          max: 100
+          nominal: 10
+  время_цикла_s:
+          min: 60
+          max: 3600
+          nominal: 1800
+  кпд_процента:
+          min: 85
+          max: 99
+          nominal: 92
+  производительность_шт_ч:
+          min: 2
+          max: 20
+          nominal: 5
+  потребление_энергии_kWh: 4
+  потребление_воды_L: 20
 наследуемые:
   стандартные_параметры: {computed_from: прототип}
   сертификация: {computed_from: прототип}
@@ -29,10 +47,7 @@ id: tekhnologia_area-selective_ald
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
----
-
-# Технология: Area-selective ALD
+дата_обновления: 2026-11-03# Технология: Area-selective ALD
 
 ## Описание
 

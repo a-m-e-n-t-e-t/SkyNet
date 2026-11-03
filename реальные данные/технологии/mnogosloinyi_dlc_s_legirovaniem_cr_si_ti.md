@@ -1,8 +1,11 @@
 ---
+
 id: tekhnologia_mnogosloinyi_dlc_s_legirovaniem_cr_si_ti
 тип: технология
 категория: обработка
-область_применения: []
+область_применения: 
+  - нанесение_покрытий
+  - DLC_многослойный_с_легированием_Cr_Si_Ti
 версия: реальная
 статус_реальности: real
 доступность: промышленный
@@ -12,14 +15,29 @@ id: tekhnologia_mnogosloinyi_dlc_s_legirovaniem_cr_si_ti
   верификация: []
 источник: user_input
 источник_разбора: пользовательский ввод
-основные:
-  температура_режима_C: {min: null, max: null, nominal: null}
-  давление_Pa: {min: null, max: null, nominal: null}
-  время_цикла_s: {min: null, max: null, nominal: null}
-  кпд_процента: {min: null, max: null, nominal: null}
-  производительность_шт_ч: {min: null, max: null, nominal: null}
-  потребление_энергии_kWh: null
-  потребление_воды_L: null
+основные: 
+  температура_режима_C:
+          min: 50
+          max: 300
+          nominal: 150
+  давление_Pa:
+          min: 0.001
+          max: 1
+          nominal: 0.1
+  время_цикла_s:
+          min: 600
+          max: 14400
+          nominal: 7200
+  кпд_процента:
+          min: 70
+          max: 95
+          nominal: 85
+  производительность_шт_ч:
+          min: 1
+          max: 10
+          nominal: 3
+  потребление_энергии_kWh: 15
+  потребление_воды_L: 100
 наследуемые:
   стандартные_параметры: {computed_from: прототип}
   сертификация: {computed_from: прототип}
@@ -29,10 +47,7 @@ id: tekhnologia_mnogosloinyi_dlc_s_legirovaniem_cr_si_ti
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
----
-
-# Технология: Многослойный DLC с легированием Cr/Si/Ti
+дата_обновления: 2026-11-03# Технология: Многослойный DLC с легированием Cr/Si/Ti
 
 ## Описание
 
