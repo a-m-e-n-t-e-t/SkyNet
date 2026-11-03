@@ -36,10 +36,14 @@ on:
   schedule:
     # Daily at 02:00 UTC (08:00 Asia/Omsk) — drift detection
     - cron: '0 2 * * *'
-  # v9.31 fix: убран `on: push` совсем. GitHub Actions создаёт empty run
-  # с conclusion=failure на каждый push даже если push.paths не совпадает,
-  # если в `on:` есть push trigger. Этот workflow нужен только для
-  # schedule (daily drift detection) и workflow_dispatch (ручной запуск).
+  push:
+    # v9.31 fix: запускаем ТОЛЬКО при изменении самого файла workflow.
+    # Без этого GitHub создаёт empty run с conclusion=failure на каждый push
+    # (потому что workflow с schedule/dispatch триггерами всё равно валидируется
+    # GitHub при пуше). С paths фильтром + реальным job который завершается
+    # success — workflow не будет блокировать CI.
+    paths:
+      - '.github/workflows/branch-protection-setup.yml'
   # Branch Protection API требует GitHub Pro для приватных репо (или
   # публичного репо) — поэтому все шаги, вызывающие protection API,
   # помечены continue-on-error: true ниже.
