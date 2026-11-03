@@ -1,7 +1,11 @@
 {
   "version": "1.0",
-  "session_id": "",
-  "counter": 0,
-  "current_phase": "",
-  "next_action": ""
+  "session_id": "web-418ef6ba-6e77-41ac-85bc-b6ed3556d83f",
+  "chat_id": "ffae4592-67dc-4911-a9ed-b17024395fc1",
+  "trace_id": "1a1a025ad8e30125",
+  "counter": 1,
+  "current_phase": "phase_1_complete",
+  "next_action": "phase_2_capture_hypothesis",
+  "last_dialog_file": "диалог/2026-11-03/0001_12-52-27.md",
+  "timestamp": "2026-11-03T12:52:27.280265+06:00"
 }
