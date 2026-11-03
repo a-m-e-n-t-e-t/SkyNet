@@ -107,9 +107,9 @@ def main():
     
     # 3. Check required files exist
     required = [
-        'требования к ии/_принципы.md',
-        'требования к ии/_версия_правил.yaml',
-        'требования к ии/_t800_terms.txt',
+        'требования_к_ии/_принципы.md',
+        'требования_к_ии/_версия_правил.yaml',
+        'требования_к_ии/_t800_terms.txt',
     ]
     for f in required:
         if not os.path.exists(os.path.join(SKYNET_REPO, f)):
@@ -227,11 +227,11 @@ def check_F88(fantastic_mat_dir):
 def check_F70g_all(repo_path):
     """F70g: все файлы имеют обязательные поля своей схемы."""
     from _helpers import check_F70g
-    prompt_path = os.path.join(repo_path, "требования к ии", "SkyNet_PROMPT_v9.26.md")
+    prompt_path = os.path.join(repo_path, "требования_к_ии", "SkyNet_PROMPT_v9.26.md")
     if not os.path.exists(prompt_path):
         # Fallback: найти любой SkyNet_PROMPT_v*.md
         import glob
-        prompts = glob.glob(os.path.join(repo_path, "требования к ии", "SkyNet_PROMPT_v*.md"))
+        prompts = glob.glob(os.path.join(repo_path, "требования_к_ии", "SkyNet_PROMPT_v*.md"))
         if prompts:
             prompt_path = sorted(prompts)[-1]  # последняя версия
         else:
@@ -250,7 +250,7 @@ def run_all_checks(repo_path):
     """v9.27: Запускает ВСЕ проверки и возвращает сводку."""
     from _helpers import check_F70g, check_F70h, check_F81_F88_all
     
-    prompt_path = os.path.join(repo_path, "требования к ии")
+    prompt_path = os.path.join(repo_path, "требования_к_ии")
     # Найти промпт
     import glob as globmod
     prompts = globmod.glob(os.path.join(prompt_path, "SkyNet_PROMPT_v*.md"))
