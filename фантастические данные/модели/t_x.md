@@ -1,8 +1,18 @@
 ---
-
-
-
 id: SkyNet-TX
+дочерние_части: 
+  - часть_t_x_cpu
+  - часть_t_x_эндоскелет
+  - часть_t_x_топливная_ячейка_1
+  - часть_t_x_топливная_ячейка_2
+  - часть_t_x_плазма_пушка
+  - часть_t_x_нанотех_инъектор
+  - часть_t_x_рука_левая
+  - часть_t_x_рука_правая
+  - часть_t_x_нога_левая
+  - часть_t_x_нога_правая
+  - часть_t_x_сенсоры
+  - часть_t_x_ткань_кожа
 тип: модель_SkyNet
 класс: гуманоидный
 категория: жидкий_металл
@@ -34,7 +44,24 @@ relations:
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: []
+реализация_промышленная: 
+  - izdelie_halve
+  - izdelie_kondensatory_keramicheskie
+  - izdelie_sic_mosfet
+  - izdelie_tverdooksidnyi_toplivnyi_element
+  - izdelie_nasa_asc-e_srsc
+  - izdelie_superkondensatory
+  - izdelie_reshetchatyi_karkas
+  - izdelie_kompensatory
+  - izdelie_metalinza
+  - izdelie_mwir_nbn_640
+  - izdelie_lidar_robosense_ac1
+  - izdelie_hasel
+  - izdelie_povorotnoe_uplotnenie
+  - izdelie_elektroflyuidnye_volokna_mit
+  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+  - izdelie_razryvnye_mufty_iso_16028
+  - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_разбора: канон
@@ -172,3 +199,48 @@ T-X (T-Xa) — гибрид: эндоскелет T-900 покрыт мимет�
 ## Источники
 
 - Канон: Terminator 3: Rise of the Machines (2003)
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    TX["SkyNet-TX"]
+    subgraph вычислительная
+    t_x_cpu["neural_net_cpu_tx<br/>0.5 kg (0.3%)"]
+    TX --> t_x_cpu
+    end
+    subgraph каркас
+    t_x_эндоскелет["hyperalloy_endoskeleton_tx<br/>75.0 kg (50.0%)"]
+    TX --> t_x_эндоскелет
+    end
+    subgraph энергетическая
+    t_x_топливная_ячейка_1["plasma_cell<br/>7.0 kg (4.7%)"]
+    TX --> t_x_топливная_ячейка_1
+    t_x_топливная_ячейка_2["plasma_cell<br/>7.0 kg (4.7%)"]
+    TX --> t_x_топливная_ячейка_2
+    end
+    subgraph встроенное_оружие
+    t_x_плазма_пушка["built_in_plasma_cannon<br/>15.0 kg (10.0%)"]
+    TX --> t_x_плазма_пушка
+    t_x_нанотех_инъектор["nanotech_injector<br/>2.0 kg (1.3%)"]
+    TX --> t_x_нанотех_инъектор
+    end
+    subgraph приводная_система
+    t_x_рука_левая["servo_arm<br/>10.0 kg (6.7%)"]
+    TX --> t_x_рука_левая
+    t_x_рука_правая["servo_arm<br/>10.0 kg (6.7%)"]
+    TX --> t_x_рука_правая
+    t_x_нога_левая["servo_leg<br/>14.0 kg (9.3%)"]
+    TX --> t_x_нога_левая
+    t_x_нога_правая["servo_leg<br/>14.0 kg (9.3%)"]
+    TX --> t_x_нога_правая
+    end
+    subgraph сенсоры
+    t_x_сенсоры["optical_audio_array<br/>1.0 kg (0.7%)"]
+    TX --> t_x_сенсоры
+    end
+    subgraph прочее
+    t_x_ткань_кожа["living_tissue_female<br/>4.0 kg (2.7%)"]
+    TX --> t_x_ткань_кожа
+    end
+```

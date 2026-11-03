@@ -1,8 +1,8 @@
 ---
-
-
-
 id: SkyNet-Rev9
+дочерние_части: 
+  - часть_rev9_endoskeleton
+  - часть_rev9_полисплав_оболочка
 тип: модель_SkyNet
 класс: гуманоидный
 категория: жидкий_металл
@@ -34,7 +34,24 @@ relations:
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: []
+реализация_промышленная: 
+  - izdelie_halve
+  - izdelie_kondensatory_keramicheskie
+  - izdelie_sic_mosfet
+  - izdelie_tverdooksidnyi_toplivnyi_element
+  - izdelie_nasa_asc-e_srsc
+  - izdelie_superkondensatory
+  - izdelie_reshetchatyi_karkas
+  - izdelie_kompensatory
+  - izdelie_metalinza
+  - izdelie_mwir_nbn_640
+  - izdelie_lidar_robosense_ac1
+  - izdelie_hasel
+  - izdelie_povorotnoe_uplotnenie
+  - izdelie_elektroflyuidnye_volokna_mit
+  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+  - izdelie_razryvnye_mufty_iso_16028
+  - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_разбора: канон
@@ -158,3 +175,18 @@ Rev-9 — улучшенный T-X; эндоскелет углерод-алloy 
 ## Источники
 
 - Канон: Terminator: Dark Fate (2019)
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    Rev9["SkyNet-Rev9"]
+    subgraph каркас
+    rev9_endoskeleton["carbon_endoskeleton<br/>80.0 kg (50.0%)"]
+    Rev9 --> rev9_endoskeleton
+    end
+    subgraph вычислительная
+    rev9_полисплав_оболочка["mimetic_polyalloy_sheath<br/>80.0 kg (50.0%)"]
+    Rev9 --> rev9_полисплав_оболочка
+    end
+```

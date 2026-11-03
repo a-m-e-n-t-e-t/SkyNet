@@ -1,8 +1,16 @@
 ---
-
-
-
 id: SkyNet-MarcusWright
+дочерние_части: 
+  - часть_marcus_человеческий_мозг
+  - часть_marcus_эндоскелет
+  - часть_marcus_сердце_гибрид
+  - часть_marcus_топливная_ячейка
+  - часть_marcus_рука_левая
+  - часть_marcus_рука_правая
+  - часть_marcus_нога_левая
+  - часть_marcus_нога_правая
+  - часть_marcus_человеческое_сердце
+  - часть_marcus_человеческая_кожа
 тип: модель_SkyNet
 класс: гуманоидный
 категория: гибрид
@@ -34,7 +42,24 @@ relations:
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: []
+реализация_промышленная: 
+  - izdelie_halve
+  - izdelie_kondensatory_keramicheskie
+  - izdelie_sic_mosfet
+  - izdelie_tverdooksidnyi_toplivnyi_element
+  - izdelie_nasa_asc-e_srsc
+  - izdelie_superkondensatory
+  - izdelie_reshetchatyi_karkas
+  - izdelie_kompensatory
+  - izdelie_metalinza
+  - izdelie_mwir_nbn_640
+  - izdelie_lidar_robosense_ac1
+  - izdelie_hasel
+  - izdelie_povorotnoe_uplotnenie
+  - izdelie_elektroflyuidnye_volokna_mit
+  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+  - izdelie_razryvnye_mufty_iso_16028
+  - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_разбора: канон
@@ -168,3 +193,40 @@ Marcus Wright — заключённый Cyberdyne, подписавший со�
 ## Источники
 
 - Канон: Terminator: Salvation (2009)
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    MarcusWright["SkyNet-MarcusWright"]
+    subgraph вычислительная
+    marcus_человеческий_мозг["human_brain_hybrid<br/>1.4 kg (1.6%)"]
+    MarcusWright --> marcus_человеческий_мозг
+    end
+    subgraph каркас
+    marcus_эндоскелет["cybernetic_endoskeleton<br/>50.0 kg (55.6%)"]
+    MarcusWright --> marcus_эндоскелет
+    end
+    subgraph энергетическая
+    marcus_сердце_гибрид["hybrid_heart<br/>0.5 kg (0.6%)"]
+    MarcusWright --> marcus_сердце_гибрид
+    marcus_топливная_ячейка["fuel_cell<br/>5.0 kg (5.6%)"]
+    MarcusWright --> marcus_топливная_ячейка
+    marcus_человеческое_сердц["biological_heart<br/>0.3 kg (0.3%)"]
+    MarcusWright --> marcus_человеческое_сердц
+    end
+    subgraph приводная_система
+    marcus_рука_левая["servo_arm<br/>8.0 kg (8.9%)"]
+    MarcusWright --> marcus_рука_левая
+    marcus_рука_правая["servo_arm<br/>8.0 kg (8.9%)"]
+    MarcusWright --> marcus_рука_правая
+    marcus_нога_левая["servo_leg<br/>7.0 kg (7.8%)"]
+    MarcusWright --> marcus_нога_левая
+    marcus_нога_правая["servo_leg<br/>7.0 kg (7.8%)"]
+    MarcusWright --> marcus_нога_правая
+    end
+    subgraph прочее
+    marcus_человеческая_кожа["human_tissue<br/>3.0 kg (3.3%)"]
+    MarcusWright --> marcus_человеческая_кожа
+    end
+```

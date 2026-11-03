@@ -1,7 +1,4 @@
 ---
-
-
-
 id: SkyNet-Turret
 тип: модель_SkyNet
 класс: стационарный
@@ -40,7 +37,19 @@ relations:
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: []
+реализация_промышленная: 
+  - izdelie_halve
+  - izdelie_kondensatory_keramicheskie
+  - izdelie_sic_mosfet
+  - izdelie_tverdooksidnyi_toplivnyi_element
+  - izdelie_nasa_asc-e_srsc
+  - izdelie_superkondensatory
+  - izdelie_loop_heat_pipe
+  - izdelie_kapillyarnaya_teplovaya_trubka
+  - izdelie_mikrokanalnye_ohlazhdayuschie_plastiny
+  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+  - izdelie_razryvnye_mufty_iso_16028
+  - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_разбора: канон

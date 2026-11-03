@@ -1,8 +1,16 @@
 ---
-
-
-
 id: SkyNet-Cameron
+дочерние_части: 
+  - часть_cameron_cpu
+  - часть_cameron_эндоскелет
+  - часть_cameron_топливная_ячейка_1
+  - часть_cameron_топливная_ячейка_2
+  - часть_cameron_рука_левая
+  - часть_cameron_рука_правая
+  - часть_cameron_нога_левая
+  - часть_cameron_нога_правая
+  - часть_cameron_сенсоры
+  - часть_cameron_ткань_кожа
 тип: модель_SkyNet
 класс: гуманоидный
 категория: стандартный
@@ -34,7 +42,24 @@ relations:
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: []
+реализация_промышленная: 
+  - izdelie_halve
+  - izdelie_kondensatory_keramicheskie
+  - izdelie_sic_mosfet
+  - izdelie_tverdooksidnyi_toplivnyi_element
+  - izdelie_nasa_asc-e_srsc
+  - izdelie_superkondensatory
+  - izdelie_reshetchatyi_karkas
+  - izdelie_kompensatory
+  - izdelie_metalinza
+  - izdelie_mwir_nbn_640
+  - izdelie_lidar_robosense_ac1
+  - izdelie_hasel
+  - izdelie_povorotnoe_uplotnenie
+  - izdelie_elektroflyuidnye_volokna_mit
+  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+  - izdelie_razryvnye_mufty_iso_16028
+  - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_разбора: канон
@@ -166,3 +191,42 @@ Cameron Phillips — перепрограммированный терминат
 ## Источники
 
 - Канон: Terminator: The Sarah Connor Chronicles (2008-2009)
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    Cameron["SkyNet-Cameron"]
+    subgraph вычислительная
+    cameron_cpu["neural_net_cpu_cameron<br/>0.3 kg (0.5%)"]
+    Cameron --> cameron_cpu
+    end
+    subgraph каркас
+    cameron_эндоскелет["titanium_endoskeleton_small<br/>35.0 kg (53.8%)"]
+    Cameron --> cameron_эндоскелет
+    end
+    subgraph энергетическая
+    cameron_топливная_ячейка_["fuel_cell_small<br/>4.0 kg (6.2%)"]
+    Cameron --> cameron_топливная_ячейка_
+    cameron_топливная_ячейка_["fuel_cell_small<br/>4.0 kg (6.2%)"]
+    Cameron --> cameron_топливная_ячейка_
+    end
+    subgraph приводная_система
+    cameron_рука_левая["servo_arm_small<br/>5.0 kg (7.7%)"]
+    Cameron --> cameron_рука_левая
+    cameron_рука_правая["servo_arm_small<br/>5.0 kg (7.7%)"]
+    Cameron --> cameron_рука_правая
+    cameron_нога_левая["servo_leg_small<br/>4.5 kg (6.9%)"]
+    Cameron --> cameron_нога_левая
+    cameron_нога_правая["servo_leg_small<br/>4.5 kg (6.9%)"]
+    Cameron --> cameron_нога_правая
+    end
+    subgraph сенсоры
+    cameron_сенсоры["optical_audio_array<br/>0.5 kg (0.8%)"]
+    Cameron --> cameron_сенсоры
+    end
+    subgraph прочее
+    cameron_ткань_кожа["living_tissue_female<br/>2.0 kg (3.1%)"]
+    Cameron --> cameron_ткань_кожа
+    end
+```

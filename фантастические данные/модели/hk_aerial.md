@@ -1,8 +1,14 @@
 ---
-
-
-
 id: SkyNet-HKAerial
+дочерние_части: 
+  - часть_hk_aerial_фюзеляж
+  - часть_hk_aerial_двигатель_левый
+  - часть_hk_aerial_двигатель_правый
+  - часть_hk_aerial_сенсоры
+  - часть_hk_aerial_плазма_пушка
+  - часть_hk_aerial_навигация
+  - часть_hk_aerial_связь
+  - часть_hk_aerial_крылья
 тип: модель_SkyNet
 класс: воздушный
 категория: воздушный_HK
@@ -31,7 +37,21 @@ relations:
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: []
+реализация_промышленная: 
+  - izdelie_tverdooksidnyi_toplivnyi_element
+  - izdelie_nasa_asc-e_srsc
+  - izdelie_superkondensatory
+  - izdelie_reshetchatyi_karkas
+  - izdelie_kompensatory
+  - izdelie_metalinza
+  - izdelie_mwir_nbn_640
+  - izdelie_lidar_robosense_ac1
+  - izdelie_hasel
+  - izdelie_povorotnoe_uplotnenie
+  - izdelie_elektroflyuidnye_volokna_mit
+  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+  - izdelie_razryvnye_mufty_iso_16028
+  - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_разбора: канон
@@ -148,3 +168,38 @@ HK-Aerial — крупный воздушный охотник; винтокры
 ## Источники
 
 - Канон: T2: Judgment Day (1991), T: Salvation (2009)
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    HKAerial["SkyNet-HKAerial"]
+    subgraph каркас
+    hk_aerial_фюзеляж["fuselage<br/>1500.0 kg (50.0%)"]
+    HKAerial --> hk_aerial_фюзеляж
+    hk_aerial_крылья["wings<br/>300.0 kg (10.0%)"]
+    HKAerial --> hk_aerial_крылья
+    end
+    subgraph энергетическая
+    hk_aerial_двигатель_левый["nuclear_vtol_engine<br/>400.0 kg (13.3%)"]
+    HKAerial --> hk_aerial_двигатель_левый
+    hk_aerial_двигатель_правы["nuclear_vtol_engine<br/>400.0 kg (13.3%)"]
+    HKAerial --> hk_aerial_двигатель_правы
+    end
+    subgraph сенсоры
+    hk_aerial_сенсоры["multi_sensor_array<br/>100.0 kg (3.3%)"]
+    HKAerial --> hk_aerial_сенсоры
+    end
+    subgraph встроенное_оружие
+    hk_aerial_плазма_пушка["plasma_cannon<br/>200.0 kg (6.7%)"]
+    HKAerial --> hk_aerial_плазма_пушка
+    end
+    subgraph навигация
+    hk_aerial_навигация["radar_navigation<br/>50.0 kg (1.7%)"]
+    HKAerial --> hk_aerial_навигация
+    end
+    subgraph система_связи
+    hk_aerial_связь["skynet_link<br/>50.0 kg (1.7%)"]
+    HKAerial --> hk_aerial_связь
+    end
+```

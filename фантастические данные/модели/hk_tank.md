@@ -1,8 +1,17 @@
 ---
-
-
-
 id: SkyNet-HKTank
+дочерние_части: 
+  - часть_hk_tank_корпус
+  - часть_hk_tank_гусеница_левая
+  - часть_hk_tank_гусеница_правая
+  - часть_hk_tank_башня
+  - часть_hk_tank_плазма_пушка_1
+  - часть_hk_tank_плазма_пушка_2
+  - часть_hk_tank_сенсоры
+  - часть_hk_tank_двигатель
+  - часть_hk_tank_связь
+  - часть_hk_tank_навигация
+  - часть_hk_tank_боеприпасы
 тип: модель_SkyNet
 класс: наземный_гусеничный
 категория: наземный_HK
@@ -37,7 +46,21 @@ relations:
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: []
+реализация_промышленная: 
+  - izdelie_tverdooksidnyi_toplivnyi_element
+  - izdelie_nasa_asc-e_srsc
+  - izdelie_superkondensatory
+  - izdelie_reshetchatyi_karkas
+  - izdelie_kompensatory
+  - izdelie_metalinza
+  - izdelie_mwir_nbn_640
+  - izdelie_lidar_robosense_ac1
+  - izdelie_hasel
+  - izdelie_povorotnoe_uplotnenie
+  - izdelie_elektroflyuidnye_volokna_mit
+  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+  - izdelie_razryvnye_mufty_iso_16028
+  - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_разбора: канон
@@ -144,3 +167,46 @@ HK-Tank — крупный гусеничный охотник-убийца; о�
 ## Источники
 
 - Канон: T1 (1984), T2 (1991), T:S (2009)
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    HKTank["SkyNet-HKTank"]
+    subgraph каркас
+    hk_tank_корпус["tank_body<br/>15000.0 kg (50.0%)"]
+    HKTank --> hk_tank_корпус
+    hk_tank_башня["turret<br/>2000.0 kg (6.7%)"]
+    HKTank --> hk_tank_башня
+    end
+    subgraph приводная_система
+    hk_tank_гусеница_левая["tank_track<br/>3000.0 kg (10.0%)"]
+    HKTank --> hk_tank_гусеница_левая
+    hk_tank_гусеница_правая["tank_track<br/>3000.0 kg (10.0%)"]
+    HKTank --> hk_tank_гусеница_правая
+    end
+    subgraph встроенное_оружие
+    hk_tank_плазма_пушка_1["plasma_cannon<br/>500.0 kg (1.7%)"]
+    HKTank --> hk_tank_плазма_пушка_1
+    hk_tank_плазма_пушка_2["plasma_cannon<br/>500.0 kg (1.7%)"]
+    HKTank --> hk_tank_плазма_пушка_2
+    end
+    subgraph сенсоры
+    hk_tank_сенсоры["radar_sensor<br/>500.0 kg (1.7%)"]
+    HKTank --> hk_tank_сенсоры
+    end
+    subgraph энергетическая
+    hk_tank_двигатель["nuclear_engine<br/>2000.0 kg (6.7%)"]
+    HKTank --> hk_tank_двигатель
+    hk_tank_боеприпасы["plasma_ammo<br/>2800.0 kg (9.3%)"]
+    HKTank --> hk_tank_боеприпасы
+    end
+    subgraph система_связи
+    hk_tank_связь["skynet_link<br/>500.0 kg (1.7%)"]
+    HKTank --> hk_tank_связь
+    end
+    subgraph навигация
+    hk_tank_навигация["gps_nav<br/>200.0 kg (0.7%)"]
+    HKTank --> hk_tank_навигация
+    end
+```

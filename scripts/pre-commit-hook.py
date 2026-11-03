@@ -115,6 +115,25 @@ def main():
         if not os.path.exists(os.path.join(SKYNET_REPO, f)):
             errors.append(f'Required file missing: {f}')
     
+    # 4. v9.31 Decomposition Validator (F12a, F14, F15a-h, F16, F17, F18, F19, F20, F21)
+    # F13 — информационная (показывает пробелы в покрытии подсистем), не блокирующая
+    try:
+        sys.path.insert(0, os.path.join(SKYNET_REPO, 'scripts'))
+        from validate_decomposition import run_all_checks
+        decomp_results = run_all_checks()
+        for metric, result in decomp_results['results'].items():
+            if metric == 'F13':
+                # F13 — информационная, не блокирующая
+                if not result['pass']:
+                    warnings.append(f"{metric}: {result['ratio']:.2f} ({result['valid']}/{result['total']}) — {result['description']}")
+                continue
+            if not result['pass']:
+                errors.append(f"{metric}: {result['ratio']:.2f} ({result['valid']}/{result['total']}) — {result['description']}")
+                for v in result.get('violations', [])[:3]:
+                    errors.append(f"  - {v}")
+    except Exception as e:
+        warnings.append(f"Decomposition validator не запустился: {e}")
+    
     # Report
     if errors:
         print(f'❌ БЛОКИРОВКА коммита ({len(errors)} ошибок):')
