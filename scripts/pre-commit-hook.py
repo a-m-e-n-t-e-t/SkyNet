@@ -89,7 +89,7 @@ def check_f70():
 
 def main():
     """Точка входа pre-commit hook."""
-    print("SkyNet Pre-commit Hook v9.17")
+    print("SkyNet Pre-commit Hook v9.31")
     
     errors = []
     warnings = []
