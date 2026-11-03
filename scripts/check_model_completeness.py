@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-SkyNet Model Completeness Checker — v9.24 НОВЕЕ
+SkyNet Model Completeness Checker — v9.24 (v9.31.1: актуализировано)
 Self-аудит полноты подсистем для каждой модели (F86).
 
 Урок из v9.17: AI не делал эту проверку сам — пользователь должен был попросить
