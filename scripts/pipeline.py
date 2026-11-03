@@ -1,5 +1,5 @@
 """SkyNet Pipeline Orchestrator — единственный оркестратор фаз 0-8 (P012).
-v9.30: функциональная реализация (не заглушка)."""
+v9.31: функциональная реализация (не заглушка)."""
 
 import os, sys, json, subprocess
 from pathlib import Path
@@ -105,7 +105,7 @@ def run_pre_commit():
 
 def main():
     """Главная точка входа pipeline."""
-    print("SkyNet Pipeline v9.17 — запуск")
+    print("SkyNet Pipeline v9.31 — запуск")
     
     # Phase 0
     state = check_current_state()
@@ -116,7 +116,7 @@ def main():
         print(f"⚠️ Отсутствуют файлы: {missing}")
     
     version = state.get('rules_version')
-    if version != '9.17':
+    if version != '9.31':
         print(f"⚠️ rules_version: {version} (ожидается 9.17)")
     
     print("Pipeline готов к работе. Используйте capture_dialog() для обработки сообщений.")
@@ -125,7 +125,7 @@ if __name__ == '__main__':
     main()
 
 
-# === v9.30: Issues integration ===
+# === v9.31: Issues integration ===
 
 def check_open_issues_state():
     """Phase 0.7: проверить открытые Issues с меткой todo."""
