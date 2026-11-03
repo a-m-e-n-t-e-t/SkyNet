@@ -1,13 +1,6 @@
 # SkyNet Reusable Workflow — скачивание PAT с Яндекс.Диска
 # v9.31: устраняет дублирование в 3 workflows (~60 строк)
-# Использование:
-#   jobs:
-#     download-pat:
-#       uses: ./.github/workflows/_download-pat.yml
-#     batch:
-#       needs: download-pat
-#       env:
-#         PAT_TOKEN: ${{ needs.download-pat.outputs.pat }}
+# v9.31.1: исправлены import sys, import urllib.parse
 
 name: _Download PAT (reusable)
 
@@ -40,7 +33,7 @@ jobs:
           YANDEX_PUBLIC_KEY: https://disk.yandex.ru/i/3RiKQucdvHI2Sg
         run: |
           python << 'PYEOF'
-          import os, json, urllib.request, zipfile, xml.etree.ElementTree as ET, re, tempfile, pathlib
+          import os, sys, json, urllib.request, urllib.parse, zipfile, xml.etree.ElementTree as ET, re, tempfile, pathlib
           public_key = os.environ["YANDEX_PUBLIC_KEY"]
           api = "https://cloud-api.yandex.net/v1/disk/public/resources/download"
           url = f"{api}?public_key={urllib.parse.quote(public_key, safe='')}"
