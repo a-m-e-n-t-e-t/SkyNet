@@ -1,6 +1,6 @@
 """
-SkyNet PROMPT v9.17 — F70 Helper Functions
-Источник: SkyNet_PROMPT_v9.17.md §19 + §13.12 (вынесено в scripts/ для сжатия промпта)
+SkyNet PROMPT v9.31 — F70 Helper Functions
+Источник: SkyNet_PROMPT_v9.31.md §19 + §13.12 (вынесено в scripts/ для сжатия промпта)
 Загружается: validate_field_contracts.py импортирует эти функции
 Версия: 9.17
 """
@@ -16,7 +16,7 @@ from glob import glob
 
 def check_schemas_consistency() -> dict:
     """
-    v9.13: Проверка консистентности всех схем §12.X и каталогов §10.X.
+    v9.31: Проверка консистентности всех схем §12.X и каталогов §10.X.
     Исполняет метрику F70 (schema_catalog_consistency = 1.0; BLOCKING).
     
     КОРНЕВАЯ ПРИЧИНА проблем v9.7-v9.12: эта функция отсутствовала.
@@ -229,7 +229,7 @@ def check_principles_vs_catalogs() -> bool:
 
 def _get_prompt_path() -> str:
     """Возвращает путь к файлу промпта."""
-    return os.environ.get('SKYNET_PROMPT_PATH', os.path.join(os.environ.get('SKYNET_REPO', '.'), 'SkyNet_PROMPT_v9.17.md'))
+    return os.environ.get('SKYNET_PROMPT_PATH', os.path.join(os.environ.get('SKYNET_REPO', '.'), 'SkyNet_PROMPT_v9.31.md'))
 
 # ===== check_current_state signature (full impl in pipeline.py) =====
 # def check_current_state() -> dict:
