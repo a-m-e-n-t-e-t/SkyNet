@@ -6,11 +6,17 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors
 уровень_номер: 2
 подсистема: приводная_система
 подтип: разъёмы
-стандарты: []
+стандарты:
+  - IEC 60603
+  - MIL-DTL-38999
 исследовательская_группа: null
 родитель: izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov
 дочерние_части: []
-материалы_частей: []
+материалы_частей:
+  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors
+    материал: cu
+    доля_массы: 1.0
+
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -23,8 +29,17 @@ scaling_type: количественный
 основные:
   масса_kg: 0.05
   доля_массы_родителя: 0.05
+  габариты_mm:
+    l: 50
+    w: 50
+    h: 30
+  выработка_энергии_W: 0
+  выработка_тепла_W: 0.1
 наследуемые: {}
-дополнительные: {}
+дополнительные:
+  тип: 'mixed signal + power'
+  pin_count: 25
+
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: web_search
@@ -35,7 +50,9 @@ scaling_type: количественный
 
 ## Описание
 
-Дочерняя часть изделия `izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov` (подсистема: приводная_система, подтип: разъёмы).
+Дочерняя часть изделия.
+
+Родитель: `izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov` (подсистема: приводная_система).
 
 ## Технические характеристики
 
@@ -45,11 +62,24 @@ scaling_type: количественный
 | подтип | разъёмы | — | canon |
 | масса | 0.05 | kg | canon |
 | доля массы родителя | 0.05 | — | canon |
+| габариты (Д×Ш×В) | 50×50×30 | mm | canon |
+| выработка энергии | 0 | W | canon |
+| выработка тепла | 0.1 | W | canon |
+| материал | cu | — | canon |
+
+## Принцип работы
+
+MIL-SPEC connector с gold-plated pins для надёжности.
 
 ## Состав
 
 Промежуточная часть (уровень 2). Дочерних частей нет.
 
+## Используемые материалы
+
+- `cu` → [`cu.md`](../../материалы/cu.md)
+
 ## Источники
 
-- Канон: декомпозиция изделия `izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov` (web search 2026-11-03)
+- Канон: декомпозиция `izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov` (web search 2026-11-03)
+- Материалы: реальные данные/материалы/
