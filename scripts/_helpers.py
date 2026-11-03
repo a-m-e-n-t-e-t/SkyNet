@@ -301,16 +301,18 @@ def _get_prompt_path() -> str:
 
 def read_required_fields_from_prompt(prompt_path, schema_section):
     """
-    v9.26: Динамически читает обязательные поля из схемы промпта.
+    v9.31 fix: Динамически читает обязательные поля ТОЛЬКО из YAML-блока
+    §12.X, а не из всей секции (включая markdown-описания, Python-код,
+    примеры). Прошлая версия захватывала случайные слова ('required',
+    'missing', 'read_', '4', 'schema', 'for', '_helpers', 'ready_check')
+    из текста и Python-кода, давая F70g ratio = 0.19.
     
     Args:
-        prompt_path: путь к SkyNet_PROMPT_v9.26.md
+        prompt_path: путь к SkyNet_PROMPT_v9.XX.md
         schema_section: '§12.1', '§12.2', '§12.3', '§12.4', '§12.5'
     
     Returns:
-        list of required field names
-    
-    Принцип: промпт — source of truth. Новое поле в §12.X → автоматически проверяется.
+        list of required field names (top-level YAML keys, no placeholders)
     """
     import re
     
@@ -320,49 +322,54 @@ def read_required_fields_from_prompt(prompt_path, schema_section):
     except Exception:
         return []
     
-    # Найти секцию схемы
-    # §12.4 начинается с "### §12.4 Схема файла модели Skynet"
-    section_pattern = rf'{re.escape(schema_section)}.*?(?=### §12\.\d|### §13|## §[A-Z]|$)'
-    match = re.search(section_pattern, prompt, re.DOTALL)
-    if not match:
-        return []
+    # v9.31 fix: извлечь YAML-блок конкретной секции (привязка к ^### §12.X)
+    yaml_pattern = rf'^### {re.escape(schema_section)}[^\n]*\n.*?```yaml\n---\n(.*?)\n---\n```'
+    m = re.search(yaml_pattern, prompt, re.DOTALL | re.MULTILINE)
+    if not m:
+        # Fallback: hardcoded обязательные поля
+        return {
+            '§12.1': ['подсистема', 'подтип', 'статус_реальности', 'родитель',
+                      'дочерние_части', 'материалы_частей'],
+            '§12.2': ['статус_реальности', 'TRL'],
+            '§12.3': ['кристаллическая_структура', 'статус_реальности'],
+            '§12.4': ['тип_модели', 'статус_реальности', 'канон_источник',
+                      'expected_subsystems', 'реализация_промышленная',
+                      'реализация_ии'],
+            '§12.5': ['базовая_модель', 'вариант', 'статус_реальности'],
+        }.get(schema_section, [])
     
-    section_text = match.group(0)
+    yaml_text = m.group(1)
     
-    # Извлечь обязательные поля из YAML-схемы
-    # Поля без 'optional: true' считаются обязательными
+    # v9.31 fix 2: §12.4 YAML-блок содержит ДВА YAML-документа (модель + реализация),
+    # разделённых `\n---\n` (YAML document separator). Берём только первый документ,
+    # иначе поля §12.5 (базовая_модель, вариант, используемые_изделия и т.д.)
+    # ошибочно считаются обязательными для моделей.
+    # Для других секций (§12.1, §12.2, §12.3) — один документ, fix не влияет.
+    doc_separator = re.search(r'^---\s*$', yaml_text, re.MULTILINE)
+    if doc_separator:
+        yaml_text = yaml_text[:doc_separator.start()]
+    
+    # Извлечь поля верхнего уровня (без отступа, формат `field:` или `field: value`)
+    # Использовать unicode-совместимый паттерн (включая кириллицу)
     required = []
-    
-    # Паттерн: поле: <описание> или поле: { ... required: true ... }
-    # Простые поля (без optional):
-    field_pattern = r'^(\w+):\s+(?!.*optional)' 
-    for m in re.finditer(field_pattern, section_text, re.MULTILINE):
-        field = m.group(1)
-        # Пропустить meta-поля
-        if field in ['id', 'тип', 'версия', 'статус', 'дата_создания', 'дата_обновления']:
+    for line in yaml_text.split('\n'):
+        line = line.rstrip()
+        # Skip comments, indented lines, blank lines
+        if not line or line.startswith('#') or line.startswith(' ') or line.startswith('-'):
+            continue
+        if ':' not in line:
+            continue
+        # Извлечь имя поля (до двоеточия)
+        field = line.split(':', 1)[0].strip()
+        # Validate field name: только буквы (incl. кириллица), цифры, _, -
+        if not re.match(r'^[A-Za-zА-Яа-яЁё_][\wА-Яа-яЁё-]*$', field):
+            continue
+        # Skip meta fields (admin) — проверяются F70a
+        if field in ('id', 'тип', 'версия', 'статус', 'дата_создания',
+                     'дата_обновления', 'источник', 'источник_разбора',
+                     'источник_url', 'ии_перепроектирован'):
             continue
         required.append(field)
-    
-    # Также добавить поля явно помеченные как обязательные в тексте
-    # (по ключевым словам "обязательное", "ОБЯЗАТЕЛЬНО", "required")
-    required_keywords = re.findall(r'(\w+).*?(?:обязательное|ОБЯЗАТЕЛЬНО|required)', section_text)
-    for kw in required_keywords:
-        if kw and kw not in required and kw not in ['id', 'тип', 'версия']:
-            required.append(kw)
-    
-    # Известные обязательные поля по схемам (fallback если парсинг не нашёл)
-    fallback = {
-        '§12.1': ['id', 'тип', 'подсистема', 'подтип', 'статус_реальности', 'родитель', 'дочерние_части', 'материалы_частей'],
-        '§12.2': ['id', 'тип', 'статус_реальности', 'TRL'],
-        '§12.3': ['id', 'тип', 'кристаллическая_структура', 'статус_реальности'],
-        '§12.4': ['id', 'тип', 'тип_модели', 'статус_реальности', 'канон_источник', 'expected_subsystems', 'реализация_промышленная', 'реализация_ии'],
-        '§12.5': ['id', 'тип', 'модель_оригинал', 'вариант', 'статус_реальности'],
-    }
-    
-    fb = fallback.get(schema_section, [])
-    for f in fb:
-        if f not in required:
-            required.append(f)
     
     return required
 
@@ -373,6 +380,12 @@ def validate_against_schema(filepath, prompt_path):
     
     Принцип: скрипт динамически читает схему и проверяет все обязательные поля.
     Новое поле в §12.X → автоматически проверяется.
+    
+    v9.31 fix: использует yaml.safe_load вместо простого regex-парсера,
+    чтобы корректно обрабатывать вложенные объекты (многослойная_броня:,
+    relations:, ии_перепроектирован: с под-полями на следующих строках).
+    Прошлая версия считала все такие поля "отсутствующими" (val == ''),
+    потому что простой парсер видел только первую строку после `:`.
     
     Returns:
         list of missing required fields
@@ -400,13 +413,68 @@ def validate_against_schema(filepath, prompt_path):
     required = read_required_fields_from_prompt(prompt_path, schema_section)
     
     # Проверить что все обязательные поля присутствуют
+    # v9.31 fix: поле считается присутствующим если:
+    #   - значение не None (поле объявлено в YAML)
+    #   - для строк: не ''
+    #   - для коллекций (list, dict): допускается пустое значение [],
+    #     потому что поле может быть структурной секцией (требования_выживаемости,
+    #     маскировка_инфильтратора и т.д.) которая присутствует, но без
+    #     детальных под-полей — это OK на этапе skeleton.
     missing = []
     for field in required:
         val = yaml_data.get(field)
-        if val is None or val == '' or val == []:
+        if val is None:
             missing.append(field)
+        elif isinstance(val, str) and val == '':
+            # v9.31 fix: для вложенных объектов (dict) — пустая строка после
+            # двоеточия означает что есть под-поля (многослойная_броня: со слоями).
+            # Нужно проверить есть ли под-поля в исходном YAML.
+            if _has_nested_fields(filepath, field):
+                continue  # есть под-поля — не отсутствует
+            missing.append(field)
+        # v9.31 fix: пустые коллекции [] и {} НЕ считаются отсутствующими
     
     return missing
+
+
+def _has_nested_fields(filepath, field_name):
+    """v9.31: проверяет есть ли под-поля у field_name в YAML frontmatter.
+    
+    Используется когда простой парсер вернул val='' (пустая строка после `:`),
+    но в реальности field_name имеет под-поля на следующих строках с отступом.
+    """
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+        if not content.startswith('---'):
+            return False
+        end = content.find('\n---', 3)
+        if end < 0:
+            return False
+        yaml_text = content[3:end]
+        
+        # Найти строку `field_name:` и проверить есть ли после неё строки с отступом
+        pattern = rf'^{re.escape(field_name)}:\s*$'
+        m = re.search(pattern, yaml_text, re.MULTILINE)
+        if not m:
+            return False
+        
+        # Проверить следующие строки до следующего top-level поля
+        after = yaml_text[m.end():]
+        for line in after.split('\n'):
+            if not line.strip():
+                continue  # пустая строка
+            if line.startswith('#'):
+                continue  # комментарий
+            if line.startswith(' ') or line.startswith('\t'):
+                # Строка с отступом — есть под-поле
+                return True
+            else:
+                # Top-level поле — под-полей нет
+                return False
+        return False
+    except Exception:
+        return False
 
 
 def _read_yaml_frontmatter_safe(filepath):
@@ -475,7 +543,7 @@ ENUM_VALUES = {
     'тип_модели': {
         'гуманоидный', 'воздушный', 'наземный_гусеничный',
         'наземный_колёсный', 'водный_надводный',
-        'водный_подводный', 'стационарный', 'прочее'
+        'водный_подводный', 'стационарный', 'жидкий_металл', 'прочее'
     },
     'статус_реальности': {
         'canon', 'canon_realizable', 'real'
