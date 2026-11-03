@@ -36,6 +36,12 @@ on:
   schedule:
     # Daily at 02:00 UTC (08:00 Asia/Omsk) — drift detection
     - cron: '0 2 * * *'
+  # v9.31 fix: НЕ добавляем `on: push` — этот workflow только для ручного
+  # запуска и daily drift detection. Запуск на каждом push создавал empty
+  # run с conclusion=failure (24 раза подряд), засоряя CI статус.
+  # Branch Protection API требует GitHub Pro для приватных репо (или
+  # публичного репо) — поэтому все шаги, вызывающие protection API,
+  # помечены continue-on-error: true ниже.
 
 permissions:
   contents: read
@@ -55,6 +61,10 @@ jobs:
     steps:
       - name: Check current protection status
         id: current
+        continue-on-error: true
+        # v9.31: continue-on-error — приватный репо без GitHub Pro получает
+        # HTTP 403 "Upgrade to GitHub Pro or make this repository public".
+        # Branch Protection — опциональная фича, не должна блокировать CI.
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -73,12 +83,17 @@ jobs:
             echo "enforce_admins=$ENFORCE_ADMINS" >> $GITHUB_OUTPUT
             echo "required_checks_count=$REQUIRED_CHECKS" >> $GITHUB_OUTPUT
             echo "::notice::Main is protected (enforce_admins=$ENFORCE_ADMINS, checks=$REQUIRED_CHECKS)"
+          elif [ "$STATUS" = "403" ]; then
+            echo "protected=skip" >> $GITHUB_OUTPUT
+            echo "::notice::Branch Protection API requires GitHub Pro or public repo (HTTP 403). Skipping protection setup — not blocking CI."
           else
             echo "protected=false" >> $GITHUB_OUTPUT
             echo "::warning::Main is NOT protected (HTTP $STATUS)"
           fi
 
       - name: Apply/refresh branch protection
+        continue-on-error: true  # v9.31: skip on HTTP 403 (private repo without GitHub Pro)
+        if: steps.current.outputs.status != '403'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ENFORCE_ADMINS: ${{ github.event.inputs.enforce_admins || 'true' }}
@@ -115,6 +130,8 @@ jobs:
           echo "http_code=$HTTP_CODE" >> $GITHUB_OUTPUT
           if [ "$HTTP_CODE" = "200" ]; then
             echo "::notice::Branch protection applied successfully"
+          elif [ "$HTTP_CODE" = "403" ]; then
+            echo "::notice::Branch Protection API not available (HTTP 403 — requires GitHub Pro or public repo). Skipping — not blocking CI."
           else
             echo "::error::Branch protection failed: HTTP $HTTP_CODE"
             echo "$BODY" | head -20

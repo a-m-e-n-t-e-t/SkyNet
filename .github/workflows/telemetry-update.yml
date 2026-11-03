@@ -71,6 +71,7 @@ jobs:
           # Читаем предыдущий telemetry
           prev_telemetry = {}
           prev_ts = None
+          prev_ts_str = None  # v9.31 fix: default — иначе NameError если файл не найден
           try:
               with open("результаты/_telemetry.json", "r", encoding="utf-8") as f:
                   prev_telemetry = json.load(f)

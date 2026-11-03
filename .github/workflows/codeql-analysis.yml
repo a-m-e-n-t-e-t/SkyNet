@@ -64,8 +64,12 @@ jobs:
           languages: ${{ matrix.language }}
           # Use default security queries + security-extended
           queries: security-extended,security-and-quality
-          # v9.21: also enable security-experimental for latest queries
-          packs: +github/codeql-python-queries
+          # v9.31 fix: убран packs: +github/codeql-python-queries — этот pack
+          # не существует в реестре ghcr.io и вызывал fatal error на init:
+          # "A fatal error occurred: 'github/codeql-python-queries' not found
+          #  in the registry 'https://ghcr.io/v2/'."
+          # Дефолтные queries (security-extended, security-and-quality) уже
+          # включают все нужные Python security queries.
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
