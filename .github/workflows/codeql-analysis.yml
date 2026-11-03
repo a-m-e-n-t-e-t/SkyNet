@@ -35,6 +35,10 @@ permissions:
   contents: read
   security-events: write
   issues: write
+  # v9.31 fix: CodeQL upload SARIF requires `actions: read` to access
+  # workflow run metadata for the upload status report.
+  # Error was: "Resource not accessible by integration - https://docs.github.com/rest/actions/workflow-runs#get-a-workflow-run"
+  actions: read
 
 # Cancel in-progress runs for the same branch
 concurrency:
