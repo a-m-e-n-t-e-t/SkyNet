@@ -1,4 +1,5 @@
 ---
+
 id: SkyNet-AerostatBomber
 тип: модель_SkyNet
 класс: воздушный
@@ -38,7 +39,6 @@ relations:
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 ---
-
 # SkyNet-AerostatBomber
 
 ## Описание
@@ -86,7 +86,7 @@ Aerostat Bomber — увеличенный Aerostat; несёт плазменн
 
 ## Произведения, где появляется
 
-- work_004
+- ✅ `work_004` — «Terminator Salvation» (2009) → [`work_004.md`](../произведения/work_004.md)
 
 ## Источники
 
