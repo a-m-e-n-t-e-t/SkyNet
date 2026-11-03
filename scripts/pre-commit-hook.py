@@ -1,5 +1,5 @@
 """SkyNet Pre-commit Hook — path-type-status + F3-F70.
-v9.17: функциональная реализация (не заглушка)."""
+v9.31: функциональная реализация (не заглушка)."""
 
 import os, sys, re, json
 
