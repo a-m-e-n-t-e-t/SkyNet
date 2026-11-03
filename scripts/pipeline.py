@@ -19,7 +19,7 @@ def check_current_state():
 
 def _read_rules_version():
     """Читает rules_version из _версия_правил.yaml."""
-    path = f'{SKYNET_REPO}/требования к ии/_версия_правил.yaml'
+    path = f'{SKYNET_REPO}/требования_к_ии/_версия_правил.yaml'
     if not os.path.exists(path):
         return None
     try:
@@ -33,15 +33,15 @@ def _read_rules_version():
 def _check_required_files():
     """Проверяет наличие обязательных файлов."""
     required = [
-        'требования к ии/_принципы.md',
-        'требования к ии/_версия_правил.yaml',
-        'требования к ии/_паттерны.md',
-        'требования к ии/_t800_terms.txt',
-        'требования к ии/_field_contracts.yaml',
-        'требования к ии/_mat_kb.yaml',
-        'требования к ии/_tec_kb.yaml',
-        'требования к ии/_typ_kb.yaml',
-        'требования к ии/_credentials.yaml',
+        'требования_к_ии/_принципы.md',
+        'требования_к_ии/_версия_правил.yaml',
+        'требования_к_ии/_паттерны.md',
+        'требования_к_ии/_t800_terms.txt',
+        'требования_к_ии/_field_contracts.yaml',
+        'требования_к_ии/_mat_kb.yaml',
+        'требования_к_ии/_tec_kb.yaml',
+        'требования_к_ии/_typ_kb.yaml',
+        'требования_к_ии/_credentials.yaml',
     ]
     return {
         f: os.path.exists(f'{SKYNET_REPO}/{f}')
