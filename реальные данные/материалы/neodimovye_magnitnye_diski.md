@@ -1,4 +1,5 @@
 ---
+применяется_в_изделиях_счёт: 0
 id: material_neodimovye_magnitnye_diski
 тип: материал
 класс: металл

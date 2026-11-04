@@ -95,33 +95,22 @@ graph LR
     часть_gr801_noel_v_risc_v_substrate[подложка]
     часть_gr801_noel_v_risc_v_capacitors[конденсаторы]
     часть_gr801_noel_v_risc_v_pins[пины]
+    часть_t1000_миметический_полисплав[mimetic_polyalloy]
     часть_cameron_cpu[neural_net_cpu_cameron]
+    часть_rev9_полисплав_оболочка[mimetic_polyalloy_sheath]
     часть_marcus_человеческий_мозг[human_brain_hybrid]
     часть_t600_cpu[early_neural_cpu]
     часть_t_x_cpu[neural_net_cpu_tx]
     часть_t800_cpu[neural_net_cpu]
     часть_t850_cpu[neural_net_cpu_v2]
-    material_ti_6al_4v[Ti-6Al-4V]
+    material_b₄c[B₄C]
+    material_epoksid_epon_828_+_teta[Эпоксид Epon 828 + TETA]
+    material_gallinstan[Галлинстан]
+    material_ptfe[PTFE]
     material_si[Si]
-    izdelie_nvidia_jetson_orin_nano -->|материал| material_silicon_wafer
-    izdelie_nvidia_jetson_orin_nano -->|материал| material_silicon_wafer
-    izdelie_nvidia_jetson_orin_nano -->|материал| material_silicon_wafer
-    izdelie_nvidia_jetson_orin_nano -->|материал| material_aluminum
-    izdelie_nvidia_jetson_orin_nano -->|материал| material_aluminum
-    izdelie_memristornye_matritsy -->|материал| material_silicon_wafer
-    izdelie_sot_mram -->|материал| material_silicon_wafer
-    izdelie_sot_mram -->|материал| material_silicon_wafer
-    izdelie_sot_mram -->|материал| material_silicon_wafer
-    izdelie_intel_loihi_2 -->|материал| material_silicon_wafer
-    izdelie_halve -->|материал| material_silicon_wafer
-    izdelie_sic_mosfet -->|материал| material_aluminum
-    izdelie_pcm -->|материал| material_silicon_wafer
-    izdelie_brainchip_akida_2 -->|материал| material_silicon_wafer
-    izdelie_ibm_northpole -->|материал| material_silicon_wafer
-    izdelie_ibm_northpole -->|материал| material_silicon_wafer
-    izdelie_gr801_noel_v_risc_v -->|материал| material_silicon_wafer
-    izdelie_gr801_noel_v_risc_v -->|материал| material_silicon_wafer
-    izdelie_gr801_noel_v_risc_v -->|материал| material_silicon_wafer
+    material_ti_6al_4v[Ti-6Al-4V]
+    material_tin[TiN]
+    izdelie_kondensatory_keramicheskie -->|материал| material_tin
     часть_litii_tionilhloridnye_batarei_separator -->|материал| material_ti_6al_4v
     часть_litii_tionilhloridnye_batarei_cathode -->|материал| material_ti_6al_4v
     часть_litii_tionilhloridnye_batarei_electrolyte -->|материал| material_ti_6al_4v
@@ -136,7 +125,6 @@ graph LR
     часть_nvidia_jetson_orin_nano_storage -->|материал| material_ti_6al_4v
     часть_nvidia_jetson_orin_nano_wifi_bt -->|материал| material_ti_6al_4v
     часть_nvidia_jetson_orin_nano_enclosure -->|материал| material_ti_6al_4v
-    часть_nvidia_jetson_orin_nano_connectors -->|материал| material_cu
     часть_kondensatory_keramicheskie_inner_electrodes -->|материал| material_ti_6al_4v
     часть_kondensatory_keramicheskie_plating -->|материал| material_ti_6al_4v
     часть_kondensatory_keramicheskie_termination -->|материал| material_ti_6al_4v
@@ -151,12 +139,16 @@ graph LR
     часть_sot_mram_row_decoders -->|материал| material_ti_6al_4v
     часть_sot_mram_io_interface -->|материал| material_ti_6al_4v
     часть_sot_mram_sense_amplifiers -->|материал| material_ti_6al_4v
-    часть_intel_loihi_2_thermal_spreader -->|материал| material_cu
-    часть_intel_loihi_2_pins_balls -->|материал| material_cu
     часть_intel_loihi_2_die -->|материал| material_si
-    часть_halve_pins_balls -->|материал| material_cu
+    часть_intel_loihi_2_capacitors -->|материал| material_b₄c
+    часть_intel_loihi_2_encapsulant -->|материал| material_epoksid_epon_828_+_teta
+    часть_intel_loihi_2_substrate -->|материал| material_ptfe
+    часть_intel_loihi_2_pcb -->|материал| material_ptfe
+    часть_halve_pcb -->|материал| material_ptfe
     часть_halve_die -->|материал| material_si
-    часть_halve_thermal_spreader -->|материал| material_cu
+    часть_halve_capacitors -->|материал| material_b₄c
+    часть_halve_encapsulant -->|материал| material_epoksid_epon_828_+_teta
+    часть_halve_substrate -->|материал| material_ptfe
     часть_sic_mosfet_die -->|материал| material_ti_6al_4v
     часть_sic_mosfet_gate_terminal -->|материал| material_ti_6al_4v
     часть_sic_mosfet_solder -->|материал| material_ti_6al_4v
@@ -169,14 +161,15 @@ graph LR
     часть_pcm_cell_array -->|материал| material_ti_6al_4v
     часть_pcm_selector -->|материал| material_ti_6al_4v
     часть_pcm_periphery -->|материал| material_ti_6al_4v
-    часть_brainchip_akida_2_pins_balls -->|материал| material_cu
+    часть_brainchip_akida_2_substrate -->|материал| material_ptfe
     часть_brainchip_akida_2_die -->|материал| material_si
-    часть_brainchip_akida_2_thermal_spreader -->|материал| material_cu
+    часть_brainchip_akida_2_pcb -->|материал| material_ptfe
+    часть_brainchip_akida_2_capacitors -->|материал| material_b₄c
+    часть_brainchip_akida_2_encapsulant -->|материал| material_epoksid_epon_828_+_teta
     часть_ibm_northpole_hbm -->|материал| material_ti_6al_4v
     часть_ibm_northpole_capacitors -->|материал| material_ti_6al_4v
     часть_ibm_northpole_die -->|материал| material_si
     часть_ibm_northpole_substrate -->|материал| material_ti_6al_4v
-    часть_ibm_northpole_thermal_spreader -->|материал| material_cu
     часть_ibm_northpole_package -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_crystal_osc -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_die -->|материал| material_si
@@ -184,10 +177,13 @@ graph LR
     часть_gr801_noel_v_risc_v_thermal_pad -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_flash -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_sram -->|материал| material_ti_6al_4v
+    часть_gr801_noel_v_risc_v_package -->|материал| material_epoksid_epon_828_+_teta
     часть_gr801_noel_v_risc_v_substrate -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_capacitors -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_pins -->|материал| material_ti_6al_4v
+    часть_t1000_миметический_полисплав -->|материал| material_gallinstan
     часть_cameron_cpu -->|материал| material_ti_6al_4v
+    часть_rev9_полисплав_оболочка -->|материал| material_gallinstan
     часть_marcus_человеческий_мозг -->|материал| material_ti_6al_4v
     часть_t600_cpu -->|материал| material_si
     часть_t_x_cpu -->|материал| material_ti_6al_4v
@@ -195,22 +191,12 @@ graph LR
     часть_t850_cpu -->|материал| material_ti_6al_4v
 ```
 
-_Показаны 5 наиболее часто используемых материалов (полный список — в graph1_data.json)._
-
 | Материал | Используется в частях |
 |---|---:|
 | `Ti-6Al-4V` | 56 |
-| `material_silicon_wafer` | 16 |
-| `material_cu` | 8 |
 | `Si` | 7 |
-| `material_copper` | 6 |
 | `PTFE` | 6 |
-| `material_bt_resin` | 5 |
-| `material_fr4` | 4 |
-| `material_copper_alloy` | 4 |
-| `material_epoxy_molding` | 4 |
 | `Эпоксид Epon 828 + TETA` | 4 |
-| `material_aluminum` | 3 |
-| `material_ceramic_mlcc` | 3 |
 | `B₄C` | 3 |
-| `material_mimetic_polyalloy` | 2 |
+| `Галлинстан` | 2 |
+| `TiN` | 1 |

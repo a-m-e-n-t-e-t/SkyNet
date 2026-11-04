@@ -1,4 +1,5 @@
 ---
+изделий_в_группе_счёт: 2
 id: group_cobham_gaisler
 тип: исследовательская_группа
 название: Cobham Gaisler → Frontgrade
@@ -38,4 +39,6 @@ GR801, RISC-V rad-hard
 
 ## Изделия и материалы
 
-_Обратные ссылки ещё не проставлены._
+**Исследуется в группах:**
+- `izdelie_gr801_noel-v_risc-v` — RISC-V_процессор
+- `часть_gr801_noel-v_risc-v_package` — корпус_FCTEBGA

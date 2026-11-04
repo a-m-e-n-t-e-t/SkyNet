@@ -1,4 +1,5 @@
 ---
+изделий_в_группе_счёт: 0
 id: group_john_goodenough
 тип: исследовательская_группа
 название: John Goodenough

@@ -143,107 +143,58 @@ graph LR
     часть_t850_нога_правая -->|материал| material_ti_6al_4v
     часть_t850_рука_левая -->|материал| material_ti_6al_4v
     часть_t850_нога_левая -->|материал| material_ti_6al_4v
-    izdelie_bldc -->|материал| material_generic_material
-    izdelie_bldc -->|материал| material_aluminum
     izdelie_3d_pechatnye_dea -->|материал| material_silikon_40_50_shore_a
-    izdelie_3d_pechatnye_dea -->|материал| material_aluminum
     izdelie_3d_pechatnye_dea -->|материал| material_becu
-    izdelie_povorotnoe_uplotnenie -->|материал| material_generic_material
-    izdelie_povorotnoe_uplotnenie -->|материал| material_aluminum
-    izdelie_tcp -->|материал| material_generic_material
-    izdelie_tcp -->|материал| material_aluminum
-    izdelie_apa -->|материал| material_generic_material
-    izdelie_apa -->|материал| material_aluminum
-    izdelie_elektroflyuidnye_volokna_mit -->|материал| material_generic_material
-    izdelie_elektroflyuidnye_volokna_mit -->|материал| material_aluminum
-    izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena -->|материал| material_generic_material
-    izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena -->|материал| material_aluminum
-    izdelie_tsa -->|материал| material_generic_material
-    izdelie_tsa -->|материал| material_aluminum
-    izdelie_pezoelektricheskii_gromkogovoritel -->|материал| material_generic_material
-    izdelie_pezoelektricheskii_gromkogovoritel -->|материал| material_aluminum
-    izdelie_belleville_shaiby -->|материал| material_generic_material
-    izdelie_belleville_shaiby -->|материал| material_aluminum
-    izdelie_zubchataya_mufta -->|материал| material_generic_material
-    izdelie_zubchataya_mufta -->|материал| material_aluminum
-    izdelie_dea -->|материал| material_generic_material
-    izdelie_dea -->|материал| material_aluminum
-    izdelie_ipmc -->|материал| material_generic_material
-    izdelie_ipmc -->|материал| material_aluminum
-    izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov -->|материал| material_generic_material
-    izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov -->|материал| material_aluminum
-    izdelie_fleksury_8_diskov_po_0_15_mm -->|материал| material_generic_material
-    izdelie_fleksury_8_diskov_po_0_15_mm -->|материал| material_aluminum
-    izdelie_bldc_+_enkoder -->|материал| material_generic_material
-    izdelie_bldc_+_enkoder -->|материал| material_aluminum
-    izdelie_hasel -->|материал| material_generic_material
-    izdelie_hasel -->|материал| material_aluminum
     часть_bldc_mounting -->|материал| material_ti_6al_4v
     часть_bldc_housing -->|материал| material_ti_6al_4v
-    часть_bldc_connectors -->|материал| material_cu
     часть_bldc_core -->|материал| material_ti_6al_4v
     часть_3d_pechatnye_dea_housing -->|материал| material_neilon_6_66
     часть_3d_pechatnye_dea_mounting -->|материал| material_neilon_6_66
     часть_3d_pechatnye_dea_core -->|материал| material_silikon_40_50_shore_a
     часть_3d_pechatnye_dea_connectors -->|материал| material_becu
     часть_povorotnoe_uplotnenie_core -->|материал| material_ti_6al_4v
-    часть_povorotnoe_uplotnenie_connectors -->|материал| material_cu
     часть_povorotnoe_uplotnenie_mounting -->|материал| material_ti_6al_4v
     часть_povorotnoe_uplotnenie_housing -->|материал| material_ti_6al_4v
     часть_tcp_core -->|материал| material_ti_6al_4v
     часть_tcp_housing -->|материал| material_ti_6al_4v
-    часть_tcp_connectors -->|материал| material_cu
     часть_tcp_mounting -->|материал| material_ti_6al_4v
     часть_apa_housing -->|материал| material_ti_6al_4v
     часть_apa_mounting -->|материал| material_ti_6al_4v
-    часть_apa_connectors -->|материал| material_cu
     часть_apa_core -->|материал| material_ti_6al_4v
     часть_elektroflyuidnye_volokna_mit_housing -->|материал| material_ti_6al_4v
     часть_elektroflyuidnye_volokna_mit_mounting -->|материал| material_ti_6al_4v
-    часть_elektroflyuidnye_volokna_mit_connectors -->|материал| material_cu
     часть_elektroflyuidnye_volokna_mit_core -->|материал| material_ti_6al_4v
     часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core -->|материал| material_ti_6al_4v
     часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing -->|материал| material_ti_6al_4v
     часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting -->|материал| material_ti_6al_4v
-    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors -->|материал| material_cu
     часть_tsa_mounting -->|материал| material_ti_6al_4v
     часть_tsa_housing -->|материал| material_ti_6al_4v
     часть_tsa_core -->|материал| material_ti_6al_4v
-    часть_tsa_connectors -->|материал| material_cu
-    часть_pezoelektricheskii_gromkogovoritel_connectors -->|материал| material_cu
     часть_pezoelektricheskii_gromkogovoritel_core -->|материал| material_ti_6al_4v
     часть_pezoelektricheskii_gromkogovoritel_mounting -->|материал| material_ti_6al_4v
     часть_pezoelektricheskii_gromkogovoritel_housing -->|материал| material_ti_6al_4v
     часть_belleville_shaiby_housing -->|материал| material_ti_6al_4v
     часть_belleville_shaiby_core -->|материал| material_ti_6al_4v
-    часть_belleville_shaiby_connectors -->|материал| material_cu
     часть_belleville_shaiby_mounting -->|материал| material_ti_6al_4v
-    часть_zubchataya_mufta_connectors -->|материал| material_cu
     часть_zubchataya_mufta_core -->|материал| material_ti_6al_4v
     часть_zubchataya_mufta_mounting -->|материал| material_ti_6al_4v
     часть_zubchataya_mufta_housing -->|материал| material_ti_6al_4v
     часть_dea_core -->|материал| material_ti_6al_4v
     часть_dea_mounting -->|материал| material_ti_6al_4v
     часть_dea_housing -->|материал| material_ti_6al_4v
-    часть_dea_connectors -->|материал| material_cu
-    часть_ipmc_connectors -->|материал| material_cu
     часть_ipmc_core -->|материал| material_ti_6al_4v
     часть_ipmc_mounting -->|материал| material_ti_6al_4v
     часть_ipmc_housing -->|материал| material_ti_6al_4v
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core -->|материал| material_ti_6al_4v
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting -->|материал| material_ti_6al_4v
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing -->|материал| material_ti_6al_4v
-    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors -->|материал| material_cu
     часть_fleksury_8_diskov_po_0_15_mm_housing -->|материал| material_ti_6al_4v
     часть_fleksury_8_diskov_po_0_15_mm_mounting -->|материал| material_ti_6al_4v
     часть_fleksury_8_diskov_po_0_15_mm_core -->|материал| material_ti_6al_4v
-    часть_fleksury_8_diskov_po_0_15_mm_connectors -->|материал| material_cu
     часть_bldc_+_enkoder_housing -->|материал| material_ti_6al_4v
-    часть_bldc_+_enkoder_connectors -->|материал| material_cu
     часть_bldc_+_enkoder_mounting -->|материал| material_ti_6al_4v
     часть_bldc_+_enkoder_core -->|материал| material_ti_6al_4v
     часть_hasel_housing -->|материал| material_ti_6al_4v
-    часть_hasel_connectors -->|материал| material_cu
     часть_hasel_core -->|материал| material_ti_6al_4v
     часть_hasel_mounting -->|материал| material_ti_6al_4v
 ```
@@ -251,9 +202,6 @@ graph LR
 | Материал | Используется в частях |
 |---|---:|
 | `Ti-6Al-4V` | 74 |
-| `material_aluminum` | 17 |
-| `material_generic_material` | 16 |
-| `material_cu` | 16 |
 | `Силикон 40–50 Shore A` | 2 |
 | `BeCu` | 2 |
 | `Нейлон 6/66` | 2 |

@@ -32,27 +32,23 @@ graph LR
     часть_t_x_эндоскелет[hyperalloy_endoskeleton_tx]
     часть_t800_эндоскелет_торс[hyperalloy_endoskeleton]
     часть_t850_эндоскелет[hyperalloy_endoskeleton]
-    material_ti_6al_4v[Ti-6Al-4V]
+    material_cfrp_t1100g[CFRP T1100G]
     material_inconel_718[Inconel 718]
+    material_ti_6al_4v[Ti-6Al-4V]
     izdelie_SkyNet_HKAerial -->|материал| material_inconel_718
     izdelie_SkyNet_HKAerial -->|материал| material_inconel_718
-    izdelie_reshetchatyi_karkas -->|материал| material_generic_material
-    izdelie_reshetchatyi_karkas -->|материал| material_aluminum
-    izdelie_kompensatory -->|материал| material_generic_material
-    izdelie_kompensatory -->|материал| material_aluminum
     часть_cameron_эндоскелет -->|материал| material_ti_6al_4v
     часть_hk_aerial_крылья -->|материал| material_ti_6al_4v
     часть_hk_aerial_фюзеляж -->|материал| material_ti_6al_4v
     часть_reshetchatyi_karkas_mounting -->|материал| material_ti_6al_4v
-    часть_reshetchatyi_karkas_connectors -->|материал| material_cu
     часть_reshetchatyi_karkas_core -->|материал| material_ti_6al_4v
     часть_reshetchatyi_karkas_housing -->|материал| material_ti_6al_4v
+    часть_rev9_endoskeleton -->|материал| material_cfrp_t1100g
     часть_marcus_эндоскелет -->|материал| material_ti_6al_4v
     часть_t600_эндоскелет -->|материал| material_ti_6al_4v
     часть_hk_tank_корпус -->|материал| material_ti_6al_4v
     часть_hk_tank_башня -->|материал| material_ti_6al_4v
     часть_kompensatory_mounting -->|материал| material_ti_6al_4v
-    часть_kompensatory_connectors -->|материал| material_cu
     часть_kompensatory_housing -->|материал| material_ti_6al_4v
     часть_kompensatory_core -->|материал| material_ti_6al_4v
     часть_t_x_эндоскелет -->|материал| material_ti_6al_4v
@@ -60,22 +56,8 @@ graph LR
     часть_t850_эндоскелет -->|материал| material_ti_6al_4v
 ```
 
-_Показаны 5 наиболее часто используемых материалов (полный список — в graph1_data.json)._
-
 | Материал | Используется в частях |
 |---|---:|
 | `Ti-6Al-4V` | 16 |
-| `material_hyperalloy_t800` | 5 |
-| `material_living_tissue_clone` | 4 |
-| `material_titanium_alloy` | 3 |
 | `Inconel 718` | 2 |
-| `material_tungsten_alloy` | 2 |
-| `material_generic_material` | 2 |
-| `material_aluminum` | 2 |
-| `material_rolled_homogeneous_armor` | 2 |
-| `material_steel_track` | 2 |
-| `material_lithium_hydrogen_cell` | 2 |
-| `material_cu` | 2 |
-| `material_carbon_fiber_endoskeleton` | 1 |
-| `material_mimetic_polyalloy` | 1 |
-| `material_cybernetic_alloy` | 1 |
+| `CFRP T1100G` | 1 |

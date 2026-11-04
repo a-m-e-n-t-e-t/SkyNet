@@ -1,4 +1,5 @@
 ---
+изделий_в_группе_счёт: 0
 id: group_argonne_national_lab
 тип: исследовательская_группа
 название: Argonne National Lab

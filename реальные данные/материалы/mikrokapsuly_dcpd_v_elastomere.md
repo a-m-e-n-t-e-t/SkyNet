@@ -1,4 +1,5 @@
 ---
+применяется_в_изделиях_счёт: 0
 id: material_mikrokapsuly_dcpd_v_elastomere
 тип: материал
 класс: полимер

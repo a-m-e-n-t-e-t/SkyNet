@@ -1,4 +1,5 @@
 ---
+применяется_в_изделиях_счёт: 13
 id: material_si
 тип: материал
 класс: прочее
@@ -100,6 +101,8 @@ Si
 - `часть_t800_cpu` — neural_net_cpu
 - `часть_t800_оптический_сенсор_1` — optical_camera
 - `часть_t800_оптический_сенсор_2` — optical_camera
+- `часть_t800_ткань_кожа` — living_tissue
+- `часть_t850_ткань_кожа` — living_tissue
 - `часть_tverdotelnye_akkumulyatory_anode` — графит_анод
 - `часть_tverdotelnye_akkumulyatory_cathode` — NMC_катод
 

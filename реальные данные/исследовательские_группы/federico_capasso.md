@@ -1,4 +1,5 @@
 ---
+изделий_в_группе_счёт: 0
 id: group_federico_capasso
 тип: исследовательская_группа
 название: Federico Capasso

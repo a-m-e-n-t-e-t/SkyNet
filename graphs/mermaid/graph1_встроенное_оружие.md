@@ -29,16 +29,12 @@ graph LR
     часть_t_x_нанотех_инъектор -->|материал| material_gallinstan
     часть_t_x_плазма_пушка -->|материал| material_ti_6al_4v
     izdelie_granatomet_m320 -->|материал| material_al_6061_t6
-    izdelie_granatomet_m320 -->|материал| material_aluminum
     izdelie_granatomet_m320 -->|материал| material_becu
-    izdelie_minigun_m134 -->|материал| material_generic_material
-    izdelie_minigun_m134 -->|материал| material_aluminum
     часть_granatomet_m320_mounting -->|материал| material_al_6061_t6
     часть_granatomet_m320_core -->|материал| material_al_6061_t6
     часть_granatomet_m320_housing -->|материал| material_al_6061_t6
     часть_granatomet_m320_connectors -->|материал| material_becu
     часть_minigun_m134_housing -->|материал| material_ti_6al_4v
-    часть_minigun_m134_connectors -->|материал| material_cu
     часть_minigun_m134_mounting -->|материал| material_stal_st3
     часть_minigun_m134_core -->|материал| material_ti_6al_4v
 ```
@@ -48,9 +44,6 @@ graph LR
 | `Al 6061-T6` | 4 |
 | `W-Ni-Fe` | 3 |
 | `Ti-6Al-4V` | 3 |
-| `material_aluminum` | 2 |
 | `BeCu` | 2 |
 | `Галлинстан` | 1 |
-| `material_generic_material` | 1 |
-| `material_cu` | 1 |
 | `Сталь Ст3` | 1 |

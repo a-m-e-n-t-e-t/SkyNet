@@ -1,4 +1,5 @@
 ---
+применяется_в_изделиях_счёт: 6
 id: material_bi₂te₃
 тип: материал
 класс: прочее
@@ -91,6 +92,9 @@ Bi₂Te₃
 ## Применение в изделиях
 
 **Используется в частях/изделиях:**
+- `izdelie_reversivnye_pelte` — реверсивный_модуль_Пельтье
+- `izdelie_termoelektricheskii_postoyannyi_magnit` — термоэлектрический_генератор
+- `izdelie_termomoduli_pelte` — модуль_Пельтье
 - `izdelie_zeno_power_am-241` — радиоизотопный_генератор_Am241
 - `часть_mmrtg_thermocouples` — термопары
 - `часть_zeno_power_am-241_thermocouples` — термопары

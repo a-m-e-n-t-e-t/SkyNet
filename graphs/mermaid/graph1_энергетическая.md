@@ -236,9 +236,10 @@ graph LR
     часть_induktivnyi_nakopitel_housing[корпус]
     часть_induktivnyi_nakopitel_cooling[охлаждение]
     material_ti_6al_4v[Ti-6Al-4V]
-    material_al_6061_t6[Al 6061-T6]
     material_si[Si]
+    material_al_6061_t6[Al 6061-T6]
     material_inconel_718[Inconel 718]
+    material_epoksid_epon_828_+_teta[Эпоксид Epon 828 + TETA]
     часть_cameron_топливная_ячейка_1 -->|материал| material_ti_6al_4v
     часть_cameron_топливная_ячейка_2 -->|материал| material_ti_6al_4v
     часть_hk_aerial_двигатель_левый -->|материал| material_inconel_718
@@ -253,24 +254,12 @@ graph LR
     часть_t_x_топливная_ячейка_2 -->|материал| material_ti_6al_4v
     часть_t850_топливная_ячейка_2 -->|материал| material_ti_6al_4v
     часть_t850_топливная_ячейка_1 -->|материал| material_ti_6al_4v
-    izdelie_superkondensatory -->|материал| material_aluminum
-    izdelie_superkondensatory -->|материал| material_aluminum
     izdelie_svobodnoporshnevoi_stirling -->|материал| material_inconel_718
     izdelie_svobodnoporshnevoi_stirling -->|материал| material_inconel_718
     izdelie_nasa_asc_e_srsc -->|материал| material_inconel_718
     izdelie_nasa_asc_e_srsc -->|материал| material_inconel_718
     izdelie_nasa_asc_e_srsc -->|материал| material_al_6061_t6
-    izdelie_mmrtg -->|материал| material_aluminum
-    izdelie_marx_generator -->|материал| material_aluminum
-    izdelie_tverdotelnye_akkumulyatory -->|материал| material_aluminum
-    izdelie_tverdotelnye_akkumulyatory -->|материал| material_aluminum
-    izdelie_vodorodnye_toplivnye_elementy -->|материал| material_aluminum
-    izdelie_termoelektricheskii_postoyannyi_magnit -->|материал| material_aluminum
-    izdelie_emi_generator -->|материал| material_aluminum
-    izdelie_emi_generator -->|материал| material_aluminum
-    izdelie_emi_generator -->|материал| material_aluminum
     izdelie_asrg -->|материал| material_inconel_718
-    izdelie_induktivnyi_nakopitel -->|материал| material_aluminum
     часть_reversivnye_pelte_ceramic_top -->|материал| material_ti_6al_4v
     часть_reversivnye_pelte_peltier_couples -->|материал| material_ti_6al_4v
     часть_reversivnye_pelte_ceramic_bottom -->|материал| material_ti_6al_4v
@@ -303,6 +292,7 @@ graph LR
     часть_betavoltaiki_case -->|материал| material_ti_6al_4v
     часть_betavoltaiki_isotope -->|материал| material_ti_6al_4v
     часть_betavoltaiki_terminal -->|материал| material_ti_6al_4v
+    часть_betavoltaiki_encapsulant -->|материал| material_epoksid_epon_828_+_teta
     часть_betavoltaiki_semiconductor -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_anode -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_case -->|материал| material_ti_6al_4v
@@ -365,6 +355,7 @@ graph LR
     часть_vodorodnye_toplivnye_elementy_bipolar_plate -->|материал| material_ti_6al_4v
     часть_vodorodnye_toplivnye_elementy_gdl_cathode -->|материал| material_ti_6al_4v
     часть_vodorodnye_toplivnye_elementy_gasket -->|материал| material_ti_6al_4v
+    часть_ni_63_betavoltaik_4h_sic_encapsulant -->|материал| material_epoksid_epon_828_+_teta
     часть_ni_63_betavoltaik_4h_sic_isotope -->|материал| material_ti_6al_4v
     часть_ni_63_betavoltaik_4h_sic_substrate -->|материал| material_ti_6al_4v
     часть_ni_63_betavoltaik_4h_sic_sic_diode -->|материал| material_ti_6al_4v
@@ -372,6 +363,7 @@ graph LR
     часть_4h_sic_betavoltaik_isotope -->|материал| material_ti_6al_4v
     часть_4h_sic_betavoltaik_substrate -->|материал| material_ti_6al_4v
     часть_4h_sic_betavoltaik_case -->|материал| material_ti_6al_4v
+    часть_4h_sic_betavoltaik_encapsulant -->|материал| material_epoksid_epon_828_+_teta
     часть_4h_sic_betavoltaik_sic_diode -->|материал| material_ti_6al_4v
     часть_alyuminievo_vozdushnye_toplivnye_elementy_cathode -->|материал| material_ti_6al_4v
     часть_alyuminievo_vozdushnye_toplivnye_elementy_housing -->|материал| material_ti_6al_4v
@@ -439,17 +431,17 @@ _Показаны 5 наиболее часто используемых мат�
 | Материал | Используется в частях |
 |---|---:|
 | `Ti-6Al-4V` | 168 |
-| `material_aluminum` | 12 |
 | `Inconel 718` | 8 |
-| `material_copper_wire` | 8 |
-| `material_silicon_carbide` | 8 |
-| `material_stainless_steel_316` | 5 |
-| `material_titanium_alloy` | 5 |
-| `material_alumina` | 4 |
+| `Bi₂Te₃` | 6 |
 | `NdFeB` | 4 |
 | `Pt` | 3 |
-| `material_bi2te3` | 3 |
-| `Bi₂Te₃` | 3 |
-| `material_copper` | 3 |
-| `material_ni63_metal` | 3 |
-| `material_epoxy` | 3 |
+| `Inconel 625` | 3 |
+| `Al 6061-T6` | 3 |
+| `углеродная сажа (токопроводящий наполнитель) + PTFE 20% (связующее), опционально катализатор MnO₂; токосъёмник — никелевая сетка` | 3 |
+| `Эпоксид Epon 828 + TETA` | 3 |
+| `ScT?` | 2 |
+| `Am-241` | 2 |
+| `Графен-аэрогель` | 2 |
+| `Pu-238 (плутоний-238)` | 2 |
+| `Si` | 2 |
+| `ZrO₂ + 8 mol% Y₂O₃ (Zr₀.₉₂Y₀.₀₈O₁.₉₆)` | 1 |

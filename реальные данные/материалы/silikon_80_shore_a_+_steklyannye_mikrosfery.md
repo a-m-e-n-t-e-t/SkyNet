@@ -1,4 +1,5 @@
 ---
+применяется_в_изделиях_счёт: 0
 id: material_silikon_80_shore_a_+_steklyannye_mikrosfery
 тип: материал
 класс: полимер

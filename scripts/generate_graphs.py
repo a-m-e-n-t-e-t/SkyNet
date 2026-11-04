@@ -82,12 +82,27 @@ def read_md(path: Path) -> dict:
 # ГРАФ 1 — граф данных
 # ============================================================================
 
+def _slug(s) -> str:
+    """'Ti-6Al-4V'→'ti-6al-4v', 'bi₂te₃'≡'bi2te3' (subscript-цифры нормализуются)."""
+    s = str(s).translate(str.maketrans("₀₁₂₃₄₅₆₇₈₉", "0123456789"))
+    return re.sub(r"[^a-z0-9а-яё]+", "-", s.lower()).strip("-")
+
+
 def graph1_build() -> dict:
     """Построить граф данных."""
     nodes: list[dict] = []
     edges: list[dict] = []
     by_id: dict[str, dict] = {}
 
+    # Индекс материалов: 'bi2te3'→'material_bi₂te₃' (матчинг упоминаний с файлами)
+    mat_index: dict[str, str] = {}
+    for _mf in sorted((REAL_DATA / "материалы").glob("*.md")):
+        _md = read_md(_mf)
+        _mid = _md.get("id")
+        if not _mid:
+            continue
+        for _cand in (_mid, _mid[len("material_"):] if _mid.startswith("material_") else _mid, _mf.stem):
+            mat_index[_slug(_cand)] = _mid
     def add_node(nid: str, ntype: str, label: str, path: str = "", subsystem: str = ""):
         if nid in by_id:
             return
@@ -145,19 +160,23 @@ def graph1_build() -> dict:
                     _raw = _mm.group(1).strip("'\"")
                     if _raw in ("null", ""):
                         continue
-                    target = _raw if _raw.startswith("material_") else f"material_{_raw}"
+                    target = mat_index.get(_slug(_raw)) or (_raw if _raw.startswith("material_") else f"material_{_raw}")
                     add_edge(nid, target, "uses_material")
 
-        # complies_with (стандарты) — с slug-нормализацией 'ISO 16028'→'iso-16028'
+        # complies_with (стандарты)
         stds = d.get("стандарты", []) or []
         if isinstance(stds, list):
             for s in stds:
                 if s and s != "null":
                     target = s if s.startswith("standart_") else f"standart_{s}"
                     add_edge(nid, target, "complies_with")
-                    add_edge(nid, f"standart_{_slug(s)}", "complies_with_slug") if False else None
-                    # доп. ребро в нормализованной форме для матчинга с файлами стандартов
-                    add_edge(nid, f"standart_{_slug(s)}", "complies_with") if False else None
+
+        # researched_by (исследовательская группа)
+        ig = d.get("исследовательская_группа")
+        if ig and ig not in ("null", "", "требует_верификации"):
+            target = ig if str(ig).startswith("group_") else f"group_{ig}"
+            add_edge(nid, target, "researched_by")
+
     for f in sorted((REAL_DATA / "материалы").glob("*.md")):
         d = read_md(f)
         if not d or "id" not in d:
@@ -213,10 +232,16 @@ def graph1_build() -> dict:
             add_node(nid, "issledovatelskaya_gruppa", d.get("название", nid), d.get("_path", ""))
 
     # Синтез обратных рёбер (в памяти графа; для записи в файлы см. --fill-backrefs)
-    forward: dict[tuple[str, str], str] = {}
+    # Фильтр висячих: ребро включается в граф только если ОБА конца — существующие вершины;
+    # висячие цели выносятся в отдельный блок (честный отчёт о неполноте данных).
+    ids = set(by_id)
+    clean, dangling = [], defaultdict(set)
     for e in edges:
-        forward[(e["src"], e["type"])] = e["dst"]
-    # used_in: для каждого uses_material src→dst добавить обратное dst→src
+        if e["src"] in ids and e["dst"] in ids:
+            clean.append(e)
+        else:
+            dangling[e["type"]].add(e["dst"] if e["dst"] not in ids else e["src"])
+    edges = clean
     for e in list(edges):
         if e["type"] == "uses_material":
             edges.append({"src": e["dst"], "dst": e["src"], "type": "used_in",
@@ -236,9 +261,11 @@ def graph1_build() -> dict:
         "description": "Граф данных: изделия ↔ материалы ↔ технологии ↔ стандарты ↔ исследовательские группы",
         "nodes": nodes,
         "edges": edges,
+        "висячие_цели": {t: sorted(v) for t, v in sorted(dangling.items())},
         "stats": {
             "nodes": len(nodes),
             "edges": len(edges),
+            "dangling": {t: len(v) for t, v in sorted(dangling.items())},
             "by_type": {t: sum(1 for n in nodes if n["type"] == t) for t in sorted(set(n["type"] for n in nodes))},
         },
     }
@@ -722,6 +749,14 @@ BACKREF_SECTION_TEMPLATES = {
     "issledovatelskaya_gruppa": "## Изделия и материалы",
 }
 
+# frontmatter-счётчики обратных ссылок (по типу вершины)
+BACKREF_COUNT_FIELD = {
+    "material": "применяется_в_изделиях_счёт",
+    "tekhnologia": "используется_в_материалах_счёт",
+    "standart": "применяется_в_изделиях_счёт",
+    "issledovatelskaya_gruppa": "изделий_в_группе_счёт",
+}
+
 
 def fill_backrefs(g: dict) -> int:
     """Заполнить обратные рёбра в файлах (разделы '## Применение в изделиях' и т.д.).
@@ -750,6 +785,14 @@ def fill_backrefs(g: dict) -> int:
         refs = backrefs.get(nid, [])
         section_title = BACKREF_SECTION_TEMPLATES[n["type"]]
         text = npath.read_text(encoding="utf-8")
+        # frontmatter-счётчик обратных ссылок (удобно для быстрого grep/сортировки)
+        cnt_field = BACKREF_COUNT_FIELD.get(n["type"])
+        if cnt_field:
+            if re.search(rf"^{cnt_field}:", text, re.M):
+                text = re.sub(rf"^{cnt_field}:\s*\d+", f"{cnt_field}: {len(refs)}",
+                              text, count=1, flags=re.M)
+            else:
+                text = text.replace("---\n", f"---\n{cnt_field}: {len(refs)}\n", 1)
         # Проверим, есть ли уже секция
         if section_title in text:
             # заменим содержимое секции

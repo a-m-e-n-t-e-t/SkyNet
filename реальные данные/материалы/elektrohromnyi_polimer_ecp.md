@@ -1,4 +1,5 @@
 ---
+применяется_в_изделиях_счёт: 0
 id: material_elektrohromnyi_polimer_ecp
 тип: материал
 класс: металл

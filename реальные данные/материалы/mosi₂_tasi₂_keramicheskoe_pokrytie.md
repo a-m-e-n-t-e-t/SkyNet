@@ -1,4 +1,5 @@
 ---
+применяется_в_изделиях_счёт: 0
 id: material_mosi₂_tasi₂_keramicheskoe_pokrytie
 тип: материал
 класс: металл

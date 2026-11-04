@@ -1,4 +1,5 @@
 ---
+применяется_в_изделиях_счёт: 0
 id: material_sic_b₄c_nanostrukturirovannyi_gibrid
 тип: материал
 класс: металл
