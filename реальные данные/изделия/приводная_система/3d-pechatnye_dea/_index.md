@@ -23,6 +23,9 @@ id: izdelie_3d-pechatnye_dea
   - часть: часть_3d-pechatnye_dea_housing
     материал: aluminum
     доля_массы: 0.27
+  - часть: часть_3d-pechatnye_dea_connectors
+    материал: becu
+    доля_массы: 0.05
 scaling_type: количественный
 соединители: []
 версия: реальная
