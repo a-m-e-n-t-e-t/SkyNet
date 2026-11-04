@@ -1205,6 +1205,301 @@ def load_all_models() -> dict[str, dict]:
 
 
 # ============================================================================
+# F22: ВЕРИФИКАЦИЯ ИСТОЧНИКА — URL обязателен для web_search
+# ============================================================================
+
+def check_F22(izdeliya: dict[str, dict]) -> dict:
+    """F22: Если источник=web_search, то источник_url должен быть заполнен.
+    
+    BLOCKING: предотвращает ложные утверждения о web-верификации.
+    Каждый файл, утверждающий `источник: web_search`, должен иметь конкретный URL
+    в поле `источник_url` и дату в `источник_дата`.
+    
+    Также проверяет модели и технологии.
+    """
+    violations = []
+    total = 0
+    valid = 0
+    
+    # Проверить изделия
+    for izd_id, data in izdeliya.items():
+        source = str(data.get('источник', '')).strip()
+        if source != 'web_search':
+            continue
+        total += 1
+        url = data.get('источник_url') or data.get('источник_верификации')
+        if not url or str(url).strip() in ('', 'null', 'None'):
+            violations.append(f"{izd_id}: источник=web_search но источник_url пустой")
+        else:
+            valid += 1
+    
+    # Проверить модели
+    models = load_all_models()
+    for mid, mdata in models.items():
+        source = str(mdata.get('источник', '')).strip()
+        if source != 'web_search':
+            continue
+        total += 1
+        url = mdata.get('источник_url') or mdata.get('источник_верификации')
+        if not url or str(url).strip() in ('', 'null', 'None'):
+            violations.append(f"{mid}: источник=web_search но источник_url пустой")
+        else:
+            valid += 1
+    
+    # Проверить технологии
+    tech_dir = SKYNET_REPO / "реальные данные" / "технологии"
+    for f in tech_dir.glob("*.md"):
+        if f.name.startswith('_'):
+            continue
+        data, _, _ = read_yaml_frontmatter(f)
+        if not data or 'id' not in data:
+            continue
+        source = str(data.get('источник', '')).strip()
+        if source != 'web_search':
+            continue
+        total += 1
+        url = data.get('источник_url')
+        if not url or str(url).strip() in ('', 'null', 'None'):
+            violations.append(f"{data['id']}: источник=web_search но источник_url пустой")
+        else:
+            valid += 1
+    
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F22',
+        'description': 'Верификация источника — URL обязателен для web_search',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
+# F23: АНТИ-ШАБЛОН — обнаружение подстановки вместо исследования
+# ============================================================================
+
+# Признаки шаблонной подстановки
+GENERIC_MATERIALS = {'generic_material', 'не_определён', 'unknown', 'tbd', 'todo'}
+TEMPLATE_DESCRIPTIONS = [
+    'Дочерняя часть изделия',
+    'Основной функциональный элемент',
+    'Защитный корпус из алюминиевого сплава',
+    'Электрические разъёмы для подключения',
+    'Монтажный крепёж',
+]
+
+def check_F23(izdeliya: dict[str, dict]) -> dict:
+    """F23: Анти-шаблон — обнаружение подстановки вместо исследования.
+    
+    BLOCKING: предотвращает шаблонные заглушки.
+    Проверки:
+      1. материал не generic_material / unknown / todo
+      2. описание не содержит шаблонных фраз
+      3. дополнительные не пустой {} для технических частей
+      4. габариты_mm не (100, 100, 50) — дефолтный fallback
+    """
+    violations = []
+    total = 0
+    valid = 0
+    
+    for izd_id, data in izdeliya.items():
+        if not izd_id.startswith('часть_'):
+            continue
+        total += 1
+        file_ok = True
+        
+        # 1. Проверить материалы_частей
+        materials = data.get('материалы_частей', [])
+        if isinstance(materials, list):
+            for m in materials:
+                if isinstance(m, dict):
+                    mat = str(m.get('материал', '')).strip().lower()
+                    if mat in GENERIC_MATERIALS:
+                        violations.append(f"{izd_id}: материал='{mat}' — шаблонная заглушка")
+                        file_ok = False
+        
+        # 2. Проверить описание (body markdown)
+        path = data.get('_path', '')
+        if path:
+            body = Path(path).read_text(encoding='utf-8')
+            # Найти body после YAML
+            body_match = re.search(r"^## Описание\s*\n\s*\n(.+?)(?:\n##|\Z)", body, re.MULTILINE | re.DOTALL)
+            if body_match:
+                desc = body_match.group(1).strip()
+                for tmpl in TEMPLATE_DESCRIPTIONS:
+                    if desc.startswith(tmpl):
+                        violations.append(f"{izd_id}: описание начинается с шаблонной фразы '{tmpl[:30]}...'")
+                        file_ok = False
+                        break
+        
+        # 3. Проверить габариты — не дефолтные (100, 100, 50)
+        basic = data.get('основные', {})
+        if isinstance(basic, dict):
+            dims = basic.get('габариты_mm')
+            if isinstance(dims, dict):
+                l = dims.get('l')
+                w = dims.get('w')
+                h = dims.get('h')
+                # Если все три 100/100/50 — это fallback
+                if l == 100 and w == 100 and h == 50:
+                    violations.append(f"{izd_id}: габариты 100×100×50 — дефолтный fallback (не исследовался)")
+                    file_ok = False
+        
+        if file_ok:
+            valid += 1
+    
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F23',
+        'description': 'Анти-шаблон — обнаружение подстановки вместо исследования',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
+# F24: СООТВЕТСТВИЕ ПОДТИПУ — ожидаемые поля для каждого подтипа
+# ============================================================================
+
+# Минимальный набор ожидаемых полей в дополнительные для каждого подтипа
+SUBTYPE_REQUIRED_FIELDS: dict[str, list[str]] = {
+    'neural_net_cpu': ['тех_процесс_nm', 'SRAM_MB'],
+    'Pu-238_источник': ['изотоп', 'T_жизни_лет'],
+    'Am-241_источник': ['изотоп', 'T_жизни_лет'],
+    'H-3_тритий': ['изотоп', 'T_жизни_лет'],
+    'plasma_cannon': ['мощность_выстрела_MJ'],
+    'mimetic_polyalloy': ['тип'],
+    'hydrogen_fuel_cell': ['T_жизни_лет'],
+    'hyperalloy_endoskeleton': ['материал'],
+    'NMC_катод': ['ёмкость_мАч_г'],
+    'керамические_слои': ['V_max_V'],
+    'PEM_мембрана': ['толщина_мкм'],
+    'YSZ_электролит': ['T_рабочая_C'],
+    'термопары': ['КПД_процентов'],
+}
+
+def check_F24(izdeliya: dict[str, dict]) -> dict:
+    """F24: Соответствие подтипу — ожидаемые поля для каждого подтипа.
+    
+    BLOCKING: каждый подтип части должен иметь специфичные поля в дополнительные.
+    Например, нейроморфный CPU должен иметь тех_процесс_nm и SRAM_MB.
+    """
+    violations = []
+    total = 0
+    valid = 0
+    
+    for izd_id, data in izdeliya.items():
+        if not izd_id.startswith('часть_'):
+            continue
+        subtype = data.get('подтип', '')
+        if subtype not in SUBTYPE_REQUIRED_FIELDS:
+            continue  # нет требований — пропускаем
+        total += 1
+        
+        required = SUBTYPE_REQUIRED_FIELDS[subtype]
+        additional = data.get('дополнительные', {})
+        if not isinstance(additional, dict):
+            additional = {}
+        
+        # Также проверить основные
+        basic = data.get('основные', {})
+        if not isinstance(basic, dict):
+            basic = {}
+        all_fields = {**basic, **additional}
+        
+        missing = [f for f in required if f not in all_fields]
+        if missing:
+            violations.append(f"{izd_id} ({subtype}): отсутствуют ожидаемые поля: {missing}")
+        else:
+            valid += 1
+    
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F24',
+        'description': 'Соответствие подтипу — ожидаемые поля для каждого подтипа',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
+# F25: УНИКАЛЬНОСТЬ ДАННЫХ — анти-дубликаты
+# ============================================================================
+
+def check_F25(izdeliya: dict[str, dict]) -> dict:
+    """F25: Уникальность данных — нет дубликатов габариты+масса+материал.
+    
+    BLOCKING: если 3+ файла часть_* с разными id имеют идентичные
+    (габариты_mm.l, габариты_mm.w, габариты_mm.h, масса_kg, материал) —
+    это признак шаблонной подстановки.
+    
+    Допускается не более 2 файлов с одинаковым набором (для парных компонентов
+    типа 2 одинаковых топливных элемента).
+    """
+    violations = []
+    
+    # Группировать по (l, w, h, mass, material)
+    signatures: dict[tuple, list[str]] = {}
+    
+    for izd_id, data in izdeliya.items():
+        if not izd_id.startswith('часть_'):
+            continue
+        basic = data.get('основные', {})
+        if not isinstance(basic, dict):
+            continue
+        mass = basic.get('масса_kg')
+        dims = basic.get('габариты_mm')
+        if not isinstance(dims, dict):
+            continue
+        l = dims.get('l')
+        w = dims.get('w')
+        h = dims.get('h')
+        
+        # Найти материал
+        material = ''
+        materials = data.get('материалы_частей', [])
+        if isinstance(materials, list):
+            for m in materials:
+                if isinstance(m, dict):
+                    material = str(m.get('материал', ''))
+                    break
+        
+        sig = (l, w, h, mass, material)
+        signatures.setdefault(sig, []).append(izd_id)
+    
+    # Найти группы с 3+ файлами
+    total = len(signatures)
+    valid = 0
+    for sig, ids in signatures.items():
+        if len(ids) > 2:
+            violations.append(
+                f"Дубликат: {len(ids)} файлов с габаритами {sig[0]}×{sig[1]}×{sig[2]}mm, "
+                f"масса={sig[3]}kg, материал={sig[4]}: {ids[:5]}"
+            )
+        else:
+            valid += 1
+    
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F25',
+        'description': 'Уникальность данных — анти-дубликаты (≤2 файлов с одинаковыми параметрами)',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
 # MAIN
 # ============================================================================
 
@@ -1316,6 +1611,50 @@ def run_all_checks() -> dict:
     r = check_F21(models, izdeliya)
     results['F21'] = r
     print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    
+    # F22 — верификация источника (NON-BLOCKING для первого прогона)
+    print()
+    print("=== F22: Верификация источника ===")
+    r = check_F22(izdeliya)
+    results['F22'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+    
+    # F23 — анти-шаблон (NON-BLOCKING для первого прогона)
+    print()
+    print("=== F23: Анти-шаблон ===")
+    r = check_F23(izdeliya)
+    results['F23'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+    
+    # F24 — соответствие подтипу
+    print()
+    print("=== F24: Соответствие подтипу ===")
+    r = check_F24(izdeliya)
+    results['F24'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+    
+    # F25 — уникальность данных
+    print()
+    print("=== F25: Уникальность данных ===")
+    r = check_F25(izdeliya)
+    results['F25'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
     
     # Сводка
     print()

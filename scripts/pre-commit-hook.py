@@ -115,15 +115,17 @@ def main():
         if not os.path.exists(os.path.join(SKYNET_REPO, f)):
             errors.append(f'Required file missing: {f}')
     
-    # 4. v9.31 Decomposition Validator (F12a, F14, F15a-h, F16, F17, F18, F19, F20, F21)
-    # F13 — информационная (показывает пробелы в покрытии подсистем), не блокирующая
+    # 4. v9.31 Decomposition Validator (F12a-F25)
+    # F13, F22, F23, F24, F25 — информационные (warnings), не блокирующие
+    # F22-F25 — анти-шаблон метрики, станут блокирующими после полной верификации
     try:
         sys.path.insert(0, os.path.join(SKYNET_REPO, 'scripts'))
         from validate_decomposition import run_all_checks
         decomp_results = run_all_checks()
+        # Метрики которые пока warning (не блокирующие)
+        WARNING_METRICS = {'F13', 'F22', 'F23', 'F24', 'F25'}
         for metric, result in decomp_results['results'].items():
-            if metric == 'F13':
-                # F13 — информационная, не блокирующая
+            if metric in WARNING_METRICS:
                 if not result['pass']:
                     warnings.append(f"{metric}: {result['ratio']:.2f} ({result['valid']}/{result['total']}) — {result['description']}")
                 continue

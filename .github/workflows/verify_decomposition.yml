@@ -1,0 +1,166 @@
+# SkyNet Decomposition Verification — auto-create issues for files needing verification
+# v9.31: F22-F25 — anti-stub metrics
+#
+# Триггеры:
+#   - push на main с изменениями в реальные данные/ или фантастические данные/
+#   - workflow_dispatch (ручной запуск)
+#
+# Что делает:
+#   1. Запускает validate_decomposition.py — получает список violations F22-F25
+#   2. Для каждого violation создаёт GitHub issue с меткой `verify-task`
+#      (БЕЗ дублирования — проверяет что issue для этого файла уже не существует)
+#   3. Issues обрабатываются другим workflow (verify_process.yml) или cron-агентом
+
+name: Decomposition — create verification tasks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'реальные данные/**'
+      - 'фантастические данные/**'
+      - 'scripts/validate_decomposition.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  create-tasks:
+    name: Create verification issues for F22-F25 violations
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout SkyNet
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pyyaml jsonschema
+
+      - name: Run validate_decomposition.py — get F22-F25 violations
+        id: violations
+        run: |
+          set +e
+          python scripts/validate_decomposition.py 2>&1 | tee validate_output.log
+          # Извлечь violations из вывода и сохранить в JSON
+          python -c "
+          import json, re, sys
+          
+          # Парсить вывод и собрать violations
+          violations = {'F22': [], 'F23': [], 'F24': [], 'F25': []}
+          current_metric = None
+          
+          with open('validate_output.log') as f:
+              for line in f:
+                  m = re.match(r'=== (F2[2-5]):', line.strip())
+                  if m:
+                      current_metric = m.group(1)
+                      continue
+                  if current_metric and line.strip().startswith('- '):
+                      violations[current_metric].append(line.strip()[2:])
+          
+          with open('violations.json', 'w') as f:
+              json.dump(violations, f, ensure_ascii=False, indent=2)
+          
+          total = sum(len(v) for v in violations.values())
+          print(f'Total violations: {total}')
+          for metric, vs in violations.items():
+              print(f'  {metric}: {len(vs)} violations')
+          "
+          
+          echo "total_violations=$(python -c 'import json; d=json.load(open(\"violations.json\")); print(sum(len(v) for v in d.values()))')" >> $GITHUB_OUTPUT
+
+      - name: Create issues for each violation (no duplicates)
+        if: steps.violations.outputs.total_violations != '0'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
+            
+            // Получить все открытые issues с меткой verify-task
+            const existingIssues = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'verify-task',
+              state: 'open',
+              per_page: 100
+            });
+            
+            // Создать множество уже существующих заголовков
+            const existingTitles = new Set(existingIssues.data.map(i => i.title));
+            
+            let created = 0;
+            let skipped = 0;
+            
+            for (const [metric, violList] of Object.entries(violations)) {
+              for (const v of violList) {
+                // Извлечь id файла из violation
+                const idMatch = v.match(/^([a-zA-Z0-9_+-]+):/);
+                const fileId = idMatch ? idMatch[1] : v.substring(0, 50);
+                const title = `[${metric}] Verify: ${fileId}`;
+                
+                if (existingTitles.has(title)) {
+                  skipped++;
+                  continue;  // не дублируем
+                }
+                
+                await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: title,
+                  body: [
+                    `## Задача верификации: ${metric}`,
+                    ``,
+                    `**Метрика:** ${metric}`,
+                    `**Файл:** \`${fileId}\``,
+                    `**Нарушение:** ${v}`,
+                    ``,
+                    `### Что нужно сделать`,
+                    ``,
+                    `1. Найти файл в репозитории по id \`${fileId}\``,
+                    `2. Провести реальный веб-поиск для этого компонента`,
+                    `3. Заполнить реальные данные:`,
+                    `   - материал (конкретный, не generic_material)`,
+                    `   - габариты (из datasheet/canon)`,
+                    `   - источник_url (URL веб-источника)`,
+                    `   - описание (не шаблонное)`,
+                    `4. Зафиксировать изменения и закрыть issue`,
+                    ``,
+                    `### Критерии закрытия`,
+                    ``,
+                    `- F22: источник_url заполнен конкретным URL`,
+                    `- F23: нет generic_material, нет шаблонного описания`,
+                    `- F24: все ожидаемые поля для подтипа присутствуют`,
+                    `- F25: параметры уникальны (≤2 файлов с одинаковыми)`,
+                    ``,
+                    `**Авто-создано:** ${new Date().toISOString()}`,
+                    `**Коммит:** ${context.sha.substring(0, 8)}`,
+                  ].join('\n'),
+                  labels: ['verify-task', metric.toLowerCase(), 'auto-generated'],
+                });
+                created++;
+              }
+            }
+            
+            console.log(`Created: ${created}, Skipped (duplicates): ${skipped}`);
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Decomposition Verification Tasks" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Violations | Description |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| F22 | ${{ steps.violations.outputs.total_violations }} | Source URL required |" >> $GITHUB_STEP_SUMMARY
+          echo "| F23 | — | Anti-template detection |" >> $GITHUB_STEP_SUMMARY
+          echo "| F24 | — | Subtype compliance |" >> $GITHUB_STEP_SUMMARY
+          echo "| F25 | — | Data uniqueness |" >> $GITHUB_STEP_SUMMARY
