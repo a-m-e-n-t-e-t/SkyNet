@@ -41,7 +41,7 @@ jobs:
       - name: Checkout SkyNet
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1  # CHANGELOG читается из рабочего дерева, git log не используется
 
       - name: Determine tag
         id: tag

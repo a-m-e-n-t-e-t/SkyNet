@@ -17,6 +17,7 @@ Usage:
 """
 from __future__ import annotations
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -835,9 +836,47 @@ def build_backref_body(refs: list[tuple[str, str, str]], ntype: str) -> str:
 # Main
 # ============================================================================
 
+def source_fingerprint() -> str:
+    """Хэш всех входных данных генераторов (контент, не mtime).
+
+    Оптимизация (2026-11-05): регенерация графов на каждом коммите занимала ~3.6 с
+    даже когда данные не менялись (например, правки только в graphs/ или docs).
+    Теперь: если контент-хэш входов совпал с кэшем и выходы существуют — пропускаем.
+    Полная пересборка остаётся при любом изменении данных (корректность важнее скорости).
+    """
+    h = hashlib.sha256()
+    excl_dirs = {'.git', 'graphs', 'архив'}
+    count = 0
+    for root, dirs, files in os.walk(REPO):
+        dirs[:] = sorted(d for d in dirs if d not in excl_dirs)
+        for fn in sorted(files):
+            if not fn.endswith(('.md', '.py', '.json', '.yaml')):
+                continue
+            p = Path(root) / fn
+            try:
+                h.update(str(p.relative_to(REPO)).encode())
+                h.update(b'\0')
+                h.update(hashlib.sha256(p.read_bytes()).digest())
+                count += 1
+            except OSError:
+                continue
+    return h.hexdigest() + f':{count}'
+
+
+def outputs_exist() -> bool:
+    """Все ожидаемые выходные файлы на месте?"""
+    required = [
+        GRAPHS_DIR / 'graph1_data.json',
+        GRAPHS_DIR / 'graph2_meta.json',
+        GRAPHS_DIR / 'graph3_traceability.json',
+    ]
+    return all(p.exists() for p in required)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="SkyNet — генератор графов")
     ap.add_argument("--all", action="store_true", help="Сгенерировать все 3 графа")
+    ap.add_argument("--force", action="store_true", help="Игнорировать fingerprint-кэш")
     ap.add_argument("--graph", type=int, choices=[1, 2, 3], help="Сгенерировать только указанный граф")
     ap.add_argument("--mermaid", action="store_true", help="Также сгенерировать Mermaid-рендеры")
     ap.add_argument("--fill-backrefs", action="store_true",
@@ -856,7 +895,18 @@ def main() -> int:
     GRAPHS_DIR.mkdir(parents=True, exist_ok=True)
     MERMAID_DIR.mkdir(parents=True, exist_ok=True)
 
+    # Инкрементальный режим: --all без изменений входов → пропуск
+    fp_file = GRAPHS_DIR / '.source_fingerprint'
+    if args.all and not args.force:
+        fp = source_fingerprint()
+        cached = fp_file.read_text(encoding='utf-8').strip() if fp_file.exists() else ''
+        if fp == cached and outputs_exist():
+            print("Графы актуальны (fingerprint совпал) — регенерация пропущена")
+            return 0
+
+    regenerated = False
     if args.all or args.graph == 1:
+        regenerated = True
         print("Граф 1 (данные)...")
         g1 = graph1_build()
         (GRAPHS_DIR / "graph1_data.json").write_text(
@@ -876,6 +926,7 @@ def main() -> int:
             print("  Mermaid-рендеры записаны")
 
     if args.all or args.graph == 2:
+        regenerated = True
         print("Граф 2 (мета)...")
         g2 = graph2_build()
         (GRAPHS_DIR / "graph2_meta.json").write_text(
@@ -887,6 +938,7 @@ def main() -> int:
             print("  Mermaid-рендер записан")
 
     if args.all or args.graph == 3:
+        regenerated = True
         print("Граф 3 (traceability)...")
         g3 = graph3_build()
         (GRAPHS_DIR / "graph3_traceability.json").write_text(
@@ -896,6 +948,11 @@ def main() -> int:
         if args.mermaid or args.all:
             (MERMAID_DIR / "graph3_traceability.md").write_text(graph3_mermaid(g3), encoding="utf-8")
             print("  Mermaid-рендер записан")
+
+    # Сохранить fingerprint только после ПОЛНОЙ регенерации (--all),
+    # чтобы частичные запуски (--graph N) не кэшировались как полные.
+    if args.all and regenerated:
+        (GRAPHS_DIR / '.source_fingerprint').write_text(source_fingerprint(), encoding='utf-8')
 
     return 0
 

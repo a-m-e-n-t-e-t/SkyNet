@@ -47,12 +47,15 @@ jobs:
       - name: Checkout SkyNet
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # нужна вся история для метрик git
+          fetch-depth: 1  # достаточно: git-метрики в pre-commit-hook.py не используются
 
       - name: Set up Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip          # кэш зависимостей между запусками
+          cache-dependency-path: |
+            .github/workflows/pre-commit-checks.yml
 
       - name: Install dependencies
         run: |

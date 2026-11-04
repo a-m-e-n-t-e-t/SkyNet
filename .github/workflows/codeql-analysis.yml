@@ -60,7 +60,7 @@ jobs:
       - name: Checkout SkyNet
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1  # CodeQL строит базу из текущего дерева, история не нужна
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3

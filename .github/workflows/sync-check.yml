@@ -37,7 +37,7 @@ jobs:
       - name: Checkout SkyNet
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # вся история
+          fetch-depth: 1  # достаточно: git fetch + rev-parse HEAD/origin
 
       - name: Configure git
         run: |

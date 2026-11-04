@@ -189,6 +189,7 @@ graph TB
     script_pre-commit-hook_py -.->|imports| script__helpers_py
     script__helpers_py -.->|implements| section_§13_20_Метрики_v9_29_F70j_+_F90_(decisions_log_+_маскировка_
     script_decompose_all_izdeliya_py -.->|imports| script_validate_decomposition_py
+    script_pre-commit-hook_py -.->|imports| script_validate_decomposition_py
     script__helpers_py -.->|implements| section_§13_15_Метрики_v9_24_F81-F87_(аудиты_реализации,_диалога,_ca
     script__helpers_py -.->|implements| section_§13_17_Метрика_v9_26_F70g_(schema-driven_validation)
     script__helpers_py -.->|implements| section_§13_18_Метрика_v9_27_F70h_(enum_validation)
@@ -201,7 +202,6 @@ graph TB
     script_generate_wrapper_izdeliya_py -.->|imports| script_validate_decomposition_py
     script_generate_wrapper_izdeliya_py -.->|imports| script_generate_decomposition_py
     script_pipeline_py -.->|imports| script__helpers_py
-    script_pre-commit-hook_py -.->|imports| script_validate_decomposition_py
     script_real_decomposition_py -.->|imports| script_validate_decomposition_py
     script_validate_field_contracts_py -.->|imports| script__helpers_py
     script_web_verify_py -.->|imports| script_validate_decomposition_py
@@ -238,7 +238,7 @@ graph TB
     section_§11_5__Разделение_уровней__паттерн_vs_экземпляр -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 184, рёбер: 212 (показано топ-50)._
+_Узлов: 184, рёбер: 213 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|

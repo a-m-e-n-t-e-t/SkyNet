@@ -1146,12 +1146,6 @@
     },
     {
       "src": "script:pre-commit-hook.py",
-      "dst": "script:_helpers.py",
-      "type": "imports",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
       "dst": "script:validate_decomposition.py",
       "type": "imports",
       "meta": {}
@@ -1165,6 +1159,18 @@
     {
       "src": "script:pre-commit-hook.py",
       "dst": "script:_helpers.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "script:_helpers.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "script:validate_decomposition.py",
       "type": "imports",
       "meta": {}
     },
@@ -2383,7 +2389,7 @@
   ],
   "stats": {
     "nodes": 184,
-    "edges": 212,
+    "edges": 213,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,

@@ -2,6 +2,8 @@
 v9.31: функциональная реализация (не заглушка)."""
 
 import os, sys, re, json
+from glob import glob
+from pathlib import Path as _Path
 
 SKYNET_REPO = os.environ.get('SKYNET_REPO', '.')
 
@@ -47,23 +49,19 @@ def check_path_type_status():
     return violations
 
 def _read_yaml_frontmatter(filepath):
-    """Читает YAML front matter из Markdown файла."""
+    """Читает YAML front matter из Markdown файла.
+
+    Оптимизация/фикс (2026-11-05): ранее здесь был наивный парсер (только
+    top-level key: value), который терял вложенные поля (реализация_промышленная,
+    материалы_частей и т.п.) — из-за этого F4 не видел реальные значения.
+    Теперь используется полноценный парсер из validate_decomposition
+    (yaml.safe_load + кэш по mtime).
+    """
     try:
-        with open(filepath, 'r', encoding='utf-8') as f:
-            content = f.read()
-        if not content.startswith('---'):
-            return None
-        end = content.find('\n---', 3)
-        if end < 0:
-            return None
-        yaml_text = content[3:end]
-        # Simple YAML parsing (avoid dependency)
-        data = {}
-        for line in yaml_text.split('\n'):
-            if ':' in line and not line.startswith(' ') and not line.startswith('#'):
-                key, val = line.split(':', 1)
-                data[key.strip()] = val.strip()
-        return data
+        sys.path.insert(0, os.path.join(SKYNET_REPO, 'scripts'))
+        from validate_decomposition import read_yaml_frontmatter
+        data, _, _ = read_yaml_frontmatter(_Path(filepath))
+        return data if isinstance(data, dict) else None
     except Exception:
         return None
 
@@ -86,93 +84,6 @@ def check_f70():
         return result
     except Exception as e:
         return {'F70_overall': 0.0, 'error': str(e)}
-
-def main():
-    """Точка входа pre-commit hook."""
-    print("SkyNet Pre-commit Hook v9.31")
-    
-    errors = []
-    warnings = []
-    
-    # 1. Path-type-status check (F4)
-    violations = check_path_type_status()
-    if violations:
-        errors.extend(violations)
-    
-    # 2. F70: schema_catalog_consistency
-    f70_result = check_f70()
-    f70_overall = f70_result.get('F70_overall', 0.0)
-    if f70_overall < 1.0:
-        errors.append(f'F70 schema_catalog_consistency = {f70_overall} (FAIL)')
-    
-    # 3. Check required files exist
-    required = [
-        'требования_к_ии/_принципы.md',
-        'требования_к_ии/_версия_правил.yaml',
-        'требования_к_ии/_t800_terms.txt',
-    ]
-    for f in required:
-        if not os.path.exists(os.path.join(SKYNET_REPO, f)):
-            errors.append(f'Required file missing: {f}')
-    
-    # 4. v9.31 Decomposition Validator (F12a-F25)
-    # F13, F22, F23, F24, F25 — информационные (warnings), не блокирующие
-    # F22-F25 — анти-шаблон метрики, станут блокирующими после полной верификации
-    try:
-        sys.path.insert(0, os.path.join(SKYNET_REPO, 'scripts'))
-        from validate_decomposition import run_all_checks
-        decomp_results = run_all_checks()
-        # Метрики которые пока warning (не блокирующие)
-        WARNING_METRICS = {'F13', 'F22', 'F23', 'F24', 'F25'}
-        for metric, result in decomp_results['results'].items():
-            if metric in WARNING_METRICS:
-                if not result['pass']:
-                    warnings.append(f"{metric}: {result['ratio']:.2f} ({result['valid']}/{result['total']}) — {result['description']}")
-                continue
-            if not result['pass']:
-                errors.append(f"{metric}: {result['ratio']:.2f} ({result['valid']}/{result['total']}) — {result['description']}")
-                for v in result.get('violations', [])[:3]:
-                    errors.append(f"  - {v}")
-    except Exception as e:
-        warnings.append(f"Decomposition validator не запустился: {e}")
-
-    # 5. Регенерация графов связей (graph1/2/3 + mermaid-рендеры)
-    #    Графы — source of truth для навигации по репозиторию, обновляются
-    #    автоматически на каждом коммите.
-    try:
-        import subprocess
-        result = subprocess.run(
-            ['python3', os.path.join(SKYNET_REPO, 'scripts', 'generate_graphs.py'), '--all'],
-            capture_output=True, text=True, cwd=SKYNET_REPO
-        )
-        if result.returncode != 0:
-            warnings.append(f"Графы не сгенерированы: {result.stderr[:200]}")
-        else:
-            # git add графов, чтобы они попали в этот же коммит
-            subprocess.run(
-                ['git', 'add', 'graphs/'],
-                cwd=SKYNET_REPO, capture_output=True
-            )
-    except Exception as e:
-        warnings.append(f"Генератор графов не запустился: {e}")
-
-    # Report
-    if errors:
-        print(f'❌ БЛОКИРОВКА коммита ({len(errors)} ошибок):')
-        for e in errors:
-            print(f'  - {e}')
-        sys.exit(1)
-    
-    if warnings:
-        print(f'⚠️ Предупреждения ({len(warnings)}):')
-        for w in warnings:
-            print(f'  - {w}')
-    
-    print('✅ Pre-commit check passed — коммит разрешён')
-    sys.exit(0)
-
-if __name__ == '__main__':
-    main()
 
 # === v9.24-v9.25: Метрики F81-F88 ===
 
@@ -271,7 +182,6 @@ def check_F70g_all(repo_path):
     prompt_path = os.path.join(repo_path, "требования_к_ии", "SkyNet_PROMPT_v9.26.md")
     if not os.path.exists(prompt_path):
         # Fallback: найти любой SkyNet_PROMPT_v*.md
-        import glob
         prompts = glob.glob(os.path.join(repo_path, "требования_к_ии", "SkyNet_PROMPT_v*.md"))
         if prompts:
             prompt_path = sorted(prompts)[-1]  # последняя версия
@@ -335,3 +245,92 @@ def run_all_checks(repo_path):
     )
     results['all_pass'] = all_pass
     return results
+
+
+def main():
+    """Точка входа pre-commit hook."""
+    print("SkyNet Pre-commit Hook v9.31")
+    
+    errors = []
+    warnings = []
+    
+    # 1. Path-type-status check (F4)
+    violations = check_path_type_status()
+    if violations:
+        errors.extend(violations)
+    
+    # 2. F70: schema_catalog_consistency
+    f70_result = check_f70()
+    f70_overall = f70_result.get('F70_overall', 0.0)
+    if f70_overall < 1.0:
+        errors.append(f'F70 schema_catalog_consistency = {f70_overall} (FAIL)')
+    
+    # 3. Check required files exist
+    required = [
+        'требования_к_ии/_принципы.md',
+        'требования_к_ии/_версия_правил.yaml',
+        'требования_к_ии/_t800_terms.txt',
+    ]
+    for f in required:
+        if not os.path.exists(os.path.join(SKYNET_REPO, f)):
+            errors.append(f'Required file missing: {f}')
+    
+    # 4. v9.31 Decomposition Validator (F12a-F25)
+    # F13, F22, F23, F24, F25 — информационные (warnings), не блокирующие
+    # F22-F25 — анти-шаблон метрики, станут блокирующими после полной верификации
+    try:
+        sys.path.insert(0, os.path.join(SKYNET_REPO, 'scripts'))
+        from validate_decomposition import run_all_checks
+        decomp_results = run_all_checks()
+        # Метрики которые пока warning (не блокирующие)
+        WARNING_METRICS = {'F13', 'F22', 'F23', 'F24', 'F25'}
+        for metric, result in decomp_results['results'].items():
+            if metric in WARNING_METRICS:
+                if not result['pass']:
+                    warnings.append(f"{metric}: {result['ratio']:.2f} ({result['valid']}/{result['total']}) — {result['description']}")
+                continue
+            if not result['pass']:
+                errors.append(f"{metric}: {result['ratio']:.2f} ({result['valid']}/{result['total']}) — {result['description']}")
+                for v in result.get('violations', [])[:3]:
+                    errors.append(f"  - {v}")
+    except Exception as e:
+        warnings.append(f"Decomposition validator не запустился: {e}")
+
+    # 5. Регенерация графов связей (graph1/2/3 + mermaid-рендеры)
+    #    Графы — source of truth для навигации по репозиторию, обновляются
+    #    автоматически на каждом коммите.
+    try:
+        import subprocess
+        result = subprocess.run(
+            ['python3', os.path.join(SKYNET_REPO, 'scripts', 'generate_graphs.py'), '--all'],
+            capture_output=True, text=True, cwd=SKYNET_REPO
+        )
+        if result.returncode != 0:
+            warnings.append(f"Графы не сгенерированы: {result.stderr[:200]}")
+        else:
+            # git add графов, чтобы они попали в этот же коммит
+            subprocess.run(
+                ['git', 'add', 'graphs/'],
+                cwd=SKYNET_REPO, capture_output=True
+            )
+    except Exception as e:
+        warnings.append(f"Генератор графов не запустился: {e}")
+
+    # Report
+    if errors:
+        print(f'❌ БЛОКИРОВКА коммита ({len(errors)} ошибок):')
+        for e in errors:
+            print(f'  - {e}')
+        sys.exit(1)
+    
+    if warnings:
+        print(f'⚠️ Предупреждения ({len(warnings)}):')
+        for w in warnings:
+            print(f'  - {w}')
+    
+    print('✅ Pre-commit check passed — коммит разрешён')
+    sys.exit(0)
+
+
+if __name__ == '__main__':
+    main()
