@@ -90,7 +90,18 @@ Si
 
 ## Применение в изделиях
 
-(Ссылки на реальные_данные/изделия/ добавляются после связывания)
+**Используется в частях/изделиях:**
+- `часть_brainchip_akida_2_die` — кремниевый_кристалл
+- `часть_gr801_noel-v_risc-v_die` — risc_v_кристалл
+- `часть_halve_die` — кремниевый_кристалл
+- `часть_ibm_northpole_die` — инференс_кристалл
+- `часть_intel_loihi_2_die` — кремниевый_кристалл
+- `часть_t600_cpu` — early_neural_cpu
+- `часть_t800_cpu` — neural_net_cpu
+- `часть_t800_оптический_сенсор_1` — optical_camera
+- `часть_t800_оптический_сенсор_2` — optical_camera
+- `часть_tverdotelnye_akkumulyatory_anode` — графит_анод
+- `часть_tverdotelnye_akkumulyatory_cathode` — NMC_катод
 
 ## Аналоги и заменители
 

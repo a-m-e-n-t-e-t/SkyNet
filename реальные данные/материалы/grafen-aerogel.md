@@ -90,7 +90,9 @@ id: material_grafen-aerogel
 
 ## Применение в изделиях
 
-(Ссылки на реальные_данные/изделия/ добавляются после связывания)
+**Используется в частях/изделиях:**
+- `часть_mmrtg_thermal_insulation` — изоляция
+- `часть_termoelektricheskii_postoyannyi_magnit_insulation` — изоляция
 
 ## Аналоги и заменители
 

@@ -90,7 +90,14 @@ id: material_epoksid_epon_828_+_teta
 
 ## Применение в изделиях
 
-(Ссылки на реальные_данные/изделия/ добавляются после связывания)
+**Используется в частях/изделиях:**
+- `часть_4h-sic_betavoltaik_encapsulant` — инкапсулянт
+- `часть_betavoltaiki_encapsulant` — инкапсулянт
+- `часть_brainchip_akida_2_encapsulant` — инкапсулянт
+- `часть_gr801_noel-v_risc-v_package` — корпус_FCTEBGA
+- `часть_halve_encapsulant` — инкапсулянт
+- `часть_intel_loihi_2_encapsulant` — инкапсулянт
+- `часть_ni-63_betavoltaik_4h-sic_encapsulant` — инкапсулянт
 
 ## Аналоги и заменители
 

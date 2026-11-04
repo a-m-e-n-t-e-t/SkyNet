@@ -91,3 +91,8 @@ ZrO₂ + 8 mol% Y₂O₃ (Zr₀.₉₂Y₀.₀₈O₁.₉₆); чистота �
 
 - 8YSZ yttria stabilized zirconia: properties, applications, selection guide: <https://en.zz-zirconia.com/8ysz-yttria-stabilized-zirconia-properties-applications-selection-guide> (проверено 2026-11-04)
 - Yuki Makinose et al., «Ionic Conductivity of Electrolytes Composed of Oleate-Capped Yttria-Stabilized Zirconia Nanoparticles», ACS Omega 2023: <https://pmc.ncbi.nlm.nih.gov/articles/PMC10753559> (проверено 2026-11-04)
+
+## Применение в изделиях
+
+**Используется в частях/изделиях:**
+- `часть_tverdooksidnyi_toplivnyi_element_electrolyte` — YSZ_электролит

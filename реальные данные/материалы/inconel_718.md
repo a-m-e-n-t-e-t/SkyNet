@@ -90,7 +90,17 @@ Inconel 718
 
 ## Применение в изделиях
 
-(Ссылки на реальные_данные/изделия/ добавляются после связывания)
+**Используется в частях/изделиях:**
+- `izdelie_SkyNet-HKAerial` — модель_обёртка
+- `izdelie_SkyNet-HKAerial` — модель_обёртка
+- `izdelie_asrg` — радиоизотопный_генератор_Стирлинг
+- `izdelie_nasa_asc-e_srsc` — Стирлинг_конвертер
+- `izdelie_nasa_asc-e_srsc` — Стирлинг_конвертер
+- `izdelie_svobodnoporshnevoi_stirling` — свободнопоршневой_Стирлинг
+- `izdelie_svobodnoporshnevoi_stirling` — свободнопоршневой_Стирлинг
+- `часть_hk_aerial_двигатель_левый` — nuclear_vtol_engine
+- `часть_hk_aerial_двигатель_правый` — nuclear_vtol_engine
+- `часть_svobodnoporshnevoi_stirling_heater` — нагреватель
 
 ## Аналоги и заменители
 

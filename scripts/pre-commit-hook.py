@@ -135,7 +135,27 @@ def main():
                     errors.append(f"  - {v}")
     except Exception as e:
         warnings.append(f"Decomposition validator не запустился: {e}")
-    
+
+    # 5. Регенерация графов связей (graph1/2/3 + mermaid-рендеры)
+    #    Графы — source of truth для навигации по репозиторию, обновляются
+    #    автоматически на каждом коммите.
+    try:
+        import subprocess
+        result = subprocess.run(
+            ['python3', os.path.join(SKYNET_REPO, 'scripts', 'generate_graphs.py'), '--all'],
+            capture_output=True, text=True, cwd=SKYNET_REPO
+        )
+        if result.returncode != 0:
+            warnings.append(f"Графы не сгенерированы: {result.stderr[:200]}")
+        else:
+            # git add графов, чтобы они попали в этот же коммит
+            subprocess.run(
+                ['git', 'add', 'graphs/'],
+                cwd=SKYNET_REPO, capture_output=True
+            )
+    except Exception as e:
+        warnings.append(f"Генератор графов не запустился: {e}")
+
     # Report
     if errors:
         print(f'❌ БЛОКИРОВКА коммита ({len(errors)} ошибок):')

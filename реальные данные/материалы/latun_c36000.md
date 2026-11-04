@@ -87,3 +87,8 @@ Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5%, Fe ≤ 0.35% (UNS C3
 - https://www.schreier-metall.de/en/product-range/brass-special-brass/cuzn39pb3 (CuZn39Pb3 — эталон обрабатываемости резанием)
 - https://www.scribd.com/document/464299233/BB-CW614N (CW614N: прочность 360–500 МПа, Pb 2.5–3.5%)
 - https://webstore.iec.ch/en/publication/4418 (IEC 61076-2-101 — стандарт M12 разъёмов)
+
+## Применение в изделиях
+
+**Используется в частях/изделиях:**
+- `часть_lidar_connectors` — разъёмы

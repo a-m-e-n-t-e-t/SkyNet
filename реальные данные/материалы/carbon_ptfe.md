@@ -85,3 +85,10 @@ id: material_carbon_ptfe
 ## Применение
 
 Воздушные катоды металл-воздушных батарей (Al-air, Zn-air), топливные элементы на щелочных электролитах, датчики кислорода (ОРР-электрод).
+
+## Применение в изделиях
+
+**Используется в частях/изделиях:**
+- `izdelie_alyuminievo-vozdushnye_toplivnye_elementy` — алюминиево-воздушный_ТЭ
+- `izdelie_alyuminievo-vozdushnye_toplivnye_elementy` — алюминиево-воздушный_ТЭ
+- `часть_alyuminievo-vozdushnye_toplivnye_elementy_air_electrode` — газодиффузионный_электрод

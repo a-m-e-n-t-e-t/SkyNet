@@ -90,7 +90,9 @@ ScT?
 
 ## Применение в изделиях
 
-(Ссылки на реальные_данные/изделия/ добавляются после связывания)
+**Используется в частях/изделиях:**
+- `izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik` — бета_вольтаик_3D_SiC
+- `часть_3d_sic-mikropillarnyi_tritii-betavoltaik_isotope` — H-3_тритий
 
 ## Аналоги и заменители
 

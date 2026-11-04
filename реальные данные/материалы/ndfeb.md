@@ -90,7 +90,11 @@ NdFeB
 
 ## Применение в изделиях
 
-(Ссылки на реальные_данные/изделия/ добавляются после связывания)
+**Используется в частях/изделиях:**
+- `izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist` — магнитная_мышца
+- `izdelie_vysokotemperaturnyi_sverhprovodyaschii_podshipnik` — HTS_подшипник
+- `часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_magnets` — постоянные_магниты
+- `часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_magnet` — магнит_ротор
 
 ## Аналоги и заменители
 

@@ -1,0 +1,4513 @@
+{
+  "kind": "graph3_traceability",
+  "description": "Traceability-граф: метрика → скрипт → файл",
+  "nodes": [
+    {
+      "id": "P064",
+      "type": "metric",
+      "label": "P064",
+      "path": ""
+    },
+    {
+      "id": "section:### §10.3 Канон: паттерн vs конкретное имя в дереве (P064, v",
+      "type": "spec_section",
+      "label": "### §10.3 Канон: паттерн vs конкретное имя в дереве (P064, v9.8)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F71",
+      "type": "metric",
+      "label": "F71",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.13 Метрики v9.22 F71-F75 (типизация моделей + многос",
+      "type": "spec_section",
+      "label": "### §13.13 Метрики v9.22 F71-F75 (типизация моделей + многослойная броня)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F75",
+      "type": "metric",
+      "label": "F75",
+      "path": ""
+    },
+    {
+      "id": "F79",
+      "type": "metric",
+      "label": "F79",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.14 Метрики v9.23 F79-F80 (тип-специфичный subset под",
+      "type": "spec_section",
+      "label": "### §13.14 Метрики v9.23 F79-F80 (тип-специфичный subset подсистем)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F80",
+      "type": "metric",
+      "label": "F80",
+      "path": ""
+    },
+    {
+      "id": "F81",
+      "type": "metric",
+      "label": "F81",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.15 Метрики v9.24 F81-F87 (аудиты реализации, диалога",
+      "type": "spec_section",
+      "label": "### §13.15 Метрики v9.24 F81-F87 (аудиты реализации, диалога, canon_realizable)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F87",
+      "type": "metric",
+      "label": "F87",
+      "path": ""
+    },
+    {
+      "id": "F88",
+      "type": "metric",
+      "label": "F88",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.16 Метрика v9.25 F88 (фантастические материалы без с",
+      "type": "spec_section",
+      "label": "### §13.16 Метрика v9.25 F88 (фантастические материалы без смешения)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F70g",
+      "type": "metric",
+      "label": "F70g",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.17 Метрика v9.26 F70g (schema-driven validation)",
+      "type": "spec_section",
+      "label": "### §13.17 Метрика v9.26 F70g (schema-driven validation)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F70h",
+      "type": "metric",
+      "label": "F70h",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.18 Метрика v9.27 F70h (enum validation)",
+      "type": "spec_section",
+      "label": "### §13.18 Метрика v9.27 F70h (enum validation)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F70i",
+      "type": "metric",
+      "label": "F70i",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.19 Метрика v9.28 F70i (enforcement)",
+      "type": "spec_section",
+      "label": "### §13.19 Метрика v9.28 F70i (enforcement)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F70j",
+      "type": "metric",
+      "label": "F70j",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.20 Метрики v9.29 F70j + F90 (decisions.log + маскиро",
+      "type": "spec_section",
+      "label": "### §13.20 Метрики v9.29 F70j + F90 (decisions.log + маскировка для гибридной)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F90",
+      "type": "metric",
+      "label": "F90",
+      "path": ""
+    },
+    {
+      "id": "F89",
+      "type": "metric",
+      "label": "F89",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.21 Метрика v9.30 F89 (Issues integration)",
+      "type": "spec_section",
+      "label": "### §13.21 Метрика v9.30 F89 (Issues integration)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F51",
+      "type": "metric",
+      "label": "F51",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.7 Метрики v9.1 (5 новых — F51-F55)",
+      "type": "spec_section",
+      "label": "### §13.7 Метрики v9.1 (5 новых — F51-F55)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F55",
+      "type": "metric",
+      "label": "F55",
+      "path": ""
+    },
+    {
+      "id": "F56",
+      "type": "metric",
+      "label": "F56",
+      "path": ""
+    },
+    {
+      "id": "section:### §21.3 Метрика F56",
+      "type": "spec_section",
+      "label": "### §21.3 Метрика F56",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F61",
+      "type": "metric",
+      "label": "F61",
+      "path": ""
+    },
+    {
+      "id": "section:### §32. ШКАЛА ДОСТУПНОСТИ TRL (v9.9: P061 + F61 перенесены ",
+      "type": "spec_section",
+      "label": "### §32. ШКАЛА ДОСТУПНОСТИ TRL (v9.9: P061 + F61 перенесены в §15/§13)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F62",
+      "type": "metric",
+      "label": "F62",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.9 Метрика F62 — кристаллическая структура по примене",
+      "type": "spec_section",
+      "label": "### §13.9 Метрика F62 — кристаллическая структура по применению (перенесено из §32.9 в v9.9)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F63",
+      "type": "metric",
+      "label": "F63",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.10 Метрика F63 — паттерн vs instance в дереве (перен",
+      "type": "spec_section",
+      "label": "### §13.10 Метрика F63 — паттерн vs instance в дереве (перенесено из §32.11 в v9.9)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F64",
+      "type": "metric",
+      "label": "F64",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.11 Метрики v9.10 F64-F69 (вдохновлено v5.0)",
+      "type": "spec_section",
+      "label": "### §13.11 Метрики v9.10 F64-F69 (вдохновлено v5.0)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F69",
+      "type": "metric",
+      "label": "F69",
+      "path": ""
+    },
+    {
+      "id": "F70",
+      "type": "metric",
+      "label": "F70",
+      "path": ""
+    },
+    {
+      "id": "section:### §13.12 Метрика v9.13 F70 — schema_catalog_consistency (Н",
+      "type": "spec_section",
+      "label": "### §13.12 Метрика v9.13 F70 — schema_catalog_consistency (НОВАЯ)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F57",
+      "type": "metric",
+      "label": "F57",
+      "path": ""
+    },
+    {
+      "id": "section:### §22.3 Метрика F57",
+      "type": "spec_section",
+      "label": "### §22.3 Метрика F57",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F58",
+      "type": "metric",
+      "label": "F58",
+      "path": ""
+    },
+    {
+      "id": "section:### §23.4 Метрика F58",
+      "type": "spec_section",
+      "label": "### §23.4 Метрика F58",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F59",
+      "type": "metric",
+      "label": "F59",
+      "path": ""
+    },
+    {
+      "id": "section:### §24.4 Метрика F59",
+      "type": "spec_section",
+      "label": "### §24.4 Метрика F59",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F60",
+      "type": "metric",
+      "label": "F60",
+      "path": ""
+    },
+    {
+      "id": "section:### §25.3 Метрика F60",
+      "type": "spec_section",
+      "label": "### §25.3 Метрика F60",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P061",
+      "type": "metric",
+      "label": "P061",
+      "path": ""
+    },
+    {
+      "id": "F19",
+      "type": "metric",
+      "label": "F19",
+      "path": ""
+    },
+    {
+      "id": "section:(без секции)",
+      "type": "spec_section",
+      "label": "(без секции)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P022",
+      "type": "metric",
+      "label": "P022",
+      "path": ""
+    },
+    {
+      "id": "F10",
+      "type": "metric",
+      "label": "F10",
+      "path": ""
+    },
+    {
+      "id": "P072",
+      "type": "metric",
+      "label": "P072",
+      "path": ""
+    },
+    {
+      "id": "P073",
+      "type": "metric",
+      "label": "P073",
+      "path": ""
+    },
+    {
+      "id": "F37",
+      "type": "metric",
+      "label": "F37",
+      "path": ""
+    },
+    {
+      "id": "P074",
+      "type": "metric",
+      "label": "P074",
+      "path": ""
+    },
+    {
+      "id": "P075",
+      "type": "metric",
+      "label": "P075",
+      "path": ""
+    },
+    {
+      "id": "F72",
+      "type": "metric",
+      "label": "F72",
+      "path": ""
+    },
+    {
+      "id": "F73",
+      "type": "metric",
+      "label": "F73",
+      "path": ""
+    },
+    {
+      "id": "F74",
+      "type": "metric",
+      "label": "F74",
+      "path": ""
+    },
+    {
+      "id": "P076",
+      "type": "metric",
+      "label": "P076",
+      "path": ""
+    },
+    {
+      "id": "P077",
+      "type": "metric",
+      "label": "P077",
+      "path": ""
+    },
+    {
+      "id": "P079",
+      "type": "metric",
+      "label": "P079",
+      "path": ""
+    },
+    {
+      "id": "F82",
+      "type": "metric",
+      "label": "F82",
+      "path": ""
+    },
+    {
+      "id": "F83",
+      "type": "metric",
+      "label": "F83",
+      "path": ""
+    },
+    {
+      "id": "F84",
+      "type": "metric",
+      "label": "F84",
+      "path": ""
+    },
+    {
+      "id": "F85",
+      "type": "metric",
+      "label": "F85",
+      "path": ""
+    },
+    {
+      "id": "F86",
+      "type": "metric",
+      "label": "F86",
+      "path": ""
+    },
+    {
+      "id": "P080",
+      "type": "metric",
+      "label": "P080",
+      "path": ""
+    },
+    {
+      "id": "P081",
+      "type": "metric",
+      "label": "P081",
+      "path": ""
+    },
+    {
+      "id": "P082",
+      "type": "metric",
+      "label": "P082",
+      "path": ""
+    },
+    {
+      "id": "P083",
+      "type": "metric",
+      "label": "P083",
+      "path": ""
+    },
+    {
+      "id": "P037",
+      "type": "metric",
+      "label": "P037",
+      "path": ""
+    },
+    {
+      "id": "F13",
+      "type": "metric",
+      "label": "F13",
+      "path": ""
+    },
+    {
+      "id": "P084",
+      "type": "metric",
+      "label": "P084",
+      "path": ""
+    },
+    {
+      "id": "P085",
+      "type": "metric",
+      "label": "P085",
+      "path": ""
+    },
+    {
+      "id": "P086",
+      "type": "metric",
+      "label": "P086",
+      "path": ""
+    },
+    {
+      "id": "P001",
+      "type": "metric",
+      "label": "P001",
+      "path": ""
+    },
+    {
+      "id": "P071",
+      "type": "metric",
+      "label": "P071",
+      "path": ""
+    },
+    {
+      "id": "F4",
+      "type": "metric",
+      "label": "F4",
+      "path": ""
+    },
+    {
+      "id": "P019",
+      "type": "metric",
+      "label": "P019",
+      "path": ""
+    },
+    {
+      "id": "section:§2. САМОДИАГНОСТИКА (перед каждой фазой)",
+      "type": "spec_section",
+      "label": "§2. САМОДИАГНОСТИКА (перед каждой фазой)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P053",
+      "type": "metric",
+      "label": "P053",
+      "path": ""
+    },
+    {
+      "id": "section:§9.0 ПРОТОКОЛ ЗАПУСКА AI-45 (ОБЯЗАТЕЛЬНО)",
+      "type": "spec_section",
+      "label": "§9.0 ПРОТОКОЛ ЗАПУСКА AI-45 (ОБЯЗАТЕЛЬНО)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P008",
+      "type": "metric",
+      "label": "P008",
+      "path": ""
+    },
+    {
+      "id": "section:§9.1 ПАКЕТНАЯ ОБРАБОТКА И УПРАВЛЕНИЕ КОНТЕКСТОМ",
+      "type": "spec_section",
+      "label": "§9.1 ПАКЕТНАЯ ОБРАБОТКА И УПРАВЛЕНИЕ КОНТЕКСТОМ",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F11",
+      "type": "metric",
+      "label": "F11",
+      "path": ""
+    },
+    {
+      "id": "section:§9.3 УСЛОВНЫЕ ЦИКЛЫ ДЛЯ CANON",
+      "type": "spec_section",
+      "label": "§9.3 УСЛОВНЫЕ ЦИКЛЫ ДЛЯ CANON",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P063",
+      "type": "metric",
+      "label": "P063",
+      "path": ""
+    },
+    {
+      "id": "section:§10.2 Дерево папок",
+      "type": "spec_section",
+      "label": "§10.2 Дерево папок",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F54",
+      "type": "metric",
+      "label": "F54",
+      "path": ""
+    },
+    {
+      "id": "P034",
+      "type": "metric",
+      "label": "P034",
+      "path": ""
+    },
+    {
+      "id": "P038",
+      "type": "metric",
+      "label": "P038",
+      "path": ""
+    },
+    {
+      "id": "P055",
+      "type": "metric",
+      "label": "P055",
+      "path": ""
+    },
+    {
+      "id": "F45",
+      "type": "metric",
+      "label": "F45",
+      "path": ""
+    },
+    {
+      "id": "F50",
+      "type": "metric",
+      "label": "F50",
+      "path": ""
+    },
+    {
+      "id": "F60d",
+      "type": "metric",
+      "label": "F60d",
+      "path": ""
+    },
+    {
+      "id": "F3",
+      "type": "metric",
+      "label": "F3",
+      "path": ""
+    },
+    {
+      "id": "F53",
+      "type": "metric",
+      "label": "F53",
+      "path": ""
+    },
+    {
+      "id": "F52",
+      "type": "metric",
+      "label": "F52",
+      "path": ""
+    },
+    {
+      "id": "P012",
+      "type": "metric",
+      "label": "P012",
+      "path": ""
+    },
+    {
+      "id": "P062",
+      "type": "metric",
+      "label": "P062",
+      "path": ""
+    },
+    {
+      "id": "section:§10.2.1 Instance example — конкретные примеры файлов (v9.8)",
+      "type": "spec_section",
+      "label": "§10.2.1 Instance example — конкретные примеры файлов (v9.8)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P063a",
+      "type": "metric",
+      "label": "P063a",
+      "path": ""
+    },
+    {
+      "id": "section:§10.3 Канон: паттерн vs конкретное имя в дереве (P064, v9.8)",
+      "type": "spec_section",
+      "label": "§10.3 Канон: паттерн vs конкретное имя в дереве (P064, v9.8)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F5",
+      "type": "metric",
+      "label": "F5",
+      "path": ""
+    },
+    {
+      "id": "P063b",
+      "type": "metric",
+      "label": "P063b",
+      "path": ""
+    },
+    {
+      "id": "F76",
+      "type": "metric",
+      "label": "F76",
+      "path": ""
+    },
+    {
+      "id": "section:§11.0 ТИПЫ МОДЕЛЕЙ SKYNET (v9.22 НОВОЕ — 7 типов)",
+      "type": "spec_section",
+      "label": "§11.0 ТИПЫ МОДЕЛЕЙ SKYNET (v9.22 НОВОЕ — 7 типов)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F77",
+      "type": "metric",
+      "label": "F77",
+      "path": ""
+    },
+    {
+      "id": "F78",
+      "type": "metric",
+      "label": "F78",
+      "path": ""
+    },
+    {
+      "id": "F44",
+      "type": "metric",
+      "label": "F44",
+      "path": ""
+    },
+    {
+      "id": "P1",
+      "type": "metric",
+      "label": "P1",
+      "path": ""
+    },
+    {
+      "id": "section:§11.3 7 антипаттернов (уроки из прошлых реализаций)",
+      "type": "spec_section",
+      "label": "§11.3 7 антипаттернов (уроки из прошлых реализаций)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P2",
+      "type": "metric",
+      "label": "P2",
+      "path": ""
+    },
+    {
+      "id": "P3",
+      "type": "metric",
+      "label": "P3",
+      "path": ""
+    },
+    {
+      "id": "P4",
+      "type": "metric",
+      "label": "P4",
+      "path": ""
+    },
+    {
+      "id": "P5",
+      "type": "metric",
+      "label": "P5",
+      "path": ""
+    },
+    {
+      "id": "P6",
+      "type": "metric",
+      "label": "P6",
+      "path": ""
+    },
+    {
+      "id": "P7",
+      "type": "metric",
+      "label": "P7",
+      "path": ""
+    },
+    {
+      "id": "P020",
+      "type": "metric",
+      "label": "P020",
+      "path": ""
+    },
+    {
+      "id": "F8",
+      "type": "metric",
+      "label": "F8",
+      "path": ""
+    },
+    {
+      "id": "section:§11.4 Полный реестр подтипов (146 подтипов)",
+      "type": "spec_section",
+      "label": "§11.4 Полный реестр подтипов (146 подтипов)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P043",
+      "type": "metric",
+      "label": "P043",
+      "path": ""
+    },
+    {
+      "id": "P050",
+      "type": "metric",
+      "label": "P050",
+      "path": ""
+    },
+    {
+      "id": "P046",
+      "type": "metric",
+      "label": "P046",
+      "path": ""
+    },
+    {
+      "id": "section:§11.5. Разделение уровней: паттерн vs экземпляр",
+      "type": "spec_section",
+      "label": "§11.5. Разделение уровней: паттерн vs экземпляр",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P028",
+      "type": "metric",
+      "label": "P028",
+      "path": ""
+    },
+    {
+      "id": "P030",
+      "type": "metric",
+      "label": "P030",
+      "path": ""
+    },
+    {
+      "id": "P023",
+      "type": "metric",
+      "label": "P023",
+      "path": ""
+    },
+    {
+      "id": "P003",
+      "type": "metric",
+      "label": "P003",
+      "path": ""
+    },
+    {
+      "id": "section:§9.8 Issues как очередь задач (v9.30 НОВОЕ — полная интеграц",
+      "type": "spec_section",
+      "label": "§9.8 Issues как очередь задач (v9.30 НОВОЕ — полная интеграция)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F31",
+      "type": "metric",
+      "label": "F31",
+      "path": ""
+    },
+    {
+      "id": "section:§9.9 Авто-создание Issues при FAIL (v9.30 НОВОЕ)",
+      "type": "spec_section",
+      "label": "§9.9 Авто-создание Issues при FAIL (v9.30 НОВОЕ)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F70a",
+      "type": "metric",
+      "label": "F70a",
+      "path": ""
+    },
+    {
+      "id": "section:§12. YAML-СХЕМЫ ФАЙЛОВ",
+      "type": "spec_section",
+      "label": "§12. YAML-СХЕМЫ ФАЙЛОВ",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F6",
+      "type": "metric",
+      "label": "F6",
+      "path": ""
+    },
+    {
+      "id": "section:§12.1 Схема файла изделия (`_index.md` или `<часть>.md`)",
+      "type": "spec_section",
+      "label": "§12.1 Схема файла изделия (`_index.md` или `<часть>.md`)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F7",
+      "type": "metric",
+      "label": "F7",
+      "path": ""
+    },
+    {
+      "id": "P024",
+      "type": "metric",
+      "label": "P024",
+      "path": ""
+    },
+    {
+      "id": "section:§12.4 Схема файла модели Skynet",
+      "type": "spec_section",
+      "label": "§12.4 Схема файла модели Skynet",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P025",
+      "type": "metric",
+      "label": "P025",
+      "path": ""
+    },
+    {
+      "id": "P026",
+      "type": "metric",
+      "label": "P026",
+      "path": ""
+    },
+    {
+      "id": "P027",
+      "type": "metric",
+      "label": "P027",
+      "path": ""
+    },
+    {
+      "id": "F18",
+      "type": "metric",
+      "label": "F18",
+      "path": ""
+    },
+    {
+      "id": "P029",
+      "type": "metric",
+      "label": "P029",
+      "path": ""
+    },
+    {
+      "id": "F22",
+      "type": "metric",
+      "label": "F22",
+      "path": ""
+    },
+    {
+      "id": "P031",
+      "type": "metric",
+      "label": "P031",
+      "path": ""
+    },
+    {
+      "id": "P032",
+      "type": "metric",
+      "label": "P032",
+      "path": ""
+    },
+    {
+      "id": "P033",
+      "type": "metric",
+      "label": "P033",
+      "path": ""
+    },
+    {
+      "id": "P035",
+      "type": "metric",
+      "label": "P035",
+      "path": ""
+    },
+    {
+      "id": "P048",
+      "type": "metric",
+      "label": "P048",
+      "path": ""
+    },
+    {
+      "id": "F1",
+      "type": "metric",
+      "label": "F1",
+      "path": ""
+    },
+    {
+      "id": "section:§13.2 Метрики аудита v3.0 (23 штуки)",
+      "type": "spec_section",
+      "label": "§13.2 Метрики аудита v3.0 (23 штуки)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F2",
+      "type": "metric",
+      "label": "F2",
+      "path": ""
+    },
+    {
+      "id": "F36",
+      "type": "metric",
+      "label": "F36",
+      "path": ""
+    },
+    {
+      "id": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "spec_section",
+      "label": "§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DRY, v9.9; v9.16: заголовок упрощён)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F33",
+      "type": "metric",
+      "label": "F33",
+      "path": ""
+    },
+    {
+      "id": "F12",
+      "type": "metric",
+      "label": "F12",
+      "path": ""
+    },
+    {
+      "id": "F24",
+      "type": "metric",
+      "label": "F24",
+      "path": ""
+    },
+    {
+      "id": "F9",
+      "type": "metric",
+      "label": "F9",
+      "path": ""
+    },
+    {
+      "id": "F14",
+      "type": "metric",
+      "label": "F14",
+      "path": ""
+    },
+    {
+      "id": "F15",
+      "type": "metric",
+      "label": "F15",
+      "path": ""
+    },
+    {
+      "id": "F16",
+      "type": "metric",
+      "label": "F16",
+      "path": ""
+    },
+    {
+      "id": "F17",
+      "type": "metric",
+      "label": "F17",
+      "path": ""
+    },
+    {
+      "id": "F20",
+      "type": "metric",
+      "label": "F20",
+      "path": ""
+    },
+    {
+      "id": "F21",
+      "type": "metric",
+      "label": "F21",
+      "path": ""
+    },
+    {
+      "id": "F23",
+      "type": "metric",
+      "label": "F23",
+      "path": ""
+    },
+    {
+      "id": "F25",
+      "type": "metric",
+      "label": "F25",
+      "path": ""
+    },
+    {
+      "id": "F26",
+      "type": "metric",
+      "label": "F26",
+      "path": ""
+    },
+    {
+      "id": "F27",
+      "type": "metric",
+      "label": "F27",
+      "path": ""
+    },
+    {
+      "id": "F28",
+      "type": "metric",
+      "label": "F28",
+      "path": ""
+    },
+    {
+      "id": "F29",
+      "type": "metric",
+      "label": "F29",
+      "path": ""
+    },
+    {
+      "id": "F30",
+      "type": "metric",
+      "label": "F30",
+      "path": ""
+    },
+    {
+      "id": "F32",
+      "type": "metric",
+      "label": "F32",
+      "path": ""
+    },
+    {
+      "id": "F34",
+      "type": "metric",
+      "label": "F34",
+      "path": ""
+    },
+    {
+      "id": "F35",
+      "type": "metric",
+      "label": "F35",
+      "path": ""
+    },
+    {
+      "id": "F38",
+      "type": "metric",
+      "label": "F38",
+      "path": ""
+    },
+    {
+      "id": "F39",
+      "type": "metric",
+      "label": "F39",
+      "path": ""
+    },
+    {
+      "id": "F40",
+      "type": "metric",
+      "label": "F40",
+      "path": ""
+    },
+    {
+      "id": "F41",
+      "type": "metric",
+      "label": "F41",
+      "path": ""
+    },
+    {
+      "id": "F42",
+      "type": "metric",
+      "label": "F42",
+      "path": ""
+    },
+    {
+      "id": "F43",
+      "type": "metric",
+      "label": "F43",
+      "path": ""
+    },
+    {
+      "id": "F46",
+      "type": "metric",
+      "label": "F46",
+      "path": ""
+    },
+    {
+      "id": "F47",
+      "type": "metric",
+      "label": "F47",
+      "path": ""
+    },
+    {
+      "id": "F48",
+      "type": "metric",
+      "label": "F48",
+      "path": ""
+    },
+    {
+      "id": "F49",
+      "type": "metric",
+      "label": "F49",
+      "path": ""
+    },
+    {
+      "id": "F65",
+      "type": "metric",
+      "label": "F65",
+      "path": ""
+    },
+    {
+      "id": "section:§13.6 Резюме реестра (v9.16: сжато)",
+      "type": "spec_section",
+      "label": "§13.6 Резюме реестра (v9.16: сжато)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F56a",
+      "type": "metric",
+      "label": "F56a",
+      "path": ""
+    },
+    {
+      "id": "section:§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "type": "spec_section",
+      "label": "§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F56b",
+      "type": "metric",
+      "label": "F56b",
+      "path": ""
+    },
+    {
+      "id": "F56c",
+      "type": "metric",
+      "label": "F56c",
+      "path": ""
+    },
+    {
+      "id": "F57a",
+      "type": "metric",
+      "label": "F57a",
+      "path": ""
+    },
+    {
+      "id": "F57b",
+      "type": "metric",
+      "label": "F57b",
+      "path": ""
+    },
+    {
+      "id": "F57c",
+      "type": "metric",
+      "label": "F57c",
+      "path": ""
+    },
+    {
+      "id": "F58a",
+      "type": "metric",
+      "label": "F58a",
+      "path": ""
+    },
+    {
+      "id": "F58b",
+      "type": "metric",
+      "label": "F58b",
+      "path": ""
+    },
+    {
+      "id": "F59a",
+      "type": "metric",
+      "label": "F59a",
+      "path": ""
+    },
+    {
+      "id": "F59b",
+      "type": "metric",
+      "label": "F59b",
+      "path": ""
+    },
+    {
+      "id": "F60a",
+      "type": "metric",
+      "label": "F60a",
+      "path": ""
+    },
+    {
+      "id": "F60e",
+      "type": "metric",
+      "label": "F60e",
+      "path": ""
+    },
+    {
+      "id": "F61a",
+      "type": "metric",
+      "label": "F61a",
+      "path": ""
+    },
+    {
+      "id": "section:§13.8a Метрика F61 — TRL доступность (перенесено из §32.6 в ",
+      "type": "spec_section",
+      "label": "§13.8a Метрика F61 — TRL доступность (перенесено из §32.6 в v9.9)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F61b",
+      "type": "metric",
+      "label": "F61b",
+      "path": ""
+    },
+    {
+      "id": "F61c",
+      "type": "metric",
+      "label": "F61c",
+      "path": ""
+    },
+    {
+      "id": "F62a",
+      "type": "metric",
+      "label": "F62a",
+      "path": ""
+    },
+    {
+      "id": "section:§13.9 Метрика F62 — кристаллическая структура по применению ",
+      "type": "spec_section",
+      "label": "§13.9 Метрика F62 — кристаллическая структура по применению (перенесено из §32.9 в v9.9)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F62b",
+      "type": "metric",
+      "label": "F62b",
+      "path": ""
+    },
+    {
+      "id": "F62c",
+      "type": "metric",
+      "label": "F62c",
+      "path": ""
+    },
+    {
+      "id": "F62d",
+      "type": "metric",
+      "label": "F62d",
+      "path": ""
+    },
+    {
+      "id": "F62e",
+      "type": "metric",
+      "label": "F62e",
+      "path": ""
+    },
+    {
+      "id": "F62f",
+      "type": "metric",
+      "label": "F62f",
+      "path": ""
+    },
+    {
+      "id": "F63a",
+      "type": "metric",
+      "label": "F63a",
+      "path": ""
+    },
+    {
+      "id": "section:§13.10 Метрика F63 — паттерн vs instance в дереве (перенесен",
+      "type": "spec_section",
+      "label": "§13.10 Метрика F63 — паттерн vs instance в дереве (перенесено из §32.11 в v9.9)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F63b",
+      "type": "metric",
+      "label": "F63b",
+      "path": ""
+    },
+    {
+      "id": "F63c",
+      "type": "metric",
+      "label": "F63c",
+      "path": ""
+    },
+    {
+      "id": "F63d",
+      "type": "metric",
+      "label": "F63d",
+      "path": ""
+    },
+    {
+      "id": "F66",
+      "type": "metric",
+      "label": "F66",
+      "path": ""
+    },
+    {
+      "id": "section:§13.11 Метрики v9.10 F64-F69 (вдохновлено v5.0)",
+      "type": "spec_section",
+      "label": "§13.11 Метрики v9.10 F64-F69 (вдохновлено v5.0)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F67",
+      "type": "metric",
+      "label": "F67",
+      "path": ""
+    },
+    {
+      "id": "F68",
+      "type": "metric",
+      "label": "F68",
+      "path": ""
+    },
+    {
+      "id": "F70b",
+      "type": "metric",
+      "label": "F70b",
+      "path": ""
+    },
+    {
+      "id": "section:§13.12 Метрика v9.13 F70 — schema_catalog_consistency (НОВАЯ",
+      "type": "spec_section",
+      "label": "§13.12 Метрика v9.13 F70 — schema_catalog_consistency (НОВАЯ)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F70c",
+      "type": "metric",
+      "label": "F70c",
+      "path": ""
+    },
+    {
+      "id": "F70d",
+      "type": "metric",
+      "label": "F70d",
+      "path": ""
+    },
+    {
+      "id": "F70e",
+      "type": "metric",
+      "label": "F70e",
+      "path": ""
+    },
+    {
+      "id": "F70f",
+      "type": "metric",
+      "label": "F70f",
+      "path": ""
+    },
+    {
+      "id": "P051",
+      "type": "metric",
+      "label": "P051",
+      "path": ""
+    },
+    {
+      "id": "P044",
+      "type": "metric",
+      "label": "P044",
+      "path": ""
+    },
+    {
+      "id": "section:§14.0 Сводная таблица 13 паттернов (с принципами и метриками",
+      "type": "spec_section",
+      "label": "§14.0 Сводная таблица 13 паттернов (с принципами и метриками)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P045",
+      "type": "metric",
+      "label": "P045",
+      "path": ""
+    },
+    {
+      "id": "P047",
+      "type": "metric",
+      "label": "P047",
+      "path": ""
+    },
+    {
+      "id": "P049",
+      "type": "metric",
+      "label": "P049",
+      "path": ""
+    },
+    {
+      "id": "P065",
+      "type": "metric",
+      "label": "P065",
+      "path": ""
+    },
+    {
+      "id": "section:§14.13 PATTERN 13: target_identification_5tuple",
+      "type": "spec_section",
+      "label": "§14.13 PATTERN 13: target_identification_5tuple",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P016",
+      "type": "metric",
+      "label": "P016",
+      "path": ""
+    },
+    {
+      "id": "section:§15. ПРИНЦИПЫ (YAML-формат, с полем version) — 71 принцип, v",
+      "type": "spec_section",
+      "label": "§15. ПРИНЦИПЫ (YAML-формат, с полем version) — 71 принцип, v9.16: TOC добавлен",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P017",
+      "type": "metric",
+      "label": "P017",
+      "path": ""
+    },
+    {
+      "id": "P021",
+      "type": "metric",
+      "label": "P021",
+      "path": ""
+    },
+    {
+      "id": "P042",
+      "type": "metric",
+      "label": "P042",
+      "path": ""
+    },
+    {
+      "id": "P060",
+      "type": "metric",
+      "label": "P060",
+      "path": ""
+    },
+    {
+      "id": "P066",
+      "type": "metric",
+      "label": "P066",
+      "path": ""
+    },
+    {
+      "id": "P067",
+      "type": "metric",
+      "label": "P067",
+      "path": ""
+    },
+    {
+      "id": "P069",
+      "type": "metric",
+      "label": "P069",
+      "path": ""
+    },
+    {
+      "id": "P068",
+      "type": "metric",
+      "label": "P068",
+      "path": ""
+    },
+    {
+      "id": "P036",
+      "type": "metric",
+      "label": "P036",
+      "path": ""
+    },
+    {
+      "id": "P070",
+      "type": "metric",
+      "label": "P070",
+      "path": ""
+    },
+    {
+      "id": "P011",
+      "type": "metric",
+      "label": "P011",
+      "path": ""
+    },
+    {
+      "id": "section:§16. ОБРАБОТКА ОШИБОК (с адаптивными стратегиями, v9.15: кон",
+      "type": "spec_section",
+      "label": "§16. ОБРАБОТКА ОШИБОК (с адаптивными стратегиями, v9.15: конкретизированы действия)",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P009",
+      "type": "metric",
+      "label": "P009",
+      "path": ""
+    },
+    {
+      "id": "section:§18. ФИНАЛЬНЫЕ ТРЕБОВАНИЯ",
+      "type": "spec_section",
+      "label": "§18. ФИНАЛЬНЫЕ ТРЕБОВАНИЯ",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P013",
+      "type": "metric",
+      "label": "P013",
+      "path": ""
+    },
+    {
+      "id": "P015",
+      "type": "metric",
+      "label": "P015",
+      "path": ""
+    },
+    {
+      "id": "P014",
+      "type": "metric",
+      "label": "P014",
+      "path": ""
+    },
+    {
+      "id": "P018",
+      "type": "metric",
+      "label": "P018",
+      "path": ""
+    },
+    {
+      "id": "P039",
+      "type": "metric",
+      "label": "P039",
+      "path": ""
+    },
+    {
+      "id": "P040",
+      "type": "metric",
+      "label": "P040",
+      "path": ""
+    },
+    {
+      "id": "P041",
+      "type": "metric",
+      "label": "P041",
+      "path": ""
+    },
+    {
+      "id": "P078",
+      "type": "metric",
+      "label": "P078",
+      "path": ""
+    },
+    {
+      "id": "section:§18.4 Требования v9.24 (159-161) — аудиты v9.17",
+      "type": "spec_section",
+      "label": "§18.4 Требования v9.24 (159-161) — аудиты v9.17",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P079a",
+      "type": "metric",
+      "label": "P079a",
+      "path": ""
+    },
+    {
+      "id": "P23",
+      "type": "metric",
+      "label": "P23",
+      "path": ""
+    },
+    {
+      "id": "section:§22. PROVENANCE & ANTI-SIMULATION",
+      "type": "spec_section",
+      "label": "§22. PROVENANCE & ANTI-SIMULATION",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P10",
+      "type": "metric",
+      "label": "P10",
+      "path": ""
+    },
+    {
+      "id": "section:§23. COMPUTE-BEFORE-WEB",
+      "type": "spec_section",
+      "label": "§23. COMPUTE-BEFORE-WEB",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "P13",
+      "type": "metric",
+      "label": "P13",
+      "path": ""
+    },
+    {
+      "id": "section:§25. ARCHIVE CONTRACT + IMMUTABLE COVERAGE",
+      "type": "spec_section",
+      "label": "§25. ARCHIVE CONTRACT + IMMUTABLE COVERAGE",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F60b",
+      "type": "metric",
+      "label": "F60b",
+      "path": ""
+    },
+    {
+      "id": "section:§25.3 Метрика F60",
+      "type": "spec_section",
+      "label": "§25.3 Метрика F60",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "F60c",
+      "type": "metric",
+      "label": "F60c",
+      "path": ""
+    },
+    {
+      "id": "P15",
+      "type": "metric",
+      "label": "P15",
+      "path": ""
+    },
+    {
+      "id": "section:§27. 17 TABLE TYPES + PARSE_TARGET_ROUTING",
+      "type": "spec_section",
+      "label": "§27. 17 TABLE TYPES + PARSE_TARGET_ROUTING",
+      "path": "SkyNet_PROMPT_v9.31.md"
+    },
+    {
+      "id": "script:__init__.py",
+      "type": "script",
+      "label": "__init__.py",
+      "path": "scripts/__init__.py"
+    },
+    {
+      "id": "script:_helpers.py",
+      "type": "script",
+      "label": "_helpers.py",
+      "path": "scripts/_helpers.py"
+    },
+    {
+      "id": "script:_stubs.py",
+      "type": "script",
+      "label": "_stubs.py",
+      "path": "scripts/_stubs.py"
+    },
+    {
+      "id": "script:capture_dialog.py",
+      "type": "script",
+      "label": "capture_dialog.py",
+      "path": "scripts/capture_dialog.py"
+    },
+    {
+      "id": "script:check_model_completeness.py",
+      "type": "script",
+      "label": "check_model_completeness.py",
+      "path": "scripts/check_model_completeness.py"
+    },
+    {
+      "id": "script:classify_subsystem.py",
+      "type": "script",
+      "label": "classify_subsystem.py",
+      "path": "scripts/classify_subsystem.py"
+    },
+    {
+      "id": "script:decompose_all_izdeliya.py",
+      "type": "script",
+      "label": "decompose_all_izdeliya.py",
+      "path": "scripts/decompose_all_izdeliya.py"
+    },
+    {
+      "id": "script:generate_decomposition.py",
+      "type": "script",
+      "label": "generate_decomposition.py",
+      "path": "scripts/generate_decomposition.py"
+    },
+    {
+      "id": "pattern:_index.md",
+      "type": "file_pattern",
+      "label": "_index.md",
+      "path": ""
+    },
+    {
+      "id": "pattern:*.md",
+      "type": "file_pattern",
+      "label": "*.md",
+      "path": ""
+    },
+    {
+      "id": "script:generate_graphs.py",
+      "type": "script",
+      "label": "generate_graphs.py",
+      "path": "scripts/generate_graphs.py"
+    },
+    {
+      "id": "pattern:*.py",
+      "type": "file_pattern",
+      "label": "*.py",
+      "path": ""
+    },
+    {
+      "id": "script:generate_wrapper_izdeliya.py",
+      "type": "script",
+      "label": "generate_wrapper_izdeliya.py",
+      "path": "scripts/generate_wrapper_izdeliya.py"
+    },
+    {
+      "id": "script:migrate_parts_into_parents.py",
+      "type": "script",
+      "label": "migrate_parts_into_parents.py",
+      "path": "scripts/migrate_parts_into_parents.py"
+    },
+    {
+      "id": "pattern:*/*/_index.md",
+      "type": "file_pattern",
+      "label": "*/*/_index.md",
+      "path": ""
+    },
+    {
+      "id": "pattern:*",
+      "type": "file_pattern",
+      "label": "*",
+      "path": ""
+    },
+    {
+      "id": "script:pipeline.py",
+      "type": "script",
+      "label": "pipeline.py",
+      "path": "scripts/pipeline.py"
+    },
+    {
+      "id": "script:pipeline_engine.py",
+      "type": "script",
+      "label": "pipeline_engine.py",
+      "path": "scripts/pipeline_engine.py"
+    },
+    {
+      "id": "script:pre-commit-hook.py",
+      "type": "script",
+      "label": "pre-commit-hook.py",
+      "path": "scripts/pre-commit-hook.py"
+    },
+    {
+      "id": "pattern:{models_dir}/*.md",
+      "type": "file_pattern",
+      "label": "{models_dir}/*.md",
+      "path": ""
+    },
+    {
+      "id": "pattern:{real_dir}/*/",
+      "type": "file_pattern",
+      "label": "{real_dir}/*/",
+      "path": ""
+    },
+    {
+      "id": "pattern:{ii_dir}/*/",
+      "type": "file_pattern",
+      "label": "{ii_dir}/*/",
+      "path": ""
+    },
+    {
+      "id": "pattern:{fantastic_mat_dir}/*.md",
+      "type": "file_pattern",
+      "label": "{fantastic_mat_dir}/*.md",
+      "path": ""
+    },
+    {
+      "id": "script:real_decomposition.py",
+      "type": "script",
+      "label": "real_decomposition.py",
+      "path": "scripts/real_decomposition.py"
+    },
+    {
+      "id": "script:validate_decomposition.py",
+      "type": "script",
+      "label": "validate_decomposition.py",
+      "path": "scripts/validate_decomposition.py"
+    },
+    {
+      "id": "script:validate_field_contracts.py",
+      "type": "script",
+      "label": "validate_field_contracts.py",
+      "path": "scripts/validate_field_contracts.py"
+    },
+    {
+      "id": "script:web_verify.py",
+      "type": "script",
+      "label": "web_verify.py",
+      "path": "scripts/web_verify.py"
+    },
+    {
+      "id": "script:autosync_helper.py",
+      "type": "script",
+      "label": "autosync_helper.py",
+      "path": "scripts/autosync_helper.py"
+    },
+    {
+      "id": "script:extract_from_sources.py",
+      "type": "script",
+      "label": "extract_from_sources.py",
+      "path": "scripts/extract_from_sources.py"
+    },
+    {
+      "id": "contract:fc_изделие_стандарты",
+      "type": "field_contract",
+      "label": "fc_изделие_стандарты",
+      "path": ""
+    },
+    {
+      "id": "contract:fc_материал_предел_текучести",
+      "type": "field_contract",
+      "label": "fc_материал_предел_текучести",
+      "path": ""
+    },
+    {
+      "id": "script:decompose_components.py",
+      "type": "script",
+      "label": "decompose_components.py",
+      "path": "scripts/decompose_components.py"
+    },
+    {
+      "id": "contract:fc_изделие_подсистема",
+      "type": "field_contract",
+      "label": "fc_изделие_подсистема",
+      "path": ""
+    },
+    {
+      "id": "contract:fc_модель_тип",
+      "type": "field_contract",
+      "label": "fc_модель_тип",
+      "path": ""
+    },
+    {
+      "id": "script:apply_weakest_link.py",
+      "type": "script",
+      "label": "apply_weakest_link.py",
+      "path": "scripts/apply_weakest_link.py"
+    },
+    {
+      "id": "script:apply_field_inheritance.py",
+      "type": "script",
+      "label": "apply_field_inheritance.py",
+      "path": "scripts/apply_field_inheritance.py"
+    },
+    {
+      "id": "script:verify_models.py",
+      "type": "script",
+      "label": "verify_models.py",
+      "path": "scripts/verify_models.py"
+    },
+    {
+      "id": "script:compute_model_parameters.py",
+      "type": "script",
+      "label": "compute_model_parameters.py",
+      "path": "scripts/compute_model_parameters.py"
+    },
+    {
+      "id": "contract:fc_изделие_масса",
+      "type": "field_contract",
+      "label": "fc_изделие_масса",
+      "path": ""
+    },
+    {
+      "id": "contract:fc_реализация_покрытие_функций",
+      "type": "field_contract",
+      "label": "fc_реализация_покрытие_функций",
+      "path": ""
+    },
+    {
+      "id": "script:update_readme.py",
+      "type": "script",
+      "label": "update_readme.py",
+      "path": "scripts/update_readme.py"
+    },
+    {
+      "id": "script:update_indexes.py",
+      "type": "script",
+      "label": "update_indexes.py",
+      "path": "scripts/update_indexes.py"
+    },
+    {
+      "id": "script:validate_patterns.py",
+      "type": "script",
+      "label": "validate_patterns.py",
+      "path": "scripts/validate_patterns.py"
+    },
+    {
+      "id": "script:check_applied_patterns.py",
+      "type": "script",
+      "label": "check_applied_patterns.py",
+      "path": "scripts/check_applied_patterns.py"
+    },
+    {
+      "id": "contract:fc_материал_кристалл_структура",
+      "type": "field_contract",
+      "label": "fc_материал_кристалл_структура",
+      "path": ""
+    },
+    {
+      "id": "contract:fc_материал_оптимальная_структура",
+      "type": "field_contract",
+      "label": "fc_материал_оптимальная_структура",
+      "path": ""
+    },
+    {
+      "id": "script:check_provenance.py",
+      "type": "script",
+      "label": "check_provenance.py",
+      "path": "scripts/check_provenance.py"
+    }
+  ],
+  "edges": [
+    {
+      "src": "P064",
+      "dst": "section:### §10.3 Канон: паттерн vs конкретное имя в дереве (P064, v",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F71",
+      "dst": "section:### §13.13 Метрики v9.22 F71-F75 (типизация моделей + многос",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F75",
+      "dst": "section:### §13.13 Метрики v9.22 F71-F75 (типизация моделей + многос",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F79",
+      "dst": "section:### §13.14 Метрики v9.23 F79-F80 (тип-специфичный subset под",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F80",
+      "dst": "section:### §13.14 Метрики v9.23 F79-F80 (тип-специфичный subset под",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F81",
+      "dst": "section:### §13.15 Метрики v9.24 F81-F87 (аудиты реализации, диалога",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F87",
+      "dst": "section:### §13.15 Метрики v9.24 F81-F87 (аудиты реализации, диалога",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F88",
+      "dst": "section:### §13.16 Метрика v9.25 F88 (фантастические материалы без с",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F70g",
+      "dst": "section:### §13.17 Метрика v9.26 F70g (schema-driven validation)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F70h",
+      "dst": "section:### §13.18 Метрика v9.27 F70h (enum validation)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F70i",
+      "dst": "section:### §13.19 Метрика v9.28 F70i (enforcement)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F70j",
+      "dst": "section:### §13.20 Метрики v9.29 F70j + F90 (decisions.log + маскиро",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F90",
+      "dst": "section:### §13.20 Метрики v9.29 F70j + F90 (decisions.log + маскиро",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F89",
+      "dst": "section:### §13.21 Метрика v9.30 F89 (Issues integration)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F51",
+      "dst": "section:### §13.7 Метрики v9.1 (5 новых — F51-F55)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F55",
+      "dst": "section:### §13.7 Метрики v9.1 (5 новых — F51-F55)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F56",
+      "dst": "section:### §21.3 Метрика F56",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F61",
+      "dst": "section:### §32. ШКАЛА ДОСТУПНОСТИ TRL (v9.9: P061 + F61 перенесены ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F62",
+      "dst": "section:### §13.9 Метрика F62 — кристаллическая структура по примене",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F63",
+      "dst": "section:### §13.10 Метрика F63 — паттерн vs instance в дереве (перен",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F64",
+      "dst": "section:### §13.11 Метрики v9.10 F64-F69 (вдохновлено v5.0)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F69",
+      "dst": "section:### §13.11 Метрики v9.10 F64-F69 (вдохновлено v5.0)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F70",
+      "dst": "section:### §13.12 Метрика v9.13 F70 — schema_catalog_consistency (Н",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F57",
+      "dst": "section:### §22.3 Метрика F57",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F58",
+      "dst": "section:### §23.4 Метрика F58",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F59",
+      "dst": "section:### §24.4 Метрика F59",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F60",
+      "dst": "section:### §25.3 Метрика F60",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P061",
+      "dst": "section:### §32. ШКАЛА ДОСТУПНОСТИ TRL (v9.9: P061 + F61 перенесены ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F19",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P022",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F10",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P072",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P073",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F37",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P074",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P075",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F72",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F73",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F74",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P076",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P077",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P079",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F82",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F83",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F84",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F85",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F86",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P080",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P081",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P082",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P083",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P037",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F13",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P084",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P085",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P086",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P001",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P071",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F4",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P019",
+      "dst": "section:§2. САМОДИАГНОСТИКА (перед каждой фазой)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P053",
+      "dst": "section:§9.0 ПРОТОКОЛ ЗАПУСКА AI-45 (ОБЯЗАТЕЛЬНО)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P008",
+      "dst": "section:§9.1 ПАКЕТНАЯ ОБРАБОТКА И УПРАВЛЕНИЕ КОНТЕКСТОМ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F11",
+      "dst": "section:§9.3 УСЛОВНЫЕ ЦИКЛЫ ДЛЯ CANON",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P063",
+      "dst": "section:§10.2 Дерево папок",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F54",
+      "dst": "section:§10.2 Дерево папок",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P034",
+      "dst": "section:§10.2 Дерево папок",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P038",
+      "dst": "section:§10.2 Дерево папок",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P055",
+      "dst": "section:§10.2 Дерево папок",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F45",
+      "dst": "section:§10.2 Дерево папок",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F50",
+      "dst": "section:§10.2 Дерево папок",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F60d",
+      "dst": "section:§10.2 Дерево папок",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F3",
+      "dst": "section:§10.2 Дерево папок",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F53",
+      "dst": "section:§10.2 Дерево папок",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F52",
+      "dst": "section:§10.2 Дерево папок",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P012",
+      "dst": "section:§10.2 Дерево папок",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P062",
+      "dst": "section:§10.2.1 Instance example — конкретные примеры файлов (v9.8)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P063a",
+      "dst": "section:§10.3 Канон: паттерн vs конкретное имя в дереве (P064, v9.8)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F5",
+      "dst": "section:§10.3 Канон: паттерн vs конкретное имя в дереве (P064, v9.8)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P063b",
+      "dst": "section:§10.3 Канон: паттерн vs конкретное имя в дереве (P064, v9.8)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F76",
+      "dst": "section:§11.0 ТИПЫ МОДЕЛЕЙ SKYNET (v9.22 НОВОЕ — 7 типов)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F77",
+      "dst": "section:§11.0 ТИПЫ МОДЕЛЕЙ SKYNET (v9.22 НОВОЕ — 7 типов)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F78",
+      "dst": "section:§11.0 ТИПЫ МОДЕЛЕЙ SKYNET (v9.22 НОВОЕ — 7 типов)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F44",
+      "dst": "section:§11.0 ТИПЫ МОДЕЛЕЙ SKYNET (v9.22 НОВОЕ — 7 типов)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P1",
+      "dst": "section:§11.3 7 антипаттернов (уроки из прошлых реализаций)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P2",
+      "dst": "section:§11.3 7 антипаттернов (уроки из прошлых реализаций)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P3",
+      "dst": "section:§11.3 7 антипаттернов (уроки из прошлых реализаций)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P4",
+      "dst": "section:§11.3 7 антипаттернов (уроки из прошлых реализаций)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P5",
+      "dst": "section:§11.3 7 антипаттернов (уроки из прошлых реализаций)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P6",
+      "dst": "section:§11.3 7 антипаттернов (уроки из прошлых реализаций)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P7",
+      "dst": "section:§11.3 7 антипаттернов (уроки из прошлых реализаций)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P020",
+      "dst": "section:§11.3 7 антипаттернов (уроки из прошлых реализаций)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F8",
+      "dst": "section:§11.4 Полный реестр подтипов (146 подтипов)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P043",
+      "dst": "section:§11.4 Полный реестр подтипов (146 подтипов)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P050",
+      "dst": "section:§11.4 Полный реестр подтипов (146 подтипов)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P046",
+      "dst": "section:§11.5. Разделение уровней: паттерн vs экземпляр",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P028",
+      "dst": "section:§11.5. Разделение уровней: паттерн vs экземпляр",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P030",
+      "dst": "section:§11.5. Разделение уровней: паттерн vs экземпляр",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P023",
+      "dst": "section:§11.5. Разделение уровней: паттерн vs экземпляр",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P003",
+      "dst": "section:§9.8 Issues как очередь задач (v9.30 НОВОЕ — полная интеграц",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F31",
+      "dst": "section:§9.9 Авто-создание Issues при FAIL (v9.30 НОВОЕ)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F70a",
+      "dst": "section:§12. YAML-СХЕМЫ ФАЙЛОВ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F6",
+      "dst": "section:§12.1 Схема файла изделия (`_index.md` или `<часть>.md`)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F7",
+      "dst": "section:§12.1 Схема файла изделия (`_index.md` или `<часть>.md`)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P024",
+      "dst": "section:§12.4 Схема файла модели Skynet",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P025",
+      "dst": "section:§12.4 Схема файла модели Skynet",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P026",
+      "dst": "section:§12.4 Схема файла модели Skynet",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P027",
+      "dst": "section:§12.4 Схема файла модели Skynet",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F18",
+      "dst": "section:§12.4 Схема файла модели Skynet",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P029",
+      "dst": "section:§12.4 Схема файла модели Skynet",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F22",
+      "dst": "section:§12.4 Схема файла модели Skynet",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P031",
+      "dst": "section:§12.4 Схема файла модели Skynet",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P032",
+      "dst": "section:§12.4 Схема файла модели Skynet",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P033",
+      "dst": "section:§12.4 Схема файла модели Skynet",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P035",
+      "dst": "section:§12.4 Схема файла модели Skynet",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P048",
+      "dst": "section:§12.4 Схема файла модели Skynet",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F1",
+      "dst": "section:§13.2 Метрики аудита v3.0 (23 штуки)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F2",
+      "dst": "section:§13.2 Метрики аудита v3.0 (23 штуки)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F36",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F33",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F12",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F24",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F9",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F14",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F15",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F16",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F17",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F20",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F21",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F23",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F25",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F26",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F27",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F28",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F29",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F30",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F32",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F34",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F35",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F38",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F39",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F40",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F41",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F42",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F43",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F46",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F47",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F48",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F49",
+      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F65",
+      "dst": "section:§13.6 Резюме реестра (v9.16: сжато)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F56a",
+      "dst": "section:§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F56b",
+      "dst": "section:§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F56c",
+      "dst": "section:§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F57a",
+      "dst": "section:§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F57b",
+      "dst": "section:§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F57c",
+      "dst": "section:§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F58a",
+      "dst": "section:§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F58b",
+      "dst": "section:§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F59a",
+      "dst": "section:§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F59b",
+      "dst": "section:§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F60a",
+      "dst": "section:§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F60e",
+      "dst": "section:§13.8 Метрики v9.3 F56-F61 (перенесено из §30 в v9.9)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F61a",
+      "dst": "section:§13.8a Метрика F61 — TRL доступность (перенесено из §32.6 в ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F61b",
+      "dst": "section:§13.8a Метрика F61 — TRL доступность (перенесено из §32.6 в ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F61c",
+      "dst": "section:§13.8a Метрика F61 — TRL доступность (перенесено из §32.6 в ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F62a",
+      "dst": "section:§13.9 Метрика F62 — кристаллическая структура по применению ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F62b",
+      "dst": "section:§13.9 Метрика F62 — кристаллическая структура по применению ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F62c",
+      "dst": "section:§13.9 Метрика F62 — кристаллическая структура по применению ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F62d",
+      "dst": "section:§13.9 Метрика F62 — кристаллическая структура по применению ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F62e",
+      "dst": "section:§13.9 Метрика F62 — кристаллическая структура по применению ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F62f",
+      "dst": "section:§13.9 Метрика F62 — кристаллическая структура по применению ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F63a",
+      "dst": "section:§13.10 Метрика F63 — паттерн vs instance в дереве (перенесен",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F63b",
+      "dst": "section:§13.10 Метрика F63 — паттерн vs instance в дереве (перенесен",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F63c",
+      "dst": "section:§13.10 Метрика F63 — паттерн vs instance в дереве (перенесен",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F63d",
+      "dst": "section:§13.10 Метрика F63 — паттерн vs instance в дереве (перенесен",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F66",
+      "dst": "section:§13.11 Метрики v9.10 F64-F69 (вдохновлено v5.0)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F67",
+      "dst": "section:§13.11 Метрики v9.10 F64-F69 (вдохновлено v5.0)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F68",
+      "dst": "section:§13.11 Метрики v9.10 F64-F69 (вдохновлено v5.0)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F70b",
+      "dst": "section:§13.12 Метрика v9.13 F70 — schema_catalog_consistency (НОВАЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F70c",
+      "dst": "section:§13.12 Метрика v9.13 F70 — schema_catalog_consistency (НОВАЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F70d",
+      "dst": "section:§13.12 Метрика v9.13 F70 — schema_catalog_consistency (НОВАЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F70e",
+      "dst": "section:§13.12 Метрика v9.13 F70 — schema_catalog_consistency (НОВАЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F70f",
+      "dst": "section:§13.12 Метрика v9.13 F70 — schema_catalog_consistency (НОВАЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P051",
+      "dst": "section:§13.12 Метрика v9.13 F70 — schema_catalog_consistency (НОВАЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P044",
+      "dst": "section:§14.0 Сводная таблица 13 паттернов (с принципами и метриками",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P045",
+      "dst": "section:§14.0 Сводная таблица 13 паттернов (с принципами и метриками",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P047",
+      "dst": "section:§14.0 Сводная таблица 13 паттернов (с принципами и метриками",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P049",
+      "dst": "section:§14.0 Сводная таблица 13 паттернов (с принципами и метриками",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P065",
+      "dst": "section:§14.13 PATTERN 13: target_identification_5tuple",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P016",
+      "dst": "section:§15. ПРИНЦИПЫ (YAML-формат, с полем version) — 71 принцип, v",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P017",
+      "dst": "section:§15. ПРИНЦИПЫ (YAML-формат, с полем version) — 71 принцип, v",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P021",
+      "dst": "section:§15. ПРИНЦИПЫ (YAML-формат, с полем version) — 71 принцип, v",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P042",
+      "dst": "section:§15. ПРИНЦИПЫ (YAML-формат, с полем version) — 71 принцип, v",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P060",
+      "dst": "section:§15. ПРИНЦИПЫ (YAML-формат, с полем version) — 71 принцип, v",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P066",
+      "dst": "section:§15. ПРИНЦИПЫ (YAML-формат, с полем version) — 71 принцип, v",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P067",
+      "dst": "section:§15. ПРИНЦИПЫ (YAML-формат, с полем version) — 71 принцип, v",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P069",
+      "dst": "section:§15. ПРИНЦИПЫ (YAML-формат, с полем version) — 71 принцип, v",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P068",
+      "dst": "section:§15. ПРИНЦИПЫ (YAML-формат, с полем version) — 71 принцип, v",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P036",
+      "dst": "section:§15. ПРИНЦИПЫ (YAML-формат, с полем version) — 71 принцип, v",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P070",
+      "dst": "section:§15. ПРИНЦИПЫ (YAML-формат, с полем version) — 71 принцип, v",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P011",
+      "dst": "section:§16. ОБРАБОТКА ОШИБОК (с адаптивными стратегиями, v9.15: кон",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P009",
+      "dst": "section:§18. ФИНАЛЬНЫЕ ТРЕБОВАНИЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P013",
+      "dst": "section:§18. ФИНАЛЬНЫЕ ТРЕБОВАНИЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P015",
+      "dst": "section:§18. ФИНАЛЬНЫЕ ТРЕБОВАНИЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P014",
+      "dst": "section:§18. ФИНАЛЬНЫЕ ТРЕБОВАНИЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P018",
+      "dst": "section:§18. ФИНАЛЬНЫЕ ТРЕБОВАНИЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P039",
+      "dst": "section:§18. ФИНАЛЬНЫЕ ТРЕБОВАНИЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P040",
+      "dst": "section:§18. ФИНАЛЬНЫЕ ТРЕБОВАНИЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P041",
+      "dst": "section:§18. ФИНАЛЬНЫЕ ТРЕБОВАНИЯ",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P078",
+      "dst": "section:§18.4 Требования v9.24 (159-161) — аудиты v9.17",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P079a",
+      "dst": "section:§18.4 Требования v9.24 (159-161) — аудиты v9.17",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P23",
+      "dst": "section:§22. PROVENANCE & ANTI-SIMULATION",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P10",
+      "dst": "section:§23. COMPUTE-BEFORE-WEB",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P13",
+      "dst": "section:§25. ARCHIVE CONTRACT + IMMUTABLE COVERAGE",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F60b",
+      "dst": "section:§25.3 Метрика F60",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F60c",
+      "dst": "section:§25.3 Метрика F60",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P15",
+      "dst": "section:§27. 17 TABLE TYPES + PARSE_TARGET_ROUTING",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "F70b",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70b",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70f",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70f",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70a",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70a",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F87",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F87",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70e",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70e",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F88",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F88",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F83",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F83",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70i",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70i",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70d",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70d",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70j",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70j",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F90",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F90",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F89",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F89",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70g",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70g",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F81",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F81",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70c",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70c",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70h",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70h",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F51",
+      "dst": "script:_stubs.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_stubs.py",
+      "dst": "F51",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F54",
+      "dst": "script:_stubs.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_stubs.py",
+      "dst": "F54",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F57",
+      "dst": "script:_stubs.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_stubs.py",
+      "dst": "F57",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F67",
+      "dst": "script:_stubs.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_stubs.py",
+      "dst": "F67",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F55",
+      "dst": "script:_stubs.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_stubs.py",
+      "dst": "F55",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F52",
+      "dst": "script:_stubs.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_stubs.py",
+      "dst": "F52",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F53",
+      "dst": "script:_stubs.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_stubs.py",
+      "dst": "F53",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F68",
+      "dst": "script:_stubs.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_stubs.py",
+      "dst": "F68",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F86",
+      "dst": "script:check_model_completeness.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:check_model_completeness.py",
+      "dst": "F86",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F3",
+      "dst": "script:classify_subsystem.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:classify_subsystem.py",
+      "dst": "F3",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F14",
+      "dst": "script:generate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_decomposition.py",
+      "dst": "F14",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F16",
+      "dst": "script:generate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_decomposition.py",
+      "dst": "F16",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F19",
+      "dst": "script:generate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_decomposition.py",
+      "dst": "F19",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F21",
+      "dst": "script:generate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_decomposition.py",
+      "dst": "F21",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F15",
+      "dst": "script:generate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_decomposition.py",
+      "dst": "F15",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F13",
+      "dst": "script:generate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_decomposition.py",
+      "dst": "F13",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F17",
+      "dst": "script:generate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_decomposition.py",
+      "dst": "F17",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_decomposition.py",
+      "dst": "pattern:_index.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_decomposition.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "F2",
+      "dst": "script:generate_graphs.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_graphs.py",
+      "dst": "F2",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F1",
+      "dst": "script:generate_graphs.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_graphs.py",
+      "dst": "F1",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_graphs.py",
+      "dst": "pattern:_index.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_graphs.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_graphs.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_graphs.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_graphs.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_graphs.py",
+      "dst": "pattern:*.py",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_graphs.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_graphs.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_graphs.py",
+      "dst": "pattern:*.py",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "F14",
+      "dst": "script:generate_wrapper_izdeliya.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_wrapper_izdeliya.py",
+      "dst": "F14",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F16",
+      "dst": "script:generate_wrapper_izdeliya.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_wrapper_izdeliya.py",
+      "dst": "F16",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F19",
+      "dst": "script:generate_wrapper_izdeliya.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_wrapper_izdeliya.py",
+      "dst": "F19",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_wrapper_izdeliya.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "F25",
+      "dst": "script:migrate_parts_into_parents.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:migrate_parts_into_parents.py",
+      "dst": "F25",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "script:migrate_parts_into_parents.py",
+      "dst": "pattern:_index.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:migrate_parts_into_parents.py",
+      "dst": "pattern:*/*/_index.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:migrate_parts_into_parents.py",
+      "dst": "pattern:*",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "P012",
+      "dst": "script:pipeline.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pipeline.py",
+      "dst": "P012",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F24",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F24",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F83",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F83",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F3",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F3",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F87",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F87",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F70",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F88",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F88",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F82",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F82",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F25",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F25",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F22",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F22",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F81",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F81",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70g",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F70g",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F23",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F23",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F4",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F4",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70h",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F70h",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F13",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F13",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "pattern:{models_dir}/*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "pattern:{models_dir}/*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "pattern:{real_dir}/*/",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "pattern:{ii_dir}/*/",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "pattern:{models_dir}/*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "pattern:{fantastic_mat_dir}/*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:real_decomposition.py",
+      "dst": "pattern:_index.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "F14",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F14",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F23",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F23",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F16",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F16",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F25",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F25",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F18",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F18",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F20",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F20",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F17",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F17",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F24",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F24",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F13",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F13",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F19",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F19",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F22",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F22",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F21",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F21",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "pattern:_index.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "F60",
+      "dst": "script:validate_field_contracts.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_field_contracts.py",
+      "dst": "F60",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70",
+      "dst": "script:validate_field_contracts.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_field_contracts.py",
+      "dst": "F70",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F58",
+      "dst": "script:validate_field_contracts.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_field_contracts.py",
+      "dst": "F58",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F56",
+      "dst": "script:validate_field_contracts.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_field_contracts.py",
+      "dst": "F56",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F37",
+      "dst": "script:pipeline.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F50",
+      "dst": "script:pipeline.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F71",
+      "dst": "script:pipeline.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F75",
+      "dst": "script:pipeline.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F46",
+      "dst": "script:autosync_helper.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F3",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F4",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F5",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F8",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F36",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F70",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F71",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F75",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:extract_from_sources.py",
+      "dst": "contract:fc_изделие_стандарты",
+      "type": "enforces_contract",
+      "meta": {}
+    },
+    {
+      "src": "script:extract_from_sources.py",
+      "dst": "contract:fc_материал_предел_текучести",
+      "type": "enforces_contract",
+      "meta": {}
+    },
+    {
+      "src": "F3",
+      "dst": "script:classify_subsystem.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F75",
+      "dst": "script:classify_subsystem.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:classify_subsystem.py",
+      "dst": "contract:fc_изделие_подсистема",
+      "type": "enforces_contract",
+      "meta": {}
+    },
+    {
+      "src": "script:classify_subsystem.py",
+      "dst": "contract:fc_модель_тип",
+      "type": "enforces_contract",
+      "meta": {}
+    },
+    {
+      "src": "F71",
+      "dst": "script:verify_models.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F74",
+      "dst": "script:verify_models.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F79",
+      "dst": "script:verify_models.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:compute_model_parameters.py",
+      "dst": "contract:fc_изделие_масса",
+      "type": "enforces_contract",
+      "meta": {}
+    },
+    {
+      "src": "script:compute_model_parameters.py",
+      "dst": "contract:fc_реализация_покрытие_функций",
+      "type": "enforces_contract",
+      "meta": {}
+    },
+    {
+      "src": "F51",
+      "dst": "script:validate_patterns.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F53",
+      "dst": "script:validate_patterns.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F54",
+      "dst": "script:validate_patterns.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F55",
+      "dst": "script:validate_patterns.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F52",
+      "dst": "script:check_applied_patterns.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F56",
+      "dst": "script:validate_field_contracts.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F58",
+      "dst": "script:validate_field_contracts.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F60",
+      "dst": "script:validate_field_contracts.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F70",
+      "dst": "script:validate_field_contracts.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_field_contracts.py",
+      "dst": "contract:fc_материал_кристалл_структура",
+      "type": "enforces_contract",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_field_contracts.py",
+      "dst": "contract:fc_материал_оптимальная_структура",
+      "type": "enforces_contract",
+      "meta": {}
+    },
+    {
+      "src": "F57",
+      "dst": "script:check_provenance.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F67",
+      "dst": "script:check_provenance.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F68",
+      "dst": "script:check_provenance.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F70",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F71",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F75",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F79",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "F80",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    }
+  ],
+  "stats": {
+    "nodes": 321,
+    "edges": 428,
+    "by_type": {
+      "spec_section": 58,
+      "file_pattern": 9,
+      "metric": 216,
+      "script": 30,
+      "field_contract": 8
+    }
+  }
+}
