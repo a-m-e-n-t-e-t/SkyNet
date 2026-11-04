@@ -239,7 +239,7 @@ def graph1_build() -> dict:
         "stats": {
             "nodes": len(nodes),
             "edges": len(edges),
-            "by_type": {t: sum(1 for n in nodes if n["type"] == t) for t in set(n["type"] for n in nodes)},
+            "by_type": {t: sum(1 for n in nodes if n["type"] == t) for t in sorted(set(n["type"] for n in nodes))},
         },
     }
 
@@ -505,7 +505,7 @@ def graph2_build() -> dict:
         "stats": {
             "nodes": len(nodes),
             "edges": len(edges),
-            "by_type": {t: sum(1 for n in nodes if n["type"] == t) for t in set(n["type"] for n in nodes)},
+            "by_type": {t: sum(1 for n in nodes if n["type"] == t) for t in sorted(set(n["type"] for n in nodes))},
         },
     }
 
@@ -664,7 +664,7 @@ def graph3_build() -> dict:
         "stats": {
             "nodes": len(nodes),
             "edges": len(edges),
-            "by_type": {t: sum(1 for n in nodes if n["type"] == t) for t in set(n["type"] for n in nodes)},
+            "by_type": {t: sum(1 for n in nodes if n["type"] == t) for t in sorted(set(n["type"] for n in nodes))},
         },
     }
 

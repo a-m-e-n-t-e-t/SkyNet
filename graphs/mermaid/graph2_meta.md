@@ -245,6 +245,6 @@ _Узлов: 184, рёбер: 212 (показано топ-50)._
 | spec_section | 146 |
 | script | 18 |
 | concept_doc | 17 |
-| spec | 1 |
 | catalog | 1 |
 | readme | 1 |
+| spec | 1 |

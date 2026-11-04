@@ -2385,12 +2385,12 @@
     "nodes": 184,
     "edges": 212,
     "by_type": {
-      "spec_section": 146,
-      "script": 18,
-      "concept_doc": 17,
-      "spec": 1,
       "catalog": 1,
-      "readme": 1
+      "concept_doc": 17,
+      "readme": 1,
+      "script": 18,
+      "spec": 1,
+      "spec_section": 146
     }
   }
 }

@@ -47915,11 +47915,11 @@
     "nodes": 942,
     "edges": 5993,
     "by_type": {
-      "izdelie": 128,
-      "standart": 8,
+      "chast": 639,
       "issledovatelskaya_gruppa": 10,
+      "izdelie": 128,
       "material": 157,
-      "chast": 639
+      "standart": 8
     }
   }
 }
