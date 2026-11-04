@@ -18,7 +18,7 @@ id: izdelie_svobodnoporshnevoi_stirling
   - часть_svobodnoporshnevoi_stirling_gas_spring
 материалы_частей:
   - часть: часть_svobodnoporshnevoi_stirling_heater
-    материал: inconel_625
+    материал: inconel_718
     доля_массы: 0.19
   - часть: часть_svobodnoporshnevoi_stirling_piston
     материал: inconel_718
