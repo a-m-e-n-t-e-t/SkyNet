@@ -16,7 +16,7 @@ id: izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik
   - часть_3d_sic-mikropillarnyi_tritii-betavoltaik_case
 материалы_частей:
   - часть: часть_3d_sic-mikropillarnyi_tritii-betavoltaik_isotope
-    материал: tritium_gas
+    материал: sct
     доля_массы: 0.19
   - часть: часть_3d_sic-mikropillarnyi_tritii-betavoltaik_micropillars
     материал: silicon_carbide
@@ -53,10 +53,10 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные: 
   изотоп: H-3 (tritium)
-  T_жизни_лет: 12
+  T_жизни_лет: 12.32
   источник: 3D micropillar 4H-SiC tritium research
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-04
 источник: user_input
 источник_разбора: пользовательский ввод
 ---
