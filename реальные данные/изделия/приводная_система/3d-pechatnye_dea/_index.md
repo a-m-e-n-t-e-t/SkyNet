@@ -18,7 +18,7 @@ id: izdelie_3d-pechatnye_dea
   - часть_3d-pechatnye_dea_mounting
 материалы_частей:
   - часть: часть_3d-pechatnye_dea_core
-    материал: generic_material
+    материал: silikon_40_50_shore_a
     доля_массы: 0.45
   - часть: часть_3d-pechatnye_dea_housing
     материал: aluminum
