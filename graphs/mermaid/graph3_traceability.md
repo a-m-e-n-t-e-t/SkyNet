@@ -27,13 +27,6 @@ graph LR
     F70 --> script_pre-commit-hook_py
     script_validate_field_contracts_py[validate_field_contracts.py]
     F70 --> script_validate_field_contracts_py
-    F14([F14])
-    script_generate_decomposition_py[generate_decomposition.py]
-    F14 --> script_generate_decomposition_py
-    script_generate_wrapper_izdeliya_py[generate_wrapper_izdeliya.py]
-    F14 --> script_generate_wrapper_izdeliya_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F14 --> script_validate_decomposition_py
     F13([F13])
     script_generate_decomposition_py[generate_decomposition.py]
     F13 --> script_generate_decomposition_py
@@ -55,6 +48,13 @@ graph LR
     F19 --> script_generate_wrapper_izdeliya_py
     script_validate_decomposition_py[validate_decomposition.py]
     F19 --> script_validate_decomposition_py
+    F14([F14])
+    script_generate_decomposition_py[generate_decomposition.py]
+    F14 --> script_generate_decomposition_py
+    script_generate_wrapper_izdeliya_py[generate_wrapper_izdeliya.py]
+    F14 --> script_generate_wrapper_izdeliya_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F14 --> script_validate_decomposition_py
     F25([F25])
     script_migrate_parts_into_parents_py[migrate_parts_into_parents.py]
     F25 --> script_migrate_parts_into_parents_py
@@ -62,21 +62,16 @@ graph LR
     F25 --> script_pre-commit-hook_py
     script_validate_decomposition_py[validate_decomposition.py]
     F25 --> script_validate_decomposition_py
-    F87([F87])
-    script__helpers_py[_helpers.py]
-    F87 --> script__helpers_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F87 --> script_pre-commit-hook_py
     F81([F81])
     script__helpers_py[_helpers.py]
     F81 --> script__helpers_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F81 --> script_pre-commit-hook_py
-    F70h([F70h])
+    F87([F87])
     script__helpers_py[_helpers.py]
-    F70h --> script__helpers_py
+    F87 --> script__helpers_py
     script_pre-commit-hook_py[pre-commit-hook.py]
-    F70h --> script_pre-commit-hook_py
+    F87 --> script_pre-commit-hook_py
     F70g([F70g])
     script__helpers_py[_helpers.py]
     F70g --> script__helpers_py
@@ -87,16 +82,26 @@ graph LR
     F83 --> script__helpers_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F83 --> script_pre-commit-hook_py
+    F70h([F70h])
+    script__helpers_py[_helpers.py]
+    F70h --> script__helpers_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F70h --> script_pre-commit-hook_py
     F88([F88])
     script__helpers_py[_helpers.py]
     F88 --> script__helpers_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F88 --> script_pre-commit-hook_py
-    F52([F52])
+    F57([F57])
     script__stubs_py[_stubs.py]
-    F52 --> script__stubs_py
-    script_check_applied_patterns_py[check_applied_patterns.py]
-    F52 --> script_check_applied_patterns_py
+    F57 --> script__stubs_py
+    script_check_provenance_py[check_provenance.py]
+    F57 --> script_check_provenance_py
+    F67([F67])
+    script__stubs_py[_stubs.py]
+    F67 --> script__stubs_py
+    script_check_provenance_py[check_provenance.py]
+    F67 --> script_check_provenance_py
     F53([F53])
     script__stubs_py[_stubs.py]
     F53 --> script__stubs_py
@@ -107,21 +112,16 @@ graph LR
     F54 --> script__stubs_py
     script_validate_patterns_py[validate_patterns.py]
     F54 --> script_validate_patterns_py
-    F57([F57])
-    script__stubs_py[_stubs.py]
-    F57 --> script__stubs_py
-    script_check_provenance_py[check_provenance.py]
-    F57 --> script_check_provenance_py
-    F51([F51])
-    script__stubs_py[_stubs.py]
-    F51 --> script__stubs_py
-    script_validate_patterns_py[validate_patterns.py]
-    F51 --> script_validate_patterns_py
     F55([F55])
     script__stubs_py[_stubs.py]
     F55 --> script__stubs_py
     script_validate_patterns_py[validate_patterns.py]
     F55 --> script_validate_patterns_py
+    F51([F51])
+    script__stubs_py[_stubs.py]
+    F51 --> script__stubs_py
+    script_validate_patterns_py[validate_patterns.py]
+    F51 --> script_validate_patterns_py
 ```
 
 _Показаны топ-20 метрик по числу скриптов-валидаторов (из 59 метрик)._

@@ -3227,30 +3227,6 @@
       "meta": {}
     },
     {
-      "src": "F87",
-      "dst": "script:_helpers.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "F87",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F70j",
-      "dst": "script:_helpers.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "F70j",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
       "src": "F81",
       "dst": "script:_helpers.py",
       "type": "validated_by",
@@ -3259,78 +3235,6 @@
     {
       "src": "script:_helpers.py",
       "dst": "F81",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F70h",
-      "dst": "script:_helpers.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "F70h",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F70e",
-      "dst": "script:_helpers.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "F70e",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F70g",
-      "dst": "script:_helpers.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "F70g",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F70i",
-      "dst": "script:_helpers.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "F70i",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F70b",
-      "dst": "script:_helpers.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "F70b",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F89",
-      "dst": "script:_helpers.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "F89",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -3347,30 +3251,6 @@
       "meta": {}
     },
     {
-      "src": "F90",
-      "dst": "script:_helpers.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "F90",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F83",
-      "dst": "script:_helpers.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "F83",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
       "src": "F70f",
       "dst": "script:_helpers.py",
       "type": "validated_by",
@@ -3383,38 +3263,14 @@
       "meta": {}
     },
     {
-      "src": "F70d",
+      "src": "F87",
       "dst": "script:_helpers.py",
       "type": "validated_by",
       "meta": {}
     },
     {
       "src": "script:_helpers.py",
-      "dst": "F70d",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F88",
-      "dst": "script:_helpers.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "F88",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F70",
-      "dst": "script:_helpers.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "F70",
+      "dst": "F87",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -3431,14 +3287,170 @@
       "meta": {}
     },
     {
-      "src": "F52",
+      "src": "F70g",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70g",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F83",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F83",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F89",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F89",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70h",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70h",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70d",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70d",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70e",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70e",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70b",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70b",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F90",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F90",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F88",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F88",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70i",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70i",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70j",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F70j",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F57",
       "dst": "script:_stubs.py",
       "type": "validated_by",
       "meta": {}
     },
     {
       "src": "script:_stubs.py",
-      "dst": "F52",
+      "dst": "F57",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F67",
+      "dst": "script:_stubs.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_stubs.py",
+      "dst": "F67",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -3467,14 +3479,14 @@
       "meta": {}
     },
     {
-      "src": "F57",
+      "src": "F55",
       "dst": "script:_stubs.py",
       "type": "validated_by",
       "meta": {}
     },
     {
       "src": "script:_stubs.py",
-      "dst": "F57",
+      "dst": "F55",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -3491,14 +3503,14 @@
       "meta": {}
     },
     {
-      "src": "F55",
+      "src": "F52",
       "dst": "script:_stubs.py",
       "type": "validated_by",
       "meta": {}
     },
     {
       "src": "script:_stubs.py",
-      "dst": "F55",
+      "dst": "F52",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -3511,18 +3523,6 @@
     {
       "src": "script:_stubs.py",
       "dst": "F68",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F67",
-      "dst": "script:_stubs.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:_stubs.py",
-      "dst": "F67",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -3551,30 +3551,6 @@
       "meta": {}
     },
     {
-      "src": "F21",
-      "dst": "script:generate_decomposition.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:generate_decomposition.py",
-      "dst": "F21",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F14",
-      "dst": "script:generate_decomposition.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:generate_decomposition.py",
-      "dst": "F14",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
       "src": "F13",
       "dst": "script:generate_decomposition.py",
       "type": "validated_by",
@@ -3583,6 +3559,18 @@
     {
       "src": "script:generate_decomposition.py",
       "dst": "F13",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F16",
+      "dst": "script:generate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_decomposition.py",
+      "dst": "F16",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -3599,6 +3587,30 @@
       "meta": {}
     },
     {
+      "src": "F19",
+      "dst": "script:generate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_decomposition.py",
+      "dst": "F19",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F14",
+      "dst": "script:generate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_decomposition.py",
+      "dst": "F14",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "F17",
       "dst": "script:generate_decomposition.py",
       "type": "validated_by",
@@ -3611,26 +3623,14 @@
       "meta": {}
     },
     {
-      "src": "F16",
+      "src": "F21",
       "dst": "script:generate_decomposition.py",
       "type": "validated_by",
       "meta": {}
     },
     {
       "src": "script:generate_decomposition.py",
-      "dst": "F16",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F19",
-      "dst": "script:generate_decomposition.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:generate_decomposition.py",
-      "dst": "F19",
+      "dst": "F21",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -3644,18 +3644,6 @@
       "src": "script:generate_decomposition.py",
       "dst": "pattern:*.md",
       "type": "checks_files",
-      "meta": {}
-    },
-    {
-      "src": "F2",
-      "dst": "script:generate_graphs.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:generate_graphs.py",
-      "dst": "F2",
-      "type": "triggers_metric",
       "meta": {}
     },
     {
@@ -3671,6 +3659,18 @@
       "meta": {}
     },
     {
+      "src": "F2",
+      "dst": "script:generate_graphs.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_graphs.py",
+      "dst": "F2",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "script:generate_graphs.py",
       "dst": "pattern:*.md",
       "type": "checks_files",
@@ -3731,18 +3731,6 @@
       "meta": {}
     },
     {
-      "src": "F14",
-      "dst": "script:generate_wrapper_izdeliya.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:generate_wrapper_izdeliya.py",
-      "dst": "F14",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
       "src": "F16",
       "dst": "script:generate_wrapper_izdeliya.py",
       "type": "validated_by",
@@ -3763,6 +3751,18 @@
     {
       "src": "script:generate_wrapper_izdeliya.py",
       "dst": "F19",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F14",
+      "dst": "script:generate_wrapper_izdeliya.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_wrapper_izdeliya.py",
+      "dst": "F14",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -3815,26 +3815,14 @@
       "meta": {}
     },
     {
-      "src": "F87",
+      "src": "F13",
       "dst": "script:pre-commit-hook.py",
       "type": "validated_by",
       "meta": {}
     },
     {
       "src": "script:pre-commit-hook.py",
-      "dst": "F87",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F82",
-      "dst": "script:pre-commit-hook.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "F82",
+      "dst": "F13",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -3847,6 +3835,78 @@
     {
       "src": "script:pre-commit-hook.py",
       "dst": "F81",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F23",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F23",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F3",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F3",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F87",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F87",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F83",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F83",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70g",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F70g",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F82",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F82",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -3875,30 +3935,6 @@
       "meta": {}
     },
     {
-      "src": "F70g",
-      "dst": "script:pre-commit-hook.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "F70g",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F13",
-      "dst": "script:pre-commit-hook.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "F13",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
       "src": "F25",
       "dst": "script:pre-commit-hook.py",
       "type": "validated_by",
@@ -3907,54 +3943,6 @@
     {
       "src": "script:pre-commit-hook.py",
       "dst": "F25",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F4",
-      "dst": "script:pre-commit-hook.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "F4",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F23",
-      "dst": "script:pre-commit-hook.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "F23",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F83",
-      "dst": "script:pre-commit-hook.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "F83",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F88",
-      "dst": "script:pre-commit-hook.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "F88",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -3971,18 +3959,6 @@
       "meta": {}
     },
     {
-      "src": "F3",
-      "dst": "script:pre-commit-hook.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "F3",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
       "src": "F70",
       "dst": "script:pre-commit-hook.py",
       "type": "validated_by",
@@ -3991,6 +3967,30 @@
     {
       "src": "script:pre-commit-hook.py",
       "dst": "F70",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F88",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F88",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F4",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F4",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -4037,6 +4037,54 @@
       "meta": {}
     },
     {
+      "src": "F19",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F19",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F25",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F25",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F16",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F16",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F24",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F24",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "F21",
       "dst": "script:validate_decomposition.py",
       "type": "validated_by",
@@ -4073,66 +4121,6 @@
       "meta": {}
     },
     {
-      "src": "F20",
-      "dst": "script:validate_decomposition.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:validate_decomposition.py",
-      "dst": "F20",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F25",
-      "dst": "script:validate_decomposition.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:validate_decomposition.py",
-      "dst": "F25",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F22",
-      "dst": "script:validate_decomposition.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:validate_decomposition.py",
-      "dst": "F22",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F13",
-      "dst": "script:validate_decomposition.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:validate_decomposition.py",
-      "dst": "F13",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F19",
-      "dst": "script:validate_decomposition.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:validate_decomposition.py",
-      "dst": "F19",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
       "src": "F14",
       "dst": "script:validate_decomposition.py",
       "type": "validated_by",
@@ -4157,26 +4145,38 @@
       "meta": {}
     },
     {
-      "src": "F24",
+      "src": "F13",
       "dst": "script:validate_decomposition.py",
       "type": "validated_by",
       "meta": {}
     },
     {
       "src": "script:validate_decomposition.py",
-      "dst": "F24",
+      "dst": "F13",
       "type": "triggers_metric",
       "meta": {}
     },
     {
-      "src": "F16",
+      "src": "F20",
       "dst": "script:validate_decomposition.py",
       "type": "validated_by",
       "meta": {}
     },
     {
       "src": "script:validate_decomposition.py",
-      "dst": "F16",
+      "dst": "F20",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F22",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F22",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -4199,18 +4199,6 @@
       "meta": {}
     },
     {
-      "src": "F70",
-      "dst": "script:validate_field_contracts.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:validate_field_contracts.py",
-      "dst": "F70",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
       "src": "F60",
       "dst": "script:validate_field_contracts.py",
       "type": "validated_by",
@@ -4219,6 +4207,18 @@
     {
       "src": "script:validate_field_contracts.py",
       "dst": "F60",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F56",
+      "dst": "script:validate_field_contracts.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_field_contracts.py",
+      "dst": "F56",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -4235,14 +4235,14 @@
       "meta": {}
     },
     {
-      "src": "F56",
+      "src": "F70",
       "dst": "script:validate_field_contracts.py",
       "type": "validated_by",
       "meta": {}
     },
     {
       "src": "script:validate_field_contracts.py",
-      "dst": "F56",
+      "dst": "F70",
       "type": "triggers_metric",
       "meta": {}
     },

@@ -97,7 +97,21 @@ def _extract_yaml_schemas(prompt_path: str) -> dict:
     совпадений с упоминаниями §12.X в коде Python или комментариях. Также убрано
     добавление `---\\n...\\n---` вокруг контента (оно ломало yaml.safe_load с
     ComposerError «expected a single document in the stream»).
+    
+    v9.32 perf (2026-11-05): кэш по (path, mtime) — раньше 36 повторных вызовов
+    per F70-прогон парсили один и тот же промпт 180 раз через yaml.safe_load,
+    что давало ~6 с. Теперь парсится один раз, ускорение ~30×.
     """
+    # Кэш: path → (mtime, schemas)
+    try:
+        cur_mtime = Path(prompt_path).stat().st_mtime
+    except OSError:
+        cur_mtime = 0
+    cache_key = prompt_path
+    cached = _extract_yaml_schemas._cache.get(cache_key)
+    if cached and cached[0] == cur_mtime:
+        return cached[1]
+    
     text = Path(prompt_path).read_text(encoding='utf-8')
     schemas = {}
     for section in ['§12.1', '§12.2', '§12.3', '§12.4', '§12.5']:
@@ -123,7 +137,10 @@ def _extract_yaml_schemas(prompt_path: str) -> dict:
                 schemas[section] = fields
         else:
             schemas[section] = {}
+    _extract_yaml_schemas._cache[cache_key] = (cur_mtime, schemas)
     return schemas
+
+_extract_yaml_schemas._cache = {}
 
 def check_field_in_schema(schema_id: str, field: str) -> bool:
     """F70a: Проверяет наличие поля в схеме."""

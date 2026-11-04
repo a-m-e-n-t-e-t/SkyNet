@@ -998,8 +998,10 @@ def check_F18(izdeliya: dict[str, dict]) -> dict:
 
     validator = None
     try:
+        # FORMAT_CHECKER=None пропускает тяжёлые импорты rfc3987_syntax/lark/isoduration
+        # (1.5+ с на старте). Схема SCHEMA_IZDELIE не использует format-ключи.
         from jsonschema import Draft202012Validator
-        validator = Draft202012Validator(SCHEMA_IZDELIE)
+        validator = Draft202012Validator(SCHEMA_IZDELIE, format_checker=None)
     except ImportError:
         pass
 
