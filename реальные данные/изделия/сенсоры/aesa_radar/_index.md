@@ -21,7 +21,7 @@ id: izdelie_aesa_radar
     материал: generic_material
     доля_массы: 0.45
   - часть: часть_aesa_radar_housing
-    материал: aluminum
+    материал: al_6061-t6
     доля_массы: 0.27
 scaling_type: количественный
 соединители: []
