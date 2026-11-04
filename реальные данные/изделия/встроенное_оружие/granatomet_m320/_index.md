@@ -22,6 +22,9 @@ id: izdelie_granatomet_m320
   - часть: часть_granatomet_m320_housing
     материал: aluminum
     доля_массы: 0.27
+  - часть: часть_granatomet_m320_connectors
+    материал: becu
+    доля_массы: 0.0025
 scaling_type: количественный
 соединители: []
 версия: реальная
