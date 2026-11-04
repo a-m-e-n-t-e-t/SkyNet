@@ -17,8 +17,8 @@ id: izdelie_granatomet_m320
   - часть_granatomet_m320_mounting
 материалы_частей:
   - часть: часть_granatomet_m320_core
-    материал: generic_material
-    доля_массы: 0.45
+    материал: al_6061-t6
+    доля_массы: 0.06
   - часть: часть_granatomet_m320_housing
     материал: aluminum
     доля_массы: 0.27
