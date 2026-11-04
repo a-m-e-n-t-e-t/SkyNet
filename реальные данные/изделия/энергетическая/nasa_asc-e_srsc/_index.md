@@ -33,6 +33,9 @@ id: izdelie_nasa_asc-e_srsc
   - часть: часть_nasa_asc-e_srsc_alternator
     материал: copper_wire
     доля_массы: 0.18
+  - часть: часть_nasa_asc-e_srsc_cooler
+    материал: al_6061-t6
+    доля_массы: 0.067
 scaling_type: количественный
 соединители: []
 версия: реальная
