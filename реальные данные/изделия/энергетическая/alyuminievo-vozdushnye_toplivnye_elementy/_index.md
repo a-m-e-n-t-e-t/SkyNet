@@ -27,6 +27,9 @@ id: izdelie_alyuminievo-vozdushnye_toplivnye_elementy
   - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_electrolyte
     материал: koh_aqueous
     доля_массы: 0.19
+  - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_air_electrode
+    материал: carbon_ptfe
+    доля_массы: 0.002
 scaling_type: количественный
 соединители: []
 версия: реальная
