@@ -20,7 +20,7 @@ id: izdelie_zeno_power_am-241
     материал: am-241
     доля_массы: 0.38
   - часть: часть_zeno_power_am-241_thermocouples
-    материал: pbte_teg
+    материал: bi₂te₃
     доля_массы: 0.27
   - часть: часть_zeno_power_am-241_shielding
     материал: tungsten_alloy
