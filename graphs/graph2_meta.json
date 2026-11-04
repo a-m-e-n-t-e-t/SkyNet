@@ -1115,12 +1115,6 @@
       "meta": {}
     },
     {
-      "src": "script:decompose_all_izdeliya.py",
-      "dst": "script:validate_decomposition.py",
-      "type": "imports",
-      "meta": {}
-    },
-    {
       "src": "script:generate_decomposition.py",
       "dst": "script:validate_decomposition.py",
       "type": "imports",
@@ -1153,24 +1147,6 @@
     {
       "src": "script:pre-commit-hook.py",
       "dst": "script:_helpers.py",
-      "type": "imports",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "script:_helpers.py",
-      "type": "imports",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "script:_helpers.py",
-      "type": "imports",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "script:validate_decomposition.py",
       "type": "imports",
       "meta": {}
     },
@@ -2082,6 +2058,12 @@
     },
     {
       "src": "catalog:scripts/_CATALOG.md",
+      "dst": "script:_stubs.py",
+      "type": "references",
+      "meta": {}
+    },
+    {
+      "src": "catalog:scripts/_CATALOG.md",
       "dst": "script:capture_dialog.py",
       "type": "references",
       "meta": {}
@@ -2095,6 +2077,36 @@
     {
       "src": "catalog:scripts/_CATALOG.md",
       "dst": "script:classify_subsystem.py",
+      "type": "references",
+      "meta": {}
+    },
+    {
+      "src": "catalog:scripts/_CATALOG.md",
+      "dst": "script:decompose_all_izdeliya.py",
+      "type": "references",
+      "meta": {}
+    },
+    {
+      "src": "catalog:scripts/_CATALOG.md",
+      "dst": "script:generate_decomposition.py",
+      "type": "references",
+      "meta": {}
+    },
+    {
+      "src": "catalog:scripts/_CATALOG.md",
+      "dst": "script:generate_graphs.py",
+      "type": "references",
+      "meta": {}
+    },
+    {
+      "src": "catalog:scripts/_CATALOG.md",
+      "dst": "script:generate_wrapper_izdeliya.py",
+      "type": "references",
+      "meta": {}
+    },
+    {
+      "src": "catalog:scripts/_CATALOG.md",
+      "dst": "script:migrate_parts_into_parents.py",
       "type": "references",
       "meta": {}
     },
@@ -2118,7 +2130,25 @@
     },
     {
       "src": "catalog:scripts/_CATALOG.md",
+      "dst": "script:real_decomposition.py",
+      "type": "references",
+      "meta": {}
+    },
+    {
+      "src": "catalog:scripts/_CATALOG.md",
+      "dst": "script:validate_decomposition.py",
+      "type": "references",
+      "meta": {}
+    },
+    {
+      "src": "catalog:scripts/_CATALOG.md",
       "dst": "script:validate_field_contracts.py",
+      "type": "references",
+      "meta": {}
+    },
+    {
+      "src": "catalog:scripts/_CATALOG.md",
+      "dst": "script:web_verify.py",
       "type": "references",
       "meta": {}
     },
@@ -2172,12 +2202,6 @@
     },
     {
       "src": "script:_helpers.py",
-      "dst": "section:§13.15 Метрики v9.24 F81-F87 (аудиты реализации, диалога, ca",
-      "type": "implements",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
       "dst": "section:§13.16 Метрика v9.25 F88 (фантастические материалы без смеше",
       "type": "implements",
       "meta": {}
@@ -2190,18 +2214,6 @@
     },
     {
       "src": "script:_helpers.py",
-      "dst": "section:§13.17 Метрика v9.26 F70g (schema-driven validation)",
-      "type": "implements",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "section:§13.18 Метрика v9.27 F70h (enum validation)",
-      "type": "implements",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
       "dst": "section:§13.18 Метрика v9.27 F70h (enum validation)",
       "type": "implements",
       "meta": {}
@@ -2209,24 +2221,6 @@
     {
       "src": "script:_helpers.py",
       "dst": "section:§13.19 Метрика v9.28 F70i (enforcement)",
-      "type": "implements",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "section:§13.19 Метрика v9.28 F70i (enforcement)",
-      "type": "implements",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "section:§13.20 Метрики v9.29 F70j + F90 (decisions.log + маскировка ",
-      "type": "implements",
-      "meta": {}
-    },
-    {
-      "src": "script:_helpers.py",
-      "dst": "section:§13.20 Метрики v9.29 F70j + F90 (decisions.log + маскировка ",
       "type": "implements",
       "meta": {}
     },
@@ -2256,19 +2250,7 @@
     },
     {
       "src": "script:_stubs.py",
-      "dst": "section:§13.7 Метрики v9.1 (5 новых — F51-F55)",
-      "type": "implements",
-      "meta": {}
-    },
-    {
-      "src": "script:_stubs.py",
       "dst": "section:§22.3 Метрика F57",
-      "type": "implements",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "section:§13.15 Метрики v9.24 F81-F87 (аудиты реализации, диалога, ca",
       "type": "implements",
       "meta": {}
     },
@@ -2287,18 +2269,6 @@
     {
       "src": "script:pre-commit-hook.py",
       "dst": "section:§13.17 Метрика v9.26 F70g (schema-driven validation)",
-      "type": "implements",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "section:§13.17 Метрика v9.26 F70g (schema-driven validation)",
-      "type": "implements",
-      "meta": {}
-    },
-    {
-      "src": "script:pre-commit-hook.py",
-      "dst": "section:§13.18 Метрика v9.27 F70h (enum validation)",
       "type": "implements",
       "meta": {}
     },
@@ -2389,7 +2359,7 @@
   ],
   "stats": {
     "nodes": 184,
-    "edges": 213,
+    "edges": 208,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,

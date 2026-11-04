@@ -94,6 +94,7 @@ def graph1_build() -> dict:
     nodes: list[dict] = []
     edges: list[dict] = []
     by_id: dict[str, dict] = {}
+    _seen_edges: set[tuple[str, str, str]] = set()
 
     # Индекс материалов: 'bi2te3'→'material_bi₂te₃' (матчинг упоминаний с файлами)
     mat_index: dict[str, str] = {}
@@ -118,6 +119,13 @@ def graph1_build() -> dict:
         by_id[nid] = node
 
     def add_edge(src: str, dst: str, etype: str, meta: dict | None = None):
+        # Дедупликация рёбер: одна и та же пара (src,dst,type) встречается
+        # многократно (например, материал в 5 частях одного изделия); мы
+        # оставляем первое вхождение, чтобы граф был минимальным.
+        key = (src, dst, etype)
+        if key in _seen_edges:
+            return
+        _seen_edges.add(key)
         edges.append({
             "src": src, "dst": dst, "type": etype,
             "meta": meta or {},
@@ -411,6 +419,7 @@ def graph2_build() -> dict:
     nodes: list[dict] = []
     edges: list[dict] = []
     by_id: dict[str, dict] = {}
+    _seen_edges: set[tuple[str, str, str]] = set()
 
     def add_node(nid: str, ntype: str, label: str, path: str = ""):
         if nid in by_id:
@@ -420,6 +429,10 @@ def graph2_build() -> dict:
         by_id[nid] = node
 
     def add_edge(src: str, dst: str, etype: str, meta: dict | None = None):
+        key = (src, dst, etype)
+        if key in _seen_edges:
+            return
+        _seen_edges.add(key)
         edges.append({"src": src, "dst": dst, "type": etype, "meta": meta or {}})
 
     # 1) Скрипты
@@ -587,6 +600,7 @@ def graph3_build() -> dict:
     nodes: list[dict] = []
     edges: list[dict] = []
     by_id: dict[str, dict] = {}
+    _seen_edges: set[tuple[str, str, str]] = set()
 
     def add_node(nid: str, ntype: str, label: str, path: str = ""):
         if nid in by_id:
@@ -596,6 +610,12 @@ def graph3_build() -> dict:
         by_id[nid] = node
 
     def add_edge(src: str, dst: str, etype: str, meta: dict | None = None):
+        # Дедупликация: один и тот же (src, dst, type) добавляем только один раз.
+        # Раньше одно и то же упоминание F-метрики в 5 местах кода порождало 5 одинаковых рёбер.
+        key = (src, dst, etype)
+        if key in _seen_edges:
+            return
+        _seen_edges.add(key)
         edges.append({"src": src, "dst": dst, "type": etype, "meta": meta or {}})
 
     # 1) Спецификация — извлечь все метрики FXX, PXX и их контекст
@@ -657,21 +677,32 @@ def graph3_build() -> dict:
                     add_node(pid, "file_pattern", pat)
                 add_edge(sid, pid, "checks_files")
 
-    # 3) Каталог _CATALOG.md — извлечь связки скрипт → метрика → field_contract
+    # 3) Каталог _CATALOG.md — извлечь связки скрипт → метрика → field_contract.
+    #    каталог может упоминать «stub»-скрипты (функции в _stubs.py), которых
+    #    нет как отдельных .py файлов — для них узел script:* НЕ создаётся,
+    #    метрика всё равно остаётся (она валидируется кодом в _stubs.py через
+    #    ребро validated_by на script:_stubs.py, см. шаг 4 ниже).
+    def _clean_cell(s: str) -> str:
+        """Убирает markdown-обрамление: `code` → code, лишние пробелы."""
+        return s.strip().strip("`").strip()
+
     if CATALOG_FILE.exists():
         cat_text = CATALOG_FILE.read_text(encoding="utf-8")
-        # строки таблицы | script.py | ... | F1, F2 | fc_xxx, fc_yyy |
         for line in cat_text.split("\n"):
             if not line.startswith("|") or "Скрипт" in line or "---" in line:
                 continue
-            cells = [c.strip() for c in line.split("|")[1:-1]]
+            cells = [_clean_cell(c) for c in line.split("|")[1:-1]]
             if len(cells) < 4:
                 continue
-            fname = cells[0].strip()
+            fname = cells[0]
             if not fname.endswith(".py"):
                 continue
             sid = f"script:{fname}"
+            # узел создаём только если .py реально существует на диске;
+            # в противном случае это stub, обрабатываемый отдельно (шаг 4).
             if sid not in by_id:
+                if not (SCRIPTS_DIR / fname).exists():
+                    continue
                 add_node(sid, "script", fname, f"scripts/{fname}")
             metrics_str = cells[2] if len(cells) > 2 else ""
             contracts_str = cells[3] if len(cells) > 3 else ""
@@ -683,6 +714,47 @@ def graph3_build() -> dict:
                 if cid not in by_id:
                     add_node(cid, "field_contract", c)
                 add_edge(sid, cid, "enforces_contract")
+
+    # 4) Stubs — функции в _stubs.py, упомянутые в каталоге как отдельные «скрипты»,
+    #    но физически hosted в одном файле. Каждая получает узел stub:<name> с
+    #    ребром hosted_in → script:_stubs.py, а метрики из каталога
+    #    дополнительно привязываются к script:_stubs.py (так как именно там
+    #    код стабов в конечном итоге окажется после реализации).
+    stubs_path = SCRIPTS_DIR / "_stubs.py"
+    if stubs_path.exists():
+        stubs_text = stubs_path.read_text(encoding="utf-8")
+        # Маркер `# === X ===` — это stub, если только X.py НЕ существует как отдельный
+        # .py файл (например, `# === pipeline_engine ===` помечает РЕАЛЬНЫЙ скрипт,
+        # а не stub — для него stub-узел не создаётся).
+        all_markers = re.findall(r"^# === (\w+) ===", stubs_text, re.MULTILINE)
+        stub_names = [m for m in all_markers if not (SCRIPTS_DIR / f"{m}.py").exists()]
+        if stub_names:
+            sid_stubs = "script:_stubs.py"
+            if sid_stubs not in by_id:
+                add_node(sid_stubs, "script", "_stubs.py", "scripts/_stubs.py")
+            for name in stub_names:
+                stub_id = f"stub:{name}"
+                add_node(stub_id, "stub", name, "scripts/_stubs.py")
+                add_edge(stub_id, sid_stubs, "hosted_in")
+                # Если в каталоге у этого stub'а были метрики — привяжем к script:_stubs.py
+                if CATALOG_FILE.exists():
+                    cat_text = CATALOG_FILE.read_text(encoding="utf-8")
+                    for line in cat_text.split("\n"):
+                        if not line.startswith("|") or "Скрипт" in line or "---" in line:
+                            continue
+                        cells = [_clean_cell(c) for c in line.split("|")[1:-1]]
+                        if len(cells) < 4 or cells[0] != f"{name}.py":
+                            continue
+                        for m in re.findall(r"\b(F\d+[a-z]?|P\d+[a-z]?)\b", cells[2]):
+                            if m in by_id:
+                                add_edge(m, sid_stubs, "validated_by")
+                                add_edge(sid_stubs, m, "triggers_metric")
+                        for c in re.findall(r"\bfc_[а-яё_]+\b", cells[3]):
+                            cid = f"contract:{c}"
+                            if cid not in by_id:
+                                add_node(cid, "field_contract", c)
+                            add_edge(sid_stubs, cid, "enforces_contract")
+                        break
 
     return {
         "kind": "graph3_traceability",
@@ -704,6 +776,11 @@ def graph3_mermaid(g: dict) -> str:
         "```mermaid",
         "graph LR",
     ]
+    # Предрасчёт (O(n), не O(n²)) — для каждого скрипта множество контрактов
+    script_contracts: dict[str, set[str]] = defaultdict(set)
+    for e in g["edges"]:
+        if e["type"] == "enforces_contract":
+            script_contracts[e["src"]].add(e["dst"])
     # Метрики (только те, у которых есть validated_by)
     metrics_with_script: dict[str, set[str]] = defaultdict(set)
     for e in g["edges"]:
@@ -727,14 +804,11 @@ def graph3_mermaid(g: dict) -> str:
     lines.append("| Метрика | Скрипты-валидаторы | Контракты |")
     lines.append("|---|---|---|")
     for mid, scripts in sorted(metrics_with_script.items()):
-        # найти контракты для каждого скрипта
         contracts: set[str] = set()
         for s in scripts:
-            for e in g["edges"]:
-                if e["src"] == s and e["type"] == "enforces_contract":
-                    contracts.add(e["dst"].split(":", 1)[1])
+            contracts |= script_contracts.get(s, set())
         scripts_str = ", ".join(sorted(s.split(":", 1)[1] for s in scripts))
-        contracts_str = ", ".join(sorted(contracts)) or "—"
+        contracts_str = ", ".join(sorted(c.split(":", 1)[1] for c in contracts)) or "—"
         lines.append(f"| `{mid}` | {scripts_str} | {contracts_str} |")
     return "\n".join(lines) + "\n"
 

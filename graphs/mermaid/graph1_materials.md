@@ -17,7 +17,7 @@ graph LR
     ROOT --> M5
     M6[Полиимид<br/>14 исп.]
     ROOT --> M6
-    M7[Inconel 718<br/>13 исп.]
+    M7[Inconel 718<br/>10 исп.]
     ROOT --> M7
     M8[Эпоксид Epon 828 …<br/>7 исп.]
     ROOT --> M8
@@ -34,6 +34,6 @@ graph LR
 | `Si` | 19 |
 | `BeCu` | 17 |
 | `Полиимид` | 14 |
-| `Inconel 718` | 13 |
+| `Inconel 718` | 10 |
 | `Эпоксид Epon 828 + TETA` | 7 |
 | `PTFE` | 7 |

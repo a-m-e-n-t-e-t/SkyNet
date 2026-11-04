@@ -69,22 +69,29 @@ Source of truth — `*.json` файлы; Mermaid `.md` рендеры — ген
 Граф прослеживаемости требований: какие требования спецификации реализуются какими скриптами и проверяются на каких файлах.
 
 **Вершины:**
-| Тип | Пример |
-|---|---|
-| `metric` | `F12a`, `F22`, `F25`, `P062` |
-| `spec_section` | `§11.1 13 подсистем` |
-| `script` | `scripts/validate_decomposition.py` |
-| `file_pattern` | `реальные данные/изделия/**/_index.md` |
-| `field_contract` | `fc_материал_кристалл_структура` |
+| Тип | Пример | Описание |
+|---|---|---|
+| `metric` | `F12a`, `F22`, `F25`, `P062` | Метрика спецификации |
+| `spec_section` | `§11.1 13 подсистем` | Секция спецификации, где метрика определена |
+| `script` | `scripts/validate_decomposition.py` | Реальный `.py` файл в `scripts/` |
+| `stub` | `stub:apply_weakest_link` | Stub-функция в `_stubs.py` (ещё не выделена в отдельный `.py`) |
+| `file_pattern` | `реальные данные/изделия/**/_index.md` | Шаблон путей, которые скрипт проверяет |
+| `field_contract` | `fc_материал_кристалл_структура` | Контракт `fc_*` из `требования_к_ии/_field_contracts.yaml` |
 
 **Рёбра:**
 | Тип | Из → в | Источник |
 |---|---|---|
 | `defined_in` | metric → spec_section | парсинг спецификации |
-| `validated_by` | metric → script | docstring / `_CATALOG.md` |
-| `checks_files` | script → file_pattern | статический анализ |
-| `enforces_contract` | script → field_contract | `_CATALOG.md` |
+| `validated_by` | metric → script | docstring скрипта + `_CATALOG.md` |
+| `checks_files` | script → file_pattern | статический анализ `rglob/glob` в коде скрипта |
+| `enforces_contract` | script → field_contract | `_CATALOG.md` (колонка «Контракты») |
 | `triggers_metric` | script → metric | обратное к `validated_by` |
+| `hosted_in` | stub → script | stub физически живёт в `scripts/_stubs.py` |
+
+**Согласованность с `_CATALOG.md`:** каталог является источником правды для
+привязок метрика ↔ скрипт и контракт ↔ скрипт. Если в каталоге упомянут
+`.py` файл, отсутствующий на диске — он интерпретируется как stub, и его
+метрики привязываются к `script:_stubs.py` (через `hosted_in`).
 
 Файлы:
 - `graphs/graph3_traceability.json`

@@ -186,22 +186,13 @@ graph TB
     concept_требования_к_ии__шаблоны_изделий_md(("_шаблоны_изделий.md"('[', ']')
     concept_требования_к_ии__шаблоны_подсистем_md(("_шаблоны_подсистем.md"('[', ']')
     concept_диалог_CHANGELOG_md(("CHANGELOG.md"('[', ']')
-    script_pre-commit-hook_py -.->|imports| script__helpers_py
-    script__helpers_py -.->|implements| section_§13_20_Метрики_v9_29_F70j_+_F90_(decisions_log_+_маскировка_
     script_decompose_all_izdeliya_py -.->|imports| script_validate_decomposition_py
-    script_pre-commit-hook_py -.->|imports| script_validate_decomposition_py
-    script__helpers_py -.->|implements| section_§13_15_Метрики_v9_24_F81-F87_(аудиты_реализации,_диалога,_ca
-    script__helpers_py -.->|implements| section_§13_17_Метрика_v9_26_F70g_(schema-driven_validation)
-    script__helpers_py -.->|implements| section_§13_18_Метрика_v9_27_F70h_(enum_validation)
-    script__helpers_py -.->|implements| section_§13_19_Метрика_v9_28_F70i_(enforcement)
-    script__stubs_py -.->|implements| section_§13_7_Метрики_v9_1_(5_новых_—_F51-F55)
-    script_pre-commit-hook_py -.->|implements| section_§13_15_Метрики_v9_24_F81-F87_(аудиты_реализации,_диалога,_ca
-    script_pre-commit-hook_py -.->|implements| section_§13_17_Метрика_v9_26_F70g_(schema-driven_validation)
-    script_pre-commit-hook_py -.->|implements| section_§13_18_Метрика_v9_27_F70h_(enum_validation)
     script_generate_decomposition_py -.->|imports| script_validate_decomposition_py
     script_generate_wrapper_izdeliya_py -.->|imports| script_validate_decomposition_py
     script_generate_wrapper_izdeliya_py -.->|imports| script_generate_decomposition_py
     script_pipeline_py -.->|imports| script__helpers_py
+    script_pre-commit-hook_py -.->|imports| script_validate_decomposition_py
+    script_pre-commit-hook_py -.->|imports| script__helpers_py
     script_real_decomposition_py -.->|imports| script_validate_decomposition_py
     script_validate_field_contracts_py -.->|imports| script__helpers_py
     script_web_verify_py -.->|imports| script_validate_decomposition_py
@@ -236,9 +227,18 @@ graph TB
     section_§11_3_7_антипаттернов_(уроки_из_прошлых_реализаций) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§11_4_Полный_реестр_подтипов_(146_подтипов) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§11_5__Разделение_уровней__паттерн_vs_экземпляр -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
+    section_§11_6_МНОГОСЛОЙНАЯ_БРОНЯ_(v9_22_НОВОЕ_—_5_слоёв) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
+    section_§9_5_Авто-отчёт_после_batch_(v9_24_НОВОЕ_—_из_аудита_диалога -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
+    section_§9_6_Запрет_эвристик_без_явного_правила_(v9_24_НОВОЕ_—_из_ау -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
+    section_§9_7_Прозрачная_остановка_(v9_24_НОВОЕ_—_из_аудита_диалога) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
+    section_§9_8_Issues_как_очередь_задач_(v9_30_НОВОЕ_—_полная_интеграц -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
+    section_§9_9_Авто-создание_Issues_при_FAIL_(v9_30_НОВОЕ) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
+    section_§12__YAML-СХЕМЫ_ФАЙЛОВ -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
+    section_§12_1_Схема_файла_изделия_(`_index_md`_или_`<часть>_md`) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
+    section_§12_2_Схема_файла_технологии -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 184, рёбер: 213 (показано топ-50)._
+_Узлов: 184, рёбер: 208 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|

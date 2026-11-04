@@ -7138,12 +7138,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_SkyNet-HKAerial",
-      "dst": "material_inconel_718",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_SkyNet-TX",
       "dst": "часть_t_x_cpu",
       "type": "has_part",
@@ -8945,12 +8939,6 @@
     },
     {
       "src": "izdelie_nasa_asc-e_srsc",
-      "dst": "material_inconel_718",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_nasa_asc-e_srsc",
       "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
@@ -9232,12 +9220,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_svobodnoporshnevoi_stirling",
-      "dst": "material_inconel_718",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_superkondensatory",
       "dst": "часть_superkondensatory_electrode_pos",
       "type": "has_part",
@@ -9463,12 +9445,6 @@
       "src": "izdelie_alyuminievo-vozdushnye_toplivnye_elementy",
       "dst": "часть_alyuminievo-vozdushnye_toplivnye_elementy_housing",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_alyuminievo-vozdushnye_toplivnye_elementy",
-      "dst": "material_carbon_ptfe",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -19006,14 +18982,6 @@
       }
     },
     {
-      "src": "material_inconel_718",
-      "dst": "izdelie_SkyNet-HKAerial",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "часть_t_x_cpu",
       "dst": "izdelie_SkyNet-TX",
       "type": "part_of",
@@ -20654,14 +20622,6 @@
       }
     },
     {
-      "src": "material_inconel_718",
-      "dst": "izdelie_nasa_asc-e_srsc",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_al_6061-t6",
       "dst": "izdelie_nasa_asc-e_srsc",
       "type": "used_in",
@@ -21038,14 +20998,6 @@
       }
     },
     {
-      "src": "material_inconel_718",
-      "dst": "izdelie_svobodnoporshnevoi_stirling",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "часть_superkondensatory_electrode_pos",
       "dst": "izdelie_superkondensatory",
       "type": "part_of",
@@ -21347,14 +21299,6 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
-      }
-    },
-    {
-      "src": "material_carbon_ptfe",
-      "dst": "izdelie_alyuminievo-vozdushnye_toplivnye_elementy",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
       }
     },
     {
@@ -29018,7 +28962,7 @@
   },
   "stats": {
     "nodes": 947,
-    "edges": 3256,
+    "edges": 3248,
     "dangling": {
       "complies_with": 88,
       "researched_by": 42,

@@ -38,7 +38,6 @@ graph LR
     material_stal_st3[Сталь Ст3]
     material_ti_6al_4v[Ti-6Al-4V]
     izdelie_SkyNet_HKAerial -->|материал| material_inconel_718
-    izdelie_SkyNet_HKAerial -->|материал| material_inconel_718
     часть_kompensatory_core -->|материал| material_inconel_718
     часть_kompensatory_connectors -->|материал| material_stal_st3
     часть_kompensatory_housing -->|материал| material_al_6061_t6
@@ -63,7 +62,7 @@ graph LR
 | Материал | Используется в частях |
 |---|---:|
 | `Ti-6Al-4V` | 12 |
-| `Inconel 718` | 3 |
 | `Al 6061-T6` | 3 |
+| `Inconel 718` | 2 |
 | `Сталь Ст3` | 2 |
 | `CFRP T1100G` | 1 |
