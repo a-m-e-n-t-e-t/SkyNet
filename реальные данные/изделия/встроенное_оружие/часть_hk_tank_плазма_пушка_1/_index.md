@@ -8,6 +8,7 @@ id: часть_hk_tank_плазма_пушка_1
 подтип: plasma_cannon
 стандарты:
   - MIL-STD-810
+  - MIL-STD-1913
 исследовательская_группа: null
 родитель: izdelie_SkyNet-HKTank
 дочерние_части: []
@@ -15,9 +16,10 @@ id: часть_hk_tank_плазма_пушка_1
   - часть: часть_hk_tank_плазма_пушка_1
     материал: w-ni-fe
     доля_массы: 1.0
-
 scaling_type: количественный
-соединители: []
+соединители:
+  - шина_данных
+  - кабель_силовой
 версия: реальная
 статус_реальности: real
 доступность: промышленный
@@ -36,23 +38,28 @@ scaling_type: количественный
   выработка_тепла_W: 500
 наследуемые: {}
 дополнительные:
-  тип: 'phased plasma cannon'
+  тип: 'dual-barrel phased plasma cannon (twin-barreled directional plasma cannon)'
   мощность_выстрела_MJ: 5
   скорострельность_выстр_мин: 200
-
+  power_source: 'fusion reactor (источник питания HK-Tank)'
+  rotation: '360 degrees (turret-mounted on steel arm)'
+  target_type: 'aerial and ground based targets'
+  ammo_type: 'plasma bolt (no conventional ammunition — energy weapon)'
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-04
 источник: web_search
 источник_разбора: канон
+источник_url: https://terminator.fandom.com/wiki/HK-Tank + https://terminator.fandom.com/wiki/Plasma_cannon + https://kaiju.wikidot.com/wiki:hunter-killer
+источник_дата: 2026-11-04
 ---
 
 # Часть: часть_hk_tank_плазма_пушка_1
 
 ## Описание
 
-Дочерняя часть изделия.
+Двухствольная фазированная плазменная пушка HK-Tank (twin-barreled directional plasma cannon), установленная на стальном «руке» в составе конусной башни (conning tower). Основное вооружение HK-Tank — совместно со второй плазменной пушкой и спаренными пулемётами.
 
-Родитель: `izdelie_SkyNet-HKTank` (подсистема: встроенное_оружие).
+Из terminator.fandom.com/wiki/HK-Tank: «...two steel "arms" equipped with twin-barreled directional plasma cannons». Пушка способна вести огонь по наземным и воздушным целям. Конструкция обеспечивает 360-градусное вращение.
 
 ## Технические характеристики
 
@@ -65,11 +72,18 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 1500×500×500 | mm | canon |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 500 | W | canon |
-| материал | w-ni-fe | — | canon |
+| материал | w-ni-fe (W-Ni-Fe heavy alloy) | — | canon |
+| тип оружия | dual-barrel phased plasma cannon | — | Fandom |
+| мощность выстрела | 5 | MJ | canon |
+| скорострельность | 200 | выстр/мин | canon |
+| вращение | 360 | degrees | kaiju.wikidot.com |
+| цель | наземные и воздушные | — | Fandom |
 
 ## Принцип работы
 
-Capacitor bank разряжается через plasma cell → Lorentz force ускоряет плазму.
+Capacitor bank разряжается через plasma cell → Lorentz force ускоряет плазму. Питание от fusion reactor HK-Tank.
+
+Плазменная пушка использует электромагнитный принцип ускорения высокотемпературной плазмы. Заряд конденсаторной батареи подаётся на импульсные катушки, создавая магнитное поле, которое ускоряет плазменный тороид по стволу с использованием силы Лоренца. Энергия выстрела — 5 МДж, скорострельность — 200 выстрелов в минуту.
 
 ## Состав
 
@@ -77,9 +91,12 @@ Capacitor bank разряжается через plasma cell → Lorentz force �
 
 ## Используемые материалы
 
-- `w-ni-fe` → [`w-ni-fe.md`](../../материалы/w-ni-fe.md)
+- `w-ni-fe` → [`w-ni-fe.md`](../../материалы/w-ni-fe.md) — вольфрам-никель-железный тяжёлый сплав для ствола и теплоотвода
 
 ## Источники
 
-- Канон: декомпозиция `izdelie_SkyNet-HKTank` (web search 2026-11-03)
+- https://terminator.fandom.com/wiki/HK-Tank — HK-Tank armament (dual plasma cannons + dual machine guns)
+- https://terminator.fandom.com/wiki/Plasma_cannon — known plasma cannons (Mark-108, 40-watt Phased)
+- https://kaiju.wikidot.com/wiki:hunter-killer — 360-degree plasma cannon rotation
+- Декомпозиция: `izdelie_SkyNet-HKTank` (web search 2026-11-03)
 - Материалы: реальные данные/материалы/
