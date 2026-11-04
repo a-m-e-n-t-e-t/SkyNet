@@ -534,7 +534,7 @@ def graph2_build() -> dict:
                 continue
             sec_title = sec["label"]
             # если в заголовке секции есть метрика FXX и скрипт её упоминает
-            for m in metrics_in_script:
+            for m in sorted(metrics_in_script):  # sorted: порядок рёбер детерминирован (set-итерация зависит от hashseed)
                 if m in sec_title:
                     add_edge(n["id"], sec["id"], "implements")
 
@@ -659,12 +659,12 @@ def graph3_build() -> dict:
         script_metrics = set(re.findall(r"\b(F\d+[a-z]?|P\d+[a-z]?)\b", stext))
         # field contracts fc_*
         contracts = set(re.findall(r"\bfc_[а-яё_]+\b", stext))
-        for c in contracts:
+        for c in sorted(contracts):  # sorted: детерминизм
             cid = f"contract:{c}"
             if cid not in by_id:
                 add_node(cid, "field_contract", c)
             add_edge(sid, cid, "enforces_contract")
-        for m in script_metrics:
+        for m in sorted(script_metrics):  # sorted: детерминизм
             if m in by_id:  # только метрики, упомянутые в спецификации
                 add_edge(m, sid, "validated_by")
                 add_edge(sid, m, "triggers_metric")

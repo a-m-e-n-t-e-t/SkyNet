@@ -27,20 +27,6 @@ graph LR
     F86 --> script_check_model_completeness_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F86 --> script_pre-commit-hook_py
-    F19([F19])
-    script_generate_decomposition_py[generate_decomposition.py]
-    F19 --> script_generate_decomposition_py
-    script_generate_wrapper_izdeliya_py[generate_wrapper_izdeliya.py]
-    F19 --> script_generate_wrapper_izdeliya_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F19 --> script_validate_decomposition_py
-    F16([F16])
-    script_generate_decomposition_py[generate_decomposition.py]
-    F16 --> script_generate_decomposition_py
-    script_generate_wrapper_izdeliya_py[generate_wrapper_izdeliya.py]
-    F16 --> script_generate_wrapper_izdeliya_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F16 --> script_validate_decomposition_py
     F13([F13])
     script_generate_decomposition_py[generate_decomposition.py]
     F13 --> script_generate_decomposition_py
@@ -55,20 +41,20 @@ graph LR
     F14 --> script_generate_wrapper_izdeliya_py
     script_validate_decomposition_py[validate_decomposition.py]
     F14 --> script_validate_decomposition_py
-    F24([F24])
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F24 --> script_pre-commit-hook_py
+    F16([F16])
+    script_generate_decomposition_py[generate_decomposition.py]
+    F16 --> script_generate_decomposition_py
+    script_generate_wrapper_izdeliya_py[generate_wrapper_izdeliya.py]
+    F16 --> script_generate_wrapper_izdeliya_py
     script_validate_decomposition_py[validate_decomposition.py]
-    F24 --> script_validate_decomposition_py
-    script_web_verify_py[web_verify.py]
-    F24 --> script_web_verify_py
-    F23([F23])
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F23 --> script_pre-commit-hook_py
+    F16 --> script_validate_decomposition_py
+    F19([F19])
+    script_generate_decomposition_py[generate_decomposition.py]
+    F19 --> script_generate_decomposition_py
+    script_generate_wrapper_izdeliya_py[generate_wrapper_izdeliya.py]
+    F19 --> script_generate_wrapper_izdeliya_py
     script_validate_decomposition_py[validate_decomposition.py]
-    F23 --> script_validate_decomposition_py
-    script_web_verify_py[web_verify.py]
-    F23 --> script_web_verify_py
+    F19 --> script_validate_decomposition_py
     F22([F22])
     script_pre-commit-hook_py[pre-commit-hook.py]
     F22 --> script_pre-commit-hook_py
@@ -76,6 +62,20 @@ graph LR
     F22 --> script_validate_decomposition_py
     script_web_verify_py[web_verify.py]
     F22 --> script_web_verify_py
+    F23([F23])
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F23 --> script_pre-commit-hook_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F23 --> script_validate_decomposition_py
+    script_web_verify_py[web_verify.py]
+    F23 --> script_web_verify_py
+    F24([F24])
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F24 --> script_pre-commit-hook_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F24 --> script_validate_decomposition_py
+    script_web_verify_py[web_verify.py]
+    F24 --> script_web_verify_py
     F37([F37])
     script_generate_graphs_py[generate_graphs.py]
     F37 --> script_generate_graphs_py
@@ -90,46 +90,46 @@ graph LR
     F38 --> script_pipeline_py
     script_pipeline_engine_py[pipeline_engine.py]
     F38 --> script_pipeline_engine_py
-    F88([F88])
-    script__helpers_py[_helpers.py]
-    F88 --> script__helpers_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F88 --> script_pre-commit-hook_py
     F70g([F70g])
     script__helpers_py[_helpers.py]
     F70g --> script__helpers_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F70g --> script_pre-commit-hook_py
-    F83([F83])
-    script__helpers_py[_helpers.py]
-    F83 --> script__helpers_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F83 --> script_pre-commit-hook_py
-    F81([F81])
-    script__helpers_py[_helpers.py]
-    F81 --> script__helpers_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F81 --> script_pre-commit-hook_py
-    F87([F87])
-    script__helpers_py[_helpers.py]
-    F87 --> script__helpers_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F87 --> script_pre-commit-hook_py
     F70h([F70h])
     script__helpers_py[_helpers.py]
     F70h --> script__helpers_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F70h --> script_pre-commit-hook_py
+    F81([F81])
+    script__helpers_py[_helpers.py]
+    F81 --> script__helpers_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F81 --> script_pre-commit-hook_py
+    F83([F83])
+    script__helpers_py[_helpers.py]
+    F83 --> script__helpers_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F83 --> script_pre-commit-hook_py
+    F87([F87])
+    script__helpers_py[_helpers.py]
+    F87 --> script__helpers_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F87 --> script_pre-commit-hook_py
+    F88([F88])
+    script__helpers_py[_helpers.py]
+    F88 --> script__helpers_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F88 --> script_pre-commit-hook_py
     F3([F3])
     script_classify_subsystem_py[classify_subsystem.py]
     F3 --> script_classify_subsystem_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F3 --> script_pre-commit-hook_py
-    F21([F21])
+    F17([F17])
     script_generate_decomposition_py[generate_decomposition.py]
-    F21 --> script_generate_decomposition_py
+    F17 --> script_generate_decomposition_py
     script_validate_decomposition_py[validate_decomposition.py]
-    F21 --> script_validate_decomposition_py
+    F17 --> script_validate_decomposition_py
 ```
 
 _Показаны топ-20 метрик по числу скриптов-валидаторов (из 65 метрик)._

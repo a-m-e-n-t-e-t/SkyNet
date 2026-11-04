@@ -35,7 +35,7 @@ field_contracts:
     tier: 2
     executor_type: semantic
     source_kind: web_search
-    executor: scripts/extract_from_sources.py
+    executor: scripts/web_verify.py  # актуализировано 2026-11-05 (был несуществующий скрипт)
     algorithm: "web-search standards for item type"
     verifies: [F6]
     blocker_if_unfilled: false
@@ -47,7 +47,7 @@ field_contracts:
     tier: 2
     executor_type: semantic
     source_kind: web_search
-    executor: scripts/extract_from_sources.py
+    executor: scripts/web_verify.py  # актуализировано 2026-11-05 (был несуществующий скрипт)
     verifies: [F7]
     blocker_if_unfilled: false
     is_orphan: false
@@ -58,7 +58,7 @@ field_contracts:
     tier: 8
     executor_type: computed
     source_kind: computed_by_formula
-    executor: scripts/compute_model_parameters.py
+    executor: scripts/generate_wrapper_izdeliya.py  # актуализировано 2026-11-05 (был несуществующий скрипт)
     algorithm: "mass = Σ(дочерних.масса × доля_массы)"
     verifies: [F31]
     blocker_if_unfilled: true
@@ -105,7 +105,7 @@ field_contracts:
     tier: 6
     executor_type: web_enriched
     source_kind: web_search
-    executor: scripts/extract_from_sources.py
+    executor: scripts/web_verify.py  # актуализировано 2026-11-05 (был несуществующий скрипт)
     verifies: [F5, P022.5]
     blocker_if_unfilled: false
     is_orphan: false
@@ -116,7 +116,7 @@ field_contracts:
     tier: 6
     executor_type: web_enriched
     source_kind: web_search
-    executor: scripts/extract_from_sources.py
+    executor: scripts/web_verify.py  # актуализировано 2026-11-05 (был несуществующий скрипт)
     verifies: [F5, P022.5]
     blocker_if_unfilled: false
     is_orphan: false
@@ -128,7 +128,7 @@ field_contracts:
     tier: 1
     executor_type: deterministic
     source_kind: derived_from_pattern_list
-    executor: scripts/check_applied_patterns.py
+    executor: scripts/_stubs.py  # актуализировано 2026-11-05 (был несуществующий скрипт)
     algorithm: "модель ссылается на applicable паттерны из §14.0"
     verifies: [F52]
     blocker_if_unfilled: true
@@ -141,7 +141,7 @@ field_contracts:
     tier: 6
     executor_type: web_enriched
     source_kind: web_search
-    executor: scripts/extract_from_sources.py
+    executor: scripts/web_verify.py  # актуализировано 2026-11-05 (был несуществующий скрипт)
     verifies: [F57]
     blocker_if_unfilled: false
     is_orphan: false
@@ -153,7 +153,7 @@ field_contracts:
     tier: 8
     executor_type: computed
     source_kind: computed_by_formula
-    executor: scripts/compute_model_parameters.py
+    executor: scripts/generate_decomposition.py  # актуализировано 2026-11-05 (был несуществующий скрипт)
     algorithm: "covered_functions / total_functions × 100"
     verifies: [F49]
     blocker_if_unfilled: true
