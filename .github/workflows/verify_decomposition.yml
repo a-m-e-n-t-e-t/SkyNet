@@ -1,5 +1,5 @@
 # SkyNet Decomposition Verification — auto-create issues for files needing verification
-# v9.31: F22-F25 — anti-stub metrics
+# v9.32: anti-duplicate / anti-parallel hardening
 #
 # Триггеры:
 #   - push на main с изменениями в реальные данные/ или фантастические данные/
@@ -8,8 +8,22 @@
 # Что делает:
 #   1. Запускает validate_decomposition.py — получает список violations F22-F25
 #   2. Для каждого violation создаёт GitHub issue с меткой `verify-task`
-#      (БЕЗ дублирования — проверяет что issue для этого файла уже не существует)
-#   3. Issues обрабатываются другим workflow (verify_process.yml) или cron-агентом
+#      (БЕЗ дублирования — проверяет все issues: open+closed,
+#       использует стабильный dedup_key в теле issue)
+#   3. Issues обрабатываются cron-агентом (job 502055)
+#
+# ANTI-PARALLEL:
+#   - concurrency.group = verify-decomposition-${{ github.ref }}
+#     с cancel-in-progress: false — параллельные push'и становятся в очередь,
+#     а не запускают параллельные runs (что вызывало дубли issues #153/#154 и т.п.)
+#
+# ANTI-DUPLICATE:
+#   - Запрашиваем ВСЕ issues с меткой verify-task (state=all),
+#     включая закрытые — если задача была решена ранее, новый issue не создаём
+#   - dedup_key хранится в HTML-комментарии в теле issue
+#     (стабилен между запусками, не зависит от количества файлов в F25)
+#   - existingKeys Set обновляется после каждого create — нет дубликатов внутри одного run
+#   - Regex для fileId поддерживает кириллицу (часть_...)
 
 name: Decomposition — create verification tasks
 
@@ -21,6 +35,12 @@ on:
       - 'фантастические данные/**'
       - 'scripts/validate_decomposition.py'
   workflow_dispatch:
+
+concurrency:
+  group: verify-decomposition-${{ github.ref }}
+  # НЕ отменяем queued runs — пусть дождутся своей очереди.
+  # Это гарантирует что параллельные push'и НЕ создадут дубликаты issues.
+  cancel-in-progress: false
 
 permissions:
   contents: read
@@ -49,11 +69,10 @@ jobs:
         run: |
           set +e
           python scripts/validate_decomposition.py 2>&1 | tee validate_output.log
-          # Извлечь violations из вывода и сохранить в JSON
+          # Извлечь violations из вывода и сохранить в JSON (с dedup_key)
           python -c "
           import json, re, sys
           
-          # Парсить вывод и собрать violations
           violations = {'F22': [], 'F23': [], 'F24': [], 'F25': []}
           current_metric = None
           
@@ -77,7 +96,7 @@ jobs:
           
           echo "total_violations=$(python -c 'import json; d=json.load(open(\"violations.json\")); print(sum(len(v) for v in d.values()))')" >> $GITHUB_OUTPUT
 
-      - name: Create issues for each violation (no duplicates)
+      - name: Create issues for each violation (anti-duplicate)
         if: steps.violations.outputs.total_violations != '0'
         uses: actions/github-script@v7
         with:
@@ -86,67 +105,122 @@ jobs:
             const fs = require('fs');
             const violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
             
-            // Получить все открытые issues с меткой verify-task
+            // ---------------------------------------------------------------
+            // Build dedup_key from a violation string.
+            // Stable across runs; independent of file count in F25.
+            //   F22/F23/F24: '<metric>:<fileId>'  — fileId is everything before the first colon
+            //   F25:         '<metric>:<param_signature>'  — extract from 'с габаритами' until next ':'
+            // ---------------------------------------------------------------
+            function buildDedupKey(metric, violation) {
+              // F25 violations start with 'Дубликат:' and contain param signature
+              if (metric === 'F25' || violation.startsWith('Дубликат:')) {
+                // Extract param signature: between 'с габаритами' and the next ':' (file list separator)
+                const m = violation.match(/с габаритами\s+([^:]+?)\s*:/);
+                if (m) {
+                  return `${metric}:${m[1].trim()}`;
+                }
+                // Fallback: full violation (without trailing file list)
+                const idx = violation.indexOf(': [');
+                return `${metric}:${idx > 0 ? violation.substring(0, idx) : violation}`;
+              }
+              // F22/F23/F24: fileId = everything before the first ':'
+              const colonIdx = violation.indexOf(':');
+              const fileId = colonIdx > 0 ? violation.substring(0, colonIdx).trim() : violation.substring(0, 80);
+              return `${metric}:${fileId}`;
+            }
+            
+            // ---------------------------------------------------------------
+            // Query ALL issues (open + closed) with label verify-task.
+            // Anti-duplicate: if a task was already solved (closed), we don't recreate.
+            // ---------------------------------------------------------------
             const existingIssues = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
               labels: 'verify-task',
-              state: 'open',
+              state: 'all',
               per_page: 100
             });
             
-            // Создать множество уже существующих заголовков
-            const existingTitles = new Set(existingIssues.data.map(i => i.title));
+            // Build Set of existing dedup_keys from issue bodies
+            // (extracted from hidden HTML comment '<!-- dedup: <key> -->')
+            const existingKeys = new Set();
+            for (const issue of existingIssues.data) {
+              const body = issue.body || '';
+              const m = body.match(/<!--\s*dedup:\s*(.+?)\s*-->/);
+              if (m) {
+                existingKeys.add(m[1].trim());
+              }
+            }
+            console.log(`Existing dedup_keys: ${existingKeys.size} (open+closed)`);
             
             let created = 0;
             let skipped = 0;
             
             for (const [metric, violList] of Object.entries(violations)) {
               for (const v of violList) {
-                // Извлечь id файла из violation
-                const idMatch = v.match(/^([a-zA-Z0-9_+-]+):/);
-                const fileId = idMatch ? idMatch[1] : v.substring(0, 50);
-                const title = `[${metric}] Verify: ${fileId}`;
+                const dedupKey = buildDedupKey(metric, v);
                 
-                if (existingTitles.has(title)) {
+                if (existingKeys.has(dedupKey)) {
                   skipped++;
-                  continue;  // не дублируем
+                  continue;  // уже есть issue (open ИЛИ closed) — не создаём дубль
                 }
+                
+                // Build readable title
+                let title;
+                if (metric === 'F25') {
+                  // F25: title uses param signature (without count)
+                  const m = v.match(/с габаритами\s+([^:]+?)\s*:/);
+                  const sig = m ? m[1].trim() : v.substring(0, 60);
+                  title = `[${metric}] Verify: Дубликат габаритов: ${sig}`;
+                } else {
+                  const colonIdx = v.indexOf(':');
+                  const fileId = colonIdx > 0 ? v.substring(0, colonIdx).trim() : v.substring(0, 50);
+                  title = `[${metric}] Verify: ${fileId}`;
+                }
+                
+                // Build body — include hidden dedup_key marker for future runs
+                const body = [
+                  `<!-- dedup: ${dedupKey} -->`,
+                  ``,
+                  `## Задача верификации: ${metric}`,
+                  ``,
+                  `**Метрика:** ${metric}`,
+                  `**Файл / сигнатура:** \`${dedupKey.substring(metric.length + 1)}\``,
+                  `**Нарушение:** ${v}`,
+                  ``,
+                  `### Что нужно сделать`,
+                  ``,
+                  `1. Найти файл в репозитории по id из нарушения выше`,
+                  `2. Провести реальный веб-поиск для этого компонента`,
+                  `3. Заполнить реальные данные:`,
+                  `   - материал (конкретный, не generic_material)`,
+                  `   - габариты (из datasheet/canon)`,
+                  `   - источник_url (URL веб-источника)`,
+                  `   - описание (не шаблонное)`,
+                  `4. Зафиксировать изменения и закрыть issue`,
+                  ``,
+                  `### Критерии закрытия`,
+                  ``,
+                  `- F22: источник_url заполнен конкретным URL`,
+                  `- F23: нет generic_material, нет шаблонного описания`,
+                  `- F24: все ожидаемые поля для подтипа присутствуют`,
+                  `- F25: параметры уникальны (≤2 файлов с одинаковыми)`,
+                  ``,
+                  `**Авто-создано:** ${new Date().toISOString()}`,
+                  `**Коммит:** ${context.sha.substring(0, 8)}`,
+                  `**Run:** ${context.runId}`,
+                ].join('\n');
                 
                 await github.rest.issues.create({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
                   title: title,
-                  body: [
-                    `## Задача верификации: ${metric}`,
-                    ``,
-                    `**Метрика:** ${metric}`,
-                    `**Файл:** \`${fileId}\``,
-                    `**Нарушение:** ${v}`,
-                    ``,
-                    `### Что нужно сделать`,
-                    ``,
-                    `1. Найти файл в репозитории по id \`${fileId}\``,
-                    `2. Провести реальный веб-поиск для этого компонента`,
-                    `3. Заполнить реальные данные:`,
-                    `   - материал (конкретный, не generic_material)`,
-                    `   - габариты (из datasheet/canon)`,
-                    `   - источник_url (URL веб-источника)`,
-                    `   - описание (не шаблонное)`,
-                    `4. Зафиксировать изменения и закрыть issue`,
-                    ``,
-                    `### Критерии закрытия`,
-                    ``,
-                    `- F22: источник_url заполнен конкретным URL`,
-                    `- F23: нет generic_material, нет шаблонного описания`,
-                    `- F24: все ожидаемые поля для подтипа присутствуют`,
-                    `- F25: параметры уникальны (≤2 файлов с одинаковыми)`,
-                    ``,
-                    `**Авто-создано:** ${new Date().toISOString()}`,
-                    `**Коммит:** ${context.sha.substring(0, 8)}`,
-                  ].join('\n'),
+                  body: body,
                   labels: ['verify-task', metric.toLowerCase(), 'auto-generated'],
                 });
+                
+                // CRITICAL: update Set to prevent within-run duplicates
+                existingKeys.add(dedupKey);
                 created++;
               }
             }
@@ -164,3 +238,6 @@ jobs:
           echo "| F23 | — | Anti-template detection |" >> $GITHUB_STEP_SUMMARY
           echo "| F24 | — | Subtype compliance |" >> $GITHUB_STEP_SUMMARY
           echo "| F25 | — | Data uniqueness |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Anti-parallel:** concurrency group \`verify-decomposition-\${{ github.ref }}\` serializes runs." >> $GITHUB_STEP_SUMMARY
+          echo "**Anti-duplicate:** dedup checks ALL issues (open+closed) via stable \`dedup_key\`." >> $GITHUB_STEP_SUMMARY
