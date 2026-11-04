@@ -106,30 +106,6 @@ jobs:
             const violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
             
             // ---------------------------------------------------------------
-            // Build dedup_key from a violation string.
-            // Stable across runs; independent of file count in F25.
-            //   F22/F23/F24: '<metric>:<fileId>'  — fileId is everything before the first colon
-            //   F25:         '<metric>:<param_signature>'  — extract from 'с габаритами' until next ':'
-            // ---------------------------------------------------------------
-            function buildDedupKey(metric, violation) {
-              // F25 violations start with 'Дубликат:' and contain param signature
-              if (metric === 'F25' || violation.startsWith('Дубликат:')) {
-                // Extract param signature: between 'с габаритами' and the next ':' (file list separator)
-                const m = violation.match(/с габаритами\s+([^:]+?)\s*:/);
-                if (m) {
-                  return `${metric}:${m[1].trim()}`;
-                }
-                // Fallback: full violation (without trailing file list)
-                const idx = violation.indexOf(': [');
-                return `${metric}:${idx > 0 ? violation.substring(0, idx) : violation}`;
-              }
-              // F22/F23/F24: fileId = everything before the first ':'
-              const colonIdx = violation.indexOf(':');
-              const fileId = colonIdx > 0 ? violation.substring(0, colonIdx).trim() : violation.substring(0, 80);
-              return `${metric}:${fileId}`;
-            }
-            
-            // ---------------------------------------------------------------
             // Query ALL issues (open + closed) with label verify-task.
             // Anti-duplicate: if a task was already solved (closed), we don't recreate.
             // ---------------------------------------------------------------
@@ -141,24 +117,49 @@ jobs:
               per_page: 100
             });
             
-            // Build Set of existing dedup_keys from issue bodies
-            // (extracted from hidden HTML comment '<!-- dedup: <key> -->')
+            // Key normalization shared by new violations AND legacy issue bodies.
+            //   F22/F23/F24: '<metric>:<fileId>'  — fileId is everything before the first colon
+            //   F25:         '<metric>:<param_signature>'  — from 'с габаритами' until next ':'
+            function normalizeViolationKey(metric, violation) {
+              if (metric === 'F25' || violation.startsWith('Дубликат:')) {
+                const m = violation.match(/с габаритами\s+([^:]+?)\s*:/);
+                if (m) return `${metric}:${m[1].trim()}`;
+                const idx = violation.indexOf(': [');
+                return `${metric}:${idx > 0 ? violation.substring(0, idx) : violation}`;
+              }
+              const colonIdx = violation.indexOf(':');
+              const fileId = colonIdx > 0 ? violation.substring(0, colonIdx).trim() : violation.substring(0, 80);
+              return `${metric}:${fileId}`;
+            }
+            
+            // Build Set of existing dedup_keys from issue bodies:
+            //   1) primary: hidden marker '<!-- dedup: <key> -->' (issues created after 6573aea)
+            //   2) fallback: legacy issues — parse '**Нарушение:**' from body and normalize
+            //      (old titles are truncated to 50 chars and cannot be used for matching)
             const existingKeys = new Set();
             for (const issue of existingIssues.data) {
               const body = issue.body || '';
-              const m = body.match(/<!--\s*dedup:\s*(.+?)\s*-->/);
-              if (m) {
-                existingKeys.add(m[1].trim());
+              const marker = body.match(/<!--\s*dedup:\s*(.+?)\s*-->/);
+              if (marker) {
+                existingKeys.add(marker[1].trim());
+                continue;
+              }
+              // Legacy fallback: full violation text lives in the body
+              const viol = body.match(/\*\*Нарушение:\*\*\s*(.+)/);
+              if (viol) {
+                const metricMatch = issue.title.match(/\[(F2[2-5])\]/);
+                const metric = metricMatch ? metricMatch[1] : 'F25';
+                existingKeys.add(normalizeViolationKey(metric, viol[1].trim()));
               }
             }
-            console.log(`Existing dedup_keys: ${existingKeys.size} (open+closed)`);
+            console.log(`Existing dedup_keys: ${existingKeys.size} (open+closed, marker+legacy-body fallback)`);
             
             let created = 0;
             let skipped = 0;
             
             for (const [metric, violList] of Object.entries(violations)) {
               for (const v of violList) {
-                const dedupKey = buildDedupKey(metric, v);
+                const dedupKey = normalizeViolationKey(metric, v);
                 
                 if (existingKeys.has(dedupKey)) {
                   skipped++;
