@@ -45,7 +45,8 @@ from pathlib import Path
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__)))
 from validate_decomposition import read_yaml_frontmatter, GENERIC_MATERIALS, TEMPLATE_DESCRIPTIONS, SKYNET_REPO
-from _helpers import write_atomic
+import yaml as _yaml
+from _helpers import write_atomic, TransactionBatch
 
 # Старый mounting-шаблон (массовые дубликаты F25, issue #146): 100×50×20
 TEMPLATE_DIMS = {(100, 100, 50), (100, 50, 20)}
@@ -108,11 +109,21 @@ def verify_file(fpath: Path) -> tuple[bool, list[str]]:
 # ============================================================================
 
 def _replace_top_scalar(yaml_text: str, key: str, value_repr: str) -> str:
-    """Заменить значение top-level скалярного поля (или добавить перед '---')."""
+    """Заменить значение top-level скалярного поля (или добавить перед '---' / концом YAML)."""
     pattern = rf'(?m)^{re.escape(key)}:[^\n]*$'
     if re.search(pattern, yaml_text):
         return re.sub(pattern, f"{key}: {value_repr}", yaml_text, count=1)
-    return yaml_text
+    # Ключ отсутствует — вставить после последнего top-level поля перед закрывающим '---'
+    # (или в конец блока, если '---' нет)
+    lines = yaml_text.rstrip('\n').split('\n')
+    # Найти позицию вставки: после последней строки без отступа
+    insert_idx = len(lines)
+    for i in range(len(lines) - 1, -1, -1):
+        if lines[i] and not lines[i].startswith((' ', '\t', '-')) and ':' in lines[i]:
+            insert_idx = i + 1
+            break
+    lines.insert(insert_idx, f"{key}: {value_repr}")
+    return '\n'.join(lines) + ('\n' if yaml_text.endswith('\n') else '')
 
 
 def _block_span(yaml_text: str, key: str) -> tuple[int, int] | None:
@@ -234,6 +245,67 @@ def set_body_sources(body: str, url: str, source_note: str) -> str:
 # apply
 # ============================================================================
 
+def _validate_inputs(url: str, material: str, dims_str: str | None) -> tuple[list[str], tuple | None]:
+    """Анти-фабрикация-гарды. Возвращает (errors, dims_tuple_or_None)."""
+    errors = []
+    if not url.startswith(('http://', 'https://')):
+        errors.append(f"url должен быть http(s) URL, получено: '{url[:60]}'")
+    if material.strip().lower() in GENERIC_MATERIALS:
+        errors.append(f"material '{material}' — generic-заглушка, отклонено")
+    dims = None
+    if dims_str:
+        try:
+            dims = tuple(float(x) for x in dims_str.split(','))
+            if len(dims) != 3 or any(d <= 0 for d in dims):
+                errors.append(f"dims должен быть 'L,W,H' из 3 положительных чисел, получено: '{dims_str}'")
+                dims = None
+            elif dims in TEMPLATE_DIMS:
+                errors.append(f"dims {dims} — шаблонный fallback, отклонено")
+                dims = None
+        except ValueError:
+            errors.append(f"dims не парсится как числа: '{dims_str}'")
+    return errors, dims
+
+
+def _build_new_text(fpath: Path, url: str, material_id: str, dims: tuple | None,
+                    mass_kg: float | None, share: float | None,
+                    standards: list[str] | None, desc: str | None,
+                    principle: str | None, source_note: str) -> tuple[str, str, dict]:
+    """Читает файл, возвращает (new_text, orig_text, orig_data).
+    Не пишет на диск — вызывающий код решает write_atomic / batch."""
+    data, yaml_text, body = read_yaml_frontmatter(fpath)
+    if not data:
+        raise ValueError(f"YAML frontmatter не распознан в {fpath}")
+    orig_text = fpath.read_text(encoding='utf-8')
+    today = date.today().isoformat()
+
+    new_yaml = yaml_text
+    new_yaml = _replace_top_scalar(new_yaml, 'дата_обновления', today)
+    new_yaml = _replace_top_scalar(new_yaml, 'источник', 'web_search')
+    new_yaml = _replace_top_scalar(new_yaml, 'источник_url', url)
+    new_yaml = _replace_top_scalar(new_yaml, 'источник_дата', today)
+    if standards:
+        new_yaml = set_standards(new_yaml, standards)
+    new_yaml = set_materials(new_yaml, material_id)
+    new_yaml = set_basic_fields(new_yaml, mass_kg=mass_kg, share=share, dims=dims)
+
+    new_body = body
+    if desc:
+        new_body = set_body_description(new_body, desc)
+    if principle:
+        new_body = set_body_principle(new_body, principle)
+    new_body = set_body_param_rows(new_body, mass_kg, share, dims, material_id, source_note)
+    new_body = set_body_materials_link(new_body, material_id)
+    new_body = set_body_sources(new_body, url, source_note)
+
+    new_text = '---\n' + new_yaml.rstrip('\n') + '\n---\n' + new_body
+    return new_text, orig_text, data
+
+
+# ============================================================================
+# apply
+# ============================================================================
+
 def cmd_apply(args) -> int:
     fpath = Path(args.file)
     if not fpath.is_absolute():
@@ -242,21 +314,7 @@ def cmd_apply(args) -> int:
         print(f"ERROR: файл не найден: {fpath}", file=sys.stderr)
         return 2
 
-    # --- Анти-фабрикация-гарды ---
-    errors = []
-    if not args.url.startswith(('http://', 'https://')):
-        errors.append(f"--url должен быть http(s) URL, получено: '{args.url[:60]}'")
-    if args.material.strip().lower() in GENERIC_MATERIALS:
-        errors.append(f"--material '{args.material}' — generic-заглушка, отклонено")
-    try:
-        dims = tuple(float(x) for x in args.dims.split(',')) if args.dims else None
-        if dims and (len(dims) != 3 or any(d <= 0 for d in dims)):
-            errors.append(f"--dims должен быть 'L,W,H' из 3 положительных чисел, получено: '{args.dims}'")
-        elif dims and dims in TEMPLATE_DIMS:
-            errors.append(f"--dims {dims} — шаблонный fallback, отклонено")
-    except ValueError:
-        errors.append(f"--dims не парсится как числа: '{args.dims}'")
-        dims = None
+    errors, dims = _validate_inputs(args.url, args.material, args.dims)
     if errors:
         for e in errors:
             print(f"GUARD: {e}", file=sys.stderr)
@@ -268,45 +326,20 @@ def cmd_apply(args) -> int:
     standards = [s.strip() for s in args.standards.split(';')] if args.standards else None
     source_note = (args.source_note or 'web_search').strip()
 
-    # --- Чтение ---
-    data, yaml_text, body = read_yaml_frontmatter(fpath)
-    if not data:
-        print(f"ERROR: YAML frontmatter не распознан в {fpath}", file=sys.stderr)
+    try:
+        new_text, orig_text, data = _build_new_text(
+            fpath, args.url, material_id, dims, mass_kg, share,
+            standards, args.desc, args.principle, source_note)
+    except ValueError as e:
+        print(f"ERROR: {e}", file=sys.stderr)
         return 2
-    orig_text = fpath.read_text(encoding='utf-8')
-    today = date.today().isoformat()
 
-    # --- Front matter ---
-    new_yaml = yaml_text
-    new_yaml = _replace_top_scalar(new_yaml, 'дата_обновления', today)
-    new_yaml = _replace_top_scalar(new_yaml, 'источник', 'web_search')
-    new_yaml = _replace_top_scalar(new_yaml, 'источник_url', args.url)
-    new_yaml = _replace_top_scalar(new_yaml, 'источник_дата', today)
-    if standards:
-        new_yaml = set_standards(new_yaml, standards)
-    new_yaml = set_materials(new_yaml, material_id)
-    new_yaml = set_basic_fields(new_yaml, mass_kg=mass_kg, share=share, dims=dims)
-
-    # --- Body ---
-    new_body = body
-    if args.desc:
-        new_body = set_body_description(new_body, args.desc)
-    if args.principle:
-        new_body = set_body_principle(new_body, args.principle)
-    new_body = set_body_param_rows(new_body, mass_kg, share, dims, material_id, source_note)
-    new_body = set_body_materials_link(new_body, material_id)
-    new_body = set_body_sources(new_body, args.url, source_note)
-
-    new_text = '---\n' + new_yaml.rstrip('\n') + '\n---\n' + new_body
-
-    # --- Preview / запись ---
     if args.dry_run:
         print("=== DRY RUN (ничего не записано) ===")
     else:
         write_atomic(fpath, new_text)
         print(f"=== Записано (atomic): {fpath} ===")
 
-    # --- Отчёт об изменениях ---
     changed = []
     for label, old, new in [
         ('источник_url', str(data.get('источник_url', '')), args.url),
@@ -318,6 +351,115 @@ def cmd_apply(args) -> int:
             changed.append(f"  {label}: {old[:40]!r} → {new[:60]!r}")
     print('\n'.join(changed) if changed else '  (front matter без изменений)')
     print(f"  байт: {len(orig_text)} → {len(new_text)}")
+    return 0
+
+
+# ============================================================================
+# apply-batch — транзакционная batch-правка N файлов одной партией
+# ============================================================================
+
+# Структура спецификации (YAML):
+#   url: https://example.com/datasheet.pdf
+#   source_note: "Vendor Datasheet 2024"
+#   files:
+#     - file: реальные данные/.../_index.md
+#       material: al_6061_t6
+#       dims: 120,80,15
+#       mass: 0.45
+#       share: 0.18
+#       standards: "ASTM B209;ISO 6361"
+#       desc: "..."
+#       principle: "..."
+#     - file: ...
+
+def cmd_apply_batch(args) -> int:
+    spec_path = Path(args.spec)
+    if not spec_path.is_absolute():
+        spec_path = SKYNET_REPO / spec_path
+    if not spec_path.exists():
+        print(f"ERROR: spec-файл не найден: {spec_path}", file=sys.stderr)
+        return 2
+
+    try:
+        spec = _yaml.safe_load(spec_path.read_text(encoding='utf-8'))
+    except _yaml.YAMLError as e:
+        print(f"ERROR: spec YAML не парсится: {e}", file=sys.stderr)
+        return 2
+    if not isinstance(spec, dict) or 'files' not in spec:
+        print("ERROR: spec должен быть dict с ключом 'files'", file=sys.stderr)
+        return 2
+
+    url = spec.get('url', '').strip()
+    source_note = (spec.get('source_note') or 'web_search').strip()
+    files_spec = spec['files']
+    if not isinstance(files_spec, list) or not files_spec:
+        print("ERROR: 'files' должен быть непустым списком", file=sys.stderr)
+        return 2
+
+    # --- 1. Валидация всех записей до начала записи (fail-fast) ---
+    plans = []  # [(fpath, material_id, dims, mass_kg, share, standards, desc, principle, new_text)]
+    errors = []
+    for i, fs in enumerate(files_spec):
+        if not isinstance(fs, dict):
+            errors.append(f"files[{i}]: не dict")
+            continue
+        fpath = Path(fs['file'])
+        if not fpath.is_absolute():
+            fpath = SKYNET_REPO / fpath
+        if not fpath.exists():
+            errors.append(f"files[{i}]: файл не найден: {fpath}")
+            continue
+
+        mat = str(fs.get('material', '')).strip()
+        dims_str = str(fs.get('dims', '') or '')
+        sub_errs, dims = _validate_inputs(url, mat, dims_str)
+        for e in sub_errs:
+            errors.append(f"files[{i}] ({fpath.name}): {e}")
+        if sub_errs:
+            continue
+
+        try:
+            new_text, _, _ = _build_new_text(
+                fpath, url, mat, dims,
+                fs.get('mass'), fs.get('share'),
+                [s.strip() for s in str(fs.get('standards', '')).split(';')] if fs.get('standards') else None,
+                fs.get('desc'), fs.get('principle'), source_note)
+        except ValueError as e:
+            errors.append(f"files[{i}] ({fpath.name}): {e}")
+            continue
+        plans.append((fpath, mat, dims, fs.get('mass'), fs.get('share'),
+                      fs.get('standards'), fs.get('desc'), fs.get('principle'), new_text))
+
+    if errors:
+        print(f"ERROR: {len(errors)} проблем(ы) в spec — batch отклонён:", file=sys.stderr)
+        for e in errors:
+            print(f"  - {e}", file=sys.stderr)
+        return 3
+    if not plans:
+        print("ERROR: нет валидных файлов в spec", file=sys.stderr)
+        return 2
+
+    # --- 2. Транзакционная запись ---
+    print(f"=== apply-batch: {len(plans)} файлов, url={url[:60]} ===")
+    if args.dry_run:
+        print("--- DRY RUN (ничего не записано) ---")
+        for fpath, mat, dims, *_rest, new_text in plans:
+            print(f"  {fpath.name}: material={mat}, dims={dims}, +{len(new_text)}B")
+        return 0
+
+    try:
+        with TransactionBatch() as batch:
+            for fpath, _mat, _dims, _mass, _share, _std, _desc, _princ, new_text in plans:
+                batch.write(fpath, new_text)
+    except OSError as e:
+        print(f"ERROR: batch write failed: {e}", file=sys.stderr)
+        print("All staging cleaned up; targets untouched.", file=sys.stderr)
+        return 4
+
+    print(f"--- Записано {len(plans)} файлов (atomic batch) ---")
+    for fpath, mat, dims, *_rest in plans:
+        dims_str = f"{dims[0]:g}×{dims[1]:g}×{dims[2]:g}" if dims else "—"
+        print(f"  ✓ {fpath.name}: material={mat}, dims={dims_str}")
     return 0
 
 
@@ -367,6 +509,12 @@ def main() -> int:
     ap_apply.add_argument('--source-note', default=None, help='Подпись источника для таблиц/списка')
     ap_apply.add_argument('--dry-run', action='store_true', help='Показать изменения, не писать')
     ap_apply.set_defaults(func=cmd_apply)
+
+    ap_batch = sub.add_parser('apply-batch',
+        help='Транзакционно применить данные к N файлам из YAML spec (1 search → N файлов)')
+    ap_batch.add_argument('--spec', required=True, help='Путь к YAML spec-файлу')
+    ap_batch.add_argument('--dry-run', action='store_true', help='Показать изменения, не писать')
+    ap_batch.set_defaults(func=cmd_apply_batch)
 
     args = ap.parse_args()
     return args.func(args)

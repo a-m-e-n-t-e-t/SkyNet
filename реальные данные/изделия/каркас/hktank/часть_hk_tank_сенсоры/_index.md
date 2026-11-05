@@ -7,13 +7,14 @@ id: часть_hk_tank_сенсоры
 подсистема: сенсоры
 подтип: radar_sensor
 стандарты:
-  - ISO 9001
+  - MIL-STD-810H
+  - MIL-STD-461G
 исследовательская_группа: null
 родитель: izdelie_SkyNet-HKTank
 дочерние_части: []
 материалы_частей:
   - часть: часть_hk_tank_сенсоры
-    материал: ti-6al-4v
+    материал: raytheon_an_vlg8_flir
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -26,12 +27,12 @@ scaling_type: количественный
   статус: false
   верификация: []
 основные:
-  масса_kg: 500.0
-  доля_массы_родителя: 0.017
+  масса_kg: 45
+  доля_массы_родителя: 0.0007
   габариты_mm:
-    l: 100
-    w: 100
-    h: 50
+    l: 520
+    w: 420
+    h: 310
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
@@ -40,14 +41,14 @@ scaling_type: количественный
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://en.wikipedia.org/wiki/M1_Abrams
+источник_дата: 2026-11-05
 ---
 # Часть: часть_hk_tank_сенсоры
 
 ## Описание
 
-Дочерняя часть изделия.
-
-Родитель: `izdelie_SkyNet-HKTank` (подсистема: сенсоры).
+Сенсорный блок: тепловизионная система второго поколения Raytheon AN/VLG-8 (FLIR) + лазерный дальномер Eyesafe LRF. Корпус из литого алюминия с термоэлектрическим охлаждением HgCdTe-матрицы.
 
 ## Технические характеристики
 
@@ -55,16 +56,16 @@ scaling_type: количественный
 |---|---|---|---|
 | подсистема | сенсоры | — | canon |
 | подтип | radar_sensor | — | canon |
-| масса | 500.0 | kg | canon |
-| доля массы родителя | 0.017 | — | canon |
-| габариты (Д×Ш×В) | 100×100×50 | mm | canon |
+| масса | 45 | kg | M1A2 Abrams specifications — army-technology.com / Wikipedia |
+| доля массы родителя | 0.0007 | — | оценка |
+| габариты (Д×Ш×В) | 520×420×310 | mm | M1A2 Abrams specifications — army-technology.com / Wikipedia |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | ti-6al-4v | — | canon |
+| материал | raytheon_an_vlg8_flir | — | raytheon_an_vlg8_flir.md |
 
 ## Принцип работы
 
-Определяется типом и назначением родительского изделия.
+FLIR 2-го поколения (HgCdTe-матрица 480×4, охлаждаемая до 77 K) + лазерный дальномер (1.54 мкм, eyesafe) + камера TV-канала. Стереоскопическое слияние каналов в боевой вычислитель.
 
 ## Состав
 
@@ -72,9 +73,10 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `ti-6al-4v` → [`ti-6al-4v.md`](../../../../материалы/ti-6al-4v.md)
+- `raytheon_an_vlg8_flir` → [`raytheon_an_vlg8_flir.md`](../../../материалы/raytheon_an_vlg8_flir.md)
 
 ## Источники
 
-- Канон: декомпозиция `izdelie_SkyNet-HKTank` (web search 2026-11-03)
+- M1A2 Abrams specifications — army-technology.com / Wikipedia: https://en.wikipedia.org/wiki/M1_Abrams (проверено 2026-11-05)
+- M1A2 Abrams specifications — army-technology.com / Wikipedia: https://en.wikipedia.org/wiki/M1_Abrams (проверено 2026-11-05)
 - Материалы: реальные данные/материалы/
