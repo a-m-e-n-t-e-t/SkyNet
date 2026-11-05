@@ -1,8 +1,10 @@
 # SkyNet Decomposition Verification — auto-create issues for files needing verification
-# v9.33: auto-close stale issues + anti-parallel hardening
+# v9.33: auto-close stale issues + anti-parallel hardening + schedule
 #
 # Триггеры:
 #   - push на main с изменениями в реальные данные/ или фантастические данные/
+#   - push с правками самого workflow или валидатора
+#   - schedule: каждый час в :15 (закрытие stale issues без ожидания push)
 #   - workflow_dispatch (ручной запуск)
 #
 # Что делает:
@@ -46,7 +48,11 @@ on:
       - 'реальные данные/**'
       - 'фантастические данные/**'
       - 'scripts/validate_decomposition.py'
+      - '.github/workflows/verify_decomposition.yml'
   workflow_dispatch:
+  schedule:
+    # Каждый час в :15 — закрытие stale issues даже без push (cron-агент не успевает)
+    - cron: '15 * * * *'
 
 concurrency:
   group: verify-decomposition-${{ github.ref }}
