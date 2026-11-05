@@ -7,13 +7,13 @@ id: часть_termoelektricheskii_postoyannyi_magnit_insulation
 подсистема: энергетическая
 подтип: изоляция
 стандарты:
-  - ASTM C534
+  - ASTM C1728
 исследовательская_группа: null
 родитель: izdelie_termoelektricheskii_postoyannyi_magnit
 дочерние_части: []
 материалы_частей:
   - часть: часть_termoelektricheskii_postoyannyi_magnit_insulation
-    материал: grafen-aerogel
+    материал: silica_aerogel_blanket
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -29,29 +29,32 @@ scaling_type: количественный
   масса_kg: 0.05
   доля_массы_родителя: 0.1
   габариты_mm:
-    l: 500
-    w: 500
-    h: 50
+    l: 60
+    w: 60
+    h: 40
   выработка_энергии_W: 0
   выработка_тепла_W: 0
 наследуемые: {}
 дополнительные:
-  теплопроводность_W_mK: 0.015
+  теплопроводность_W_mK: 0.020
   T_max_C: 650
+  плотность_kg_m3: 200
+  толщина_бланкета_мм: 10
+  продукт: Pyrogel XTE (Aspen Aerogels)
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://www.aerogel.com/product/pyrogel-xte
+источник_дата: 2026-11-05
 ---
 
 # Часть: часть_termoelektricheskii_postoyannyi_magnit_insulation
 
 ## Описание
 
-Дочерняя часть изделия.
-
-Родитель: `izdelie_termoelektricheskii_postoyannyi_magnit` (подсистема: энергетическая).
+Теплоизоляционная оболочка термоэлектрического генератора: съёмный кожух-жакет из гибкого аэрогель-бланкета Pyrogel XTE (Aspen Aerogels, ASTM C1728 Type III Gr 1A) толщиной 10 мм, надеваемый на горячий радиатор 40×40×20 мм. Наружная оболочка 60×60×40 мм закрывает горячую сторону TEG-стека, отсекая конвективные и радиационные теплопотери при рабочей температуре горячего спая до 250°C; материал гидрофобен и выдерживает нагрев до 650°C.
 
 ## Технические характеристики
 
@@ -61,14 +64,17 @@ scaling_type: количественный
 | подтип | изоляция | — | canon |
 | масса | 0.05 | kg | canon |
 | доля массы родителя | 0.1 | — | canon |
-| габариты (Д×Ш×В) | 500×500×50 | mm | canon |
+| габариты (Д×Ш×В) | 60×60×40 | mm | жакет 2×10 мм Pyrogel XTE вокруг радиатора 40×40×20 мм: Aspen Aerogels |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 0 | W | canon |
-| материал | grafen-aerogel | — | canon |
+| материал | silica_aerogel_blanket | — | silica_aerogel_blanket.md |
+| теплопроводность (0°C) | 0.020 | W/(м·К) | Pyrogel XTE datasheet, ASTM C177 |
+| теплопроводность (200°C) | 0.028 | W/(м·К) | Pyrogel XTE datasheet |
+| макс. рабочая температура | 650 | °C | ASTM C447 (1200°F), Aspen Aerogels |
 
 ## Принцип работы
 
-Aerogel blanket с reflective foil для минимизации теплопотерь.
+Нанопористая структура аморфного SiO2-аэрогеля (поры ~20–100 нм, меньше длины свободного пробега молекул воздуха) подавляет газовую теплопроводность по кнудсеновскому механизму, а ИК-опакеры снижают радиационный перенос при высоких температурах — суммарно k=0.020 Вт/(м·К) при 0°C против ~0.04 у стекловаты; гибкий бланкет 10 мм сжимается до ≥20.7 кПа при 10% деформации и снимается для обслуживания TEG без демонтажа крепежа.
 
 ## Состав
 
@@ -76,9 +82,9 @@ Aerogel blanket с reflective foil для минимизации теплопо�
 
 ## Используемые материалы
 
-- `grafen-aerogel` → [`grafen-aerogel.md`](../../../../материалы/grafen-aerogel.md)
+- `silica_aerogel_blanket` → [`silica_aerogel_blanket.md`](../../../../материалы/silica_aerogel_blanket.md)
 
 ## Источники
 
-- Канон: декомпозиция `izdelie_termoelektricheskii_postoyannyi_magnit` (web search 2026-11-03)
+- Aspen Aerogels — Pyrogel XTE Industry Leading Industrial Insulation (max use temperature 1200°F/650°C, density 12.5 lb/ft3, толщины 5/10 мм, k=20–89 мВт/м·К): https://www.aerogel.com/product/pyrogel-xte (проверено 2026-11-05)
 - Материалы: реальные данные/материалы/
