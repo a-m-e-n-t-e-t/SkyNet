@@ -7,13 +7,14 @@ id: часть_nvidia_jetson_orin_nano_pcb
 подсистема: вычислительная
 подтип: плата
 стандарты:
+  - IPC-2221
   - ISO 9001
 исследовательская_группа: null
 родитель: izdelie_nvidia_jetson_orin_nano
 дочерние_части: []
 материалы_частей:
   - часть: часть_nvidia_jetson_orin_nano_pcb
-    материал: ti-6al-4v
+    материал: fr4
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -26,28 +27,32 @@ scaling_type: количественный
   статус: false
   верификация: []
 основные:
-  масса_kg: 0.04
+  масса_kg: 0.052
   доля_массы_родителя: 0.4
   габариты_mm:
-    l: 100
-    w: 100
-    h: 50
+    l: 69.6
+    w: 45
+    h: 1.2
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
-дополнительные: {}
+дополнительные:
+  тип: 'Многослойная печатная плата модуля (SOM) — несущая подложка SoC, памяти и PMIC'
+  формфактор: 'SO-DIMM, 69.6×45 мм, 260-контактный краевой разъём (DS-11105 §Mechanical)'
+  разъём: '260-pin SO-DIMM, TE DA11534001 (Jetson Design Guide §5.1)'
+  подложка: 'FR-4 high-Tg ламинат, толщина ~1.2 мм (типовая для SO-DIMM, оценка — NVIDIA толщину не публикует)'
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://esys.ir/images/img_Item/2776/Files/Jetson-Orin-Nano-Series-Modules-Data-Sheet_DS-11105-001_v1.2.pdf
+источник_дата: 2026-11-05
 ---
 # Часть: часть_nvidia_jetson_orin_nano_pcb
 
 ## Описание
 
-Дочерняя часть изделия.
-
-Родитель: `izdelie_nvidia_jetson_orin_nano` (подсистема: вычислительная).
+Многослойная печатная плата модуля Jetson Orin Nano (SOM) — несущая подложка, объединяющая SoC, LPDDR5-память, PMIC и eMMC в формфакторе SO-DIMM: контур 69.6×45 мм с 260-контактным краевым разъёмом (Module Size: 69.6 mm x 45 mm | 260 pin SO-DIMM Connector, DS-11105-001 v1.2 §Mechanical). Материал — ламинат FR-4 high-Tg (плотность ~2.0 г/см³, k≈0.6 Вт/м·К — файл fr4.md, Isola FR408HR-класс); толщина ~1.2 мм типовая для SO-DIMM-модулей (оценка — NVIDIA не публикует толщину; смена ламината отслеживается PCN 214301). Масса 0.052 кг = 0.4 номинала модуля 0.13 кг: голая подложка ~7.5 г, остальное — SMD-пассивы, не выделенные в отдельные части.
 
 ## Технические характеристики
 
@@ -55,16 +60,16 @@ scaling_type: количественный
 |---|---|---|---|
 | подсистема | вычислительная | — | canon |
 | подтип | плата | — | canon |
-| масса | 0.04 | kg | canon |
+| масса | 0.052 | kg | canon (доля 0.4 × номинал модуля 0.13 кг) |
 | доля массы родителя | 0.4 | — | canon |
-| габариты (Д×Ш×В) | 100×100×50 | mm | canon |
+| габариты (Д×Ш×В) | 69.6×45×1.2 | mm | 69.6×45 — DS-11105-001 v1.2 §Mechanical; толщина ~1.2 мм — оценка SO-DIMM |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | ti-6al-4v | — | canon |
+| материал | fr4 | — | fr4.md (Isola FR408HR-класс ламината, PCN 214301) |
 
 ## Принцип работы
 
-Определяется типом и назначением родительского изделия.
+Плата выполняет три функции: (1) импеданс-контролируемая трассировка высокоскоростных интерфейсов (PCIe Gen3, MIPI CSI-2, LPDDR5-шина между SoC и памятью, eMMC) с согласованными дифпарами и опорными плоскостями; (2) распределение питания VDD_IN 5 В через медные полигонные плоскости к PMIC и от регуляторов к доменам SoC; (3) механическая интеграция: краевой 260-контактный SO-DIMM-разъём (TE DA11534001) стыкует модуль с несущей платой, тепловое сопротивление подложки переносит поток от SoC на радиатор через термопрокладки.
 
 ## Состав
 
@@ -72,9 +77,11 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `ti-6al-4v` → [`ti-6al-4v.md`](../../../../материалы/ti-6al-4v.md)
+- `fr4` → [`fr4.md`](../../../../материалы/fr4.md)
 
 ## Источники
 
-- Канон: декомпозиция `izdelie_nvidia_jetson_orin_nano` (web search 2026-11-03)
-- Материалы: реальные данные/материалы/
+- NVIDIA, Jetson Orin Nano Series Modules Data Sheet DS-11105-001 v1.2 (Module Size: 69.6 mm x 45 mm | 260 pin SO-DIMM Connector, §Mechanical; зеркало официального документа): https://esys.ir/images/img_Item/2776/Files/Jetson-Orin-Nano-Series-Modules-Data-Sheet_DS-11105-001_v1.2.pdf (проверено 2026-11-05, PDF скачан и разобран)
+- NVIDIA Developer Forums / Jetson Design Guide §5.1 (260-pin SODIMM connector, TE DA11534001; для Orin NX/Nano): https://forums.developer.nvidia.com/t/nvidia-orin-nx-fitment-to-sodimm-connector-on-carrier-pcb/344045
+- NVIDIA PCN 214301 (Jetson Orin NX/Nano — сменa PCB laminate material, подтверждение FR-4-класса подложки): https://developer.nvidia.com/embedded/downloads
+- Diamond Systems, NVIDIA Jetson Module Comparison (69.6 mm x 45 mm | 260 pin SO-DIMM Connector): https://www.diamondsystems.com/umpages/jetsonmodules
