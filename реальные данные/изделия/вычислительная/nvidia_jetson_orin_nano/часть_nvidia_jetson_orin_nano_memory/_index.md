@@ -38,20 +38,20 @@ scaling_type: количественный
 дополнительные:
   тип: 'LPDDR5 SDRAM чип — оперативная память модуля'
   пакет: 'TFBGA 200-ball, 11.5×13×0.6 мм (типовой корпус LPDDR5 x32, JEDEC JESD209-5C)'
-  интерфейс: 'LPDDR5, 64-битная шина модуля, до 102 ГБ/с'
+  интерфейс: 'LPDDR5, 128-битная шина модуля 8GB (64-bit у 4GB), до 2133 МГц, пиковая пропускная способность 68 ГБ/с (DS-11105 §Memory Subsystem)'
   питание: 'VDD1 0.5 В, VDD2/VDDQ 1.05–1.1 В'
-  источник_url: 'https://www.micron.com/products/memory/lpddr-components/lpddr5/part-catalog'
-  источник_дата: '2026-11-05'
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://esys.ir/images/img_Item/2776/Files/Jetson-Orin-Nano-Series-Modules-Data-Sheet_DS-11105-001_v1.2.pdf
+источник_дата: 2026-11-05
 ---
 # Часть: часть_nvidia_jetson_orin_nano_memory
 
 ## Описание
 
-Чип LPDDR5 SDRAM — оперативная память модуля Jetson Orin Nano (8 ГБ, 64-битная шина, до 102 ГБ/с): типоразмер TFBGA 200-ball 11.5×13×0.6 мм — стандартный корпус LPDDR5 x32 по семейству стандартов JEDEC JESD209-5C (пакеты LFBGA/TFBGA/WFBGA в каталоге Micron LPDDR5). Питание VDD1 0.5 В, VDD2/VDDQ ~1.1 В, скорости до 6400 MTPS; масса ~0.27 г (расчёт по объёму 89.7 мм³ × ~3.0 г/см³).
+Чип LPDDR5 SDRAM — оперативная память модуля Jetson Orin Nano (8 ГБ на 128-битной шине LPDDR5, до 2133 МГц, пиковая пропускная способность 68 ГБ/с — DS-11105-001 v1.2 «Memory Subsystem»; 64-битная шина — только у модели 4GB, а 102 ГБ/с — это Orin NX): типоразмер TFBGA 200-ball 11.5×13×0.6 мм — стандартный корпус LPDDR5 x32 по семейству стандартов JEDEC JESD209-5C (пакеты LFBGA/TFBGA/WFBGA в каталоге Micron LPDDR5). Питание VDD1 0.5 В, VDD2/VDDQ ~1.1 В, скорости до 6400 MTPS; масса ~0.27 г (расчёт по объёму 89.7 мм³ × ~3.0 г/см³).
 
 ## Технические характеристики
 
@@ -65,7 +65,7 @@ scaling_type: количественный
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
 | материал | epoksid_epon_828_+_teta | — | canon (эпоксидный компаунд корпуса) |
-| шина | LPDDR5 64-bit, 102 ГБ/с | — | NVIDIA (спецификация модуля) |
+| шина | LPDDR5 128-bit, 2133 МГц, 68 ГБ/с | — | DS-11105-001 v1.2 (Memory Subsystem: ON 8GB 128-bit / ON 4GB 64-bit) |
 | питание | VDD1 0.5 В | — | JEDEC JESD209-5C |
 
 ## Принцип работы
@@ -82,6 +82,7 @@ LPDDR5 работает в реверсивном режиме тактиров�
 
 ## Источники
 
+- NVIDIA, Jetson Orin Nano Series Modules Data Sheet DS-11105-001 v1.2 (Memory Subsystem: ON 8GB 128-bit LPDDR5 / ON 4GB 64-bit; max 2133 МГц; пиковая пропускная 68 ГБ/с; зеркало официального документа): https://esys.ir/images/img_Item/2776/Files/Jetson-Orin-Nano-Series-Modules-Data-Sheet_DS-11105-001_v1.2.pdf (проверено 2026-11-05, PDF скачан и разобран)
 - Micron LPDDR5 part catalog (пакеты LFBGA/TFBGA/WFBGA, до 6400 MTPS): https://www.micron.com/products/memory/lpddr-components/lpddr5/part-catalog
 - JEDEC JESD209-5C, LPDDR5/LPDDR5X standard: https://www.jedec.org/sites/default/files/docs/JESD209-5C.pdf
-- NVIDIA Jetson Orin Nano (8 ГБ LPDDR5, 102 ГБ/с): https://developer.nvidia.com/embedded/jetson-orin
+- NVIDIA Jetson Orin Nano (модуль, память LPDDR5): https://developer.nvidia.com/embedded/jetson-orin
