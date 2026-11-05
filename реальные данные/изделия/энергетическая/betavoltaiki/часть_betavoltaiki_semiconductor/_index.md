@@ -45,6 +45,8 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-05
 источник: web_search
+источник_url: https://www.sciencedirect.com/science/article/pii/S1738573318303267
+источник_дата: 2026-11-05
 источник_разбора: канон
 ---
 # Часть: часть_betavoltaiki_semiconductor
