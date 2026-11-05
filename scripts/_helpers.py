@@ -306,8 +306,32 @@ def check_principles_vs_catalogs() -> bool:
     return True  # Simplified: return True unless clear violation
 
 def _get_prompt_path() -> str:
-    """Возвращает путь к файлу промпта."""
-    return os.environ.get('SKYNET_PROMPT_PATH', os.path.join(os.environ.get('SKYNET_REPO', '.'), 'SkyNet_PROMPT_v9.31.md'))
+    """Возвращает путь к файлу промпта.
+    
+    v9.36: приоритет — env SKYNET_PROMPT_PATH, затем авто-glob последней версии
+    в `требования_к_ии/`. Раньше был hardcode v9.31, что ломало
+    validate_field_contracts.py при запуске из scripts/.
+    """
+    env = os.environ.get('SKYNET_PROMPT_PATH')
+    if env and os.path.exists(env):
+        return env
+    # Авто-обнаружение последней версии промпта
+    repo = os.environ.get('SKYNET_REPO', '.')
+    # Поиск в трёх возможных местах: repo root, требования_к_ии/, parent/требования_к_ии/
+    candidates = []
+    for base in (repo,
+                 os.path.join(repo, 'требования_к_ии'),
+                 os.path.join(repo, '..', 'требования_к_ии'),
+                 'требования_к_ии', '..'):
+        if os.path.isdir(base):
+            candidates.extend(glob(os.path.join(base, 'SkyNet_PROMPT_v*.md')))
+            if candidates:
+                break
+    if candidates:
+        # Сортировка по версии: v9.31 > v9.30 > v9.26 и т.д.
+        return sorted(candidates)[-1]
+    # Фолбэк: legacy hardcode (не существует — но пусть будет для обратной совместимости)
+    return os.path.join(repo, 'SkyNet_PROMPT_v9.31.md')
 
 # ===== check_current_state signature (full impl in pipeline.py) =====
 # def check_current_state() -> dict:
@@ -943,3 +967,75 @@ def check_F89(repo_path):
         return ratio >= 0.80, ratio
     except Exception:
         return True, 1.0  # no git — skip
+
+
+# ============================================================================
+# v9.36: общие утилиты — вынесены из 3 копий serialize_value и MODEL_FILENAMES
+# ============================================================================
+
+# Единый реестр «id модели → имя файла .md» (раньше был в 3 местах:
+# generate_decomposition.py:model_filename_map,
+# migrate_dedup_quantity.py:name_map + model_map)
+MODEL_FILENAMES: dict[str, str] = {
+    'izdelie_SkyNet-T800':     't800.md',
+    'izdelie_SkyNet-T1000':    't1000.md',
+    'izdelie_SkyNet-Rev-9':    'rev9.md',
+    'izdelie_SkyNet-HK-Aerial':'hk_aerial.md',
+    'izdelie_SkyNet-HK-Tank':  'hk_tank.md',
+    'izdelie_SkyNet-T600':     't600.md',
+    'izdelie_SkyNet-T850':     't850.md',
+    'izdelie_SkyNet-Marcus-Wright': 'marcus_wright.md',
+    'izdelie_SkyNet-Cameron-Phillips': 'cameron_phillips.md',
+    'izdelie_SkyNet-T-X':     't_x.md',
+    'izdelie_SkyNet-T1001':   't1001.md',
+}
+
+
+def yaml_serialize_value(value) -> str:
+    """Сериализовать Python-значение в YAML-строку для inline-использования.
+
+    Единая реализация (раньше 3 копии в generate_decomposition.py,
+    web_verify.py, decompose_all_izdeliya.py).
+    """
+    if value is None:
+        return 'null'
+    if isinstance(value, bool):
+        return 'true' if value else 'false'
+    if isinstance(value, (int, float)):
+        return str(value)
+    if isinstance(value, list):
+        if not value:
+            return '[]'
+        return '[' + ', '.join(yaml_serialize_value(v) for v in value) + ']'
+    if isinstance(value, dict):
+        if not value:
+            return '{}'
+        parts = ['{']
+        items = []
+        for k, v in value.items():
+            items.append(f'  {k}: {yaml_serialize_value(v)}')
+        parts.append('\n'.join(items))
+        parts.append('}')
+        return '\n'.join(parts)
+    # string fallback — экранируем только если нужны кавычки
+    s = str(value)
+    # Если содержит спецсимволы YAML — обернуть в одинарные кавычки
+    if any(c in s for c in [':', '#', '{', '}', '[', ']', ',', '&', '*', '!', '|', '>', "'", '"', '\n', '\t']):
+        # Экранировать одинарные кавычки как ''
+        escaped = s.replace("'", "''")
+        return f"'{escaped}'"
+    return s
+
+
+def write_atomic(path, content: str) -> None:
+    """Атомарная запись файла: tmp + os.replace.
+
+    Защищает от частичной записи при прерывании процесса
+    (раньше все генераторы делали fpath.write_text напрямую).
+    """
+    import os
+    from pathlib import Path
+    p = Path(path)
+    tmp = p.with_suffix(p.suffix + '.tmp')
+    tmp.write_text(content, encoding='utf-8')
+    os.replace(tmp, p)

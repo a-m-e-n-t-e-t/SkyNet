@@ -1,4 +1,8 @@
 # SkyNet Decomposition Verification — auto-create issues for files needing verification
+# v9.36: оптимизация — единый модуль scripts/_dedup_keys.js для normalizeViolationKey
+#   (устранён copy-rot: auto-close копия не знала про F26 → ложное закрытие F26 issues);
+#   пагинация списка issues в шаге создания (>100 issues больше не теряются);
+#   schedule сокращён до каждые 3 ч (push-триггеры покрывают основной поток).
 # v9.34: полный список violations через --json-out (исправление критичного бага v9.33)
 #
 # БАГ v9.33 и ранее: нарушения парсились из человеческого лога валидатора,
@@ -15,8 +19,9 @@
 #
 # Триггеры:
 #   - push на main с изменениями в реальные данные/ или фантастические данные/
-#   - push с правками самого workflow или валидатора
-#   - schedule: каждый час в :15 (закрытие stale issues без ожидания push)
+#   - push с правками самого workflow, валидатора или scripts/_dedup_keys.js
+#   - schedule: каждые 3 часа в :15 (закрытие stale issues без ожидания push;
+#     push-триггеры покрывают основной поток — агент пушит после каждой партии)
 #   - workflow_dispatch (ручной запуск)
 #
 # Что делает:
@@ -60,11 +65,14 @@ on:
       - 'реальные данные/**'
       - 'фантастические данные/**'
       - 'scripts/validate_decomposition.py'
+      - 'scripts/_dedup_keys.js'
       - '.github/workflows/verify_decomposition.yml'
   workflow_dispatch:
   schedule:
-    # Каждый час в :15 — закрытие stale issues даже без push (cron-агент не успевает)
-    - cron: '15 * * * *'
+    # Каждые 3 часа в :15 — закрытие stale issues даже без push.
+    # v9.36: было каждый час; push-триггеры (агент пушит каждую партию) покрывают
+    # основной поток, ежечасный запуск лишь сжигал минуты Actions.
+    - cron: '15 */3 * * *'
 
 concurrency:
   group: verify-decomposition-${{ github.ref }}
@@ -116,15 +124,18 @@ jobs:
           echo "partial=0" >> $GITHUB_OUTPUT
           echo "using complete --json-out violations list"
 
-          # Подсчёт total и per-metric (без вложенных кавычек — был SyntaxError в CI)
-          TOTAL=$(python3 -c "import json; d=json.load(open('violations.json')); print(sum(len(v) for v in d.values()))")
-          echo "total_violations=$TOTAL" >> $GITHUB_OUTPUT
-          echo "Total violations: $TOTAL"
-          for M in F22 F23 F24 F25 F26; do
-            CNT=$(python3 -c "import json; d=json.load(open('violations.json')); print(len(d.get('$M', [])))")
-            echo "${M}_count=$CNT" >> $GITHUB_OUTPUT
-            echo "  $M: $CNT violations"
-          done
+          # v9.36: один вызов python вместо 6 — печатает total и per-metric в одном subprocess
+          python3 - <<'PYEOF' >> $GITHUB_OUTPUT
+          import json
+          d = json.load(open('violations.json'))
+          total = sum(len(v) for v in d.values())
+          print(f"total_violations={total}")
+          print(f"Total violations: {total}")
+          for M in ('F22','F23','F24','F25','F26'):
+              cnt = len(d.get(M, []))
+              print(f"{M}_count={cnt}")
+              print(f"  {M}: {cnt} violations")
+          PYEOF
 
       - name: Create issues for each violation (anti-duplicate, round-robin, capped)
         if: steps.violations.outputs.total_violations != '0'
@@ -136,6 +147,7 @@ jobs:
           script: |
             const fs = require('fs');
             const violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
+            const { normalizeViolationKey, legacyMetricFromTitle } = require('./scripts/_dedup_keys.js');
             
             // Round-robin очередь между метриками: F22, F23, F24, F25, F22, F23, ...
             // (иначе лимит MAX_NEW_ISSUES выбирал бы только первую метрику)
@@ -156,55 +168,43 @@ jobs:
             // ---------------------------------------------------------------
             // Query ALL issues (open + closed) with label verify-task.
             // Anti-duplicate: if a task was already solved (closed), we don't recreate.
+            // v9.36: пагинация — без неё при >100 issues дедуп-проверка теряла
+            //        старые ключи и создавала дубликаты (#153/#154 инцидент).
             // ---------------------------------------------------------------
-            const existingIssues = await github.rest.issues.listForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              labels: 'verify-task',
-              state: 'all',
-              per_page: 100
-            });
-            
-            // Key normalization shared by new violations AND legacy issue bodies.
-            //   F22/F23/F24: '<metric>:<fileId>'  — fileId is everything before the first colon
-            //   F25:         '<metric>:<param_signature>'  — from 'с габаритами' until next ':'
-            //   F26:         '<metric>:<parent_subtype>'  — from 'Родитель ' until ' подтип'
-            function normalizeViolationKey(metric, violation) {
-              if (metric === 'F25' || violation.startsWith('Дубликат:')) {
-                const m = violation.match(/с габаритами\s+([^:]+?)\s*:/);
-                if (m) return `${metric}:${m[1].trim()}`;
-                const idx = violation.indexOf(': [');
-                return `${metric}:${idx > 0 ? violation.substring(0, idx) : violation}`;
-              }
-              if (metric === 'F26') {
-                // "Родитель izdelie_XXX: подтип 'YYY' имеет N файлов..."
-                const m = violation.match(/Родитель\s+(\S+?):\s*подтип\s+'([^']+)'/);
-                if (m) return `${metric}:${m[1]}:${m[2]}`;
-                const colonIdx = violation.indexOf(':');
-                return `${metric}:${colonIdx > 0 ? violation.substring(0, colonIdx).trim() : violation.substring(0, 80)}`;
-              }
-              const colonIdx = violation.indexOf(':');
-              const fileId = colonIdx > 0 ? violation.substring(0, colonIdx).trim() : violation.substring(0, 80);
-              return `${metric}:${fileId}`;
+            const existingIssues = [];
+            for (let page = 1; page <= 10; page++) {  // safety cap: 1000 issues
+              const resp = await github.rest.issues.listForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: 'verify-task',
+                state: 'all',
+                per_page: 100,
+                page: page,
+              });
+              if (resp.data.length === 0) break;
+              existingIssues.push(...resp.data);
+              if (resp.data.length < 100) break;
             }
+            console.log(`Loaded ${existingIssues.length} existing verify-task issues (open+closed)`);
             
-            // Build Set of existing dedup_keys from issue bodies:
-            //   1) primary: hidden marker '<!-- dedup: <key> -->' (issues created after 6573aea)
-            //   2) fallback: legacy issues — parse '**Нарушение:**' from body and normalize
-            //      (old titles are truncated to 50 chars and cannot be used for matching)
+            // Key normalization — единый источник: scripts/_dedup_keys.js
+            // v9.36: ранее функция была скопирована в 2 места (create + auto-close)
+            // auto-close копия не получила F26-ветку → F26 issues ложно закрывались как stale.
+            // Теперь оба шага require() один модуль — copy-rot структурно невозможен.
+            // (Определение см. в scripts/_dedup_keys.js)
+            
+            // Legacy fallback для старых issues: extract violation text + metric
             const existingKeys = new Set();
-            for (const issue of existingIssues.data) {
+            for (const issue of existingIssues) {
               const body = issue.body || '';
               const marker = body.match(/<!--\s*dedup:\s*(.+?)\s*-->/);
               if (marker) {
                 existingKeys.add(marker[1].trim());
                 continue;
               }
-              // Legacy fallback: full violation text lives in the body
               const viol = body.match(/\*\*Нарушение:\*\*\s*(.+)/);
               if (viol) {
-                const metricMatch = issue.title.match(/\[(F2[2-6])\]/);
-                const metric = metricMatch ? metricMatch[1] : (violation.startsWith('Родитель') ? 'F26' : 'F25');
+                const metric = legacyMetricFromTitle(issue.title, viol[1].trim());
                 existingKeys.add(normalizeViolationKey(metric, viol[1].trim()));
               }
             }
@@ -305,25 +305,13 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
-            let violations = {F22:[], F23:[], F24:[], F25:[]};
+            const { normalizeViolationKey, legacyMetricFromTitle } = require('./scripts/_dedup_keys.js');
+            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[]};
             try {
               violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
             } catch (e) {
               console.log('violations.json not found (validator step failed?) — skip auto-close');
               return;
-            }
-
-            // Тот же normalize, что и в шаге создания issues
-            function normalizeViolationKey(metric, violation) {
-              if (metric === 'F25' || violation.startsWith('Дубликат:')) {
-                const m = violation.match(/с габаритами\s+([^:]+?)\s*:/);
-                if (m) return `${metric}:${m[1].trim()}`;
-                const idx = violation.indexOf(': [');
-                return `${metric}:${idx > 0 ? violation.substring(0, idx) : violation}`;
-              }
-              const colonIdx = violation.indexOf(':');
-              const fileId = colonIdx > 0 ? violation.substring(0, colonIdx).trim() : violation.substring(0, 80);
-              return `${metric}:${fileId}`;
             }
 
             // Текущие ключи нарушений
@@ -354,7 +342,7 @@ jobs:
             }
             console.log(`Open verify-task issues: ${openIssues.length}`);
 
-            // Извлечение dedup_key (тот же алгоритм, что при создании)
+            // Извлечение dedup_key (тот же алгоритм, что при создании — из _dedup_keys.js)
             function parseKey(issue) {
               const body = issue.body || '';
               const marker = body.match(/<!--\s*dedup:\s*(.+?)\s*-->/);
@@ -362,8 +350,7 @@ jobs:
               // Legacy fallback для старых issues
               const viol = body.match(/\*\*Нарушение:\*\*\s*(.+)/);
               if (viol) {
-                const metricMatch = issue.title.match(/\[(F2[2-6])\]/);
-                const metric = metricMatch ? metricMatch[1] : (violation.startsWith('Родитель') ? 'F26' : 'F25');
+                const metric = legacyMetricFromTitle(issue.title, viol[1].trim());
                 return normalizeViolationKey(metric, viol[1].trim());
               }
               return null;
@@ -440,6 +427,7 @@ jobs:
           echo "| F23 | ${{ steps.violations.outputs.F23_count }} | Anti-template detection |" >> $GITHUB_STEP_SUMMARY
           echo "| F24 | ${{ steps.violations.outputs.F24_count }} | Subtype compliance |" >> $GITHUB_STEP_SUMMARY
           echo "| F25 | ${{ steps.violations.outputs.F25_count }} | Data uniqueness |" >> $GITHUB_STEP_SUMMARY
+          echo "| F26 | ${{ steps.violations.outputs.F26_count }} | Within-parent duplicates |" >> $GITHUB_STEP_SUMMARY
           echo "| **Total** | **${{ steps.violations.outputs.total_violations }}** | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Violation source:** ${{ steps.violations.outputs.partial == '1' && 'TRUNCATED log fallback (auto-close DISABLED)' || 'complete --json-out' }}" >> $GITHUB_STEP_SUMMARY

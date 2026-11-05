@@ -200,14 +200,12 @@ def check_F88(fantastic_mat_dir):
 def check_F70g_all(repo_path):
     """F70g: все файлы имеют обязательные поля своей схемы."""
     from _helpers import check_F70g
-    prompt_path = os.path.join(repo_path, "требования_к_ии", "SkyNet_PROMPT_v9.26.md")
-    if not os.path.exists(prompt_path):
-        # Fallback: найти любой SkyNet_PROMPT_v*.md
-        prompts = glob.glob(os.path.join(repo_path, "требования_к_ии", "SkyNet_PROMPT_v*.md"))
-        if prompts:
-            prompt_path = sorted(prompts)[-1]  # последняя версия
-        else:
-            return True, 1.0  # нет промпта — пропускаем
+    # v9.36: авто-поиск последней версии промпта через glob (раньше был hardcode v9.26)
+    prompts = glob.glob(os.path.join(repo_path, "требования_к_ии", "SkyNet_PROMPT_v*.md"))
+    if prompts:
+        prompt_path = sorted(prompts)[-1]  # последняя версия
+    else:
+        return True, 1.0  # нет промпта — пропускаем
     
     result = check_F70g(repo_path, prompt_path)
     if not result['pass']:

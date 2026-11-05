@@ -2166,6 +2166,12 @@
     },
     {
       "src": "catalog:scripts/_CATALOG.md",
+      "dst": "script:restore_missing_parts.py",
+      "type": "references",
+      "meta": {}
+    },
+    {
+      "src": "catalog:scripts/_CATALOG.md",
       "dst": "script:validate_decomposition.py",
       "type": "references",
       "meta": {}
@@ -2389,7 +2395,7 @@
   ],
   "stats": {
     "nodes": 186,
-    "edges": 211,
+    "edges": 212,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,

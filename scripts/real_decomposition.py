@@ -613,7 +613,7 @@ def generate_real_part_content(part_id: str, parent_id: str, subsystem: str,
 
     material = pd.get('материал', 'si')
     standards = pd.get('стандарты', [])
-    gабариты = pd.get('габариты_mm', {'l': 100, 'w': 100, 'h': 50})
+    gabarity = pd.get('габариты_mm', {'l': 100, 'w': 100, 'h': 50})
     # v9.35: если subtype — placeholder (крепёж или основной_элемент fallback),
     # вычислить per-parent уникальные габариты, чтобы избежать F25 дубликатов
     if subtype in ('крепёж', 'основной_элемент') or subtype not in PART_DATA:
@@ -621,14 +621,14 @@ def generate_real_part_content(part_id: str, parent_id: str, subsystem: str,
         h = hashlib.sha256(parent_id.encode('utf-8')).digest()
         if subtype == 'крепёж':
             # l: 80-200 (шаг 5), w: 40-120 (шаг 5), h: 15-75 (шаг 5)
-            gабариты = {
+            gabarity = {
                 'l': 80 + (h[0] % 25) * 5,
                 'w': 40 + (h[1] % 17) * 5,
                 'h': 15 + (h[2] % 13) * 5,
             }
         else:
             # основной_элемент fallback: l: 50-200, w: 50-200, h: 20-150
-            gабариты = {
+            gabarity = {
                 'l': 50 + (h[0] % 30) * 5,
                 'w': 50 + (h[1] % 30) * 5,
                 'h': 20 + (h[2] % 26) * 5,
@@ -636,7 +636,7 @@ def generate_real_part_content(part_id: str, parent_id: str, subsystem: str,
     power = pd.get('мощность_W', 0)
     heat = pd.get('тепло_W', 0)
     additional = pd.get('дополнительные', {})
-    description = pd.get('description', 'Дочерняя часть изделия.')
+    description = pd.get('описание', 'Дочерняя часть изделия.')
     principle = pd.get('принцип_работы', 'Принцип работы определяется типом изделия.')
     
     # Сериализовать стандарты
@@ -653,9 +653,9 @@ def generate_real_part_content(part_id: str, parent_id: str, subsystem: str,
 """
     
     # Сериализовать основные
-    l = gабариты.get('l', 100)
-    w = gабариты.get('w', 100)
-    h = gабариты.get('h', 50)
+    l = gabarity.get('l', 100)
+    w = gabarity.get('w', 100)
+    h = gabarity.get('h', 50)
     
     # Сериализовать дополнительные
     if additional:
@@ -804,7 +804,7 @@ def main():
     
     print(f"\n=== Сводка ===")
     print(f"Всего часть_* файлов перегенерировано: {updated}")
-    print(f"С реальными материалами и габаритами: {updated - len(not_found) * (updated // max(1, len(not_found) + 1))}")
+    print(f"С реальными материалами и габаритами: {updated - len(not_found)}")
     print(f"С fallback данными: ~{len(not_found)} подтипов")
 
 

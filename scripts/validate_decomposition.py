@@ -289,14 +289,18 @@ def _read_yaml_frontmatter_uncached(filepath: Path) -> tuple[dict, str, str]:
 # ============================================================================
 
 def load_all_izdeliya() -> dict[str, dict]:
-    """Загрузить все .md в реальные данные/изделия/ в dict {id: data, ...}."""
+    """Загрузить все .md в реальные данные/изделия/ в dict {id: data, ...}.
+    
+    v9.36: сохраняем markdown body в data['_body'] — F19/F23 больше не перечитывают файл.
+    """
     result = {}
     izd_dir = SKYNET_REPO / "реальные данные" / "изделия"
     for f in izd_dir.rglob("_index.md"):
-        data, _, _ = read_yaml_frontmatter(f)
+        data, _, body = read_yaml_frontmatter(f)
         if data and 'id' in data:
             data['_path'] = str(f)
             data['_filename'] = f.name
+            data['_body'] = body  # v9.36: cache body to avoid re-reads in F19/F23
             result[data['id']] = data
     return result
 
@@ -313,8 +317,27 @@ def check_F12a(izdeliya: dict[str, dict]) -> dict:
       2. Если у части есть родитель, родитель существует и содержит её в дочерние_части
       3. Нет циклов (A→B→C→A)
       4. Нет «сирот» (часть без родителя, но изделие верхнего уровня не указано в дочерние_части)
+    
+    v9.36: O(n²)→O(n) — обратный индекс children→parents строится один раз.
     """
     violations = []
+    
+    # v9.36: построить обратный индекс «child_id → set(родитель_id, ...)» за один проход
+    # (раньше для каждой parentless части rescанировался весь izdeliya)
+    child_to_parents: dict[str, set[str]] = {}
+    parent_map: dict[str, str | None] = {}  # izd_id → parent_id (or None)
+    
+    for izd_id, data in izdeliya.items():
+        parent = data.get('родитель')
+        if not isinstance(parent, str) or parent == 'null':
+            parent_map[izd_id] = None
+        else:
+            parent_map[izd_id] = parent
+        children = data.get('дочерние_части', [])
+        if isinstance(children, list):
+            for child_id in children:
+                if isinstance(child_id, str):
+                    child_to_parents.setdefault(child_id, set()).add(izd_id)
     
     # 1. Каждый id в дочерние_части должен существовать
     for izd_id, data in izdeliya.items():
@@ -328,51 +351,61 @@ def check_F12a(izdeliya: dict[str, dict]) -> dict:
                 violations.append(f"{izd_id}: дочерние_части ссылается на несуществующий id '{child_id}'")
     
     # 2. Обратная ссылка: если родитель X, то X должен содержать в дочерние_части
-    for izd_id, data in izdeliya.items():
-        parent = data.get('родитель')
-        if parent and parent != 'null':
-            if parent not in izdeliya:
-                violations.append(f"{izd_id}: родитель '{parent}' не существует")
-            else:
-                parent_children = izdeliya[parent].get('дочерние_части', [])
-                if not isinstance(parent_children, list):
-                    parent_children = []
-                if izd_id not in parent_children:
-                    violations.append(f"{izd_id}: родитель '{parent}' не содержит этот id в дочерние_части")
+    for izd_id, parent in parent_map.items():
+        if not parent:
+            continue
+        if parent not in izdeliya:
+            violations.append(f"{izd_id}: родитель '{parent}' не существует")
+        else:
+            parent_children = izdeliya[parent].get('дочерние_части', [])
+            if not isinstance(parent_children, list):
+                parent_children = []
+            if izd_id not in parent_children:
+                violations.append(f"{izd_id}: родитель '{parent}' не содержит этот id в дочерние_части")
     
-    # 3. Циклы (DFS)
+    # 3. Циклы (однопроходный 3-color DFS вместо «перезапуска DFS из каждой вершины»)
+    # WHITE=unvisited, GRAY=on-stack, BLACK=done
+    WHITE, GRAY, BLACK = 0, 1, 2
+    color: dict[str, int] = {izd_id: WHITE for izd_id in izdeliya}
+    
+    def detect_cycle_from(start: str) -> str | None:
+        """Walk parent pointers; return cycle anchor if found, else None."""
+        path = []
+        current = start
+        while current is not None and current != 'null':
+            if color.get(current) == BLACK:
+                return None  # уже проверено — цикла нет
+            if color.get(current) == GRAY:
+                return current  # найден цикл
+            color[current] = GRAY
+            path.append(current)
+            current = parent_map.get(current)
+        # пометить всю цепочку как BLACK
+        for node in path:
+            color[node] = BLACK
+        return None
+    
     for izd_id in izdeliya:
-        visited = set()
-        current = izd_id
-        while current and current != 'null':
-            if current in visited:
-                violations.append(f"{izd_id}: обнаружен цикл в иерархии (через {current})")
-                break
-            visited.add(current)
-            data = izdeliya.get(current, {})
-            current = data.get('родитель')
-            if not isinstance(current, str) or current == 'null':
-                break
+        if color.get(izd_id) != WHITE:
+            continue
+        cycle_anchor = detect_cycle_from(izd_id)
+        if cycle_anchor is not None:
+            violations.append(f"{izd_id}: обнаружен цикл в иерархии (через {cycle_anchor})")
+            # пометить оставшиеся узлы как BLACK чтобы не дублировать сообщения
+            for node in izdeliya:
+                color[node] = BLACK
     
-    # 4. Сироты: часть с родителем=null, но не упомянута в дочерние_части ни одного верхнего
-    for izd_id, data in izdeliya.items():
-        parent = data.get('родитель')
-        if parent and parent != 'null':
+    # 4. Сироты: часть с родителем=null, но не упомянута в дочерние_части
+    #    (теперь — O(1) lookup в обратном индексе вместо O(n) сканирования)
+    for izd_id, parent in parent_map.items():
+        if parent:
             continue  # имеет родителя — не сирота
+        data = izdeliya[izd_id]
         # нет родителя — должен быть упомянут в каком-то дочерние_части ИЛИ быть верхним уровнем
         level = data.get('уровень_иерархии', '')
         if level == 'верхний':
             continue  # OK — это верхний уровень
-        # Не верхний уровень и без родителя — проверить не упоминается ли где
-        mentioned = False
-        for other_id, other_data in izdeliya.items():
-            if other_id == izd_id:
-                continue
-            children = other_data.get('дочерние_части', [])
-            if isinstance(children, list) and izd_id in children:
-                mentioned = True
-                break
-        if not mentioned:
+        if izd_id not in child_to_parents:
             violations.append(f"{izd_id}: сирота — нет родителя и не упомянут в дочерние_части других изделий")
     
     total = len(izdeliya)
@@ -1084,7 +1117,10 @@ def generate_mermaid_diagram(izd_id: str, izdeliya: dict[str, dict]) -> str:
 
 
 def check_F19(izdeliya: dict[str, dict]) -> dict:
-    """F19: Mermaid диаграмма присутствует в markdown body каждого изделия с дочерними."""
+    """F19: Mermaid диаграмма присутствует в markdown body каждого изделия с дочерними.
+    
+    v9.36: используем кешированный body из data['_body'] вместо повторного чтения файла.
+    """
     violations = []
     total = 0
     valid = 0
@@ -1094,10 +1130,13 @@ def check_F19(izdeliya: dict[str, dict]) -> dict:
         if not isinstance(children, list) or not children:
             continue
         total += 1
-        path = data.get('_path')
-        if not path:
-            continue
-        body = Path(path).read_text(encoding='utf-8').split('---', 2)[-1]
+        body = data.get('_body')
+        if not body:
+            # fallback: path-based read (для случая, когда izdeliya передан без _body)
+            path = data.get('_path')
+            if not path:
+                continue
+            body = Path(path).read_text(encoding='utf-8').split('---', 2)[-1]
         if '```mermaid' in body:
             valid += 1
         else:
@@ -1253,7 +1292,7 @@ def load_all_models() -> dict[str, dict]:
 # F22: ВЕРИФИКАЦИЯ ИСТОЧНИКА — URL обязателен для web_search
 # ============================================================================
 
-def check_F22(izdeliya: dict[str, dict]) -> dict:
+def check_F22(izdeliya: dict[str, dict], models: dict[str, dict] | None = None) -> dict:
     """F22: Если источник=web_search, то источник_url должен быть заполнен.
     
     BLOCKING: предотвращает ложные утверждения о web-верификации.
@@ -1261,6 +1300,9 @@ def check_F22(izdeliya: dict[str, dict]) -> dict:
     в поле `источник_url` и дату в `источник_дата`.
     
     Также проверяет модели и технологии.
+    
+    v9.36: опциональный параметр `models` позволяет переиспользовать уже загруженный
+    словарь из run_all_checks — экономит rglob+parse ~41 файла при каждом вызове.
     """
     violations = []
     total = 0
@@ -1278,8 +1320,9 @@ def check_F22(izdeliya: dict[str, dict]) -> dict:
         else:
             valid += 1
     
-    # Проверить модели
-    models = load_all_models()
+    # Проверить модели (переиспользуем переданный, иначе загружаем)
+    if models is None:
+        models = load_all_models()
     for mid, mdata in models.items():
         source = str(mdata.get('источник', '')).strip()
         if source != 'web_search':
@@ -1365,10 +1408,13 @@ def check_F23(izdeliya: dict[str, dict]) -> dict:
                         violations.append(f"{izd_id}: материал='{mat}' — шаблонная заглушка")
                         file_ok = False
         
-        # 2. Проверить описание (body markdown)
-        path = data.get('_path', '')
-        if path:
-            body = Path(path).read_text(encoding='utf-8')
+        # 2. Проверить описание (body markdown) — v9.36: используем кеш _body
+        body = data.get('_body')
+        if not body:
+            path = data.get('_path', '')
+            if path:
+                body = Path(path).read_text(encoding='utf-8')
+        if body:
             # Найти body после YAML
             body_match = re.search(r"^## Описание\s*\n\s*\n(.+?)(?:\n##|\Z)", body, re.MULTILINE | re.DOTALL)
             if body_match:
@@ -1770,7 +1816,7 @@ def run_all_checks() -> dict:
     # F22 — верификация источника (NON-BLOCKING для первого прогона)
     print()
     print("=== F22: Верификация источника ===")
-    r = check_F22(izdeliya)
+    r = check_F22(izdeliya, models)  # v9.36: reuse loaded models
     results['F22'] = r
     print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
     if r['violations']:

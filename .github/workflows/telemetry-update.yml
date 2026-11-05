@@ -3,7 +3,7 @@
 # Соответствует: §13 метрика M37 (telemetry_freshness_min ≤ 5)
 #
 # Триггеры:
-#   - schedule: каждые 30 минут (v9.31: GitHub Free лимит)
+#   - schedule: каждые 30 минут (GitHub Free лимит — 5-min cron не разрешён)
 #   - workflow_dispatch
 #
 # Что делает:
@@ -12,12 +12,16 @@
 #   3. Коммитит обновлённый telemetry обратно в репо
 #
 # NB: Если pipeline.py не существует (скелет не создан), workflow завершается warning-ом
+# NB: GitHub Free не позволяет cron чаще 5 мин; M37threshold=5min — предельный случай,
+#     поэтому 30-min schedule воспринимается как «best-effort heartbeat»: свежесть
+#     поддерживается в рамках запуска, alerts срабатывают только если прошлый run
+#     был > 5 минут назад (например, после runner outage).
 
 name: M37 — Telemetry Update
 
 on:
   schedule:
-    # Каждые 5 минут — соответствует M37 порогу telemetry_freshness_min ≤ 5
+    # Каждые 30 минут — максимальная частота для GitHub Free без переполнения минут
     - cron: '*/30 * * * *'
   workflow_dispatch:
 

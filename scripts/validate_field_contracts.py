@@ -3,6 +3,7 @@
 v9.13: расширен check_schemas_consistency() (F70).
 v9.31.1: исправлен импорт (from scripts._helpers → from _helpers)
 """
+import json
 from _helpers import check_schemas_consistency
 
 def validate():
@@ -12,4 +13,4 @@ def validate():
 
 if __name__ == "__main__":
     result = validate()
-    print(json.dumps(result, indent=2, ensure_ascii=False) if isinstance(result, dict) else result)
+    print(json.dumps(result, indent=2, ensure_ascii=False, default=str) if isinstance(result, dict) else result)
