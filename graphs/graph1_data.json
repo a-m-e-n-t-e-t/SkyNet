@@ -6296,6 +6296,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_tedlar_pet",
+      "type": "material",
+      "label": "Трёхслойная ламинация TPT (Tedlar/PET/Tedlar): плёнки Tedlar® PVF (поливинилфторид) ~25 мкм с обеих сторон + двуосно-ориентированная ПЭТ-сердцевина (полиэтилентерефталат) 150–280 мкм + праймерные/адгезионные слои",
+      "path": "реальные данные/материалы/tedlar_pet.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_teng",
       "type": "material",
       "label": "TENG",
@@ -11514,6 +11521,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_perovskite_tandem",
+      "dst": "material_tedlar_pet",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_tpv-lenty",
       "dst": "часть_tpv-lenty_emitter_ribbon",
       "type": "has_part",
@@ -12816,21 +12829,9 @@
       "meta": {}
     },
     {
-      "src": "часть_svintsovo-kislotnye_akb_cathode",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_svintsovo-kislotnye_akb_anode",
       "dst": "izdelie_svintsovo-kislotnye_akb",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_svintsovo-kislotnye_akb_anode",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -13117,7 +13118,7 @@
     },
     {
       "src": "часть_perovskite_tandem_backsheet",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_tedlar_pet",
       "type": "uses_material",
       "meta": {}
     },
@@ -13548,12 +13549,6 @@
       "meta": {}
     },
     {
-      "src": "часть_mptm_heat_exchanger",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_mptm_housing",
       "dst": "izdelie_mptm",
       "type": "child_of",
@@ -13944,21 +13939,27 @@
       "meta": {}
     },
     {
-      "src": "часть_lt-sofc_interconnect",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_lt-sofc_anode",
       "dst": "izdelie_lt-sofc",
       "type": "child_of",
       "meta": {}
     },
     {
+      "src": "часть_lt-sofc_anode",
+      "dst": "material_ni-ysz",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_lt-sofc_electrolyte",
       "dst": "izdelie_lt-sofc",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_lt-sofc_electrolyte",
+      "dst": "material_8ysz",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -22436,6 +22437,14 @@
       }
     },
     {
+      "src": "material_tedlar_pet",
+      "dst": "izdelie_perovskite_tandem",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_tpv-lenty_emitter_ribbon",
       "dst": "izdelie_tpv-lenty",
       "type": "part_of",
@@ -23620,22 +23629,6 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_svintsovo-kislotnye_akb_cathode",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_svintsovo-kislotnye_akb_anode",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_latun_c36000",
       "dst": "часть_svintsovo-kislotnye_akb_terminal",
       "type": "used_in",
@@ -23804,7 +23797,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_tedlar_pet",
       "dst": "часть_perovskite_tandem_backsheet",
       "type": "used_in",
       "meta": {
@@ -24060,14 +24053,6 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_mptm_heat_exchanger",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_al_6061-t6",
       "dst": "часть_mptm_housing",
       "type": "used_in",
@@ -24316,8 +24301,16 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_lt-sofc_interconnect",
+      "src": "material_ni-ysz",
+      "dst": "часть_lt-sofc_anode",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_8ysz",
+      "dst": "часть_lt-sofc_electrolyte",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -27613,6 +27606,7 @@
       "standart_ASTM D412",
       "standart_ASTM D4894",
       "standart_ASTM D638",
+      "standart_ASTM D882",
       "standart_ASTM E1289",
       "standart_ASTM E8",
       "standart_ASTM F136",
@@ -27642,6 +27636,7 @@
       "standart_EN 1090-2",
       "standart_EN 1092-1 (Type 01, PN10 DN50)",
       "standart_EN 12164",
+      "standart_EN 13345",
       "standart_EN 50342-1",
       "standart_EN 50598",
       "standart_EN 683-17",
@@ -27783,6 +27778,7 @@
       "standart_Oxford Instruments Integration Note",
       "standart_PBMR Fuel Specification",
       "standart_PCIe 3.0",
+      "standart_PED",
       "standart_Parker PC6116",
       "standart_Phasics SID4 Spec Sheet",
       "standart_Prophesee EVK4 Product Brief",
@@ -27942,6 +27938,7 @@
       "material_ni_ysz_cermet",
       "material_nickel",
       "material_pb_sb_alloy",
+      "material_pbo2",
       "material_pbte_teg",
       "material_pe_pp",
       "material_pe_separator",
@@ -27974,7 +27971,6 @@
       "material_steel_track_links_t158",
       "material_synthetic_rubber",
       "material_tebabf4_acn",
-      "material_tedlar_pet",
       "material_ti.md",
       "material_tin_metal",
       "material_tio2_memristor",
@@ -27990,10 +27986,10 @@
     ]
   },
   "stats": {
-    "nodes": 937,
-    "edges": 3092,
+    "nodes": 938,
+    "edges": 3090,
     "dangling": {
-      "complies_with": 240,
+      "complies_with": 243,
       "has_part": 1,
       "researched_by": 43,
       "uses_material": 115
@@ -28002,7 +27998,7 @@
       "chast": 628,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 131,
-      "material": 160,
+      "material": 161,
       "standart": 8
     }
   }

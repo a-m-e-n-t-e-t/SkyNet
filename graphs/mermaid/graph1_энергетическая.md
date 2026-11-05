@@ -262,8 +262,6 @@ graph LR
     часть_4h_sic_betavoltaik_case -->|материал| material_ti_6al_4v
     часть_4h_sic_betavoltaik_sic_diode -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_grid_pos -->|материал| material_ti_6al_4v
-    часть_svintsovo_kislotnye_akb_cathode -->|материал| material_ti_6al_4v
-    часть_svintsovo_kislotnye_akb_anode -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_terminal -->|материал| material_latun_c36000
     часть_emi_generator_switch -->|материал| material_ti_6al_4v
     часть_emi_generator_waveguide -->|материал| material_ti_6al_4v
@@ -274,7 +272,6 @@ graph LR
     часть_ni_63_betavoltaik_4h_sic_case -->|материал| material_ti_6al_4v
     часть_termomoduli_pelte_ceramic_top -->|материал| material_ti_6al_4v
     часть_perovskite_tandem_cells -->|материал| material_si
-    часть_perovskite_tandem_backsheet -->|материал| material_ti_6al_4v
     часть_perovskite_tandem_front_glass -->|материал| material_ti_6al_4v
     часть_tpv_lenty_reflector -->|материал| material_al_6061_t6
     часть_superkondensatory_separator -->|материал| material_ti_6al_4v
@@ -292,7 +289,6 @@ graph LR
     часть_betavoltaiki_semiconductor -->|материал| material_ti_6al_4v
     часть_betavoltaiki_case -->|материал| material_ti_6al_4v
     часть_mptm_controls -->|материал| material_al_6061_t6
-    часть_mptm_heat_exchanger -->|материал| material_ti_6al_4v
     часть_mptm_housing -->|материал| material_al_6061_t6
     часть_3d_sic_mikropillarnyi_tritii_betavoltaik_case -->|материал| material_ti_6al_4v
     часть_mmrtg_housing -->|материал| material_al_6061_t6
@@ -308,7 +304,6 @@ graph LR
     часть_marx_generator_capacitors -->|материал| material_ti_6al_4v
     часть_marx_generator_housing -->|материал| material_stal_st3
     часть_marx_generator_resistors -->|материал| material_ti_6al_4v
-    часть_lt_sofc_interconnect -->|материал| material_ti_6al_4v
     часть_coilgun_switch -->|материал| material_ti_6al_4v
     часть_coilgun_housing -->|материал| material_stal_st3
     часть_coilgun_capacitor_bank -->|материал| material_ti_6al_4v
@@ -327,7 +322,7 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 58 |
+| `Ti-6Al-4V` | 53 |
 | `Al 6061-T6` | 22 |
 | `SS AISI 304` | 11 |
 | `Inconel 718` | 9 |
