@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-SkyNet Decomposition Validator — v9.31
+SkyNet Decomposition Validator — v9.35
 Метрики декомпозиции и проверка целостности parent↔children графа.
 
 Метрики (BLOCKING):
@@ -978,6 +978,8 @@ SCHEMA_IZDELIE = {
         "родитель": {"type": ["string", "null"]},
         "дочерние_части": {"type": "array"},
         "материалы_частей": {"type": "array"},
+        # v9.35 НОВОЕ — количество одинаковых экземпляров (default=1)
+        "количество": {"type": "integer", "minimum": 1},
         "статус_реальности": {"type": "string", "enum": ["real", "canon", "canon_realizable"]},
         "доступность": {"type": "string"},
     }
@@ -1532,6 +1534,116 @@ def check_F25(izdeliya: dict[str, dict]) -> dict:
 
 
 # ============================================================================
+# F26: ВНУТРИ-РОДИТЕЛЬСКИЕ ДУБЛИКАТЫ — группа часть_* с одинаковым подтипом
+#      в одном родителе с N≥2, без поля количество=N
+# ============================================================================
+
+def check_F26(izdeliya: dict[str, dict]) -> dict:
+    """F26: Внутри-родительские дубликаты — анти-шаблон "шаблонная подстановка".
+
+    BLOCKING: если в одном родителе есть 2+ часть_* с одинаковым подтипом
+    И ИДЕНТИЧНЫМИ данными (масса + габариты + материал) — это признак
+    шаблонной подстановки (left/right, _1/_2, etc.).
+    Допускается только если у survivor'а есть поле количество=N (где N≥2).
+
+    Если данные РАЗНЫЕ — нарушение не возникает (это разные части, не дубликаты).
+
+    Правила:
+      • 2+ файлов с одинаковым подтипом + идентичными данными в одном родителе → нарушение,
+        ЕСЛИ ни у одного из них нет количество≥2
+      • Если данные разные — OK (parts are genuinely different)
+
+    Возвращает ratio: (parents_clean / total_parents_with_children)
+    """
+    from collections import defaultdict
+
+    # Group children by parent
+    parent_children: dict[str, list[tuple[str, dict]]] = defaultdict(list)
+    for izd_id, data in izdeliya.items():
+        if not izd_id.startswith('часть_'):
+            continue
+        parent = data.get('родитель', '')
+        if not parent:
+            continue
+        parent_children[parent].append((izd_id, data))
+
+    violations = []
+    total = 0
+    valid = 0
+    for parent, kids in parent_children.items():
+        if len(kids) < 2:
+            continue
+        total += 1
+
+        # Group by subtype
+        by_subtype: dict[str, list[tuple[str, dict]]] = defaultdict(list)
+        for izd_id, data in kids:
+            subtype = data.get('подтип', '')
+            if not subtype:
+                continue
+            by_subtype[subtype].append((izd_id, data))
+
+        parent_clean = True
+        for subtype, items in by_subtype.items():
+            if len(items) < 2:
+                continue
+            # Check if data is IDENTICAL across all items
+            sigs = set()
+            for izd_id, d in items:
+                basic = d.get('основные', {})
+                if not isinstance(basic, dict):
+                    basic = {}
+                dims = basic.get('габариты_mm', {})
+                if not isinstance(dims, dict):
+                    dims = {}
+                mass = basic.get('масса_kg')
+                mats = d.get('материалы_частей', [])
+                mat = ''
+                if isinstance(mats, list) and mats:
+                    m0 = mats[0]
+                    if isinstance(m0, dict):
+                        mat = str(m0.get('материал', ''))
+                sig = (dims.get('l'), dims.get('w'), dims.get('h'), mass, mat)
+                sigs.add(sig)
+
+            # Only flag if all signatures are IDENTICAL (true duplicates)
+            if len(sigs) > 1:
+                # Different data — not duplicates, OK
+                continue
+
+            # All identical — check for количество=N
+            ids = [izd_id for izd_id, _ in items]
+            has_quantity = False
+            for izd_id in ids:
+                d = izdeliya.get(izd_id, {})
+                q = d.get('количество', 1)
+                if isinstance(q, int) and q >= len(ids):
+                    has_quantity = True
+                    break
+            if not has_quantity:
+                parent_clean = False
+                violations.append(
+                    f"Родитель {parent}: подтип '{subtype}' имеет {len(ids)} файлов с идентичными данными "
+                    f"({ids[:3]}...), ни один не имеет количество≥{len(ids)}. "
+                    f"Объединить через migrate_dedup_quantity.py или установить количество=N."
+                )
+
+        if parent_clean:
+            valid += 1
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F26',
+        'description': 'Внутри-родительские дубликаты (≤1 подтип в родителе без количество=N)',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
 # MAIN
 # ============================================================================
 
@@ -1687,7 +1799,18 @@ def run_all_checks() -> dict:
         print(f"  violations: {len(r['violations'])} (первые 3):")
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
-    
+
+    # F26 — внутри-родительские дубликаты (v9.35)
+    print()
+    print("=== F26: Внутри-родительские дубликаты ===")
+    r = check_F26(izdeliya)
+    results['F26'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
     # Сводка
     print()
     print("=== Сводка ===")
@@ -1737,7 +1860,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F22', 'F23', 'F24', 'F25')
+            for m in ('F22', 'F23', 'F24', 'F25', 'F26')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:

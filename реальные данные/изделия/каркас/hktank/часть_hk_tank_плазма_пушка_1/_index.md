@@ -11,6 +11,7 @@ id: часть_hk_tank_плазма_пушка_1
   - MIL-STD-1913
 исследовательская_группа: null
 родитель: izdelie_SkyNet-HKTank
+количество: 2
 дочерние_части: []
 материалы_частей:
   - часть: часть_hk_tank_плазма_пушка_1
@@ -46,15 +47,13 @@ scaling_type: количественный
   target_type: 'aerial and ground based targets'
   ammo_type: 'plasma bolt (no conventional ammunition — energy weapon)'
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-04
+дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
 источник_url: https://terminator.fandom.com/wiki/HK-Tank + https://terminator.fandom.com/wiki/Plasma_cannon + https://kaiju.wikidot.com/wiki:hunter-killer
 источник_дата: 2026-11-04
 ---
-
-# Часть: часть_hk_tank_плазма_пушка_1
-
+# Часть: часть_hk_tank_плазма_пушка_1 (×2)
 ## Описание
 
 Двухствольная фазированная плазменная пушка HK-Tank (twin-barreled directional plasma cannon), установленная на стальном «руке» в составе конусной башни (conning tower). Основное вооружение HK-Tank — совместно со второй плазменной пушкой и спаренными пулемётами.
@@ -100,3 +99,11 @@ Capacitor bank разряжается через plasma cell → Lorentz force �
 - https://kaiju.wikidot.com/wiki:hunter-killer — 360-degree plasma cannon rotation
 - Декомпозиция: `izdelie_SkyNet-HKTank` (web search 2026-11-03)
 - Материалы: реальные данные/материалы/
+
+
+## Примечание о количестве
+
+Эта часть представляет собой **2 идентичных экземпляра** (поле `количество: 2`).
+Ранее каждый экземпляр был отдельным файлом (`часть_hk_tank_плазма_пушка_2`); объединено в v9.35
+для устранения дублирования данных (принцип P085 — канонизация).
+Масса и габариты указаны за **один** экземпляр; `доля_массы_родителя` — суммарная.

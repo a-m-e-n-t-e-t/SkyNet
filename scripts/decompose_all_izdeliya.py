@@ -801,8 +801,14 @@ def serialize_value(value, indent=0):
 
 
 def generate_part_content(part_id: str, parent_id: str, subsystem: str,
-                          subtype: str, mass_kg: float, share: float) -> str:
-    """Сгенерировать содержимое файла части."""
+                          subtype: str, mass_kg: float, share: float,
+                          count: int = 1) -> str:
+    """Сгенерировать содержимое файла части.
+
+    v9.35: добавлено поле количество=N (для paired parts).
+    """
+    count_yaml = f"количество: {count}\n" if count > 1 else ""
+    title_suffix = f" (×{count})" if count > 1 else ""
     return f"""---
 id: {part_id}
 тип: изделие
@@ -814,7 +820,7 @@ id: {part_id}
 стандарты: []
 исследовательская_группа: null
 родитель: {parent_id}
-дочерние_части: []
+{count_yaml}дочерние_части: []
 материалы_частей: []
 scaling_type: количественный
 соединители: []
@@ -836,7 +842,7 @@ scaling_type: количественный
 источник_разбора: канон
 ---
 
-# Часть: {part_id}
+# Часть: {part_id}{title_suffix}
 
 ## Описание
 
@@ -850,6 +856,7 @@ scaling_type: количественный
 | подтип | {subtype} | — | canon |
 | масса | {mass_kg} | kg | canon |
 | доля массы родителя | {share} | — | canon |
+| количество | {count} | шт. | canon |
 
 ## Состав
 
@@ -958,7 +965,12 @@ def decompose_izdelie(izd_id: str, izd_data: dict) -> tuple[int, list]:
     
     # Создать дочерние части
     for part in template['parts']:
-        part_suffix, part_subtype, mass_kg, share = part
+        # v9.35: support optional count field (5-tuple or 6-tuple)
+        if len(part) == 5:
+            part_suffix, part_subtype, mass_kg, share = part
+            count = 1
+        else:
+            part_suffix, part_subtype, mass_kg, share, count = part
         part_id = generate_part_id(izd_id, part_suffix)
         children_ids.append(part_id)
         
@@ -967,7 +979,7 @@ def decompose_izdelie(izd_id: str, izd_data: dict) -> tuple[int, list]:
         part_file = part_dir / "_index.md"
         if not part_file.exists():
             part_dir.mkdir(parents=True, exist_ok=True)
-            content = generate_part_content(part_id, izd_id, subsystem, part_subtype, mass_kg, share)
+            content = generate_part_content(part_id, izd_id, subsystem, part_subtype, mass_kg, share, count)
             part_file.write_text(content, encoding='utf-8')
             created_files.append(str(part_file))
     

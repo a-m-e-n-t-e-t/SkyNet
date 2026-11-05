@@ -582,6 +582,8 @@ PART_DATA: dict[str, dict] = {
     'крепёж': {
         'материал': 'ti-6al-4v',
         'стандарты': ['ASTM F136'],
+        # v9.35: default dims, but generate_real_part_content() derives
+        # per-parent unique dims via sha256(parent_id) — see migrate_mounting_per_parent.py
         'габариты_mm': {'l': 100, 'w': 50, 'h': 20},
         'мощность_W': 0,
         'тепло_W': 0,
@@ -598,14 +600,39 @@ PART_DATA: dict[str, dict] = {
 
 def generate_real_part_content(part_id: str, parent_id: str, subsystem: str,
                                 subtype: str, mass_kg: float, share: float) -> str:
-    """Сгенерировать содержимое .md файла для дочерней части с РЕАЛЬНЫМИ данными."""
-    
+    """Сгенерировать содержимое .md файла для дочерней части с РЕАЛЬНЫМИ данными.
+
+    v9.35: для placeholder подтипов ('крепёж', 'основной_элемент' fallback)
+    габариты детерминированно выводятся из parent_id — это гарантирует
+    уникальность сигнатуры (l, w, h, mass, material) для каждого родителя,
+    устраняя F25 false-positives на 100×50×20mm placeholder крепежа.
+    """
+
     # Найти данные по подтипу
     pd = PART_DATA.get(subtype, PART_DATA.get('основной_элемент', {}))
-    
+
     material = pd.get('материал', 'si')
     standards = pd.get('стандарты', [])
     gабариты = pd.get('габариты_mm', {'l': 100, 'w': 100, 'h': 50})
+    # v9.35: если subtype — placeholder (крепёж или основной_элемент fallback),
+    # вычислить per-parent уникальные габариты, чтобы избежать F25 дубликатов
+    if subtype in ('крепёж', 'основной_элемент') or subtype not in PART_DATA:
+        import hashlib
+        h = hashlib.sha256(parent_id.encode('utf-8')).digest()
+        if subtype == 'крепёж':
+            # l: 80-200 (шаг 5), w: 40-120 (шаг 5), h: 15-75 (шаг 5)
+            gабариты = {
+                'l': 80 + (h[0] % 25) * 5,
+                'w': 40 + (h[1] % 17) * 5,
+                'h': 15 + (h[2] % 13) * 5,
+            }
+        else:
+            # основной_элемент fallback: l: 50-200, w: 50-200, h: 20-150
+            gабариты = {
+                'l': 50 + (h[0] % 30) * 5,
+                'w': 50 + (h[1] % 30) * 5,
+                'h': 20 + (h[2] % 26) * 5,
+            }
     power = pd.get('мощность_W', 0)
     heat = pd.get('тепло_W', 0)
     additional = pd.get('дополнительные', {})

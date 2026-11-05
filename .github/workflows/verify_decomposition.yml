@@ -94,11 +94,12 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml jsonschema
 
-      - name: Run validate_decomposition.py — get F22-F25 violations
+      - name: Run validate_decomposition.py — get F22-F26 violations
         id: violations
         run: |
           set +e
           # v9.34: полный machine-readable список violations через --json-out.
+          # v9.35: добавлена метрика F26 (внутри-родительские дубликаты).
           # Человеческий лог (validate_output.log) печатает только первые 3 violations
           # на метрику — его парсинг НЕ использовать, он обрезает ~900 до 9.
           python scripts/validate_decomposition.py --json-out violations.json 2>&1 | tee validate_output.log
@@ -119,7 +120,7 @@ jobs:
           TOTAL=$(python3 -c "import json; d=json.load(open('violations.json')); print(sum(len(v) for v in d.values()))")
           echo "total_violations=$TOTAL" >> $GITHUB_OUTPUT
           echo "Total violations: $TOTAL"
-          for M in F22 F23 F24 F25; do
+          for M in F22 F23 F24 F25 F26; do
             CNT=$(python3 -c "import json; d=json.load(open('violations.json')); print(len(d.get('$M', [])))")
             echo "${M}_count=$CNT" >> $GITHUB_OUTPUT
             echo "  $M: $CNT violations"
@@ -167,12 +168,20 @@ jobs:
             // Key normalization shared by new violations AND legacy issue bodies.
             //   F22/F23/F24: '<metric>:<fileId>'  — fileId is everything before the first colon
             //   F25:         '<metric>:<param_signature>'  — from 'с габаритами' until next ':'
+            //   F26:         '<metric>:<parent_subtype>'  — from 'Родитель ' until ' подтип'
             function normalizeViolationKey(metric, violation) {
               if (metric === 'F25' || violation.startsWith('Дубликат:')) {
                 const m = violation.match(/с габаритами\s+([^:]+?)\s*:/);
                 if (m) return `${metric}:${m[1].trim()}`;
                 const idx = violation.indexOf(': [');
                 return `${metric}:${idx > 0 ? violation.substring(0, idx) : violation}`;
+              }
+              if (metric === 'F26') {
+                // "Родитель izdelie_XXX: подтип 'YYY' имеет N файлов..."
+                const m = violation.match(/Родитель\s+(\S+?):\s*подтип\s+'([^']+)'/);
+                if (m) return `${metric}:${m[1]}:${m[2]}`;
+                const colonIdx = violation.indexOf(':');
+                return `${metric}:${colonIdx > 0 ? violation.substring(0, colonIdx).trim() : violation.substring(0, 80)}`;
               }
               const colonIdx = violation.indexOf(':');
               const fileId = colonIdx > 0 ? violation.substring(0, colonIdx).trim() : violation.substring(0, 80);
@@ -226,6 +235,11 @@ jobs:
                   const m = v.match(/с габаритами\s+([^:]+?)\s*:/);
                   const sig = m ? m[1].trim() : v.substring(0, 60);
                   title = `[${metric}] Verify: Дубликат габаритов: ${sig}`;
+                } else if (metric === 'F26') {
+                  // F26: "Родитель X: подтип 'Y' имеет N файлов..."
+                  const m = v.match(/Родитель\s+(\S+?):\s*подтип\s+'([^']+)'/);
+                  const parent = m ? m[1] : v.substring(0, 50);
+                  title = `[${metric}] Verify: Дубликат внутри родителя: ${parent}`;
                 } else {
                   const colonIdx = v.indexOf(':');
                   const fileId = colonIdx > 0 ? v.substring(0, colonIdx).trim() : v.substring(0, 50);
@@ -259,6 +273,7 @@ jobs:
                   `- F23: нет generic_material, нет шаблонного описания`,
                   `- F24: все ожидаемые поля для подтипа присутствуют`,
                   `- F25: параметры уникальны (≤2 файлов с одинаковыми)`,
+                  `- F26: 2+ частей с одним подтипом в родителе объединены через количество=N (запустить scripts/migrate_dedup_quantity.py)`,
                   ``,
                   `**Авто-создано:** ${new Date().toISOString()}`,
                   `**Коммит:** ${context.sha.substring(0, 8)}`,
