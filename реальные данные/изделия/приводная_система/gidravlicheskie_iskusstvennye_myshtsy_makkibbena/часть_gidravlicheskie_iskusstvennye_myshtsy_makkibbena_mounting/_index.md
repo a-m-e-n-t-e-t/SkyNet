@@ -13,7 +13,7 @@ id: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
 дочерние_части: []
 материалы_частей:
   - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
-    материал: ti-6al-4v
+    материал: al_6061-t6
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -26,12 +26,12 @@ scaling_type: количественный
   статус: false
   верификация: []
 основные:
-  масса_kg: 0.1
-  доля_массы_родителя: 0.1
+  масса_kg: 0.02
+  доля_массы_родителя: 0.02
   габариты_mm:
-    l: 165
-    w: 120
-    h: 40
+    l: 28
+    w: 14
+    h: 14
   выработка_энергии_W: 0
   выработка_тепла_W: 0
 наследуемые: {}
@@ -40,6 +40,8 @@ scaling_type: количественный
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://www.researchgate.net/publication/220122552_Enhanced_Modelling_and_Performance_in_Braided_Pneumatic_Muscle_Actuators
+источник_дата: 2026-11-05
 ---
 # Часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
 
@@ -55,12 +57,14 @@ scaling_type: количественный
 |---|---|---|---|
 | подсистема | приводная_система | — | canon |
 | подтип | крепёж | — | canon |
-| масса | 0.1 | kg | canon |
-| доля массы родителя | 0.1 | — | canon |
-| габариты (Д×Ш×В) | 165×120×40 | mm | canon |
+| масса | 0.02 | kg | оценка по компонентам узла | kg | canon |
+| доля массы родителя | 0.02 | — | 0.02 / 1.0 | — | canon |
+| габариты (Д×Ш×В) | 28×14×14 | mm | оценка: envelope узла крепления | mm | canon |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 0 | W | canon |
-| материал | ti-6al-4v | — | canon |
+| материал | al_6061-t6 | — | al_6061-t6.md | — | canon |
+| фитинги | 2× Ø12×25, AL 6061-T6, цанга | — | PAM литература |
+| штуцер | M5 + FKM уплотнение | — | оценка |
 
 ## Принцип работы
 

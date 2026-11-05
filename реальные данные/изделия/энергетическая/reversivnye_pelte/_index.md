@@ -15,8 +15,12 @@ id: izdelie_reversivnye_pelte
   - часть_reversivnye_pelte_ceramic_top
   - часть_reversivnye_pelte_electrodes
   - часть_reversivnye_pelte_solder
+  - часть_reversivnye_pelte_ceramic_bottom
 материалы_частей:
   - часть: часть_reversivnye_pelte_peltier_couples
+  - часть: часть_reversivnye_pelte_ceramic_bottom
+    материал: alumina
+    доля_массы: 0.1900
     материал: bi2te3
     доля_массы: 0.38
   - часть: часть_reversivnye_pelte_ceramic_top
@@ -55,7 +59,7 @@ scaling_type: количественный
   Qmax_W: 100
   источник: Ferrotec 9500 series
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-05
 источник: user_input
 источник_разбора: пользовательский ввод
 ---

@@ -19,8 +19,12 @@ id: izdelie_svintsovo-kislotnye_akb
   - часть_svintsovo-kislotnye_akb_grid_pos
   - часть_svintsovo-kislotnye_akb_case
   - часть_svintsovo-kislotnye_akb_terminal
+  - часть_svintsovo-kislotnye_akb_grid_neg
 материалы_частей:
   - часть: часть_svintsovo-kislotnye_akb_anode
+  - часть: часть_svintsovo-kislotnye_akb_grid_neg
+    материал: pbca_alloy
+    доля_массы: 0.0500
     материал: pbo2
     доля_массы: 0.19
   - часть: часть_svintsovo-kislotnye_akb_cathode
@@ -71,7 +75,7 @@ scaling_type: количественный
   T_жизни_циклы: 500
   источник: Exide lead-acid battery
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-05
 источник: user_input
 источник_разбора: пользовательский ввод
 ---

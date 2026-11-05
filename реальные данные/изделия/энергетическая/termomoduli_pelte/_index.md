@@ -16,8 +16,12 @@ id: izdelie_termomoduli_pelte
   - часть_termomoduli_pelte_electrodes
   - часть_termomoduli_pelte_solder
   - часть_termomoduli_pelte_wires
+  - часть_termomoduli_pelte_ceramic_bottom
 материалы_частей:
   - часть: часть_termomoduli_pelte_peltier_couples
+  - часть: часть_termomoduli_pelte_ceramic_bottom
+    материал: alumina
+    доля_массы: 0.2000
     материал: bi2te3
     доля_массы: 0.38
   - часть: часть_termomoduli_pelte_ceramic_top
@@ -60,7 +64,7 @@ scaling_type: количественный
   dT_max_C: 70
   источник: Marlow Industries TEC
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-05
 источник: user_input
 источник_разбора: пользовательский ввод
 ---

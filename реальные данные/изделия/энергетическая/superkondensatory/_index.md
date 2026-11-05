@@ -17,8 +17,12 @@ id: izdelie_superkondensatory
   - часть_superkondensatory_current_collector
   - часть_superkondensatory_terminal
   - часть_superkondensatory_case
+  - часть_superkondensatory_electrode_neg
 материалы_частей:
   - часть: часть_superkondensatory_electrode_pos
+  - часть: часть_superkondensatory_electrode_neg
+    материал: activated_carbon
+    доля_массы: 0.1500
     материал: activated_carbon
     доля_массы: 0.27
     материал: activated_carbon
@@ -67,7 +71,7 @@ scaling_type: количественный
   V_max_V: 2.7
   источник: Maxwell BCAP3000
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-05
 источник: user_input
 источник_разбора: пользовательский ввод
 ---
