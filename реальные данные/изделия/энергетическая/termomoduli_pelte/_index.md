@@ -13,7 +13,6 @@ id: izdelie_termomoduli_pelte
 дочерние_части:
   - часть_termomoduli_pelte_peltier_couples
   - часть_termomoduli_pelte_ceramic_top
-  - часть_termomoduli_pelte_ceramic_bottom
   - часть_termomoduli_pelte_electrodes
   - часть_termomoduli_pelte_solder
   - часть_termomoduli_pelte_wires
@@ -24,7 +23,6 @@ id: izdelie_termomoduli_pelte
   - часть: часть_termomoduli_pelte_ceramic_top
     материал: alumina
     доля_массы: 0.19
-  - часть: часть_termomoduli_pelte_ceramic_bottom
     материал: alumina
     доля_массы: 0.19
   - часть: часть_termomoduli_pelte_electrodes
@@ -115,7 +113,6 @@ graph TD
     termomoduli_pelte --> termomoduli_pelte_peltier
     termomoduli_pelte_ceramic["часть_termomoduli_pelte_ceramic_top"]
     termomoduli_pelte --> termomoduli_pelte_ceramic
-    termomoduli_pelte_ceramic["часть_termomoduli_pelte_ceramic_bottom"]
     termomoduli_pelte --> termomoduli_pelte_ceramic
     termomoduli_pelte_electro["часть_termomoduli_pelte_electrodes"]
     termomoduli_pelte --> termomoduli_pelte_electro

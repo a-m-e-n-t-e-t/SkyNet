@@ -100,7 +100,6 @@ Inconel 718
 - `izdelie_svobodnoporshnevoi_stirling` — свободнопоршневой_Стирлинг
 - `izdelie_svobodnoporshnevoi_stirling` — свободнопоршневой_Стирлинг
 - `часть_hk_aerial_двигатель_левый` — nuclear_vtol_engine
-- `часть_hk_aerial_двигатель_правый` — nuclear_vtol_engine
 - `часть_svobodnoporshnevoi_stirling_heater` — нагреватель
 
 ## Аналоги и заменители

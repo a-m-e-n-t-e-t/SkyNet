@@ -158,3 +158,16 @@ field_contracts:
     verifies: [F49]
     blocker_if_unfilled: true
     is_orphan: false
+
+  # === ЧАСТЬ (§12.1, v9.35) ===
+  - id: fc_часть_количество
+    schema: §12.1
+    поле: количество
+    tier: 1
+    executor_type: deterministic
+    source_kind: derived_from_decomposition
+    executor: scripts/migrate_dedup_quantity.py  # v9.35: объединение идентичных близнецов
+    algorithm: "N идентичных экземпляров (левая/правая, _1/_2, pos/neg, top/bottom) → один файл с количество=N; default=1"
+    verifies: [F26]
+    blocker_if_unfilled: false
+    is_orphan: false

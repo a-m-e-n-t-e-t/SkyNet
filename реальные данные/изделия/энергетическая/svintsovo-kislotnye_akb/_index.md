@@ -17,7 +17,6 @@ id: izdelie_svintsovo-kislotnye_akb
   - часть_svintsovo-kislotnye_akb_electrolyte
   - часть_svintsovo-kislotnye_akb_separator
   - часть_svintsovo-kislotnye_akb_grid_pos
-  - часть_svintsovo-kislotnye_akb_grid_neg
   - часть_svintsovo-kislotnye_akb_case
   - часть_svintsovo-kislotnye_akb_terminal
 материалы_частей:
@@ -131,7 +130,6 @@ graph TD
     svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_s
     svintsovo-kislotnye_akb_g["часть_svintsovo-kislotnye_akb_grid_pos"]
     svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_g
-    svintsovo-kislotnye_akb_g["часть_svintsovo-kislotnye_akb_grid_neg"]
     svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_g
     svintsovo-kislotnye_akb_c["часть_svintsovo-kislotnye_akb_case"]
     svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_c

@@ -93,7 +93,6 @@ Pt
 
 **Используется в частях/изделиях:**
 - `часть_t800_топливная_ячейка_1` — hydrogen_fuel_cell
-- `часть_t800_топливная_ячейка_2` — hydrogen_fuel_cell
 - `часть_vodorodnye_toplivnye_elementy_catalyst_anode` — Pt_анод
 
 ## Аналоги и заменители

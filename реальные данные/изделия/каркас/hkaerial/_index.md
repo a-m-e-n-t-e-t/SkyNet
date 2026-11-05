@@ -66,7 +66,6 @@ graph TD
     HKAerial --> hk_aerial_фюзеляж
     hk_aerial_двигатель_левый["часть_hk_aerial_двигатель_левый"]
     HKAerial --> hk_aerial_двигатель_левый
-    hk_aerial_двигатель_правы["часть_hk_aerial_двигатель_правый"]
     HKAerial --> hk_aerial_двигатель_правы
     hk_aerial_сенсоры["часть_hk_aerial_сенсоры"]
     HKAerial --> hk_aerial_сенсоры
@@ -85,7 +84,6 @@ graph TD
 Дочерние части:
 - `часть_hk_aerial_фюзеляж`
 - `часть_hk_aerial_двигатель_левый`
-- `часть_hk_aerial_двигатель_правый`
 - `часть_hk_aerial_сенсоры`
 - `часть_hk_aerial_плазма_пушка`
 - `часть_hk_aerial_навигация`

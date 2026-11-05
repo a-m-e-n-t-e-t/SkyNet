@@ -203,8 +203,8 @@ jobs:
               // Legacy fallback: full violation text lives in the body
               const viol = body.match(/\*\*Нарушение:\*\*\s*(.+)/);
               if (viol) {
-                const metricMatch = issue.title.match(/\[(F2[2-5])\]/);
-                const metric = metricMatch ? metricMatch[1] : 'F25';
+                const metricMatch = issue.title.match(/\[(F2[2-6])\]/);
+                const metric = metricMatch ? metricMatch[1] : (violation.startsWith('Родитель') ? 'F26' : 'F25');
                 existingKeys.add(normalizeViolationKey(metric, viol[1].trim()));
               }
             }
@@ -362,8 +362,8 @@ jobs:
               // Legacy fallback для старых issues
               const viol = body.match(/\*\*Нарушение:\*\*\s*(.+)/);
               if (viol) {
-                const metricMatch = issue.title.match(/\[(F2[2-5])\]/);
-                const metric = metricMatch ? metricMatch[1] : 'F25';
+                const metricMatch = issue.title.match(/\[(F2[2-6])\]/);
+                const metric = metricMatch ? metricMatch[1] : (violation.startsWith('Родитель') ? 'F26' : 'F25');
                 return normalizeViolationKey(metric, viol[1].trim());
               }
               return null;

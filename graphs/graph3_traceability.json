@@ -843,6 +843,12 @@
       "path": ""
     },
     {
+      "id": "F26",
+      "type": "metric",
+      "label": "F26",
+      "path": ""
+    },
+    {
       "id": "P024",
       "type": "metric",
       "label": "P024",
@@ -1020,12 +1026,6 @@
       "id": "F25",
       "type": "metric",
       "label": "F25",
-      "path": ""
-    },
-    {
-      "id": "F26",
-      "type": "metric",
-      "label": "F26",
       "path": ""
     },
     {
@@ -1725,6 +1725,18 @@
       "path": "scripts/generate_wrapper_izdeliya.py"
     },
     {
+      "id": "script:migrate_dedup_quantity.py",
+      "type": "script",
+      "label": "migrate_dedup_quantity.py",
+      "path": "scripts/migrate_dedup_quantity.py"
+    },
+    {
+      "id": "script:migrate_mounting_per_parent.py",
+      "type": "script",
+      "label": "migrate_mounting_per_parent.py",
+      "path": "scripts/migrate_mounting_per_parent.py"
+    },
+    {
       "id": "script:migrate_parts_into_parents.py",
       "type": "script",
       "label": "migrate_parts_into_parents.py",
@@ -1741,6 +1753,12 @@
       "type": "file_pattern",
       "label": "*",
       "path": ""
+    },
+    {
+      "id": "script:migrate_placeholder_per_parent.py",
+      "type": "script",
+      "label": "migrate_placeholder_per_parent.py",
+      "path": "scripts/migrate_placeholder_per_parent.py"
     },
     {
       "id": "script:pipeline.py",
@@ -2549,6 +2567,12 @@
       "meta": {}
     },
     {
+      "src": "F26",
+      "dst": "section:§12.1 Схема файла изделия (`_index.md` или `<часть>.md`)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
       "src": "P024",
       "dst": "section:§12.4 Схема файла модели Skynet",
       "type": "defined_in",
@@ -2706,12 +2730,6 @@
     },
     {
       "src": "F25",
-      "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
-      "type": "defined_in",
-      "meta": {}
-    },
-    {
-      "src": "F26",
       "dst": "section:§13.5 Метрики v7.2-v9.0 (48 метрик) + канон canon-exempt (DR",
       "type": "defined_in",
       "meta": {}
@@ -3708,6 +3726,54 @@
     },
     {
       "src": "F25",
+      "dst": "script:migrate_dedup_quantity.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:migrate_dedup_quantity.py",
+      "dst": "F25",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F26",
+      "dst": "script:migrate_dedup_quantity.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:migrate_dedup_quantity.py",
+      "dst": "F26",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "P085",
+      "dst": "script:migrate_dedup_quantity.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:migrate_dedup_quantity.py",
+      "dst": "P085",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F25",
+      "dst": "script:migrate_mounting_per_parent.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:migrate_mounting_per_parent.py",
+      "dst": "F25",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F25",
       "dst": "script:migrate_parts_into_parents.py",
       "type": "validated_by",
       "meta": {}
@@ -3734,6 +3800,18 @@
       "src": "script:migrate_parts_into_parents.py",
       "dst": "pattern:*",
       "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "F25",
+      "dst": "script:migrate_placeholder_per_parent.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:migrate_placeholder_per_parent.py",
+      "dst": "F25",
+      "type": "triggers_metric",
       "meta": {}
     },
     {
@@ -3805,6 +3883,18 @@
     {
       "src": "script:pre-commit-hook.py",
       "dst": "F25",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F26",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F26",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -3950,6 +4040,18 @@
       "src": "script:pre-commit-hook.py",
       "dst": "pattern:{fantastic_mat_dir}/*.md",
       "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "F25",
+      "dst": "script:real_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:real_decomposition.py",
+      "dst": "F25",
+      "type": "triggers_metric",
       "meta": {}
     },
     {
@@ -4103,6 +4205,18 @@
       "meta": {}
     },
     {
+      "src": "F26",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F26",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "script:validate_decomposition.py",
       "dst": "pattern:_index.md",
       "type": "checks_files",
@@ -4243,6 +4357,18 @@
     {
       "src": "F38",
       "dst": "script:generate_graphs.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "P085",
+      "dst": "script:migrate_mounting_per_parent.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "P085",
+      "dst": "script:migrate_placeholder_per_parent.py",
       "type": "validated_by",
       "meta": {}
     },
@@ -4476,13 +4602,13 @@
     }
   ],
   "stats": {
-    "nodes": 321,
-    "edges": 424,
+    "nodes": 324,
+    "edges": 442,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 9,
       "metric": 216,
-      "script": 18,
+      "script": 21,
       "spec_section": 58,
       "stub": 12
     }

@@ -13,7 +13,6 @@ id: izdelie_reversivnye_pelte
 дочерние_части:
   - часть_reversivnye_pelte_peltier_couples
   - часть_reversivnye_pelte_ceramic_top
-  - часть_reversivnye_pelte_ceramic_bottom
   - часть_reversivnye_pelte_electrodes
   - часть_reversivnye_pelte_solder
 материалы_частей:
@@ -23,7 +22,6 @@ id: izdelie_reversivnye_pelte
   - часть: часть_reversivnye_pelte_ceramic_top
     материал: alumina
     доля_массы: 0.19
-  - часть: часть_reversivnye_pelte_ceramic_bottom
     материал: alumina
     доля_массы: 0.19
 scaling_type: количественный
@@ -110,7 +108,6 @@ graph TD
     reversivnye_pelte --> reversivnye_pelte_peltier
     reversivnye_pelte_ceramic["часть_reversivnye_pelte_ceramic_top"]
     reversivnye_pelte --> reversivnye_pelte_ceramic
-    reversivnye_pelte_ceramic["часть_reversivnye_pelte_ceramic_bottom"]
     reversivnye_pelte --> reversivnye_pelte_ceramic
     reversivnye_pelte_electro["часть_reversivnye_pelte_electrodes"]
     reversivnye_pelte --> reversivnye_pelte_electro

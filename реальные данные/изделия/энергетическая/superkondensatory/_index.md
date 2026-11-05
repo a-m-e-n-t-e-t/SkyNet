@@ -12,7 +12,6 @@ id: izdelie_superkondensatory
 родитель: null
 дочерние_части:
   - часть_superkondensatory_electrode_pos
-  - часть_superkondensatory_electrode_neg
   - часть_superkondensatory_separator
   - часть_superkondensatory_electrolyte
   - часть_superkondensatory_current_collector
@@ -22,7 +21,6 @@ id: izdelie_superkondensatory
   - часть: часть_superkondensatory_electrode_pos
     материал: activated_carbon
     доля_массы: 0.27
-  - часть: часть_superkondensatory_electrode_neg
     материал: activated_carbon
     доля_массы: 0.27
   - часть: часть_superkondensatory_separator
@@ -120,7 +118,6 @@ graph TD
     superkondensatory["izdelie_superkondensatory"]
     superkondensatory_electro["часть_superkondensatory_electrode_pos"]
     superkondensatory --> superkondensatory_electro
-    superkondensatory_electro["часть_superkondensatory_electrode_neg"]
     superkondensatory --> superkondensatory_electro
     superkondensatory_separat["часть_superkondensatory_separator"]
     superkondensatory --> superkondensatory_separat

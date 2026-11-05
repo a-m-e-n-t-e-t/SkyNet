@@ -70,11 +70,9 @@ graph TD
     MarcusWright --> marcus_топливная_ячейка
     marcus_рука_левая["часть_marcus_рука_левая"]
     MarcusWright --> marcus_рука_левая
-    marcus_рука_правая["часть_marcus_рука_правая"]
     MarcusWright --> marcus_рука_правая
     marcus_нога_левая["часть_marcus_нога_левая"]
     MarcusWright --> marcus_нога_левая
-    marcus_нога_правая["часть_marcus_нога_правая"]
     MarcusWright --> marcus_нога_правая
     marcus_человеческое_сердц["часть_marcus_человеческое_сердце"]
     MarcusWright --> marcus_человеческое_сердц
@@ -90,9 +88,7 @@ graph TD
 - `часть_marcus_сердце_гибрид`
 - `часть_marcus_топливная_ячейка`
 - `часть_marcus_рука_левая`
-- `часть_marcus_рука_правая`
 - `часть_marcus_нога_левая`
-- `часть_marcus_нога_правая`
 - `часть_marcus_человеческое_сердце`
 - `часть_marcus_человеческая_кожа`
 

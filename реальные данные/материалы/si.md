@@ -100,7 +100,6 @@ Si
 - `часть_t600_cpu` — early_neural_cpu
 - `часть_t800_cpu` — neural_net_cpu
 - `часть_t800_оптический_сенсор_1` — optical_camera
-- `часть_t800_оптический_сенсор_2` — optical_camera
 - `часть_t800_ткань_кожа` — living_tissue
 - `часть_t850_ткань_кожа` — living_tissue
 - `часть_tverdotelnye_akkumulyatory_anode` — графит_анод

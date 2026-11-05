@@ -70,11 +70,9 @@ graph TD
     Cameron --> cameron_топливная_ячейка_
     cameron_рука_левая["часть_cameron_рука_левая"]
     Cameron --> cameron_рука_левая
-    cameron_рука_правая["часть_cameron_рука_правая"]
     Cameron --> cameron_рука_правая
     cameron_нога_левая["часть_cameron_нога_левая"]
     Cameron --> cameron_нога_левая
-    cameron_нога_правая["часть_cameron_нога_правая"]
     Cameron --> cameron_нога_правая
     cameron_сенсоры["часть_cameron_сенсоры"]
     Cameron --> cameron_сенсоры
@@ -90,9 +88,7 @@ graph TD
 - `часть_cameron_топливная_ячейка_1`
 - `часть_cameron_топливная_ячейка_2`
 - `часть_cameron_рука_левая`
-- `часть_cameron_рука_правая`
 - `часть_cameron_нога_левая`
-- `часть_cameron_нога_правая`
 - `часть_cameron_сенсоры`
 - `часть_cameron_ткань_кожа`
 

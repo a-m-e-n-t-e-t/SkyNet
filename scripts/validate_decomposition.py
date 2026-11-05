@@ -1173,11 +1173,13 @@ def check_F21(models: dict[str, dict], izdeliya: dict[str, dict]) -> dict:
     v9.31: проверяем через wrapper-изделие (izdelie_SkyNet-XXX), а не через
     реализация_промышленная в моделях. Wrapper имеет дочерние_части, которые
     и есть декомпозиция.
+    v9.35: учитываем поле «количество» дочерних частей — если у child
+    количество=N, оно вносит N в общий счётчик подсистемы (а не 1).
     """
     violations = []
     total = 0
     valid = 0
-    
+
     for model_id, canon_spec in CANON_DECOMPOSITION.items():
         # Найти wrapper-изделие izdelie_<model_id>
         wrapper_id = f"izdelie_{model_id}"
@@ -1188,26 +1190,35 @@ def check_F21(models: dict[str, dict], izdeliya: dict[str, dict]) -> dict:
         children = wrapper.get('дочерние_части', [])
         if not isinstance(children, list):
             children = []
-        
+
         # Подсчитать сколько изделий каждой подсистемы
+        # v9.35: вес каждого child = его поле «количество» (default 1)
         sub_counts: dict[str, int] = {}
         for child_id in children:
             if not isinstance(child_id, str) or child_id not in izdeliya:
                 continue
             sub = izdeliya[child_id].get('подсистема')
             if sub:
-                sub_counts[sub] = sub_counts.get(sub, 0) + 1
-        
+                # v9.35: учитываем количество — paired parts (количество=2) считаются как 2
+                q_raw = izdeliya[child_id].get('количество', 1)
+                try:
+                    q = int(q_raw) if q_raw is not None else 1
+                except (TypeError, ValueError):
+                    q = 1
+                if q < 1:
+                    q = 1
+                sub_counts[sub] = sub_counts.get(sub, 0) + q
+
         ok = True
         for sub, expected_count in canon_spec.items():
             actual = sub_counts.get(sub, 0)
             if actual < expected_count:
                 violations.append(f"{model_id}: подсистема '{sub}' — canon ожидает ≥{expected_count}, фактически {actual}")
                 ok = False
-        
+
         if ok:
             valid += 1
-    
+
     ratio = valid / max(1, total)
     return {
         'metric': 'F21',
