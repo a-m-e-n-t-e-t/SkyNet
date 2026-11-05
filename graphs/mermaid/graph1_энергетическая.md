@@ -229,9 +229,9 @@ graph LR
     часть_cameron_топливная_ячейка_1[fuel_cell_small]
     material_ti_6al_4v[Ti-6Al-4V]
     material_al_6061_t6[Al 6061-T6]
-    material_stal_st3[Сталь Ст3]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
-    material_si[Si]
+    material_stal_st3[Сталь Ст3]
+    material_poliimid[Полиимид]
     izdelie_nasa_asc_e_srsc -->|материал| material_al_6061_t6
     часть_tpv_pv_cell -->|материал| material_ti_6al_4v
     часть_tpv_filter -->|материал| material_ti_6al_4v
@@ -242,6 +242,7 @@ graph LR
     часть_termomoduli_pelte_wires -->|материал| material_ti_6al_4v
     часть_termomoduli_pelte_ceramic_top -->|материал| material_ti_6al_4v
     часть_alyuminievo_vozdushnye_toplivnye_elementy_housing -->|материал| material_al_6061_t6
+    часть_alyuminievo_vozdushnye_toplivnye_elementy_separator -->|материал| material_poliimid
     часть_induktivnyi_nakopitel_housing -->|материал| material_stal_st3
     часть_induktivnyi_nakopitel_coil -->|материал| material_ti_6al_4v
     часть_induktivnyi_nakopitel_switch -->|материал| material_ti_6al_4v
@@ -338,9 +339,8 @@ graph LR
     часть_svobodnoporshnevoi_stirling_piston -->|материал| material_al_6061_t6
     часть_svobodnoporshnevoi_stirling_alternator -->|материал| material_ti_6al_4v
     часть_tverdotelnye_akkumulyatory_case -->|материал| material_al_6061_t6
-    часть_tverdotelnye_akkumulyatory_anode -->|материал| material_si
+    часть_tverdotelnye_akkumulyatory_separator -->|материал| material_poliimid
     часть_tverdotelnye_akkumulyatory_current_collector_cu -->|материал| material_ti_6al_4v
-    часть_tverdotelnye_akkumulyatory_cathode -->|материал| material_si
     часть_tverdotelnye_akkumulyatory_current_collector_al -->|материал| material_ti_6al_4v
     часть_marx_generator_housing -->|материал| material_stal_st3
     часть_marx_generator_spark_gaps -->|материал| material_ti_6al_4v

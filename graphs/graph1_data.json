@@ -10159,7 +10159,7 @@
     },
     {
       "src": "часть_slm_eos_m290_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -10219,7 +10219,7 @@
     },
     {
       "src": "часть_dielektricheskie_elastomernye_datchiki_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_uv-absorbing_pmma",
       "type": "uses_material",
       "meta": {}
     },
@@ -10279,7 +10279,7 @@
     },
     {
       "src": "часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_latun_c36000",
       "type": "uses_material",
       "meta": {}
     },
@@ -10303,7 +10303,7 @@
     },
     {
       "src": "часть_polyimide_fpc_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_poliimid",
       "type": "uses_material",
       "meta": {}
     },
@@ -10375,7 +10375,7 @@
     },
     {
       "src": "часть_gibkii_pcb_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_epotek_301-2",
       "type": "uses_material",
       "meta": {}
     },
@@ -21090,7 +21090,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_slm_eos_m290_mounting",
       "type": "used_in",
       "meta": {
@@ -21130,7 +21130,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_uv-absorbing_pmma",
       "dst": "часть_dielektricheskie_elastomernye_datchiki_mounting",
       "type": "used_in",
       "meta": {
@@ -21170,7 +21170,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_latun_c36000",
       "dst": "часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_mounting",
       "type": "used_in",
       "meta": {
@@ -21186,7 +21186,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_poliimid",
       "dst": "часть_polyimide_fpc_mounting",
       "type": "used_in",
       "meta": {
@@ -21234,7 +21234,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_epotek_301-2",
       "dst": "часть_gibkii_pcb_mounting",
       "type": "used_in",
       "meta": {
@@ -27741,6 +27741,7 @@
       "standart_ASTM F136",
       "standart_DIN 2093",
       "standart_DIN 69051",
+      "standart_DIN 912",
       "standart_DIN VDE 0580",
       "standart_DOE 10 CFR 71",
       "standart_EIA RS-198",
@@ -27772,11 +27773,15 @@
       "standart_IEEE C57.16",
       "standart_IPC J-STD-001",
       "standart_IPC TM-650 2.4.24",
+      "standart_IPC-2223",
+      "standart_IPC-6013",
       "standart_IPC-A-600",
       "standart_ISO 14687",
       "standart_ISO 15241",
       "standart_ISO 1940",
+      "standart_ISO 286 H7/g6",
       "standart_ISO 2919",
+      "standart_ISO 3506 A2-70",
       "standart_ISO 630",
       "standart_ISO 9001",
       "standart_Intel 4 process",
@@ -27958,7 +27963,7 @@
     "nodes": 925,
     "edges": 3122,
     "dangling": {
-      "complies_with": 92,
+      "complies_with": 97,
       "has_part": 1,
       "researched_by": 42,
       "uses_material": 95

@@ -102,8 +102,8 @@ graph LR
     часть_pezoelektricheskii_gromkogovoritel_mounting[крепёж]
     material_ti_6al_4v[Ti-6Al-4V]
     material_al_6061_t6[Al 6061-T6]
-    material_stal_st3[Сталь Ст3]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
+    material_stal_st3[Сталь Ст3]
     material_poliimid[Полиимид]
     часть_t600_рука_левая -->|материал| material_ti_6al_4v
     часть_t600_нога_левая -->|материал| material_ti_6al_4v

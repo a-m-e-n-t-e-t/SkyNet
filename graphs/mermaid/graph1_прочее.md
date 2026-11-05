@@ -51,6 +51,7 @@ graph LR
     material_al_6061_t6[Al 6061-T6]
     material_becu[BeCu]
     material_cfrp_t1100g[CFRP T1100G]
+    material_epotek_301_2[Epotek 301-2]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
     material_mxene[MXene]
     material_neilon_6_66[Нейлон 6/66]
@@ -58,27 +59,29 @@ graph LR
     material_poliimid[Полиимид]
     material_si[Si]
     material_silikon_40_50_shore_a[Силикон 40–50 Shore A]
+    material_ss_aisi_304[SS AISI 304]
     material_stal_st3[Сталь Ст3]
     material_ti_6al_4v[Ti-6Al-4V]
-    часть_slm_eos_m290_mounting -->|материал| material_ti_6al_4v
+    material_uv_absorbing_pmma[UV-absorbing PMMA]
+    часть_slm_eos_m290_mounting -->|материал| material_ss_aisi_304
     часть_slm_eos_m290_connectors -->|материал| material_al_6061_t6
     часть_slm_eos_m290_housing -->|материал| material_stal_st3
     часть_slm_eos_m290_core -->|материал| material_stal_st3
     часть_dielektricheskie_elastomernye_datchiki_housing -->|материал| material_al_6061_t6
-    часть_dielektricheskie_elastomernye_datchiki_mounting -->|материал| material_ti_6al_4v
+    часть_dielektricheskie_elastomernye_datchiki_mounting -->|материал| material_uv_absorbing_pmma
     часть_dielektricheskie_elastomernye_datchiki_core -->|материал| material_p_vdf_trfe_cfe
     часть_dielektricheskie_elastomernye_datchiki_connectors -->|материал| material_latun_c36000
     часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_core -->|материал| material_stal_st3
     часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_connectors -->|материал| material_neilon_6_66
-    часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_mounting -->|материал| material_ti_6al_4v
+    часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_mounting -->|материал| material_latun_c36000
     часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_housing -->|материал| material_al_6061_t6
-    часть_polyimide_fpc_mounting -->|материал| material_ti_6al_4v
+    часть_polyimide_fpc_mounting -->|материал| material_poliimid
     часть_polyimide_fpc_core -->|материал| material_poliimid
     часть_polyimide_fpc_connectors -->|материал| material_poliimid
     часть_polyimide_fpc_housing -->|материал| material_al_6061_t6
     часть_gibkii_pcb_housing -->|материал| material_al_6061_t6
     часть_gibkii_pcb_connectors -->|материал| material_poliimid
-    часть_gibkii_pcb_mounting -->|материал| material_ti_6al_4v
+    часть_gibkii_pcb_mounting -->|материал| material_epotek_301_2
     часть_gibkii_pcb_core -->|материал| material_poliimid
     часть_elastomernyh_dempferah_housing -->|материал| material_al_6061_t6
     часть_elastomernyh_dempferah_core -->|материал| material_silikon_40_50_shore_a
@@ -101,15 +104,18 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 11 |
 | `Al 6061-T6` | 8 |
+| `Ti-6Al-4V` | 6 |
+| `Полиимид` | 5 |
 | `Сталь Ст3` | 4 |
-| `Полиимид` | 4 |
+| `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 2 |
 | `BeCu` | 2 |
 | `Si` | 2 |
+| `SS AISI 304` | 1 |
+| `UV-absorbing PMMA` | 1 |
 | `P` | 1 |
-| `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 1 |
 | `Нейлон 6/66` | 1 |
+| `Epotek 301-2` | 1 |
 | `Силикон 40–50 Shore A` | 1 |
 | `CFRP T1100G` | 1 |
 | `MXene` | 1 |
