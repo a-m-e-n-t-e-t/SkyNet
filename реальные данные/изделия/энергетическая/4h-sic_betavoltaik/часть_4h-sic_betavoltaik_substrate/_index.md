@@ -13,7 +13,7 @@ id: часть_4h-sic_betavoltaik_substrate
 дочерние_части: []
 материалы_частей:
   - часть: часть_4h-sic_betavoltaik_substrate
-    материал: ti-6al-4v
+    материал: monokristallicheskogo_sic
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -29,9 +29,9 @@ scaling_type: количественный
   масса_kg: 0.002
   доля_массы_родителя: 0.2
   габариты_mm:
-    l: 100
-    w: 100
-    h: 50
+    l: 20
+    w: 20
+    h: 0.5
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
@@ -40,14 +40,14 @@ scaling_type: количественный
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://www.sciencedirect.com/topics/engineering/betavoltaic-battery
+источник_дата: 2026-11-05
 ---
 # Часть: часть_4h-sic_betavoltaik_substrate
 
 ## Описание
 
-Дочерняя часть изделия.
-
-Родитель: `izdelie_4h-sic_betavoltaik` (подсистема: энергетическая).
+Подложка 4H-SiC толщиной 500 мкм из стандартной пластины (диапазон 300–500 мкм по обзору betavoltaic-батарей); база эпитаксиальной p-n структуры бета-вольтаического элемента 20×20 мм.
 
 ## Технические характеристики
 
@@ -57,10 +57,10 @@ scaling_type: количественный
 | подтип | SiC_подложка | — | canon |
 | масса | 0.002 | kg | canon |
 | доля массы родителя | 0.2 | — | canon |
-| габариты (Д×Ш×В) | 100×100×50 | mm | canon |
+| габариты (Д×Ш×В) | 20×20×0.5 | mm | ScienceDirect — стандартная толщина подложки SiC 300–500 мкм |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | ti-6al-4v | — | canon |
+| материал | monokristallicheskogo_sic | — | monokristallicheskogo_sic.md |
 
 ## Принцип работы
 
@@ -72,9 +72,9 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `ti-6al-4v` → [`ti-6al-4v.md`](../../../../материалы/ti-6al-4v.md)
+- `monokristallicheskogo_sic` → [`monokristallicheskogo_sic.md`](../../../материалы/monokristallicheskogo_sic.md)
 
 ## Источники
 
-- Канон: декомпозиция `izdelie_4h-sic_betavoltaik` (web search 2026-11-03)
+- ScienceDirect — стандартная толщина подложки SiC 300–500 мкм: https://www.sciencedirect.com/topics/engineering/betavoltaic-battery (проверено 2026-11-05)
 - Материалы: реальные данные/материалы/

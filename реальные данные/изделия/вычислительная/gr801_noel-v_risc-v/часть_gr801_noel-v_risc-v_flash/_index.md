@@ -13,7 +13,7 @@ id: часть_gr801_noel-v_risc-v_flash
 дочерние_части: []
 материалы_частей:
   - часть: часть_gr801_noel-v_risc-v_flash
-    материал: ti-6al-4v
+    материал: si
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -29,9 +29,9 @@ scaling_type: количественный
   масса_kg: 0.002
   доля_массы_родителя: 0.04
   габариты_mm:
-    l: 100
-    w: 100
-    h: 50
+    l: 8
+    w: 6
+    h: 0.75
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
@@ -40,14 +40,14 @@ scaling_type: количественный
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://www.digikey.com/en/articles/reliable-high-density-flash-memory-enables-fast-boot-for-embedded-industrial-and-automotive-systems
+источник_дата: 2026-11-05
 ---
 # Часть: часть_gr801_noel-v_risc-v_flash
 
 ## Описание
 
-Дочерняя часть изделия.
-
-Родитель: `izdelie_gr801_noel-v_risc-v` (подсистема: вычислительная).
+QSPI NOR флеш кодового хранилища NOEL-V RISC-V в корпусе WSON-8 8×6×0.75 мм (аналог серии IS25xP ISSI); высота корпуса 0.75 мм.
 
 ## Технические характеристики
 
@@ -57,10 +57,10 @@ scaling_type: количественный
 | подтип | флеш_память | — | canon |
 | масса | 0.002 | kg | canon |
 | доля массы родителя | 0.04 | — | canon |
-| габариты (Д×Ш×В) | 100×100×50 | mm | canon |
+| габариты (Д×Ш×В) | 8×6×0.75 | mm | DigiKey — NOR Flash IS25xP: WSON 0.75 мм × 6×8 мм |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | ti-6al-4v | — | canon |
+| материал | si | — | si.md |
 
 ## Принцип работы
 
@@ -72,9 +72,9 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `ti-6al-4v` → [`ti-6al-4v.md`](../../../../материалы/ti-6al-4v.md)
+- `si` → [`si.md`](../../../материалы/si.md)
 
 ## Источники
 
-- Канон: декомпозиция `izdelie_gr801_noel-v_risc-v` (web search 2026-11-03)
+- DigiKey — NOR Flash IS25xP: WSON 0.75 мм × 6×8 мм: https://www.digikey.com/en/articles/reliable-high-density-flash-memory-enables-fast-boot-for-embedded-industrial-and-automotive-systems (проверено 2026-11-05)
 - Материалы: реальные данные/материалы/

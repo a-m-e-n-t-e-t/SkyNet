@@ -13,7 +13,7 @@ id: часть_memristornye_matritsy_crossbar
 дочерние_части: []
 материалы_частей:
   - часть: часть_memristornye_matritsy_crossbar
-    материал: ti-6al-4v
+    материал: hfo₂
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -29,9 +29,9 @@ scaling_type: количественный
   масса_kg: 0.002
   доля_массы_родителя: 0.4
   габариты_mm:
-    l: 100
-    w: 100
-    h: 50
+    l: 10
+    w: 10
+    h: 0.25
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
@@ -40,14 +40,14 @@ scaling_type: количественный
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://www.frontiersin.org/journals/nanotechnology/articles/10.3389/fnano.2021.734121/full
+источник_дата: 2026-11-05
 ---
 # Часть: часть_memristornye_matritsy_crossbar
 
 ## Описание
 
-Дочерняя часть изделия.
-
-Родитель: `izdelie_memristornye_matritsy` (подсистема: вычислительная).
+Кроссбар 1T1R на HfOx: слой переключения 5 нм, ширина прибора 40 нм, электроды Ti (TE) / TiN (BE); матрица на кристалле 10×10 мм, толщина с подложкой 0.25 мм.
 
 ## Технические характеристики
 
@@ -57,10 +57,10 @@ scaling_type: количественный
 | подтип | кроссбар_матрица | — | canon |
 | масса | 0.002 | kg | canon |
 | доля массы родителя | 0.4 | — | canon |
-| габариты (Д×Ш×В) | 100×100×50 | mm | canon |
+| габариты (Д×Ш×В) | 10×10×0.25 | mm | Frontiers in Nanotechnology — TCAD HfO2 memristor: HfOx 5 нм, ширина 40 нм, Ti/TiN |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | ti-6al-4v | — | canon |
+| материал | hfo₂ | — | hfo₂.md |
 
 ## Принцип работы
 
@@ -72,9 +72,9 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `ti-6al-4v` → [`ti-6al-4v.md`](../../../../материалы/ti-6al-4v.md)
+- `hfo₂` → [`hfo₂.md`](../../../материалы/hfo₂.md)
 
 ## Источники
 
-- Канон: декомпозиция `izdelie_memristornye_matritsy` (web search 2026-11-03)
+- Frontiers in Nanotechnology — TCAD HfO2 memristor: HfOx 5 нм, ширина 40 нм, Ti/TiN: https://www.frontiersin.org/journals/nanotechnology/articles/10.3389/fnano.2021.734121/full (проверено 2026-11-05)
 - Материалы: реальные данные/материалы/
