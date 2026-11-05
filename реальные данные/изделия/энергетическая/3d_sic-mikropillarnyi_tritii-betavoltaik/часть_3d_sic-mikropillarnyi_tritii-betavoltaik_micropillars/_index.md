@@ -13,7 +13,7 @@ id: часть_3d_sic-mikropillarnyi_tritii-betavoltaik_micropillars
 дочерние_части: []
 материалы_частей:
   - часть: часть_3d_sic-mikropillarnyi_tritii-betavoltaik_micropillars
-    материал: ti-6al-4v
+    материал: monokristallicheskogo_sic
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -29,9 +29,9 @@ scaling_type: количественный
   масса_kg: 0.001
   доля_массы_родителя: 0.4
   габариты_mm:
-    l: 100
-    w: 100
-    h: 50
+    l: 4
+    w: 4
+    h: 0.25
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
@@ -40,14 +40,14 @@ scaling_type: количественный
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://citylabs.net/technology-overview
+источник_дата: 2026-11-05
 ---
 # Часть: часть_3d_sic-mikropillarnyi_tritii-betavoltaik_micropillars
 
 ## Описание
 
-Дочерняя часть изделия.
-
-Родитель: `izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik` (подсистема: энергетическая).
+Массив 3D-микропилляров из монокристаллического 4H-SiC на чипе 4×4 мм (высота столбов ~0.25 мм, шаг десятки микрометров) для тритиевого бета-вольтаика: развитая трёхмерная поверхность увеличивает площадь контакта с тритиевым источником (твердотельный гидрид трития) в разы по сравнению с плоской геометрией и повышает собираемость β-частиц. Эрозионно-выращенные микростолбы сохраняют монокристалличность эпитаксиального 4H-SiC.
 
 ## Технические характеристики
 
@@ -55,16 +55,16 @@ scaling_type: количественный
 |---|---|---|---|
 | подсистема | энергетическая | — | canon |
 | подтип | 3D_SiC_микропилляры | — | canon |
-| масса | 0.001 | kg | canon |
+| масса | 0.001 | kg | Tritium betavoltaic technology (solid tritide source): City Labs technology overview |
 | доля массы родителя | 0.4 | — | canon |
-| габариты (Д×Ш×В) | 100×100×50 | mm | canon |
+| габариты (Д×Ш×В) | 4×4×0.25 | mm | Tritium betavoltaic technology (solid tritide source): City Labs technology overview |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | ti-6al-4v | — | canon |
+| материал | monokristallicheskogo_sic | — | monokristallicheskogo_sic.md |
 
 ## Принцип работы
 
-Определяется типом и назначением родительского изделия.
+Тритий (T½ = 12.3 года, Eβ.max = 18.6 кэВ, средняя ~5.7 кэВ) размещается в зазорах между SiC-микропиллярами; мягкие β-электроны поглощаются в боковых стенках столбов, где p-n переходы собирают носители. 3D-геометрия компенсирует малый пробег β-частиц трития (~мкм) и поднимает выходную мощность на площадь чипа.
 
 ## Состав
 
@@ -72,9 +72,9 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `ti-6al-4v` → [`ti-6al-4v.md`](../../../../материалы/ti-6al-4v.md)
+- `monokristallicheskogo_sic` → [`monokristallicheskogo_sic.md`](../../../../материалы/monokristallicheskogo_sic.md)
 
 ## Источники
 
-- Канон: декомпозиция `izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik` (web search 2026-11-03)
+- Tritium betavoltaic technology (solid tritide source): City Labs technology overview: https://citylabs.net/technology-overview (проверено 2026-11-05)
 - Материалы: реальные данные/материалы/
