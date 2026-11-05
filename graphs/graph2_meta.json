@@ -1181,6 +1181,12 @@
       "meta": {}
     },
     {
+      "src": "script:web_verify.py",
+      "dst": "script:_helpers.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
       "src": "section:§0.1 Что проверять (через GitHub REST API с PAT)",
       "dst": "spec:SkyNet_PROMPT_v9.31.md",
       "type": "part_of",
@@ -2359,7 +2365,7 @@
   ],
   "stats": {
     "nodes": 182,
-    "edges": 210,
+    "edges": 211,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,

@@ -26,7 +26,7 @@ from validate_decomposition import (
     SKYNET_REPO, EXPECTED_SUBSYSTEMS_BY_TYPE, TYPE_TEMPLATE_PARTS,
     CANON_DECOMPOSITION, generate_mermaid_diagram
 )
-from _helpers import write_atomic  # v9.37: atomic writes (T1)
+from _helpers import write_atomic, yaml_serialize_block as serialize_value  # v9.37: T1; v9.37.1: M1 единый сериализатор
 
 TODAY = "2026-11-03"
 IZDELIYA_DIR = SKYNET_REPO / "реальные данные" / "изделия"
@@ -255,58 +255,6 @@ CANON_DECOMP_ALL: dict[str, dict] = {
 # ============================================================================
 # ГЕНЕРАЦИЯ ФАЙЛОВ ДОЧЕРНИХ ЧАСТЕЙ
 # ============================================================================
-
-def serialize_value(value: Any, indent: int = 0) -> str:
-    """YAML-сериализация (как в fill_canon_data.py)."""
-    pad = "  " * indent
-    pad_child = "  " * (indent + 1)
-    
-    if isinstance(value, str):
-        if any(c in value for c in [":", "#", "\n", "{", "}", "[", "]", ",", "&", "*", "?", "|", "<", ">", "=", "%", "@", "`", '"', "'"]):
-            escaped = value.replace("'", "''")
-            return f"'{escaped}'"
-        return value
-    if isinstance(value, bool):
-        return "true" if value else "false"
-    if isinstance(value, (int, float)):
-        return str(value)
-    if isinstance(value, type(None)):
-        return "null"
-    if isinstance(value, list):
-        if not value:
-            return "[]"
-        items = []
-        for v in value:
-            items.append(f"{pad_child}- {serialize_value(v, indent + 1)}")
-        return "\n" + "\n".join(items)
-    if isinstance(value, dict):
-        if not value:
-            return "{}"
-        lines = []
-        for k, v in value.items():
-            if isinstance(v, dict):
-                if v:
-                    lines.append(f"{pad_child}{k}:")
-                    sub = serialize_value(v, indent + 2)
-                    for line in sub.split("\n"):
-                        if line:
-                            lines.append(pad_child + "  " + line)
-                else:
-                    lines.append(f"{pad_child}{k}: {{}}")
-            elif isinstance(v, list):
-                if v:
-                    lines.append(f"{pad_child}{k}:")
-                    sub = serialize_value(v, indent + 1)
-                    for line in sub.split("\n"):
-                        if line:
-                            lines.append(pad_child + line if not line.startswith(" ") else pad_child + "  " + line.lstrip())
-                else:
-                    lines.append(f"{pad_child}{k}: []")
-            else:
-                lines.append(f"{pad_child}{k}: {serialize_value(v, indent + 1)}")
-        return "\n" + "\n".join(lines)
-    return "null"
-
 
 def generate_part_file(part_id: str, parent_id: str, subsystem: str, subtype: str,
                        mass_kg: float, share: float, count: int = 1) -> str:

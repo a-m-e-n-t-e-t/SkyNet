@@ -44,7 +44,7 @@ from typing import Any
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__)))
 from validate_decomposition import read_yaml_frontmatter, SKYNET_REPO
-from _helpers import write_atomic, TransactionBatch  # v9.37: T1+T2
+from _helpers import write_atomic, TransactionBatch, yaml_serialize_block as serialize_value  # v9.37: T1+T2; v9.37.1: M1 единый сериализатор
 
 TODAY = "2026-11-03"
 IZDELIYA_DIR = SKYNET_REPO / "реальные данные" / "изделия"
@@ -751,54 +751,6 @@ def generate_part_id(parent_id: str, part_suffix: str) -> str:
     if short.startswith('izdelie_'):
         short = short[len('izdelie_'):]
     return f"часть_{short}_{part_suffix}"
-
-
-def serialize_value(value, indent=0):
-    """YAML-сериализация."""
-    pad = "  " * indent
-    pad_child = "  " * (indent + 1)
-    if isinstance(value, str):
-        if any(c in value for c in [":", "#", "\n", "{", "}", "[", "]", ",", "&", "*", "?", "|", "<", ">", "=", "%", "@", "`", '"', "'"]):
-            return f"'{value.replace(chr(39), chr(39)+chr(39))}'"
-        return value
-    if isinstance(value, bool):
-        return "true" if value else "false"
-    if isinstance(value, (int, float)):
-        return str(value)
-    if isinstance(value, type(None)):
-        return "null"
-    if isinstance(value, list):
-        if not value:
-            return "[]"
-        items = [f"{pad_child}- {serialize_value(v, indent + 1)}" for v in value]
-        return "\n" + "\n".join(items)
-    if isinstance(value, dict):
-        if not value:
-            return "{}"
-        lines = []
-        for k, v in value.items():
-            if isinstance(v, dict):
-                if v:
-                    lines.append(f"{pad_child}{k}:")
-                    sub = serialize_value(v, indent + 2)
-                    for line in sub.split("\n"):
-                        if line:
-                            lines.append(pad_child + "  " + line)
-                else:
-                    lines.append(f"{pad_child}{k}: {{}}")
-            elif isinstance(v, list):
-                if v:
-                    lines.append(f"{pad_child}{k}:")
-                    sub = serialize_value(v, indent + 1)
-                    for line in sub.split("\n"):
-                        if line:
-                            lines.append(pad_child + line if not line.startswith(" ") else pad_child + "  " + line.lstrip())
-                else:
-                    lines.append(f"{pad_child}{k}: []")
-            else:
-                lines.append(f"{pad_child}{k}: {serialize_value(v, indent + 1)}")
-        return "\n" + "\n".join(lines)
-    return "null"
 
 
 def generate_part_content(part_id: str, parent_id: str, subsystem: str,

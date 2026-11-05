@@ -198,6 +198,7 @@ graph TB
     script_real_decomposition_py -.->|imports| script__helpers_py
     script_validate_field_contracts_py -.->|imports| script__helpers_py
     script_web_verify_py -.->|imports| script_validate_decomposition_py
+    script_web_verify_py -.->|imports| script__helpers_py
     section_§0_1_Что_проверять_(через_GitHub_REST_API_с_PAT) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§0_2_Решение_по_результатам_проверки -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§0_3_Связь_с_§19 -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
@@ -233,10 +234,9 @@ graph TB
     section_§9_5_Авто-отчёт_после_batch_(v9_24_НОВОЕ_—_из_аудита_диалога -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§9_6_Запрет_эвристик_без_явного_правила_(v9_24_НОВОЕ_—_из_ау -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§9_7_Прозрачная_остановка_(v9_24_НОВОЕ_—_из_аудита_диалога) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
-    section_§9_8_Issues_как_очередь_задач_(v9_30_НОВОЕ_—_полная_интеграц -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 182, рёбер: 210 (показано топ-50)._
+_Узлов: 182, рёбер: 211 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|

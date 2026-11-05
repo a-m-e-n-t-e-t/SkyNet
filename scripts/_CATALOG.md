@@ -19,13 +19,13 @@
 | Скрипт | Назначение | Метрики | Контракты (fc_*) |
 |---|---|---|---|
 | `__init__.py` | Пакет Python для `scripts/` (импорт как модуль) | — | — |
-| `_helpers.py` | Общие хелперы: кэш YAML-frontmatter, проверка schema-consistency (F70), pattern-matching для метрик | F70, F71, F72, F73, F74, F75, F79, F80, F86, F87 | — |
+| `_helpers.py` | Общие хелперы: кэш YAML-frontmatter, проверка schema-consistency (F70), pattern-matching для метрик; v9.37: `write_atomic`, `TransactionBatch`; v9.37.1: `yaml_serialize_block` (единый сериализатор вместо 3 копий) | F70, F71, F72, F73, F74, F75, F79, F80, F86, F87 | — |
 | `_stubs.py` | Реестр нереализованных функций (см. раздел Stubs) | — | — |
 | `capture_dialog.py` | Захват диалога в `диалог/*.md` для аудита решений | E1, E2, E3, E4 | — |
 | `check_model_completeness.py` | Проверка ≥1 изделия на каждую expected_subsystem модели | F86 | — |
 | `classify_subsystem.py` | Классификация 13 подсистем + тип_модели | F3, F75 | fc_изделие_подсистема, fc_модель_тип |
-| `decompose_all_izdeliya.py` | Декомпозиция всех изделий на части (batch); v9.35: поддержка поля количество=N | B07, B09 | — |
-| `generate_decomposition.py` | Генерация stub-файлов декомпозиции; v9.35: CANON_DECOMP использует count=2 для paired parts | B07 | — |
+| `decompose_all_izdeliya.py` | Декомпозиция всех изделий на части (batch); v9.35: поддержка поля количество=N; v9.37: TransactionBatch (parent+children атомарно); v9.37.1: serialize_value из _helpers | B07, B09 | — |
+| `generate_decomposition.py` | Генерация stub-файлов декомпозиции; v9.35: CANON_DECOMP использует count=2 для paired parts; v9.37.1: serialize_value из _helpers | B07 | — |
 | `generate_graphs.py` | Генератор graph1/2/3 + Mermaid-рендеры + fill-backrefs | F36, F37, F38 | — |
 | `generate_wrapper_izdeliya.py` | Генерация wrapper-файлов изделия (cover page); v9.37: `write_atomic` | B05 | — |
 | `pipeline.py` | Оркестратор фаз 0-8 batch-обработки | F37, F38, F39, F40, F46, F47 | — |
@@ -33,7 +33,7 @@
 | `real_decomposition.py` | Декомпозиция реальных изделий (live data); v9.35: per-parent уникальные dims для крепёж и основной_элемент; v9.36: исправлен баг `description` → `описание`; v9.37: `write_atomic` | B07, B09 | — |
 | `validate_decomposition.py` | Главный валидатор: F12a-F26, F70 (schema consistency), F18 (jsonschema); v9.35: добавлена F26 + поле количество в schema; v9.36: F12a O(n²)→O(n), F22/F19/F23 cache reuse | F12a, F13, F14, F15a, F15b, F15d, F15g, F16, F17, F18, F19, F20, F21, F22, F23, F24, F25, F26, F70 | — |
 | `validate_field_contracts.py` | Бидирекциональная проверка fc_* (спецификация ↔ данные) | F56, F58, F59, F60, F70 | fc_материал_кристалл_структура, fc_материал_оптимальная_структура, fc_изделие_стандарты, fc_материал_предел_текучести, fc_модель_applied_patterns, fc_реализация_покрытие_функций, fc_изделие_масса |
-| `web_verify.py` | Веб-верификация: web_search → заполнение `источник_url`, материала, габаритов | F22, F23, F24, F25 | — |
+| `web_verify.py` | **v9.38 CLI-раннер веб-верификации** (замена one-shot v9.31, заархивирован в `_archive_oneoff/web_verify_one_shot_v9.31.py`): `check` — критерии F22/F23/F25* для cron-шага 5 (exit 0 = issue устарел), `apply` — транзакционное применение web_search-данных (шаг 6), анти-фабрикация-гарды (отказ generic-материалов, шаблонных габаритов, не-URL), `--dry-run` | F22, F23, F25 | — |
 
 ## Stubs (`scripts/_stubs.py`)
 
@@ -69,6 +69,25 @@ v9.36: исправления в `verify_decomposition.yml` — добавлен
 (раньше при >100 issues дедуп-проверка теряла старые ключи).
 
 ## Использование
+
+### Веб-верификация через CLI (v9.38 НОВОЕ)
+
+```bash
+# Шаг 5 cron-протокола: проверка «issue устарел?»
+python3 scripts/web_verify.py check --file "реальные данные/.../_index.md"
+python3 scripts/web_verify.py check --file ... --json   # machine-readable
+
+# Шаг 6: применение результатов реального web_search (транзакционно)
+python3 scripts/web_verify.py apply --file "реальные данные/.../_index.md" \
+    --url https://... --material <id> --dims L,W,H [--mass 0.42] \
+    [--standards "ASTM F136; ISO 5832-3"] [--desc "..."] [--principle "..."] \
+    [--dry-run]
+```
+
+`apply` отклоняет (exit 3): generic-материалы (`GENERIC_MATERIALS` из валидатора),
+шаблонные габариты 100×100×50 / 100×50×20, не-URL источники. Запись через
+`write_atomic`. Критерии `check` синхронизированы с F22/F23/F25 валидатора —
+выход 0 означает «нарушение исправлено, issue можно закрыть как stale».
 
 ### Установка локального pre-commit hook (v9.37 НОВОЕ)
 

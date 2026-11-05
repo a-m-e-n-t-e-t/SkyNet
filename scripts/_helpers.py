@@ -1027,6 +1027,65 @@ def yaml_serialize_value(value) -> str:
     return s
 
 
+def yaml_serialize_block(value, indent: int = 0) -> str:
+    """Блочная YAML-сериализация (multi-line) для генераторов part-файлов.
+
+    v9.37.1 (M1): единая реализация вместо 3 побайтово-одинаковых копий
+    serialize_value в decompose_all_izdeliya.py, generate_decomposition.py,
+    web_verify.py. Поведение идентично оригиналу (проверено byte-equality
+    тестом на вложенных dict/list/строках со спецсимволами).
+
+    Отличие от yaml_serialize_value: та пишет flow-style ({k: v}) для
+    inline-подстановок; эта — block-style с отступами, как в телах файлов.
+    Не менять формат — регенерация 644+ файлов изменит вывод.
+    """
+    pad = "  " * indent
+    pad_child = "  " * (indent + 1)
+    if isinstance(value, str):
+        if any(c in value for c in [":", "#", "\n", "{", "}", "[", "]", ",", "&", "*", "?", "|", "<", ">", "=", "%", "@", "`", '"', "'"]):
+            escaped = value.replace("'", "''")
+            return f"'{escaped}'"
+        return value
+    if isinstance(value, bool):
+        return "true" if value else "false"
+    if isinstance(value, (int, float)):
+        return str(value)
+    if isinstance(value, type(None)):
+        return "null"
+    if isinstance(value, list):
+        if not value:
+            return "[]"
+        items = [f"{pad_child}- {yaml_serialize_block(v, indent + 1)}" for v in value]
+        return "\n" + "\n".join(items)
+    if isinstance(value, dict):
+        if not value:
+            return "{}"
+        lines = []
+        for k, v in value.items():
+            if isinstance(v, dict):
+                if v:
+                    lines.append(f"{pad_child}{k}:")
+                    sub = yaml_serialize_block(v, indent + 2)
+                    for line in sub.split("\n"):
+                        if line:
+                            lines.append(pad_child + "  " + line)
+                else:
+                    lines.append(f"{pad_child}{k}: {{}}")
+            elif isinstance(v, list):
+                if v:
+                    lines.append(f"{pad_child}{k}:")
+                    sub = yaml_serialize_block(v, indent + 1)
+                    for line in sub.split("\n"):
+                        if line:
+                            lines.append(pad_child + line if not line.startswith(" ") else pad_child + "  " + line.lstrip())
+                else:
+                    lines.append(f"{pad_child}{k}: []")
+            else:
+                lines.append(f"{pad_child}{k}: {yaml_serialize_block(v, indent + 1)}")
+        return "\n" + "\n".join(lines)
+    return "null"
+
+
 def write_atomic(path, content: str) -> None:
     """Атомарная запись файла: tmp + os.replace.
 

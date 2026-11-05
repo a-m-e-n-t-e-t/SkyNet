@@ -4151,6 +4151,42 @@
       "meta": {}
     },
     {
+      "src": "F22",
+      "dst": "script:web_verify.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:web_verify.py",
+      "dst": "F22",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F23",
+      "dst": "script:web_verify.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:web_verify.py",
+      "dst": "F23",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F25",
+      "dst": "script:web_verify.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:web_verify.py",
+      "dst": "F25",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "F71",
       "dst": "script:_helpers.py",
       "type": "validated_by",
@@ -4355,30 +4391,6 @@
       "meta": {}
     },
     {
-      "src": "F22",
-      "dst": "script:web_verify.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "F23",
-      "dst": "script:web_verify.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "F24",
-      "dst": "script:web_verify.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "F25",
-      "dst": "script:web_verify.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
       "src": "stub:apply_field_inheritance",
       "dst": "script:_stubs.py",
       "type": "hosted_in",
@@ -4459,7 +4471,7 @@
   ],
   "stats": {
     "nodes": 318,
-    "edges": 424,
+    "edges": 426,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 7,
