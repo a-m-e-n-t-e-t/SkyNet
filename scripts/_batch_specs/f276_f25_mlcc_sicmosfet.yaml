@@ -1,0 +1,46 @@
+# Issue #276 — группа «100×100×50mm, 0.0001kg, ti-6al-4v» (4 файла): 3 части MLCC 0402 + wire bonds SiC MOSFET
+# Данные из web_search 2026-11-05: DOEEET MLCC manufacturing process — Cu-терминация BME, Ni-барьер 1–3 мкм,
+# Sn-покрытие 3–10 мкм; TDK — «base electrodes Cu and Ni-Sn plating»; bond-iq Publication 007 — Al heavy wire
+# Ø125/300/400 мкм для MOSFET; Inseto — large-diameter Al wire 125–500 мкм.
+# Массы = доля_массы × nominal родителя: MLCC 0.001 кг (0.08/0.09/0.09); sic_mosfet 0.003 кг (0.0095).
+files:
+  - file: реальные данные/изделия/вычислительная/kondensatory_keramicheskie/часть_kondensatory_keramicheskie_outer_electrodes/_index.md
+    url: https://www.doeeet.com/content/eee-components/passive-components/mlcc-manufacturing-process
+    source_note: "DOEEET: MLCC manufacturing process — BME-терминация: базовый слой Cu, Ni-барьер 1–3 мкм, Sn-покрытие 3–10 мкм"
+    material: copper
+    dims: 0.25,0.5,0.5
+    mass: 0.00008
+    share: 0.08
+    standards: "IEC 60384-10;AEC-Q200"
+    desc: "Торцевой внешний электрод MLCC класса 0402 (габарит чипа 1.0×0.5×0.5 мм, Murata GRM155-класс): спечённый Cu-слой BME-терминации шириной ~0.25 мм на торце, высота и глубина — по контуру чипа 0.5×0.5 мм. Материал — электролитическая медь C11000 (Cu ≥99.9%); поверх наносятся Ni-барьер и Sn-покрытие (учтены как отдельные части). Масса ≈80 мг (8% номинала родителя 1 г)."
+    principle: "Спечённая Cu-паста на обоих торцах керамического блока собирает токи с внутренних Ni-электродов и служит контактной площадкой терминации; медь выбрана в BME-конструкции за совместимость с Ni-барьером и низкое электрическое сопротивление, а её КТР 17×10⁻⁶ 1/К смягчает рассогласование с керамикой при пайке."
+  - file: реальные данные/изделия/вычислительная/kondensatory_keramicheskie/часть_kondensatory_keramicheskie_termination/_index.md
+    url: https://www.tdk-electronics.tdk.com/en/374108/tech-library/articles/products-technologies/products-technologies/tdk-expands-mlcc-lineup-with-new-state-of-the-art-low-resistance-soft-termination-types/3181946
+    source_note: "TDK Tech Library: стандартная терминация MLCC — базовые электроды Cu с двухслойным Ni-Sn покрытием"
+    material: copper
+    dims: 0.4,0.5,0.02
+    mass: 0.00009
+    share: 0.09
+    standards: "IEC 60384-10;AEC-Q200"
+    desc: "Cu-терминационный слой MLCC 0402: непрерывная плёнка спечённой Cu-пасты толщиной ~20 мкм, покрывающая оба торца на глубину ~0.4 мм и высоту чипа 0.5 мм, — несущий слой, на котором формируются Ni-барьер и Sn-финиш. Материал — электролитическая медь C11000; стандартная терминация по TDK — базовые электроды Cu + двухслойное Ni-Sn покрытие. Масса ≈90 мг (9% номинала родителя 1 г)."
+    principle: "Терминация связывает чередующиеся Ni-внутренние электроды керамического блока в два контактных вывода; медный базовый слой задаёт низкое ESR и механическую податливость, гасящую изгибающие напряжения паяного соединения, а его спекание в восстановительной атмосфере исключает окисление, несовместимое с Ni-барьером."
+  - file: реальные данные/изделия/вычислительная/kondensatory_keramicheskie/часть_kondensatory_keramicheskie_plating/_index.md
+    url: https://www.doeeet.com/content/eee-components/passive-components/mlcc-manufacturing-process
+    source_note: "DOEEET: MLCC manufacturing process — электролитическое Sn-покрытие как внешний слой 3–10 мкм поверх Ni-барьера"
+    material: tin_metal
+    dims: 0.5,0.5,0.008
+    mass: 0.00009
+    share: 0.09
+    standards: "IEC 60384-10;JIS C 5101-11;RoHS 2011/65/EU"
+    desc: "Финишное паяемое покрытие MLCC 0402: гальваническое matte Sn (чистое олово Sn ≥99.9%, Pb-free) толщиной ~8 мкм по рабочей зоне терминации ~0.5×0.5 мм. По DOEEET электролитическое Sn даёт равномерную толщину на кромках и углах; рекомендуемая толщина ближе к 10 мкм (0.4 mil) предотвращает сквозное окисление перпендикулярно ориентированных кристаллов Sn. Масса ≈90 мг (9% номинала родителя 1 г)."
+    principle: "Sn-слой обеспечивает смачивание бессвинцовым припоем SAC305 при SMT-reflow (~245 °C) и защиту Ni-барьера от окисления; Ni между Sn и Cu сдерживает рост интерметаллидов Cu₃Sn/Cu₆Sn₅, сохраняя паяемость при многократных температурных циклах и превышениях по классификации MSL."
+  - file: реальные данные/изделия/вычислительная/sic_mosfet/часть_sic_mosfet_wire_bonds/_index.md
+    url: https://www.bond-iq.de/blog-publications/publication-007
+    source_note: "bond-iq Publication 007: heavy Al wire bonds для MOSFET — материалы Al-H11/Al-CR/AlX, диаметры 125/300/400 мкм; Inseto: large-diameter Al wire 125–500 мкм"
+    material: al_bondwire
+    dims: 5,0.3,0.3
+    mass: 0.00003
+    share: 0.0095
+    standards: "MIL-STD-883 M2011.9;JEDEC JESD22-A104"
+    desc: "Алюминиевые heavy wire bonds силового кристалла SiC MOSFET (Wolfspeed-класс, корпус TO-247): клин-бонды чистого Al (Al ≥99.99%, классы Al-H11/Al-CR) диаметром ~300 мкм (12 mil) от топ-метализации истока/затвора кристалла к выводной рамке, длина петли ~5 мм. Проволока ряда 125–500 мкм для силовой электроники; ресурс на power-cycling сильно зависит от диаметра (Ø125 мкм в 10–15 раз долговечнее Ø300 мкм). Масса ≈30 мг (0.95% номинала родителя 3 г)."
+    principle: "Ультразвуковой клин-бондинг формирует металлическую связь Al-проволоки с алюминиевой топ-метализацией SiC-кристалла без высокотемпературного нагрева — критично для SiC, у которого затворный оксид чувствителен к термоциклированию; петля проволоки компенсирует рассогласование КТР кристалла и рамки, а параллельные бонды распределяют рабочий ток и снижают паразитную индуктивность истоковой цепи."

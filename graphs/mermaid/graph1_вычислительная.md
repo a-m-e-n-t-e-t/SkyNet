@@ -137,7 +137,6 @@ graph LR
     часть_sot_mram_io_interface -->|материал| material_ti_6al_4v
     часть_sic_mosfet_encapsulant -->|материал| material_ti_6al_4v
     часть_sic_mosfet_die -->|материал| material_ti_6al_4v
-    часть_sic_mosfet_wire_bonds -->|материал| material_ti_6al_4v
     часть_sic_mosfet_lead_frame -->|материал| material_ti_6al_4v
     часть_sic_mosfet_gate_terminal -->|материал| material_ti_6al_4v
     часть_sic_mosfet_solder -->|материал| material_splav_sn_pb
@@ -157,9 +156,6 @@ graph LR
     часть_pcm_periphery -->|материал| material_ti_6al_4v
     часть_pcm_io_interface -->|материал| material_ti_6al_4v
     часть_kondensatory_keramicheskie_inner_electrodes -->|материал| material_ti_6al_4v
-    часть_kondensatory_keramicheskie_plating -->|материал| material_ti_6al_4v
-    часть_kondensatory_keramicheskie_termination -->|материал| material_ti_6al_4v
-    часть_kondensatory_keramicheskie_outer_electrodes -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_die -->|материал| material_si
     часть_gr801_noel_v_risc_v_crystal_osc -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_flash -->|материал| material_ti_6al_4v
@@ -196,7 +192,7 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 40 |
+| `Ti-6Al-4V` | 36 |
 | `Si` | 13 |
 | `PTFE` | 6 |
 | `Эпоксид Epon 828 + TETA` | 5 |

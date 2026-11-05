@@ -16104,12 +16104,6 @@
       "meta": {}
     },
     {
-      "src": "часть_sic_mosfet_wire_bonds",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_sic_mosfet_lead_frame",
       "dst": "izdelie_sic_mosfet",
       "type": "child_of",
@@ -16368,21 +16362,9 @@
       "meta": {}
     },
     {
-      "src": "часть_kondensatory_keramicheskie_plating",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_kondensatory_keramicheskie_termination",
       "dst": "izdelie_kondensatory_keramicheskie",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_kondensatory_keramicheskie_termination",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16395,12 +16377,6 @@
       "src": "часть_kondensatory_keramicheskie_outer_electrodes",
       "dst": "izdelie_kondensatory_keramicheskie",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_kondensatory_keramicheskie_outer_electrodes",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -26569,14 +26545,6 @@
     },
     {
       "src": "material_ti-6al-4v",
-      "dst": "часть_sic_mosfet_wire_bonds",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
       "dst": "часть_sic_mosfet_lead_frame",
       "type": "used_in",
       "meta": {
@@ -26722,30 +26690,6 @@
     {
       "src": "material_ti-6al-4v",
       "dst": "часть_kondensatory_keramicheskie_inner_electrodes",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_kondensatory_keramicheskie_plating",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_kondensatory_keramicheskie_termination",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_kondensatory_keramicheskie_outer_electrodes",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -28085,6 +28029,7 @@
       "standart_IEC 60095-2",
       "standart_IEC 60243-1",
       "standart_IEC 60317 (обмоточный провод)",
+      "standart_IEC 60384-10",
       "standart_IEC 60404-8-1",
       "standart_IEC 60498",
       "standart_IEC 60529",
@@ -28161,6 +28106,7 @@
       "standart_JEDEC JESD22-A104",
       "standart_JEDEC JESD47",
       "standart_JEDEC MS-001 (DIP)",
+      "standart_JIS C 5101-11",
       "standart_JIS D5301",
       "standart_Jülich Kuriakose 2024",
       "standart_MIL-DTL-11821",
@@ -28177,6 +28123,7 @@
       "standart_MIL-STD-810",
       "standart_MIL-STD-810G",
       "standart_MIL-STD-810H",
+      "standart_MIL-STD-883 M2011.9",
       "standart_MIL-STD-883 TM1019",
       "standart_MSFC-STD-5003",
       "standart_Microgen Engine Corporation Specs",
@@ -28285,6 +28232,7 @@
     ],
     "uses_material": [
       "material_aerogel",
+      "material_al_bondwire",
       "material_alumina",
       "material_aluminum",
       "material_aluminum_1100",
@@ -28377,6 +28325,7 @@
       "material_tebabf4_acn",
       "material_tedlar_pet",
       "material_ti.md",
+      "material_tin_metal",
       "material_tio2_memristor",
       "material_titanium_alloy",
       "material_tungsten",
@@ -28391,12 +28340,12 @@
   },
   "stats": {
     "nodes": 937,
-    "edges": 3152,
+    "edges": 3144,
     "dangling": {
-      "complies_with": 232,
+      "complies_with": 235,
       "has_part": 1,
       "researched_by": 43,
-      "uses_material": 103
+      "uses_material": 105
     },
     "by_type": {
       "chast": 628,
