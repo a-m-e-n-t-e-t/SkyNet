@@ -128,7 +128,7 @@ graph LR
     F24 --> script_validate_decomposition_py
 ```
 
-_Показаны топ-20 метрик по числу скриптов-валидаторов (из 67 метрик)._
+_Показаны топ-20 метрик по числу скриптов-валидаторов (из 68 метрик)._
 
 | Метрика | Скрипты-валидаторы | Контракты |
 |---|---|---|
@@ -147,6 +147,7 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F25` | pre-commit-hook.py, real_decomposition.py, validate_decomposition.py, web_verify.py | — |
 | `F26` | pre-commit-hook.py, validate_decomposition.py | — |
 | `F27` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
+| `F28` | pre-commit-hook.py, validate_decomposition.py | — |
 | `F3` | classify_subsystem.py, pre-commit-hook.py | fc_изделие_подсистема, fc_модель_тип |
 | `F36` | generate_graphs.py, pre-commit-hook.py | — |
 | `F37` | generate_graphs.py, pipeline.py | — |

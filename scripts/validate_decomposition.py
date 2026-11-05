@@ -1768,7 +1768,7 @@ def check_F26(izdeliya: dict[str, dict]) -> dict:
 
 
 # ============================================================================
-# F27: НЕЗАПОЛНЕННЫЕ МАТЕРИАЛЫ-ЗАГЛУШКИ (v9.40)
+# F27: НЕЗАПОЛНЕННЫЕ МАТЕРИАЛЫ-ЗАГЛУШКИ (v9.40; v9.41 — добавлен критерий e)
 # ============================================================================
 
 # Ключевые свойства материала: если ВСЕ null — файл-заглушка без данных.
@@ -1809,6 +1809,12 @@ def check_F27(izdeliya: dict[str, dict]) -> dict:
       b. исследовательская_группа = 'требует_верификации' (маркер генератора)
       c. источник=web_search, но источник_url пуст (аналог F22 для материалов)
       d. YAML frontmatter не читается (обрезан) — свойства недоступны
+      e. вариант_структуры пустой/null (v9.41 — preventive: web_search должен
+         зафиксировать конкретную форму: mono/poly/amorphous/...). Для полиморфных
+         кристаллов (Si, SiO₂, Al₂O₃, TiO₂, C, BaTiO₃, YBCO, Si₃N₄, ZrO₂, ...)
+         generic 'single_phase' скрывает реальную кристаллографическую форму,
+         от которой зависят свойства — это критично для AI-генерации вариантов
+         изделий (могут быть скомбинированы несовместимые свойства).
 
     Формат violation: '<material_id>: ...' — совместим с дефолтной веткой
     normalizeViolationKey (dedup F27:<file_id>) и титульником
@@ -1847,7 +1853,8 @@ def check_F27(izdeliya: dict[str, dict]) -> dict:
         basic = data.get('основные') or {}
         if not isinstance(basic, dict):
             basic = {}
-        if all(basic.get(k) in (None, '', 'null', 'None') for k in MATERIAL_CORE_FIELDS):
+        all_null = all(basic.get(k) in (None, '', 'null', 'None') for k in MATERIAL_CORE_FIELDS)
+        if all_null:
             problems.append("все ключевые свойства null (плотность/теплопроводность/плавление)")
 
         # (b) маркер генератора
@@ -1860,6 +1867,19 @@ def check_F27(izdeliya: dict[str, dict]) -> dict:
         if src == 'web_search' and (not url or str(url).strip() in ('', 'null', 'None')):
             problems.append("источник=web_search но источник_url пустой")
 
+        # (e) v9.41: вариант_структуры не указан (preventive).
+        # Проверяем только когда свойства НЕ все null (иначе (a) уже покрывает),
+        # чтобы не дублировать нарушение на полностью пустых заглушках.
+        if not all_null:
+            vs = data.get('вариант_структуры')
+            if vs is None or str(vs).strip() in ('', 'null', 'None'):
+                problems.append(
+                    "вариант_структуры не указан — web_search должен зафиксировать "
+                    "конкретную форму (mono/poly/amorphous/...); для полиморфных "
+                    "кристаллов (Si, SiO₂, Al₂O₃, TiO₂, C, BaTiO₃, YBCO, Si₃N₄, "
+                    "ZrO₂, ...) generic 'single_phase' скрывает реальную форму "
+                    "(критично для AI-вариантов изделий)")
+
         if problems:
             violations.append(f"{mid}: незаполненный материал-заглушка ({'; '.join(problems)})")
         else:
@@ -1868,7 +1888,93 @@ def check_F27(izdeliya: dict[str, dict]) -> dict:
     ratio = valid / max(1, total)
     return {
         'metric': 'F27',
-        'description': 'Незаполненные материалы-заглушки, используемые изделиями (пустые свойства/URL)',
+        'description': 'Незаполненные материалы-заглушки, используемые изделиями (пустые свойства/URL/вариант_структуры)',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# F28: АЛЬТЕРНАТИВНЫЕ ФОРМЫ МАТЕРИАЛА (v9.42)
+# Идея: при вебпоиске материала искать ВСЕ его формы (монокристалл/
+# поликристалл/аморфный/полиморфы; для аморфных систем — вариант_составов:
+# наполненный/ненаполненный/гибкий), фиксировать их в сравнение_структур /
+# варианты_по_применению. Это даёт AI-перепроектированию ('ии вариантов
+# изделий') легальный выбор формы, а не единственную 'оптимальную'.
+
+def check_F28(izdeliya: dict[str, dict]) -> dict:
+    """F28: Материалы без перечня альтернативных форм/вариантов.
+
+    WARNING-уровень (не блокирующий). Скоуп — только материалы, используемые
+    изделиями (материалы_частей), как в F27: неиспользуемые не флудят очередь.
+
+    Критерий нарушения: у материала заполнены свойства (не заглушка по F27),
+    но ОДНОВРЕМЕННО:
+      - сравнение_структур пусто (нет альтернативных форм: mono/poly/amorphous/
+        полиморфы SiC 3C/4H/6H, α/β кварц, ...), И
+      - варианты_по_применению пусто (нет вариантов составов/конфигураций:
+        наполненный/ненаполненный, гибкий/жёсткий, ...), И
+      - структурные_формы_альтернативы пусто (v9.41-поле чек-листа F27).
+
+    Для аморфных материалов (термореактивы, стёкла) ось кристалличности
+    вырождена — достаточно вариантов_по_применению; для полиморфных —
+    достаточно сравнение_структур. Хоть одна ось должна быть заполнена.
+
+    Формат violation: '<material_id>: ...' — совместим с normalizeViolationKey
+    (dedup F28:<file_id>) и титульником '[F28] Verify: <file_id>'.
+    """
+    violations = []
+    total = 0
+    valid = 0
+
+    referenced = _collect_referenced_materials(izdeliya)
+    mat_dir = SKYNET_REPO / "реальные данные" / "материалы"
+
+    for f in sorted(mat_dir.glob("*.md")):
+        if f.name.startswith('_'):
+            continue
+        data, _, _ = read_yaml_frontmatter(f)
+        if not data:
+            continue  # обрезанный YAML уже ловит F27
+
+        mid = str(data.get('id', '')).strip() or ('material_' + f.stem)
+        stem = mid.replace('material_', '', 1)
+        if mid not in referenced and stem not in referenced:
+            continue  # не используется изделиями — вне очереди F28
+
+        # Пропускаем заглушки — их чинит F27 (там же заполнят формы по чек-листу)
+        basic = data.get('основные') or {}
+        if not isinstance(basic, dict):
+            basic = {}
+        all_null = all(basic.get(k) in (None, '', 'null', 'None') for k in MATERIAL_CORE_FIELDS)
+        if all_null:
+            continue
+
+        total += 1
+        valid += 1
+
+        sr = data.get('сравнение_структур')
+        vp = data.get('варианты_по_применению')
+        sfa = data.get('структурные_формы_альтернативы')  # v9.41 checklist-поле
+        sr_filled = isinstance(sr, dict) and len(sr) > 0
+        vp_filled = isinstance(vp, dict) and len(vp) > 0
+        sfa_filled = (isinstance(sfa, list) and len(sfa) > 0) or (isinstance(sfa, dict) and len(sfa) > 0)
+
+        if not (sr_filled or vp_filled or sfa_filled):
+            valid -= 1
+            violations.append(
+                f"{mid}: не перечислены альтернативные формы/варианты "
+                f"(сравнение_структур и варианты_по_применению пусты) — "
+                f"вебпоиск должен покрыть все формы (mono/poly/amorphous/полиморфы; "
+                f"для аморфных — варианты составов), иначе AI-варианты изделий "
+                f"скованы единственной 'оптимальной' формой")
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F28',
+        'description': 'Материалы без перечня альтернативных форм/вариантов (для AI-вариантов изделий)',
         'total': total,
         'valid': valid,
         'ratio': round(ratio, 4),
@@ -2045,11 +2151,23 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
-    # F27 — незаполненные материалы-заглушки (v9.40)
+    # F27 — незаполненные материалы-заглушки (v9.40; v9.41 — критерий e: вариант_структуры)
     print()
     print("=== F27: Незаполненные материалы (используемые изделиями) ===")
     r = check_F27(izdeliya)
     results['F27'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
+    # F28 — альтернативные формы материалов (v9.42; идея: вебпоиск всех форм
+    # mono/poly/amorphous/составов — выбор формы для AI-вариантов изделий)
+    print()
+    print("=== F28: Альтернативные формы материалов (используемые изделиями) ===")
+    r = check_F28(izdeliya)
+    results['F28'] = r
     print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
     if r['violations']:
         print(f"  violations: {len(r['violations'])} (первые 3):")
@@ -2105,7 +2223,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F22', 'F23', 'F24', 'F25', 'F26', 'F27')
+            for m in ('F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:

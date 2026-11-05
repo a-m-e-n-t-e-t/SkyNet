@@ -26,8 +26,9 @@ function normalizeViolationKey(metric, violation) {
 }
 
 // Legacy-fallback: метрика для старых issues без [F2x] в заголовке.
+// v9.42: диапазон расширен до F28 (альтернативные формы материалов).
 function legacyMetricFromTitle(title, violation) {
-  const metricMatch = (title || '').match(/\[(F2[2-7])\]/);
+  const metricMatch = (title || '').match(/\[(F2[2-8])\]/);
   return metricMatch ? metricMatch[1] : (violation.startsWith('Родитель') ? 'F26' : 'F25');
 }
 

@@ -102,13 +102,18 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml jsonschema
 
-      - name: Run validate_decomposition.py — get F22-F27 violations
+      - name: Run validate_decomposition.py — get F22-F28 violations
         id: violations
         run: |
           set +e
           # v9.34: полный machine-readable список violations через --json-out.
           # v9.35: добавлена метрика F26 (внутри-родительские дубликаты).
           # v9.40: добавлена метрика F27 (незаполненные материалы, используемые изделиями).
+          # v9.42: добавлена метрика F28 (альтернативные формы материалов для AI-вариантов изделий).
+          # v9.41: расширение F27 — критерий (e): вариант_структуры должен быть
+          #        указан (preventive); checklist уточнён — web_search ищет ВСЕ
+          #        структурные формы (mono/poly/amorphous/...), полиморфные кристаллы
+          #        требуют конкретной фазы; добавлено поле структурные_формы_альтернативы.
           # Человеческий лог (validate_output.log) печатает только первые 3 violations
           # на метрику — его парсинг НЕ использовать, он обрезает ~900 до 9.
           python scripts/validate_decomposition.py --json-out violations.json 2>&1 | tee validate_output.log
@@ -134,7 +139,7 @@ jobs:
           d = json.load(open('violations.json'))
           total = sum(len(v) for v in d.values())
           print(f"total_violations={total}")
-          for M in ('F22','F23','F24','F25','F26','F27'):
+          for M in ('F22','F23','F24','F25','F26','F27','F28'):
               print(f"{M}_count={len(d.get(M, []))}")
           PYEOF
           # info-лог в stdout шага (одинарные кавычки — без bash-интерполяции):
@@ -142,7 +147,7 @@ jobs:
           import json
           d = json.load(open('violations.json'))
           print(f"[info] Total violations: {sum(len(v) for v in d.values())}")
-          for M in ('F22','F23','F24','F25','F26','F27'):
+          for M in ('F22','F23','F24','F25','F26','F27','F28'):
               print(f"[info]   {M}: {len(d.get(M, []))} violations")
           PYEOF
 
@@ -257,11 +262,32 @@ jobs:
                 
                 // Build body — include hidden dedup_key marker for future runs
                 // v9.40: F27 (материалы) — свой чек-лист: свойства материала вместо габаритов части
-                const isMaterial = metric === 'F27';
-                const checklist = isMaterial
+                // v9.41: добавлен раздел про структурные формы (mono/poly/amorphous/...) —
+                //        web_search должен искать ВСЕ формы материала, выбрать конкретную
+                //        под применение и зафиксировать в вариант_структуры; альтернативы
+                //        (для AI-генерации вариантов изделий) — в структурные_формы_альтернативы.
+                // v9.42: F28 — отдельный чек-лист перечня форм (полиморфы/составы) в
+                //        схемных полях сравнение_структур / варианты_по_применению.
+                const isMaterial = metric === 'F27' || metric === 'F28';
+                const isForms = metric === 'F28';
+                const checklist = isForms
+                  ? [
+                      `   - перечислить ВСЕ распространённые формы материала: монокристалл | поликристалл | аморфный | полиморфы (SiC: 3C/4H/6H; SiO₂: α/β-кварц/кристобалит; C: графит/алмаз; TiO₂: рутил/анатаз/брукит; ...)`,
+                      `   - для аморфных материалов (термореактивы, стёкла) ось кристалличности вырождена — перечислить варианты составов/конфигураций: наполненный/ненаполненный, гибкий/жёсткий, разные отвердители/наполнители`,
+                      `   - по каждой форме указать ключевые свойства (запрещённая зона, теплопроводность, плотность, Tg/CTE — что применимо)`,
+                      `   - записать в схемные поля: сравнение_структур (полиморфы) и/или варианты_по_применению (составы) — формат: ключ → {описание, свойства, применение}`,
+                      `   - допустимо альтернативное поле структурные_формы_альтернативы (массив, как в чек-листе F27 v9.41)`,
+                      `   - источник_url по каждой форме/варианту (или общий источник с обоснованием)`,
+                    ]
+                  : isMaterial
                   ? [
                       `   - свойства: плотность_kg_m3, теплопроводность_W_mK, температура_плавления_C (или макс_рабочая_температура_C) из datasheet/справочника`,
-                      `   - химический_состав, класс, стандарты, вариант_структуры`,
+                      `   - химический_состав, класс, стандарты`,
+                      `   - вариант_структуры: КОНКРЕТНАЯ форма — web_search ищет ВСЕ формы материала:`,
+                      `     · monocrystalline | polycrystalline | amorphous | nanocrystalline | thin_film | layered | fiber_reinforced | composite | porous_foam | ...`,
+                      `     · для полиморфных кристаллов (Si, SiO₂, Al₂O₃, TiO₂, C, BaTiO₃, YBCO, Si₃N₄-α/β, ZrO₂-cubic/tetragonal/monoclinic, ...) — конкретная фаза (α-quartz, fused_silica_amorphous, rutile, graphite, α-Al₂O₃, γ-Al₂O₃, orthorhombic_YBCO, ...); НЕ generic 'single_phase'`,
+                      `     · для сплавов/полимеров/стёкол 'single_phase' допустим (металлургическая/морфологическая корректность)`,
+                      `   - альтернативные формы — сразу в сравнение_структур/варианты_по_применению (см. чек-лист F28; заодно закроет F28 для этого файла)`,
                       `   - источник_url (URL веб-источника) + источник_дата`,
                       `   - снять маркер исследовательская_группа='требует_верификации'`,
                       `   - заполнить пустые остальные поля основные/дополнительные (null → реальные значения или обоснованный null)`,
@@ -272,9 +298,16 @@ jobs:
                       `   - источник_url (URL веб-источника)`,
                       `   - описание (не шаблонное)`,
                     ];
-                const criteriaList = isMaterial
+                const criteriaList = isForms
+                  ? [
+                      `- F28: сравнение_структур (полиморфы: свойства по каждой форме) ИЛИ варианты_по_применению (составы: свойства + применение) ИЛИ структурные_формы_альтернативы заполнено`,
+                      `- F28: формы/варианты из реального вебпоиска, свойства по каждой форме указаны`,
+                      `- F22: источник_url заполнен (если источник=web_search)`,
+                    ]
+                  : isMaterial
                   ? [
                       `- F27: плотность_kg_m3 и теплопроводность_W_mK заполнены реальными значениями из источника`,
+                      `- F27: вариант_структуры заполнен конкретной формой (для полиморфных кристаллов — НЕ 'single_phase' generic; для сплавов/полимеров 'single_phase' допустим)`,
                       `- F27: маркер 'требует_верификации' снят (исследовательская_группа заполнена или null)`,
                       `- F22: источник_url заполнен конкретным URL (если источник=web_search)`,
                     ]
@@ -337,7 +370,7 @@ jobs:
           script: |
             const fs = require('fs');
             const { normalizeViolationKey, legacyMetricFromTitle } = require('./scripts/_dedup_keys.js');
-            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[], F27:[]};
+            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[], F27:[], F28:[]};
             try {
               violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
             } catch (e) {
@@ -460,10 +493,11 @@ jobs:
           echo "| F25 | ${{ steps.violations.outputs.F25_count }} | Data uniqueness |" >> $GITHUB_STEP_SUMMARY
           echo "| F26 | ${{ steps.violations.outputs.F26_count }} | Within-parent duplicates |" >> $GITHUB_STEP_SUMMARY
           echo "| F27 | ${{ steps.violations.outputs.F27_count }} | Unfilled materials (used by izdeliya) |" >> $GITHUB_STEP_SUMMARY
+          echo "| F28 | ${{ steps.violations.outputs.F28_count }} | Materials without alternative forms/variants (for AI product variants) |" >> $GITHUB_STEP_SUMMARY
           echo "| **Total** | **${{ steps.violations.outputs.total_violations }}** | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Violation source:** ${{ steps.violations.outputs.partial == '1' && 'TRUNCATED log fallback (auto-close DISABLED)' || 'complete --json-out' }}" >> $GITHUB_STEP_SUMMARY
           echo "**Anti-parallel:** concurrency group \`verify-decomposition-\${{ github.ref }}\` serializes runs." >> $GITHUB_STEP_SUMMARY
           echo "**Anti-duplicate:** dedup checks ALL issues (open+closed) via stable \`dedup_key\`." >> $GITHUB_STEP_SUMMARY
-          echo "**Issue cap:** max \`MAX_NEW_ISSUES\` per run (round-robin across F22–F27)." >> $GITHUB_STEP_SUMMARY
+          echo "**Issue cap:** max \`MAX_NEW_ISSUES\` per run (round-robin across F22–F28)." >> $GITHUB_STEP_SUMMARY
           echo "**Auto-close stale:** open verify-task issues whose dedup_key is no longer in current violations are auto-closed (skips \`in-progress\`; runs only on complete violation list)." >> $GITHUB_STEP_SUMMARY

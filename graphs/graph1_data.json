@@ -5547,13 +5547,6 @@
       "subsystem": ""
     },
     {
-      "id": "material_epoksid_epon_828_+_teta",
-      "type": "material",
-      "label": "Эпоксид Epon 828 + TETA",
-      "path": "реальные данные/материалы/epoksid_epon_828_+_teta.md",
-      "subsystem": ""
-    },
-    {
       "id": "material_epon_828",
       "type": "material",
       "label": "Epon 828",
@@ -12785,12 +12778,6 @@
       "meta": {}
     },
     {
-      "src": "часть_4h-sic_betavoltaik_encapsulant",
-      "dst": "material_epoksid_epon_828_+_teta",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_4h-sic_betavoltaik_case",
       "dst": "izdelie_4h-sic_betavoltaik",
       "type": "child_of",
@@ -13028,12 +13015,6 @@
       "src": "часть_ni-63_betavoltaik_4h-sic_encapsulant",
       "dst": "izdelie_ni-63_betavoltaik_4h-sic",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_encapsulant",
-      "dst": "material_epoksid_epon_828_+_teta",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -13478,12 +13459,6 @@
       "src": "часть_betavoltaiki_encapsulant",
       "dst": "izdelie_betavoltaiki",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_betavoltaiki_encapsulant",
-      "dst": "material_epoksid_epon_828_+_teta",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15755,12 +15730,6 @@
       "meta": {}
     },
     {
-      "src": "часть_halve_encapsulant",
-      "dst": "material_epoksid_epon_828_+_teta",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_halve_substrate",
       "dst": "izdelie_halve",
       "type": "child_of",
@@ -16079,12 +16048,6 @@
       "meta": {}
     },
     {
-      "src": "часть_brainchip_akida_2_encapsulant",
-      "dst": "material_epoksid_epon_828_+_teta",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_brainchip_akida_2_die",
       "dst": "izdelie_brainchip_akida_2",
       "type": "child_of",
@@ -16148,12 +16111,6 @@
       "src": "часть_intel_loihi_2_encapsulant",
       "dst": "izdelie_intel_loihi_2",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_intel_loihi_2_encapsulant",
-      "dst": "material_epoksid_epon_828_+_teta",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16289,12 +16246,6 @@
       "meta": {}
     },
     {
-      "src": "часть_gr801_noel-v_risc-v_substrate",
-      "dst": "material_epoksid_epon_828_+_teta",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_gr801_noel-v_risc-v_pcb",
       "dst": "izdelie_gr801_noel-v_risc-v",
       "type": "child_of",
@@ -16352,12 +16303,6 @@
       "src": "часть_gr801_noel-v_risc-v_package",
       "dst": "izdelie_gr801_noel-v_risc-v",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_gr801_noel-v_risc-v_package",
-      "dst": "material_epoksid_epon_828_+_teta",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16433,12 +16378,6 @@
       "meta": {}
     },
     {
-      "src": "часть_nvidia_jetson_orin_nano_pcb",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_nvidia_jetson_orin_nano_enclosure",
       "dst": "izdelie_nvidia_jetson_orin_nano",
       "type": "child_of",
@@ -16475,21 +16414,9 @@
       "meta": {}
     },
     {
-      "src": "часть_nvidia_jetson_orin_nano_pmic",
-      "dst": "material_epoksid_epon_828_+_teta",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_nvidia_jetson_orin_nano_storage",
       "dst": "izdelie_nvidia_jetson_orin_nano",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_nvidia_jetson_orin_nano_storage",
-      "dst": "material_epoksid_epon_828_+_teta",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16508,12 +16435,6 @@
       "src": "часть_nvidia_jetson_orin_nano_memory",
       "dst": "izdelie_nvidia_jetson_orin_nano",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_nvidia_jetson_orin_nano_memory",
-      "dst": "material_epoksid_epon_828_+_teta",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -23593,14 +23514,6 @@
       }
     },
     {
-      "src": "material_epoksid_epon_828_+_teta",
-      "dst": "часть_4h-sic_betavoltaik_encapsulant",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_ti-6al-4v",
       "dst": "часть_4h-sic_betavoltaik_case",
       "type": "used_in",
@@ -23723,14 +23636,6 @@
     {
       "src": "material_monokristallicheskogo_sic",
       "dst": "часть_ni-63_betavoltaik_4h-sic_substrate",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_epoksid_epon_828_+_teta",
-      "dst": "часть_ni-63_betavoltaik_4h-sic_encapsulant",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -23987,14 +23892,6 @@
     {
       "src": "material_al_6061-t6",
       "dst": "часть_tverdotelnye_akkumulyatory_case",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_epoksid_epon_828_+_teta",
-      "dst": "часть_betavoltaiki_encapsulant",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -26073,14 +25970,6 @@
       }
     },
     {
-      "src": "material_epoksid_epon_828_+_teta",
-      "dst": "часть_halve_encapsulant",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_ptfe",
       "dst": "часть_halve_substrate",
       "type": "used_in",
@@ -26241,14 +26130,6 @@
       }
     },
     {
-      "src": "material_epoksid_epon_828_+_teta",
-      "dst": "часть_brainchip_akida_2_encapsulant",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_si",
       "dst": "часть_brainchip_akida_2_die",
       "type": "used_in",
@@ -26275,14 +26156,6 @@
     {
       "src": "material_si",
       "dst": "часть_intel_loihi_2_die",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_epoksid_epon_828_+_teta",
-      "dst": "часть_intel_loihi_2_encapsulant",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -26345,14 +26218,6 @@
       }
     },
     {
-      "src": "material_epoksid_epon_828_+_teta",
-      "dst": "часть_gr801_noel-v_risc-v_substrate",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_poliimid",
       "dst": "часть_gr801_noel-v_risc-v_pcb",
       "type": "used_in",
@@ -26379,14 +26244,6 @@
     {
       "src": "material_silikon_40_50_shore_a",
       "dst": "часть_gr801_noel-v_risc-v_thermal_pad",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_epoksid_epon_828_+_teta",
-      "dst": "часть_gr801_noel-v_risc-v_package",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -26433,14 +26290,6 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_nvidia_jetson_orin_nano_pcb",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_al_6061-t6",
       "dst": "часть_nvidia_jetson_orin_nano_enclosure",
       "type": "used_in",
@@ -26457,32 +26306,8 @@
       }
     },
     {
-      "src": "material_epoksid_epon_828_+_teta",
-      "dst": "часть_nvidia_jetson_orin_nano_pmic",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_epoksid_epon_828_+_teta",
-      "dst": "часть_nvidia_jetson_orin_nano_storage",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_ti-6al-4v",
       "dst": "часть_nvidia_jetson_orin_nano_heat_sink",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_epoksid_epon_828_+_teta",
-      "dst": "часть_nvidia_jetson_orin_nano_memory",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -27733,6 +27558,7 @@
       "standart_MIL-STD-810G",
       "standart_MIL-STD-810H",
       "standart_MIL-STD-883 M2011.9",
+      "standart_MIL-STD-883 Method 1010 (термоциклирование)",
       "standart_MIL-STD-883 TM1019",
       "standart_MSFC-STD-5003",
       "standart_Microgen Engine Corporation Specs",
@@ -27809,6 +27635,7 @@
       "group_boyd_corp",
       "group_brigham_young_university",
       "group_ceres_power",
+      "group_city_labs",
       "group_doe_arpa_e",
       "group_exide",
       "group_ferrotec",
@@ -27874,6 +27701,7 @@
       "material_crofer_22_apu",
       "material_cybernetic_alloy",
       "material_electrical_steel",
+      "material_epoksid_epon_828_+_teta",
       "material_epoxy",
       "material_epoxy_molding",
       "material_eva",
@@ -27959,19 +27787,19 @@
     ]
   },
   "stats": {
-    "nodes": 942,
-    "edges": 3082,
+    "nodes": 941,
+    "edges": 3058,
     "dangling": {
-      "complies_with": 247,
+      "complies_with": 248,
       "has_part": 1,
-      "researched_by": 43,
-      "uses_material": 112
+      "researched_by": 44,
+      "uses_material": 113
     },
     "by_type": {
       "chast": 628,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 131,
-      "material": 165,
+      "material": 164,
       "standart": 8
     }
   }
