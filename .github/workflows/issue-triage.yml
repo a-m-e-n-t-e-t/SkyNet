@@ -3,7 +3,9 @@
 # Соответствует: §9.2 разбор типа запроса (command_create), §9.0 AI-45 (немедленный старт)
 #
 # Триггеры:
-#   - issues: [opened, edited, labeled]
+#   - issues: [opened, edited, labeled] c фильтром labels [todo, model-request]
+#     (v9.36.1: без фильтра КАЖДЫЙ issue-иверн — включая ~50 verify-task/telemetry
+#     issues в день — порождал запуск воркфлоу, который тут же скипался job-if'ом)
 #   - workflow_dispatch
 #
 # Что делает:
@@ -18,6 +20,8 @@ name: Issue Triage — auto-parse model requests
 on:
   issues:
     types: [opened, edited, labeled]
+    # v9.36.1: фильтр меток — не порождаем пустые прогоны на посторонних issues
+    labels: [todo, model-request]
   workflow_dispatch:
     inputs:
       issue_number:
@@ -28,12 +32,17 @@ on:
 permissions:
   issues: write
   contents: write
-  pull-requests: write
   models: read  # v9.21: для GitHub Models API
 
+concurrency:
+  # v9.36.1: два одновременных triage-прогона гонялись за git push
+  # (non-fast-forward) и дважды создавали файл модели
+  group: triage-${{ github.event.issue.number || github.event.inputs.issue_number }}
+  cancel-in-progress: false
+
 env:
-  GITHUB_USER: a-m-e-n-t-e-t
-  SKYNET_REPO: a-m-e-n-t-e-t/SkyNet
+  # v9.36.1: было захардкожено a-m-e-n-t-e-t/SkyNet — ломалось при форке/переименовании
+  SKYNET_REPO: ${{ github.repository }}
 
 jobs:
   triage:
@@ -69,9 +78,12 @@ jobs:
 
       - name: Determine issue number
         id: issue
+        env:
+          ISSUE_INPUT: ${{ github.event.inputs.issue_number }}
         run: |
+          # v9.36.1: ввод через env, а не прямую интерполяцию в shell
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "number=${{ github.event.inputs.issue_number }}" >> $GITHUB_OUTPUT
+            echo "number=${ISSUE_INPUT}" >> $GITHUB_OUTPUT
           else
             echo "number=${{ github.event.issue.number }}" >> $GITHUB_OUTPUT
           fi
@@ -148,6 +160,16 @@ jobs:
               if content.startswith("```"):
                   content = content.split("\n", 1)[1].rsplit("```", 1)[0]
               parsed = json.loads(content)
+              # v9.36.1 САНТИЗАЦИЯ LLM-ВЫВОДА (prompt-injection → RCE):
+              # раньше сырое model_name шло в путь файла и в shell/имя метки.
+              # Разрешаем только [A-Za-z0-9_-], максимум 64 символа.
+              import re as _re
+              def _safe(s, fallback):
+                  s = _re.sub(r"[^A-Za-z0-9_\-]+", "_", str(s)).strip("_")[:64]
+                  return s or fallback
+              parsed["model_name"] = _safe(parsed.get("model_name", "unknown"), "unknown")
+              parsed["canon_source"] = str(parsed.get("canon_source", "unknown"))[:120].replace("\n", " ").replace("\r", " ")
+              parsed["status"] = _safe(parsed.get("status", "canon"), "canon")
               print(f"::notice::GitHub Models parsed: {parsed.get('model_name', 'unknown')}")
               with open("parsed.json", "w") as f:
                   json.dump(parsed, f, ensure_ascii=False, indent=2)
@@ -170,6 +192,7 @@ jobs:
           PYEOF
 
       - name: Create model file (фантастические данные/<model>.md)
+        id: create
         if: steps.parse.outputs.model_name != 'unknown'
         env:
           MODEL_NAME: ${{ steps.parse.outputs.model_name }}
@@ -187,10 +210,10 @@ jobs:
           else
             cat > "$FILE" << YAMLEOF
           ---
-          id: ${MODEL_NAME}
-          название: ${MODEL_NAME}
-          канон_источник: ${CANON_SOURCE}
-          статус_реальности: ${STATUS}
+          id: "${MODEL_NAME}"
+          название: "${MODEL_NAME}"
+          канон_источник: "${CANON_SOURCE}"
+          статус_реальности: "${STATUS}"
           источники:
             - тип: github_issue
               url: ${{ github.server_url }}/${{ env.SKYNET_REPO }}/issues/${ISSUE_NUMBER}
@@ -283,8 +306,8 @@ jobs:
           
           echo "" >> /tmp/comment.md
           echo "### Next steps" >> /tmp/comment.md
-          echo "- \`batch-process.yml\` will pick this up on next run (every 6 hours)" >> /tmp/comment.md
-          echo "- Run \`gh workflow run batch-process.yml\` to trigger now" >> /tmp/comment.md
+          echo "- Валидация: workflow \`pre-commit-checks.yml\` запустится на следующем push" >> /tmp/comment.md
+          echo "- Декомпозиция задач: workflow verify_decomposition.yml (каждые 3 ч + на push)" >> /tmp/comment.md
           echo "- Track progress: GitHub Project 'SkyNet Models Pipeline'" >> /tmp/comment.md
           
           gh issue comment "$ISSUE_NUMBER" --body-file /tmp/comment.md --repo "${{ env.SKYNET_REPO }}"

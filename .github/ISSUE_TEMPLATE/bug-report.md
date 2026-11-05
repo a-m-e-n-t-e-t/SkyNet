@@ -40,7 +40,7 @@ assignees: ["a-m-e-n-t-e-t"]
 
 - **Версия промпта:** <!-- v9.21 -->
 - **Запуск:** <!-- sandbox / GitHub Actions / локально -->
-- **Workflow (если применимо):** <!-- phase0-init.yml / batch-process.yml / etc -->
+- **Workflow (если применимо):** <!-- verify_decomposition.yml / telemetry-update.yml / pre-commit-checks.yml / etc -->
 - **Run ID:** <!-- если GitHub Actions -->
 
 ## Затронутые метрики

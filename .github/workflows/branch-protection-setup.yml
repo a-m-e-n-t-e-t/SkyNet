@@ -34,8 +34,10 @@ on:
         default: '0'
         type: string
   schedule:
-    # Daily at 02:00 UTC (08:00 Asia/Omsk) — drift detection
-    - cron: '0 2 * * *'
+    # v9.36.1: ежедневный drift-прогон удалён — на этом плане Branch Protection API
+    # отвечает 403 (нужен GitHub Pro/публичный репо), прогон всегда был no-op.
+    # Drift-проверка остаётся доступной вручную: gh workflow run branch-protection-setup.yml
+    # - cron: '0 2 * * *'
   push:
     # v9.31 fix: запускаем ТОЛЬКО при изменении самого файла workflow.
     # Без этого GitHub создаёт empty run с conclusion=failure на каждый push
@@ -54,8 +56,14 @@ permissions:
   administration: write  # required for branch protection
 
 env:
-  SKYNET_REPO: a-m-e-n-t-e-t/SkyNet
-  REQUIRED_CHECKS: '["Pre-commit Checks (49 F-метрик)", "F47 — GitHub Sync Verification", "build", "deploy"]'
+  SKYNET_REPO: ${{ github.repository }}
+  # v9.36.1: убраны фантомные "build"/"deploy" (таких проверок в репо нет) и
+  # исправлены имена — требуются JOB display names, а не имена workflow:
+  #   job pre-commit-checks.yml  = "Run pre-commit-hook.py (49 F-метрик)"
+  #   job sync-check.yml         = "Verify local ↔ remote sync (F47)"
+  # Со старым списком (имена workflow + фантомы) при активации protection
+  # со strict:true репо заблокировало бы себе все merge навсегда.
+  REQUIRED_CHECKS: '["Run pre-commit-hook.py (49 F-метрик)", "Verify local ↔ remote sync (F47)"]'
 
 jobs:
   setup-protection:

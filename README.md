@@ -3,6 +3,23 @@
 > **Версия промпта:** 9.31 (2026-11-03)
 > **Базируется на:** v9.30 + оптимизация + GitHub Free/Private compliance
 
+## Обновление v9.36 (2026-11-05) — аудит и оптимизация CI/скриптов
+
+> Историческая таблица ниже описывает состояние v9.31 и больше не отражает реальность. Текущее:
+
+| Workflow | Статус |
+|---|---|
+| verify_decomposition | активен: единый модуль `scripts/_dedup_keys.js` (фикс ложного auto-close F26), пагинация issues, schedule каждые 3 ч |
+| telemetry-update | активен: M37_THRESHOLD 35 мин (было 5 → ~48 ложных issues/сутки), дедуп + авто-закрытие stale-telemetry, pull --rebase, concurrency, cron :07/:37 |
+| issue-triage | активен: санитизация LLM-вывода (prompt-injection → RCE закрыт), фильтр меток, concurrency, `github.repository` |
+| pre-commit-checks | активен: path-фильтры push-триггера |
+| sync-alice-concepts | активен: исправлен каталог `требования_к_ии` (была теневая директория с пробелами), `[skip ci]` |
+| branch-protection-setup | dispatch-only: ежедневный 403-no-op прогон удалён, фантомные проверки build/deploy убраны |
+| batch-process, phase0-init, _download-pat, release-creator | **удалены** (мёртвые/no-op; первые три скачивали публичный PAT) |
+| sync-check | активен (F47); известное ограничение: в CI-окружении проверка тавтологична |
+
+⚠️ **SECURITY:** в трёх удалённых воркфлоу был захардкожен публичный Yandex Disk-файл с GitHub PAT. Токен рекомендуется **отозвать/ротировать** и при необходимости перенести в repo secrets.
+
 ## Что нового в v9.31
 
 ### 1. Оптимизация архива

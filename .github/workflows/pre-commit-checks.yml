@@ -20,6 +20,15 @@ name: Pre-commit Checks (49 F-метрик)
 on:
   push:
     branches: ['**']
+    # v9.36.1: path-фильтр — doc/диалог/концепция коммиты не меняют данные,
+    # полные 49-метрические прогоны на них были чистым сжиганием минут Actions
+    paths:
+      - 'реальные данные/**'
+      - 'фантастические данные/**'
+      - 'scripts/**'
+      - 'требования_к_ии/**'
+      - 'graphs/**'
+      - '.github/workflows/pre-commit-checks.yml'
   pull_request:
     branches: [main]
   workflow_dispatch:

@@ -8,22 +8,30 @@
 #
 # Что делает:
 #   1. Обновляет результаты/_telemetry.json (timestamp = now)
-#   2. Если last_telemetry_update > 5 min → создаёт ISSUE с меткой `stale-telemetry`
+#   2. Если last_telemetry_update > 35 min → создаёт ISSUE с меткой `stale-telemetry`
+#      (НЕ чаще одного открытого issue — дедуп; авто-закрытие при восстановлении)
 #   3. Коммитит обновлённый telemetry обратно в репо
 #
 # NB: Если pipeline.py не существует (скелет не создан), workflow завершается warning-ом
-# NB: GitHub Free не позволяет cron чаще 5 мин; M37threshold=5min — предельный случай,
-#     поэтому 30-min schedule воспринимается как «best-effort heartbeat»: свежесть
-#     поддерживается в рамках запуска, alerts срабатывают только если прошлый run
-#     был > 5 минут назад (например, после runner outage).
+# NB: v9.36.1 КРИТИЧЕСКИЙ ФИКС ложных срабатываний: cron = */30, поэтому нормальный
+#     интервал между записями = 30 мин. Старый порог 5 мин означал m37_pass=false
+#     на КАЖДОМ запуске → ~48 мусорных issues/сутки (по одному на каждый прогон).
+#     Новый порог 35 мин = «прошлый запуск пропущен» (реальная деградация),
+#     а не «прошло полчаса по расписанию» (норма).
 
 name: M37 — Telemetry Update
 
 on:
   schedule:
-    # Каждые 30 минут — максимальная частота для GitHub Free без переполнения минут
-    - cron: '*/30 * * * *'
+    # Смещение на :07/:37 — топ-часовые слоты :00/:30 у GitHub перегружены
+    # (schedule drift 5-45 мин); нечётные слоты стабильнее
+    - cron: '7,37 * * * *'
   workflow_dispatch:
+
+# Сериализация: параллельные прогоны перезаписывали бы _telemetry.json
+concurrency:
+  group: telemetry-update
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -34,7 +42,7 @@ env:
 
 jobs:
   telemetry:
-    name: Update telemetry (M37 freshness ≤ 5 min)
+    name: Update telemetry (M37 freshness, threshold 35 min)
     runs-on: ubuntu-latest
     timeout-minutes: 2
 
@@ -94,7 +102,10 @@ jobs:
               print(f"::notice::Previous telemetry age: {freshness_min:.2f} min")
 
           # Проверка M37
-          M37_THRESHOLD = 5.0
+          # v9.36.1: порог 35 мин > cron-интервала 30 мин (раньше 5 мин —
+          # гарантированный FAIL каждый прогон и ~48 мусорных issues/сутки).
+          # Алерт только если прошлый запуск ПРОПУЩЕН (gap > одного интервала).
+          M37_THRESHOLD = 35.0
           m37_pass = freshness_min is None or freshness_min <= M37_THRESHOLD
 
           # Запись в GITHUB_OUTPUT
@@ -107,7 +118,7 @@ jobs:
 
           print(f"M37 PASS={m37_pass}")
           if not m37_pass:
-              print(f"::warning::M37 VIOLATION — telemetry freshness {freshness_min:.2f} min > 5 min threshold")
+              print(f"::warning::M37 VIOLATION — telemetry freshness {freshness_min:.2f} min > {M37_THRESHOLD:.0f} min threshold")
           PYEOF
 
       - name: Update telemetry timestamp
@@ -147,7 +158,43 @@ jobs:
         run: |
           git add результаты/_telemetry.json
           git commit -m "chore(telemetry): auto-update $(date -u +'%Y-%m-%dT%H:%M:%SZ') [skip ci]" || echo "Nothing to commit"
+          # v9.36.1: rebase перед push — без этого push тихо падал после каждого
+          # агента/commit'а других воркфлоу (non-fast-forward), точка телеметрии терялась
+          git pull --rebase origin main || (git rebase --abort && echo "::warning::rebase failed, skipping push")
           git push || echo "Push failed (network?)"
+
+      - name: Close recovered M37 issues
+        # v9.36.1: симметрия дедупа — когда свежесть восстановилась, открытый
+        # stale-telemetry issue закрывается автоматически (раньше висел вечно)
+        if: steps.pipeline.outputs.exists == 'true' && steps.prev.outputs.m37_pass != 'false'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const resp = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'stale-telemetry',
+              state: 'open',
+              per_page: 20,
+            });
+            for (const issue of resp.data) {
+              if (issue.pull_request) continue;
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: `✅ **M37 recovered** — telemetry freshness вернулась в норму (≤ 35 мин).\n\n**Run:** ${context.runId} • ${new Date().toISOString()}`,
+              });
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed',
+                state_reason: 'completed',
+              });
+              console.log(`Closed recovered stale-telemetry #${issue.number}`);
+            }
 
       - name: Create issue if M37 violated
         if: steps.pipeline.outputs.exists == 'true' && steps.prev.outputs.m37_pass == 'false'
@@ -155,18 +202,32 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            // v9.36.1: дедуп — не более одного ОТКРЫТОГО stale-telemetry issue.
+            // Раньше при длительной деградации каждые 30 мин создавался новый issue
+            // (мусорная очередь + skipped-run triage на каждый)
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'stale-telemetry',
+              state: 'open',
+              per_page: 1,
+            });
+            if (open.data.length > 0) {
+              console.log(`Open stale-telemetry issue #${open.data[0].number} already exists — skip creation`);
+              return;
+            }
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: `🔴 M37 stale telemetry (${context.runId})`,
               body: [
-                `**M37 (telemetry_freshness_min ≤ 5) VIOLATED**`,
+                `**M37 (telemetry_freshness_min ≤ 35) VIOLATED**`,
                 ``,
                 `| Field | Value |`,
                 `|---|---|`,
                 `| Previous telemetry timestamp | ${{ steps.prev.outputs.prev_timestamp }} |`,
                 `| Freshness (minutes) | ${{ steps.prev.outputs.freshness_min }} |`,
-                `| Threshold | 5.0 min |`,
+                `| Threshold | 35.0 min |`,
                 `| Violation (over by) | ${{ steps.prev.outputs.m37_violation_minutes }} min |`,
                 ``,
                 `**Possible causes:**`,
@@ -192,6 +253,6 @@ jobs:
             echo "|---|---|" >> $GITHUB_STEP_SUMMARY
             echo "| Previous timestamp | ${{ steps.prev.outputs.prev_timestamp }} |" >> $GITHUB_STEP_SUMMARY
             echo "| Freshness | ${{ steps.prev.outputs.freshness_min }} min |" >> $GITHUB_STEP_SUMMARY
-            echo "| Threshold | 5 min |" >> $GITHUB_STEP_SUMMARY
+            echo "| Threshold | 35 min (cron interval = 30 min) |" >> $GITHUB_STEP_SUMMARY
             echo "| M37 PASS | ${{ steps.prev.outputs.m37_pass }} |" >> $GITHUB_STEP_SUMMARY
           fi

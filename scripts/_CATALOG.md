@@ -63,7 +63,7 @@
 
 ## GitHub Actions Workflows
 
-12 файлов в `.github/workflows/`. Подробности — в `.github/workflows/README.md`
+8 файлов в `.github/workflows/` (v9.36.1: удалены мёртвые `_download-pat.yml`, `batch-process.yml`, `phase0-init.yml`, `release-creator.yml`; `scripts/_dedup_keys.js` — общий модуль dedup-ключей для verify_decomposition.yml). Подробности — в `.github/workflows/README.md`
 (если присутствует) или в комментариях в каждом workflow.
 
 v9.36: исправления в `verify_decomposition.yml` — добавлена обработка F26
