@@ -1725,40 +1725,10 @@
       "path": "scripts/generate_wrapper_izdeliya.py"
     },
     {
-      "id": "script:migrate_dedup_quantity.py",
-      "type": "script",
-      "label": "migrate_dedup_quantity.py",
-      "path": "scripts/migrate_dedup_quantity.py"
-    },
-    {
-      "id": "script:migrate_parts_into_parents.py",
-      "type": "script",
-      "label": "migrate_parts_into_parents.py",
-      "path": "scripts/migrate_parts_into_parents.py"
-    },
-    {
-      "id": "pattern:*/*/_index.md",
-      "type": "file_pattern",
-      "label": "*/*/_index.md",
-      "path": ""
-    },
-    {
-      "id": "pattern:*",
-      "type": "file_pattern",
-      "label": "*",
-      "path": ""
-    },
-    {
       "id": "script:pipeline.py",
       "type": "script",
       "label": "pipeline.py",
       "path": "scripts/pipeline.py"
-    },
-    {
-      "id": "script:pipeline_engine.py",
-      "type": "script",
-      "label": "pipeline_engine.py",
-      "path": "scripts/pipeline_engine.py"
     },
     {
       "id": "script:pre-commit-hook.py",
@@ -1795,12 +1765,6 @@
       "type": "script",
       "label": "real_decomposition.py",
       "path": "scripts/real_decomposition.py"
-    },
-    {
-      "id": "script:restore_missing_parts.py",
-      "type": "script",
-      "label": "restore_missing_parts.py",
-      "path": "scripts/restore_missing_parts.py"
     },
     {
       "id": "script:validate_decomposition.py",
@@ -1914,6 +1878,12 @@
       "id": "stub:extract_from_sources",
       "type": "stub",
       "label": "extract_from_sources",
+      "path": "scripts/_stubs.py"
+    },
+    {
+      "id": "stub:pipeline_engine",
+      "type": "stub",
+      "label": "pipeline_engine",
       "path": "scripts/_stubs.py"
     },
     {
@@ -3719,72 +3689,6 @@
       "meta": {}
     },
     {
-      "src": "F25",
-      "dst": "script:migrate_dedup_quantity.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:migrate_dedup_quantity.py",
-      "dst": "F25",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F26",
-      "dst": "script:migrate_dedup_quantity.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:migrate_dedup_quantity.py",
-      "dst": "F26",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "P085",
-      "dst": "script:migrate_dedup_quantity.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:migrate_dedup_quantity.py",
-      "dst": "P085",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F25",
-      "dst": "script:migrate_parts_into_parents.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:migrate_parts_into_parents.py",
-      "dst": "F25",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "script:migrate_parts_into_parents.py",
-      "dst": "pattern:_index.md",
-      "type": "checks_files",
-      "meta": {}
-    },
-    {
-      "src": "script:migrate_parts_into_parents.py",
-      "dst": "pattern:*/*/_index.md",
-      "type": "checks_files",
-      "meta": {}
-    },
-    {
-      "src": "script:migrate_parts_into_parents.py",
-      "dst": "pattern:*",
-      "type": "checks_files",
-      "meta": {}
-    },
-    {
       "src": "P012",
       "dst": "script:pipeline.py",
       "type": "validated_by",
@@ -4367,18 +4271,6 @@
       "meta": {}
     },
     {
-      "src": "F37",
-      "dst": "script:pipeline_engine.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "F38",
-      "dst": "script:pipeline_engine.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
       "src": "F5",
       "dst": "script:pre-commit-hook.py",
       "type": "validated_by",
@@ -4535,6 +4427,12 @@
       "meta": {}
     },
     {
+      "src": "stub:pipeline_engine",
+      "dst": "script:_stubs.py",
+      "type": "hosted_in",
+      "meta": {}
+    },
+    {
       "src": "stub:update_indexes",
       "dst": "script:_stubs.py",
       "type": "hosted_in",
@@ -4560,15 +4458,15 @@
     }
   ],
   "stats": {
-    "nodes": 323,
-    "edges": 436,
+    "nodes": 318,
+    "edges": 424,
     "by_type": {
       "field_contract": 8,
-      "file_pattern": 9,
+      "file_pattern": 7,
       "metric": 216,
-      "script": 20,
+      "script": 16,
       "spec_section": 58,
-      "stub": 12
+      "stub": 13
     }
   }
 }

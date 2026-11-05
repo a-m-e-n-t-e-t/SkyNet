@@ -21,6 +21,7 @@ from typing import Any
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__)))
 from validate_decomposition import read_yaml_frontmatter, SKYNET_REPO
+from _helpers import write_atomic  # v9.37: atomic writes (T1)
 
 TODAY = "2026-11-03"
 IZDELIYA_DIR = SKYNET_REPO / "реальные данные" / "изделия"
@@ -213,11 +214,11 @@ def main():
         
         if fpath.exists():
             # Обновить
-            fpath.write_text(content, encoding='utf-8')
+            write_atomic(fpath, content)  # v9.37: atomic write
             updated += 1
         else:
             fpath.parent.mkdir(parents=True, exist_ok=True)
-            fpath.write_text(content, encoding='utf-8')
+            write_atomic(fpath, content)  # v9.37: atomic write
             created += 1
         
         print(f"  ✓ {model_id} → реальные данные/изделия/{subsystem}/{folder_name}/_index.md")

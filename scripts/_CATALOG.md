@@ -7,9 +7,10 @@
 
 Согласованность (по состоянию на 2026-11-05, v9.36):
 
-* 22 файла `.py` на диске (включая `__init__.py`, `_helpers.py`, `_stubs.py`)
+* 17 файлов `.py` на диске (включая `__init__.py`, `_helpers.py`, `_stubs.py`)
 * 12 функций-заглушек в `_stubs.py` (см. раздел "Stubs")
 * v9.36: в `_helpers.py` добавлены `MODEL_FILENAMES`, `yaml_serialize_value`, `write_atomic` — единый источник правды для будущих скриптов
+* v9.37: добавлен `TransactionBatch` для транзакционной multi-file записи; 3 отработавших one-shot миграции перенесены в `_archive_oneoff/` (17 файлов вместо 22)
 
 ---
 
@@ -26,14 +27,10 @@
 | `decompose_all_izdeliya.py` | Декомпозиция всех изделий на части (batch); v9.35: поддержка поля количество=N | B07, B09 | — |
 | `generate_decomposition.py` | Генерация stub-файлов декомпозиции; v9.35: CANON_DECOMP использует count=2 для paired parts | B07 | — |
 | `generate_graphs.py` | Генератор graph1/2/3 + Mermaid-рендеры + fill-backrefs | F36, F37, F38 | — |
-| `generate_wrapper_izdeliya.py` | Генерация wrapper-файлов изделия (cover page) | B05 | — |
-| `migrate_dedup_quantity.py` | v9.35 НОВОЕ — объединение within-product дубликатов (левая+правая, _1+_2) в один файл с количество=N (one-shot: запущен 2026-11-05, 19 пар объединено) | F26, P085 | — |
-| `migrate_parts_into_parents.py` | Миграция частей в родительский `_index.md` (one-shot: выполнено) | B09 | — |
-| `restore_missing_parts.py` | v9.35 НОВОЕ — восстановление 4 случайно удалённых часть_* файлов после d35e893 (one-shot: выполнено 2026-11-05) | F12a | — |
+| `generate_wrapper_izdeliya.py` | Генерация wrapper-файлов изделия (cover page); v9.37: `write_atomic` | B05 | — |
 | `pipeline.py` | Оркестратор фаз 0-8 batch-обработки | F37, F38, F39, F40, F46, F47 | — |
-| `pipeline_engine.py` | Engine цикла batch — СТАБ (5 строк, `execute_phase` pass). Запланирован к реализации в v9.37 | F37, F38 | — |
 | `pre-commit-hook.py` | Pre-commit: path-type-status + F3-F36, F70, F81-F88, регенерация графов; v9.35: F26 warning | F3, F4, F5, F8-F36, F70, F81, F82, F83, F84, F85, F86, F87, F88 | — |
-| `real_decomposition.py` | Декомпозиция реальных изделий (live data); v9.35: per-parent уникальные dims для крепёж и основной_элемент; v9.36: исправлен баг `description` → `описание` | B07, B09 | — |
+| `real_decomposition.py` | Декомпозиция реальных изделий (live data); v9.35: per-parent уникальные dims для крепёж и основной_элемент; v9.36: исправлен баг `description` → `описание`; v9.37: `write_atomic` | B07, B09 | — |
 | `validate_decomposition.py` | Главный валидатор: F12a-F26, F70 (schema consistency), F18 (jsonschema); v9.35: добавлена F26 + поле количество в schema; v9.36: F12a O(n²)→O(n), F22/F19/F23 cache reuse | F12a, F13, F14, F15a, F15b, F15d, F15g, F16, F17, F18, F19, F20, F21, F22, F23, F24, F25, F26, F70 | — |
 | `validate_field_contracts.py` | Бидирекциональная проверка fc_* (спецификация ↔ данные) | F56, F58, F59, F60, F70 | fc_материал_кристалл_структура, fc_материал_оптимальная_структура, fc_изделие_стандарты, fc_материал_предел_текучести, fc_модель_applied_patterns, fc_реализация_покрытие_функций, fc_изделие_масса |
 | `web_verify.py` | Веб-верификация: web_search → заполнение `источник_url`, материала, габаритов | F22, F23, F24, F25 | — |
@@ -72,6 +69,32 @@ v9.36: исправления в `verify_decomposition.yml` — добавлен
 (раньше при >100 issues дедуп-проверка теряла старые ключи).
 
 ## Использование
+
+### Установка локального pre-commit hook (v9.37 НОВОЕ)
+
+```bash
+bash scripts/install_hooks.sh   # ставит .git/hooks/pre-commit
+```
+
+Запускает `scripts/pre-commit-hook.py` **до** git commit. Блокирует плохой
+коммит на этапе набора (CI ловит с задержкой 5-10 мин). Path-filter:
+запускается только для коммитов, затрагивающих `реальные данные/`,
+`фантастические данные/`, `scripts/`, `требования_к_ии/`, `graphs/`.
+Bypass: `git commit --no-verify` (не рекомендуется).
+
+### Транзакционный cron-цикл (v9.37 НОВОЕ)
+
+```bash
+bash scripts/cron_run.sh <issue_number> <file_path>...
+# пример:
+bash scripts/cron_run.sh 146 "реальные данные/изделия/прочее/X/_index.md"
+```
+
+Обёртка cron-агента: проверка in-progress lock → взятие лока → `git add` →
+`git commit` → `git push` (rebase) → комментарий к issue → закрытие →
+снятие метки. На EXIT/INT/TERM — cleanup: orphaned edits сохраняются для
+следующего цикла (НЕ `git restore`). Устраняет баг 11:37/12:07 — цикл падает
+между edit и commit, валидные данные пропадают.
 
 ### Полная регенерация графов
 

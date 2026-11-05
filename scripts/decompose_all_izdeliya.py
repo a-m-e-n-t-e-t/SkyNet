@@ -44,6 +44,7 @@ from typing import Any
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__)))
 from validate_decomposition import read_yaml_frontmatter, SKYNET_REPO
+from _helpers import write_atomic, TransactionBatch  # v9.37: T1+T2
 
 TODAY = "2026-11-03"
 IZDELIYA_DIR = SKYNET_REPO / "реальные данные" / "изделия"
@@ -868,8 +869,12 @@ scaling_type: количественный
 """
 
 
-def update_parent_file(parent_path: Path, children_ids: list, materials: list) -> bool:
-    """Обновить родительский файл: заполнить дочерние_части и материалы_частей."""
+def update_parent_file(parent_path: Path, children_ids: list, materials: list) -> str:
+    """Обновить родительский файл: заполнить дочерние_части и материалы_частей.
+
+    v9.37: возврат нового текста вместо прямой записи — caller (decompose_izdelie)
+    включит его в TransactionBatch вместе с дочерними файлами.
+    """
     text = parent_path.read_text(encoding='utf-8')
     data, yaml_text, body = read_yaml_frontmatter(parent_path)
     if not data:
@@ -942,8 +947,8 @@ def update_parent_file(parent_path: Path, children_ids: list, materials: list) -
     else:
         new_text = "---\n" + new_yaml + "\n---\n" + body
     
-    parent_path.write_text(new_text, encoding='utf-8')
-    return True
+    # v9.37: прямой write убран — функция pure, caller записывает через TransactionBatch
+    return new_text
 
 
 def decompose_izdelie(izd_id: str, izd_data: dict) -> tuple[int, list]:
@@ -959,11 +964,15 @@ def decompose_izdelie(izd_id: str, izd_data: dict) -> tuple[int, list]:
     if not template:
         return 0, []
     
+    # Создать дочерние части и обновить родителя в одной транзакции (T2 v9.37):
+    # раньше parent_path.write_text → part_file.write_text в разных вызовах,
+    # сбой между ними порвал консистентность родителя и детей.
     created_files = []
     children_ids = []
     materials_with_shares = []
+    pending_parent_write = None  # (parent_path, new_text) — запишется в batch после детей
+    pending_parts = []          # [(part_file, content), ...]
     
-    # Создать дочерние части
     for part in template['parts']:
         # v9.35: support optional count field (5-tuple or 6-tuple)
         if len(part) == 5:
@@ -980,7 +989,7 @@ def decompose_izdelie(izd_id: str, izd_data: dict) -> tuple[int, list]:
         if not part_file.exists():
             part_dir.mkdir(parents=True, exist_ok=True)
             content = generate_part_content(part_id, izd_id, subsystem, part_subtype, mass_kg, share, count)
-            part_file.write_text(content, encoding='utf-8')
+            pending_parts.append((part_file, content))
             created_files.append(str(part_file))
     
     # Подготовить материалы с долями
@@ -995,8 +1004,21 @@ def decompose_izdelie(izd_id: str, izd_data: dict) -> tuple[int, list]:
                 break
         materials_with_shares.append((part_id, material_id, share_in_part, share_in_parent))
     
-    # Обновить родительский файл
-    update_parent_file(parent_path, children_ids, materials_with_shares)
+    # Обновить родительский файл (получить текст без записи)
+    parent_new_text = update_parent_file(parent_path, children_ids, materials_with_shares)
+    if not parent_new_text:
+        return 0, created_files  # parent file не парсится — пишем только то, что успели собрать
+
+    # Транзакционный commit: либо все файлы (родитель + дети) обновятся, либо ни одного (T2 v9.37).
+    # Раньше: parent_path.write_text → part_file.write_text → ... — сбой между ними портил связность.
+    try:
+        with TransactionBatch() as batch:
+            batch.write(parent_path, parent_new_text)
+            for part_file, content in pending_parts:
+                batch.write(part_file, content)
+    except OSError as e:
+        print(f"  ⚠️ TransactionBatch commit failed for {izd_id}: {e}", file=sys.stderr)
+        return 0, []  # созданные файлы в staging удалены rollback'ом
     
     return len(created_files), created_files
 

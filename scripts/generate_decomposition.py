@@ -26,6 +26,7 @@ from validate_decomposition import (
     SKYNET_REPO, EXPECTED_SUBSYSTEMS_BY_TYPE, TYPE_TEMPLATE_PARTS,
     CANON_DECOMPOSITION, generate_mermaid_diagram
 )
+from _helpers import write_atomic  # v9.37: atomic writes (T1)
 
 TODAY = "2026-11-03"
 IZDELIYA_DIR = SKYNET_REPO / "реальные данные" / "изделия"
@@ -398,7 +399,7 @@ def create_part_files(model_id: str, decomp: dict) -> list[str]:
         
         if not fpath.exists():
             content = generate_part_file(part_id, model_id, subsystem, subtype, mass, share, count)
-            fpath.write_text(content, encoding='utf-8')
+            write_atomic(fpath, content)  # v9.37: atomic write
             created.append(str(fpath))
     
     return created
@@ -463,7 +464,7 @@ def update_model_decomposition(model_id: str, decomp: dict) -> bool:
         body = body.rstrip() + "\n\n## Декомпозиция\n\n" + mermaid_diagram + "\n"
     
     new_text = "---\n" + new_yaml + "\n---\n" + body
-    fpath.write_text(new_text, encoding='utf-8')
+    write_atomic(fpath, new_text)  # v9.37: atomic write
     return True
 
 
@@ -553,7 +554,7 @@ def link_models_to_izdeliya() -> int:
         )
         
         new_text = "---\n" + new_yaml + "\n---\n" + body
-        mf.write_text(new_text, encoding='utf-8')
+        write_atomic(mf, new_text)  # v9.37: atomic write
         updated += 1
     
     return updated

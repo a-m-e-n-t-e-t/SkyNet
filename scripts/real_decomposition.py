@@ -27,6 +27,7 @@ from typing import Any
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__)))
 from validate_decomposition import read_yaml_frontmatter, SKYNET_REPO
+from _helpers import write_atomic  # v9.37: atomic writes (T1)
 
 TODAY = "2026-11-03"
 IZDELIYA_DIR = SKYNET_REPO / "реальные данные" / "изделия"
@@ -783,7 +784,7 @@ def update_all_parts():
         
         # Сгенерировать реальное содержимое
         content = generate_real_part_content(part_id, parent_id, subsystem, subtype, mass_kg, share)
-        f.write_text(content, encoding='utf-8')
+        write_atomic(f, content)  # v9.37: atomic write
         updated += 1
     
     return updated, not_found_subtypes

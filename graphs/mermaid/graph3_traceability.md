@@ -2,19 +2,6 @@
 
 ```mermaid
 graph LR
-    F25([F25])
-    script_migrate_dedup_quantity_py[migrate_dedup_quantity.py]
-    F25 --> script_migrate_dedup_quantity_py
-    script_migrate_parts_into_parents_py[migrate_parts_into_parents.py]
-    F25 --> script_migrate_parts_into_parents_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F25 --> script_pre-commit-hook_py
-    script_real_decomposition_py[real_decomposition.py]
-    F25 --> script_real_decomposition_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F25 --> script_validate_decomposition_py
-    script_web_verify_py[web_verify.py]
-    F25 --> script_web_verify_py
     F70([F70])
     script__helpers_py[_helpers.py]
     F70 --> script__helpers_py
@@ -24,6 +11,15 @@ graph LR
     F70 --> script_validate_decomposition_py
     script_validate_field_contracts_py[validate_field_contracts.py]
     F70 --> script_validate_field_contracts_py
+    F25([F25])
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F25 --> script_pre-commit-hook_py
+    script_real_decomposition_py[real_decomposition.py]
+    F25 --> script_real_decomposition_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F25 --> script_validate_decomposition_py
+    script_web_verify_py[web_verify.py]
+    F25 --> script_web_verify_py
     F86([F86])
     script__helpers_py[_helpers.py]
     F86 --> script__helpers_py
@@ -59,13 +55,6 @@ graph LR
     F19 --> script_generate_wrapper_izdeliya_py
     script_validate_decomposition_py[validate_decomposition.py]
     F19 --> script_validate_decomposition_py
-    F26([F26])
-    script_migrate_dedup_quantity_py[migrate_dedup_quantity.py]
-    F26 --> script_migrate_dedup_quantity_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F26 --> script_pre-commit-hook_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F26 --> script_validate_decomposition_py
     F22([F22])
     script_pre-commit-hook_py[pre-commit-hook.py]
     F22 --> script_pre-commit-hook_py
@@ -87,20 +76,6 @@ graph LR
     F24 --> script_validate_decomposition_py
     script_web_verify_py[web_verify.py]
     F24 --> script_web_verify_py
-    F37([F37])
-    script_generate_graphs_py[generate_graphs.py]
-    F37 --> script_generate_graphs_py
-    script_pipeline_py[pipeline.py]
-    F37 --> script_pipeline_py
-    script_pipeline_engine_py[pipeline_engine.py]
-    F37 --> script_pipeline_engine_py
-    F38([F38])
-    script_generate_graphs_py[generate_graphs.py]
-    F38 --> script_generate_graphs_py
-    script_pipeline_py[pipeline.py]
-    F38 --> script_pipeline_py
-    script_pipeline_engine_py[pipeline_engine.py]
-    F38 --> script_pipeline_engine_py
     F70g([F70g])
     script__helpers_py[_helpers.py]
     F70g --> script__helpers_py
@@ -136,9 +111,24 @@ graph LR
     F3 --> script_classify_subsystem_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F3 --> script_pre-commit-hook_py
+    F17([F17])
+    script_generate_decomposition_py[generate_decomposition.py]
+    F17 --> script_generate_decomposition_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F17 --> script_validate_decomposition_py
+    F21([F21])
+    script_generate_decomposition_py[generate_decomposition.py]
+    F21 --> script_generate_decomposition_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F21 --> script_validate_decomposition_py
+    F26([F26])
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F26 --> script_pre-commit-hook_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F26 --> script_validate_decomposition_py
 ```
 
-_Показаны топ-20 метрик по числу скриптов-валидаторов (из 67 метрик)._
+_Показаны топ-20 метрик по числу скриптов-валидаторов (из 66 метрик)._
 
 | Метрика | Скрипты-валидаторы | Контракты |
 |---|---|---|
@@ -154,12 +144,12 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F22` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
 | `F23` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
 | `F24` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
-| `F25` | migrate_dedup_quantity.py, migrate_parts_into_parents.py, pre-commit-hook.py, real_decomposition.py, validate_decomposition.py, web_verify.py | — |
-| `F26` | migrate_dedup_quantity.py, pre-commit-hook.py, validate_decomposition.py | — |
+| `F25` | pre-commit-hook.py, real_decomposition.py, validate_decomposition.py, web_verify.py | — |
+| `F26` | pre-commit-hook.py, validate_decomposition.py | — |
 | `F3` | classify_subsystem.py, pre-commit-hook.py | fc_изделие_подсистема, fc_модель_тип |
 | `F36` | generate_graphs.py, pre-commit-hook.py | — |
-| `F37` | generate_graphs.py, pipeline.py, pipeline_engine.py | — |
-| `F38` | generate_graphs.py, pipeline.py, pipeline_engine.py | — |
+| `F37` | generate_graphs.py, pipeline.py | — |
+| `F38` | generate_graphs.py, pipeline.py | — |
 | `F39` | pipeline.py | — |
 | `F4` | pre-commit-hook.py | — |
 | `F40` | pipeline.py | — |
@@ -208,4 +198,3 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F89` | _helpers.py | — |
 | `F90` | _helpers.py | — |
 | `P012` | pipeline.py | — |
-| `P085` | migrate_dedup_quantity.py | — |

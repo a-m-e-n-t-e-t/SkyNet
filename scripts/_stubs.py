@@ -48,7 +48,9 @@ def extract(source_type, source_url):
     pass
 
 # === pipeline_engine ===
-# pipeline_engine импортируется pipeline.py — оставлен как отдельный файл
+# v9.37: pipeline_engine.py (5-строчный stub с execute_phase: pass) перенесён
+# в _archive_oneoff/pipeline_engine_stub_v9.31.py — pipeline.py его не импортировал,
+# был фантомной абстракцией «к реализации в v9.37».
 
 # === update_indexes ===
 def update_indexes(repo_path):

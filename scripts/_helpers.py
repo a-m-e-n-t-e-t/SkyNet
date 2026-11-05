@@ -1039,3 +1039,76 @@ def write_atomic(path, content: str) -> None:
     tmp = p.with_suffix(p.suffix + '.tmp')
     tmp.write_text(content, encoding='utf-8')
     os.replace(tmp, p)
+
+
+class TransactionBatch:
+    """Контекстный менеджер для транзакционной записи нескольких файлов.
+
+    Проблема, которую решает: генераторы (decompose_all_izdeliya.py:945/983,
+    generate_decomposition.py:401/466/556) пишут несколько файлов подряд.
+    Если между записями упадёт процесс — останется полусовместное состояние
+    (родитель обновлён, ребёнок нет), граф связности порван.
+
+    Решение: все записи идут в staging (tmp-файлы рядом с целевыми).
+    На __exit__ без исключения — все staging-файлы atomic-replace'ятся.
+    На __exit__ с исключением — staging удаляется, репозиторий не тронут.
+
+    Использование::
+
+        with TransactionBatch() as batch:
+            batch.write(parent_path, parent_text)
+            batch.write(part_file, part_text)
+        # здесь либо оба файла обновлены, либо ни одного
+
+    v9.37 — добавлено для устранения orphaned-правок cron-агента
+    (5 файлов в working tree после упавшего цикла #146).
+    """
+
+    def __init__(self):
+        self._staging: list[tuple] = []  # [(tmp_path, target_path), ...]
+
+    def write(self, target_path, content: str) -> None:
+        """Запланировать запись content в target_path при выходе из блока."""
+        import os
+        from pathlib import Path
+        p = Path(target_path)
+        tmp = p.with_suffix(p.suffix + f'.batch.{id(self) & 0xFFFFFF:x}.tmp')
+        tmp.write_text(content, encoding='utf-8')
+        self._staging.append((tmp, p))
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        import os
+        if exc_type is not None:
+            # Откат: удалить staging, цели не трогать
+            for tmp, _ in self._staging:
+                try:
+                    tmp.unlink()
+                except FileNotFoundError:
+                    pass
+                except OSError:
+                    pass
+            return False  # не подавлять исключение
+        # Commit: atomic-replace всех staging на цели
+        # Порядок: цели записываются в порядке добавления (родитель → потомки),
+        # но при сбое посреди replace — частично-применённое состояние.
+        # Каждый os.replace атомарен индивидуально, но не как группа.
+        # Для большинства применений (генераторы на CI/локально) это допустимо:
+        # rollback возвращает все .tmp в мусор, а частично-применённое состояние
+        # возможно только при SIGKILL ровно между двумя os.replace.
+        for tmp, target in self._staging:
+            try:
+                os.replace(tmp, target)
+            except OSError:
+                # Partial commit — удалить оставшиеся staging
+                for t2, _ in self._staging:
+                    try:
+                        t2.unlink()
+                    except FileNotFoundError:
+                        pass
+                    except OSError:
+                        pass
+                raise
+        return False

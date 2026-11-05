@@ -12,13 +12,9 @@ graph TB
     script_generate_decomposition_py(("generate_decomposition.py"))
     script_generate_graphs_py(("generate_graphs.py"))
     script_generate_wrapper_izdeliya_py(("generate_wrapper_izdeliya.py"))
-    script_migrate_dedup_quantity_py(("migrate_dedup_quantity.py"))
-    script_migrate_parts_into_parents_py(("migrate_parts_into_parents.py"))
     script_pipeline_py(("pipeline.py"))
-    script_pipeline_engine_py(("pipeline_engine.py"))
     script_pre-commit-hook_py(("pre-commit-hook.py"))
     script_real_decomposition_py(("real_decomposition.py"))
-    script_restore_missing_parts_py(("restore_missing_parts.py"))
     script_validate_decomposition_py(("validate_decomposition.py"))
     script_validate_field_contracts_py(("validate_field_contracts.py"))
     script_web_verify_py(("web_verify.py"))
@@ -189,15 +185,17 @@ graph TB
     concept_требования_к_ии__шаблоны_подсистем_md(("_шаблоны_подсистем.md"('[', ']')
     concept_диалог_CHANGELOG_md(("CHANGELOG.md"('[', ']')
     script_decompose_all_izdeliya_py -.->|imports| script_validate_decomposition_py
+    script_decompose_all_izdeliya_py -.->|imports| script__helpers_py
     script_generate_decomposition_py -.->|imports| script_validate_decomposition_py
+    script_generate_decomposition_py -.->|imports| script__helpers_py
     script_generate_wrapper_izdeliya_py -.->|imports| script_validate_decomposition_py
+    script_generate_wrapper_izdeliya_py -.->|imports| script__helpers_py
     script_generate_wrapper_izdeliya_py -.->|imports| script_generate_decomposition_py
-    script_migrate_dedup_quantity_py -.->|imports| script_validate_decomposition_py
     script_pipeline_py -.->|imports| script__helpers_py
     script_pre-commit-hook_py -.->|imports| script_validate_decomposition_py
     script_pre-commit-hook_py -.->|imports| script__helpers_py
     script_real_decomposition_py -.->|imports| script_validate_decomposition_py
-    script_restore_missing_parts_py -.->|imports| script_validate_decomposition_py
+    script_real_decomposition_py -.->|imports| script__helpers_py
     script_validate_field_contracts_py -.->|imports| script__helpers_py
     script_web_verify_py -.->|imports| script_validate_decomposition_py
     section_§0_1_Что_проверять_(через_GitHub_REST_API_с_PAT) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
@@ -236,17 +234,15 @@ graph TB
     section_§9_6_Запрет_эвристик_без_явного_правила_(v9_24_НОВОЕ_—_из_ау -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§9_7_Прозрачная_остановка_(v9_24_НОВОЕ_—_из_аудита_диалога) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§9_8_Issues_как_очередь_задач_(v9_30_НОВОЕ_—_полная_интеграц -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
-    section_§9_9_Авто-создание_Issues_при_FAIL_(v9_30_НОВОЕ) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
-    section_§12__YAML-СХЕМЫ_ФАЙЛОВ -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 186, рёбер: 212 (показано топ-50)._
+_Узлов: 182, рёбер: 210 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|
 | spec_section | 146 |
-| script | 20 |
 | concept_doc | 17 |
+| script | 16 |
 | catalog | 1 |
 | readme | 1 |
 | spec | 1 |

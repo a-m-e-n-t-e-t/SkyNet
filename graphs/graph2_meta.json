@@ -63,28 +63,10 @@
       "path": "scripts/generate_wrapper_izdeliya.py"
     },
     {
-      "id": "script:migrate_dedup_quantity.py",
-      "type": "script",
-      "label": "migrate_dedup_quantity.py",
-      "path": "scripts/migrate_dedup_quantity.py"
-    },
-    {
-      "id": "script:migrate_parts_into_parents.py",
-      "type": "script",
-      "label": "migrate_parts_into_parents.py",
-      "path": "scripts/migrate_parts_into_parents.py"
-    },
-    {
       "id": "script:pipeline.py",
       "type": "script",
       "label": "pipeline.py",
       "path": "scripts/pipeline.py"
-    },
-    {
-      "id": "script:pipeline_engine.py",
-      "type": "script",
-      "label": "pipeline_engine.py",
-      "path": "scripts/pipeline_engine.py"
     },
     {
       "id": "script:pre-commit-hook.py",
@@ -97,12 +79,6 @@
       "type": "script",
       "label": "real_decomposition.py",
       "path": "scripts/real_decomposition.py"
-    },
-    {
-      "id": "script:restore_missing_parts.py",
-      "type": "script",
-      "label": "restore_missing_parts.py",
-      "path": "scripts/restore_missing_parts.py"
     },
     {
       "id": "script:validate_decomposition.py",
@@ -1127,26 +1103,38 @@
       "meta": {}
     },
     {
+      "src": "script:decompose_all_izdeliya.py",
+      "dst": "script:_helpers.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
       "src": "script:generate_decomposition.py",
       "dst": "script:validate_decomposition.py",
       "type": "imports",
       "meta": {}
     },
     {
+      "src": "script:generate_decomposition.py",
+      "dst": "script:_helpers.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
       "src": "script:generate_wrapper_izdeliya.py",
       "dst": "script:validate_decomposition.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
+      "src": "script:generate_wrapper_izdeliya.py",
+      "dst": "script:_helpers.py",
       "type": "imports",
       "meta": {}
     },
     {
       "src": "script:generate_wrapper_izdeliya.py",
       "dst": "script:generate_decomposition.py",
-      "type": "imports",
-      "meta": {}
-    },
-    {
-      "src": "script:migrate_dedup_quantity.py",
-      "dst": "script:validate_decomposition.py",
       "type": "imports",
       "meta": {}
     },
@@ -1175,8 +1163,8 @@
       "meta": {}
     },
     {
-      "src": "script:restore_missing_parts.py",
-      "dst": "script:validate_decomposition.py",
+      "src": "script:real_decomposition.py",
+      "dst": "script:_helpers.py",
       "type": "imports",
       "meta": {}
     },
@@ -2130,25 +2118,7 @@
     },
     {
       "src": "catalog:scripts/_CATALOG.md",
-      "dst": "script:migrate_dedup_quantity.py",
-      "type": "references",
-      "meta": {}
-    },
-    {
-      "src": "catalog:scripts/_CATALOG.md",
-      "dst": "script:migrate_parts_into_parents.py",
-      "type": "references",
-      "meta": {}
-    },
-    {
-      "src": "catalog:scripts/_CATALOG.md",
       "dst": "script:pipeline.py",
-      "type": "references",
-      "meta": {}
-    },
-    {
-      "src": "catalog:scripts/_CATALOG.md",
-      "dst": "script:pipeline_engine.py",
       "type": "references",
       "meta": {}
     },
@@ -2161,12 +2131,6 @@
     {
       "src": "catalog:scripts/_CATALOG.md",
       "dst": "script:real_decomposition.py",
-      "type": "references",
-      "meta": {}
-    },
-    {
-      "src": "catalog:scripts/_CATALOG.md",
-      "dst": "script:restore_missing_parts.py",
       "type": "references",
       "meta": {}
     },
@@ -2394,13 +2358,13 @@
     }
   ],
   "stats": {
-    "nodes": 186,
-    "edges": 212,
+    "nodes": 182,
+    "edges": 210,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,
       "readme": 1,
-      "script": 20,
+      "script": 16,
       "spec": 1,
       "spec_section": 146
     }
