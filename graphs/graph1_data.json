@@ -8226,7 +8226,7 @@
     },
     {
       "src": "часть_eo_ir_kamera_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -8358,7 +8358,7 @@
     },
     {
       "src": "часть_flir_lwir_2_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -8502,7 +8502,7 @@
     },
     {
       "src": "часть_quantum_cascade_laser_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_becu",
       "type": "uses_material",
       "meta": {}
     },
@@ -8964,7 +8964,7 @@
     },
     {
       "src": "часть_ultrakorotkoimpulsnye_lazery_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -9000,7 +9000,7 @@
     },
     {
       "src": "часть_cw-lazer_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -9168,7 +9168,7 @@
     },
     {
       "src": "часть_ipg_yls-eco_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_stal_st3",
       "type": "uses_material",
       "meta": {}
     },
@@ -19643,7 +19643,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_eo_ir_kamera_mounting",
       "type": "used_in",
       "meta": {
@@ -19731,7 +19731,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_flir_lwir_2_mounting",
       "type": "used_in",
       "meta": {
@@ -19827,7 +19827,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_becu",
       "dst": "часть_quantum_cascade_laser_mounting",
       "type": "used_in",
       "meta": {
@@ -20131,7 +20131,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_ultrakorotkoimpulsnye_lazery_mounting",
       "type": "used_in",
       "meta": {
@@ -20155,7 +20155,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_cw-lazer_mounting",
       "type": "used_in",
       "meta": {
@@ -20267,7 +20267,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_stal_st3",
       "dst": "часть_ipg_yls-eco_mounting",
       "type": "used_in",
       "meta": {
@@ -28050,6 +28050,7 @@
       "standart_ASTM A36",
       "standart_ASTM B152",
       "standart_ASTM B16",
+      "standart_ASTM B194 (BeCu)",
       "standart_ASTM B209",
       "standart_ASTM B221",
       "standart_ASTM B348",
@@ -28069,6 +28070,7 @@
       "standart_Bosch Sensortec PCB Guide",
       "standart_Cedrat Mechanical Interface",
       "standart_Celsius Design Guide",
+      "standart_Coherent Integration Guide",
       "standart_DIN 2093",
       "standart_DIN 69051",
       "standart_DIN 912",
@@ -28084,6 +28086,8 @@
       "standart_EN 683-17",
       "standart_ETSI EN 301 489",
       "standart_FCC Part 15",
+      "standart_FLIR Neutrino IDD",
+      "standart_FLIR Tau 2 IDD",
       "standart_IAEA SSR-4",
       "standart_IBM 2nm",
       "standart_IEC 60034",
@@ -28123,6 +28127,8 @@
       "standart_IPC-6013",
       "standart_IPC-A-600",
       "standart_IPC-A-610",
+      "standart_IPG Installation Manual",
+      "standart_IPG Mechanical Interface",
       "standart_ISO 1179 (пневмопорты)",
       "standart_ISO 14687",
       "standart_ISO 15241",
@@ -28191,6 +28197,7 @@
       "standart_TSO-C88b",
       "standart_Teledyne Mechanical IDD",
       "standart_Teledyne Mechanical IDD (Boson+)",
+      "standart_Thorlabs Mounting Note",
       "standart_UL 94 V-0",
       "standart_UN 3090",
       "standart_UN 38.3",
@@ -28198,7 +28205,8 @@
       "standart_UN 38.3 (транспорт)",
       "standart_USB Type-C Spec Rev 2.2 (USB-IF)",
       "standart_VITA 65",
-      "standart_Wang 2021 interface"
+      "standart_Wang 2021 interface",
+      "standart_X20 Mounting Guide"
     ],
     "has_part": [
       "часть_nvidia_jetson_orin_nano_soc"
@@ -28358,7 +28366,7 @@
     "nodes": 936,
     "edges": 3158,
     "dangling": {
-      "complies_with": 162,
+      "complies_with": 170,
       "has_part": 1,
       "researched_by": 43,
       "uses_material": 103

@@ -228,7 +228,7 @@ graph LR
     часть_pezoelektricheskie_mems_core -->|материал| material_aln
     часть_pezoelektricheskie_mems_connectors -->|материал| material_latun_c36000
     часть_eo_ir_kamera_housing -->|материал| material_al_6061_t6
-    часть_eo_ir_kamera_mounting -->|материал| material_ti_6al_4v
+    часть_eo_ir_kamera_mounting -->|материал| material_al_6061_t6
     часть_eo_ir_kamera_core -->|материал| material_al_6061_t6
     часть_eo_ir_kamera_connectors -->|материал| material_latun_c36000
     часть_mems_imu_connectors -->|материал| material_poliimid
@@ -239,7 +239,7 @@ graph LR
     часть_ads_b_priemnik_connectors -->|материал| material_latun_c36000
     часть_ads_b_priemnik_housing -->|материал| material_al_6061_t6
     часть_ads_b_priemnik_core -->|материал| material_al_6061_t6
-    часть_flir_lwir_2_mounting -->|материал| material_ti_6al_4v
+    часть_flir_lwir_2_mounting -->|материал| material_al_6061_t6
     часть_flir_lwir_2_connectors -->|материал| material_becu
     часть_flir_lwir_2_housing -->|материал| material_al_6061_t6
     часть_flir_lwir_2_core -->|материал| material_al_6061_t6
@@ -251,7 +251,7 @@ graph LR
     часть_pezo_mems_connectors -->|материал| material_latun_c36000
     часть_pezo_mems_mounting -->|материал| material_ss_aisi_304
     часть_pezo_mems_core -->|материал| material_aln
-    часть_quantum_cascade_laser_mounting -->|материал| material_ti_6al_4v
+    часть_quantum_cascade_laser_mounting -->|материал| material_becu
     часть_quantum_cascade_laser_connectors -->|материал| material_latun_c36000
     часть_quantum_cascade_laser_core -->|материал| material_al_6061_t6
     часть_quantum_cascade_laser_housing -->|материал| material_al_6061_t6
@@ -289,10 +289,10 @@ graph LR
     часть_ultrakorotkoimpulsnye_lazery_housing -->|материал| material_stal_st3
     часть_ultrakorotkoimpulsnye_lazery_connectors -->|материал| material_latun_c36000
     часть_ultrakorotkoimpulsnye_lazery_core -->|материал| material_al_6061_t6
-    часть_ultrakorotkoimpulsnye_lazery_mounting -->|материал| material_ti_6al_4v
+    часть_ultrakorotkoimpulsnye_lazery_mounting -->|материал| material_al_6061_t6
     часть_cw_lazer_connectors -->|материал| material_al_6061_t6
     часть_cw_lazer_core -->|материал| material_al_6061_t6
-    часть_cw_lazer_mounting -->|материал| material_ti_6al_4v
+    часть_cw_lazer_mounting -->|материал| material_al_6061_t6
     часть_cw_lazer_housing -->|материал| material_al_6061_t6
     часть_mwir_nbn_640_housing -->|материал| material_al_6061_t6
     часть_mwir_nbn_640_connectors -->|материал| material_becu
@@ -306,7 +306,7 @@ graph LR
     часть_mwir_2_mounting -->|материал| material_ti_6al_4v
     часть_mwir_2_connectors -->|материал| material_becu
     часть_mwir_2_housing -->|материал| material_al_6061_t6
-    часть_ipg_yls_eco_mounting -->|материал| material_ti_6al_4v
+    часть_ipg_yls_eco_mounting -->|материал| material_stal_st3
     часть_ipg_yls_eco_connectors -->|материал| material_al_6061_t6
     часть_ipg_yls_eco_core -->|материал| material_stal_st3
     часть_ipg_yls_eco_housing -->|материал| material_stal_st3
@@ -328,11 +328,11 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 67 |
-| `Ti-6Al-4V` | 22 |
+| `Al 6061-T6` | 71 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 17 |
-| `BeCu` | 7 |
-| `Сталь Ст3` | 6 |
+| `Ti-6Al-4V` | 16 |
+| `BeCu` | 8 |
+| `Сталь Ст3` | 7 |
 | `Si` | 5 |
 | `Полиимид` | 5 |
 | `AlN` | 4 |
