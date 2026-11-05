@@ -12121,7 +12121,7 @@
     },
     {
       "src": "часть_asrg_regenerator",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -12469,7 +12469,7 @@
     },
     {
       "src": "часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_mednyi_provod",
       "type": "uses_material",
       "meta": {}
     },
@@ -12895,7 +12895,7 @@
     },
     {
       "src": "часть_svintsovo-kislotnye_akb_case",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_uhmwpe_dyneema",
       "type": "uses_material",
       "meta": {}
     },
@@ -13015,7 +13015,7 @@
     },
     {
       "src": "часть_zeno_power_am-241_shielding",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_w-ni-fe",
       "type": "uses_material",
       "meta": {}
     },
@@ -13183,7 +13183,7 @@
     },
     {
       "src": "часть_perovskite_tandem_encapsulant",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_etfe",
       "type": "uses_material",
       "meta": {}
     },
@@ -13447,7 +13447,7 @@
     },
     {
       "src": "часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_shaft",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -13891,7 +13891,7 @@
     },
     {
       "src": "часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_screw",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_100cr6",
       "type": "uses_material",
       "meta": {}
     },
@@ -13903,7 +13903,7 @@
     },
     {
       "src": "часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_nut",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_100cr6",
       "type": "uses_material",
       "meta": {}
     },
@@ -23378,7 +23378,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_asrg_regenerator",
       "type": "used_in",
       "meta": {
@@ -23610,7 +23610,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_mednyi_provod",
       "dst": "часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil",
       "type": "used_in",
       "meta": {
@@ -23890,7 +23890,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_uhmwpe_dyneema",
       "dst": "часть_svintsovo-kislotnye_akb_case",
       "type": "used_in",
       "meta": {
@@ -23970,7 +23970,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_w-ni-fe",
       "dst": "часть_zeno_power_am-241_shielding",
       "type": "used_in",
       "meta": {
@@ -24082,7 +24082,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_etfe",
       "dst": "часть_perovskite_tandem_encapsulant",
       "type": "used_in",
       "meta": {
@@ -24250,7 +24250,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_shaft",
       "type": "used_in",
       "meta": {
@@ -24546,7 +24546,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_100cr6",
       "dst": "часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_screw",
       "type": "used_in",
       "meta": {
@@ -24554,7 +24554,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_100cr6",
       "dst": "часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_nut",
       "type": "used_in",
       "meta": {
@@ -28055,6 +28055,7 @@
       "standart_ANSI/ASME B1.1 (1/4-20 UNC)",
       "standart_ASHRAE 15",
       "standart_ASME BPVC Section III",
+      "standart_ASTM A240 (AISI 304)",
       "standart_ASTM A36",
       "standart_ASTM B152",
       "standart_ASTM B16",
@@ -28083,6 +28084,7 @@
       "standart_Celsius Design Guide",
       "standart_City Labs NanoTritium P100",
       "standart_Coherent Integration Guide",
+      "standart_DIN 17230 (100Cr6)",
       "standart_DIN 2093",
       "standart_DIN 69051",
       "standart_DIN 912",
@@ -28112,7 +28114,9 @@
       "standart_IEC 60068",
       "standart_IEC 60086",
       "standart_IEC 60095",
+      "standart_IEC 60095-2",
       "standart_IEC 60243-1",
+      "standart_IEC 60317 (обмоточный провод)",
       "standart_IEC 60404-8-1",
       "standart_IEC 60498",
       "standart_IEC 60529",
@@ -28163,7 +28167,9 @@
       "standart_ISO 2768-m",
       "standart_ISO 286 H7/g6",
       "standart_ISO 2919",
+      "standart_ISO 2919 (герметичные источники)",
       "standart_ISO 3506 A2-70",
+      "standart_ISO 4115 (металлический фетр)",
       "standart_ISO 4762 (M2)",
       "standart_ISO 4762 (M2.5)",
       "standart_ISO 4762 (M3)",
@@ -28204,10 +28210,13 @@
       "standart_MIL-STD-810H",
       "standart_MIL-STD-883 TM1019",
       "standart_MSFC-STD-5003",
+      "standart_Mitsubishi SH-170030ENG",
       "standart_Murata Mounting Guide",
+      "standart_NASA NTRS 20080047351",
       "standart_NASA-STD-5001A",
       "standart_NASA-STD-8729.1",
       "standart_NEMA 17",
+      "standart_NREL 89857 (2024)",
       "standart_New Way Design Guide",
       "standart_Oxford Instruments Integration Note",
       "standart_PCIe 3.0",
@@ -28223,6 +28232,7 @@
       "standart_SAE J1962_201607",
       "standart_SEMI M1",
       "standart_STANAG 4294",
+      "standart_Schaeffler TPI 291",
       "standart_Sony IMX992 SenSWIR Flyer",
       "standart_Starlink Mini Specification Sheet",
       "standart_TE LDT Mounting Note",
@@ -28241,7 +28251,10 @@
       "standart_USB Type-C Spec Rev 2.2 (USB-IF)",
       "standart_VITA 65",
       "standart_Wang 2021 interface",
-      "standart_X20 Mounting Guide"
+      "standart_Werfel ISMB7",
+      "standart_X20 Mounting Guide",
+      "standart_Zeno Power Tech",
+      "standart_battery-component.com Container Spec"
     ],
     "has_part": [
       "часть_nvidia_jetson_orin_nano_soc"
@@ -28401,7 +28414,7 @@
     "nodes": 937,
     "edges": 3158,
     "dangling": {
-      "complies_with": 198,
+      "complies_with": 211,
       "has_part": 1,
       "researched_by": 43,
       "uses_material": 103

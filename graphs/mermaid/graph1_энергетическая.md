@@ -237,7 +237,6 @@ graph LR
     часть_tpv_pv_cell -->|материал| material_ti_6al_4v
     часть_tpv_cooling -->|материал| material_al_6061_t6
     часть_tpv_filter -->|материал| material_ti_6al_4v
-    часть_asrg_regenerator -->|материал| material_ti_6al_4v
     часть_asrg_alternator -->|материал| material_ti_6al_4v
     часть_asrg_housing -->|материал| material_al_6061_t6
     часть_asrg_piston -->|материал| material_ti_6al_4v
@@ -260,7 +259,6 @@ graph LR
     часть_svobodnoporshnevoi_stirling_alternator -->|материал| material_ti_6al_4v
     часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor -->|материал| material_ti_6al_4v
     часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_housing -->|материал| material_stal_st3
-    часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil -->|материал| material_ti_6al_4v
     часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator -->|материал| material_ti_6al_4v
     часть_mikroreaktor_deleniya_vessel -->|материал| material_ti_6al_4v
     часть_mikroreaktor_deleniya_heat_exchanger -->|материал| material_ti_6al_4v
@@ -284,7 +282,6 @@ graph LR
     часть_svintsovo_kislotnye_akb_anode -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_separator -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_terminal -->|материал| material_latun_c36000
-    часть_svintsovo_kislotnye_akb_case -->|материал| material_ti_6al_4v
     часть_emi_generator_capacitor_bank -->|материал| material_ti_6al_4v
     часть_emi_generator_source -->|материал| material_ti_6al_4v
     часть_emi_generator_switch -->|материал| material_ti_6al_4v
@@ -292,7 +289,6 @@ graph LR
     часть_emi_generator_housing -->|материал| material_stal_st3
     часть_emi_generator_antenna -->|материал| material_ti_6al_4v
     часть_zeno_power_am_241_housing -->|материал| material_al_6061_t6
-    часть_zeno_power_am_241_shielding -->|материал| material_ti_6al_4v
     часть_ni_63_betavoltaik_4h_sic_sic_diode -->|материал| material_ti_6al_4v
     часть_ni_63_betavoltaik_4h_sic_substrate -->|материал| material_ti_6al_4v
     часть_ni_63_betavoltaik_4h_sic_isotope -->|материал| material_ti_6al_4v
@@ -303,7 +299,6 @@ graph LR
     часть_termomoduli_pelte_solder -->|материал| material_ti_6al_4v
     часть_perovskite_tandem_cells -->|материал| material_ti_6al_4v
     часть_perovskite_tandem_backsheet -->|материал| material_ti_6al_4v
-    часть_perovskite_tandem_encapsulant -->|материал| material_ti_6al_4v
     часть_perovskite_tandem_front_glass -->|материал| material_ti_6al_4v
     часть_perovskite_tandem_frame -->|материал| material_ti_6al_4v
     часть_tpv_lenty_reflector -->|материал| material_al_6061_t6
@@ -319,7 +314,6 @@ graph LR
     часть_tverdooksidnyi_toplivnyi_element_interconnect -->|материал| material_ti_6al_4v
     часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_cryostat -->|материал| material_ti_6al_4v
     часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_housing -->|материал| material_al_6061_t6
-    часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_shaft -->|материал| material_ti_6al_4v
     часть_tverdotelnye_akkumulyatory_cathode -->|материал| material_si
     часть_tverdotelnye_akkumulyatory_anode -->|материал| material_si
     часть_tverdotelnye_akkumulyatory_current_collector_cu -->|материал| material_ti_6al_4v
@@ -346,8 +340,6 @@ graph LR
     часть_induktivnyi_nakopitel_cooling -->|материал| material_ti_6al_4v
     часть_induktivnyi_nakopitel_switch -->|материал| material_ti_6al_4v
     часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_housing -->|материал| material_al_6061_t6
-    часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_screw -->|материал| material_ti_6al_4v
-    часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_nut -->|материал| material_ti_6al_4v
     часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_spring -->|материал| material_ti_6al_4v
     часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_coil -->|материал| material_ti_6al_4v
     часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_housing -->|материал| material_al_6061_t6
@@ -378,13 +370,14 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 112 |
+| `Ti-6Al-4V` | 104 |
 | `Al 6061-T6` | 20 |
 | `Inconel 718` | 7 |
+| `SS AISI 304` | 7 |
 | `Bi₂Te₃` | 5 |
-| `SS AISI 304` | 5 |
 | `Сталь Ст3` | 5 |
 | `NdFeB` | 4 |
+| `100Cr6 (EN 683-17) / AISI 52100 / ГОСТ ШХ15: C 0.95–1.10 %, Cr 1.35–1.65 %, Mn 0.25–0.45 %, Si 0.15–0.35 %` | 4 |
 | `Inconel 625` | 3 |
 | `Pt` | 3 |
 | `Эпоксид Epon 828 + TETA` | 3 |
@@ -392,4 +385,3 @@ _Показаны 5 наиболее часто используемых мат�
 | `Am-241` | 2 |
 | `ScT?` | 2 |
 | `карбон` | 2 |
-| `Pu-238 (плутоний-238)` | 2 |

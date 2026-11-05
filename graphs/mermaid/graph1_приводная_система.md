@@ -104,11 +104,12 @@ graph LR
     material_al_6061_t6[Al 6061-T6]
     material_stal_st3[Сталь Ст3]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
-    material_poliimid[Полиимид]
+    material_ss_aisi_304[SS AISI 304]
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing -->|материал| material_al_6061_t6
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors -->|материал| material_al_6061_t6
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting -->|материал| material_ss_aisi_304
     часть_elektroflyuidnye_volokna_mit_housing -->|материал| material_al_6061_t6
-    часть_elektroflyuidnye_volokna_mit_connectors -->|материал| material_poliimid
+    часть_elektroflyuidnye_volokna_mit_mounting -->|материал| material_ss_aisi_304
     часть_bldc_mounting -->|материал| material_al_6061_t6
     часть_bldc_connectors -->|материал| material_al_6061_t6
     часть_bldc_core -->|материал| material_al_6061_t6
@@ -116,7 +117,6 @@ graph LR
     часть_tsa_housing -->|материал| material_al_6061_t6
     часть_tsa_connectors -->|материал| material_al_6061_t6
     часть_tsa_mounting -->|материал| material_al_6061_t6
-    часть_hasel_connectors -->|материал| material_poliimid
     часть_hasel_housing -->|материал| material_al_6061_t6
     часть_pezoelektricheskii_gromkogovoritel_core -->|материал| material_latun_c36000
     часть_pezoelektricheskii_gromkogovoritel_mounting -->|материал| material_latun_c36000
@@ -127,15 +127,14 @@ graph LR
     часть_bldc_+_enkoder_housing -->|материал| material_al_6061_t6
     часть_bldc_+_enkoder_connectors -->|материал| material_al_6061_t6
     часть_fleksury_8_diskov_po_0_15_mm_housing -->|материал| material_al_6061_t6
+    часть_fleksury_8_diskov_po_0_15_mm_mounting -->|материал| material_ss_aisi_304
     часть_fleksury_8_diskov_po_0_15_mm_connectors -->|материал| material_latun_c36000
-    часть_tcp_connectors -->|материал| material_poliimid
     часть_tcp_mounting -->|материал| material_al_6061_t6
     часть_tcp_housing -->|материал| material_al_6061_t6
     часть_povorotnoe_uplotnenie_housing -->|материал| material_al_6061_t6
     часть_povorotnoe_uplotnenie_connectors -->|материал| material_al_6061_t6
     часть_povorotnoe_uplotnenie_mounting -->|материал| material_stal_st3
     часть_ipmc_mounting -->|материал| material_latun_c36000
-    часть_ipmc_connectors -->|материал| material_poliimid
     часть_ipmc_housing -->|материал| material_al_6061_t6
     часть_dea_housing -->|материал| material_al_6061_t6
     часть_dea_connectors -->|материал| material_latun_c36000
