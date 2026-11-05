@@ -104,13 +104,11 @@ graph LR
     часть_t1001_миметический_полисплав[mimetic_polyalloy_t1001]
     material_al_6061_t6[Al 6061-T6]
     material_ti_6al_4v[Ti-6Al-4V]
+    material_stal_st3[Сталь Ст3]
     material_si[Si]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
-    material_ss_aisi_304[SS AISI 304]
     часть_halve_die -->|материал| material_si
-    часть_litii_tionilhloridnye_batarei_case -->|материал| material_ss_aisi_304
-    часть_litii_tionilhloridnye_batarei_terminal -->|материал| material_ti_6al_4v
-    часть_litii_tionilhloridnye_batarei_separator -->|материал| material_ti_6al_4v
+    часть_litii_tionilhloridnye_batarei_terminal -->|материал| material_stal_st3
     часть_memristornye_matritsy_word_drivers -->|материал| material_si
     часть_memristornye_matritsy_adc -->|материал| material_si
     часть_memristornye_matritsy_controller -->|материал| material_si
@@ -119,7 +117,6 @@ graph LR
     часть_sot_mram_sense_amplifiers -->|материал| material_si
     часть_sot_mram_row_decoders -->|материал| material_si
     часть_sot_mram_io_interface -->|материал| material_si
-    часть_sic_mosfet_lead_frame -->|материал| material_ti_6al_4v
     часть_brainchip_akida_2_die -->|материал| material_si
     часть_intel_loihi_2_die -->|материал| material_si
     часть_pcm_controller -->|материал| material_si
@@ -128,22 +125,15 @@ graph LR
     часть_kondensatory_keramicheskie_inner_electrodes -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_die -->|материал| material_si
     часть_gr801_noel_v_risc_v_flash -->|материал| material_si
-    часть_gr801_noel_v_risc_v_pins -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_sram -->|материал| material_si
-    часть_gr801_noel_v_risc_v_capacitors -->|материал| material_ti_6al_4v
     часть_ibm_northpole_package -->|материал| material_ti_6al_4v
     часть_ibm_northpole_substrate -->|материал| material_ti_6al_4v
     часть_ibm_northpole_die -->|материал| material_si
     часть_ibm_northpole_hbm -->|материал| material_si
-    часть_ibm_northpole_capacitors -->|материал| material_ti_6al_4v
     часть_nvidia_jetson_orin_nano_pcb -->|материал| material_ti_6al_4v
     часть_nvidia_jetson_orin_nano_enclosure -->|материал| material_al_6061_t6
     часть_nvidia_jetson_orin_nano_connectors -->|материал| material_latun_c36000
-    часть_nvidia_jetson_orin_nano_wifi_bt -->|материал| material_ti_6al_4v
-    часть_nvidia_jetson_orin_nano_pmic -->|материал| material_ti_6al_4v
-    часть_nvidia_jetson_orin_nano_storage -->|материал| material_ti_6al_4v
     часть_nvidia_jetson_orin_nano_heat_sink -->|материал| material_ti_6al_4v
-    часть_nvidia_jetson_orin_nano_memory -->|материал| material_ti_6al_4v
     часть_t850_cpu -->|материал| material_al_6061_t6
     часть_t800_cpu -->|материал| material_si
     часть_marcus_человеческий_мозг -->|материал| material_ti_6al_4v
@@ -157,8 +147,9 @@ _Показаны 5 наиболее часто используемых мат�
 | Материал | Используется в частях |
 |---|---:|
 | `Si` | 21 |
-| `Ti-6Al-4V` | 17 |
-| `Эпоксид Epon 828 + TETA` | 5 |
+| `Эпоксид Epon 828 + TETA` | 8 |
+| `Ti-6Al-4V` | 7 |
+| `Сплав Sn-Pb` | 5 |
 | `PTFE` | 3 |
 | `Al 6061-T6` | 3 |
 | `Полиимид` | 2 |
@@ -166,8 +157,7 @@ _Показаны 5 наиболее часто используемых мат�
 | `TiN` | 1 |
 | `углеродная сажа (токопроводящий наполнитель) + PTFE 20% (связующее), опционально катализатор MnO₂; токосъёмник — никелевая сетка` | 1 |
 | `SS AISI 304` | 1 |
+| `Сталь Ст3` | 1 |
 | `HfO₂` | 1 |
 | `Epotek 301-2` | 1 |
 | `монокристаллического SiC` | 1 |
-| `Сплав Sn-Pb` | 1 |
-| `PCM` | 1 |

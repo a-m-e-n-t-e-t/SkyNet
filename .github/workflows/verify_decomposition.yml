@@ -102,12 +102,13 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml jsonschema
 
-      - name: Run validate_decomposition.py — get F22-F26 violations
+      - name: Run validate_decomposition.py — get F22-F27 violations
         id: violations
         run: |
           set +e
           # v9.34: полный machine-readable список violations через --json-out.
           # v9.35: добавлена метрика F26 (внутри-родительские дубликаты).
+          # v9.40: добавлена метрика F27 (незаполненные материалы, используемые изделиями).
           # Человеческий лог (validate_output.log) печатает только первые 3 violations
           # на метрику — его парсинг НЕ использовать, он обрезает ~900 до 9.
           python scripts/validate_decomposition.py --json-out violations.json 2>&1 | tee validate_output.log
@@ -133,7 +134,7 @@ jobs:
           d = json.load(open('violations.json'))
           total = sum(len(v) for v in d.values())
           print(f"total_violations={total}")
-          for M in ('F22','F23','F24','F25','F26'):
+          for M in ('F22','F23','F24','F25','F26','F27'):
               print(f"{M}_count={len(d.get(M, []))}")
           PYEOF
           # info-лог в stdout шага (одинарные кавычки — без bash-интерполяции):
@@ -141,7 +142,7 @@ jobs:
           import json
           d = json.load(open('violations.json'))
           print(f"[info] Total violations: {sum(len(v) for v in d.values())}")
-          for M in ('F22','F23','F24','F25','F26'):
+          for M in ('F22','F23','F24','F25','F26','F27'):
               print(f"[info]   {M}: {len(d.get(M, []))} violations")
           PYEOF
 
@@ -255,6 +256,35 @@ jobs:
                 }
                 
                 // Build body — include hidden dedup_key marker for future runs
+                // v9.40: F27 (материалы) — свой чек-лист: свойства материала вместо габаритов части
+                const isMaterial = metric === 'F27';
+                const checklist = isMaterial
+                  ? [
+                      `   - свойства: плотность_kg_m3, теплопроводность_W_mK, температура_плавления_C (или макс_рабочая_температура_C) из datasheet/справочника`,
+                      `   - химический_состав, класс, стандарты, вариант_структуры`,
+                      `   - источник_url (URL веб-источника) + источник_дата`,
+                      `   - снять маркер исследовательская_группа='требует_верификации'`,
+                      `   - заполнить пустые остальные поля основные/дополнительные (null → реальные значения или обоснованный null)`,
+                    ]
+                  : [
+                      `   - материал (конкретный, не generic_material)`,
+                      `   - габариты (из datasheet/canon)`,
+                      `   - источник_url (URL веб-источника)`,
+                      `   - описание (не шаблонное)`,
+                    ];
+                const criteriaList = isMaterial
+                  ? [
+                      `- F27: плотность_kg_m3 и теплопроводность_W_mK заполнены реальными значениями из источника`,
+                      `- F27: маркер 'требует_верификации' снят (исследовательская_группа заполнена или null)`,
+                      `- F22: источник_url заполнен конкретным URL (если источник=web_search)`,
+                    ]
+                  : [
+                      `- F22: источник_url заполнен конкретным URL`,
+                      `- F23: нет generic_material, нет шаблонного описания`,
+                      `- F24: все ожидаемые поля для подтипа присутствуют`,
+                      `- F25: параметры уникальны (≤2 файлов с одинаковыми)`,
+                      `- F26: 2+ частей с одним подтипом в родителе объединены через количество=N (запустить scripts/migrate_dedup_quantity.py)`,
+                    ];
                 const body = [
                   `<!-- dedup: ${dedupKey} -->`,
                   ``,
@@ -266,22 +296,15 @@ jobs:
                   ``,
                   `### Что нужно сделать`,
                   ``,
-                  `1. Найти файл в репозитории по id из нарушения выше`,
+                  `1. Найти файл в репозитории по id из нарушения выше${isMaterial ? ' (реальные данные/материалы/<id без префикса material_>.md)' : ''}`,
                   `2. Провести реальный веб-поиск для этого компонента`,
                   `3. Заполнить реальные данные:`,
-                  `   - материал (конкретный, не generic_material)`,
-                  `   - габариты (из datasheet/canon)`,
-                  `   - источник_url (URL веб-источника)`,
-                  `   - описание (не шаблонное)`,
+                  ...checklist,
                   `4. Зафиксировать изменения и закрыть issue`,
                   ``,
                   `### Критерии закрытия`,
                   ``,
-                  `- F22: источник_url заполнен конкретным URL`,
-                  `- F23: нет generic_material, нет шаблонного описания`,
-                  `- F24: все ожидаемые поля для подтипа присутствуют`,
-                  `- F25: параметры уникальны (≤2 файлов с одинаковыми)`,
-                  `- F26: 2+ частей с одним подтипом в родителе объединены через количество=N (запустить scripts/migrate_dedup_quantity.py)`,
+                  ...criteriaList,
                   ``,
                   `**Авто-создано:** ${new Date().toISOString()}`,
                   `**Коммит:** ${context.sha.substring(0, 8)}`,
@@ -314,7 +337,7 @@ jobs:
           script: |
             const fs = require('fs');
             const { normalizeViolationKey, legacyMetricFromTitle } = require('./scripts/_dedup_keys.js');
-            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[]};
+            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[], F27:[]};
             try {
               violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
             } catch (e) {
@@ -436,10 +459,11 @@ jobs:
           echo "| F24 | ${{ steps.violations.outputs.F24_count }} | Subtype compliance |" >> $GITHUB_STEP_SUMMARY
           echo "| F25 | ${{ steps.violations.outputs.F25_count }} | Data uniqueness |" >> $GITHUB_STEP_SUMMARY
           echo "| F26 | ${{ steps.violations.outputs.F26_count }} | Within-parent duplicates |" >> $GITHUB_STEP_SUMMARY
+          echo "| F27 | ${{ steps.violations.outputs.F27_count }} | Unfilled materials (used by izdeliya) |" >> $GITHUB_STEP_SUMMARY
           echo "| **Total** | **${{ steps.violations.outputs.total_violations }}** | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Violation source:** ${{ steps.violations.outputs.partial == '1' && 'TRUNCATED log fallback (auto-close DISABLED)' || 'complete --json-out' }}" >> $GITHUB_STEP_SUMMARY
           echo "**Anti-parallel:** concurrency group \`verify-decomposition-\${{ github.ref }}\` serializes runs." >> $GITHUB_STEP_SUMMARY
           echo "**Anti-duplicate:** dedup checks ALL issues (open+closed) via stable \`dedup_key\`." >> $GITHUB_STEP_SUMMARY
-          echo "**Issue cap:** max \`MAX_NEW_ISSUES\` per run (round-robin across F22–F25)." >> $GITHUB_STEP_SUMMARY
+          echo "**Issue cap:** max \`MAX_NEW_ISSUES\` per run (round-robin across F22–F27)." >> $GITHUB_STEP_SUMMARY
           echo "**Auto-close stale:** open verify-task issues whose dedup_key is no longer in current violations are auto-closed (skips \`in-progress\`; runs only on complete violation list)." >> $GITHUB_STEP_SUMMARY

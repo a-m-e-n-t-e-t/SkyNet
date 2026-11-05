@@ -27,7 +27,7 @@ function normalizeViolationKey(metric, violation) {
 
 // Legacy-fallback: метрика для старых issues без [F2x] в заголовке.
 function legacyMetricFromTitle(title, violation) {
-  const metricMatch = (title || '').match(/\[(F2[2-6])\]/);
+  const metricMatch = (title || '').match(/\[(F2[2-7])\]/);
   return metricMatch ? metricMatch[1] : (violation.startsWith('Родитель') ? 'F26' : 'F25');
 }
 

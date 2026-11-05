@@ -69,6 +69,13 @@ graph LR
     F23 --> script_validate_decomposition_py
     script_web_verify_py[web_verify.py]
     F23 --> script_web_verify_py
+    F27([F27])
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F27 --> script_pre-commit-hook_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F27 --> script_validate_decomposition_py
+    script_web_verify_py[web_verify.py]
+    F27 --> script_web_verify_py
     F70g([F70g])
     script__helpers_py[_helpers.py]
     F70g --> script__helpers_py
@@ -119,14 +126,9 @@ graph LR
     F24 --> script_pre-commit-hook_py
     script_validate_decomposition_py[validate_decomposition.py]
     F24 --> script_validate_decomposition_py
-    F26([F26])
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F26 --> script_pre-commit-hook_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F26 --> script_validate_decomposition_py
 ```
 
-_Показаны топ-20 метрик по числу скриптов-валидаторов (из 66 метрик)._
+_Показаны топ-20 метрик по числу скриптов-валидаторов (из 67 метрик)._
 
 | Метрика | Скрипты-валидаторы | Контракты |
 |---|---|---|
@@ -144,6 +146,7 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F24` | pre-commit-hook.py, validate_decomposition.py | — |
 | `F25` | pre-commit-hook.py, real_decomposition.py, validate_decomposition.py, web_verify.py | — |
 | `F26` | pre-commit-hook.py, validate_decomposition.py | — |
+| `F27` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
 | `F3` | classify_subsystem.py, pre-commit-hook.py | fc_изделие_подсистема, fc_модель_тип |
 | `F36` | generate_graphs.py, pre-commit-hook.py | — |
 | `F37` | generate_graphs.py, pipeline.py | — |

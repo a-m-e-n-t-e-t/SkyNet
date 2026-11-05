@@ -1768,6 +1768,116 @@ def check_F26(izdeliya: dict[str, dict]) -> dict:
 
 
 # ============================================================================
+# F27: НЕЗАПОЛНЕННЫЕ МАТЕРИАЛЫ-ЗАГЛУШКИ (v9.40)
+# ============================================================================
+
+# Ключевые свойства материала: если ВСЕ null — файл-заглушка без данных.
+# Намеренно узкий список: у жидкостей/газов/изоляторов часть полей легитимно null,
+# но плотность и теплопроводность известны для любого реального материала.
+MATERIAL_CORE_FIELDS = ('плотность_kg_m3', 'теплопроводность_W_mK', 'температура_плавления_C')
+
+def _collect_referenced_materials(izdeliya: dict[str, dict]) -> set:
+    """Материалы, на которые ссылаются изделия/части через материалы_частей.
+
+    Возвращает set stem-ов И полных id ('grafen-aerogel' и 'material_grafen-aerogel').
+    """
+    refs = set()
+    for data in izdeliya.values():
+        mats = data.get('материалы_частей', [])
+        if not isinstance(mats, list):
+            continue
+        for m in mats:
+            if isinstance(m, dict):
+                mat = str(m.get('материал', '')).strip()
+                if mat:
+                    refs.add(mat)
+                    if not mat.startswith('material_'):
+                        refs.add('material_' + mat)
+    return refs
+
+
+def check_F27(izdeliya: dict[str, dict]) -> dict:
+    """F27: Незаполненные материалы-заглушки, на которые ссылаются изделия.
+
+    BLOCKING: цепочка «часть → материал» не должна вести в пустой файл.
+    Проверяются ТОЛЬКО материалы, используемые изделиями (материалы_частей):
+    неиспользуемые файлы не влияют на корректность дерева изделий и не должны
+    флудить очередь verify-task (приоритизация очереди).
+
+    Критерии нарушения (любое):
+      a. все ключевые свойства null (плотность/теплопроводность/плавление)
+      b. исследовательская_группа = 'требует_верификации' (маркер генератора)
+      c. источник=web_search, но источник_url пуст (аналог F22 для материалов)
+      d. YAML frontmatter не читается (обрезан) — свойства недоступны
+
+    Формат violation: '<material_id>: ...' — совместим с дефолтной веткой
+    normalizeViolationKey (dedup F27:<file_id>) и титульником
+    '[F27] Verify: <file_id>' (verify_decomposition.yml).
+    """
+    violations = []
+    total = 0
+    valid = 0
+
+    referenced = _collect_referenced_materials(izdeliya)
+    mat_dir = SKYNET_REPO / "реальные данные" / "материалы"
+
+    for f in sorted(mat_dir.glob("*.md")):
+        if f.name.startswith('_'):
+            continue
+        data, _, _ = read_yaml_frontmatter(f)
+
+        if not data:
+            # Обрезанный/нечитаемый frontmatter — материал-кандидат без данных
+            stem = f.stem
+            if stem in referenced or ('material_' + stem) in referenced:
+                total += 1
+                violations.append(
+                    f"material_{stem}: YAML frontmatter не читается (обрезан?) — свойства недоступны")
+            continue
+
+        mid = str(data.get('id', '')).strip() or ('material_' + f.stem)
+        stem = mid.replace('material_', '', 1)
+        if mid not in referenced and stem not in referenced:
+            continue  # не используется изделиями — вне очереди F27
+
+        total += 1
+        problems = []
+
+        # (a) все ключевые свойства null
+        basic = data.get('основные') or {}
+        if not isinstance(basic, dict):
+            basic = {}
+        if all(basic.get(k) in (None, '', 'null', 'None') for k in MATERIAL_CORE_FIELDS):
+            problems.append("все ключевые свойства null (плотность/теплопроводность/плавление)")
+
+        # (b) маркер генератора
+        if str(data.get('исследовательская_группа', '')).strip() == 'требует_верификации':
+            problems.append("исследовательская_группа='требует_верификации'")
+
+        # (c) аналог F22
+        src = str(data.get('источник', '')).strip()
+        url = data.get('источник_url')
+        if src == 'web_search' and (not url or str(url).strip() in ('', 'null', 'None')):
+            problems.append("источник=web_search но источник_url пустой")
+
+        if problems:
+            violations.append(f"{mid}: незаполненный материал-заглушка ({'; '.join(problems)})")
+        else:
+            valid += 1
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F27',
+        'description': 'Незаполненные материалы-заглушки, используемые изделиями (пустые свойства/URL)',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
 # MAIN
 # ============================================================================
 
@@ -1935,6 +2045,17 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
+    # F27 — незаполненные материалы-заглушки (v9.40)
+    print()
+    print("=== F27: Незаполненные материалы (используемые изделиями) ===")
+    r = check_F27(izdeliya)
+    results['F27'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
     # Сводка
     print()
     print("=== Сводка ===")
@@ -1984,7 +2105,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F22', 'F23', 'F24', 'F25', 'F26')
+            for m in ('F22', 'F23', 'F24', 'F25', 'F26', 'F27')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:

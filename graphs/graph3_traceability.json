@@ -3839,6 +3839,18 @@
       "meta": {}
     },
     {
+      "src": "F27",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F27",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "F3",
       "dst": "script:pre-commit-hook.py",
       "type": "validated_by",
@@ -4157,6 +4169,18 @@
       "meta": {}
     },
     {
+      "src": "F27",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F27",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "script:validate_decomposition.py",
       "dst": "pattern:_index.md",
       "type": "checks_files",
@@ -4255,6 +4279,18 @@
     {
       "src": "script:web_verify.py",
       "dst": "F25",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F27",
+      "dst": "script:web_verify.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:web_verify.py",
+      "dst": "F27",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -4543,7 +4579,7 @@
   ],
   "stats": {
     "nodes": 323,
-    "edges": 433,
+    "edges": 439,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,
