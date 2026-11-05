@@ -2,10 +2,6 @@
 
 ```mermaid
 graph LR
-    часть_hk_aerial_связь[skynet_link]
-    часть_hk_tank_связь[skynet_link]
-    часть_t850_связь[skyet_link]
-    часть_t800_антенна[skyet_link_antenna]
     izdelie_stm32h743[прочее]
     izdelie_optovolokonnaya_shina[прочее]
     izdelie_usb_c[прочее]
@@ -54,10 +50,6 @@ graph LR
     material_si[Si]
     material_ss_aisi_304[SS AISI 304]
     material_stal_st3[Сталь Ст3]
-    material_ti_6al_4v[Ti-6Al-4V]
-    часть_hk_aerial_связь -->|материал| material_ti_6al_4v
-    часть_t850_связь -->|материал| material_al_6061_t6
-    часть_t800_антенна -->|материал| material_poliimid
     часть_stm32h743_housing -->|материал| material_al_6061_t6
     часть_stm32h743_mounting -->|материал| material_al_6061_t6
     часть_stm32h743_core -->|материал| material_si
@@ -94,12 +86,11 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 14 |
+| `Al 6061-T6` | 13 |
 | `Сталь Ст3` | 5 |
 | `Si` | 3 |
 | `BeCu` | 3 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 3 |
-| `Полиимид` | 2 |
 | `SS AISI 304` | 2 |
 | `PEEK` | 2 |
-| `Ti-6Al-4V` | 1 |
+| `Полиимид` | 1 |

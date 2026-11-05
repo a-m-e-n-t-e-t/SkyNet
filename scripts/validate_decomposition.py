@@ -440,8 +440,32 @@ EXPECTED_SUBSYSTEMS_BY_TYPE: dict[str, list[str]] = {
     'прочее': [],
 }
 
+_SKYNET_IMPL_INDEX: dict[str, Path] = {}
+
+
+def _build_impl_index() -> None:
+    """v9.40 (#256): индекс id moved-обёрток → каталог реализации в фантастических данных."""
+    if _SKYNET_IMPL_INDEX:
+        return
+    mod_root = SKYNET_REPO / "фантастические данные" / "модели"
+    if not mod_root.is_dir():
+        return
+    for model_md in mod_root.glob("*.md"):
+        impl_root = mod_root / model_md.stem / "реализация"
+        if not impl_root.is_dir():
+            continue
+        for impl_dir in impl_root.iterdir():
+            idx = impl_dir / "_index.md"
+            if not idx.is_file():
+                continue
+            data, _, _ = read_yaml_frontmatter(idx)
+            if data and 'id' in data:
+                _SKYNET_IMPL_INDEX[data['id']] = impl_dir
+
+
 def check_F13(models: dict[str, dict], izdeliya: dict[str, dict]) -> dict:
     """F13: покрытие подсистем — expected_subsystems покрыты дочерними."""
+    _build_impl_index()
     violations = []
     total = 0
     valid = 0
@@ -464,19 +488,35 @@ def check_F13(models: dict[str, dict], izdeliya: dict[str, dict]) -> dict:
         
         # Какие подсистемы покрыты
         covered = set()
+        # (a) v9.40: собственное поддерево реализации модели
+        #     (фантастические данные/модели/<stem>/реализация/** — вариант A #256)
+        mpath = mdata.get('_path')
+        if mpath:
+            impl_root = Path(mpath).parent / Path(mpath).stem / 'реализация'
+            if impl_root.is_dir():
+                for impl_file in impl_root.rglob('_index.md'):
+                    idata, _, _ = read_yaml_frontmatter(impl_file)
+                    if idata and idata.get('подсистема'):
+                        covered.add(idata['подсистема'])
+        # (b) реализация_промышленная — id изделий.
+        #     v9.40 (#256 вариант A): id из moved-обёрток (izdelie_SkyNet-*) резолвится
+        #     в поддерево фантастические данные/модели/<stem>/реализация/<impl>/;
+        #     остальные id — по-прежнему в реальные данные/изделия/.
         for izd_id in real_impl:
             if not isinstance(izd_id, str):
+                continue
+            impl_dir = _SKYNET_IMPL_INDEX.get(izd_id)
+            if impl_dir is not None:
+                for impl_file in impl_dir.rglob('_index.md'):
+                    idata, _, _ = read_yaml_frontmatter(impl_file)
+                    if idata and idata.get('подсистема'):
+                        covered.add(idata['подсистема'])
                 continue
             izd_data = izdeliya.get(izd_id, {})
             sub = izd_data.get('подсистема')
             if sub:
                 covered.add(sub)
-        
-        # Также учесть дочерние_части
-        for izd_id in real_impl:
-            if not isinstance(izd_id, str):
-                continue
-            izd_data = izdeliya.get(izd_id, {})
+            # Также учесть дочерние_части
             children = izd_data.get('дочерние_части', [])
             if isinstance(children, list):
                 for child_id in children:
@@ -1219,27 +1259,50 @@ def check_F21(models: dict[str, dict], izdeliya: dict[str, dict]) -> dict:
     total = 0
     valid = 0
 
+    _build_impl_index()
     for model_id, canon_spec in CANON_DECOMPOSITION.items():
         # Найти wrapper-изделие izdelie_<model_id>
         wrapper_id = f"izdelie_{model_id}"
-        if wrapper_id not in izdeliya:
+        wrapper = izdeliya.get(wrapper_id)
+        impl_dir = _SKYNET_IMPL_INDEX.get(wrapper_id)
+        if wrapper is None and impl_dir is None:
             continue
         total += 1
-        wrapper = izdeliya[wrapper_id]
-        children = wrapper.get('дочерние_части', [])
-        if not isinstance(children, list):
-            children = []
-
         # Подсчитать сколько изделий каждой подсистемы
         # v9.35: вес каждого child = его поле «количество» (default 1)
         sub_counts: dict[str, int] = {}
-        for child_id in children:
-            if not isinstance(child_id, str) or child_id not in izdeliya:
-                continue
-            sub = izdeliya[child_id].get('подсистема')
-            if sub:
-                # v9.35: учитываем количество — paired parts (количество=2) считаются как 2
-                q_raw = izdeliya[child_id].get('количество', 1)
+        if wrapper is not None:
+            children = wrapper.get('дочерние_части', [])
+            if not isinstance(children, list):
+                children = []
+            for child_id in children:
+                if not isinstance(child_id, str) or child_id not in izdeliya:
+                    continue
+                sub = izdeliya[child_id].get('подсистема')
+                if sub:
+                    # v9.35: учитываем количество — paired parts (количество=2) считаются как 2
+                    q_raw = izdeliya[child_id].get('количество', 1)
+                    try:
+                        q = int(q_raw) if q_raw is not None else 1
+                    except (TypeError, ValueError):
+                        q = 1
+                    if q < 1:
+                        q = 1
+                    sub_counts[sub] = sub_counts.get(sub, 0) + q
+        else:
+            # v9.40 (#256 вариант A): wrapper перенесён в фантастические данные —
+            # canon-декомпозиция считается по поддереву реализации (дети, без самой обёртки)
+            wrapper_file = (impl_dir / "_index.md").resolve()
+            for impl_file in impl_dir.rglob('_index.md'):
+                if impl_file.resolve() == wrapper_file:
+                    continue
+                idata, _, _ = read_yaml_frontmatter(impl_file)
+                if not idata:
+                    continue
+                sub = idata.get('подсистема')
+                if not sub:
+                    continue
+                q_raw = idata.get('количество', 1)
                 try:
                     q = int(q_raw) if q_raw is not None else 1
                 except (TypeError, ValueError):

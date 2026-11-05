@@ -1659,6 +1659,30 @@
       "path": "scripts/_helpers.py"
     },
     {
+      "id": "script:_migrate_256_fix_links.py",
+      "type": "script",
+      "label": "_migrate_256_fix_links.py",
+      "path": "scripts/_migrate_256_fix_links.py"
+    },
+    {
+      "id": "pattern:*.md",
+      "type": "file_pattern",
+      "label": "*.md",
+      "path": ""
+    },
+    {
+      "id": "script:_migrate_256_variant_a.py",
+      "type": "script",
+      "label": "_migrate_256_variant_a.py",
+      "path": "scripts/_migrate_256_variant_a.py"
+    },
+    {
+      "id": "pattern:_index.md",
+      "type": "file_pattern",
+      "label": "_index.md",
+      "path": ""
+    },
+    {
       "id": "script:_stubs.py",
       "type": "script",
       "label": "_stubs.py",
@@ -1693,18 +1717,6 @@
       "type": "script",
       "label": "generate_decomposition.py",
       "path": "scripts/generate_decomposition.py"
-    },
-    {
-      "id": "pattern:_index.md",
-      "type": "file_pattern",
-      "label": "_index.md",
-      "path": ""
-    },
-    {
-      "id": "pattern:*.md",
-      "type": "file_pattern",
-      "label": "*.md",
-      "path": ""
     },
     {
       "id": "script:generate_graphs.py",
@@ -3413,6 +3425,24 @@
       "meta": {}
     },
     {
+      "src": "script:_migrate_256_fix_links.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:_migrate_256_variant_a.py",
+      "dst": "pattern:_index.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:_migrate_256_variant_a.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
       "src": "F51",
       "dst": "script:_stubs.py",
       "type": "validated_by",
@@ -4470,13 +4500,13 @@
     }
   ],
   "stats": {
-    "nodes": 318,
-    "edges": 426,
+    "nodes": 320,
+    "edges": 429,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 7,
       "metric": 216,
-      "script": 16,
+      "script": 18,
       "spec_section": 58,
       "stub": 13
     }

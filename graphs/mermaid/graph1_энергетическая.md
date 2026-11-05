@@ -2,18 +2,6 @@
 
 ```mermaid
 graph LR
-    часть_hk_aerial_двигатель_левый[nuclear_vtol_engine]
-    часть_hk_tank_двигатель[nuclear_engine]
-    часть_hk_tank_боеприпасы[plasma_ammo]
-    часть_marcus_топливная_ячейка[fuel_cell]
-    часть_marcus_человеческое_сердце[biological_heart]
-    часть_marcus_сердце_гибрид[hybrid_heart]
-    часть_cameron_топливная_ячейка_1[fuel_cell_small]
-    часть_cameron_топливная_ячейка_2[fuel_cell_small]
-    часть_t850_топливная_ячейка_1[hydrogen_fuel_cell_v2]
-    часть_t_x_топливная_ячейка_1[plasma_cell]
-    часть_t600_топливная_ячейка[fuel_cell]
-    часть_t800_топливная_ячейка_1[hydrogen_fuel_cell]
     izdelie_marx_generator[импульсный_генератор_Маркса]
     izdelie_perovskite_tandem[фотоэлектрический_модуль]
     izdelie_vysokotemperaturnyi_sverhprovodyaschii_podshipnik[HTS_подшипник]
@@ -231,14 +219,7 @@ graph LR
     material_al_6061_t6[Al 6061-T6]
     material_stal_st3[Сталь Ст3]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
-    material_si[Si]
-    часть_marcus_топливная_ячейка -->|материал| material_ti_6al_4v
-    часть_marcus_сердце_гибрид -->|материал| material_ti_6al_4v
-    часть_cameron_топливная_ячейка_1 -->|материал| material_ti_6al_4v
-    часть_cameron_топливная_ячейка_2 -->|материал| material_ti_6al_4v
-    часть_t850_топливная_ячейка_1 -->|материал| material_ti_6al_4v
-    часть_t_x_топливная_ячейка_1 -->|материал| material_ti_6al_4v
-    часть_t600_топливная_ячейка -->|материал| material_ti_6al_4v
+    material_ss_aisi_304[SS AISI 304]
     izdelie_nasa_asc_e_srsc -->|материал| material_al_6061_t6
     часть_marx_generator_output_terminal -->|материал| material_ti_6al_4v
     часть_marx_generator_capacitors -->|материал| material_ti_6al_4v
@@ -271,6 +252,8 @@ graph LR
     часть_coilgun_housing -->|материал| material_stal_st3
     часть_svobodnoporshnevoi_stirling_piston -->|материал| material_al_6061_t6
     часть_svobodnoporshnevoi_stirling_alternator -->|материал| material_ti_6al_4v
+    часть_svobodnoporshnevoi_stirling_cooler -->|материал| material_ss_aisi_304
+    часть_svobodnoporshnevoi_stirling_gas_spring -->|материал| material_ss_aisi_304
     часть_svobodnoporshnevoi_stirling_regenerator -->|материал| material_ti_6al_4v
     часть_emi_generator_switch -->|материал| material_ti_6al_4v
     часть_emi_generator_waveguide -->|материал| material_ti_6al_4v
@@ -305,13 +288,12 @@ graph LR
     часть_tpv_filter -->|материал| material_ti_6al_4v
     часть_tverdooksidnyi_toplivnyi_element_seal -->|материал| material_ti_6al_4v
     часть_tverdooksidnyi_toplivnyi_element_interconnect -->|материал| material_ti_6al_4v
+    часть_tverdooksidnyi_toplivnyi_element_manifold -->|материал| material_ss_aisi_304
     часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_spring -->|материал| material_ti_6al_4v
     часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_housing -->|материал| material_al_6061_t6
     часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_coil -->|материал| material_ti_6al_4v
     часть_tverdotelnye_akkumulyatory_case -->|материал| material_al_6061_t6
-    часть_tverdotelnye_akkumulyatory_anode -->|материал| material_si
     часть_tverdotelnye_akkumulyatory_current_collector_cu -->|материал| material_ti_6al_4v
-    часть_tverdotelnye_akkumulyatory_cathode -->|материал| material_si
     часть_tverdotelnye_akkumulyatory_current_collector_al -->|материал| material_ti_6al_4v
     часть_superkondensatory_separator -->|материал| material_ti_6al_4v
     часть_superkondensatory_electrolyte -->|материал| material_ti_6al_4v
@@ -346,6 +328,7 @@ graph LR
     часть_mikroreaktor_deleniya_shielding -->|материал| material_ti_6al_4v
     часть_lt_sofc_seal -->|материал| material_ti_6al_4v
     часть_lt_sofc_interconnect -->|материал| material_ti_6al_4v
+    часть_lt_sofc_manifold -->|материал| material_ss_aisi_304
     часть_reversivnye_pelte_peltier_couples -->|материал| material_ti_6al_4v
     часть_reversivnye_pelte_electrodes -->|материал| material_ti_6al_4v
     часть_reversivnye_pelte_ceramic_top -->|материал| material_ti_6al_4v
@@ -364,6 +347,7 @@ graph LR
     часть_nasa_asc_e_srsc_alternator -->|материал| material_ti_6al_4v
     часть_nasa_asc_e_srsc_cooler -->|материал| material_al_6061_t6
     часть_nasa_asc_e_srsc_displacer_piston -->|материал| material_ti_6al_4v
+    часть_nasa_asc_e_srsc_regenerator -->|материал| material_ss_aisi_304
     часть_4h_sic_betavoltaik_sic_diode -->|материал| material_ti_6al_4v
     часть_4h_sic_betavoltaik_isotope -->|материал| material_ti_6al_4v
     часть_4h_sic_betavoltaik_case -->|материал| material_ti_6al_4v
@@ -379,18 +363,18 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 113 |
+| `Ti-6Al-4V` | 106 |
 | `Al 6061-T6` | 20 |
-| `Inconel 718` | 7 |
+| `Inconel 718` | 6 |
 | `Bi₂Te₃` | 5 |
 | `Сталь Ст3` | 5 |
 | `SS AISI 304` | 5 |
 | `NdFeB` | 4 |
-| `Pt` | 3 |
 | `Inconel 625` | 3 |
 | `Эпоксид Epon 828 + TETA` | 3 |
 | `ScT?` | 2 |
 | `Am-241` | 2 |
 | `углеродная сажа (токопроводящий наполнитель) + PTFE 20% (связующее), опционально катализатор MnO₂; токосъёмник — никелевая сетка` | 2 |
 | `Pu-238 (плутоний-238)` | 2 |
+| `Pt` | 2 |
 | `Графен-аэрогель` | 2 |

@@ -15,6 +15,18 @@
       "path": "scripts/_helpers.py"
     },
     {
+      "id": "script:_migrate_256_fix_links.py",
+      "type": "script",
+      "label": "_migrate_256_fix_links.py",
+      "path": "scripts/_migrate_256_fix_links.py"
+    },
+    {
+      "id": "script:_migrate_256_variant_a.py",
+      "type": "script",
+      "label": "_migrate_256_variant_a.py",
+      "path": "scripts/_migrate_256_variant_a.py"
+    },
+    {
       "id": "script:_stubs.py",
       "type": "script",
       "label": "_stubs.py",
@@ -2160,6 +2172,12 @@
     },
     {
       "src": "readme:README.md",
+      "dst": "script:validate_decomposition.py",
+      "type": "documents",
+      "meta": {}
+    },
+    {
+      "src": "readme:README.md",
       "dst": "script:web_verify.py",
       "type": "documents",
       "meta": {}
@@ -2370,13 +2388,13 @@
     }
   ],
   "stats": {
-    "nodes": 182,
-    "edges": 212,
+    "nodes": 184,
+    "edges": 213,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,
       "readme": 1,
-      "script": 16,
+      "script": 18,
       "spec": 1,
       "spec_section": 146
     }

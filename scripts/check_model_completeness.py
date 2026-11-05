@@ -169,6 +169,8 @@ def check_all_models():
             'total_models': 0,
             'complete_models': 0,
             'F86': 1.0,  # vacuously true
+            'F86_threshold': 1.0,
+            'F86_pass': True,
             'details': [],
         }
     

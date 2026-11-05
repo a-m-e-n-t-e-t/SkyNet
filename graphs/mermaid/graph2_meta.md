@@ -4,6 +4,8 @@
 graph TB
     script___init___py(("__init__.py"))
     script__helpers_py(("_helpers.py"))
+    script__migrate_256_fix_links_py(("_migrate_256_fix_links.py"))
+    script__migrate_256_variant_a_py(("_migrate_256_variant_a.py"))
     script__stubs_py(("_stubs.py"))
     script_capture_dialog_py(("capture_dialog.py"))
     script_check_model_completeness_py(("check_model_completeness.py"))
@@ -236,13 +238,13 @@ graph TB
     section_§9_7_Прозрачная_остановка_(v9_24_НОВОЕ_—_из_аудита_диалога) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 182, рёбер: 212 (показано топ-50)._
+_Узлов: 184, рёбер: 213 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|
 | spec_section | 146 |
+| script | 18 |
 | concept_doc | 17 |
-| script | 16 |
 | catalog | 1 |
 | readme | 1 |
 | spec | 1 |

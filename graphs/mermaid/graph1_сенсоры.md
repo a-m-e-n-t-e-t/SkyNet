@@ -167,13 +167,6 @@ graph LR
     часть_dvs_mounting[крепёж]
     часть_dvs_connectors[разъёмы]
     часть_dvs_housing[корпус]
-    часть_hk_aerial_сенсоры[multi_sensor_array]
-    часть_hk_tank_сенсоры[radar_sensor]
-    часть_cameron_сенсоры[optical_audio_array]
-    часть_t850_сенсоры[optical_audio_array]
-    часть_t_x_сенсоры[optical_audio_array]
-    часть_t800_оптический_сенсор_1[optical_camera]
-    часть_t800_аудио_сенсор[audio_microphone]
     material_al_6061_t6[Al 6061-T6]
     material_aln[AlN]
     material_becu[BeCu]
@@ -318,24 +311,18 @@ graph LR
     часть_dvs_mounting -->|материал| material_ti_6al_4v
     часть_dvs_connectors -->|материал| material_latun_c36000
     часть_dvs_housing -->|материал| material_al_6061_t6
-    часть_hk_aerial_сенсоры -->|материал| material_al_6061_t6
-    часть_cameron_сенсоры -->|материал| material_poliimid
-    часть_t850_сенсоры -->|материал| material_ti_6al_4v
-    часть_t_x_сенсоры -->|материал| material_ti_6al_4v
-    часть_t800_оптический_сенсор_1 -->|материал| material_si
-    часть_t800_аудио_сенсор -->|материал| material_si
 ```
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 71 |
+| `Al 6061-T6` | 70 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 17 |
-| `Ti-6Al-4V` | 16 |
+| `Ti-6Al-4V` | 14 |
 | `BeCu` | 8 |
 | `Сталь Ст3` | 7 |
-| `Si` | 5 |
-| `Полиимид` | 5 |
 | `AlN` | 4 |
+| `Полиимид` | 4 |
+| `Si` | 3 |
 | `SS AISI 304` | 2 |
 | `метаповерхность` | 1 |
 | `Силикон 80 Shore A + стеклянные микросферы` | 1 |

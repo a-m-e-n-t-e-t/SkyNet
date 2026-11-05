@@ -2,19 +2,10 @@
 
 ```mermaid
 graph LR
-    часть_marcus_человеческий_мозг[human_brain_hybrid]
-    часть_rev9_полисплав_оболочка[mimetic_polyalloy_sheath]
-    часть_cameron_cpu[neural_net_cpu_cameron]
-    часть_t850_cpu[neural_net_cpu_v2]
-    часть_t_x_cpu[neural_net_cpu_tx]
-    часть_t600_cpu[early_neural_cpu]
-    часть_t800_cpu[neural_net_cpu]
     izdelie_sot_mram[память_MRAM]
     izdelie_memristornye_matritsy[memristor_массив]
     izdelie_intel_loihi_2[нейроморфный_процессор]
     izdelie_kondensatory_keramicheskie[керамический_конденсатор]
-    izdelie_SkyNet_T1000[модель_обёртка]
-    izdelie_SkyNet_T1001[модель_обёртка]
     izdelie_gr801_noel_v_risc_v[RISC-V_процессор]
     izdelie_sic_mosfet[силовой_транзистор]
     izdelie_pcm[phase_change_память]
@@ -45,8 +36,6 @@ graph LR
     часть_kondensatory_keramicheskie_termination[терминалы]
     часть_kondensatory_keramicheskie_outer_electrodes[внешние_электроды]
     часть_kondensatory_keramicheskie_ceramic_layers[керамические_слои]
-    часть_t1000_миметический_полисплав[mimetic_polyalloy]
-    часть_t1001_миметический_полисплав[mimetic_polyalloy_t1001]
     часть_gr801_noel_v_risc_v_flash[флеш_память]
     часть_gr801_noel_v_risc_v_capacitors[конденсаторы]
     часть_gr801_noel_v_risc_v_package[корпус_FCTEBGA]
@@ -105,20 +94,12 @@ graph LR
     material_al_6061_t6[Al 6061-T6]
     material_b₄c[B₄C]
     material_epoksid_epon_828_+_teta[Эпоксид Epon 828 + TETA]
-    material_gallinstan[Галлинстан]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
     material_poliimid[Полиимид]
     material_ptfe[PTFE]
     material_si[Si]
     material_ti_6al_4v[Ti-6Al-4V]
     material_tin[TiN]
-    часть_marcus_человеческий_мозг -->|материал| material_ti_6al_4v
-    часть_rev9_полисплав_оболочка -->|материал| material_gallinstan
-    часть_cameron_cpu -->|материал| material_poliimid
-    часть_t850_cpu -->|материал| material_al_6061_t6
-    часть_t_x_cpu -->|материал| material_al_6061_t6
-    часть_t600_cpu -->|материал| material_si
-    часть_t800_cpu -->|материал| material_si
     izdelie_kondensatory_keramicheskie -->|материал| material_tin
     часть_sot_mram_periphery -->|материал| material_ti_6al_4v
     часть_sot_mram_io_interface -->|материал| material_ti_6al_4v
@@ -139,8 +120,6 @@ graph LR
     часть_kondensatory_keramicheskie_inner_electrodes -->|материал| material_ti_6al_4v
     часть_kondensatory_keramicheskie_termination -->|материал| material_ti_6al_4v
     часть_kondensatory_keramicheskie_outer_electrodes -->|материал| material_ti_6al_4v
-    часть_t1000_миметический_полисплав -->|материал| material_gallinstan
-    часть_t1001_миметический_полисплав -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_flash -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_capacitors -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_package -->|материал| material_epoksid_epon_828_+_teta
@@ -194,13 +173,12 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 47 |
-| `Si` | 8 |
+| `Ti-6Al-4V` | 45 |
+| `Si` | 6 |
 | `PTFE` | 6 |
 | `Эпоксид Epon 828 + TETA` | 5 |
-| `Al 6061-T6` | 3 |
 | `B₄C` | 3 |
-| `Галлинстан` | 2 |
-| `Полиимид` | 2 |
 | `TiN` | 1 |
+| `Полиимид` | 1 |
+| `Al 6061-T6` | 1 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 1 |
