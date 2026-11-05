@@ -17,11 +17,17 @@ id: izdelie_reversivnye_pelte
   - часть_reversivnye_pelte_solder
 материалы_частей:
   - часть: часть_reversivnye_pelte_peltier_couples
+    материал: bi₂te₃
+    доля_массы: 0.137
   - часть: часть_reversivnye_pelte_ceramic_top
-    материал: alumina
-    доля_массы: 0.19
-    материал: alumina
-    доля_массы: 0.19
+    материал: oksid_alyuminiya
+    доля_массы: 0.149
+  - часть: часть_reversivnye_pelte_electrodes
+    материал: copper
+    доля_массы: 0.06
+  - часть: часть_reversivnye_pelte_solder
+    материал: splav_sn-pb
+    доля_массы: 0.054
 scaling_type: количественный
 соединители: []
 версия: реальная

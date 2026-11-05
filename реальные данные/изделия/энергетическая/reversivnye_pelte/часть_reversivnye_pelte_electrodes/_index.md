@@ -47,6 +47,8 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-05
 источник: web_search
+источник_url: https://thermal.ferrotec.com/products/peltier-thermoelectric-cooler-modules/9500_127_120-b
+источник_дата: 2026-11-05
 источник_разбора: канон
 ---
 # Часть: часть_reversivnye_pelte_electrodes
