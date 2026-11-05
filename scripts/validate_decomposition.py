@@ -1710,8 +1710,12 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--metric', help='Запустить конкретную метрику')
     parser.add_argument('--fix', action='store_true', help='Авто-фикс где возможно')
+    parser.add_argument('--json-out', dest='json_out',
+                        help='Записать ПОЛНЫЙ machine-readable JSON со всеми violations '
+                             '(в человеческом логе печатются только первые 3 на метрику) '
+                             '— для CI (verify_decomposition.yml)')
     args = parser.parse_args()
-    
+
     if args.metric:
         # Запуск конкретной метрики
         izdeliya = load_all_izdeliya()
@@ -1727,8 +1731,20 @@ def main():
                 for v in r['violations'][:10]:
                     print(f"  - {v}")
         return 0 if check_fn else 1
-    
+
     results = run_all_checks()
+
+    if args.json_out:
+        payload = {
+            m: results['results'][m]['violations']
+            for m in ('F22', 'F23', 'F24', 'F25')
+            if m in results['results']
+        }
+        with open(args.json_out, 'w', encoding='utf-8') as f:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+        total = sum(len(v) for v in payload.values())
+        print(f"JSON written ({args.json_out}): {total} violations (полный список, без обрезки)")
+
     return 0 if results['all_pass'] else 1
 
 
