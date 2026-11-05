@@ -2159,6 +2159,12 @@
       "meta": {}
     },
     {
+      "src": "readme:README.md",
+      "dst": "script:web_verify.py",
+      "type": "documents",
+      "meta": {}
+    },
+    {
       "src": "concept:требования_к_ии/_examples.md",
       "dst": "script:pipeline.py",
       "type": "describes",
@@ -2365,7 +2371,7 @@
   ],
   "stats": {
     "nodes": 182,
-    "edges": 211,
+    "edges": 212,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,

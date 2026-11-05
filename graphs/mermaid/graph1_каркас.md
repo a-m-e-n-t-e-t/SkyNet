@@ -35,6 +35,7 @@ graph LR
     material_al_6061_t6[Al 6061-T6]
     material_cfrp_t1100g[CFRP T1100G]
     material_inconel_718[Inconel 718]
+    material_ss_aisi_304[SS AISI 304]
     material_stal_st3[Сталь Ст3]
     material_ti_6al_4v[Ti-6Al-4V]
     izdelie_SkyNet_HKAerial -->|материал| material_inconel_718
@@ -46,7 +47,7 @@ graph LR
     часть_t850_эндоскелет -->|материал| material_ti_6al_4v
     часть_t_x_эндоскелет -->|материал| material_ti_6al_4v
     часть_kompensatory_connectors -->|материал| material_stal_st3
-    часть_kompensatory_mounting -->|материал| material_ti_6al_4v
+    часть_kompensatory_mounting -->|материал| material_ss_aisi_304
     часть_kompensatory_housing -->|материал| material_al_6061_t6
     часть_kompensatory_core -->|материал| material_inconel_718
     часть_t600_эндоскелет -->|материал| material_ti_6al_4v
@@ -54,13 +55,14 @@ graph LR
     часть_reshetchatyi_karkas_housing -->|материал| material_stal_st3
     часть_reshetchatyi_karkas_core -->|материал| material_al_6061_t6
     часть_reshetchatyi_karkas_connectors -->|материал| material_al_6061_t6
-    часть_reshetchatyi_karkas_mounting -->|материал| material_ti_6al_4v
+    часть_reshetchatyi_karkas_mounting -->|материал| material_stal_st3
 ```
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 10 |
+| `Ti-6Al-4V` | 8 |
+| `Сталь Ст3` | 3 |
 | `Al 6061-T6` | 3 |
 | `Inconel 718` | 2 |
-| `Сталь Ст3` | 2 |
 | `CFRP T1100G` | 1 |
+| `SS AISI 304` | 1 |

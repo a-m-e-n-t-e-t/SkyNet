@@ -1333,6 +1333,41 @@
       "subsystem": "сенсоры"
     },
     {
+      "id": "izdelie_SkyNet-PowerBackpack",
+      "type": "izdelie",
+      "label": "батарейный_блок",
+      "path": "реальные данные/изделия/система_питания/sky-net_power_backpack/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
+      "id": "часть_SkyNet-PowerBackpack_housing",
+      "type": "chast",
+      "label": "накопитель_энергии",
+      "path": "реальные данные/изделия/система_питания/sky-net_power_backpack/часть_SkyNet-PowerBackpack_housing/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
+      "id": "часть_SkyNet-PowerBackpack_bms",
+      "type": "chast",
+      "label": "накопитель_энергии",
+      "path": "реальные данные/изделия/система_питания/sky-net_power_backpack/часть_SkyNet-PowerBackpack_bms/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
+      "id": "часть_SkyNet-PowerBackpack_cells",
+      "type": "chast",
+      "label": "накопитель_энергии",
+      "path": "реальные данные/изделия/система_питания/sky-net_power_backpack/часть_SkyNet-PowerBackpack_cells/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
+      "id": "часть_SkyNet-PowerBackpack_mounting",
+      "type": "chast",
+      "label": "крепёж",
+      "path": "реальные данные/изделия/система_питания/sky-net_power_backpack/часть_SkyNet-PowerBackpack_mounting/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
       "id": "izdelie_provodnikovaya_nanoreshetka",
       "type": "izdelie",
       "label": "прочее",
@@ -4588,6 +4623,41 @@
       "subsystem": "система_связи"
     },
     {
+      "id": "izdelie_SkyNet-LegActuator",
+      "type": "izdelie",
+      "label": "привод_конечности",
+      "path": "реальные данные/изделия/система_передвижения/sky-net_leg_actuator/_index.md",
+      "subsystem": "система_передвижения"
+    },
+    {
+      "id": "часть_SkyNet-LegActuator_ankle",
+      "type": "chast",
+      "label": "привод_конечности",
+      "path": "реальные данные/изделия/система_передвижения/sky-net_leg_actuator/часть_SkyNet-LegActuator_ankle/_index.md",
+      "subsystem": "система_передвижения"
+    },
+    {
+      "id": "часть_SkyNet-LegActuator_mounting",
+      "type": "chast",
+      "label": "крепёж",
+      "path": "реальные данные/изделия/система_передвижения/sky-net_leg_actuator/часть_SkyNet-LegActuator_mounting/_index.md",
+      "subsystem": "система_передвижения"
+    },
+    {
+      "id": "часть_SkyNet-LegActuator_knee",
+      "type": "chast",
+      "label": "привод_конечности",
+      "path": "реальные данные/изделия/система_передвижения/sky-net_leg_actuator/часть_SkyNet-LegActuator_knee/_index.md",
+      "subsystem": "система_передвижения"
+    },
+    {
+      "id": "часть_SkyNet-LegActuator_hip",
+      "type": "chast",
+      "label": "привод_конечности",
+      "path": "реальные данные/изделия/система_передвижения/sky-net_leg_actuator/часть_SkyNet-LegActuator_hip/_index.md",
+      "subsystem": "система_передвижения"
+    },
+    {
       "id": "izdelie_sot-mram",
       "type": "izdelie",
       "label": "память_MRAM",
@@ -5873,6 +5943,13 @@
       "type": "material",
       "label": "нитинол",
       "path": "реальные данные/материалы/nitinol.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_nmc_graphite",
+      "type": "material",
+      "label": "LiNi₀.₈Mn₀.₁Co₀.₁O₂ катод / графит анод",
+      "path": "реальные данные/материалы/nmc_graphite.md",
       "subsystem": ""
     },
     {
@@ -9228,6 +9305,96 @@
       "meta": {}
     },
     {
+      "src": "izdelie_SkyNet-PowerBackpack",
+      "dst": "часть_SkyNet-PowerBackpack_cells",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-PowerBackpack",
+      "dst": "часть_SkyNet-PowerBackpack_bms",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-PowerBackpack",
+      "dst": "часть_SkyNet-PowerBackpack_housing",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-PowerBackpack",
+      "dst": "часть_SkyNet-PowerBackpack_mounting",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-PowerBackpack",
+      "dst": "material_nmc_graphite",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-PowerBackpack",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-PowerBackpack",
+      "dst": "material_ss_aisi_304",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_housing",
+      "dst": "izdelie_SkyNet-PowerBackpack",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_housing",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms",
+      "dst": "izdelie_SkyNet-PowerBackpack",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells",
+      "dst": "izdelie_SkyNet-PowerBackpack",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells",
+      "dst": "material_nmc_graphite",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_mounting",
+      "dst": "izdelie_SkyNet-PowerBackpack",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_mounting",
+      "dst": "material_ss_aisi_304",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_provodnikovaya_nanoreshetka",
       "dst": "часть_provodnikovaya_nanoreshetka_core",
       "type": "has_part",
@@ -10861,7 +11028,7 @@
     },
     {
       "src": "часть_kompensatory_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -11119,7 +11286,7 @@
     },
     {
       "src": "часть_reshetchatyi_karkas_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_stal_st3",
       "type": "uses_material",
       "meta": {}
     },
@@ -16260,6 +16427,96 @@
       "meta": {}
     },
     {
+      "src": "izdelie_SkyNet-LegActuator",
+      "dst": "часть_SkyNet-LegActuator_hip",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-LegActuator",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-LegActuator",
+      "dst": "часть_SkyNet-LegActuator_ankle",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-LegActuator",
+      "dst": "часть_SkyNet-LegActuator_mounting",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-LegActuator",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-LegActuator",
+      "dst": "material_ti-6al-4v",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-LegActuator",
+      "dst": "material_ss_aisi_304",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle",
+      "dst": "izdelie_SkyNet-LegActuator",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_mounting",
+      "dst": "izdelie_SkyNet-LegActuator",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_mounting",
+      "dst": "material_ss_aisi_304",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee",
+      "dst": "izdelie_SkyNet-LegActuator",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee",
+      "dst": "material_ti-6al-4v",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_hip",
+      "dst": "izdelie_SkyNet-LegActuator",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_hip",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_sot-mram",
       "dst": "часть_sot-mram_cell_array",
       "type": "has_part",
@@ -20106,6 +20363,94 @@
       }
     },
     {
+      "src": "часть_SkyNet-PowerBackpack_cells",
+      "dst": "izdelie_SkyNet-PowerBackpack",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms",
+      "dst": "izdelie_SkyNet-PowerBackpack",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_housing",
+      "dst": "izdelie_SkyNet-PowerBackpack",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_mounting",
+      "dst": "izdelie_SkyNet-PowerBackpack",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_nmc_graphite",
+      "dst": "izdelie_SkyNet-PowerBackpack",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "izdelie_SkyNet-PowerBackpack",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ss_aisi_304",
+      "dst": "izdelie_SkyNet-PowerBackpack",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_SkyNet-PowerBackpack_housing",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_SkyNet-PowerBackpack_bms",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_nmc_graphite",
+      "dst": "часть_SkyNet-PowerBackpack_cells",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ss_aisi_304",
+      "dst": "часть_SkyNet-PowerBackpack_mounting",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_provodnikovaya_nanoreshetka_core",
       "dst": "izdelie_provodnikovaya_nanoreshetka",
       "type": "part_of",
@@ -21594,7 +21939,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_kompensatory_mounting",
       "type": "used_in",
       "meta": {
@@ -21762,7 +22107,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_stal_st3",
       "dst": "часть_reshetchatyi_karkas_mounting",
       "type": "used_in",
       "meta": {
@@ -26370,6 +26715,94 @@
       }
     },
     {
+      "src": "часть_SkyNet-LegActuator_hip",
+      "dst": "izdelie_SkyNet-LegActuator",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee",
+      "dst": "izdelie_SkyNet-LegActuator",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle",
+      "dst": "izdelie_SkyNet-LegActuator",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_mounting",
+      "dst": "izdelie_SkyNet-LegActuator",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "izdelie_SkyNet-LegActuator",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ti-6al-4v",
+      "dst": "izdelie_SkyNet-LegActuator",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ss_aisi_304",
+      "dst": "izdelie_SkyNet-LegActuator",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_SkyNet-LegActuator_ankle",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ss_aisi_304",
+      "dst": "часть_SkyNet-LegActuator_mounting",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ti-6al-4v",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_SkyNet-LegActuator_hip",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_sot-mram_cell_array",
       "dst": "izdelie_sot-mram",
       "type": "part_of",
@@ -27628,12 +28061,16 @@
       "standart_ASTM D638",
       "standart_ASTM E1289",
       "standart_ASTM F136",
+      "standart_ASTM F136 (Ti-6Al-4V)",
       "standart_DIN 2093",
       "standart_DIN 69051",
       "standart_DIN 912",
       "standart_DIN VDE 0580",
       "standart_DOE 10 CFR 71",
       "standart_EIA RS-198",
+      "standart_EJMA (монтаж компенсаторов)",
+      "standart_EN 1090-2",
+      "standart_EN 1092-1 (Type 01, PN10 DN50)",
       "standart_EN 12164",
       "standart_EN 683-17",
       "standart_ETSI EN 301 489",
@@ -27641,6 +28078,8 @@
       "standart_IAEA SSR-4",
       "standart_IBM 2nm",
       "standart_IEC 60034",
+      "standart_IEC 60034-1",
+      "standart_IEC 60034-1 (вращающиеся машины)",
       "standart_IEC 60034-7 (IM B3/B5)",
       "standart_IEC 60068",
       "standart_IEC 60086",
@@ -27649,6 +28088,7 @@
       "standart_IEC 60404-8-1",
       "standart_IEC 60498",
       "standart_IEC 60529",
+      "standart_IEC 60529 (IP54)",
       "standart_IEC 60529 (IP67)",
       "standart_IEC 60603",
       "standart_IEC 60904",
@@ -27656,9 +28096,15 @@
       "standart_IEC 61215",
       "standart_IEC 61730",
       "standart_IEC 61960",
+      "standart_IEC 62133-2",
+      "standart_IEC 62133-2 (безопасность Li-ion)",
       "standart_IEC 62282",
       "standart_IEC 62282-2",
       "standart_IEC 62391",
+      "standart_IEC 62619",
+      "standart_IEC 62619 (промышленные Li-ion)",
+      "standart_IEEE 1625",
+      "standart_IEEE 1625 (многоэлементные сборки)",
       "standart_IEEE C57.12.00",
       "standart_IEEE C57.16",
       "standart_IPC J-STD-001",
@@ -27677,9 +28123,15 @@
       "standart_ISO 3506 A2-70",
       "standart_ISO 4762 (M4)",
       "standart_ISO 4762 (M5)",
+      "standart_ISO 4762 (M6)",
+      "standart_ISO 4762 (M8)",
       "standart_ISO 630",
       "standart_ISO 898-1",
+      "standart_ISO 898-1 (класс 8.8)",
       "standart_ISO 9001",
+      "standart_ISO 9283",
+      "standart_ISO 9283 (промышленные роботы — точность позы)",
+      "standart_ISO 9283 (точность позы)",
       "standart_Intel 4 process",
       "standart_JEDEC J-STD-020D",
       "standart_JEDEC JESD22-A104",
@@ -27716,6 +28168,8 @@
       "standart_UL 94 V-0",
       "standart_UN 3090",
       "standart_UN 38.3",
+      "standart_UN 38.3 (транспорт литий-ионных батарей)",
+      "standart_UN 38.3 (транспорт)",
       "standart_USB Type-C Spec Rev 2.2 (USB-IF)",
       "standart_VITA 65"
     ],
@@ -27729,6 +28183,7 @@
       "group_bloom_energy",
       "group_boeing_lockheed",
       "group_boeing_nasa",
+      "group_boston_dynamics",
       "group_boyd_corp",
       "group_brigham_young_university",
       "group_ceres_power",
@@ -27873,19 +28328,19 @@
     ]
   },
   "stats": {
-    "nodes": 925,
-    "edges": 3106,
+    "nodes": 936,
+    "edges": 3158,
     "dangling": {
-      "complies_with": 114,
+      "complies_with": 135,
       "has_part": 1,
-      "researched_by": 42,
+      "researched_by": 43,
       "uses_material": 103
     },
     "by_type": {
-      "chast": 620,
+      "chast": 628,
       "issledovatelskaya_gruppa": 10,
-      "izdelie": 128,
-      "material": 159,
+      "izdelie": 130,
+      "material": 160,
       "standart": 8
     }
   }
