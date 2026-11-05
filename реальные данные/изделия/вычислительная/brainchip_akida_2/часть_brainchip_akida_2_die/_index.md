@@ -52,6 +52,8 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-05
 источник: web_search
+источник_url: https://www.eenewseurope.com/en/brainchip-announces-neuromorphic-ai-on-the-m-2-form-factor
+источник_дата: 2026-11-05
 источник_разбора: канон
 ---
 # Часть: часть_brainchip_akida_2_die
