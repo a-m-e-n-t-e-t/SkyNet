@@ -13567,7 +13567,7 @@
     },
     {
       "src": "часть_betavoltaiki_terminal",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_becu",
       "type": "uses_material",
       "meta": {}
     },
@@ -16003,7 +16003,7 @@
     },
     {
       "src": "часть_memristornye_matritsy_adc",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -16015,7 +16015,7 @@
     },
     {
       "src": "часть_memristornye_matritsy_controller",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -16051,7 +16051,7 @@
     },
     {
       "src": "часть_sot-mram_sense_amplifiers",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -16063,7 +16063,7 @@
     },
     {
       "src": "часть_sot-mram_row_decoders",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -16159,7 +16159,7 @@
     },
     {
       "src": "часть_sic_mosfet_solder",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_splav_sn-pb",
       "type": "uses_material",
       "meta": {}
     },
@@ -16315,7 +16315,7 @@
     },
     {
       "src": "часть_pcm_controller",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -16339,7 +16339,7 @@
     },
     {
       "src": "часть_pcm_selector",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_pcm",
       "type": "uses_material",
       "meta": {}
     },
@@ -24330,7 +24330,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_becu",
       "dst": "часть_betavoltaiki_terminal",
       "type": "used_in",
       "meta": {
@@ -26530,7 +26530,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_memristornye_matritsy_adc",
       "type": "used_in",
       "meta": {
@@ -26538,7 +26538,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_memristornye_matritsy_controller",
       "type": "used_in",
       "meta": {
@@ -26562,7 +26562,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_sot-mram_sense_amplifiers",
       "type": "used_in",
       "meta": {
@@ -26570,7 +26570,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_sot-mram_row_decoders",
       "type": "used_in",
       "meta": {
@@ -26634,7 +26634,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_splav_sn-pb",
       "dst": "часть_sic_mosfet_solder",
       "type": "used_in",
       "meta": {
@@ -26722,7 +26722,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_pcm_controller",
       "type": "used_in",
       "meta": {
@@ -26738,7 +26738,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_pcm",
       "dst": "часть_pcm_selector",
       "type": "used_in",
       "meta": {
@@ -28075,11 +28075,13 @@
       "standart_ASTM E8",
       "standart_ASTM F136",
       "standart_ASTM F136 (Ti-6Al-4V)",
+      "standart_Aguirre 2024 (ADC area 70-90%)",
       "standart_Arbe Phoenix Integration Guide",
       "standart_Bosch Sensortec PCB Guide",
       "standart_CISPR 25",
       "standart_Cedrat Mechanical Interface",
       "standart_Celsius Design Guide",
+      "standart_City Labs NanoTritium P100",
       "standart_Coherent Integration Guide",
       "standart_DIN 2093",
       "standart_DIN 69051",
@@ -28102,6 +28104,7 @@
       "standart_Fair-Rite Material 43/31 DS",
       "standart_IAEA SSR-4",
       "standart_IBM 2nm",
+      "standart_IDTechEx Die-Attach Trend (2024)",
       "standart_IEC 60034",
       "standart_IEC 60034-1",
       "standart_IEC 60034-1 (вращающиеся машины)",
@@ -28132,7 +28135,12 @@
       "standart_IEEE 1625 (многоэлементные сборки)",
       "standart_IEEE C57.12.00",
       "standart_IEEE C57.16",
+      "standart_IEEE SSCS 7nm SOT-MRAM",
+      "standart_IEEE Trans. Circuits Syst.",
+      "standart_IMEC OTS-Only Memory (2024)",
+      "standart_IMEC SOT-MRAM LL-Cache (2023)",
       "standart_IPC J-STD-001",
+      "standart_IPC J-STD-006",
       "standart_IPC TM-650 2.4.24",
       "standart_IPC-2221",
       "standart_IPC-2223",
@@ -28172,11 +28180,14 @@
       "standart_ISO 9283 (промышленные роботы — точность позы)",
       "standart_ISO 9283 (точность позы)",
       "standart_Intel 4 process",
+      "standart_Intel Optane PM Guide",
       "standart_Iridium 9603 Developer Guide",
       "standart_JEDEC J-STD-020D",
       "standart_JEDEC JESD22-A104",
       "standart_JEDEC JESD47",
+      "standart_JEDEC MS-001 (DIP)",
       "standart_JIS D5301",
+      "standart_Jülich Kuriakose 2024",
       "standart_MIL-DTL-11821",
       "standart_MIL-DTL-12560K",
       "standart_MIL-DTL-28876",
@@ -28218,6 +28229,7 @@
       "standart_TSO-C112e",
       "standart_TSO-C166b",
       "standart_TSO-C88b",
+      "standart_TechInsights 3D XPoint Teardown (2017)",
       "standart_Teledyne Mechanical IDD",
       "standart_Teledyne Mechanical IDD (Boson+)",
       "standart_Thorlabs Mounting Note",
@@ -28389,7 +28401,7 @@
     "nodes": 937,
     "edges": 3158,
     "dangling": {
-      "complies_with": 186,
+      "complies_with": 198,
       "has_part": 1,
       "researched_by": 43,
       "uses_material": 103

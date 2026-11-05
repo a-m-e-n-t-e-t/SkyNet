@@ -1,0 +1,87 @@
+# Issue #151 — группа «100×100×50mm, 0.0005kg, ti-6al-4v» (8 файлов), batch 1
+# Данные из web_search 2026-11-05: IMEC SOT-MRAM LL-cache (2023) + 1 Kb SOT-MRAM MUX array (2024);
+# Jülich memristor-чип 1.4×1.0 мм (Kuriakose 2024) + Aguirre 2024 (ADC 70–90% площади);
+# TechInsights 3D XPoint teardown (PCM+OTS между M4/M5) + IMEC OTS-only (2024);
+# IDTechEx die-attach (bondline 50–100 мкм, SAC305 vs sintered silver);
+# City Labs NanoTritium P100 (0.8/1.6/2.4 В, DIP form factor по DOE).
+files:
+  - file: реальные данные/изделия/вычислительная/sot-mram/часть_sot-mram_row_decoders/_index.md
+    url: https://www.imec-int.com/en/articles/novel-sot-mram-architecture-opens-doors-high-density-last-level-cache-memory-applications
+    source_note: "IMEC — novel SOT-MRAM architecture для last-level cache (2023): плотность и разнесение путей записи/чтения на кристалле"
+    material: si
+    dims: 1.6,1.1,0.4
+    mass: 0.0004
+    share: 0.1333
+    standards: "IMEC SOT-MRAM LL-Cache (2023);IEEE SSCS 7nm SOT-MRAM"
+    desc: "Блок дешифраторов строк SOT-MRAM-кристалла (чип 8×8×1 мм класса IMEC SOT-MRAM LL-cache 2023): кремниевый логический блок 1.6×1.1×0.4 мм на общей подложке, CMOS-логика выборки строки из 2¹⁰ состояний затворов. Масса ≈0.4 г (13.3% номинала 3 г)."
+    principle: "Дешифратор принимает адрес шины и активирует единственную строку слов через ступени преддекодера — разнесение путей записи/чтения SOT-ячейки (по IMEC) позволяет декодеру управлять линиями слов без конфликтов с туннельным током записи; блок размещается у периферии массива для минимальной длины словных линий."
+  - file: реальные данные/изделия/вычислительная/sot-mram/часть_sot-mram_sense_amplifiers/_index.md
+    url: https://www.imec-int.com/en/articles/novel-sot-mram-architecture-opens-doors-high-density-last-level-cache-memory-applications
+    source_note: "IMEC SOT-MRAM (2023) + демонстрация 1 Kb SOT-MRAM MUX-массива (researching.cn, 2024): чтение состояния MTJ через развязку записи"
+    material: si
+    dims: 1.4,0.9,0.4
+    mass: 0.0005
+    share: 0.1667
+    standards: "IMEC SOT-MRAM LL-Cache (2023);IEEE SSCS 7nm SOT-MRAM"
+    desc: "Блок sense-усилителей SOT-MRAM-кристалла (чип 8×8×1 мм, технология с раздельными путями записи/чтения по IMEC 2023 и 1 Kb MUX-демонстрацией 2024): кремниевый блок 1.4×0.9×0.4 мм с дифференциальными компараторами токов MTJ. Масса ≈0.5 г (16.7% номинала 3 г)."
+    principle: "Sense-усилитель сравнивает сопротивление выбранной MTJ с опорной ячейкой и защёлкивает бит — SOT-развязка записи (ток по тяжёлому металлу) от чтения убирает disturb-канал, поэтому усилитель может работать с меньшим запасом по току и выше по скорости, чем в STT-MRAM."
+  - file: реальные данные/изделия/вычислительная/memristornye_matritsy/часть_memristornye_matritsy_adc/_index.md
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10912231
+    source_note: "Aguirre et al. (2024, обзор memristive crossbar): ADC занимает до 70–90% площади on-chip вычислительного узла кроссбара"
+    material: si
+    dims: 1.4,1.0,0.4
+    mass: 0.0008
+    share: 0.08
+    standards: "Aguirre 2024 (ADC area 70-90%);Jülich Kuriakose 2024"
+    desc: "Интерфейсный АЦП мемристорной матрицы (кристалл 12×12×1 мм, периферия класса чипа Jülich 1.4×1.0 мм с управляющим контуром 0.4×0.5 мм; по Aguirre 2024 АЦП занимает до 70–90% площади узла): кремниевый блок SAR-АЦП 1.4×1.0×0.4 мм. Масса ≈0.8 г (8% номинала 10 г)."
+    principle: "Ток столбца кроссбара (закон Кирхгофа — аналог скалярного произведения) интегрируется на ёмкости и квантуется SAR-циклом компаратора — разрядность выбирается под динамический диапазон суммы, а мультиплексирование АЦП на группу столбцов экономит площадь, доминирующую в балансе узла."
+  - file: реальные данные/изделия/вычислительная/memristornye_matritsy/часть_memristornye_matritsy_controller/_index.md
+    url: https://juser.fz-juelich.de/record/1033840
+    source_note: "Kuriakose et al. (Jülich, 2024) — чип 1.4×1.0 мм, из них контур управления мемристором 0.4×0.5 мм"
+    material: si
+    dims: 0.9,0.7,0.4
+    mass: 0.0006
+    share: 0.06
+    standards: "Jülich Kuriakose 2024;IEEE Trans. Circuits Syst."
+    desc: "Контроллер мемристорной матрицы (кристалл 12×12×1 мм; управляющий контур класса чипа Jülich 2024 — 0.4×0.5 мм на кристалле 1.4×1.0 мм): кремниевый конечный автомат 0.9×0.7×0.4 мм с очередью операций и схемой формирования импульсов SET/RESET. Масса ≈0.6 г (6% номинала 10 г)."
+    principle: "Контроллер принимает операцию VMM, выставляет адреса строк/столбцов и управляет амплитудой-длительностью программирующих импульсов через verify-циклы — итеративная подстройка проводимости компенсирует дрейф и разброс мемристоров без внешнего процессора."
+  - file: реальные данные/изделия/вычислительная/pcm/часть_pcm_controller/_index.md
+    url: https://www.techinsights.com/blog/intel-3d-xpoint-memory-die-removed-intel-optanetm-pcm-phase-change-memory
+    source_note: "TechInsights teardown 3D XPoint (2017): слои памяти между metal 4 и metal 5, PCM-элемент с OTS-селектором на каждой пересечении"
+    material: si
+    dims: 1.8,1.3,0.4
+    mass: 0.0007
+    share: 0.07
+    standards: "TechInsights 3D XPoint Teardown (2017);Intel Optane PM Guide"
+    desc: "Контроллер PCM-кристалла (чип 12×12×1 мм, архитектура 3D XPoint класса Intel Optane с ячейками между metal 4/metal 5 по TechInsights 2017): кремниевый блок управления 1.8×1.3×0.4 мм с планировщиком программирования (SET-импульсы с наклонным фронтом, RESET с закалкой). Масса ≈0.7 г (7% номинала 10 г)."
+    principle: "Контроллер транслирует адрес в выборку слова/битиры и формирует профили импульсов: RESET — короткий сильный импульс аморфизации, SET — более длинный с наклонным фронтом кристаллизации; verify-чтение после каждой операции удерживает распределение сопротивлений ячеек в окне считывания."
+  - file: реальные данные/изделия/вычислительная/pcm/часть_pcm_selector/_index.md
+    url: https://www.imec-int.com/en/articles/promise-ots-only-memories-next-gen-compute-system-architectures-0
+    source_note: "IMEC (2024) — ovonic threshold switching (OTS): халькогенидный пороговый переключатель, селективность и токовая плотность"
+    material: pcm
+    dims: 0.8,0.6,0.25
+    mass: 0.0003
+    share: 0.03
+    standards: "IMEC OTS-Only Memory (2024);TechInsights 3D XPoint Teardown (2017)"
+    desc: "OTS-селектор массива PCM (пороговый халькогенидный переключатель на каждом пересечении, как в 3D XPoint между M4/M5 и в OTS-исследованиях IMEC 2024): массив селекторных элементов 0.8×0.6×0.25 мм из фазопереходного халькогенида в стеке электродов. Масса ≈0.3 г (3% номинала 10 г)."
+    principle: "Ниже порогового напряжения халькогенид аморфен и практически не проводит, выше — переключается в проводящее состояние за наносекунды: селектор подавляет sneak-токи непрошенных ячеек кроссбара и обеспечивает нелинейность ВАХ, без которой пассивный массив нечитаем."
+  - file: реальные данные/изделия/вычислительная/sic_mosfet/часть_sic_mosfet_solder/_index.md
+    url: https://www.idtechex.com/en/research-article/die-attach-material-trend-for-ev-power-electronics/31154
+    source_note: "IDTechEx (2024) — die-attach силовой электроники: bondline припоя 50–100 мкм, SAC305 против спечённого серебра"
+    material: splav_sn-pb
+    dims: 5.5,5.5,0.08
+    mass: 0.00002
+    share: 0.0067
+    standards: "IDTechEx Die-Attach Trend (2024);IPC J-STD-006"
+    desc: "Слой пайки кристалла SiC MOSFET (кристалл 10×10×2 мм модуля; bondline класса 50–100 мкм по IDTechEx 2024, припой Sn-Pb/SAC305 до 175 °C и спечённое серебро выше): припоиная прослойка 5.5×5.5×0.08 мм между кристаллом и выводной рамкой. Масса ≈20 мг (0.67% номинала 3 г)."
+    principle: "Припоиная линза смачивает металлизацию кристалла и рамки, образуя электронное и тепловое соединение: толщина 80 мкм держит термическое сопротивление вниз, а предел текучести припоя снимает термомеханические напряжения пары SiC (КТР 4×10⁻⁶) — медь рамки (КТР 17×10⁻⁶) при термоциклах."
+  - file: реальные данные/изделия/энергетическая/betavoltaiki/часть_betavoltaiki_terminal/_index.md
+    url: https://www.energy.gov/sites/prod/files/2015/08/f26/Cabauy%20Tritium%20Focus%20Group%20Presentation.pdf
+    source_note: "DOE Tritium Focus Group — City Labs NanoTritium betavoltaic: форм-фактор DIP, напряжения 0.8/1.6/2.4 В, ток ~50–350 нА"
+    material: becu
+    dims: 5,1.5,0.8
+    mass: 0.00003
+    share: 0.0006
+    standards: "City Labs NanoTritium P100;JEDEC MS-001 (DIP)"
+    desc: "Выводные контакты бетавольтаической батареи (элемент класса City Labs NanoTritium P100 в DIP-корпусе 25×25×5 мм, напряжения 0.8–2.4 В, токи наноамперного диапазона): пара штыревых выводов Ø0.5×5 мм из бериллиевой бронзы BeCu C17200 на шаге DIP 2.54 мм. Масса ≈30 мг (0.06% номинала 50 г)."
+    principle: "Штыри запрессованы в корпус и припаяны к контактным площадкам чипа внутри — BeCu держит упругую посадку в панели и минимальное контактное сопротивление при наноамперных токах, где даже единицы ом вывода съедают заметную долю рабочего напряжения элемента."

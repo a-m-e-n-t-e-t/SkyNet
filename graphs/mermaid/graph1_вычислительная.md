@@ -107,9 +107,11 @@ graph LR
     material_epoksid_epon_828_+_teta[Эпоксид Epon 828 + TETA]
     material_gallinstan[Галлинстан]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
+    material_pcm[PCM]
     material_poliimid[Полиимид]
     material_ptfe[PTFE]
     material_si[Si]
+    material_splav_sn_pb[Сплав Sn-Pb]
     material_ti_6al_4v[Ti-6Al-4V]
     material_tin[TiN]
     izdelie_kondensatory_keramicheskie -->|материал| material_tin
@@ -125,12 +127,12 @@ graph LR
     часть_litii_tionilhloridnye_batarei_anode -->|материал| material_ti_6al_4v
     часть_memristornye_matritsy_crossbar -->|материал| material_ti_6al_4v
     часть_memristornye_matritsy_word_drivers -->|материал| material_ti_6al_4v
-    часть_memristornye_matritsy_adc -->|материал| material_ti_6al_4v
-    часть_memristornye_matritsy_controller -->|материал| material_ti_6al_4v
+    часть_memristornye_matritsy_adc -->|материал| material_si
+    часть_memristornye_matritsy_controller -->|материал| material_si
     часть_memristornye_matritsy_bit_sense -->|материал| material_ti_6al_4v
     часть_sot_mram_periphery -->|материал| material_ti_6al_4v
-    часть_sot_mram_sense_amplifiers -->|материал| material_ti_6al_4v
-    часть_sot_mram_row_decoders -->|материал| material_ti_6al_4v
+    часть_sot_mram_sense_amplifiers -->|материал| material_si
+    часть_sot_mram_row_decoders -->|материал| material_si
     часть_sot_mram_cell_array -->|материал| material_ti_6al_4v
     часть_sot_mram_io_interface -->|материал| material_ti_6al_4v
     часть_sic_mosfet_encapsulant -->|материал| material_ti_6al_4v
@@ -138,7 +140,7 @@ graph LR
     часть_sic_mosfet_wire_bonds -->|материал| material_ti_6al_4v
     часть_sic_mosfet_lead_frame -->|материал| material_ti_6al_4v
     часть_sic_mosfet_gate_terminal -->|материал| material_ti_6al_4v
-    часть_sic_mosfet_solder -->|материал| material_ti_6al_4v
+    часть_sic_mosfet_solder -->|материал| material_splav_sn_pb
     часть_brainchip_akida_2_pcb -->|материал| material_ptfe
     часть_brainchip_akida_2_capacitors -->|материал| material_b₄c
     часть_brainchip_akida_2_substrate -->|материал| material_ptfe
@@ -149,9 +151,9 @@ graph LR
     часть_intel_loihi_2_die -->|материал| material_si
     часть_intel_loihi_2_encapsulant -->|материал| material_epoksid_epon_828_+_teta
     часть_intel_loihi_2_capacitors -->|материал| material_b₄c
-    часть_pcm_controller -->|материал| material_ti_6al_4v
+    часть_pcm_controller -->|материал| material_si
     часть_pcm_cell_array -->|материал| material_ti_6al_4v
-    часть_pcm_selector -->|материал| material_ti_6al_4v
+    часть_pcm_selector -->|материал| material_pcm
     часть_pcm_periphery -->|материал| material_ti_6al_4v
     часть_pcm_io_interface -->|материал| material_ti_6al_4v
     часть_kondensatory_keramicheskie_inner_electrodes -->|материал| material_ti_6al_4v
@@ -194,8 +196,8 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 47 |
-| `Si` | 8 |
+| `Ti-6Al-4V` | 40 |
+| `Si` | 13 |
 | `PTFE` | 6 |
 | `Эпоксид Epon 828 + TETA` | 5 |
 | `B₄C` | 3 |
@@ -203,4 +205,6 @@ graph LR
 | `Полиимид` | 2 |
 | `Галлинстан` | 2 |
 | `TiN` | 1 |
+| `Сплав Sn-Pb` | 1 |
+| `PCM` | 1 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 1 |

@@ -326,7 +326,6 @@ graph LR
     часть_tverdotelnye_akkumulyatory_current_collector_al -->|материал| material_ti_6al_4v
     часть_tverdotelnye_akkumulyatory_case -->|материал| material_al_6061_t6
     часть_betavoltaiki_semiconductor -->|материал| material_ti_6al_4v
-    часть_betavoltaiki_terminal -->|материал| material_ti_6al_4v
     часть_betavoltaiki_case -->|материал| material_ti_6al_4v
     часть_betavoltaiki_isotope -->|материал| material_ti_6al_4v
     часть_mptm_generator -->|материал| material_ti_6al_4v
@@ -379,7 +378,7 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 113 |
+| `Ti-6Al-4V` | 112 |
 | `Al 6061-T6` | 20 |
 | `Inconel 718` | 7 |
 | `Bi₂Te₃` | 5 |
