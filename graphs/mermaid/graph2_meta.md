@@ -16,6 +16,7 @@ graph TB
     script_generate_decomposition_py(("generate_decomposition.py"))
     script_generate_graphs_py(("generate_graphs.py"))
     script_generate_wrapper_izdeliya_py(("generate_wrapper_izdeliya.py"))
+    script_migrate_material_form_py(("migrate_material_form.py"))
     script_pipeline_py(("pipeline.py"))
     script_pre-commit-hook_py(("pre-commit-hook.py"))
     script_real_decomposition_py(("real_decomposition.py"))
@@ -240,12 +241,12 @@ graph TB
     section_§9_7_Прозрачная_остановка_(v9_24_НОВОЕ_—_из_аудита_диалога) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 186, рёбер: 216 (показано топ-50)._
+_Узлов: 187, рёбер: 216 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|
 | spec_section | 146 |
-| script | 20 |
+| script | 21 |
 | concept_doc | 17 |
 | catalog | 1 |
 | readme | 1 |

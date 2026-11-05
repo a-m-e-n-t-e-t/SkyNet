@@ -121,14 +121,14 @@ graph LR
     F21 --> script_generate_decomposition_py
     script_validate_decomposition_py[validate_decomposition.py]
     F21 --> script_validate_decomposition_py
-    F24([F24])
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F24 --> script_pre-commit-hook_py
+    F20([F20])
+    script_migrate_material_form_py[migrate_material_form.py]
+    F20 --> script_migrate_material_form_py
     script_validate_decomposition_py[validate_decomposition.py]
-    F24 --> script_validate_decomposition_py
+    F20 --> script_validate_decomposition_py
 ```
 
-_Показаны топ-20 метрик по числу скриптов-валидаторов (из 68 метрик)._
+_Показаны топ-20 метрик по числу скриптов-валидаторов (из 70 метрик)._
 
 | Метрика | Скрипты-валидаторы | Контракты |
 |---|---|---|
@@ -139,7 +139,7 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F17` | generate_decomposition.py, validate_decomposition.py | — |
 | `F18` | validate_decomposition.py | — |
 | `F19` | generate_decomposition.py, generate_wrapper_izdeliya.py, validate_decomposition.py | — |
-| `F20` | validate_decomposition.py | — |
+| `F20` | migrate_material_form.py, validate_decomposition.py | — |
 | `F21` | generate_decomposition.py, validate_decomposition.py | — |
 | `F22` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
 | `F23` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
@@ -148,7 +148,9 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F26` | pre-commit-hook.py, validate_decomposition.py | — |
 | `F27` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
 | `F28` | pre-commit-hook.py, validate_decomposition.py | — |
+| `F29` | pre-commit-hook.py, validate_decomposition.py | — |
 | `F3` | classify_subsystem.py, pre-commit-hook.py | fc_изделие_подсистема, fc_модель_тип |
+| `F30` | pre-commit-hook.py, validate_decomposition.py | — |
 | `F36` | generate_graphs.py, pre-commit-hook.py | — |
 | `F37` | generate_graphs.py, pipeline.py | — |
 | `F38` | generate_graphs.py, pipeline.py | — |

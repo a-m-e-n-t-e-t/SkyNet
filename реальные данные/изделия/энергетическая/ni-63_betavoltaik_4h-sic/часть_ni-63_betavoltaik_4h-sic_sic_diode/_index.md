@@ -1,4 +1,5 @@
 ---
+
 id: часть_ni-63_betavoltaik_4h-sic_sic_diode
 тип: изделие
 категория: машиностроение
@@ -14,6 +15,7 @@ id: часть_ni-63_betavoltaik_4h-sic_sic_diode
 материалы_частей:
   - часть: часть_ni-63_betavoltaik_4h-sic_sic_diode
     материал: monokristallicheskogo_sic
+    форма: 4h-sic_monocrystal_wafer
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -45,8 +47,7 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-05
 источник: web_search
-источник_разбора: канон
----
+источник_разбора: канон---
 # Часть: часть_ni-63_betavoltaik_4h-sic_sic_diode
 
 ## Описание

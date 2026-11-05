@@ -117,11 +117,6 @@ graph LR
     часть_zeno_power_am_241_thermocouples[термопары]
     часть_zeno_power_am_241_housing[корпус]
     часть_zeno_power_am_241_shielding[экранирование]
-    часть_ni_63_betavoltaik_4h_sic_sic_diode[SiC_pn_диод]
-    часть_ni_63_betavoltaik_4h_sic_substrate[SiC_подложка]
-    часть_ni_63_betavoltaik_4h_sic_encapsulant[инкапсулянт]
-    часть_ni_63_betavoltaik_4h_sic_isotope[Ni-63_источник]
-    часть_ni_63_betavoltaik_4h_sic_case[корпус]
     часть_termomoduli_pelte_wires[провода]
     часть_termomoduli_pelte_electrodes[электроды]
     часть_termomoduli_pelte_ceramic_top[керамика_верх]
@@ -241,8 +236,6 @@ graph LR
     часть_nasa_asc_e_srsc_displacer_piston -->|материал| material_ti_6al_4v
     часть_nasa_asc_e_srsc_power_piston -->|материал| material_ti_6al_4v
     часть_nasa_asc_e_srsc_cooler -->|материал| material_al_6061_t6
-    часть_reversivnye_pelte_ceramic_top -->|материал| material_ti_6al_4v
-    часть_reversivnye_pelte_peltier_couples -->|материал| material_ti_6al_4v
     часть_termoelektricheskii_postoyannyi_magnit_heat_sink_hot -->|материал| material_al_6061_t6
     часть_termoelektricheskii_postoyannyi_magnit_heat_sink_cold -->|материал| material_al_6061_t6
     часть_svobodnoporshnevoi_stirling_piston -->|материал| material_al_6061_t6
@@ -262,15 +255,12 @@ graph LR
     часть_emi_generator_housing -->|материал| material_stal_st3
     часть_emi_generator_antenna -->|материал| material_ti_6al_4v
     часть_zeno_power_am_241_housing -->|материал| material_al_6061_t6
-    часть_ni_63_betavoltaik_4h_sic_case -->|материал| material_ti_6al_4v
     часть_perovskite_tandem_cells -->|материал| material_si
     часть_tpv_lenty_reflector -->|материал| material_al_6061_t6
     часть_superkondensatory_separator -->|материал| material_ti_6al_4v
     часть_superkondensatory_case -->|материал| material_al_6061_t6
     часть_superkondensatory_current_collector -->|материал| material_al_6061_t6
     часть_superkondensatory_terminal -->|материал| material_ti_6al_4v
-    часть_tverdooksidnyi_toplivnyi_element_seal -->|материал| material_ti_6al_4v
-    часть_tverdooksidnyi_toplivnyi_element_interconnect -->|материал| material_ti_6al_4v
     часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_housing -->|материал| material_al_6061_t6
     часть_tverdotelnye_akkumulyatory_cathode -->|материал| material_si
     часть_tverdotelnye_akkumulyatory_anode -->|материал| material_si
@@ -308,18 +298,18 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 38 |
+| `Ti-6Al-4V` | 33 |
 | `Al 6061-T6` | 22 |
 | `SS AISI 304` | 11 |
 | `Inconel 718` | 9 |
-| `монокристаллического SiC` | 7 |
-| `Bi₂Te₃` | 6 |
+| `Bi₂Te₃` | 8 |
 | `Сталь Ст3` | 6 |
+| `Оксид алюминия` | 5 |
 | `NdFeB` | 5 |
+| `монокристаллического SiC` | 5 |
 | `Inconel 625` | 4 |
 | `углеродная сажа (токопроводящий наполнитель) + PTFE 20% (связующее), опционально катализатор MnO₂; токосъёмник — никелевая сетка` | 4 |
+| `LSM-20: (La0.8Sr0.2)MnO3-δ — манганит лантана, легированный 20 мол.% Sr (перовскит ABO3); катодный композит LSM/YSZ — 50 wt% (La0.80Sr0.20)0.95MnO3-X + 50 wt% (Y2O3)0.08(ZrO2)0.92 (8YSZ)` | 4 |
+| `Ферритная жаростойкая сталь X1CrTiLa22 (1.4760, UNS S44535): Fe — основа, Cr 20.0–24.0 %, Ti 0.03–0.20 %, La 0.04–0.20 %, C ≤0.03 %, Mn ≤0.50 %, Si ≤0.50 %, Cu ≤0.50 %, Al ≤0.50 %, P ≤0.05 %` | 4 |
 | `100Cr6 (EN 683-17) / AISI 52100 / ГОСТ ШХ15: C 0.95–1.10 %, Cr 1.35–1.65 %, Mn 0.25–0.45 %, Si 0.15–0.35 %` | 4 |
-| `карбон` | 3 |
-| `медный провод` | 3 |
-| `Pt` | 3 |
-| `Ni-63` | 3 |
+| `Сплав Sn-Pb` | 3 |

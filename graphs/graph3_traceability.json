@@ -1749,6 +1749,12 @@
       "path": "scripts/generate_wrapper_izdeliya.py"
     },
     {
+      "id": "script:migrate_material_form.py",
+      "type": "script",
+      "label": "migrate_material_form.py",
+      "path": "scripts/migrate_material_form.py"
+    },
+    {
       "id": "script:pipeline.py",
       "type": "script",
       "label": "pipeline.py",
@@ -3755,6 +3761,24 @@
       "meta": {}
     },
     {
+      "src": "F20",
+      "dst": "script:migrate_material_form.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:migrate_material_form.py",
+      "dst": "F20",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "script:migrate_material_form.py",
+      "dst": "pattern:_index.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
       "src": "P012",
       "dst": "script:pipeline.py",
       "type": "validated_by",
@@ -3863,6 +3887,18 @@
       "meta": {}
     },
     {
+      "src": "F29",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F29",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "F3",
       "dst": "script:pre-commit-hook.py",
       "type": "validated_by",
@@ -3871,6 +3907,18 @@
     {
       "src": "script:pre-commit-hook.py",
       "dst": "F3",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F30",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F30",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -4201,6 +4249,30 @@
     {
       "src": "script:validate_decomposition.py",
       "dst": "F28",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F29",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F29",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F30",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F30",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -4602,13 +4674,13 @@
     }
   ],
   "stats": {
-    "nodes": 323,
-    "edges": 443,
+    "nodes": 324,
+    "edges": 454,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,
       "metric": 216,
-      "script": 20,
+      "script": 21,
       "spec_section": 58,
       "stub": 13
     }

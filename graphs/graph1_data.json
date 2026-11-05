@@ -2873,41 +2873,6 @@
       "subsystem": "энергетическая"
     },
     {
-      "id": "часть_ni-63_betavoltaik_4h-sic_sic_diode",
-      "type": "chast",
-      "label": "SiC_pn_диод",
-      "path": "реальные данные/изделия/энергетическая/ni-63_betavoltaik_4h-sic/часть_ni-63_betavoltaik_4h-sic_sic_diode/_index.md",
-      "subsystem": "энергетическая"
-    },
-    {
-      "id": "часть_ni-63_betavoltaik_4h-sic_substrate",
-      "type": "chast",
-      "label": "SiC_подложка",
-      "path": "реальные данные/изделия/энергетическая/ni-63_betavoltaik_4h-sic/часть_ni-63_betavoltaik_4h-sic_substrate/_index.md",
-      "subsystem": "энергетическая"
-    },
-    {
-      "id": "часть_ni-63_betavoltaik_4h-sic_encapsulant",
-      "type": "chast",
-      "label": "инкапсулянт",
-      "path": "реальные данные/изделия/энергетическая/ni-63_betavoltaik_4h-sic/часть_ni-63_betavoltaik_4h-sic_encapsulant/_index.md",
-      "subsystem": "энергетическая"
-    },
-    {
-      "id": "часть_ni-63_betavoltaik_4h-sic_isotope",
-      "type": "chast",
-      "label": "Ni-63_источник",
-      "path": "реальные данные/изделия/энергетическая/ni-63_betavoltaik_4h-sic/часть_ni-63_betavoltaik_4h-sic_isotope/_index.md",
-      "subsystem": "энергетическая"
-    },
-    {
-      "id": "часть_ni-63_betavoltaik_4h-sic_case",
-      "type": "chast",
-      "label": "корпус",
-      "path": "реальные данные/изделия/энергетическая/ni-63_betavoltaik_4h-sic/часть_ni-63_betavoltaik_4h-sic_case/_index.md",
-      "subsystem": "энергетическая"
-    },
-    {
       "id": "часть_termomoduli_pelte_wires",
       "type": "chast",
       "label": "провода",
@@ -5358,6 +5323,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_al_6063-t5",
+      "type": "material",
+      "label": "Al 97.5–99.35% + Mg 0.45–0.9% + Si 0.2–0.6% (Fe ≤0.35%, Cr/Cu/Mn/Ti/Zn ≤0.1%)",
+      "path": "реальные данные/материалы/al_6063-t5.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_aln",
       "type": "material",
       "label": "AlN",
@@ -5505,6 +5477,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_crofer_22_apu",
+      "type": "material",
+      "label": "Ферритная жаростойкая сталь X1CrTiLa22 (1.4760, UNS S44535): Fe — основа, Cr 20.0–24.0 %, Ti 0.03–0.20 %, La 0.04–0.20 %, C ≤0.03 %, Mn ≤0.50 %, Si ≤0.50 %, Cu ≤0.50 %, Al ≤0.50 %, P ≤0.05 %",
+      "path": "реальные данные/материалы/crofer_22_apu.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_cu-aerogel_regenerator",
       "type": "material",
       "label": "Cu-аэрогель регенератор",
@@ -5544,6 +5523,13 @@
       "type": "material",
       "label": "EPDM-Kevlar",
       "path": "реальные данные/материалы/epdm-kevlar.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_epoksid_epon_828_+_teta",
+      "type": "material",
+      "label": "Эпоксид Epon 828 + TETA",
+      "path": "реальные данные/материалы/epoksid_epon_828_+_teta.md",
       "subsystem": ""
     },
     {
@@ -5607,6 +5593,13 @@
       "type": "material",
       "label": "гелий",
       "path": "реальные данные/материалы/gelii.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_glass_ceramic_bcas",
+      "type": "material",
+      "label": "BaO-CaO-Al2O3-SiO2 стеклокерамика (PNNL G18-тип): 35 mol.% BaO, 15 mol.% CaO, 10 mol.% B2O3, 5 mol.% Al2O3, bal. SiO2; коммерческий аналог — Schott 394",
+      "path": "реальные данные/материалы/glass_ceramic_bcas.md",
       "subsystem": ""
     },
     {
@@ -5740,6 +5733,13 @@
       "type": "material",
       "label": "Низкожелезистое содово-известковое (soda-lime) стекло: SiO2 ~72%, Na2O ~14%, CaO/MgO ~10%, Fe2O3 <=0.015%",
       "path": "реальные данные/материалы/low_iron_glass.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_lsm_cathode",
+      "type": "material",
+      "label": "LSM-20: (La0.8Sr0.2)MnO3-δ — манганит лантана, легированный 20 мол.% Sr (перовскит ABO3); катодный композит LSM/YSZ — 50 wt% (La0.80Sr0.20)0.95MnO3-X + 50 wt% (Y2O3)0.08(ZrO2)0.92 (8YSZ)",
+      "path": "реальные данные/материалы/lsm_cathode.md",
       "subsystem": ""
     },
     {
@@ -5929,6 +5929,13 @@
       "type": "material",
       "label": "Ni-YSZ",
       "path": "реальные данные/материалы/ni-ysz.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_ni_ysz_cermet",
+      "type": "material",
+      "label": "Ni-YSZ кермет: NiO + 8YSZ ((Y2O3)0.08(ZrO2)0.92) в соотношении 50:50–65:35 wt.% (Ni:YSZ 35:65–55:45 об.%); после восстановления в H2 при 850–1000 °C — металлический Ni (~40 об.%) + керамический каркас YSZ + пористость 25–40%",
+      "path": "реальные данные/материалы/ni_ysz_cermet.md",
       "subsystem": ""
     },
     {
@@ -11050,6 +11057,24 @@
       "meta": {}
     },
     {
+      "src": "izdelie_reversivnye_pelte",
+      "dst": "material_bi₂te₃",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_reversivnye_pelte",
+      "dst": "material_oksid_alyuminiya",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_reversivnye_pelte",
+      "dst": "material_splav_sn-pb",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_termoelektricheskii_postoyannyi_magnit",
       "dst": "часть_termoelektricheskii_postoyannyi_magnit_teg_modules",
       "type": "has_part",
@@ -11452,36 +11477,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_ni-63_betavoltaik_4h-sic",
-      "dst": "часть_ni-63_betavoltaik_4h-sic_isotope",
-      "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_ni-63_betavoltaik_4h-sic",
-      "dst": "часть_ni-63_betavoltaik_4h-sic_sic_diode",
-      "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_ni-63_betavoltaik_4h-sic",
-      "dst": "часть_ni-63_betavoltaik_4h-sic_substrate",
-      "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_ni-63_betavoltaik_4h-sic",
-      "dst": "часть_ni-63_betavoltaik_4h-sic_encapsulant",
-      "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_ni-63_betavoltaik_4h-sic",
-      "dst": "часть_ni-63_betavoltaik_4h-sic_case",
-      "type": "has_part",
-      "meta": {}
-    },
-    {
       "src": "izdelie_termomoduli_pelte",
       "dst": "часть_termomoduli_pelte_peltier_couples",
       "type": "has_part",
@@ -11653,6 +11648,24 @@
       "src": "izdelie_tverdooksidnyi_toplivnyi_element",
       "dst": "часть_tverdooksidnyi_toplivnyi_element_manifold",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_tverdooksidnyi_toplivnyi_element",
+      "dst": "material_ni_ysz_cermet",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_tverdooksidnyi_toplivnyi_element",
+      "dst": "material_lsm_cathode",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_tverdooksidnyi_toplivnyi_element",
+      "dst": "material_crofer_22_apu",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -12046,6 +12059,24 @@
       "meta": {}
     },
     {
+      "src": "izdelie_lt-sofc",
+      "dst": "material_ni_ysz_cermet",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_lt-sofc",
+      "dst": "material_lsm_cathode",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_lt-sofc",
+      "dst": "material_crofer_22_apu",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_coilgun",
       "dst": "часть_coilgun_coil",
       "type": "has_part",
@@ -12323,7 +12354,7 @@
     },
     {
       "src": "часть_reversivnye_pelte_ceramic_top",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_oksid_alyuminiya",
       "type": "uses_material",
       "meta": {}
     },
@@ -12335,7 +12366,7 @@
     },
     {
       "src": "часть_reversivnye_pelte_peltier_couples",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_bi₂te₃",
       "type": "uses_material",
       "meta": {}
     },
@@ -12778,6 +12809,12 @@
       "meta": {}
     },
     {
+      "src": "часть_4h-sic_betavoltaik_encapsulant",
+      "dst": "material_epoksid_epon_828_+_teta",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_4h-sic_betavoltaik_case",
       "dst": "izdelie_4h-sic_betavoltaik",
       "type": "child_of",
@@ -12984,60 +13021,6 @@
     {
       "src": "часть_zeno_power_am-241_shielding",
       "dst": "material_w-ni-fe",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_sic_diode",
-      "dst": "izdelie_ni-63_betavoltaik_4h-sic",
-      "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_sic_diode",
-      "dst": "material_monokristallicheskogo_sic",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_substrate",
-      "dst": "izdelie_ni-63_betavoltaik_4h-sic",
-      "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_substrate",
-      "dst": "material_monokristallicheskogo_sic",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_encapsulant",
-      "dst": "izdelie_ni-63_betavoltaik_4h-sic",
-      "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_isotope",
-      "dst": "izdelie_ni-63_betavoltaik_4h-sic",
-      "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_isotope",
-      "dst": "material_ni-63",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_case",
-      "dst": "izdelie_ni-63_betavoltaik_4h-sic",
-      "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_case",
-      "dst": "material_ti-6al-4v",
       "type": "uses_material",
       "meta": {}
     },
@@ -13258,6 +13241,12 @@
       "meta": {}
     },
     {
+      "src": "часть_tverdooksidnyi_toplivnyi_element_anode",
+      "dst": "material_ni_ysz_cermet",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_tverdooksidnyi_toplivnyi_element_seal",
       "dst": "izdelie_tverdooksidnyi_toplivnyi_element",
       "type": "child_of",
@@ -13265,7 +13254,7 @@
     },
     {
       "src": "часть_tverdooksidnyi_toplivnyi_element_seal",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_glass_ceramic_bcas",
       "type": "uses_material",
       "meta": {}
     },
@@ -13277,7 +13266,7 @@
     },
     {
       "src": "часть_tverdooksidnyi_toplivnyi_element_interconnect",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_crofer_22_apu",
       "type": "uses_material",
       "meta": {}
     },
@@ -13309,6 +13298,12 @@
       "src": "часть_tverdooksidnyi_toplivnyi_element_cathode",
       "dst": "izdelie_tverdooksidnyi_toplivnyi_element",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_tverdooksidnyi_toplivnyi_element_cathode",
+      "dst": "material_lsm_cathode",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -13459,6 +13454,12 @@
       "src": "часть_betavoltaiki_encapsulant",
       "dst": "izdelie_betavoltaiki",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_betavoltaiki_encapsulant",
+      "dst": "material_epoksid_epon_828_+_teta",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -13930,6 +13931,12 @@
       "meta": {}
     },
     {
+      "src": "часть_lt-sofc_interconnect",
+      "dst": "material_crofer_22_apu",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_lt-sofc_anode",
       "dst": "izdelie_lt-sofc",
       "type": "child_of",
@@ -13960,9 +13967,21 @@
       "meta": {}
     },
     {
+      "src": "часть_lt-sofc_seal",
+      "dst": "material_glass_ceramic_bcas",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_lt-sofc_cathode",
       "dst": "izdelie_lt-sofc",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_lt-sofc_cathode",
+      "dst": "material_lsm_cathode",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15730,6 +15749,12 @@
       "meta": {}
     },
     {
+      "src": "часть_halve_encapsulant",
+      "dst": "material_epoksid_epon_828_+_teta",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_halve_substrate",
       "dst": "izdelie_halve",
       "type": "child_of",
@@ -16048,6 +16073,12 @@
       "meta": {}
     },
     {
+      "src": "часть_brainchip_akida_2_encapsulant",
+      "dst": "material_epoksid_epon_828_+_teta",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_brainchip_akida_2_die",
       "dst": "izdelie_brainchip_akida_2",
       "type": "child_of",
@@ -16111,6 +16142,12 @@
       "src": "часть_intel_loihi_2_encapsulant",
       "dst": "izdelie_intel_loihi_2",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_intel_loihi_2_encapsulant",
+      "dst": "material_epoksid_epon_828_+_teta",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16246,6 +16283,12 @@
       "meta": {}
     },
     {
+      "src": "часть_gr801_noel-v_risc-v_substrate",
+      "dst": "material_epoksid_epon_828_+_teta",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_gr801_noel-v_risc-v_pcb",
       "dst": "izdelie_gr801_noel-v_risc-v",
       "type": "child_of",
@@ -16303,6 +16346,12 @@
       "src": "часть_gr801_noel-v_risc-v_package",
       "dst": "izdelie_gr801_noel-v_risc-v",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_gr801_noel-v_risc-v_package",
+      "dst": "material_epoksid_epon_828_+_teta",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16414,12 +16463,24 @@
       "meta": {}
     },
     {
+      "src": "часть_nvidia_jetson_orin_nano_pmic",
+      "dst": "material_epoksid_epon_828_+_teta",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_nvidia_jetson_orin_nano_storage",
       "dst": "izdelie_nvidia_jetson_orin_nano",
       "type": "child_of",
       "meta": {}
     },
     {
+      "src": "часть_nvidia_jetson_orin_nano_storage",
+      "dst": "material_epoksid_epon_828_+_teta",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_nvidia_jetson_orin_nano_heat_sink",
       "dst": "izdelie_nvidia_jetson_orin_nano",
       "type": "child_of",
@@ -16427,7 +16488,7 @@
     },
     {
       "src": "часть_nvidia_jetson_orin_nano_heat_sink",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6063-t5",
       "type": "uses_material",
       "meta": {}
     },
@@ -16435,6 +16496,12 @@
       "src": "часть_nvidia_jetson_orin_nano_memory",
       "dst": "izdelie_nvidia_jetson_orin_nano",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_nvidia_jetson_orin_nano_memory",
+      "dst": "material_epoksid_epon_828_+_teta",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -21706,6 +21773,30 @@
       }
     },
     {
+      "src": "material_bi₂te₃",
+      "dst": "izdelie_reversivnye_pelte",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_oksid_alyuminiya",
+      "dst": "izdelie_reversivnye_pelte",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_splav_sn-pb",
+      "dst": "izdelie_reversivnye_pelte",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_termoelektricheskii_postoyannyi_magnit_teg_modules",
       "dst": "izdelie_termoelektricheskii_postoyannyi_magnit",
       "type": "part_of",
@@ -22242,46 +22333,6 @@
       }
     },
     {
-      "src": "часть_ni-63_betavoltaik_4h-sic_isotope",
-      "dst": "izdelie_ni-63_betavoltaik_4h-sic",
-      "type": "part_of",
-      "meta": {
-        "forward": "has_part"
-      }
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_sic_diode",
-      "dst": "izdelie_ni-63_betavoltaik_4h-sic",
-      "type": "part_of",
-      "meta": {
-        "forward": "has_part"
-      }
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_substrate",
-      "dst": "izdelie_ni-63_betavoltaik_4h-sic",
-      "type": "part_of",
-      "meta": {
-        "forward": "has_part"
-      }
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_encapsulant",
-      "dst": "izdelie_ni-63_betavoltaik_4h-sic",
-      "type": "part_of",
-      "meta": {
-        "forward": "has_part"
-      }
-    },
-    {
-      "src": "часть_ni-63_betavoltaik_4h-sic_case",
-      "dst": "izdelie_ni-63_betavoltaik_4h-sic",
-      "type": "part_of",
-      "meta": {
-        "forward": "has_part"
-      }
-    },
-    {
       "src": "часть_termomoduli_pelte_peltier_couples",
       "dst": "izdelie_termomoduli_pelte",
       "type": "part_of",
@@ -22511,6 +22562,30 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_ni_ysz_cermet",
+      "dst": "izdelie_tverdooksidnyi_toplivnyi_element",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_lsm_cathode",
+      "dst": "izdelie_tverdooksidnyi_toplivnyi_element",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_crofer_22_apu",
+      "dst": "izdelie_tverdooksidnyi_toplivnyi_element",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -23034,6 +23109,30 @@
       }
     },
     {
+      "src": "material_ni_ysz_cermet",
+      "dst": "izdelie_lt-sofc",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_lsm_cathode",
+      "dst": "izdelie_lt-sofc",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_crofer_22_apu",
+      "dst": "izdelie_lt-sofc",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_coilgun_coil",
       "dst": "izdelie_coilgun",
       "type": "part_of",
@@ -23226,7 +23325,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_oksid_alyuminiya",
       "dst": "часть_reversivnye_pelte_ceramic_top",
       "type": "used_in",
       "meta": {
@@ -23234,7 +23333,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_bi₂te₃",
       "dst": "часть_reversivnye_pelte_peltier_couples",
       "type": "used_in",
       "meta": {
@@ -23514,6 +23613,14 @@
       }
     },
     {
+      "src": "material_epoksid_epon_828_+_teta",
+      "dst": "часть_4h-sic_betavoltaik_encapsulant",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_ti-6al-4v",
       "dst": "часть_4h-sic_betavoltaik_case",
       "type": "used_in",
@@ -23620,38 +23727,6 @@
     {
       "src": "material_w-ni-fe",
       "dst": "часть_zeno_power_am-241_shielding",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_monokristallicheskogo_sic",
-      "dst": "часть_ni-63_betavoltaik_4h-sic_sic_diode",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_monokristallicheskogo_sic",
-      "dst": "часть_ni-63_betavoltaik_4h-sic_substrate",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ni-63",
-      "dst": "часть_ni-63_betavoltaik_4h-sic_isotope",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_ni-63_betavoltaik_4h-sic_case",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -23770,7 +23845,15 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ni_ysz_cermet",
+      "dst": "часть_tverdooksidnyi_toplivnyi_element_anode",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_glass_ceramic_bcas",
       "dst": "часть_tverdooksidnyi_toplivnyi_element_seal",
       "type": "used_in",
       "meta": {
@@ -23778,7 +23861,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_crofer_22_apu",
       "dst": "часть_tverdooksidnyi_toplivnyi_element_interconnect",
       "type": "used_in",
       "meta": {
@@ -23796,6 +23879,14 @@
     {
       "src": "material_8ysz",
       "dst": "часть_tverdooksidnyi_toplivnyi_element_electrolyte",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_lsm_cathode",
+      "dst": "часть_tverdooksidnyi_toplivnyi_element_cathode",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -23892,6 +23983,14 @@
     {
       "src": "material_al_6061-t6",
       "dst": "часть_tverdotelnye_akkumulyatory_case",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_epoksid_epon_828_+_teta",
+      "dst": "часть_betavoltaiki_encapsulant",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -24186,6 +24285,14 @@
       }
     },
     {
+      "src": "material_crofer_22_apu",
+      "dst": "часть_lt-sofc_interconnect",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_ni-ysz",
       "dst": "часть_lt-sofc_anode",
       "type": "used_in",
@@ -24196,6 +24303,22 @@
     {
       "src": "material_8ysz",
       "dst": "часть_lt-sofc_electrolyte",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_glass_ceramic_bcas",
+      "dst": "часть_lt-sofc_seal",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_lsm_cathode",
+      "dst": "часть_lt-sofc_cathode",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -25970,6 +26093,14 @@
       }
     },
     {
+      "src": "material_epoksid_epon_828_+_teta",
+      "dst": "часть_halve_encapsulant",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_ptfe",
       "dst": "часть_halve_substrate",
       "type": "used_in",
@@ -26130,6 +26261,14 @@
       }
     },
     {
+      "src": "material_epoksid_epon_828_+_teta",
+      "dst": "часть_brainchip_akida_2_encapsulant",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_si",
       "dst": "часть_brainchip_akida_2_die",
       "type": "used_in",
@@ -26156,6 +26295,14 @@
     {
       "src": "material_si",
       "dst": "часть_intel_loihi_2_die",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_epoksid_epon_828_+_teta",
+      "dst": "часть_intel_loihi_2_encapsulant",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -26218,6 +26365,14 @@
       }
     },
     {
+      "src": "material_epoksid_epon_828_+_teta",
+      "dst": "часть_gr801_noel-v_risc-v_substrate",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_poliimid",
       "dst": "часть_gr801_noel-v_risc-v_pcb",
       "type": "used_in",
@@ -26244,6 +26399,14 @@
     {
       "src": "material_silikon_40_50_shore_a",
       "dst": "часть_gr801_noel-v_risc-v_thermal_pad",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_epoksid_epon_828_+_teta",
+      "dst": "часть_gr801_noel-v_risc-v_package",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -26306,8 +26469,32 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_epoksid_epon_828_+_teta",
+      "dst": "часть_nvidia_jetson_orin_nano_pmic",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_epoksid_epon_828_+_teta",
+      "dst": "часть_nvidia_jetson_orin_nano_storage",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6063-t5",
       "dst": "часть_nvidia_jetson_orin_nano_heat_sink",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_epoksid_epon_828_+_teta",
+      "dst": "часть_nvidia_jetson_orin_nano_memory",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -27387,6 +27574,7 @@
       "standart_ASME BPVC Section III",
       "standart_ASTM A228/A228M-18",
       "standart_ASTM A240 (AISI 304)",
+      "standart_ASTM A240 (sheet/strip)",
       "standart_ASTM A36",
       "standart_ASTM B152",
       "standart_ASTM B16",
@@ -27477,6 +27665,7 @@
       "standart_IEC 62133-2",
       "standart_IEC 62133-2 (безопасность Li-ion)",
       "standart_IEC 62282",
+      "standart_IEC 62282 (SOFC)",
       "standart_IEC 62282-2",
       "standart_IEC 62391",
       "standart_IEC 62619",
@@ -27605,6 +27794,7 @@
       "standart_TechInsights 3D XPoint Teardown (2017)",
       "standart_Teledyne Mechanical IDD",
       "standart_Teledyne Mechanical IDD (Boson+)",
+      "standart_The Aluminum Association: AA 6063 (ASTM B221)",
       "standart_Thorlabs Mounting Note",
       "standart_UL 94 V-0",
       "standart_UN 3090",
@@ -27622,6 +27812,11 @@
       "standart_battery-component.com Container Spec"
     ],
     "has_part": [
+      "часть_ni-63_betavoltaik_4h-sic_case",
+      "часть_ni-63_betavoltaik_4h-sic_encapsulant",
+      "часть_ni-63_betavoltaik_4h-sic_isotope",
+      "часть_ni-63_betavoltaik_4h-sic_sic_diode",
+      "часть_ni-63_betavoltaik_4h-sic_substrate",
       "часть_nvidia_jetson_orin_nano_soc"
     ],
     "researched_by": [
@@ -27698,17 +27893,14 @@
       "material_copper",
       "material_copper_alloy",
       "material_copper_wire",
-      "material_crofer_22_apu",
       "material_cybernetic_alloy",
       "material_electrical_steel",
-      "material_epoksid_epon_828_+_teta",
       "material_epoxy",
       "material_epoxy_molding",
       "material_eva",
       "material_fr4",
       "material_gaSb",
       "material_generic_material",
-      "material_glass_ceramic_bcas",
       "material_gold_coating",
       "material_gps_ins_an_vsn_8",
       "material_grafit_kompozit_bpp",
@@ -27730,14 +27922,12 @@
       "material_lithium_hydrogen_cell",
       "material_lithium_metal",
       "material_living_tissue_clone",
-      "material_lsm_cathode",
       "material_m829a4_apfsds",
       "material_magnitnaya_rezina_ferritovyi_poroshok",
       "material_mimetic_polyalloy",
       "material_monocrystalline_si",
       "material_nafion_117",
       "material_ni63_metal",
-      "material_ni_ysz_cermet",
       "material_nickel",
       "material_pb_sb_alloy",
       "material_pbo2",
@@ -27772,7 +27962,6 @@
       "material_steel_track_links_t158",
       "material_synthetic_rubber",
       "material_tebabf4_acn",
-      "material_ti.md",
       "material_tin_metal",
       "material_tio2_memristor",
       "material_titanium_alloy",
@@ -27787,19 +27976,19 @@
     ]
   },
   "stats": {
-    "nodes": 941,
-    "edges": 3058,
+    "nodes": 942,
+    "edges": 3083,
     "dangling": {
-      "complies_with": 248,
-      "has_part": 1,
+      "complies_with": 251,
+      "has_part": 6,
       "researched_by": 44,
-      "uses_material": 113
+      "uses_material": 107
     },
     "by_type": {
-      "chast": 628,
+      "chast": 623,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 131,
-      "material": 164,
+      "material": 170,
       "standart": 8
     }
   }

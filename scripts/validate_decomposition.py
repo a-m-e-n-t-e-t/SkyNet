@@ -1984,6 +1984,195 @@ def check_F28(izdeliya: dict[str, dict]) -> dict:
 
 
 # ============================================================================
+# F29: ФОРМА МАТЕРИАЛА В ЧАСТИ (v9.43)
+# ============================================================================
+
+def check_F29(izdeliya: dict[str, dict]) -> dict:
+    """F29: Каждая запись материалы_частей указывает `форму` материала.
+
+    WARNING-уровень (не блокирующий). Идея: ссылка `часть → материал` должна
+    быть неоднозначной — часть использует конкретную ФОРМУ материала
+    (forged_bar / electroplated_foil / 4h-sic_wafer / ...), а не generic id.
+    Формы описаны в файле материала (варианты_по_применению / сравнение_структур);
+    часть должна выбрать одну.
+
+    v1 (текущая): МЯГКИЙ чек — F29=1.0 если `форма` указана (любое непустое
+    значение). Жёсткая проверка FK (форма ∈ варианты_по_применению материала)
+    будет включена после F28 > 0.8 (когда большинство материалов опишут свои
+    варианты применения).
+
+    Скоуп: все файлы с `материалы_частей` (изделия И части).
+    Формат violation: '<file_id>: ...' — совместим с verify_decomposition.yml.
+    """
+    violations = []
+    total = 0
+    valid = 0
+
+    for fid, data in izdeliya.items():
+        mats = data.get('материалы_частей', [])
+        if not isinstance(mats, list):
+            continue
+        for m in mats:
+            if not isinstance(m, dict):
+                continue
+            total += 1
+            forma = m.get('форма')
+            if forma and str(forma).strip() and str(forma).strip().lower() not in ('null', 'none', '~'):
+                valid += 1
+            else:
+                part_ref = m.get('часть', '?')
+                mat_ref = m.get('материал', '?')
+                violations.append(
+                    f"{fid}: материалы_частей[{part_ref} → {mat_ref}] "
+                    f"не указана `форма` — часть использует конкретный вариант "
+                    f"материала (forged_bar / electroplated_foil / 4h-sic_wafer / ...); "
+                    f"форма должна быть ключом из материал.варианты_по_применению"
+                )
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F29',
+        'description': 'Форма материала в материалы_частей (мягкий чек — заполнение)',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
+# F30: НАСЛЕДУЕМЫЕ_МАТЕРИАЛЫ РОДИТЕЛЯ (v9.43)
+# ============================================================================
+
+def check_F30(izdeliya: dict[str, dict]) -> dict:
+    """F30: Родитель наследует все материалы частей в агрегированном виде.
+
+    WARNING-уровень (не блокирующий). Для каждого файла с непустым
+    `дочерние_части` (родителя):
+      a. `наследуемые_материалы` заполнено (не пусто / не [])
+      b. агрегация (материал, форма) по дочерним части.материалы_частей
+         (с долями родителя из родитель.материалы_частей) согласована с
+         наследуемые_материалы: суммы долей совпадают (±0.001), источники_частей
+         полны.
+
+    BOM-вид: дедупликация по (материал, форма) — например, SiC в diode+substrate
+    схлопывается в одну запись с суммарной долей и списком источников.
+
+    Формат violation: '<izdelie_id>: ...'.
+    """
+    violations = []
+    total = 0
+    valid = 0
+
+    for fid, data in izdeliya.items():
+        dochernie = data.get('дочерние_части', [])
+        if not isinstance(dochernie, list) or not dochernie:
+            continue  # не родитель — вне скоупа F30
+        total += 1
+        ok = True
+        msgs = []
+
+        # a. наследуемые_материалы заполнено
+        nm = data.get('наследуемые_материалы')
+        if not nm or (isinstance(nm, list) and len(nm) == 0):
+            msgs.append("наследуемые_материалы пусто — родитель должен агрегировать материалы частей")
+            ok = False
+            violations.append(f"{fid}: " + "; ".join(msgs))
+            continue
+
+        if not isinstance(nm, list):
+            msgs.append("наследуемые_материалы не list")
+            ok = False
+            violations.append(f"{fid}: " + "; ".join(msgs))
+            continue
+
+        # b. согласованность: построить ожидаемую агрегацию из частей
+        # доли родителя по part_id
+        parent_shares = {}
+        for entry in data.get('материалы_частей', []) or []:
+            if isinstance(entry, dict):
+                pid = entry.get('часть')
+                share = entry.get('доля_массы')
+                if pid and share is not None:
+                    parent_shares[pid] = share
+
+        expected = {}  # (материал, форма) → {сумма, источники}
+        for pid in dochernie:
+            part = izdeliya.get(pid)
+            if not part:
+                continue  # orphan — F12a поймает
+            share = parent_shares.get(pid)
+            if share is None:
+                continue
+            for m in part.get('материалы_частей', []) or []:
+                if not isinstance(m, dict):
+                    continue
+                mid = m.get('материал')
+                forma = m.get('форма') or '_no_forma_'
+                if not mid:
+                    continue
+                key = (mid, forma)
+                if key not in expected:
+                    expected[key] = {'сумма': 0.0, 'источники': []}
+                expected[key]['сумма'] += share
+                expected[key]['источники'].append(pid)
+
+        # сравнить с фактическим наследуемые_материалы
+        actual = {}
+        for item in nm:
+            if not isinstance(item, dict):
+                continue
+            mid = item.get('материал')
+            forma = item.get('форма') or '_no_forma_'
+            suma = item.get('суммарная_доля_массы')
+            srcs = item.get('источники_частей', [])
+            if mid:
+                actual[(mid, forma)] = {'сумма': suma, 'источники': set(srcs)}
+
+        for key, exp in expected.items():
+            mid, forma = key
+            act = actual.get(key)
+            if not act:
+                msgs.append(f"наследуемые_материалы не содержит ({mid}, {forma})")
+                ok = False
+                continue
+            # сумма (±0.001)
+            if act['сумма'] is None or abs((act['сумма'] or 0) - exp['сумма']) > 0.001:
+                msgs.append(
+                    f"({mid}, {forma}): суммарная_доля_массы {act['сумма']} ≠ ожидаемой {round(exp['сумма'], 6)}"
+                )
+                ok = False
+            # источники
+            exp_set = set(exp['источники'])
+            if act['источники'] != exp_set:
+                missing = exp_set - act['источники']
+                extra = act['источники'] - exp_set
+                if missing:
+                    msgs.append(f"({mid}, {forma}): источники_частей не хватает {sorted(missing)}")
+                    ok = False
+                if extra:
+                    msgs.append(f"({mid}, {forma}): источники_частей лишние {sorted(extra)}")
+                    ok = False
+
+        if ok:
+            valid += 1
+        else:
+            violations.append(f"{fid}: " + "; ".join(msgs))
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F30',
+        'description': 'наследуемые_материалы родителя (BOM: агрегация по форма)',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
 # MAIN
 # ============================================================================
 
@@ -2168,6 +2357,28 @@ def run_all_checks() -> dict:
     print("=== F28: Альтернативные формы материалов (используемые изделиями) ===")
     r = check_F28(izdeliya)
     results['F28'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
+    # F29 — форма материала в материалы_частей (v9.43; мягкий чек — заполнение)
+    print()
+    print("=== F29: Форма материала в части (мягкий чек) ===")
+    r = check_F29(izdeliya)
+    results['F29'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
+    # F30 — наследуемые_материалы родителя (v9.43; BOM агрегация по форма)
+    print()
+    print("=== F30: наследуемые_материалы родителя (BOM) ===")
+    r = check_F30(izdeliya)
+    results['F30'] = r
     print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
     if r['violations']:
         print(f"  violations: {len(r['violations'])} (первые 3):")

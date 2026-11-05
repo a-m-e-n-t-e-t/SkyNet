@@ -1,4 +1,5 @@
 ---
+
 id: часть_ni-63_betavoltaik_4h-sic_substrate
 тип: изделие
 категория: машиностроение
@@ -14,6 +15,7 @@ id: часть_ni-63_betavoltaik_4h-sic_substrate
 материалы_частей:
   - часть: часть_ni-63_betavoltaik_4h-sic_substrate
     материал: monokristallicheskogo_sic
+    форма: 4h-sic_monocrystal_wafer
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -41,8 +43,7 @@ scaling_type: количественный
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.sciencedirect.com/topics/engineering/betavoltaic-battery
-источник_дата: 2026-11-05
----
+источник_дата: 2026-11-05---
 # Часть: часть_ni-63_betavoltaik_4h-sic_substrate
 
 ## Описание

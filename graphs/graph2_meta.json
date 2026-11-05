@@ -87,6 +87,12 @@
       "path": "scripts/generate_wrapper_izdeliya.py"
     },
     {
+      "id": "script:migrate_material_form.py",
+      "type": "script",
+      "label": "migrate_material_form.py",
+      "path": "scripts/migrate_material_form.py"
+    },
+    {
       "id": "script:pipeline.py",
       "type": "script",
       "label": "pipeline.py",
@@ -2418,13 +2424,13 @@
     }
   ],
   "stats": {
-    "nodes": 186,
+    "nodes": 187,
     "edges": 216,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,
       "readme": 1,
-      "script": 20,
+      "script": 21,
       "spec": 1,
       "spec_section": 146
     }

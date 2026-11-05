@@ -294,18 +294,20 @@ def main():
         if not os.path.exists(os.path.join(SKYNET_REPO, f)):
             errors.append(f'Required file missing: {f}')
     
-    # 4. v9.31 Decomposition Validator (F12a-F28)
+    # 4. v9.31 Decomposition Validator (F12a-F30)
     # F13, F22, F23, F24, F25, F26 — информационные (warnings), не блокирующие
     # F22-F26 — анти-шаблон метрики, станут блокирующими после полной верификации
     # v9.40: F27 (незаполненные материалы) — тоже warning: 87 заглушек в очереди
     # verify-task, блокировать коммиты нельзя пока backlog не разобран.
     # v9.42: F28 (альтернативные формы материалов) — warning: очередь ~30 материалов.
+    # v9.43: F29 (форма материала в части) + F30 (наследуемые_материалы) — warnings:
+    # пилот на ni-63_betavoltaik_4h-sic; full-migration pending.
     try:
         sys.path.insert(0, os.path.join(SKYNET_REPO, 'scripts'))
         from validate_decomposition import run_all_checks
         decomp_results = run_all_checks()
         # Метрики которые пока warning (не блокирующие)
-        WARNING_METRICS = {'F13', 'F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28'}
+        WARNING_METRICS = {'F13', 'F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28', 'F29', 'F30'}
         for metric, result in decomp_results['results'].items():
             if metric in WARNING_METRICS:
                 if not result['pass']:

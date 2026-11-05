@@ -1,4 +1,5 @@
 ---
+
 id: часть_ni-63_betavoltaik_4h-sic_encapsulant
 тип: изделие
 категория: машиностроение
@@ -14,6 +15,7 @@ id: часть_ni-63_betavoltaik_4h-sic_encapsulant
 материалы_частей:
   - часть: часть_ni-63_betavoltaik_4h-sic_encapsulant
     материал: epoksid_epon_828_+_teta
+    форма: cast_resin_ambient_cure
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -42,9 +44,7 @@ scaling_type: количественный
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 источник: web_search
-источник_разбора: канон
----
-
+источник_разбора: канон---
 # Часть: часть_ni-63_betavoltaik_4h-sic_encapsulant
 
 ## Описание

@@ -132,7 +132,6 @@ graph LR
     часть_ibm_northpole_hbm -->|материал| material_si
     часть_nvidia_jetson_orin_nano_enclosure -->|материал| material_al_6061_t6
     часть_nvidia_jetson_orin_nano_connectors -->|материал| material_latun_c36000
-    часть_nvidia_jetson_orin_nano_heat_sink -->|материал| material_ti_6al_4v
     часть_t850_cpu -->|материал| material_al_6061_t6
     часть_t800_cpu -->|материал| material_si
     часть_marcus_человеческий_мозг -->|материал| material_ti_6al_4v
@@ -146,8 +145,9 @@ _Показаны 5 наиболее часто используемых мат�
 | Материал | Используется в частях |
 |---|---:|
 | `Si` | 21 |
-| `Ti-6Al-4V` | 6 |
+| `Эпоксид Epon 828 + TETA` | 8 |
 | `Сплав Sn-Pb` | 5 |
+| `Ti-6Al-4V` | 5 |
 | `PTFE` | 3 |
 | `Al 6061-T6` | 3 |
 | `Полиимид` | 2 |
@@ -159,4 +159,3 @@ _Показаны 5 наиболее часто используемых мат�
 | `HfO₂` | 1 |
 | `Epotek 301-2` | 1 |
 | `монокристаллического SiC` | 1 |
-| `PCM` | 1 |

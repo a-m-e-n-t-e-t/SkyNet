@@ -19,19 +19,43 @@ id: izdelie_ni-63_betavoltaik_4h-sic
 материалы_частей:
   - часть: часть_ni-63_betavoltaik_4h-sic_isotope
     материал: ni63_metal
+    форма: electroplated_foil
     доля_массы: 0.2375
   - часть: часть_ni-63_betavoltaik_4h-sic_sic_diode
     материал: silicon_carbide
+    форма: 4h-sic_monocrystal_wafer
     доля_массы: 0.475
   - часть: часть_ni-63_betavoltaik_4h-sic_substrate
     материал: silicon_carbide
+    форма: 4h-sic_monocrystal_wafer
     доля_массы: 0.198
   - часть: часть_ni-63_betavoltaik_4h-sic_encapsulant
     материал: epoxy
+    форма: cast_resin_ambient_cure
     доля_массы: 0.095
   - часть: часть_ni-63_betavoltaik_4h-sic_case
     материал: titanium_alloy
+    форма: forged_bar_ams_4928
     доля_массы: 0.285
+наследуемые_материалы:
+  - материал: monokristallicheskogo_sic
+    форма: 4h-sic_monocrystal_wafer
+    суммарная_доля_массы: 0.673
+    источники_частей:
+      - часть_ni-63_betavoltaik_4h-sic_sic_diode
+      - часть_ni-63_betavoltaik_4h-sic_substrate
+  - материал: ti-6al-4v
+    форма: forged_bar_ams_4928
+    суммарная_доля_массы: 0.285
+    источники_частей: [часть_ni-63_betavoltaik_4h-sic_case]
+  - материал: ni-63
+    форма: electroplated_foil
+    суммарная_доля_массы: 0.2375
+    источники_частей: [часть_ni-63_betavoltaik_4h-sic_isotope]
+  - материал: epoksid_epon_828_+_teta
+    форма: cast_resin_ambient_cure
+    суммарная_доля_массы: 0.095
+    источники_частей: [часть_ni-63_betavoltaik_4h-sic_encapsulant]
 scaling_type: количественный
 соединители: []
 версия: реальная
