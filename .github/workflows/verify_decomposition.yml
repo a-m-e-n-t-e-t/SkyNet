@@ -1,5 +1,5 @@
 # SkyNet Decomposition Verification — auto-create issues for files needing verification
-# v9.32: anti-duplicate / anti-parallel hardening
+# v9.33: auto-close stale issues + anti-parallel hardening
 #
 # Триггеры:
 #   - push на main с изменениями в реальные данные/ или фантастические данные/
@@ -10,7 +10,10 @@
 #   2. Для каждого violation создаёт GitHub issue с меткой `verify-task`
 #      (БЕЗ дублирования — проверяет все issues: open+closed,
 #       использует стабильный dedup_key в теле issue)
-#   3. Issues обрабатываются cron-агентом (job 502055)
+#   3. AUTO-CLOSE STALE: для каждого открытого verify-task issue, чей dedup_key
+#      отсутствует в текущих violations, автоматически закрывает как stale
+#      (НЕ трогает issues с меткой in-progress — cron-агент работает)
+#   4. Issues обрабатываются cron-агентом (job 504119)
 #
 # ANTI-PARALLEL:
 #   - concurrency.group = verify-decomposition-${{ github.ref }}
@@ -24,6 +27,15 @@
 #     (стабилен между запусками, не зависит от количества файлов в F25)
 #   - existingKeys Set обновляется после каждого create — нет дубликатов внутри одного run
 #   - Regex для fileId поддерживает кириллицу (часть_...)
+#
+# AUTO-CLOSE STALE (новое в v9.33):
+#   - Проблема: workflow создавал issue по старому checkout'у, фикс устранял нарушение,
+#     но issue оставался открытым — cron-агент тратил циклы на ручное закрытие (#133 и др.)
+#   - Решение: после создания новых issues проходим по всем открытым verify-task,
+#     извлекаем dedup_key, и если его нет в текущих violations — закрываем как stale
+#     с комментарием «Auto-closed: violation gone from current validator output»
+#   - in-progress issues НЕ закрываем (cron-агент в работе)
+#   - Issues без извлекаемого dedup_key (очень старые) не трогаем
 
 name: Decomposition — create verification tasks
 
@@ -228,6 +240,137 @@ jobs:
             
             console.log(`Created: ${created}, Skipped (duplicates): ${skipped}`);
 
+      - name: Auto-close stale issues (violations gone)
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            let violations = {F22:[], F23:[], F24:[], F25:[]};
+            try {
+              violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
+            } catch (e) {
+              console.log('violations.json not found (validator step failed?) — skip auto-close');
+              return;
+            }
+
+            // Тот же normalize, что и в шаге создания issues
+            function normalizeViolationKey(metric, violation) {
+              if (metric === 'F25' || violation.startsWith('Дубликат:')) {
+                const m = violation.match(/с габаритами\s+([^:]+?)\s*:/);
+                if (m) return `${metric}:${m[1].trim()}`;
+                const idx = violation.indexOf(': [');
+                return `${metric}:${idx > 0 ? violation.substring(0, idx) : violation}`;
+              }
+              const colonIdx = violation.indexOf(':');
+              const fileId = colonIdx > 0 ? violation.substring(0, colonIdx).trim() : violation.substring(0, 80);
+              return `${metric}:${fileId}`;
+            }
+
+            // Текущие ключи нарушений
+            const currentKeys = new Set();
+            for (const [metric, violList] of Object.entries(violations)) {
+              for (const v of violList) {
+                currentKeys.add(normalizeViolationKey(metric, v));
+              }
+            }
+            console.log(`Current violations: ${currentKeys.size} dedup_keys`);
+
+            // Получаем ВСЕ открытые verify-task issues (с пагинацией)
+            const openIssues = [];
+            let page = 1;
+            while (true) {
+              const resp = await github.rest.issues.listForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                labels: 'verify-task',
+                state: 'open',
+                per_page: 100,
+                page: page,
+              });
+              if (resp.data.length === 0) break;
+              openIssues.push(...resp.data);
+              if (resp.data.length < 100) break;
+              page++;
+            }
+            console.log(`Open verify-task issues: ${openIssues.length}`);
+
+            // Извлечение dedup_key (тот же алгоритм, что при создании)
+            function parseKey(issue) {
+              const body = issue.body || '';
+              const marker = body.match(/<!--\s*dedup:\s*(.+?)\s*-->/);
+              if (marker) return marker[1].trim();
+              // Legacy fallback для старых issues
+              const viol = body.match(/\*\*Нарушение:\*\*\s*(.+)/);
+              if (viol) {
+                const metricMatch = issue.title.match(/\[(F2[2-5])\]/);
+                const metric = metricMatch ? metricMatch[1] : 'F25';
+                return normalizeViolationKey(metric, viol[1].trim());
+              }
+              return null;
+            }
+
+            let closed = 0;
+            let protectedInProgress = 0;
+            let noKey = 0;
+
+            for (const issue of openIssues) {
+              const labels = issue.labels.map(l => l.name);
+              if (labels.includes('in-progress')) {
+                protectedInProgress++;
+                continue;  // cron-агент в работе — не трогаем
+              }
+
+              const key = parseKey(issue);
+              if (!key) {
+                noKey++;
+                continue;  // очень старый issue без dedup_key — пропускаем
+              }
+
+              if (currentKeys.has(key)) {
+                continue;  // нарушение ещё актуально
+              }
+
+              // Нарушение исчезло — закрываем как stale
+              const staleBody = [
+                `## ⏱️ Auto-closed as stale`,
+                ``,
+                `**dedup_key:** \`${key}\``,
+                ``,
+                `Нарушение **${key}** больше не присутствует в текущем выводе \`validate_decomposition.py\` — соответствующий файл был исправлен в предыдущем коммите.`,
+                ``,
+                `Issue был создан по устаревшему срезу репозитория (фикс пришёл после запуска workflow). Раньше такие issues оставались открытыми и cron-агент закрывал их вручную — теперь workflow делает это автоматически.`,
+                ``,
+                `**Коммит-инициатор:** [${context.sha.substring(0, 8)}](https://github.com/${context.repo.owner}/${context.repo.repo}/commit/${context.sha})`,
+                `**Run:** ${context.runId}`,
+                ``,
+                `*Авто-закрыто verify_decomposition.yml v9.33 — auto-close stale step.*`,
+              ].join('\n');
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: staleBody,
+              });
+
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed',
+                state_reason: 'completed',
+              });
+
+              console.log(`  closed #${issue.number} (${key})`);
+              closed++;
+            }
+
+            console.log(`Auto-closed stale: ${closed}`);
+            console.log(`Protected (in-progress): ${protectedInProgress}`);
+            console.log(`Skipped (no dedup_key): ${noKey}`);
+
       - name: Summary
         if: always()
         run: |
@@ -242,3 +385,4 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Anti-parallel:** concurrency group \`verify-decomposition-\${{ github.ref }}\` serializes runs." >> $GITHUB_STEP_SUMMARY
           echo "**Anti-duplicate:** dedup checks ALL issues (open+closed) via stable \`dedup_key\`." >> $GITHUB_STEP_SUMMARY
+          echo "**Auto-close stale:** open verify-task issues whose dedup_key is no longer in current violations are auto-closed (skips \`in-progress\`)." >> $GITHUB_STEP_SUMMARY
