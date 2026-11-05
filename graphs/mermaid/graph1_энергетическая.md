@@ -238,7 +238,6 @@ graph LR
     часть_tpv_cooling -->|материал| material_al_6061_t6
     часть_tpv_filter -->|материал| material_ti_6al_4v
     часть_asrg_housing -->|материал| material_al_6061_t6
-    часть_asrg_piston -->|материал| material_ti_6al_4v
     часть_asrg_cooler -->|материал| material_ti_6al_4v
     часть_nasa_asc_e_srsc_displacer_piston -->|материал| material_ti_6al_4v
     часть_nasa_asc_e_srsc_power_piston -->|материал| material_ti_6al_4v
@@ -358,9 +357,9 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 92 |
+| `Ti-6Al-4V` | 91 |
 | `Al 6061-T6` | 20 |
-| `Inconel 718` | 8 |
+| `Inconel 718` | 9 |
 | `SS AISI 304` | 8 |
 | `Bi₂Te₃` | 5 |
 | `Сталь Ст3` | 5 |

@@ -12157,7 +12157,7 @@
     },
     {
       "src": "часть_asrg_piston",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_inconel_718",
       "type": "uses_material",
       "meta": {}
     },
@@ -23360,7 +23360,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_inconel_718",
       "dst": "часть_asrg_piston",
       "type": "used_in",
       "meta": {
@@ -27954,6 +27954,7 @@
       "standart_AMS 4027",
       "standart_AMS 4928",
       "standart_AMS 5662",
+      "standart_AMS 5662 (Inconel 718)",
       "standart_AMS 5663 (Inconel 718)",
       "standart_ANSI/ASME B1.1 (1/4-20 UNC)",
       "standart_ASHRAE 15",
@@ -28135,6 +28136,7 @@
       "standart_NASA NTRS 20160010442",
       "standart_NASA-STD-5001A",
       "standart_NASA-STD-8729.1",
+      "standart_NASA/TM-2008-215282",
       "standart_NASA/TM—2018-219944",
       "standart_NEMA 17",
       "standart_NREL 89857 (2024)",
@@ -28342,7 +28344,7 @@
     "nodes": 937,
     "edges": 3144,
     "dangling": {
-      "complies_with": 235,
+      "complies_with": 237,
       "has_part": 1,
       "researched_by": 43,
       "uses_material": 105
