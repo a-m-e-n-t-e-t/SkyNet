@@ -124,18 +124,17 @@ graph LR
     часть_belleville_shaiby_housing -->|материал| material_al_6061_t6
     часть_ipmc_housing -->|материал| material_al_6061_t6
     часть_ipmc_connectors -->|материал| material_poliimid
-    часть_ipmc_mounting -->|материал| material_ti_6al_4v
+    часть_ipmc_mounting -->|материал| material_latun_c36000
     часть_tcp_housing -->|материал| material_al_6061_t6
     часть_tcp_connectors -->|материал| material_poliimid
-    часть_tcp_mounting -->|материал| material_ti_6al_4v
-    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting -->|материал| material_ti_6al_4v
+    часть_tcp_mounting -->|материал| material_al_6061_t6
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing -->|материал| material_al_6061_t6
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors -->|материал| material_al_6061_t6
     часть_fleksury_8_diskov_po_0_15_mm_housing -->|материал| material_al_6061_t6
     часть_fleksury_8_diskov_po_0_15_mm_connectors -->|материал| material_latun_c36000
     часть_pezoelektricheskii_gromkogovoritel_connectors -->|материал| material_latun_c36000
     часть_pezoelektricheskii_gromkogovoritel_core -->|материал| material_latun_c36000
-    часть_pezoelektricheskii_gromkogovoritel_mounting -->|материал| material_ti_6al_4v
+    часть_pezoelektricheskii_gromkogovoritel_mounting -->|материал| material_latun_c36000
     часть_pezoelektricheskii_gromkogovoritel_housing -->|материал| material_al_6061_t6
     часть_bldc_+_enkoder_connectors -->|материал| material_al_6061_t6
     часть_bldc_+_enkoder_mounting -->|материал| material_stal_st3
@@ -144,7 +143,7 @@ graph LR
     часть_apa_housing -->|материал| material_al_6061_t6
     часть_apa_connectors -->|материал| material_al_6061_t6
     часть_apa_core -->|материал| material_ti_6al_4v
-    часть_apa_mounting -->|материал| material_ti_6al_4v
+    часть_apa_mounting -->|материал| material_al_6061_t6
     часть_zubchataya_mufta_housing -->|материал| material_al_6061_t6
     часть_zubchataya_mufta_mounting -->|материал| material_stal_st3
     часть_zubchataya_mufta_core -->|материал| material_stal_st3
@@ -157,14 +156,13 @@ graph LR
     часть_dea_mounting -->|материал| material_al_6061_t6
     часть_elektroflyuidnye_volokna_mit_housing -->|материал| material_al_6061_t6
     часть_elektroflyuidnye_volokna_mit_connectors -->|материал| material_poliimid
-    часть_elektroflyuidnye_volokna_mit_mounting -->|материал| material_ti_6al_4v
     часть_bldc_housing -->|материал| material_al_6061_t6
     часть_bldc_connectors -->|материал| material_al_6061_t6
     часть_bldc_mounting -->|материал| material_al_6061_t6
     часть_bldc_core -->|материал| material_al_6061_t6
     часть_povorotnoe_uplotnenie_connectors -->|материал| material_al_6061_t6
     часть_povorotnoe_uplotnenie_housing -->|материал| material_al_6061_t6
-    часть_povorotnoe_uplotnenie_mounting -->|материал| material_ti_6al_4v
+    часть_povorotnoe_uplotnenie_mounting -->|материал| material_stal_st3
     часть_hasel_housing -->|материал| material_al_6061_t6
     часть_hasel_connectors -->|материал| material_poliimid
 ```
@@ -173,18 +171,18 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 30 |
-| `Ti-6Al-4V` | 20 |
+| `Al 6061-T6` | 32 |
+| `Ti-6Al-4V` | 13 |
+| `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 6 |
+| `Сталь Ст3` | 5 |
 | `Нейлон 6/66` | 4 |
-| `Сталь Ст3` | 4 |
 | `Полиимид` | 4 |
-| `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 4 |
 | `BeCu` | 3 |
+| `SS AISI 304` | 3 |
 | `Силикон 40–50 Shore A` | 2 |
 | `Spectra (UHMWPE волокно Honeywell)` | 1 |
 | `100Cr6 (EN 683-17) / AISI 52100 / ГОСТ ШХ15: C 0.95–1.10 %, Cr 1.35–1.65 %, Mn 0.25–0.45 %, Si 0.15–0.35 %` | 1 |
 | `ионогель` | 1 |
 | `медный провод` | 1 |
-| `SS AISI 304` | 1 |
 | `Silicone-Textile composite` | 1 |
 | `Эластомерная матрица` | 1 |

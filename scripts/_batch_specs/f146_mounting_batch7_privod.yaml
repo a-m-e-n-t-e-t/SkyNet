@@ -1,0 +1,78 @@
+# Issue #146 — группа «100×50×20mm, 0.1kg, ti-6al-4v» (40→33 файлов), batch 7: приводная_система (7 mounting)
+# Данные из web_search 2026-11-05: Cedrat APA230L datasheet (145×85×16 мм, 280 г), Afsar et al.
+# Science Robotics 2026 (электрофлюидные волокна Ø1 мм), Ahn 2010 (IPMC ERI 40×6×0.2 мм),
+# Felt & Remy 2016 (Smart Braid McKibben), Murata 7BB (узел крепления), Deublin ST252,
+# Haines et al. Science 2014 (TCP). Все родители группы: nominal 1 кг → масса = share × 1 кг.
+url: https://www.mmech.com/images/stories/Standard_Products/Cedrat/APA_Overview/APA_Specification/APA230L.pdf
+source_note: "web_search 2026-11-05: datasheet производителя"
+files:
+  - file: реальные данные/изделия/приводная_система/apa/часть_apa_mounting/_index.md
+    url: https://www.mmech.com/images/stories/Standard_Products/Cedrat/APA_Overview/APA_Specification/APA230L.pdf
+    source_note: "Cedrat Technologies APA230L datasheet — габариты 145×85×16 мм, масса 280 г, база с резьбовыми отверстиями под винты"
+    material: al_6061-t6
+    dims: 60,40,6
+    mass: 0.026
+    share: 0.026
+    standards: "ISO 4762 (M5);Cedrat Mechanical Interface"
+    desc: "Базовая плита крепления усилённого пьезоактуатора Cedrat APA230L (корпус 145×85×16 мм, 280 г): плита 60×40×6 мм под посадочную площадку базы с 4× резьбовыми отверстиями M5 и центральным пазом 20 мм для свободного хода гибкого штока. Алюминий 6061-T6, чёрное анодирование. Масса ≈26 г (2.6% номинала 1 кг)."
+    principle: "Корпус APA притягивается 4× винтами M5 к плите по штатным точкам базы (шаг 110×12 мм по интерфейсу APA); плита изолирует оболочку-усилитель от изгибных деформаций носителя и передаёт реакцию 30 Н на базовую поверхность без защемления мембраны."
+  - file: реальные данные/изделия/приводная_система/elektroflyuidnye_volokna_mit/часть_elektroflyuidnye_volokna_mit_mounting/_index.md
+    url: https://www.science.org/doi/abs/10.1126/scirobotics.ady6438
+    source_note: "Afsar et al., Science Robotics 2026 (MIT Media Lab) — электрофлюидные fiber-мышцы Ø~1 мм, 50 Вт/кг, подъём 4 кг с ходом 30 мм"
+    material: ss_aisi_304
+    dims: 18,12,10
+    mass: 0.014
+    share: 0.014
+    standards: "ISO 6149-1 (fluid ports);ASTM B633"
+    desc: "Торцевой манифольд-блок пучка электрофлюидных волокон MIT (волокна Ø~1 мм с электродами и микроканалом, 50 Вт/кг): блок из нержавеющей стали AISI 304 18×12×10 мм с 6× посадками Ø1.2 мм под волокна, общим флюидным портом ISO 6149 M3 и разъёмом электродов. Масса ≈14 г (1.4% номинала 1 кг)."
+    principle: "Волокна фиксируются цанговыми посадками в блоке, флюидный канал разводится к микроканалам волокон через общий порт, электроды сходятся на контактную площадку; блок распределяет натяг пучка (до 4 кг на пучок по Science Robotics) и герметизирует рабочую жидкость."
+  - file: реальные данные/изделия/приводная_система/ipmc/часть_ipmc_mounting/_index.md
+    url: https://www.sciencedirect.com/science/article/abs/pii/S092442471000110X
+    source_note: "Ahn et al., Sensors and Actuators A 2010 — IPMC-полоса 40×6×0.2 мм производства Environmental Robots Inc."
+    material: latun_c36000
+    dims: 30,14,10
+    mass: 0.019
+    share: 0.019
+    standards: "ASTM B488 (Au-покрытие);ISO 2768-m"
+    desc: "Зажим-электродный блок IPMC-полосы (образец Environmental Robots Inc. 40×6×0.2 мм): латунный C36000 корпус 30×14×10 мм с цангой захвата корня полосы на глубину 6 мм, золочёными контактными губками (ASTM B488, ≥2 µm Au) и кабельным выводом. Масса ≈19 г (1.9% номинала 1 кг)."
+    principle: "Корень полосы зажимается между золочёными губками 4× винтами M2 — контактное сопротивление <10 мОм без газовыделения во влажной среде Nafion; латунный блок работает как токоподвод и теплоотвод, оставляя свободными 34 мм рабочей длины полосы."
+  - file: реальные данные/изделия/приводная_система/opletku_iz_tokoprovodyaschih_izolirovannyh_provodov/часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting/_index.md
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5424474
+    source_note: "Felt & Remy, IEEE/ASME TMech 2016 — Smart Braid McKibben: оплётка из токопроводящих изолированных проводов, самооценка сокращения"
+    material: ss_aisi_304
+    dims: 45,18,18
+    mass: 0.032
+    share: 0.032
+    standards: "ISO 1179 (пневмопорты);ISO 898-1"
+    desc: "Торцевой узел Smart Braid McKibben-мышцы (оплётка из изолированных токопроводящих проводов по Felt & Remy 2016): штуцер-цанга AISI 304 45×18×18 мм с ершатом под внутреннюю камеру Ø10 мм, пневмопортом ISO 1179 G1/8 и клеммой съёма сигнала индуктивности оплётки. Масса ≈32 г (3.2% номинала 1 кг)."
+    principle: "Камера обжимается на ершате хомутом, оплётка заделывается за кольцо цанги — торец держит и давление до 0.6 МПа, и измерительный контур проводов; сокращение мышцы читается по индуктивности оплётки, поэтому металлический узел заземляется отдельно от сигнальной жилы."
+  - file: реальные данные/изделия/приводная_система/pezoelektricheskii_gromkogovoritel/часть_pezoelektricheskii_gromkogovoritel_mounting/_index.md
+    url: https://www.murata.com/-/media/webrenewal/support/faqs/products/sound/sounder/char/sc0002/p37e.ashx?la=en
+    source_note: "Murata Piezoelectric Sound Components — крепление пьезодиафрагм серии 7BB по узловой окружности (node diameter), Ø20 мм класс"
+    material: latun_c36000
+    dims: 26,26,4
+    mass: 0.007
+    share: 0.007
+    standards: "ISO 261 (M2);Murata Mounting Guide"
+    desc: "Кольцевой обод крепления пьезогромкоговорителя (диафрагма Murata 7BB-20-6C класс, Ø20 мм): латунное кольцо 26×26×4 мм с внутренней проточкой до Ø20.4 мм и 3× ушками M2 по узловой окружности диафрагмы. Масса ≈7 г (0.7% номинала 1 кг)."
+    principle: "Диафрагма зажимается по узловой окружности (без демпфирования лепестка) мягким уплотнением в проточке кольца — по инструкции Murata свободная зона ≥15 мм перед излучателем; кольцо отделяет резонанс мембраны от корпуса и отводит тепло пьезослоя."
+  - file: реальные данные/изделия/приводная_система/povorotnoe_uplotnenie/часть_povorotnoe_uplotnenie_mounting/_index.md
+    url: https://www.deublin.com/_Resources/Persistent/5/6/6/8/56683bfe9757615589678c9d6a347919abc3f6fd/SteelBrochure%20-%20ST252%20US_LowRes.pdf
+    source_note: "Deublin ST252 Self-Aligning Swivel Joints brochure — фиксация корпуса против вращения, допуски 360° ротации / 10° перекоса"
+    material: stal_st3
+    dims: 55,35,8
+    mass: 0.075
+    share: 0.075
+    standards: "ISO 4762 (M6);Deublin Mounting Instructions"
+    desc: "Кронштейн фиксации корпуса поворотного уплотнения (rotary union класса Deublin ST252, самоустанавливающийся свивел-джойнт): плита из стали Ст3 55×35×8 мм с пазом 25 мм под лыски корпуса и 2× винтами M6, вырезом под сальниковый узел. Масса ≈75 г (7.5% номинала 1 кг)."
+    principle: "Неподвижный корпус юниона фиксируется в пазу плиты за штатные лыски (запрет вращения по инструкции Deublin), ротор остаётся свободным; плита допускает угловое самоустановка до 10° через сферическую шайбу, сохраняя соосность уплотнения и выравнивая нагрузку на подшипник."
+  - file: реальные данные/изделия/приводная_система/tcp/часть_tcp_mounting/_index.md
+    url: https://www.scienceintheclassroom.org/sites/default/files/research-papers/science-2014-haines-868-72.pdf
+    source_note: "Haines et al., Science 2014 — TCP-мышцы из нейлона 6,6 (fishing line), закрутка до коил-формы, сокращение до 49%"
+    material: al_6061-t6
+    dims: 40,15,6
+    mass: 0.015
+    share: 0.015
+    standards: "ISO 261 (M3);ASTM E8"
+    desc: "Натяжной концевой узел TCP-мышцы (скрученная коил-полимерная нить нейлона 6,6 по Haines et al. Science 2014): планка из алюминия 6061-T6 40×15×6 мм с двумя цанговыми зажимами нити Ø0.5 мм на концах и отверстиями M3 для тензодатчика. Масса ≈15 г (1.5% номинала 1 кг)."
+    principle: "Концы коила заводятся в цанговые зажимы планки — фиксация без пережатия горячекоил-структуры; планка держит предварительный натяг (~10% длины, режим training по Haines) и передаёт сокращение до 49% на нагрузку через разнесённые оси зажимов."

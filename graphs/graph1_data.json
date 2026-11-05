@@ -11850,7 +11850,7 @@
     },
     {
       "src": "часть_ipmc_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_latun_c36000",
       "type": "uses_material",
       "meta": {}
     },
@@ -11886,7 +11886,7 @@
     },
     {
       "src": "часть_tcp_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -11910,7 +11910,7 @@
     },
     {
       "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -12030,7 +12030,7 @@
     },
     {
       "src": "часть_pezoelektricheskii_gromkogovoritel_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_latun_c36000",
       "type": "uses_material",
       "meta": {}
     },
@@ -12138,7 +12138,7 @@
     },
     {
       "src": "часть_apa_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -12330,7 +12330,7 @@
     },
     {
       "src": "часть_elektroflyuidnye_volokna_mit_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -12474,7 +12474,7 @@
     },
     {
       "src": "часть_povorotnoe_uplotnenie_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_stal_st3",
       "type": "uses_material",
       "meta": {}
     },
@@ -22763,7 +22763,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_latun_c36000",
       "dst": "часть_ipmc_mounting",
       "type": "used_in",
       "meta": {
@@ -22787,7 +22787,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_tcp_mounting",
       "type": "used_in",
       "meta": {
@@ -22803,7 +22803,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting",
       "type": "used_in",
       "meta": {
@@ -22883,7 +22883,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_latun_c36000",
       "dst": "часть_pezoelektricheskii_gromkogovoritel_mounting",
       "type": "used_in",
       "meta": {
@@ -22955,7 +22955,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_apa_mounting",
       "type": "used_in",
       "meta": {
@@ -23083,7 +23083,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_elektroflyuidnye_volokna_mit_mounting",
       "type": "used_in",
       "meta": {
@@ -23179,7 +23179,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_stal_st3",
       "dst": "часть_povorotnoe_uplotnenie_mounting",
       "type": "used_in",
       "meta": {
@@ -28053,6 +28053,8 @@
       "standart_ASTM B209",
       "standart_ASTM B221",
       "standart_ASTM B348",
+      "standart_ASTM B488 (Au-покрытие)",
+      "standart_ASTM B633",
       "standart_ASTM B637",
       "standart_ASTM C534",
       "standart_ASTM C750",
@@ -28060,13 +28062,16 @@
       "standart_ASTM D4894",
       "standart_ASTM D638",
       "standart_ASTM E1289",
+      "standart_ASTM E8",
       "standart_ASTM F136",
       "standart_ASTM F136 (Ti-6Al-4V)",
+      "standart_Cedrat Mechanical Interface",
       "standart_DIN 2093",
       "standart_DIN 69051",
       "standart_DIN 912",
       "standart_DIN VDE 0580",
       "standart_DOE 10 CFR 71",
+      "standart_Deublin Mounting Instructions",
       "standart_EIA RS-198",
       "standart_EJMA (монтаж компенсаторов)",
       "standart_EN 1090-2",
@@ -28112,6 +28117,7 @@
       "standart_IPC-2223",
       "standart_IPC-6013",
       "standart_IPC-A-600",
+      "standart_ISO 1179 (пневмопорты)",
       "standart_ISO 14687",
       "standart_ISO 15241",
       "standart_ISO 1940",
@@ -28119,6 +28125,7 @@
       "standart_ISO 261 (M2)",
       "standart_ISO 261 (M2.5)",
       "standart_ISO 261 (M3)",
+      "standart_ISO 2768-m",
       "standart_ISO 286 H7/g6",
       "standart_ISO 2919",
       "standart_ISO 3506 A2-70",
@@ -28127,6 +28134,7 @@
       "standart_ISO 4762 (M5)",
       "standart_ISO 4762 (M6)",
       "standart_ISO 4762 (M8)",
+      "standart_ISO 6149-1 (fluid ports)",
       "standart_ISO 630",
       "standart_ISO 898-1",
       "standart_ISO 898-1 (класс 8.8)",
@@ -28153,6 +28161,7 @@
       "standart_MIL-STD-810G",
       "standart_MIL-STD-810H",
       "standart_MSFC-STD-5003",
+      "standart_Murata Mounting Guide",
       "standart_NASA-STD-5001A",
       "standart_NASA-STD-8729.1",
       "standart_NEMA 17",
@@ -28335,7 +28344,7 @@
     "nodes": 936,
     "edges": 3158,
     "dangling": {
-      "complies_with": 139,
+      "complies_with": 148,
       "has_part": 1,
       "researched_by": 43,
       "uses_material": 103
