@@ -267,7 +267,7 @@ graph LR
     часть_iridium_sbd_core -->|материал| material_al_6061_t6
     часть_iridium_sbd_housing -->|материал| material_al_6061_t6
     часть_flir_boson_640_housing -->|материал| material_al_6061_t6
-    часть_flir_boson_640_mounting -->|материал| material_ti_6al_4v
+    часть_flir_boson_640_mounting -->|материал| material_al_6061_t6
     часть_flir_boson_640_core -->|материал| material_al_6061_t6
     часть_flir_boson_640_connectors -->|материал| material_becu
     часть_ferritovye_klinya_na_kabelyah_sensorov_housing -->|материал| material_al_6061_t6
@@ -295,7 +295,7 @@ graph LR
     часть_cw_lazer_housing -->|материал| material_al_6061_t6
     часть_mwir_nbn_640_housing -->|материал| material_al_6061_t6
     часть_mwir_nbn_640_connectors -->|материал| material_becu
-    часть_mwir_nbn_640_mounting -->|материал| material_ti_6al_4v
+    часть_mwir_nbn_640_mounting -->|материал| material_al_6061_t6
     часть_mwir_nbn_640_core -->|материал| material_al_6061_t6
     часть_akusticheskaya_linza_housing -->|материал| material_al_6061_t6
     часть_akusticheskaya_linza_connectors -->|материал| material_latun_c36000
@@ -327,8 +327,8 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 60 |
-| `Ti-6Al-4V` | 31 |
+| `Al 6061-T6` | 62 |
+| `Ti-6Al-4V` | 29 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 17 |
 | `BeCu` | 7 |
 | `Сталь Ст3` | 6 |

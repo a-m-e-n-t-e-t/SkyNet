@@ -1,0 +1,36 @@
+# Issue #146 — группа «100×50×20mm, 0.1kg, ti-6al-4v» (68→43 файлов), batch 6: сенсоры-тепловизоры (3 mounting)
+# Данные из web_search 2026-11-05: Teledyne FLIR Boson/Boson+ datasheet (21×21×11, 7.5 г, 4× M1.6×0.35 rear),
+# SCD Blackbird 640 SPARROW (видео-модуль 58×62×42 мм, 300 г, Optro 2020)
+url: https://f.hubspotusercontent10.net/hubfs/20335613/flir-boson-datasheet.pdf
+source_note: "web_search 2026-11-05: datasheet производителя"
+files:
+  - file: реальные данные/изделия/сенсоры/flir_boson_640/часть_flir_boson_640_mounting/_index.md
+    url: https://f.hubspotusercontent10.net/hubfs/20335613/flir-boson-datasheet.pdf
+    source_note: "Teledyne FLIR Boson datasheet — Size 21×21×11 мм (без линзы), вес 7.5 г, Precision Mounting Holes: Four tapped M1.6×0.35 (rear cover)"
+    material: al_6061-t6
+    dims: 28,28,3
+    mass: 0.006
+    share: 0.013
+    standards: "ISO 261 (M1.6);Teledyne Mechanical IDD"
+    desc: "Адаптер крепления тепловизионного ядра FLIR Boson 640 (корпус 21×21×11 мм, 7.5 г): пластина 28×28×3 мм с 4× резьбовыми отверстиями M1.6×0.35 под заднюю крышку Boson и центральным окном для оптической оси. Алюминий 6061-T6, чёрное анодирование (минимизация паразитных засветок). Масса ≈6 г."
+    principle: "Ядро притягивается 4× винтами M1.6×0.35 к пластине через заднюю крышку (штатная схема mounting Boson по datasheet); пластина изолирует ядро от деформаций несущего кронштейна и обеспечивает отвод тепла на базовую поверхность без пережатия корпуса."
+  - file: реальные данные/изделия/сенсоры/lwir_boson_1024/часть_lwir_boson_1024_mounting/_index.md
+    url: https://www.militarysystems-tech.com/sites/militarysystems/files/supplier_docs/Boson%2B%20Datasheet%20-%20Teledyne%20FLIR.pdf
+    source_note: "Teledyne FLIR Boson+ datasheet — вес 7.5 г (без линзы), Precision Mounting Holes: Four tapped M1.6×0.35 (rear cover); формат 1024 — повышенная жёсткость узла"
+    material: ti-6al-4v
+    dims: 32,32,4
+    mass: 0.018
+    share: 0.036
+    standards: "ISO 261 (M1.6);Teledyne Mechanical IDD (Boson+)"
+    desc: "Адаптер крепления LWIR-ядра Boson+ 1024 (вес 7.5 г без линзы, 4× M1.6×0.35 на задней крышке): жёсткая пластина 32×32×4 мм из Ti-6Al-4V с окном под оптику и 4× резьбовыми посадками M1.6. Титан выбран для высокой изгибной жёсткости при малой массе (большой формат 1024 чувствителен к деформациям фокальной плоскости). Масса ≈18 г."
+    principle: "Крепление по штатной схеме Boson+: 4× винта M1.6×0.35 в заднюю крышку; жёсткая титановая пластина держит плоскостность посадки ядра при термокачаниях и вибрациях, передавая тепло на кронштейн через контактную площадку."
+  - file: реальные данные/изделия/сенсоры/mwir_nbn_640/часть_mwir_nbn_640_mounting/_index.md
+    url: https://www.scd.co.il/wp-content/uploads/2020/02/Low-SWaP-MWIR-detector-and-a-video-core_Optro-2020.pdf
+    source_note: "SCD (Gershon et al., Optro 2020) — Sparrow: MWIR XBn видео-модуль на базе Blackbird 640×512/10µm, объём 58×62×42 мм, вес 300 г"
+    material: al_6061-t6
+    dims: 70,66,5
+    mass: 0.062
+    share: 0.125
+    standards: "ISO 4762 (M3);ISO 898-1"
+    desc: "Поддон-адаптер MWIR-модуля SCD Sparrow (XBn Blackbird 640×512, корпус 58×62×42 мм, 300 г): плита 70×66×5 мм с 4× отверстиями M3 по периметру габарита модуля и вырезом 30×30 для криокулерного теплового интерфейса снизу. Алюминий 6061-T6. Масса ≈62 г."
+    principle: "Модуль Sparrow фиксируется 4× винтами M3 к плите-поддону по штатным точкам корпуса; вырез снизу открывает зону холодного пальца криокулера, а плита распределяет нагрузку 300-граммового модуля на носитель без локальных перекосов FPA."

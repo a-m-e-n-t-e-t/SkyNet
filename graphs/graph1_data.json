@@ -8706,7 +8706,7 @@
     },
     {
       "src": "часть_flir_boson_640_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -9048,7 +9048,7 @@
     },
     {
       "src": "часть_mwir_nbn_640_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -19963,7 +19963,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_flir_boson_640_mounting",
       "type": "used_in",
       "meta": {
@@ -20187,7 +20187,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_mwir_nbn_640_mounting",
       "type": "used_in",
       "meta": {
@@ -28115,12 +28115,14 @@
       "standart_ISO 14687",
       "standart_ISO 15241",
       "standart_ISO 1940",
+      "standart_ISO 261 (M1.6)",
       "standart_ISO 261 (M2)",
       "standart_ISO 261 (M2.5)",
       "standart_ISO 261 (M3)",
       "standart_ISO 286 H7/g6",
       "standart_ISO 2919",
       "standart_ISO 3506 A2-70",
+      "standart_ISO 4762 (M3)",
       "standart_ISO 4762 (M4)",
       "standart_ISO 4762 (M5)",
       "standart_ISO 4762 (M6)",
@@ -28165,6 +28167,8 @@
       "standart_TSO-C112e",
       "standart_TSO-C166b",
       "standart_TSO-C88b",
+      "standart_Teledyne Mechanical IDD",
+      "standart_Teledyne Mechanical IDD (Boson+)",
       "standart_UL 94 V-0",
       "standart_UN 3090",
       "standart_UN 38.3",
@@ -28331,7 +28335,7 @@
     "nodes": 936,
     "edges": 3158,
     "dangling": {
-      "complies_with": 135,
+      "complies_with": 139,
       "has_part": 1,
       "researched_by": 43,
       "uses_material": 103
