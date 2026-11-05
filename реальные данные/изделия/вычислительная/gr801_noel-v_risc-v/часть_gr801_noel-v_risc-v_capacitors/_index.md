@@ -42,9 +42,11 @@ scaling_type: количественный
   источник_url: 'https://www.murata.com/en-global/products/productdetail?partno=GRM155R71C104KA88D'
   источник_дата: '2026-11-05'
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 источник: web_search
-источник_разбора: канон
+источник_url: https://www.murata.com/en-global/products/productdetail?partno=GRM155R71C104KA88D
+источник_дата: 2026-11-06
+источник_разбора: веб-верификация
 ---
 # Часть: часть_gr801_noel-v_risc-v_capacitors
 
