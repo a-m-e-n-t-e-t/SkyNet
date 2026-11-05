@@ -42,6 +42,12 @@ graph LR
     часть_gibkii_pcb_mounting[крепёж]
     часть_gibkii_pcb_housing[корпус]
     часть_gibkii_pcb_core[основной_элемент]
+    часть_marcus_человеческая_кожа[human_tissue]
+    часть_cameron_ткань_кожа[living_tissue_female]
+    часть_t850_ткань_кожа[living_tissue]
+    часть_t_x_ткань_кожа[living_tissue_female]
+    часть_t600_резиновая_кожа[rubber_skin]
+    часть_t800_ткань_кожа[living_tissue]
     material_al_6061_t6[Al 6061-T6]
     material_becu[BeCu]
     material_cfrp_t1100g[CFRP T1100G]
@@ -51,6 +57,7 @@ graph LR
     material_neilon_6_66[Нейлон 6/66]
     material_p_vdf_trfe_cfe[P]
     material_poliimid[Полиимид]
+    material_si[Si]
     material_silikon_40_50_shore_a[Силикон 40–50 Shore A]
     material_ss_aisi_304[SS AISI 304]
     material_stal_st3[Сталь Ст3]
@@ -88,6 +95,11 @@ graph LR
     часть_gibkii_pcb_mounting -->|материал| material_epotek_301_2
     часть_gibkii_pcb_housing -->|материал| material_al_6061_t6
     часть_gibkii_pcb_core -->|материал| material_poliimid
+    часть_marcus_человеческая_кожа -->|материал| material_ti_6al_4v
+    часть_cameron_ткань_кожа -->|материал| material_ti_6al_4v
+    часть_t850_ткань_кожа -->|материал| material_si
+    часть_t_x_ткань_кожа -->|материал| material_ti_6al_4v
+    часть_t800_ткань_кожа -->|материал| material_si
 ```
 
 | Материал | Используется в частях |
@@ -95,11 +107,12 @@ graph LR
 | `Al 6061-T6` | 9 |
 | `Сталь Ст3` | 5 |
 | `Полиимид` | 5 |
+| `Ti-6Al-4V` | 4 |
 | `BeCu` | 2 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 2 |
+| `Si` | 2 |
 | `MXene` | 1 |
 | `Нейлон 6/66` | 1 |
-| `Ti-6Al-4V` | 1 |
 | `CFRP T1100G` | 1 |
 | `SS AISI 304` | 1 |
 | `Силикон 40–50 Shore A` | 1 |

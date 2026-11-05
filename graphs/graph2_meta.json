@@ -27,6 +27,18 @@
       "path": "scripts/_migrate_256_variant_a.py"
     },
     {
+      "id": "script:_migrate_256_variant_d.py",
+      "type": "script",
+      "label": "_migrate_256_variant_d.py",
+      "path": "scripts/_migrate_256_variant_d.py"
+    },
+    {
+      "id": "script:_migrate_256_variant_d_fix_links.py",
+      "type": "script",
+      "label": "_migrate_256_variant_d_fix_links.py",
+      "path": "scripts/_migrate_256_variant_d_fix_links.py"
+    },
+    {
       "id": "script:_stubs.py",
       "type": "script",
       "label": "_stubs.py",
@@ -2172,6 +2184,24 @@
     },
     {
       "src": "readme:README.md",
+      "dst": "script:_migrate_256_variant_d_fix_links.py",
+      "type": "documents",
+      "meta": {}
+    },
+    {
+      "src": "readme:README.md",
+      "dst": "script:check_model_completeness.py",
+      "type": "documents",
+      "meta": {}
+    },
+    {
+      "src": "readme:README.md",
+      "dst": "script:generate_graphs.py",
+      "type": "documents",
+      "meta": {}
+    },
+    {
+      "src": "readme:README.md",
       "dst": "script:validate_decomposition.py",
       "type": "documents",
       "meta": {}
@@ -2388,13 +2418,13 @@
     }
   ],
   "stats": {
-    "nodes": 184,
-    "edges": 213,
+    "nodes": 186,
+    "edges": 216,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,
       "readme": 1,
-      "script": 18,
+      "script": 20,
       "spec": 1,
       "spec_section": 146
     }

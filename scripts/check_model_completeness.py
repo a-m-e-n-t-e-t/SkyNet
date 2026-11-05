@@ -73,8 +73,8 @@ def parse_yaml_frontmatter(filepath):
 
 
 def get_all_models():
-    """Возвращает список всех моделей из фантастические данные/."""
-    models_dir = os.path.join(SKYNET_REPO, 'фантастические данные')
+    """Возвращает список всех моделей из фантастические данные/модели/."""
+    models_dir = os.path.join(SKYNET_REPO, 'фантастические данные', 'модели')
     if not os.path.exists(models_dir):
         return []
     models = []
@@ -84,15 +84,48 @@ def get_all_models():
     return models
 
 
+# v9.40 вариант D: индекс id → подсистема для всех изделий (реальные данные + работа и и)
+_ID_TO_SUBSYSTEM: dict[str, str] | None = None
+
+
+def _build_id_to_subsystem() -> dict[str, str]:
+    """Построить индекс {id: подсистема} из всех _index.md в реальные данные/изделия/
+    и работа и и/изделия/. Используется для резолva id из реализация_промышленная."""
+    global _ID_TO_SUBSYSTEM
+    if _ID_TO_SUBSYSTEM is not None:
+        return _ID_TO_SUBSYSTEM
+    result: dict[str, str] = {}
+    roots = [
+        os.path.join(SKYNET_REPO, 'реальные данные', 'изделия'),
+        os.path.join(SKYNET_REPO, 'работа и и', 'изделия'),
+    ]
+    for root in roots:
+        if not os.path.exists(root):
+            continue
+        for dirpath, _, files in os.walk(root):
+            if '_index.md' in files:
+                idx_path = os.path.join(dirpath, '_index.md')
+                yaml_data = parse_yaml_frontmatter(idx_path)
+                if yaml_data and 'id' in yaml_data and 'подсистема' in yaml_data:
+                    result[yaml_data['id']] = yaml_data['подсистема']
+    _ID_TO_SUBSYSTEM = result
+    return result
+
+
 def extract_subsystems_from_implementation(impl_list):
-    """Извлекает подсистемы из списка изделий (по пути или имени)."""
+    """Извлекает подсистемы из списка изделий (по id или имени каталога)."""
     subsystems = set()
+    id_index = _build_id_to_subsystem()
     for item in impl_list:
         if not isinstance(item, str):
             continue
+        # (a) v9.40 вариант D: прямой lookup по id (izdelie_SkyNet-T600 → каркас)
+        if item in id_index:
+            subsystems.add(id_index[item])
+            continue
         # Remove __ии suffix
         clean = item.replace('__ии', '').replace('__пром', '')
-        # Try to find in реальные данные/изделия/<подсистема>/<item>/
+        # (b) fallback: найти в реальные данные/изделия/<подсистема>/<item>/
         for sub in ['каркас', 'энергетическая', 'броня', 'вычислительная', 'сенсоры',
                      'встроенное_оружие', 'приводная_система', 'система_охлаждения',
                      'система_питания', 'система_передвижения', 'система_связи',

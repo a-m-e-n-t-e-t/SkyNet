@@ -91,9 +91,21 @@ graph LR
     часть_brainchip_akida_2_die[кремниевый_кристалл]
     часть_brainchip_akida_2_capacitors[блокировка_питания]
     часть_brainchip_akida_2_pcb[плата_носитель]
+    часть_marcus_человеческий_мозг[human_brain_hybrid]
+    часть_rev9_полисплав_оболочка[mimetic_polyalloy_sheath]
+    часть_cameron_cpu[neural_net_cpu_cameron]
+    часть_t850_cpu[neural_net_cpu_v2]
+    часть_t_x_cpu[neural_net_cpu_tx]
+    часть_t600_cpu[early_neural_cpu]
+    часть_t800_cpu[neural_net_cpu]
+    izdelie_SkyNet_T1000[прочее]
+    izdelie_SkyNet_T1001[прочее]
+    часть_t1000_миметический_полисплав[mimetic_polyalloy]
+    часть_t1001_миметический_полисплав[mimetic_polyalloy_t1001]
     material_al_6061_t6[Al 6061-T6]
     material_b₄c[B₄C]
     material_epoksid_epon_828_+_teta[Эпоксид Epon 828 + TETA]
+    material_gallinstan[Галлинстан]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
     material_poliimid[Полиимид]
     material_ptfe[PTFE]
@@ -169,16 +181,26 @@ graph LR
     часть_brainchip_akida_2_die -->|материал| material_si
     часть_brainchip_akida_2_capacitors -->|материал| material_b₄c
     часть_brainchip_akida_2_pcb -->|материал| material_ptfe
+    часть_marcus_человеческий_мозг -->|материал| material_ti_6al_4v
+    часть_rev9_полисплав_оболочка -->|материал| material_gallinstan
+    часть_cameron_cpu -->|материал| material_poliimid
+    часть_t850_cpu -->|материал| material_al_6061_t6
+    часть_t_x_cpu -->|материал| material_al_6061_t6
+    часть_t600_cpu -->|материал| material_si
+    часть_t800_cpu -->|материал| material_si
+    часть_t1000_миметический_полисплав -->|материал| material_gallinstan
+    часть_t1001_миметический_полисплав -->|материал| material_ti_6al_4v
 ```
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 45 |
-| `Si` | 6 |
+| `Ti-6Al-4V` | 47 |
+| `Si` | 8 |
 | `PTFE` | 6 |
 | `Эпоксид Epon 828 + TETA` | 5 |
 | `B₄C` | 3 |
+| `Al 6061-T6` | 3 |
+| `Полиимид` | 2 |
+| `Галлинстан` | 2 |
 | `TiN` | 1 |
-| `Полиимид` | 1 |
-| `Al 6061-T6` | 1 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 1 |

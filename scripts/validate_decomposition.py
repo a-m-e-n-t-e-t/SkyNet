@@ -289,19 +289,27 @@ def _read_yaml_frontmatter_uncached(filepath: Path) -> tuple[dict, str, str]:
 # ============================================================================
 
 def load_all_izdeliya() -> dict[str, dict]:
-    """Загрузить все .md в реальные данные/изделия/ в dict {id: data, ...}.
+    """Загрузить все .md в реальные данные/изделия/ И работа и и/изделия/ в dict {id: data, ...}.
     
     v9.36: сохраняем markdown body в data['_body'] — F19/F23 больше не перечитывают файл.
+    v9.40 вариант D: работа и и/изделия/ содержит 11 izdelie_SkyNet-* обёрток
+    (перенесены из реальные данные → фантастические данные → работа и и).
     """
     result = {}
-    izd_dir = SKYNET_REPO / "реальные данные" / "изделия"
-    for f in izd_dir.rglob("_index.md"):
-        data, _, body = read_yaml_frontmatter(f)
-        if data and 'id' in data:
-            data['_path'] = str(f)
-            data['_filename'] = f.name
-            data['_body'] = body  # v9.36: cache body to avoid re-reads in F19/F23
-            result[data['id']] = data
+    izd_dirs = [
+        SKYNET_REPO / "реальные данные" / "изделия",
+        SKYNET_REPO / "работа и и" / "изделия",
+    ]
+    for izd_dir in izd_dirs:
+        if not izd_dir.is_dir():
+            continue
+        for f in izd_dir.rglob("_index.md"):
+            data, _, body = read_yaml_frontmatter(f)
+            if data and 'id' in data:
+                data['_path'] = str(f)
+                data['_filename'] = f.name
+                data['_body'] = body  # v9.36: cache body to avoid re-reads in F19/F23
+                result[data['id']] = data
     return result
 
 
@@ -444,23 +452,26 @@ _SKYNET_IMPL_INDEX: dict[str, Path] = {}
 
 
 def _build_impl_index() -> None:
-    """v9.40 (#256): индекс id moved-обёрток → каталог реализации в фантастических данных."""
+    """v9.40 (#256 вариант D): индекс id обёрток izdelie_SkyNet-* → каталог в работа и и/изделия/.
+
+    Вариант A (152107e) хранил обёртки в фантастические данные/модели/<stem>/реализация/<impl>/.
+    Вариант D (текущий) переносит их в работа и и/изделия/<подсистема>/<wrapper>/,
+    с frontmatter подтип: прочее, версия: ии-улучшенная, ии_перепроектирован: true.
+    """
     if _SKYNET_IMPL_INDEX:
         return
-    mod_root = SKYNET_REPO / "фантастические данные" / "модели"
-    if not mod_root.is_dir():
+    work_root = SKYNET_REPO / "работа и и" / "изделия"
+    if not work_root.is_dir():
         return
-    for model_md in mod_root.glob("*.md"):
-        impl_root = mod_root / model_md.stem / "реализация"
-        if not impl_root.is_dir():
+    for impl_dir in work_root.rglob("*"):
+        if not impl_dir.is_dir():
             continue
-        for impl_dir in impl_root.iterdir():
-            idx = impl_dir / "_index.md"
-            if not idx.is_file():
-                continue
-            data, _, _ = read_yaml_frontmatter(idx)
-            if data and 'id' in data:
-                _SKYNET_IMPL_INDEX[data['id']] = impl_dir
+        idx = impl_dir / "_index.md"
+        if not idx.is_file():
+            continue
+        data, _, _ = read_yaml_frontmatter(idx)
+        if data and 'id' in data and isinstance(data['id'], str) and data['id'].startswith('izdelie_SkyNet-'):
+            _SKYNET_IMPL_INDEX[data['id']] = impl_dir
 
 
 def check_F13(models: dict[str, dict], izdeliya: dict[str, dict]) -> dict:
@@ -488,20 +499,13 @@ def check_F13(models: dict[str, dict], izdeliya: dict[str, dict]) -> dict:
         
         # Какие подсистемы покрыты
         covered = set()
-        # (a) v9.40: собственное поддерево реализации модели
-        #     (фантастические данные/модели/<stem>/реализация/** — вариант A #256)
-        mpath = mdata.get('_path')
-        if mpath:
-            impl_root = Path(mpath).parent / Path(mpath).stem / 'реализация'
-            if impl_root.is_dir():
-                for impl_file in impl_root.rglob('_index.md'):
-                    idata, _, _ = read_yaml_frontmatter(impl_file)
-                    if idata and idata.get('подсистема'):
-                        covered.add(idata['подсистема'])
+        # (a) v9.40 вариант D: собственное поддерево реализации модели больше не существует —
+        #     обёртки izdelie_SkyNet-* перенесены в работа и и/изделия/. Их подсистемы
+        #     учитываются через (b) — id в _SKYNET_IMPL_INDEX.
         # (b) реализация_промышленная — id изделий.
-        #     v9.40 (#256 вариант A): id из moved-обёрток (izdelie_SkyNet-*) резолвится
-        #     в поддерево фантастические данные/модели/<stem>/реализация/<impl>/;
-        #     остальные id — по-прежнему в реальные данные/изделия/.
+        #     v9.40 вариант D: id обёрток izdelie_SkyNet-* резолвятся через
+        #     _SKYNET_IMPL_INDEX (работа и и/изделия/<subsystem>/<wrapper>/);
+        #     остальные id — в реальные данные/изделия/.
         for izd_id in real_impl:
             if not isinstance(izd_id, str):
                 continue

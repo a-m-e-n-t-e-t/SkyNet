@@ -1683,6 +1683,18 @@
       "path": ""
     },
     {
+      "id": "script:_migrate_256_variant_d.py",
+      "type": "script",
+      "label": "_migrate_256_variant_d.py",
+      "path": "scripts/_migrate_256_variant_d.py"
+    },
+    {
+      "id": "script:_migrate_256_variant_d_fix_links.py",
+      "type": "script",
+      "label": "_migrate_256_variant_d_fix_links.py",
+      "path": "scripts/_migrate_256_variant_d_fix_links.py"
+    },
+    {
       "id": "script:_stubs.py",
       "type": "script",
       "label": "_stubs.py",
@@ -1783,6 +1795,12 @@
       "type": "script",
       "label": "validate_decomposition.py",
       "path": "scripts/validate_decomposition.py"
+    },
+    {
+      "id": "pattern:*",
+      "type": "file_pattern",
+      "label": "*",
+      "path": ""
     },
     {
       "id": "script:validate_field_contracts.py",
@@ -3443,6 +3461,24 @@
       "meta": {}
     },
     {
+      "src": "script:_migrate_256_variant_d.py",
+      "dst": "pattern:_index.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:_migrate_256_variant_d.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:_migrate_256_variant_d_fix_links.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
       "src": "F51",
       "dst": "script:_stubs.py",
       "type": "validated_by",
@@ -4128,6 +4164,12 @@
     },
     {
       "src": "script:validate_decomposition.py",
+      "dst": "pattern:*",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
       "dst": "pattern:*.md",
       "type": "checks_files",
       "meta": {}
@@ -4500,13 +4542,13 @@
     }
   ],
   "stats": {
-    "nodes": 320,
-    "edges": 429,
+    "nodes": 323,
+    "edges": 433,
     "by_type": {
       "field_contract": 8,
-      "file_pattern": 7,
+      "file_pattern": 8,
       "metric": 216,
-      "script": 18,
+      "script": 20,
       "spec_section": 58,
       "stub": 13
     }

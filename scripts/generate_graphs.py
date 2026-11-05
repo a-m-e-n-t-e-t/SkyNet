@@ -131,8 +131,12 @@ def graph1_build() -> dict:
             "meta": meta or {},
         })
 
-    # 1) Изделия и части
-    for f in (REAL_DATA / "изделия").rglob("_index.md"):
+    # 1) Изделия и части (v9.40 вариант D: реальные данные/ + работа и и/)
+    IZD_FILES = []
+    for izd_root in [REAL_DATA / "изделия", REPO / "работа и и" / "изделия"]:
+        if izd_root.is_dir():
+            IZD_FILES.extend(izd_root.rglob("_index.md"))
+    for f in IZD_FILES:
         d = read_md(f)
         if not d or "id" not in d:
             continue
