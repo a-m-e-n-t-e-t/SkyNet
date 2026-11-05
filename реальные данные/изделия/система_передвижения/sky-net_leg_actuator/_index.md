@@ -94,6 +94,19 @@ scaling_type: количественный
 
 Изделие уровня 1, состоит из 4 дочерних частей (hip, knee, ankle, mounting). Каждое сочленение — отдельныйservo-узел; mounting-часть включает интерфейс к тазовому/стопному фланцам.
 
+```mermaid
+graph TD
+    izdelie_SkyNet-LegActuator["izdelie_SkyNet-LegActuator"]
+    hip["часть_SkyNet-LegActuator_hip"]
+    izdelie_SkyNet-LegActuator --> hip
+    knee["часть_SkyNet-LegActuator_knee"]
+    izdelie_SkyNet-LegActuator --> knee
+    ankle["часть_SkyNet-LegActuator_ankle"]
+    izdelie_SkyNet-LegActuator --> ankle
+    la_mounting["часть_SkyNet-LegActuator_mounting"]
+    izdelie_SkyNet-LegActuator --> la_mounting
+```
+
 ## Используемые материалы
 
 - `al_6061-t6` → hip/ankle корпуса (лёгкость, усталостная прочность)

@@ -98,6 +98,19 @@ Li-ion сборка 14s×10p (14 последовательно × 10 парал
 
 Изделие уровня 1, состоит из 4 дочерних частей: ячейки (cells), система управления (BMS), корпус с терморегуляцией (housing), крепёж (mounting).
 
+```mermaid
+graph TD
+    izdelie_SkyNet-PowerBackpack["izdelie_SkyNet-PowerBackpack"]
+    cells["часть_SkyNet-PowerBackpack_cells"]
+    izdelie_SkyNet-PowerBackpack --> cells
+    bms["часть_SkyNet-PowerBackpack_bms"]
+    izdelie_SkyNet-PowerBackpack --> bms
+    housing["часть_SkyNet-PowerBackpack_housing"]
+    izdelie_SkyNet-PowerBackpack --> housing
+    pb_mounting["часть_SkyNet-PowerBackpack_mounting"]
+    izdelie_SkyNet-PowerBackpack --> pb_mounting
+```
+
 ## Используемые материалы
 
 - `nmc_graphite` → ячейки (NMC катод / графит анод)
