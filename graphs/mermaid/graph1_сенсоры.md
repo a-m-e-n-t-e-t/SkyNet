@@ -183,6 +183,7 @@ graph LR
     material_poliimid[Полиимид]
     material_si[Si]
     material_silikon_80_shore_a_+_steklyannye_mikrosfery[Силикон 80 Shore A + с…]
+    material_ss_aisi_304[SS AISI 304]
     material_stal_st3[Сталь Ст3]
     material_ti_6al_4v[Ti-6Al-4V]
     izdelie_aesa_radar -->|материал| material_al_6061_t6
@@ -206,7 +207,7 @@ graph LR
     часть_flir_connectors -->|материал| material_latun_c36000
     часть_flir_core -->|материал| material_si
     часть_flir_housing -->|материал| material_al_6061_t6
-    часть_pezo_sensor_mounting -->|материал| material_ti_6al_4v
+    часть_pezo_sensor_mounting -->|материал| material_al_6061_t6
     часть_pezo_sensor_housing -->|материал| material_al_6061_t6
     часть_pezo_sensor_core -->|материал| material_aln
     часть_pezo_sensor_connectors -->|материал| material_stal_st3
@@ -222,7 +223,7 @@ graph LR
     часть_aesa_radar_mounting -->|материал| material_al_6061_t6
     часть_aesa_radar_housing -->|материал| material_al_6061_t6
     часть_aesa_radar_connectors -->|материал| material_latun_c36000
-    часть_pezoelektricheskie_mems_mounting -->|материал| material_ti_6al_4v
+    часть_pezoelektricheskie_mems_mounting -->|материал| material_al_6061_t6
     часть_pezoelektricheskie_mems_housing -->|материал| material_al_6061_t6
     часть_pezoelektricheskie_mems_core -->|материал| material_aln
     часть_pezoelektricheskie_mems_connectors -->|материал| material_latun_c36000
@@ -232,7 +233,7 @@ graph LR
     часть_eo_ir_kamera_connectors -->|материал| material_latun_c36000
     часть_mems_imu_connectors -->|материал| material_poliimid
     часть_mems_imu_core -->|материал| material_si
-    часть_mems_imu_mounting -->|материал| material_ti_6al_4v
+    часть_mems_imu_mounting -->|материал| material_al_6061_t6
     часть_mems_imu_housing -->|материал| material_al_6061_t6
     часть_ads_b_priemnik_mounting -->|материал| material_al_6061_t6
     часть_ads_b_priemnik_connectors -->|материал| material_latun_c36000
@@ -248,7 +249,7 @@ graph LR
     часть_sensora_volnovogo_fronta_housing -->|материал| material_al_6061_t6
     часть_pezo_mems_housing -->|материал| material_al_6061_t6
     часть_pezo_mems_connectors -->|материал| material_latun_c36000
-    часть_pezo_mems_mounting -->|материал| material_ti_6al_4v
+    часть_pezo_mems_mounting -->|материал| material_ss_aisi_304
     часть_pezo_mems_core -->|материал| material_aln
     часть_quantum_cascade_laser_mounting -->|материал| material_ti_6al_4v
     часть_quantum_cascade_laser_connectors -->|материал| material_latun_c36000
@@ -261,7 +262,7 @@ graph LR
     часть_mems_mikrofonov_housing -->|материал| material_al_6061_t6
     часть_mems_mikrofonov_core -->|материал| material_si
     часть_mems_mikrofonov_connectors -->|материал| material_poliimid
-    часть_mems_mikrofonov_mounting -->|материал| material_ti_6al_4v
+    часть_mems_mikrofonov_mounting -->|материал| material_al_6061_t6
     часть_iridium_sbd_connectors -->|материал| material_latun_c36000
     часть_iridium_sbd_mounting -->|материал| material_ti_6al_4v
     часть_iridium_sbd_core -->|материал| material_al_6061_t6
@@ -281,7 +282,7 @@ graph LR
     часть_tverdotelnyi_mmwave_radar_core -->|материал| material_al_6061_t6
     часть_tverdotelnyi_mmwave_radar_mounting -->|материал| material_ti_6al_4v
     часть_tverdotelnyi_mmwave_radar_connectors -->|материал| material_latun_c36000
-    часть_pmut_mounting -->|материал| material_ti_6al_4v
+    часть_pmut_mounting -->|материал| material_ss_aisi_304
     часть_pmut_core -->|материал| material_aln
     часть_pmut_housing -->|материал| material_al_6061_t6
     часть_pmut_connectors -->|материал| material_latun_c36000
@@ -299,7 +300,7 @@ graph LR
     часть_mwir_nbn_640_core -->|материал| material_al_6061_t6
     часть_akusticheskaya_linza_housing -->|материал| material_al_6061_t6
     часть_akusticheskaya_linza_connectors -->|материал| material_latun_c36000
-    часть_akusticheskaya_linza_mounting -->|материал| material_ti_6al_4v
+    часть_akusticheskaya_linza_mounting -->|материал| material_al_6061_t6
     часть_akusticheskaya_linza_core -->|материал| material_silikon_80_shore_a_+_steklyannye_mikrosfery
     часть_mwir_2_core -->|материал| material_al_6061_t6
     часть_mwir_2_mounting -->|материал| material_ti_6al_4v
@@ -327,14 +328,15 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 62 |
-| `Ti-6Al-4V` | 29 |
+| `Al 6061-T6` | 67 |
+| `Ti-6Al-4V` | 22 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 17 |
 | `BeCu` | 7 |
 | `Сталь Ст3` | 6 |
 | `Si` | 5 |
 | `Полиимид` | 5 |
 | `AlN` | 4 |
+| `SS AISI 304` | 2 |
 | `метаповерхность` | 1 |
 | `Силикон 80 Shore A + стеклянные микросферы` | 1 |
 | `монокристаллического SiC` | 1 |
