@@ -412,7 +412,10 @@ def cmd_apply_batch(args) -> int:
 
         mat = str(fs.get('material', '')).strip()
         dims_str = str(fs.get('dims', '') or '')
-        sub_errs, dims = _validate_inputs(url, mat, dims_str)
+        # Per-file URL override: если у записи свой url/source_note — использовать их
+        furl = str(fs.get('url') or url).strip()
+        fnote = str(fs.get('source_note') or source_note).strip()
+        sub_errs, dims = _validate_inputs(furl, mat, dims_str)
         for e in sub_errs:
             errors.append(f"files[{i}] ({fpath.name}): {e}")
         if sub_errs:
@@ -420,10 +423,10 @@ def cmd_apply_batch(args) -> int:
 
         try:
             new_text, _, _ = _build_new_text(
-                fpath, url, mat, dims,
+                fpath, furl, mat, dims,
                 fs.get('mass'), fs.get('share'),
                 [s.strip() for s in str(fs.get('standards', '')).split(';')] if fs.get('standards') else None,
-                fs.get('desc'), fs.get('principle'), source_note)
+                fs.get('desc'), fs.get('principle'), fnote)
         except ValueError as e:
             errors.append(f"files[{i}] ({fpath.name}): {e}")
             continue
