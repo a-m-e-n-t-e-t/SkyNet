@@ -29,16 +29,16 @@ scaling_type: количественный
   масса_kg: 0.003
   доля_массы_родителя: 0.0231
   габариты_mm:
-    l: 16
-    w: 12
-    h: 1.67
+    l: 30
+    w: 22
+    h: 2.15
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
 дополнительные:
   тип: 'беспроводной модуль M.2 Key-E на чипе Realtek RTL8822CE (Wi-Fi 5 + BT 5.0), установлен в девкит Jetson Orin Nano'
-  стандарт_модуля: 'M.2 Type 1216 (12 мм × 16 мм), монтажная высота 1.67 мм'
-  интерфейсы: 'PCIe ×1 — Wi-Fi, USB 2.0 — Bluetooth; антенны U.FL/IPEX'
+  стандарт_модуля: 'M.2 2230-E (30 мм × 22 мм), высота с экранирующим кожухом 2.15 мм'
+  интерфейсы: 'PCIe 2.1 ×1 — Wi-Fi, USB 2.0 FS — Bluetooth; антенны U.FL/IPEX'
   функции: '802.11ac 2×2 MU-MIMO (до 867 Мбит/с), Bluetooth 5.0'
   источник_url: 'https://developer.nvidia.com/embedded/learn/get-started-jetson-orin-nano-devkit'
   источник_дата: 2026-11-05
@@ -46,14 +46,16 @@ scaling_type: количественный
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://wiki.seeedstudio.com/rtl8822ce_wireless_module_for_jetson
+источник_дата: 2026-11-05
 ---
 # Часть: часть_nvidia_jetson_orin_nano_wifi_bt
 
 ## Описание
 
-Беспроводной модуль `izdelie_nvidia_jetson_orin_nano` — карта M.2 Key-E на чипе Realtek RTL8822CE: Wi-Fi 5 (802.11ac) 2×2 MU-MIMO до 867 Мбит/с и Bluetooth 5.0. Модуль форм-фактора **M.2 Type 1216** (16.0×12.0×1.67 мм — по данным QuickSpecs, где RTL8822CE указана именно в типоразмере 1216) устанавливается в слот M.2 Key-E платы-носителя девкита Jetson Orin Nano. Конструктив: четырёхслойная PCB FR-4 с печатными антеннами или разъёмами U.FL/IPEX под внешние антенны, чип RTL8822CE (однокристальный Wi-Fi/BT SoC, интерфейс PCIe ×1 для Wi-Fi и USB 2.0 для Bluetooth), экранирующий металлический кожух и SMD-обвязка (усилители мощности, коммутатор антенн, кварц).
+Беспроводной модуль `izdelie_nvidia_jetson_orin_nano` — карта M.2 Key-E на чипе Realtek RTL8822CE: Wi-Fi 5 (802.11ac) 2×2 MU-MIMO до 867 Мбит/с и Bluetooth 5.0. Модуль форм-фактора **M.2 2230** (30.0×22.0×2.15 мм — типовой типоразмер карт RTL8822CE для платформ Jetson, ключ E/A+E, по данным Seeed Studio) устанавливается в слот M.2 Key-E платы-носителя девкита Jetson Orin Nano. Конструктив: четырёхслойная PCB FR-4 с печатными антеннами или разъёмами U.FL/IPEX под внешние антенны, чип RTL8822CE (однокристальный Wi-Fi/BT SoC, интерфейс PCIe ×1 для Wi-Fi и USB 2.0 для Bluetooth), экранирующий металлический кожух и SMD-обвязка (усилители мощности, коммутатор антенн, кварц).
 
-Каноническая масса части (3 г) включает позицию модуля с крепежом/экраном; типовая масса «голой» карты M.2 1216 ≈ 1.3 г (по классификации типоразмеров M.2 в QuickSpecs). Габариты — реальные, по стандарту JEDEC M.2 Type 1216: длина 16.0 мм, ширина 12.0 мм, монтажная высота 1.67 мм (полутолщина + компоненты).
+Каноническая масса части (3 г) включает позицию модуля с крепежом/экраном; типовая масса карты M.2 2230 ≈ 2.5 г (с экранирующим кожухом и SMD-обвязкой). Габариты — реальные, по типоразмеру M.2 2230-E (Seeed Studio, RTL8822CE для Jetson): длина 30.0 мм, ширина 22.0 мм, высота с кожухом 2.15 мм.
 
 Родитель: `izdelie_nvidia_jetson_orin_nano` (подсистема: вычислительная).
 
@@ -63,20 +65,20 @@ scaling_type: количественный
 |---|---|---|---|
 | подсистема | вычислительная | — | canon |
 | подтип | WiFi_BT_модуль | — | canon |
-| масса | 0.003 | kg | canon (карта M.2 1216 ≈ 1.3 г; с экраном/крепежом — до 3 г) |
+| масса | 0.003 | kg | canon (карта M.2 2230 ≈ 2.5 г; с экраном/крепежом — до 3 г) |
 | доля массы родителя | 0.0231 | — | расчёт: 0.003 / номинал 0.13 kg |
-| габариты (Д×Ш×В) | 16×12×1.67 | mm | JEDEC M.2 Type 1216 (QuickSpecs, RTL8822CE) |
+| габариты (Д×Ш×В) | 30×22×2.15 | mm | M.2 2230-E (Seeed Studio, RTL8822CE для Jetson) |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
 | материал | fr4 (PCB модуля) | — | конструкция M.2-карты |
 | чип | Realtek RTL8822CE | — | QuickSpecs / NVIDIA |
 | Wi-Fi | 802.11ac 2×2, до 867 | Мбит/с | Realtek RTL8822CE |
 | Bluetooth | 5.0 | — | Realtek RTL8822CE |
-| интерфейсы | PCIe ×1 + USB 2.0, M.2 Key-E | — | JEDEC M.2 / RTL8822CE |
+| интерфейсы | PCIe 2.1 ×1 + USB 2.0 FS, M.2 2230 Key-E | — | Seeed Studio / RTL8822CE |
 
 ## Принцип работы
 
-RTL8822CE — однокристальный Wi-Fi/Bluetooth SoC: радиотракт 802.11ac (5 ГГц, 2×2 MU-MIMO) и Bluetooth 5.0 (LE, 2 Мбит/с) на одном чипе, подключение к хосту — PCIe Gen1 ×1 для Wi-Fi (DMA-передача сетевых пакетов в Tegra Orin Nano) и USB 2.0 для Bluetooth-контроллера. Модуль занимает слот M.2 Key-E платы-носителя девкита; питание 3.3 В от слота. Wi-Fi-часть реализует MAC/PHY с аппаратным шифрованием (WPA3/AES), BT-часть — аудио и HCI-транспорт. Тепловыделение модуля (~1 Вт в пике TX) рассеивается через экранирующий кожух на PCB платы-носителя; в отличие от SoC (15 Вт) модуль не требует радиатора.
+RTL8822CE — однокристальный Wi-Fi/Bluetooth SoC: радиотракт 802.11ac (5 ГГц, 2×2 MU-MIMO) и Bluetooth 5.0 (LE, 2 Мбит/с) на одном чипе, подключение к хосту — PCIe 2.1 ×1 для Wi-Fi (DMA-передача сетевых пакетов в Tegra Orin Nano) и USB 2.0 FS для Bluetooth-контроллера. Модуль занимает слот M.2 Key-E платы-носителя девкита; питание 3.3 В от слота. Wi-Fi-часть реализует MAC/PHY с аппаратным шифрованием (WPA3/AES), BT-часть — аудио и HCI-транспорт. Тепловыделение модуля (~1 Вт в пике TX) рассеивается через экранирующий кожух на PCB платы-носителя; в отличие от SoC (15 Вт) модуль не требует радиатора.
 
 ## Состав
 
@@ -88,6 +90,7 @@ RTL8822CE — однокристальный Wi-Fi/Bluetooth SoC: радиотр
 
 ## Источники
 
-- HP QuickSpecs (255 G8 Notebook PC) — Realtek RTL8822CE 802.11ac 2×2 Wi-Fi + Bluetooth 5.0 Wireless Card, типоразмер M.2 Type 1216: 1.67×12.0×16.0 мм: https://t-support.gr/image/catalog/pdf/f1d49c6121725634dfc51f3d7bccf11a-HP%20255%20G8%20Notebook%20PC%20-%20c06913989.pdf
+- Seeed Studio Wiki, RTL8822CE Wireless Module for Jetson — форм-фактор M.2 2230 (30×22×2.15 мм, ключ A/E), PCIe 2.1 (WLAN) + USB 2.0 FS (BT), 802.11a/b/g/n/ac, BT 5.0/4.2/2.1: https://wiki.seeedstudio.com/rtl8822ce_wireless_module_for_jetson
+- Waveshare, Wireless-RTL8822CE — спецификация модуля 802.11ac 867 Мбит/с + BT 5.0, M.2: https://files.waveshare.com/wiki/Wireless-RTL8822CE/Wireless-RTL8822CE.pdf
 - NVIDIA, Jetson Orin Nano Developer Kit — слот M.2 Key-E с беспроводным модулем (RTL8822CE): https://developer.nvidia.com/embedded/learn/get-started-jetson-orin-nano-devkit
 - Realtek RTL8822CE-CG — Wi-Fi 5 / BT 5.0 combo SoC, PCIe + USB 2.0: https://www.realtek.com/Product/Index?id=4005
