@@ -12133,7 +12133,7 @@
     },
     {
       "src": "часть_asrg_alternator",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_smco",
       "type": "uses_material",
       "meta": {}
     },
@@ -12169,7 +12169,7 @@
     },
     {
       "src": "часть_asrg_heater_head",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_inconel_718",
       "type": "uses_material",
       "meta": {}
     },
@@ -12822,12 +12822,6 @@
       "meta": {}
     },
     {
-      "src": "часть_svintsovo-kislotnye_akb_electrolyte",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_svintsovo-kislotnye_akb_grid_pos",
       "dst": "izdelie_svintsovo-kislotnye_akb",
       "type": "child_of",
@@ -13203,12 +13197,6 @@
       "src": "часть_perovskite_tandem_frame",
       "dst": "izdelie_perovskite_tandem",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_perovskite_tandem_frame",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -13602,12 +13590,6 @@
       "meta": {}
     },
     {
-      "src": "часть_mptm_generator",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_mptm_controls",
       "dst": "izdelie_mptm",
       "type": "child_of",
@@ -13771,7 +13753,7 @@
     },
     {
       "src": "часть_mmrtg_hot_side",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_inconel_625",
       "type": "uses_material",
       "meta": {}
     },
@@ -17539,7 +17521,7 @@
     },
     {
       "src": "часть_marcus_человеческая_кожа",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_silikon_40_50_shore_a",
       "type": "uses_material",
       "meta": {}
     },
@@ -23386,7 +23368,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_smco",
       "dst": "часть_asrg_alternator",
       "type": "used_in",
       "meta": {
@@ -23410,7 +23392,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_inconel_718",
       "dst": "часть_asrg_heater_head",
       "type": "used_in",
       "meta": {
@@ -23843,14 +23825,6 @@
     },
     {
       "src": "material_ti-6al-4v",
-      "dst": "часть_svintsovo-kislotnye_akb_electrolyte",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
       "dst": "часть_svintsovo-kislotnye_akb_grid_pos",
       "type": "used_in",
       "meta": {
@@ -24092,14 +24066,6 @@
     {
       "src": "material_ti-6al-4v",
       "dst": "часть_perovskite_tandem_front_glass",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_perovskite_tandem_frame",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -24354,14 +24320,6 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_mptm_generator",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_al_6061-t6",
       "dst": "часть_mptm_controls",
       "type": "used_in",
@@ -24466,7 +24424,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_inconel_625",
       "dst": "часть_mmrtg_hot_side",
       "type": "used_in",
       "meta": {
@@ -27778,7 +27736,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_silikon_40_50_shore_a",
       "dst": "часть_marcus_человеческая_кожа",
       "type": "used_in",
       "meta": {
@@ -28052,6 +28010,7 @@
       "standart_AMS 4027",
       "standart_AMS 4928",
       "standart_AMS 5662",
+      "standart_AMS 5663 (Inconel 718)",
       "standart_ANSI/ASME B1.1 (1/4-20 UNC)",
       "standart_ASHRAE 15",
       "standart_ASME BPVC Section III",
@@ -28069,6 +28028,7 @@
       "standart_ASTM B637",
       "standart_ASTM C534",
       "standart_ASTM C750",
+      "standart_ASTM D2240 (Shore A)",
       "standart_ASTM D412",
       "standart_ASTM D4894",
       "standart_ASTM D638",
@@ -28092,6 +28052,7 @@
       "standart_DIN VDE 0580",
       "standart_DMP Photonics Spark Gaps",
       "standart_DOE 10 CFR 71",
+      "standart_DOE GPHS Rev.5",
       "standart_Deublin Mounting Instructions",
       "standart_Doodle Labs Helix Datasheet",
       "standart_ECSS-Q-ST-60-15",
@@ -28100,7 +28061,10 @@
       "standart_EN 1090-2",
       "standart_EN 1092-1 (Type 01, PN10 DN50)",
       "standart_EN 12164",
+      "standart_EN 50342-1",
+      "standart_EN 50598",
       "standart_EN 683-17",
+      "standart_EN 755-9 (EN AW-6063-T5)",
       "standart_EPJ Appl. Phys. 80, 20901 (2017)",
       "standart_ETSI EN 301 489",
       "standart_Edmund Optics M12 Lens Holder",
@@ -28157,6 +28121,7 @@
       "standart_IPC-A-610",
       "standart_IPG Installation Manual",
       "standart_IPG Mechanical Interface",
+      "standart_ISO 10993-1 (биосовместимость)",
       "standart_ISO 1179 (пневмопорты)",
       "standart_ISO 14687",
       "standart_ISO 15241",
@@ -28214,11 +28179,16 @@
       "standart_MIL-STD-810H",
       "standart_MIL-STD-883 TM1019",
       "standart_MSFC-STD-5003",
+      "standart_Microgen Engine Corporation Specs",
       "standart_Mitsubishi SH-170030ENG",
       "standart_Murata Mounting Guide",
+      "standart_NASA GRC ASRG EU Specs",
+      "standart_NASA Mars 2020 MMRTG Fact Sheet",
       "standart_NASA NTRS 20080047351",
+      "standart_NASA NTRS 20160010442",
       "standart_NASA-STD-5001A",
       "standart_NASA-STD-8729.1",
+      "standart_NASA/TM—2018-219944",
       "standart_NEMA 17",
       "standart_NREL 89857 (2024)",
       "standart_New Way Design Guide",
@@ -28421,9 +28391,9 @@
   },
   "stats": {
     "nodes": 937,
-    "edges": 3158,
+    "edges": 3152,
     "dangling": {
-      "complies_with": 220,
+      "complies_with": 232,
       "has_part": 1,
       "researched_by": 43,
       "uses_material": 103

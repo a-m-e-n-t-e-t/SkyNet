@@ -237,10 +237,8 @@ graph LR
     часть_tpv_pv_cell -->|материал| material_ti_6al_4v
     часть_tpv_cooling -->|материал| material_al_6061_t6
     часть_tpv_filter -->|материал| material_ti_6al_4v
-    часть_asrg_alternator -->|материал| material_ti_6al_4v
     часть_asrg_housing -->|материал| material_al_6061_t6
     часть_asrg_piston -->|материал| material_ti_6al_4v
-    часть_asrg_heater_head -->|материал| material_ti_6al_4v
     часть_asrg_cooler -->|материал| material_ti_6al_4v
     часть_nasa_asc_e_srsc_displacer_piston -->|материал| material_ti_6al_4v
     часть_nasa_asc_e_srsc_power_piston -->|материал| material_ti_6al_4v
@@ -275,7 +273,6 @@ graph LR
     часть_4h_sic_betavoltaik_sic_diode -->|материал| material_ti_6al_4v
     часть_4h_sic_betavoltaik_isotope -->|материал| material_ti_6al_4v
     часть_4h_sic_betavoltaik_substrate -->|материал| material_ti_6al_4v
-    часть_svintsovo_kislotnye_akb_electrolyte -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_grid_pos -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_cathode -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_anode -->|материал| material_ti_6al_4v
@@ -298,7 +295,6 @@ graph LR
     часть_perovskite_tandem_cells -->|материал| material_ti_6al_4v
     часть_perovskite_tandem_backsheet -->|материал| material_ti_6al_4v
     часть_perovskite_tandem_front_glass -->|материал| material_ti_6al_4v
-    часть_perovskite_tandem_frame -->|материал| material_ti_6al_4v
     часть_tpv_lenty_reflector -->|материал| material_al_6061_t6
     часть_tpv_lenty_cooling -->|материал| material_ti_6al_4v
     часть_tpv_lenty_pv_cells -->|материал| material_ti_6al_4v
@@ -320,7 +316,6 @@ graph LR
     часть_betavoltaiki_semiconductor -->|материал| material_ti_6al_4v
     часть_betavoltaiki_case -->|материал| material_ti_6al_4v
     часть_betavoltaiki_isotope -->|материал| material_ti_6al_4v
-    часть_mptm_generator -->|материал| material_ti_6al_4v
     часть_mptm_controls -->|материал| material_al_6061_t6
     часть_mptm_engine -->|материал| material_ti_6al_4v
     часть_mptm_heat_exchanger -->|материал| material_ti_6al_4v
@@ -331,7 +326,6 @@ graph LR
     часть_mmrtg_housing -->|материал| material_al_6061_t6
     часть_mmrtg_cold_side -->|материал| material_al_6061_t6
     часть_mmrtg_connector -->|материал| material_al_6061_t6
-    часть_mmrtg_hot_side -->|материал| material_ti_6al_4v
     часть_induktivnyi_nakopitel_core -->|материал| material_ti_6al_4v
     часть_induktivnyi_nakopitel_housing -->|материал| material_stal_st3
     часть_induktivnyi_nakopitel_cooling -->|материал| material_ti_6al_4v
@@ -364,15 +358,15 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 98 |
+| `Ti-6Al-4V` | 92 |
 | `Al 6061-T6` | 20 |
+| `Inconel 718` | 8 |
 | `SS AISI 304` | 8 |
-| `Inconel 718` | 7 |
 | `Bi₂Te₃` | 5 |
 | `Сталь Ст3` | 5 |
+| `Inconel 625` | 4 |
 | `NdFeB` | 4 |
 | `100Cr6 (EN 683-17) / AISI 52100 / ГОСТ ШХ15: C 0.95–1.10 %, Cr 1.35–1.65 %, Mn 0.25–0.45 %, Si 0.15–0.35 %` | 4 |
-| `Inconel 625` | 3 |
 | `карбон` | 3 |
 | `Pt` | 3 |
 | `Эпоксид Epon 828 + TETA` | 3 |
