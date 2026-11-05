@@ -12553,7 +12553,7 @@
     },
     {
       "src": "часть_mikroreaktor_deleniya_fuel",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_karbon",
       "type": "uses_material",
       "meta": {}
     },
@@ -12907,7 +12907,7 @@
     },
     {
       "src": "часть_emi-generator_capacitor_bank",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -13819,7 +13819,7 @@
     },
     {
       "src": "часть_induktivnyi_nakopitel_coil",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ybco",
       "type": "uses_material",
       "meta": {}
     },
@@ -13975,7 +13975,7 @@
     },
     {
       "src": "часть_marx_generator_insulator",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_oksid_alyuminiya",
       "type": "uses_material",
       "meta": {}
     },
@@ -13987,7 +13987,7 @@
     },
     {
       "src": "часть_marx_generator_spark_gaps",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_oksid_alyuminiya",
       "type": "uses_material",
       "meta": {}
     },
@@ -14161,7 +14161,7 @@
     },
     {
       "src": "часть_coilgun_barrel",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_becu",
       "type": "uses_material",
       "meta": {}
     },
@@ -17575,7 +17575,7 @@
     },
     {
       "src": "часть_marcus_эндоскелет",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -17869,7 +17869,7 @@
     },
     {
       "src": "часть_hk_aerial_навигация",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -17881,7 +17881,7 @@
     },
     {
       "src": "часть_hk_aerial_связь",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -23666,7 +23666,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_karbon",
       "dst": "часть_mikroreaktor_deleniya_fuel",
       "type": "used_in",
       "meta": {
@@ -23898,7 +23898,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_emi-generator_capacitor_bank",
       "type": "used_in",
       "meta": {
@@ -24498,7 +24498,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ybco",
       "dst": "часть_induktivnyi_nakopitel_coil",
       "type": "used_in",
       "meta": {
@@ -24602,7 +24602,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_oksid_alyuminiya",
       "dst": "часть_marx_generator_insulator",
       "type": "used_in",
       "meta": {
@@ -24610,7 +24610,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_oksid_alyuminiya",
       "dst": "часть_marx_generator_spark_gaps",
       "type": "used_in",
       "meta": {
@@ -24714,7 +24714,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_becu",
       "dst": "часть_coilgun_barrel",
       "type": "used_in",
       "meta": {
@@ -27802,7 +27802,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_marcus_эндоскелет",
       "type": "used_in",
       "meta": {
@@ -27994,7 +27994,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_hk_aerial_навигация",
       "type": "used_in",
       "meta": {
@@ -28002,7 +28002,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_hk_aerial_связь",
       "type": "used_in",
       "meta": {
@@ -28079,6 +28079,7 @@
       "standart_Aguirre 2024 (ADC area 70-90%)",
       "standart_Arbe Phoenix Integration Guide",
       "standart_Bosch Sensortec PCB Guide",
+      "standart_CDE WL-Series Datasheet",
       "standart_CISPR 25",
       "standart_Cedrat Mechanical Interface",
       "standart_Celsius Design Guide",
@@ -28089,8 +28090,10 @@
       "standart_DIN 69051",
       "standart_DIN 912",
       "standart_DIN VDE 0580",
+      "standart_DMP Photonics Spark Gaps",
       "standart_DOE 10 CFR 71",
       "standart_Deublin Mounting Instructions",
+      "standart_Doodle Labs Helix Datasheet",
       "standart_ECSS-Q-ST-60-15",
       "standart_EIA RS-198",
       "standart_EJMA (монтаж компенсаторов)",
@@ -28098,6 +28101,7 @@
       "standart_EN 1092-1 (Type 01, PN10 DN50)",
       "standart_EN 12164",
       "standart_EN 683-17",
+      "standart_EPJ Appl. Phys. 80, 20901 (2017)",
       "standart_ETSI EN 301 489",
       "standart_Edmund Optics M12 Lens Holder",
       "standart_FCC Part 15",
@@ -28218,7 +28222,9 @@
       "standart_NEMA 17",
       "standart_NREL 89857 (2024)",
       "standart_New Way Design Guide",
+      "standart_ONR EMRG Program",
       "standart_Oxford Instruments Integration Note",
+      "standart_PBMR Fuel Specification",
       "standart_PCIe 3.0",
       "standart_Parker PC6116",
       "standart_Phasics SID4 Spec Sheet",
@@ -28228,6 +28234,7 @@
       "standart_RoHS 2011/65/EU",
       "standart_RoHS 2011/65/EU (exemption 6c)",
       "standart_RoboSense AC1 Datasheet",
+      "standart_Royal C4-250III Datasheet",
       "standart_S-mount (M12×0.5)",
       "standart_SAE J1962_201607",
       "standart_SEMI M1",
@@ -28249,7 +28256,9 @@
       "standart_UN 38.3 (транспорт литий-ионных батарей)",
       "standart_UN 38.3 (транспорт)",
       "standart_USB Type-C Spec Rev 2.2 (USB-IF)",
+      "standart_Unitree H1 Datasheet",
       "standart_VITA 65",
+      "standart_VectorNav VN-300 Datasheet",
       "standart_Wang 2021 interface",
       "standart_Werfel ISMB7",
       "standart_X20 Mounting Guide",
@@ -28414,7 +28423,7 @@
     "nodes": 937,
     "edges": 3158,
     "dangling": {
-      "complies_with": 211,
+      "complies_with": 220,
       "has_part": 1,
       "researched_by": 43,
       "uses_material": 103

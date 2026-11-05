@@ -54,7 +54,6 @@ graph LR
     material_si[Si]
     material_ss_aisi_304[SS AISI 304]
     material_stal_st3[Сталь Ст3]
-    material_ti_6al_4v[Ti-6Al-4V]
     часть_radiatsionno_stoikii_neiromorfnyi_tmr_housing -->|материал| material_al_6061_t6
     часть_radiatsionno_stoikii_neiromorfnyi_tmr_mounting -->|материал| material_ss_aisi_304
     часть_radiatsionno_stoikii_neiromorfnyi_tmr_core -->|материал| material_si
@@ -89,12 +88,12 @@ graph LR
     часть_stm32h743_core -->|материал| material_si
     часть_t850_связь -->|материал| material_al_6061_t6
     часть_t800_антенна -->|материал| material_poliimid
-    часть_hk_aerial_связь -->|материал| material_ti_6al_4v
+    часть_hk_aerial_связь -->|материал| material_al_6061_t6
 ```
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 14 |
+| `Al 6061-T6` | 15 |
 | `Сталь Ст3` | 5 |
 | `Si` | 3 |
 | `BeCu` | 3 |
@@ -102,4 +101,3 @@ graph LR
 | `SS AISI 304` | 2 |
 | `Полиимид` | 2 |
 | `PEEK` | 2 |
-| `Ti-6Al-4V` | 1 |

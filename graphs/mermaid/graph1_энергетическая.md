@@ -227,8 +227,8 @@ graph LR
     часть_t_x_топливная_ячейка_1[plasma_cell]
     часть_t600_топливная_ячейка[fuel_cell]
     часть_hk_aerial_двигатель_левый[nuclear_vtol_engine]
-    material_ti_6al_4v[Ti-6Al-4V]
     material_al_6061_t6[Al 6061-T6]
+    material_ti_6al_4v[Ti-6Al-4V]
     material_stal_st3[Сталь Ст3]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
     material_si[Si]
@@ -262,7 +262,6 @@ graph LR
     часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator -->|материал| material_ti_6al_4v
     часть_mikroreaktor_deleniya_vessel -->|материал| material_ti_6al_4v
     часть_mikroreaktor_deleniya_heat_exchanger -->|материал| material_ti_6al_4v
-    часть_mikroreaktor_deleniya_fuel -->|материал| material_ti_6al_4v
     часть_mikroreaktor_deleniya_shielding -->|материал| material_ti_6al_4v
     часть_mikroreaktor_deleniya_coolant -->|материал| material_ti_6al_4v
     часть_mikroreaktor_deleniya_moderator -->|материал| material_ti_6al_4v
@@ -282,7 +281,6 @@ graph LR
     часть_svintsovo_kislotnye_akb_anode -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_separator -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_terminal -->|материал| material_latun_c36000
-    часть_emi_generator_capacitor_bank -->|материал| material_ti_6al_4v
     часть_emi_generator_source -->|материал| material_ti_6al_4v
     часть_emi_generator_switch -->|материал| material_ti_6al_4v
     часть_emi_generator_waveguide -->|материал| material_ti_6al_4v
@@ -336,15 +334,12 @@ graph LR
     часть_mmrtg_hot_side -->|материал| material_ti_6al_4v
     часть_induktivnyi_nakopitel_core -->|материал| material_ti_6al_4v
     часть_induktivnyi_nakopitel_housing -->|материал| material_stal_st3
-    часть_induktivnyi_nakopitel_coil -->|материал| material_ti_6al_4v
     часть_induktivnyi_nakopitel_cooling -->|материал| material_ti_6al_4v
     часть_induktivnyi_nakopitel_switch -->|материал| material_ti_6al_4v
     часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_housing -->|материал| material_al_6061_t6
     часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_spring -->|материал| material_ti_6al_4v
     часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_coil -->|материал| material_ti_6al_4v
     часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_housing -->|материал| material_al_6061_t6
-    часть_marx_generator_insulator -->|материал| material_ti_6al_4v
-    часть_marx_generator_spark_gaps -->|материал| material_ti_6al_4v
     часть_marx_generator_output_terminal -->|материал| material_ti_6al_4v
     часть_marx_generator_capacitors -->|материал| material_ti_6al_4v
     часть_marx_generator_housing -->|материал| material_stal_st3
@@ -356,7 +351,6 @@ graph LR
     часть_coilgun_capacitor_bank -->|материал| material_ti_6al_4v
     часть_coilgun_coil -->|материал| material_ti_6al_4v
     часть_coilgun_projectile -->|материал| material_ti_6al_4v
-    часть_coilgun_barrel -->|материал| material_ti_6al_4v
     часть_cameron_топливная_ячейка_1 -->|материал| material_ti_6al_4v
     часть_cameron_топливная_ячейка_2 -->|материал| material_ti_6al_4v
     часть_t850_топливная_ячейка_1 -->|материал| material_ti_6al_4v
@@ -370,18 +364,18 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 104 |
+| `Ti-6Al-4V` | 98 |
 | `Al 6061-T6` | 20 |
+| `SS AISI 304` | 8 |
 | `Inconel 718` | 7 |
-| `SS AISI 304` | 7 |
 | `Bi₂Te₃` | 5 |
 | `Сталь Ст3` | 5 |
 | `NdFeB` | 4 |
 | `100Cr6 (EN 683-17) / AISI 52100 / ГОСТ ШХ15: C 0.95–1.10 %, Cr 1.35–1.65 %, Mn 0.25–0.45 %, Si 0.15–0.35 %` | 4 |
 | `Inconel 625` | 3 |
+| `карбон` | 3 |
 | `Pt` | 3 |
 | `Эпоксид Epon 828 + TETA` | 3 |
 | `углеродная сажа (токопроводящий наполнитель) + PTFE 20% (связующее), опционально катализатор MnO₂; токосъёмник — никелевая сетка` | 2 |
 | `Am-241` | 2 |
 | `ScT?` | 2 |
-| `карбон` | 2 |
