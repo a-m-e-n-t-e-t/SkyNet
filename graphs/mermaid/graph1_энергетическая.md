@@ -276,7 +276,6 @@ graph LR
     часть_svintsovo_kislotnye_akb_anode -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_separator -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_terminal -->|материал| material_latun_c36000
-    часть_emi_generator_source -->|материал| material_ti_6al_4v
     часть_emi_generator_switch -->|материал| material_ti_6al_4v
     часть_emi_generator_waveguide -->|материал| material_ti_6al_4v
     часть_emi_generator_housing -->|материал| material_stal_st3
@@ -290,7 +289,7 @@ graph LR
     часть_termomoduli_pelte_electrodes -->|материал| material_ti_6al_4v
     часть_termomoduli_pelte_ceramic_top -->|материал| material_ti_6al_4v
     часть_termomoduli_pelte_solder -->|материал| material_ti_6al_4v
-    часть_perovskite_tandem_cells -->|материал| material_ti_6al_4v
+    часть_perovskite_tandem_cells -->|материал| material_si
     часть_perovskite_tandem_backsheet -->|материал| material_ti_6al_4v
     часть_perovskite_tandem_front_glass -->|материал| material_ti_6al_4v
     часть_tpv_lenty_reflector -->|материал| material_al_6061_t6
@@ -304,7 +303,6 @@ graph LR
     часть_superkondensatory_terminal -->|материал| material_ti_6al_4v
     часть_tverdooksidnyi_toplivnyi_element_seal -->|материал| material_ti_6al_4v
     часть_tverdooksidnyi_toplivnyi_element_interconnect -->|материал| material_ti_6al_4v
-    часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_cryostat -->|материал| material_ti_6al_4v
     часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_housing -->|материал| material_al_6061_t6
     часть_tverdotelnye_akkumulyatory_cathode -->|материал| material_si
     часть_tverdotelnye_akkumulyatory_anode -->|материал| material_si
@@ -315,7 +313,6 @@ graph LR
     часть_betavoltaiki_case -->|материал| material_ti_6al_4v
     часть_betavoltaiki_isotope -->|материал| material_ti_6al_4v
     часть_mptm_controls -->|материал| material_al_6061_t6
-    часть_mptm_engine -->|материал| material_ti_6al_4v
     часть_mptm_heat_exchanger -->|материал| material_ti_6al_4v
     часть_mptm_housing -->|материал| material_al_6061_t6
     часть_3d_sic_mikropillarnyi_tritii_betavoltaik_substrate -->|материал| material_ti_6al_4v
@@ -326,8 +323,6 @@ graph LR
     часть_mmrtg_connector -->|материал| material_al_6061_t6
     часть_induktivnyi_nakopitel_core -->|материал| material_ti_6al_4v
     часть_induktivnyi_nakopitel_housing -->|материал| material_stal_st3
-    часть_induktivnyi_nakopitel_cooling -->|материал| material_ti_6al_4v
-    часть_induktivnyi_nakopitel_switch -->|материал| material_ti_6al_4v
     часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_housing -->|материал| material_al_6061_t6
     часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_spring -->|материал| material_ti_6al_4v
     часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_coil -->|материал| material_ti_6al_4v
@@ -356,10 +351,10 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 90 |
+| `Ti-6Al-4V` | 84 |
 | `Al 6061-T6` | 20 |
+| `SS AISI 304` | 10 |
 | `Inconel 718` | 9 |
-| `SS AISI 304` | 8 |
 | `Bi₂Te₃` | 6 |
 | `Сталь Ст3` | 5 |
 | `Inconel 625` | 4 |
@@ -368,6 +363,6 @@ _Показаны 5 наиболее часто используемых мат�
 | `карбон` | 3 |
 | `Pt` | 3 |
 | `Эпоксид Epon 828 + TETA` | 3 |
+| `Si` | 3 |
 | `углеродная сажа (токопроводящий наполнитель) + PTFE 20% (связующее), опционально катализатор MnO₂; токосъёмник — никелевая сетка` | 2 |
 | `Am-241` | 2 |
-| `ScT?` | 2 |

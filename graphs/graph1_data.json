@@ -12912,12 +12912,6 @@
       "meta": {}
     },
     {
-      "src": "часть_emi-generator_source",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_emi-generator_switch",
       "dst": "izdelie_emi-generator",
       "type": "child_of",
@@ -13141,7 +13135,7 @@
     },
     {
       "src": "часть_perovskite_tandem_cells",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -13399,7 +13393,7 @@
     },
     {
       "src": "часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_cryostat",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -13609,7 +13603,7 @@
     },
     {
       "src": "часть_mptm_engine",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -13812,21 +13806,9 @@
       "meta": {}
     },
     {
-      "src": "часть_induktivnyi_nakopitel_cooling",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_induktivnyi_nakopitel_switch",
       "dst": "izdelie_induktivnyi_nakopitel",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_induktivnyi_nakopitel_switch",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -23857,14 +23839,6 @@
     },
     {
       "src": "material_ti-6al-4v",
-      "dst": "часть_emi-generator_source",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
       "dst": "часть_emi-generator_switch",
       "type": "used_in",
       "meta": {
@@ -24008,7 +23982,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_perovskite_tandem_cells",
       "type": "used_in",
       "meta": {
@@ -24168,7 +24142,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_cryostat",
       "type": "used_in",
       "meta": {
@@ -24304,7 +24278,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_mptm_engine",
       "type": "used_in",
       "meta": {
@@ -24434,22 +24408,6 @@
     {
       "src": "material_ybco",
       "dst": "часть_induktivnyi_nakopitel_coil",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_induktivnyi_nakopitel_cooling",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_induktivnyi_nakopitel_switch",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -28345,7 +28303,7 @@
   },
   "stats": {
     "nodes": 937,
-    "edges": 3144,
+    "edges": 3138,
     "dangling": {
       "complies_with": 240,
       "has_part": 1,
