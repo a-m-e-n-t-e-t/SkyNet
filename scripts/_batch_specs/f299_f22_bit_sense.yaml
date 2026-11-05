@@ -1,0 +1,16 @@
+# Issue #299 — F22: часть_memristornye_matritsy_bit_sense (пустой источник_url, шаблон 100×100×50, ti-6al-4v)
+# Данные из web_search 2026-11-05: Zhang et al., Micromachines 12:913 (2021) — Sensing Circuit Design
+# Techniques for RRAM in Advanced CMOS Technology Nodes (current/voltage-mode sense amps, sneak-path
+# компенсация); arXiv 2511.21796 — sneak path currents в memristor crossbar.
+# Масса = доля_массы × nominal родителя: 0.2 × 0.01 кг = 0.002 кг.
+files:
+  - file: реальные данные/изделия/вычислительная/memristornye_matritsy/часть_memristornye_matritsy_bit_sense/_index.md
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8398062
+    source_note: "Zhang et al., Micromachines 12:913 (2021) — Sensing Circuit Design Techniques for RRAM in Advanced CMOS Technology Nodes: voltage/current-mode sense amplifiers, транзиентная компенсация, опорные ячейки; arXiv 2511.21796 — sneak-path токи кроссбара"
+    material: si
+    dims: 1.5,1.0,0.5
+    mass: 0.002
+    share: 0.2
+    standards: "Micromachines 12:913 (2021);JEDEC JESD22"
+    desc: "Блок sense-усилителей периферии мемристорной матрицы: CMOS-схемы считывания (current-mode и voltage-mode sense amplifiers с транзиентной компенсацией и опорными ячейками), размещённые на кремниевом кристалле 12×12 мм рядом с кроссбаром. По обзору Zhang et al. (Micromachines 12:913, 2021) в advanced CMOS-узлах схемы считывания RRAM устойчивы к разбросу сопротивлений ячеек (килоомный диапазон HRS/LRS); макроблок sense-цепей принят 1.5×1.0×0.5 мм. Масса ≈2 г (20% номинала родителя 10 г)."
+    principle: "При чтении на выбранную ячейку кроссбара подаётся низкое напряжение (схемы V/2-смещения невыбранных строк подавляют sneak-path токи через соседние ячейки); sense-усилитель сравнивает ток или напряжение выбранной битовой линии с опорной ячейкой и фиксирует состояние HRS/LRS защёлкой-триггером. Current-mode схемы устойчивы к разбросу сопротивлений мемристоров, voltage-mode с транзиентной компенсацией сокращают время чтения до наносекундного диапазона."

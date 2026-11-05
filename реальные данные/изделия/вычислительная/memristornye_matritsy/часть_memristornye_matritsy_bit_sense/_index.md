@@ -7,13 +7,14 @@ id: часть_memristornye_matritsy_bit_sense
 подсистема: вычислительная
 подтип: sense_amplifiers
 стандарты:
-  - ISO 9001
+  - Micromachines 12:913 (2021)
+  - JEDEC JESD22
 исследовательская_группа: null
 родитель: izdelie_memristornye_matritsy
 дочерние_части: []
 материалы_частей:
   - часть: часть_memristornye_matritsy_bit_sense
-    материал: ti-6al-4v
+    материал: si
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -26,12 +27,12 @@ scaling_type: количественный
   статус: false
   верификация: []
 основные:
-  масса_kg: 0.001
+  масса_kg: 0.002
   доля_массы_родителя: 0.2
   габариты_mm:
-    l: 100
-    w: 100
-    h: 50
+    l: 1.5
+    w: 1
+    h: 0.5
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
@@ -40,14 +41,14 @@ scaling_type: количественный
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC8398062
+источник_дата: 2026-11-05
 ---
 # Часть: часть_memristornye_matritsy_bit_sense
 
 ## Описание
 
-Дочерняя часть изделия.
-
-Родитель: `izdelie_memristornye_matritsy` (подсистема: вычислительная).
+Блок sense-усилителей периферии мемристорной матрицы: CMOS-схемы считывания (current-mode и voltage-mode sense amplifiers с транзиентной компенсацией и опорными ячейками), размещённые на кремниевом кристалле 12×12 мм рядом с кроссбаром. По обзору Zhang et al. (Micromachines 12:913, 2021) в advanced CMOS-узлах схемы считывания RRAM устойчивы к разбросу сопротивлений ячеек (килоомный диапазон HRS/LRS); макроблок sense-цепей принят 1.5×1.0×0.5 мм. Масса ≈2 г (20% номинала родителя 10 г).
 
 ## Технические характеристики
 
@@ -55,16 +56,16 @@ scaling_type: количественный
 |---|---|---|---|
 | подсистема | вычислительная | — | canon |
 | подтип | sense_amplifiers | — | canon |
-| масса | 0.001 | kg | canon |
-| доля массы родителя | 0.2 | — | canon |
-| габариты (Д×Ш×В) | 100×100×50 | mm | canon |
+| масса | 0.002 | kg | Zhang et al., Micromachines 12:913 (2021) — Sensing Circuit Design Techniques for RRAM in Advanced CMOS Technology Nodes: voltage/current-mode sense amplifiers, транзиентная компенсация, опорные ячейки; arXiv 2511.21796 — sneak-path токи кроссбара |
+| доля массы родителя | 0.2 | — | оценка |
+| габариты (Д×Ш×В) | 1.5×1×0.5 | mm | Zhang et al., Micromachines 12:913 (2021) — Sensing Circuit Design Techniques for RRAM in Advanced CMOS Technology Nodes: voltage/current-mode sense amplifiers, транзиентная компенсация, опорные ячейки; arXiv 2511.21796 — sneak-path токи кроссбара |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | ti-6al-4v | — | canon |
+| материал | si | — | si.md |
 
 ## Принцип работы
 
-Определяется типом и назначением родительского изделия.
+При чтении на выбранную ячейку кроссбара подаётся низкое напряжение (схемы V/2-смещения невыбранных строк подавляют sneak-path токи через соседние ячейки); sense-усилитель сравнивает ток или напряжение выбранной битовой линии с опорной ячейкой и фиксирует состояние HRS/LRS защёлкой-триггером. Current-mode схемы устойчивы к разбросу сопротивлений мемристоров, voltage-mode с транзиентной компенсацией сокращают время чтения до наносекундного диапазона.
 
 ## Состав
 
@@ -72,9 +73,9 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `ti-6al-4v` → [`ti-6al-4v.md`](../../../../материалы/ti-6al-4v.md)
+- `si` → [`si.md`](../../../материалы/si.md)
 
 ## Источники
 
-- Канон: декомпозиция `izdelie_memristornye_matritsy` (web search 2026-11-03)
+- Zhang et al., Micromachines 12:913 (2021) — Sensing Circuit Design Techniques for RRAM in Advanced CMOS Technology Nodes: voltage/current-mode sense amplifiers, транзиентная компенсация, опорные ячейки; arXiv 2511.21796 — sneak-path токи кроссбара: https://pmc.ncbi.nlm.nih.gov/articles/PMC8398062 (проверено 2026-11-05)
 - Материалы: реальные данные/материалы/

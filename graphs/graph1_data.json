@@ -16009,7 +16009,7 @@
     },
     {
       "src": "часть_memristornye_matritsy_bit_sense",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -26480,7 +26480,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_memristornye_matritsy_bit_sense",
       "type": "used_in",
       "meta": {
@@ -28104,6 +28104,7 @@
       "standart_Intel Optane PM Guide",
       "standart_Iridium 9603 Developer Guide",
       "standart_JEDEC J-STD-020D",
+      "standart_JEDEC JESD22",
       "standart_JEDEC JESD22-A104",
       "standart_JEDEC JESD47",
       "standart_JEDEC MS-001 (DIP)",
@@ -28128,6 +28129,7 @@
       "standart_MIL-STD-883 TM1019",
       "standart_MSFC-STD-5003",
       "standart_Microgen Engine Corporation Specs",
+      "standart_Micromachines 12:913 (2021)",
       "standart_Mitsubishi SH-170030ENG",
       "standart_Murata Mounting Guide",
       "standart_NASA GRC ASRG EU Specs",
@@ -28345,7 +28347,7 @@
     "nodes": 937,
     "edges": 3144,
     "dangling": {
-      "complies_with": 238,
+      "complies_with": 240,
       "has_part": 1,
       "researched_by": 43,
       "uses_material": 105

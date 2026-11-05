@@ -129,7 +129,7 @@ graph LR
     часть_memristornye_matritsy_word_drivers -->|материал| material_ti_6al_4v
     часть_memristornye_matritsy_adc -->|материал| material_si
     часть_memristornye_matritsy_controller -->|материал| material_si
-    часть_memristornye_matritsy_bit_sense -->|материал| material_ti_6al_4v
+    часть_memristornye_matritsy_bit_sense -->|материал| material_si
     часть_sot_mram_periphery -->|материал| material_ti_6al_4v
     часть_sot_mram_sense_amplifiers -->|материал| material_si
     часть_sot_mram_row_decoders -->|материал| material_si
@@ -192,8 +192,8 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 36 |
-| `Si` | 13 |
+| `Ti-6Al-4V` | 35 |
+| `Si` | 14 |
 | `PTFE` | 6 |
 | `Эпоксид Epon 828 + TETA` | 5 |
 | `B₄C` | 3 |
