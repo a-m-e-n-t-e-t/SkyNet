@@ -50,6 +50,8 @@ relations:
   - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
   - izdelie_razryvnye_mufty_iso_16028
   - izdelie_flat-face_couplings_iso_16028
+  - izdelie_SkyNet-LegActuator
+  - izdelie_SkyNet-PowerBackpack
 реализация_ии: []
 источник: web_search
 источник_разбора: канон
