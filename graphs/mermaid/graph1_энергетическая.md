@@ -229,8 +229,8 @@ graph LR
     часть_cameron_топливная_ячейка_1[fuel_cell_small]
     material_ti_6al_4v[Ti-6Al-4V]
     material_al_6061_t6[Al 6061-T6]
-    material_latun_c36000[Cu 60–63% (основа), Zn…]
     material_stal_st3[Сталь Ст3]
+    material_latun_c36000[Cu 60–63% (основа), Zn…]
     material_si[Si]
     izdelie_nasa_asc_e_srsc -->|материал| material_al_6061_t6
     часть_tpv_pv_cell -->|материал| material_ti_6al_4v
@@ -383,8 +383,8 @@ _Показаны 5 наиболее часто используемых мат�
 |---|---:|
 | `Ti-6Al-4V` | 115 |
 | `Al 6061-T6` | 20 |
-| `Bi₂Te₃` | 7 |
 | `Inconel 718` | 7 |
+| `Bi₂Te₃` | 5 |
 | `Сталь Ст3` | 5 |
 | `SS AISI 304` | 5 |
 | `NdFeB` | 4 |

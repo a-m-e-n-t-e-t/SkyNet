@@ -1731,12 +1731,6 @@
       "path": "scripts/migrate_dedup_quantity.py"
     },
     {
-      "id": "script:migrate_mounting_per_parent.py",
-      "type": "script",
-      "label": "migrate_mounting_per_parent.py",
-      "path": "scripts/migrate_mounting_per_parent.py"
-    },
-    {
       "id": "script:migrate_parts_into_parents.py",
       "type": "script",
       "label": "migrate_parts_into_parents.py",
@@ -1753,12 +1747,6 @@
       "type": "file_pattern",
       "label": "*",
       "path": ""
-    },
-    {
-      "id": "script:migrate_placeholder_per_parent.py",
-      "type": "script",
-      "label": "migrate_placeholder_per_parent.py",
-      "path": "scripts/migrate_placeholder_per_parent.py"
     },
     {
       "id": "script:pipeline.py",
@@ -1807,6 +1795,12 @@
       "type": "script",
       "label": "real_decomposition.py",
       "path": "scripts/real_decomposition.py"
+    },
+    {
+      "id": "script:restore_missing_parts.py",
+      "type": "script",
+      "label": "restore_missing_parts.py",
+      "path": "scripts/restore_missing_parts.py"
     },
     {
       "id": "script:validate_decomposition.py",
@@ -3762,18 +3756,6 @@
     },
     {
       "src": "F25",
-      "dst": "script:migrate_mounting_per_parent.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:migrate_mounting_per_parent.py",
-      "dst": "F25",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
-      "src": "F25",
       "dst": "script:migrate_parts_into_parents.py",
       "type": "validated_by",
       "meta": {}
@@ -3800,18 +3782,6 @@
       "src": "script:migrate_parts_into_parents.py",
       "dst": "pattern:*",
       "type": "checks_files",
-      "meta": {}
-    },
-    {
-      "src": "F25",
-      "dst": "script:migrate_placeholder_per_parent.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:migrate_placeholder_per_parent.py",
-      "dst": "F25",
-      "type": "triggers_metric",
       "meta": {}
     },
     {
@@ -4361,18 +4331,6 @@
       "meta": {}
     },
     {
-      "src": "P085",
-      "dst": "script:migrate_mounting_per_parent.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "P085",
-      "dst": "script:migrate_placeholder_per_parent.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
       "src": "F37",
       "dst": "script:pipeline.py",
       "type": "validated_by",
@@ -4602,13 +4560,13 @@
     }
   ],
   "stats": {
-    "nodes": 324,
-    "edges": 442,
+    "nodes": 323,
+    "edges": 436,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 9,
       "metric": 216,
-      "script": 21,
+      "script": 20,
       "spec_section": 58,
       "stub": 12
     }

@@ -15,14 +15,8 @@ id: izdelie_reversivnye_pelte
   - часть_reversivnye_pelte_ceramic_top
   - часть_reversivnye_pelte_electrodes
   - часть_reversivnye_pelte_solder
-  - часть_reversivnye_pelte_ceramic_bottom
 материалы_частей:
   - часть: часть_reversivnye_pelte_peltier_couples
-  - часть: часть_reversivnye_pelte_ceramic_bottom
-    материал: alumina
-    доля_массы: 0.1900
-    материал: bi2te3
-    доля_массы: 0.38
   - часть: часть_reversivnye_pelte_ceramic_top
     материал: alumina
     доля_массы: 0.19

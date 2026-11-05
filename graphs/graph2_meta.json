@@ -69,22 +69,10 @@
       "path": "scripts/migrate_dedup_quantity.py"
     },
     {
-      "id": "script:migrate_mounting_per_parent.py",
-      "type": "script",
-      "label": "migrate_mounting_per_parent.py",
-      "path": "scripts/migrate_mounting_per_parent.py"
-    },
-    {
       "id": "script:migrate_parts_into_parents.py",
       "type": "script",
       "label": "migrate_parts_into_parents.py",
       "path": "scripts/migrate_parts_into_parents.py"
-    },
-    {
-      "id": "script:migrate_placeholder_per_parent.py",
-      "type": "script",
-      "label": "migrate_placeholder_per_parent.py",
-      "path": "scripts/migrate_placeholder_per_parent.py"
     },
     {
       "id": "script:pipeline.py",
@@ -109,6 +97,12 @@
       "type": "script",
       "label": "real_decomposition.py",
       "path": "scripts/real_decomposition.py"
+    },
+    {
+      "id": "script:restore_missing_parts.py",
+      "type": "script",
+      "label": "restore_missing_parts.py",
+      "path": "scripts/restore_missing_parts.py"
     },
     {
       "id": "script:validate_decomposition.py",
@@ -1157,18 +1151,6 @@
       "meta": {}
     },
     {
-      "src": "script:migrate_mounting_per_parent.py",
-      "dst": "script:validate_decomposition.py",
-      "type": "imports",
-      "meta": {}
-    },
-    {
-      "src": "script:migrate_placeholder_per_parent.py",
-      "dst": "script:validate_decomposition.py",
-      "type": "imports",
-      "meta": {}
-    },
-    {
       "src": "script:pipeline.py",
       "dst": "script:_helpers.py",
       "type": "imports",
@@ -1188,6 +1170,12 @@
     },
     {
       "src": "script:real_decomposition.py",
+      "dst": "script:validate_decomposition.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
+      "src": "script:restore_missing_parts.py",
       "dst": "script:validate_decomposition.py",
       "type": "imports",
       "meta": {}
@@ -2148,19 +2136,7 @@
     },
     {
       "src": "catalog:scripts/_CATALOG.md",
-      "dst": "script:migrate_mounting_per_parent.py",
-      "type": "references",
-      "meta": {}
-    },
-    {
-      "src": "catalog:scripts/_CATALOG.md",
       "dst": "script:migrate_parts_into_parents.py",
-      "type": "references",
-      "meta": {}
-    },
-    {
-      "src": "catalog:scripts/_CATALOG.md",
-      "dst": "script:migrate_placeholder_per_parent.py",
       "type": "references",
       "meta": {}
     },
@@ -2412,13 +2388,13 @@
     }
   ],
   "stats": {
-    "nodes": 187,
-    "edges": 214,
+    "nodes": 186,
+    "edges": 211,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,
       "readme": 1,
-      "script": 21,
+      "script": 20,
       "spec": 1,
       "spec_section": 146
     }

@@ -6702,12 +6702,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_termomoduli_pelte",
-      "dst": "material_bi₂te₃",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_alyuminievo-vozdushnye_toplivnye_elementy",
       "dst": "часть_alyuminievo-vozdushnye_toplivnye_elementy_anode",
       "type": "has_part",
@@ -7317,12 +7311,6 @@
       "src": "izdelie_reversivnye_pelte",
       "dst": "часть_reversivnye_pelte_solder",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_reversivnye_pelte",
-      "dst": "material_bi₂te₃",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -17017,7 +17005,7 @@
     },
     {
       "src": "часть_bldc_+_enkoder_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_stal_st3",
       "type": "uses_material",
       "meta": {}
     },
@@ -17065,7 +17053,7 @@
     },
     {
       "src": "часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -17233,7 +17221,7 @@
     },
     {
       "src": "часть_dea_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -17317,7 +17305,7 @@
     },
     {
       "src": "часть_hasel_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_peek",
       "type": "uses_material",
       "meta": {}
     },
@@ -17365,7 +17353,7 @@
     },
     {
       "src": "часть_zubchataya_mufta_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_stal_st3",
       "type": "uses_material",
       "meta": {}
     },
@@ -17521,7 +17509,7 @@
     },
     {
       "src": "часть_tsa_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -17545,7 +17533,7 @@
     },
     {
       "src": "часть_fleksury_8_diskov_po_0_15_mm_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -17665,7 +17653,7 @@
     },
     {
       "src": "часть_belleville_shaiby_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_100cr6",
       "type": "uses_material",
       "meta": {}
     },
@@ -17947,14 +17935,6 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
-      }
-    },
-    {
-      "src": "material_bi₂te₃",
-      "dst": "izdelie_termomoduli_pelte",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
       }
     },
     {
@@ -18771,14 +18751,6 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
-      }
-    },
-    {
-      "src": "material_bi₂te₃",
-      "dst": "izdelie_reversivnye_pelte",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
       }
     },
     {
@@ -27270,7 +27242,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_stal_st3",
       "dst": "часть_bldc_+_enkoder_mounting",
       "type": "used_in",
       "meta": {
@@ -27302,7 +27274,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting",
       "type": "used_in",
       "meta": {
@@ -27414,7 +27386,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_dea_mounting",
       "type": "used_in",
       "meta": {
@@ -27470,7 +27442,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_peek",
       "dst": "часть_hasel_mounting",
       "type": "used_in",
       "meta": {
@@ -27502,7 +27474,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_stal_st3",
       "dst": "часть_zubchataya_mufta_mounting",
       "type": "used_in",
       "meta": {
@@ -27606,7 +27578,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_tsa_mounting",
       "type": "used_in",
       "meta": {
@@ -27622,7 +27594,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_fleksury_8_diskov_po_0_15_mm_mounting",
       "type": "used_in",
       "meta": {
@@ -27702,7 +27674,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_100cr6",
       "dst": "часть_belleville_shaiby_mounting",
       "type": "used_in",
       "meta": {
@@ -27767,6 +27739,7 @@
       "standart_ASTM D638",
       "standart_ASTM E1289",
       "standart_ASTM F136",
+      "standart_DIN 2093",
       "standart_DIN 69051",
       "standart_DIN VDE 0580",
       "standart_DOE 10 CFR 71",
@@ -27821,6 +27794,7 @@
       "standart_MIL-STD-810G",
       "standart_MIL-STD-810H",
       "standart_NASA-STD-8729.1",
+      "standart_NEMA 17",
       "standart_PCIe 3.0",
       "standart_RTCA DO-160G",
       "standart_RV64GC ISA",
@@ -27883,7 +27857,6 @@
       "group_zeno_power"
     ],
     "uses_material": [
-      "material_activated_carbon",
       "material_aerogel",
       "material_alumina",
       "material_aluminum",
@@ -27941,7 +27914,6 @@
       "material_ni_ysz_cermet",
       "material_nickel",
       "material_pb_sb_alloy",
-      "material_pbo2",
       "material_pbte_teg",
       "material_pe_pp",
       "material_pe_separator",
@@ -27984,12 +27956,12 @@
   },
   "stats": {
     "nodes": 925,
-    "edges": 3126,
+    "edges": 3122,
     "dangling": {
-      "complies_with": 90,
+      "complies_with": 92,
       "has_part": 1,
       "researched_by": 42,
-      "uses_material": 97
+      "uses_material": 95
     },
     "by_type": {
       "chast": 620,

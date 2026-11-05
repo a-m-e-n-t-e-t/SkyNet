@@ -5,12 +5,8 @@ graph LR
     F25([F25])
     script_migrate_dedup_quantity_py[migrate_dedup_quantity.py]
     F25 --> script_migrate_dedup_quantity_py
-    script_migrate_mounting_per_parent_py[migrate_mounting_per_parent.py]
-    F25 --> script_migrate_mounting_per_parent_py
     script_migrate_parts_into_parents_py[migrate_parts_into_parents.py]
     F25 --> script_migrate_parts_into_parents_py
-    script_migrate_placeholder_per_parent_py[migrate_placeholder_per_parent.py]
-    F25 --> script_migrate_placeholder_per_parent_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F25 --> script_pre-commit-hook_py
     script_real_decomposition_py[real_decomposition.py]
@@ -70,13 +66,6 @@ graph LR
     F26 --> script_pre-commit-hook_py
     script_validate_decomposition_py[validate_decomposition.py]
     F26 --> script_validate_decomposition_py
-    P085([P085])
-    script_migrate_dedup_quantity_py[migrate_dedup_quantity.py]
-    P085 --> script_migrate_dedup_quantity_py
-    script_migrate_mounting_per_parent_py[migrate_mounting_per_parent.py]
-    P085 --> script_migrate_mounting_per_parent_py
-    script_migrate_placeholder_per_parent_py[migrate_placeholder_per_parent.py]
-    P085 --> script_migrate_placeholder_per_parent_py
     F22([F22])
     script_pre-commit-hook_py[pre-commit-hook.py]
     F22 --> script_pre-commit-hook_py
@@ -142,6 +131,11 @@ graph LR
     F88 --> script__helpers_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F88 --> script_pre-commit-hook_py
+    F3([F3])
+    script_classify_subsystem_py[classify_subsystem.py]
+    F3 --> script_classify_subsystem_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F3 --> script_pre-commit-hook_py
 ```
 
 _Показаны топ-20 метрик по числу скриптов-валидаторов (из 67 метрик)._
@@ -160,7 +154,7 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F22` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
 | `F23` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
 | `F24` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
-| `F25` | migrate_dedup_quantity.py, migrate_mounting_per_parent.py, migrate_parts_into_parents.py, migrate_placeholder_per_parent.py, pre-commit-hook.py, real_decomposition.py, validate_decomposition.py, web_verify.py | — |
+| `F25` | migrate_dedup_quantity.py, migrate_parts_into_parents.py, pre-commit-hook.py, real_decomposition.py, validate_decomposition.py, web_verify.py | — |
 | `F26` | migrate_dedup_quantity.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F3` | classify_subsystem.py, pre-commit-hook.py | fc_изделие_подсистема, fc_модель_тип |
 | `F36` | generate_graphs.py, pre-commit-hook.py | — |
@@ -214,4 +208,4 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F89` | _helpers.py | — |
 | `F90` | _helpers.py | — |
 | `P012` | pipeline.py | — |
-| `P085` | migrate_dedup_quantity.py, migrate_mounting_per_parent.py, migrate_placeholder_per_parent.py | — |
+| `P085` | migrate_dedup_quantity.py | — |

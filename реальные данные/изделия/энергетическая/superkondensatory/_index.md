@@ -17,16 +17,8 @@ id: izdelie_superkondensatory
   - часть_superkondensatory_current_collector
   - часть_superkondensatory_terminal
   - часть_superkondensatory_case
-  - часть_superkondensatory_electrode_neg
 материалы_частей:
   - часть: часть_superkondensatory_electrode_pos
-  - часть: часть_superkondensatory_electrode_neg
-    материал: activated_carbon
-    доля_массы: 0.1500
-    материал: activated_carbon
-    доля_массы: 0.27
-    материал: activated_carbon
-    доля_массы: 0.27
   - часть: часть_superkondensatory_separator
     материал: cellulose
     доля_массы: 0.0475

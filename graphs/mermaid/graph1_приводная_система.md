@@ -102,8 +102,8 @@ graph LR
     часть_pezoelektricheskii_gromkogovoritel_mounting[крепёж]
     material_ti_6al_4v[Ti-6Al-4V]
     material_al_6061_t6[Al 6061-T6]
-    material_latun_c36000[Cu 60–63% (основа), Zn…]
     material_stal_st3[Сталь Ст3]
+    material_latun_c36000[Cu 60–63% (основа), Zn…]
     material_poliimid[Полиимид]
     часть_t600_рука_левая -->|материал| material_ti_6al_4v
     часть_t600_нога_левая -->|материал| material_ti_6al_4v
@@ -126,11 +126,11 @@ graph LR
     часть_tcp_connectors -->|материал| material_poliimid
     часть_tcp_mounting -->|материал| material_ti_6al_4v
     часть_bldc_+_enkoder_core -->|материал| material_al_6061_t6
-    часть_bldc_+_enkoder_mounting -->|материал| material_ti_6al_4v
+    часть_bldc_+_enkoder_mounting -->|материал| material_stal_st3
     часть_bldc_+_enkoder_housing -->|материал| material_al_6061_t6
     часть_bldc_+_enkoder_connectors -->|материал| material_al_6061_t6
     часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors -->|материал| material_al_6061_t6
-    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting -->|материал| material_ti_6al_4v
+    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting -->|материал| material_al_6061_t6
     часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing -->|материал| material_al_6061_t6
     часть_elektroflyuidnye_volokna_mit_housing -->|материал| material_al_6061_t6
     часть_elektroflyuidnye_volokna_mit_connectors -->|материал| material_poliimid
@@ -140,24 +140,22 @@ graph LR
     часть_ipmc_mounting -->|материал| material_ti_6al_4v
     часть_dea_housing -->|материал| material_al_6061_t6
     часть_dea_connectors -->|материал| material_latun_c36000
-    часть_dea_mounting -->|материал| material_ti_6al_4v
+    часть_dea_mounting -->|материал| material_al_6061_t6
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors -->|материал| material_al_6061_t6
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing -->|материал| material_al_6061_t6
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting -->|материал| material_ti_6al_4v
     часть_hasel_housing -->|материал| material_al_6061_t6
-    часть_hasel_mounting -->|материал| material_ti_6al_4v
     часть_hasel_connectors -->|материал| material_poliimid
     часть_zubchataya_mufta_core -->|материал| material_stal_st3
     часть_zubchataya_mufta_housing -->|материал| material_al_6061_t6
-    часть_zubchataya_mufta_mounting -->|материал| material_ti_6al_4v
+    часть_zubchataya_mufta_mounting -->|материал| material_stal_st3
     часть_zubchataya_mufta_connectors -->|материал| material_al_6061_t6
     часть_povorotnoe_uplotnenie_mounting -->|материал| material_ti_6al_4v
     часть_povorotnoe_uplotnenie_housing -->|материал| material_al_6061_t6
     часть_povorotnoe_uplotnenie_connectors -->|материал| material_al_6061_t6
     часть_tsa_housing -->|материал| material_al_6061_t6
     часть_tsa_connectors -->|материал| material_al_6061_t6
-    часть_tsa_mounting -->|материал| material_ti_6al_4v
-    часть_fleksury_8_diskov_po_0_15_mm_mounting -->|материал| material_ti_6al_4v
+    часть_tsa_mounting -->|материал| material_al_6061_t6
     часть_fleksury_8_diskov_po_0_15_mm_housing -->|материал| material_al_6061_t6
     часть_fleksury_8_diskov_po_0_15_mm_connectors -->|материал| material_latun_c36000
     часть_apa_connectors -->|материал| material_al_6061_t6
@@ -166,7 +164,6 @@ graph LR
     часть_apa_mounting -->|материал| material_ti_6al_4v
     часть_belleville_shaiby_core -->|материал| material_stal_st3
     часть_belleville_shaiby_housing -->|материал| material_al_6061_t6
-    часть_belleville_shaiby_mounting -->|материал| material_ti_6al_4v
     часть_pezoelektricheskii_gromkogovoritel_core -->|материал| material_latun_c36000
     часть_pezoelektricheskii_gromkogovoritel_connectors -->|материал| material_latun_c36000
     часть_pezoelektricheskii_gromkogovoritel_housing -->|материал| material_al_6061_t6
@@ -177,18 +174,18 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 30 |
-| `Al 6061-T6` | 26 |
+| `Al 6061-T6` | 29 |
+| `Ti-6Al-4V` | 22 |
 | `Полиимид` | 4 |
 | `Нейлон 6/66` | 4 |
+| `Сталь Ст3` | 4 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 4 |
 | `BeCu` | 3 |
 | `Силикон 40–50 Shore A` | 2 |
-| `Сталь Ст3` | 2 |
 | `Silicone-Textile composite` | 1 |
 | `Ионная жидкость [EMIM][TFSI]` | 1 |
 | `ионогель` | 1 |
 | `Эластомерная матрица` | 1 |
 | `медный провод` | 1 |
 | `HALVE P` | 1 |
-| `PTFE-композит DU втулки` | 1 |
+| `PEEK` | 1 |
