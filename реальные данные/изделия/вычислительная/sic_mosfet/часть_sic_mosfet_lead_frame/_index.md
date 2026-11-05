@@ -40,12 +40,12 @@ scaling_type: количественный
   корпус: 'TO-247 (15.94×20.95×5.02 мм, Toshiba)'
   толщина_рамки_mm: 0.6
   покрытие: 'Ni-барьер + Ag-пайка die pad, Ni/Au на выводах'
-  источник_url: 'https://toshiba.semicon-storage.com/us/semiconductor/design-development/package/detail.TO-247.html'
-  источник_дата: '2026-11-05'
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 источник: web_search
-источник_разбора: канон
+источник_разбора: веб-верификация
+источник_url: https://toshiba.semicon-storage.com/us/semiconductor/design-development/package/detail.TO-247.html
+источник_дата: 2026-11-06
 ---
 # Часть: часть_sic_mosfet_lead_frame
 
@@ -80,6 +80,8 @@ scaling_type: количественный
 
 ## Источники
 
-- Toshiba, TO-247 package dimensions (15.94×20.95×5.02 мм): https://toshiba.semicon-storage.com/us/semiconductor/design-development/package/detail.TO-247.html
+- Toshiba, TO-247 package dimensions (15.94×20.95×5.02 мм): https://toshiba.semicon-storage.com/us/semiconductor/design-development/package/detail.TO-247.html (проверено 2026-11-06)
+- JTCopper, Lead Frame Materials for Power Semiconductors — C19400/C11000 медные полосы: https://en.jtcopper.com/lead-frame-materials-for-power-semiconductors-why-c19400-copper-alloy-s
+- US6518508B2, Lead frame for semiconductor package (Cu/Cu-alloy base + Ni барьер + Ag/Au покрытие): https://patents.google.com/patent/US6518508B2/en
 - Diodes Inc., TO-247 package outline (выводы, фланец): https://www.diodes.com/assets/Package-Files/TO247-Type-WH.pdf
 - Infineon, TO-247PLUS application note (структура рамки): https://www.infineon.com/assets/row/public/documents/24/42/infineon-discrete-igbt-in-to-247plus-an-en.pdf
