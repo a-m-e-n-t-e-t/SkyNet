@@ -30,7 +30,7 @@ id: izdelie_4h-sic_betavoltaik
     материал: epoxy
     доля_массы: 0.095
   - часть: часть_4h-sic_betavoltaik_case
-    материал: titanium_alloy
+    материал: ti-6al-4v
     доля_массы: 0.285
 scaling_type: количественный
 соединители: []
