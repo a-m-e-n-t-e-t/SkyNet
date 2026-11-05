@@ -33,19 +33,11 @@ on:
         required: false
         default: '0'
         type: string
-  schedule:
-    # v9.36.1: ежедневный drift-прогон удалён — на этом плане Branch Protection API
-    # отвечает 403 (нужен GitHub Pro/публичный репо), прогон всегда был no-op.
-    # Drift-проверка остаётся доступной вручную: gh workflow run branch-protection-setup.yml
-    # - cron: '0 2 * * *'
-  push:
-    # v9.31 fix: запускаем ТОЛЬКО при изменении самого файла workflow.
-    # Без этого GitHub создаёт empty run с conclusion=failure на каждый push
-    # (потому что workflow с schedule/dispatch триггерами всё равно валидируется
-    # GitHub при пуше). С paths фильтром + реальным job который завершается
-    # success — workflow не будет блокировать CI.
-    paths:
-      - '.github/workflows/branch-protection-setup.yml'
+  # v9.39.5 fix: триггеры schedule и push удалены ПОЛНОСТЬЮ → workflow dispatch-only.
+  # Причины: (1) Branch Protection API на этом плане всегда 403 — прогон был no-op;
+  # (2) GitHub создавал empty-run (0 jobs, conclusion=failure, name = путь файла)
+  # на каждый push — CI горел красным без единого реального шага.
+  # Drift-проверка вручную: gh workflow run branch-protection-setup.yml
   # Branch Protection API требует GitHub Pro для приватных репо (или
   # публичного репо) — поэтому все шаги, вызывающие protection API,
   # помечены continue-on-error: true ниже.

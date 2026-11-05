@@ -125,17 +125,24 @@ jobs:
           echo "using complete --json-out violations list"
 
           # v9.36: один вызов python вместо 6 — печатает total и per-metric в одном subprocess
+          # v9.39.5 fix: в GITHUB_OUTPUT допустимы ТОЛЬКО строки key=value — отладочные
+          # print() вида "Total violations: N" ломали парсер (Invalid format) и делали
+          # workflow failure хроническим с a0c14b1. Отладка — только в stdout шага.
           python3 - <<'PYEOF' >> $GITHUB_OUTPUT
           import json
           d = json.load(open('violations.json'))
           total = sum(len(v) for v in d.values())
           print(f"total_violations={total}")
-          print(f"Total violations: {total}")
           for M in ('F22','F23','F24','F25','F26'):
-              cnt = len(d.get(M, []))
-              print(f"{M}_count={cnt}")
-              print(f"  {M}: {cnt} violations")
+              print(f"{M}_count={len(d.get(M, []))}")
           PYEOF
+          python3 -c "
+          import json
+          d = json.load(open('violations.json'))
+          print(f"[info] Total violations: {sum(len(v) for v in d.values())}")
+          for M in ('F22','F23','F24','F25','F26'):
+              print(f"[info]   {M}: {len(d.get(M, []))} violations")
+          "
 
       - name: Create issues for each violation (anti-duplicate, round-robin, capped)
         if: steps.violations.outputs.total_violations != '0'
