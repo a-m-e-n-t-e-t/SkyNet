@@ -43,9 +43,11 @@ scaling_type: количественный
   источник_url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC13066639'
   источник_дата: 2026-11-05
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 источник: web_search
 источник_разбора: канон
+источник_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC13066639
+источник_дата: 2026-11-06
 ---
 # Часть: часть_4h-sic_betavoltaik_sic_diode
 
@@ -87,6 +89,7 @@ scaling_type: количественный
 
 ## Источники
 
-- Kim K.M., Woo S.Y., Moon J.H., Yoon Y.J., Seo J.H., «Optimization and experimental demonstration of mesh-patterned 4H-SiC betavoltaic cells for enhanced power density», Scientific Reports 16, 11906 (2026) — кристалл 900×900 мкм, активная 816×816 мкм, p⁺ 0.4 мкм / n-дрейф 10.87 мкм, +65.1%: https://pmc.ncbi.nlm.nih.gov/articles/PMC13066639
+- Kim K.M., Woo S.Y., Moon J.H., Yoon Y.J., Seo J.H., «Optimization and experimental demonstration of mesh-patterned 4H-SiC betavoltaic cells for enhanced power density», Scientific Reports 16, 11906 (2026) — первоисточник (Nature): https://www.nature.com/articles/s41598-026-42272-x
+- Тот же препринт в PMC (полный текст): https://pmc.ncbi.nlm.nih.gov/articles/PMC13066639
 - Widetronix, Technology — 4H-SiC бэтавольтаика, Uхх 2.0 В, КПД >20%, spin-off Корнелла: https://www.widetronix.com/technology
 - Chandrashekhar M.V.S. et al., «Demonstration of a 4H SiC Betavoltaic Cell», APL 88, 033506 (2006) — первая 4H-SiC бэтавольтаика, КПД 3.7%: https://doi.org/10.1063/1.2166699
