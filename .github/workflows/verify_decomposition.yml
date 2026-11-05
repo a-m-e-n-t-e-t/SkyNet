@@ -136,13 +136,14 @@ jobs:
           for M in ('F22','F23','F24','F25','F26'):
               print(f"{M}_count={len(d.get(M, []))}")
           PYEOF
-          python3 -c "
+          # info-лог в stdout шага (одинарные кавычки — без bash-интерполяции):
+          python3 - <<'PYEOF'
           import json
           d = json.load(open('violations.json'))
           print(f"[info] Total violations: {sum(len(v) for v in d.values())}")
           for M in ('F22','F23','F24','F25','F26'):
               print(f"[info]   {M}: {len(d.get(M, []))} violations")
-          "
+          PYEOF
 
       - name: Create issues for each violation (anti-duplicate, round-robin, capped)
         if: steps.violations.outputs.total_violations != '0'
