@@ -13,7 +13,7 @@ id: часть_svobodnoporshnevoi_stirling_alternator
 дочерние_части: []
 материалы_частей:
   - часть: часть_svobodnoporshnevoi_stirling_alternator
-    материал: ti-6al-4v
+    материал: ndfeb
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -29,9 +29,9 @@ scaling_type: количественный
   масса_kg: 0.7
   доля_массы_родителя: 0.4
   габариты_mm:
-    l: 100
-    w: 100
-    h: 50
+    l: 90
+    w: 90
+    h: 70
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
@@ -40,14 +40,14 @@ scaling_type: количественный
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://www.sunpowerinc.com/Technologies
+источник_дата: 2026-11-05
 ---
 # Часть: часть_svobodnoporshnevoi_stirling_alternator
 
 ## Описание
 
-Дочерняя часть изделия.
-
-Родитель: `izdelie_svobodnoporshnevoi_stirling` (подсистема: энергетическая).
+Линейный генератор движущегося магнита (moving-magnet) свободнопоршневого Стирлинга: NdFeB-магниты с радиальным полем соединены со штоком силового поршня и наводят синусоидальную ЭДС в катушке на железном магнитопроводе; четырёхкомпонентная топология Sunpower (катушка/железо/магнит/структура), КПД до ~83 % у 35-Вт космического аналога.
 
 ## Технические характеристики
 
@@ -57,10 +57,10 @@ scaling_type: количественный
 | подтип | генератор | — | canon |
 | масса | 0.7 | kg | canon |
 | доля массы родителя | 0.4 | — | canon |
-| габариты (Д×Ш×В) | 100×100×50 | mm | canon |
+| габариты (Д×Ш×В) | 90×90×70 | mm | Sunpower (AMETEK) — Linear Alternators and Motors (coil/iron/magnet/structure, 83% efficiency 35 W FPSE) |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | ti-6al-4v | — | canon |
+| материал | ndfeb | — | ndfeb.md |
 
 ## Принцип работы
 
@@ -72,9 +72,9 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `ti-6al-4v` → [`ti-6al-4v.md`](../../../../материалы/ti-6al-4v.md)
+- `ndfeb` → [`ndfeb.md`](../../../материалы/ndfeb.md)
 
 ## Источники
 
-- Канон: декомпозиция `izdelie_svobodnoporshnevoi_stirling` (web search 2026-11-03)
+- Sunpower (AMETEK) — Linear Alternators and Motors (coil/iron/magnet/structure, 83% efficiency 35 W FPSE): https://www.sunpowerinc.com/Technologies (проверено 2026-11-05)
 - Материалы: реальные данные/материалы/
