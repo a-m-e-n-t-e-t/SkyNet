@@ -63,7 +63,7 @@ graph LR
     material_stal_st3[Сталь Ст3]
     material_ti_6al_4v[Ti-6Al-4V]
     material_uv_absorbing_pmma[UV-absorbing PMMA]
-    часть_provodnikovaya_nanoreshetka_mounting -->|материал| material_ti_6al_4v
+    часть_provodnikovaya_nanoreshetka_mounting -->|материал| material_al_6061_t6
     часть_provodnikovaya_nanoreshetka_connectors -->|материал| material_becu
     часть_provodnikovaya_nanoreshetka_housing -->|материал| material_al_6061_t6
     часть_provodnikovaya_nanoreshetka_core -->|материал| material_mxene
@@ -80,7 +80,7 @@ graph LR
     часть_slm_eos_m290_core -->|материал| material_stal_st3
     часть_slm_eos_m290_connectors -->|материал| material_al_6061_t6
     часть_elastomernyh_dempferah_housing -->|материал| material_al_6061_t6
-    часть_elastomernyh_dempferah_mounting -->|материал| material_ti_6al_4v
+    часть_elastomernyh_dempferah_mounting -->|материал| material_stal_st3
     часть_elastomernyh_dempferah_core -->|материал| material_silikon_40_50_shore_a
     часть_elastomernyh_dempferah_connectors -->|материал| material_becu
     часть_polyimide_fpc_core -->|материал| material_poliimid
@@ -104,10 +104,10 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 8 |
-| `Ti-6Al-4V` | 6 |
+| `Al 6061-T6` | 9 |
+| `Сталь Ст3` | 5 |
 | `Полиимид` | 5 |
-| `Сталь Ст3` | 4 |
+| `Ti-6Al-4V` | 4 |
 | `BeCu` | 2 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 2 |
 | `Si` | 2 |

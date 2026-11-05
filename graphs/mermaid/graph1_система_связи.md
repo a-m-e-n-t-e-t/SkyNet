@@ -63,19 +63,19 @@ graph LR
     часть_stm32h743_core -->|материал| material_si
     часть_stm32h743_connectors -->|материал| material_becu
     часть_optovolokonnaya_shina_connectors -->|материал| material_poliimid
-    часть_optovolokonnaya_shina_mounting -->|материал| material_ti_6al_4v
+    часть_optovolokonnaya_shina_mounting -->|материал| material_al_6061_t6
     часть_optovolokonnaya_shina_core -->|материал| material_al_6061_t6
     часть_optovolokonnaya_shina_housing -->|материал| material_al_6061_t6
     часть_usb_c_connectors -->|материал| material_latun_c36000
     часть_usb_c_housing -->|материал| material_al_6061_t6
     часть_usb_c_core -->|материал| material_becu
     часть_usb_c_mounting -->|материал| material_ss_aisi_304
-    часть_radiatsionno_stoikii_neiromorfnyi_tmr_mounting -->|материал| material_ti_6al_4v
+    часть_radiatsionno_stoikii_neiromorfnyi_tmr_mounting -->|материал| material_ss_aisi_304
     часть_radiatsionno_stoikii_neiromorfnyi_tmr_core -->|материал| material_si
     часть_radiatsionno_stoikii_neiromorfnyi_tmr_housing -->|материал| material_al_6061_t6
     часть_radiatsionno_stoikii_neiromorfnyi_tmr_connectors -->|материал| material_becu
     часть_flat_face_couplings_iso_16028_core -->|материал| material_stal_st3
-    часть_flat_face_couplings_iso_16028_mounting -->|материал| material_ti_6al_4v
+    часть_flat_face_couplings_iso_16028_mounting -->|материал| material_stal_st3
     часть_flat_face_couplings_iso_16028_housing -->|материал| material_al_6061_t6
     часть_flat_face_couplings_iso_16028_connectors -->|материал| material_latun_c36000
     часть_stm32_mounting -->|материал| material_peek
@@ -88,18 +88,18 @@ graph LR
     часть_obd_ii_mounting -->|материал| material_al_6061_t6
     часть_razryvnye_mufty_iso_16028_core -->|материал| material_stal_st3
     часть_razryvnye_mufty_iso_16028_housing -->|материал| material_al_6061_t6
-    часть_razryvnye_mufty_iso_16028_mounting -->|материал| material_ti_6al_4v
+    часть_razryvnye_mufty_iso_16028_mounting -->|материал| material_al_6061_t6
     часть_razryvnye_mufty_iso_16028_connectors -->|материал| material_latun_c36000
 ```
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 12 |
-| `Ti-6Al-4V` | 5 |
-| `Сталь Ст3` | 4 |
+| `Al 6061-T6` | 14 |
+| `Сталь Ст3` | 5 |
 | `Si` | 3 |
 | `BeCu` | 3 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 3 |
 | `Полиимид` | 2 |
+| `SS AISI 304` | 2 |
 | `PEEK` | 2 |
-| `SS AISI 304` | 1 |
+| `Ti-6Al-4V` | 1 |

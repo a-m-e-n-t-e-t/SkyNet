@@ -6648,7 +6648,7 @@
     },
     {
       "src": "часть_kapillyarnaya_teplovaya_trubka_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -9594,7 +9594,7 @@
     },
     {
       "src": "часть_provodnikovaya_nanoreshetka_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -9798,7 +9798,7 @@
     },
     {
       "src": "часть_elastomernyh_dempferah_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_stal_st3",
       "type": "uses_material",
       "meta": {}
     },
@@ -16110,7 +16110,7 @@
     },
     {
       "src": "часть_optovolokonnaya_shina_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -16194,7 +16194,7 @@
     },
     {
       "src": "часть_radiatsionno-stoikii_neiromorfnyi_tmr_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -16254,7 +16254,7 @@
     },
     {
       "src": "часть_flat-face_couplings_iso_16028_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_stal_st3",
       "type": "uses_material",
       "meta": {}
     },
@@ -16410,7 +16410,7 @@
     },
     {
       "src": "часть_razryvnye_mufty_iso_16028_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -18019,7 +18019,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_kapillyarnaya_teplovaya_trubka_mounting",
       "type": "used_in",
       "meta": {
@@ -20707,7 +20707,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_provodnikovaya_nanoreshetka_mounting",
       "type": "used_in",
       "meta": {
@@ -20843,7 +20843,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_stal_st3",
       "dst": "часть_elastomernyh_dempferah_mounting",
       "type": "used_in",
       "meta": {
@@ -26499,7 +26499,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_optovolokonnaya_shina_mounting",
       "type": "used_in",
       "meta": {
@@ -26555,7 +26555,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_radiatsionno-stoikii_neiromorfnyi_tmr_mounting",
       "type": "used_in",
       "meta": {
@@ -26595,7 +26595,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_stal_st3",
       "dst": "часть_flat-face_couplings_iso_16028_mounting",
       "type": "used_in",
       "meta": {
@@ -26699,7 +26699,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_razryvnye_mufty_iso_16028_mounting",
       "type": "used_in",
       "meta": {
@@ -28053,6 +28053,7 @@
       "standart_ASTM B209",
       "standart_ASTM B221",
       "standart_ASTM B348",
+      "standart_ASTM B483",
       "standart_ASTM B488 (Au-покрытие)",
       "standart_ASTM B633",
       "standart_ASTM B637",
@@ -28066,12 +28067,14 @@
       "standart_ASTM F136",
       "standart_ASTM F136 (Ti-6Al-4V)",
       "standart_Cedrat Mechanical Interface",
+      "standart_Celsius Design Guide",
       "standart_DIN 2093",
       "standart_DIN 69051",
       "standart_DIN 912",
       "standart_DIN VDE 0580",
       "standart_DOE 10 CFR 71",
       "standart_Deublin Mounting Instructions",
+      "standart_ECSS-Q-ST-60-15",
       "standart_EIA RS-198",
       "standart_EJMA (монтаж компенсаторов)",
       "standart_EN 1090-2",
@@ -28120,6 +28123,7 @@
       "standart_ISO 1179 (пневмопорты)",
       "standart_ISO 14687",
       "standart_ISO 15241",
+      "standart_ISO 16028",
       "standart_ISO 1940",
       "standart_ISO 261 (M1.6)",
       "standart_ISO 261 (M2)",
@@ -28149,6 +28153,7 @@
       "standart_JIS D5301",
       "standart_MIL-DTL-11821",
       "standart_MIL-DTL-12560K",
+      "standart_MIL-DTL-28876",
       "standart_MIL-DTL-38999",
       "standart_MIL-DTL-39029",
       "standart_MIL-DTL-6360",
@@ -28160,12 +28165,14 @@
       "standart_MIL-STD-810",
       "standart_MIL-STD-810G",
       "standart_MIL-STD-810H",
+      "standart_MIL-STD-883 TM1019",
       "standart_MSFC-STD-5003",
       "standart_Murata Mounting Guide",
       "standart_NASA-STD-5001A",
       "standart_NASA-STD-8729.1",
       "standart_NEMA 17",
       "standart_PCIe 3.0",
+      "standart_Parker PC6116",
       "standart_RTCA DO-160G",
       "standart_RV64GC ISA",
       "standart_RoHS 2011/65/EU",
@@ -28344,7 +28351,7 @@
     "nodes": 936,
     "edges": 3158,
     "dangling": {
-      "complies_with": 148,
+      "complies_with": 155,
       "has_part": 1,
       "researched_by": 43,
       "uses_material": 103

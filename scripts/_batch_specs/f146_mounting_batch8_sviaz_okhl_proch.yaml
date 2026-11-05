@@ -1,0 +1,78 @@
+# Issue #146 — группа «100×50×20mm, 0.1kg, ti-6al-4v» (33→26 файлов), batch 8: связь ×4 + охлаждение ×1 + прочее ×2
+# Данные из web_search 2026-11-05: Tu-lok/Staubli RME (ISO 16028 flat-face), Manuli Q-Safe (breakaway),
+# NASA NEPP fiber assemblies, Zhang et al. MDPI Appl.Sci. 2024 (radiation-hardened TMR), Celsius heat pipe
+# design guide (6×150 мм), Parker PC6116 (elastomer isolators), Li et al. 2016 (Al nanomesh AAO, PMC4735723).
+# Масса = share × nominal родителя (муфты/шина/TMR: 0.1 kg; heat pipe: 0.5 kg; демпфер/нанорешётка: 5 kg).
+url: https://www.staubli.com/us/en/fluid-connectors/products/quick-and-dry-disconnect-couplings/thermal-management/rme-double-shutoff.html
+source_note: "web_search 2026-11-05: datasheet/каталог производителя"
+files:
+  - file: реальные данные/изделия/система_связи/flat-face_couplings_iso_16028/часть_flat-face_couplings_iso_16028_mounting/_index.md
+    url: https://www.tu-lok.com/iso-16028-coupler.html
+    source_note: "Tu-lok ISO 16028 таблица габаритов — L 35–146 мм, OD 18.6–60 мм, hex 17–65 мм; класс DN07.8 (3/8\")"
+    material: stal_st3
+    dims: 35,28,4
+    mass: 0.02
+    share: 0.2
+    standards: "ISO 16028;ISO 4762 (M4)"
+    desc: "Плита-ложе крепления flat-face муфты ISO 16028 (класс DN07.8, корпус L≈70 мм / OD≈25 мм по таблице Tu-lok): стальная плита Ст3 35×28×4 мм с полукруглым ложем Ø25.5 мм и 2× винтами M4, паз под фиксацию шестиугольника hex 22 мм. Масса ≈20 г (20% номинала 0.1 кг)."
+    principle: "Корпус муфты укладывается в ложе и стягивается хомутом через лыски hex — плита воспринимает осевой сдвиг при стыковке ответной части (толчок запирания ISO 16028) и не мешает обслуживанию плоских уплотнительных поверхностей, которые нельзя царапать."
+  - file: реальные данные/изделия/система_связи/razryvnye_mufty_iso_16028/часть_razryvnye_mufty_iso_16028_mounting/_index.md
+    url: https://manuli-hydraulics.com/wp-content/uploads/2020/03/Q-Safe-section.pdf
+    source_note: "Manuli Q-Safe catalog — разрывные/предохранительные муфты ISO 16028, стальной корпус, плоский клапан, полиуретановые уплотнения"
+    material: al_6061-t6
+    dims: 40,32,5
+    mass: 0.017
+    share: 0.17
+    standards: "ISO 16028;ISO 898-1"
+    desc: "Держатель разрывной муфты ISO 16028 (стальной корпус Q-Safe-класса, плоский клапан): алюминиевая скоба 40×32×5 мм с Г-образным вырезом под корпус муфты Ø26 мм и 2× винтами M5; скоба рассчитана на рывок срабатывания разрыва и удерживает половины муфты после разделения. Масса ≈17 г (17% номинала 0.1 кг)."
+    principle: "Муфта зажимается скобой за корпус выше зоны разрыва — при превышении тягового усилия муфта разъединяется внутри, а скоба сохраняет половины на носителе (без падения и утечки по ISO 16028), снижая ударную нагрузку на трубопроводы."
+  - file: реальные данные/изделия/система_связи/optovolokonnaya_shina/часть_optovolokonnaya_shina_mounting/_index.md
+    url: https://nepp.nasa.gov/docuploads/F72F2489-FFBA-4021-88428C5A85930D38/cabass.pdf
+    source_note: "NASA NEPP (Ott, 1997) — fiber optic cable assemblies для space flight: минимальный радиус изгиба, фиксация баферa, терминаторы M28876/D38999"
+    material: al_6061-t6
+    dims: 60,25,6
+    mass: 0.018
+    share: 0.18
+    standards: "MIL-DTL-28876;MIL-DTL-38999"
+    desc: "Трасс-кронштейн оптоволоконной шины (аэрокосмический кабель LITEflight-класса, жгут Ø3.5 мм, терминаторы M28876/D38999): алюминиевая шина 60×25×6 мм с 4× P-скобами Ø4 мм (шаг 15 мм) и приливами крепления M3. Масса ≈18 г (18% номинала 0.1 кг)."
+    principle: "Волоконная трасса фиксируется скобами с шагом 15 мм без пережатия (радиус изгиба ≥30 мм по требованиям NASA NEPP к buffer-to-fiber migration); шина гасит микроизгибы, которые дают вносимые потери, и разгружает терминаторы от осевого натяга."
+  - file: реальные данные/изделия/система_связи/radiatsionno-stoikii_neiromorfnyi_tmr/часть_radiatsionno-stoikii_neiromorfnyi_tmr_mounting/_index.md
+    url: https://www.mdpi.com/2076-3417/14/3/1229
+    source_note: "Zhang et al., Applied Sciences 2024 — радиационно-стойкая TMR (triple modular redundancy) архитектура; модуль в экранированном корпусе"
+    material: ss_aisi_304
+    dims: 32,32,8
+    mass: 0.025
+    share: 0.25
+    standards: "MIL-STD-883 TM1019;ECSS-Q-ST-60-15"
+    desc: "Рамка-экран нейроморфного TMR-модуля (кристалл MTJ-синапсов в керамическом BGA-корпусе 27×27 мм по классу Zhang 2024): рамка из нержавеющей стали AISI 304 32×32×8 мм с окном 24×24 мм, 4× лапками M2.5 и пружинным контактом по периметру. Масса ≈25 г (25% номинала 0.1 кг)."
+    principle: "Рамка прижимает крышку электромагнитного экранирования к плате через пружинный контакт — экранирует MTJ-массив от магнитных помех (поля >10 Э сбивают TMR-состояния синапсов) и отводит тепло кристалла, не увеличивая массу модуля критично."
+  - file: реальные данные/изделия/система_охлаждения/kapillyarnaya_teplovaya_trubka/часть_kapillyarnaya_teplovaya_trubka_mounting/_index.md
+    url: https://celsiainc.com/heat-sink-blog/heat-pipe-design-guide
+    source_note: "Celsius heat pipe design guide — типовая sintered Cu тепловая трубка Ø6 мм × 150 мм содержит ~1 cc воды; правило посадочного седла"
+    material: al_6061-t6
+    dims: 60,20,3
+    mass: 0.01
+    share: 0.02
+    standards: "ASTM B483;Celsius Design Guide"
+    desc: "Седловый прижим тепловой трубки (sintered copper трубка Ø6 мм × 150 мм, ~1 cc воды по Celsius): алюминиевая планка 60×20×3 мм с двумя сёдлами Ø6.2 мм (шаг 40 мм) и винтами M3; планка-термоинтерфейс между трубкой и радиатором. Масса ≈10 г (2% номинала 0.5 кг)."
+    principle: "Трубка лежит в сёдлах планки с термопастой 50–100 µm — плоский контакт передаёт тепловой поток от испарителя к конденсатору без пережатия парового канала; прижим распределяет контактное давление равномерно, сохраняя капиллярную прокачку фитиля."
+  - file: реальные данные/изделия/прочее/elastomernyh_dempferah/часть_elastomernyh_dempferah_mounting/_index.md
+    url: https://www.parker.com/content/dam/Parker-com/Literature/noise-vibration---harshness-division/aerospace---defense/Product-Catalogs/Product-Catalog---Aerospace--Defense-Isolator-Catalog_PC6116.pdf
+    source_note: "Parker PC6116 aerospace isolator catalog — силиконовые/SPE эластомерные изоляторы 20–25 Гц, эластомер вулканизуется к металлическому фланцу"
+    material: stal_st3
+    dims: 90,90,25
+    mass: 0.3
+    share: 0.06
+    standards: "ISO 4762 (M8);Parker PC6116"
+    desc: "Фланцевый корпус эластомерного демпфера (силиконовый изолятор класса Parker 20–25 Гц, рассчитан на блок 5 кг): стальное гнездо Ст3 90×90×25 мм с чашей Ø60×15 мм под вулканизацию эластомера, 4× отверстиями M8 по фланцу и рёбрами жёсткости. Масса ≈300 г (6% номинала 5 кг)."
+    principle: "Эластомерный элемент завулканизован в чашу корпуса (bonded mount по Parker) — стальное гнездо принимает нагрузку блока 5 кг на сдвиг и сжатие, а чашеобразная геометрия ограничивает вырыв эластомера при 30g ударных перегрузках."
+  - file: реальные данные/изделия/прочее/provodnikovaya_nanoreshetka/часть_provodnikovaya_nanoreshetka_mounting/_index.md
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4735723
+    source_note: "Li et al., Nanoscale/NPG Asia 2016 (PMC4735723) — Al nanomesh из AAO-шаблона (шаг ~200 нм) на прозрачной подложке как прозрачный проводящий электрод"
+    material: al_6061-t6
+    dims: 80,80,12
+    mass: 0.25
+    share: 0.05
+    standards: "ISO 2768-m;ASTM E8"
+    desc: "Юстировочное кольцо-держатель нанорешётки (плёнка Al nanomesh, шаг 200 нм / высота 500 нм на сапфировой подложке Ø50 мм по Li et al. 2016): кольцо из алюминия 6061-T6 80×80×12 мм с круглым окном Ø52 мм, 3× M4-винтами под кинематическую посадку и прокладкой PTFE. Масса ≈250 г (5% номинала 5 кг)."
+    principle: "Сапфировая подложка зажимается по периферии кольцом через PTFE-прокладку — изгиб кристалла исключён (нанорешётка трескается при прогибе >0.05 мм), кольцо обеспечивает соосность оптической оси и повторяемость посадки при съёме модуля."

@@ -229,8 +229,8 @@ graph LR
     часть_tpv_lenty_cooling[охлаждение]
     material_ti_6al_4v[Ti-6Al-4V]
     material_al_6061_t6[Al 6061-T6]
-    material_latun_c36000[Cu 60–63% (основа), Zn…]
     material_stal_st3[Сталь Ст3]
+    material_latun_c36000[Cu 60–63% (основа), Zn…]
     material_si[Si]
     часть_marcus_топливная_ячейка -->|материал| material_ti_6al_4v
     часть_marcus_сердце_гибрид -->|материал| material_ti_6al_4v

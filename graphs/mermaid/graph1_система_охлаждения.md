@@ -23,7 +23,7 @@ graph LR
     material_stal_st3[Сталь Ст3]
     material_ti_6al_4v[Ti-6Al-4V]
     часть_kapillyarnaya_teplovaya_trubka_housing -->|материал| material_al_6061_t6
-    часть_kapillyarnaya_teplovaya_trubka_mounting -->|материал| material_ti_6al_4v
+    часть_kapillyarnaya_teplovaya_trubka_mounting -->|материал| material_al_6061_t6
     часть_kapillyarnaya_teplovaya_trubka_core -->|материал| material_mednyi_provod
     часть_kapillyarnaya_teplovaya_trubka_connectors -->|материал| material_latun_c36000
     часть_mikrokanalnye_ohlazhdayuschie_plastiny_mounting -->|материал| material_ti_6al_4v
@@ -38,8 +38,8 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 5 |
-| `Ti-6Al-4V` | 3 |
+| `Al 6061-T6` | 6 |
 | `медный провод` | 2 |
+| `Ti-6Al-4V` | 2 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 1 |
 | `Сталь Ст3` | 1 |
