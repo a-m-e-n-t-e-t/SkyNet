@@ -160,7 +160,7 @@ graph LR
     часть_elektroflyuidnye_volokna_mit_mounting -->|материал| material_ti_6al_4v
     часть_bldc_housing -->|материал| material_al_6061_t6
     часть_bldc_connectors -->|материал| material_al_6061_t6
-    часть_bldc_mounting -->|материал| material_ti_6al_4v
+    часть_bldc_mounting -->|материал| material_al_6061_t6
     часть_bldc_core -->|материал| material_al_6061_t6
     часть_povorotnoe_uplotnenie_connectors -->|материал| material_al_6061_t6
     часть_povorotnoe_uplotnenie_housing -->|материал| material_al_6061_t6
@@ -173,8 +173,8 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 29 |
-| `Ti-6Al-4V` | 21 |
+| `Al 6061-T6` | 30 |
+| `Ti-6Al-4V` | 20 |
 | `Нейлон 6/66` | 4 |
 | `Сталь Ст3` | 4 |
 | `Полиимид` | 4 |

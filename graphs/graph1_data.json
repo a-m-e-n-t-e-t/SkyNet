@@ -7849,7 +7849,7 @@
     },
     {
       "src": "часть_flir_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -7993,7 +7993,7 @@
     },
     {
       "src": "часть_lidar_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -12199,7 +12199,7 @@
     },
     {
       "src": "часть_bldc_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -15895,7 +15895,7 @@
     },
     {
       "src": "часть_stm32h743_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -16015,7 +16015,7 @@
     },
     {
       "src": "часть_usb-c_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -16123,7 +16123,7 @@
     },
     {
       "src": "часть_stm32_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_peek",
       "type": "uses_material",
       "meta": {}
     },
@@ -16207,7 +16207,7 @@
     },
     {
       "src": "часть_obd-ii_mounting",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -19186,7 +19186,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_flir_mounting",
       "type": "used_in",
       "meta": {
@@ -19282,7 +19282,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_lidar_mounting",
       "type": "used_in",
       "meta": {
@@ -22762,7 +22762,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_bldc_mounting",
       "type": "used_in",
       "meta": {
@@ -26122,7 +26122,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_stm32h743_mounting",
       "type": "used_in",
       "meta": {
@@ -26202,7 +26202,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_usb-c_mounting",
       "type": "used_in",
       "meta": {
@@ -26274,7 +26274,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_peek",
       "dst": "часть_stm32_mounting",
       "type": "used_in",
       "meta": {
@@ -26330,7 +26330,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_obd-ii_mounting",
       "type": "used_in",
       "meta": {
@@ -27604,6 +27604,7 @@
   ],
   "висячие_цели": {
     "complies_with": [
+      "standart_1/4-20 UNC tripod",
       "standart_10 CFR 50",
       "standart_AEC-Q101",
       "standart_AEC-Q200",
@@ -27640,6 +27641,7 @@
       "standart_IAEA SSR-4",
       "standart_IBM 2nm",
       "standart_IEC 60034",
+      "standart_IEC 60034-7 (IM B3/B5)",
       "standart_IEC 60068",
       "standart_IEC 60086",
       "standart_IEC 60095",
@@ -27667,10 +27669,16 @@
       "standart_ISO 14687",
       "standart_ISO 15241",
       "standart_ISO 1940",
+      "standart_ISO 261 (M2)",
+      "standart_ISO 261 (M2.5)",
+      "standart_ISO 261 (M3)",
       "standart_ISO 286 H7/g6",
       "standart_ISO 2919",
       "standart_ISO 3506 A2-70",
+      "standart_ISO 4762 (M4)",
+      "standart_ISO 4762 (M5)",
       "standart_ISO 630",
+      "standart_ISO 898-1",
       "standart_ISO 9001",
       "standart_Intel 4 process",
       "standart_JEDEC J-STD-020D",
@@ -27690,6 +27698,8 @@
       "standart_MIL-STD-810",
       "standart_MIL-STD-810G",
       "standart_MIL-STD-810H",
+      "standart_MSFC-STD-5003",
+      "standart_NASA-STD-5001A",
       "standart_NASA-STD-8729.1",
       "standart_NEMA 17",
       "standart_PCIe 3.0",
@@ -27697,6 +27707,7 @@
       "standart_RV64GC ISA",
       "standart_RoHS 2011/65/EU",
       "standart_RoHS 2011/65/EU (exemption 6c)",
+      "standart_SAE J1962_201607",
       "standart_SEMI M1",
       "standart_STANAG 4294",
       "standart_TSO-C112e",
@@ -27705,6 +27716,7 @@
       "standart_UL 94 V-0",
       "standart_UN 3090",
       "standart_UN 38.3",
+      "standart_USB Type-C Spec Rev 2.2 (USB-IF)",
       "standart_VITA 65"
     ],
     "has_part": [
@@ -27864,7 +27876,7 @@
     "nodes": 925,
     "edges": 3106,
     "dangling": {
-      "complies_with": 102,
+      "complies_with": 114,
       "has_part": 1,
       "researched_by": 42,
       "uses_material": 103

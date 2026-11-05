@@ -202,7 +202,7 @@ graph LR
     часть_kaskadnyi_stirling_kriokuler_mounting -->|материал| material_ti_6al_4v
     часть_kaskadnyi_stirling_kriokuler_core -->|материал| material_al_6061_t6
     часть_kaskadnyi_stirling_kriokuler_connectors -->|материал| material_becu
-    часть_flir_mounting -->|материал| material_ti_6al_4v
+    часть_flir_mounting -->|материал| material_al_6061_t6
     часть_flir_connectors -->|материал| material_latun_c36000
     часть_flir_core -->|материал| material_si
     часть_flir_housing -->|материал| material_al_6061_t6
@@ -214,7 +214,7 @@ graph LR
     часть_multispektralnye_cmos_matritsy_s_ik_diapazonom_connectors -->|материал| material_poliimid
     часть_multispektralnye_cmos_matritsy_s_ik_diapazonom_core -->|материал| material_al_6061_t6
     часть_multispektralnye_cmos_matritsy_s_ik_diapazonom_mounting -->|материал| material_ti_6al_4v
-    часть_lidar_mounting -->|материал| material_ti_6al_4v
+    часть_lidar_mounting -->|материал| material_al_6061_t6
     часть_lidar_connectors -->|материал| material_latun_c36000
     часть_lidar_housing -->|материал| material_al_6061_t6
     часть_lidar_core -->|материал| material_al_6061_t6
@@ -327,8 +327,8 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 58 |
-| `Ti-6Al-4V` | 33 |
+| `Al 6061-T6` | 60 |
+| `Ti-6Al-4V` | 31 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 17 |
 | `BeCu` | 7 |
 | `Сталь Ст3` | 6 |
