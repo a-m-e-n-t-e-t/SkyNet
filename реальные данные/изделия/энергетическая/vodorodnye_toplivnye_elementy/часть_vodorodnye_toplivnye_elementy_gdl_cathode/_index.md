@@ -13,7 +13,7 @@ id: часть_vodorodnye_toplivnye_elementy_gdl_cathode
 дочерние_части: []
 материалы_частей:
   - часть: часть_vodorodnye_toplivnye_elementy_gdl_cathode
-    материал: ti-6al-4v
+    материал: carbon_ptfe
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -31,7 +31,7 @@ scaling_type: количественный
   габариты_mm:
     l: 100
     w: 100
-    h: 50
+    h: 0.37
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
@@ -40,14 +40,14 @@ scaling_type: количественный
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://www.canrud.com/knowledge/battery-material/toray-tgp-h-060-vs-090-carbon-paper-selection-checklist-378
+источник_дата: 2026-11-05
 ---
 # Часть: часть_vodorodnye_toplivnye_elementy_gdl_cathode
 
 ## Описание
 
-Дочерняя часть изделия.
-
-Родитель: `izdelie_vodorodnye_toplivnye_elementy` (подсистема: энергетическая).
+Газодиффузионный слой катода PEM топливного элемента: углеродная бумага (тип Toray TGP-H-120) 100×100 мм толщиной 0.37 мм с PTFE-гидрофобизацией и усиленным MPL. На катоде отводится продукт реакции — вода: более толстый слой с развитой пористостью управляет водным балансом мембраны, предотвращая затопление при 80 °C.
 
 ## Технические характеристики
 
@@ -57,14 +57,14 @@ scaling_type: количественный
 | подтип | GDL_катод | — | canon |
 | масса | 0.05 | kg | canon |
 | доля массы родителя | 0.1 | — | canon |
-| габариты (Д×Ш×В) | 100×100×50 | mm | canon |
+| габариты (Д×Ш×В) | 100×100×0.37 | mm | Toray TGP-H-120 carbon paper = 370 um, PTFE wet-proofed option: Canrud/Fuel Cell Store |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | ti-6al-4v | — | canon |
+| материал | carbon_ptfe | — | carbon_ptfe.md |
 
 ## Принцип работы
 
-Определяется типом и назначением родительского изделия.
+Кислород диффундирует к каталитическому слою: O2 + 4H+ + 4e− → 2H2O; капли воды удаляются капиллярно через гидрофобные поры в каналы биполярной пластины, электронный ток снимается в биполярную пластину через объёмную проводимость углерода.
 
 ## Состав
 
@@ -72,9 +72,9 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `ti-6al-4v` → [`ti-6al-4v.md`](../../../../материалы/ti-6al-4v.md)
+- `carbon_ptfe` → [`carbon_ptfe.md`](../../../../материалы/carbon_ptfe.md)
 
 ## Источники
 
-- Канон: декомпозиция `izdelie_vodorodnye_toplivnye_elementy` (web search 2026-11-03)
+- Toray TGP-H-120 carbon paper = 370 um, PTFE wet-proofed option: Canrud/Fuel Cell Store: https://www.canrud.com/knowledge/battery-material/toray-tgp-h-060-vs-090-carbon-paper-selection-checklist-378 (проверено 2026-11-05)
 - Материалы: реальные данные/материалы/

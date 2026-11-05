@@ -13,7 +13,7 @@ id: часть_superkondensatory_electrolyte
 дочерние_части: []
 материалы_частей:
   - часть: часть_superkondensatory_electrolyte
-    материал: ti-6al-4v
+    материал: acetonitrile_teabf4
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -29,9 +29,9 @@ scaling_type: количественный
   масса_kg: 0.05
   доля_массы_родителя: 0.15
   габариты_mm:
-    l: 100
-    w: 100
-    h: 50
+    l: 40
+    w: 40
+    h: 3
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
@@ -40,14 +40,14 @@ scaling_type: количественный
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://www.ascent-petrochem.com/products/specialty-chemicals/conventional-electrolyte-for-edlc-cas-429-06-1.html
+источник_дата: 2026-11-05
 ---
 # Часть: часть_superkondensatory_electrolyte
 
 ## Описание
 
-Дочерняя часть изделия.
-
-Родитель: `izdelie_superkondensatory` (подсистема: энергетическая).
+Органический электролит суперконденсатора: 1M TEABF4 (тетраэтиламмоний тетрафторборат) в ацетонитриле, пропитывающий сепаратор и поры угольных электродов стек 40×40×3 мм. Проводимость 55–60 мСм/см при 25 °C и электрохимическое окно ~2.8 В — промышленный стандарт EDLC (CAS 429-06-1); диапазон −40…+65 °C.
 
 ## Технические характеристики
 
@@ -57,14 +57,14 @@ scaling_type: количественный
 | подтип | электролит | — | canon |
 | масса | 0.05 | kg | canon |
 | доля массы родителя | 0.15 | — | canon |
-| габариты (Д×Ш×В) | 100×100×50 | mm | canon |
+| габариты (Д×Ш×В) | 40×40×3 | mm | 1M TEABF4 in acetonitrile EDLC electrolyte, 55–60 mS/cm: Ascent Petrochem (CAS 429-06-1) |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | ti-6al-4v | — | canon |
+| материал | acetonitrile_teabf4 | — | acetonitrile_teabf4.md |
 
 ## Принцип работы
 
-Определяется типом и назначением родительского изделия.
+Ионы TEA+ и BF4− адсорбируются на границе уголь/электролит, формируя двойные электрические слои нанометровой толщины на площади ~2000 м²/г активированного угля; ёмкость накапливается электростатически (без фарадеевских реакций), что даёт миллион циклов заряд-разряд.
 
 ## Состав
 
@@ -72,9 +72,9 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `ti-6al-4v` → [`ti-6al-4v.md`](../../../../материалы/ti-6al-4v.md)
+- `acetonitrile_teabf4` → [`acetonitrile_teabf4.md`](../../../../материалы/acetonitrile_teabf4.md)
 
 ## Источники
 
-- Канон: декомпозиция `izdelie_superkondensatory` (web search 2026-11-03)
+- 1M TEABF4 in acetonitrile EDLC electrolyte, 55–60 mS/cm: Ascent Petrochem (CAS 429-06-1): https://www.ascent-petrochem.com/products/specialty-chemicals/conventional-electrolyte-for-edlc-cas-429-06-1.html (проверено 2026-11-05)
 - Материалы: реальные данные/материалы/
