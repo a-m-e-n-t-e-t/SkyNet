@@ -1,5 +1,17 @@
 # SkyNet Decomposition Verification — auto-create issues for files needing verification
-# v9.33: auto-close stale issues + anti-parallel hardening + schedule
+# v9.34: полный список violations через --json-out (исправление критичного бага v9.33)
+#
+# БАГ v9.33 и ранее: нарушения парсились из человеческого лога валидатора,
+# который печатает только ПЕРВЫЕ 3 violations на метрику (violations[:3], v[:100]).
+# Следствия:
+#   (а) issues создавались только для случайного вращающегося подмножества из 3×4 нарушений;
+#   (б) auto-close stale сверял ВСЕ открытые issues с этим же обрезанным списком
+#       → ложно закрывал бы актуальные issues (нарушение «исчезло», потому что
+#         не попало в первые 3 напечатанные строки).
+# v9.34: валидатор запускается с --json-out violations.json — ПОЛНЫЙ список (сейчас ~900).
+# Лог-парсинг оставлен только как fallback; при fallback авто-закрытие ЗАПРЕЩЕНО (partial=1).
+# Создание issues: справедливый round-robin между метриками + лимит MAX_NEW_ISSUES
+# за прогон (защита от флуда issue-очереди одним коммитом). + schedule
 #
 # Триггеры:
 #   - push на main с изменениями в реальные данные/ или фантастические данные/
@@ -8,13 +20,13 @@
 #   - workflow_dispatch (ручной запуск)
 #
 # Что делает:
-#   1. Запускает validate_decomposition.py — получает список violations F22-F25
-#   2. Для каждого violation создаёт GitHub issue с меткой `verify-task`
-#      (БЕЗ дублирования — проверяет все issues: open+closed,
-#       использует стабильный dedup_key в теле issue)
-#   3. AUTO-CLOSE STALE: для каждого открытого verify-task issue, чей dedup_key
-#      отсутствует в текущих violations, автоматически закрывает как stale
-#      (НЕ трогает issues с меткой in-progress — cron-агент работает)
+#   1. Запускает validate_decomposition.py --json-out — ПОЛНЫЙ список violations F22-F25
+#   2. Создаёт GitHub issues с меткой `verify-task` для первых MAX_NEW_ISSUES нарушений
+#      (round-robin между метриками; БЕЗ дублирования — проверяет все issues:
+#       open+closed, использует стабильный dedup_key в теле issue)
+#   3. AUTO-CLOSE STALE (только при ПОЛНОМ списке, partial=0): для каждого открытого
+#      verify-task issue, чей dedup_key отсутствует в текущих violations, автоматически
+#      закрывает как stale (НЕ трогает issues с меткой in-progress — cron-агент работает)
 #   4. Issues обрабатываются cron-агентом (job 504119)
 #
 # ANTI-PARALLEL:
@@ -86,42 +98,59 @@ jobs:
         id: violations
         run: |
           set +e
-          python scripts/validate_decomposition.py 2>&1 | tee validate_output.log
-          # Извлечь violations из вывода и сохранить в JSON (с dedup_key)
-          python -c "
-          import json, re, sys
-          
-          violations = {'F22': [], 'F23': [], 'F24': [], 'F25': []}
-          current_metric = None
-          
-          with open('validate_output.log') as f:
-              for line in f:
-                  m = re.match(r'=== (F2[2-5]):', line.strip())
-                  if m:
-                      current_metric = m.group(1)
-                      continue
-                  if current_metric and line.strip().startswith('- '):
-                      violations[current_metric].append(line.strip()[2:])
-          
-          with open('violations.json', 'w') as f:
-              json.dump(violations, f, ensure_ascii=False, indent=2)
-          
-          total = sum(len(v) for v in violations.values())
-          print(f'Total violations: {total}')
-          for metric, vs in violations.items():
-              print(f'  {metric}: {len(vs)} violations')
-          "
-          
-          echo "total_violations=$(python -c 'import json; d=json.load(open(\"violations.json\")); print(sum(len(v) for v in d.values()))')" >> $GITHUB_OUTPUT
+          # v9.34: полный machine-readable список violations через --json-out.
+          # Человеческий лог (validate_output.log) печатает только первые 3 violations
+          # на метрику — его парсинг НЕ использовать, он обрезает ~900 до 9.
+          python scripts/validate_decomposition.py --json-out violations.json 2>&1 | tee validate_output.log
+          VALIDATOR_EXIT=$?
 
-      - name: Create issues for each violation (anti-duplicate)
+          # Явная проверка: violations.json должен существовать и быть непустым
+          if [ ! -s violations.json ]; then
+            echo "::error::validate_decomposition.py did not produce violations.json (exit=$VALIDATOR_EXIT). Auto-close step will be skipped."
+            echo "total_violations=0" >> $GITHUB_OUTPUT
+            echo "partial=1" >> $GITHUB_OUTPUT
+            exit 0   # не падаем весь workflow — Summary всё равно полезен
+          fi
+
+          echo "partial=0" >> $GITHUB_OUTPUT
+          echo "using complete --json-out violations list"
+
+          # Подсчёт total и per-metric (без вложенных кавычек — был SyntaxError в CI)
+          TOTAL=$(python3 -c "import json; d=json.load(open('violations.json')); print(sum(len(v) for v in d.values()))")
+          echo "total_violations=$TOTAL" >> $GITHUB_OUTPUT
+          echo "Total violations: $TOTAL"
+          for M in F22 F23 F24 F25; do
+            CNT=$(python3 -c "import json; d=json.load(open('violations.json')); print(len(d.get('$M', [])))")
+            echo "${M}_count=$CNT" >> $GITHUB_OUTPUT
+            echo "  $M: $CNT violations"
+          done
+
+      - name: Create issues for each violation (anti-duplicate, round-robin, capped)
         if: steps.violations.outputs.total_violations != '0'
         uses: actions/github-script@v7
+        env:
+          MAX_NEW_ISSUES: '6'   # защита от флуда очереди одним прогоном; остальные нарушения поймает следующий push
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const fs = require('fs');
             const violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
+            
+            // Round-robin очередь между метриками: F22, F23, F24, F25, F22, F23, ...
+            // (иначе лимит MAX_NEW_ISSUES выбирал бы только первую метрику)
+            const roundRobinQueue = [];
+            const lists = Object.entries(violations).map(([metric, arr]) => ({ metric, arr, i: 0 }));
+            let progressed = true;
+            while (progressed) {
+              progressed = false;
+              for (const l of lists) {
+                if (l.i < l.arr.length) {
+                  roundRobinQueue.push([l.metric, l.arr[l.i++]]);
+                  progressed = true;
+                }
+              }
+            }
+            console.log(`Round-robin queue: ${roundRobinQueue.length} violations total`);
             
             // ---------------------------------------------------------------
             // Query ALL issues (open + closed) with label verify-task.
@@ -172,17 +201,23 @@ jobs:
             }
             console.log(`Existing dedup_keys: ${existingKeys.size} (open+closed, marker+legacy-body fallback)`);
             
+            const maxNew = parseInt(process.env.MAX_NEW_ISSUES || '6', 10);
             let created = 0;
             let skipped = 0;
+            let deferred = 0;
             
-            for (const [metric, violList] of Object.entries(violations)) {
-              for (const v of violList) {
-                const dedupKey = normalizeViolationKey(metric, v);
-                
-                if (existingKeys.has(dedupKey)) {
-                  skipped++;
-                  continue;  // уже есть issue (open ИЛИ closed) — не создаём дубль
-                }
+            for (const [metric, v] of roundRobinQueue) {
+              const dedupKey = normalizeViolationKey(metric, v);
+              
+              if (existingKeys.has(dedupKey)) {
+                skipped++;
+                continue;  // уже есть issue (open ИЛИ closed) — не создаём дубль
+              }
+              
+              if (created >= maxNew) {
+                deferred++;  // лимит прогона — нарушение останется в полном списке для следующего push
+                continue;
+              }
                 
                 // Build readable title
                 let title;
@@ -241,13 +276,15 @@ jobs:
                 // CRITICAL: update Set to prevent within-run duplicates
                 existingKeys.add(dedupKey);
                 created++;
-              }
             }
             
-            console.log(`Created: ${created}, Skipped (duplicates): ${skipped}`);
+            console.log(`Created: ${created}, Skipped (duplicates): ${skipped}, Deferred (cap ${maxNew}): ${deferred}`);
 
       - name: Auto-close stale issues (violations gone)
-        if: always()
+        # v9.34: КРИТИЧНО — только при ПОЛНОМ списке violations (partial=0).
+        # При fallback-парсинге лога (первые 3 на метрику) авто-закрытие отключено:
+        # иначе ложно закрывались бы актуальные issues, чьи нарушения не попали в первые 3 строки.
+        if: always() && steps.violations.outputs.partial != '1'
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -382,13 +419,16 @@ jobs:
         run: |
           echo "## Decomposition Verification Tasks" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "| Metric | Violations | Description |" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Violations (full list) | Description |" >> $GITHUB_STEP_SUMMARY
           echo "|---|---|---|" >> $GITHUB_STEP_SUMMARY
-          echo "| F22 | ${{ steps.violations.outputs.total_violations }} | Source URL required |" >> $GITHUB_STEP_SUMMARY
-          echo "| F23 | — | Anti-template detection |" >> $GITHUB_STEP_SUMMARY
-          echo "| F24 | — | Subtype compliance |" >> $GITHUB_STEP_SUMMARY
-          echo "| F25 | — | Data uniqueness |" >> $GITHUB_STEP_SUMMARY
+          echo "| F22 | ${{ steps.violations.outputs.F22_count }} | Source URL required |" >> $GITHUB_STEP_SUMMARY
+          echo "| F23 | ${{ steps.violations.outputs.F23_count }} | Anti-template detection |" >> $GITHUB_STEP_SUMMARY
+          echo "| F24 | ${{ steps.violations.outputs.F24_count }} | Subtype compliance |" >> $GITHUB_STEP_SUMMARY
+          echo "| F25 | ${{ steps.violations.outputs.F25_count }} | Data uniqueness |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Total** | **${{ steps.violations.outputs.total_violations }}** | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Violation source:** ${{ steps.violations.outputs.partial == '1' && 'TRUNCATED log fallback (auto-close DISABLED)' || 'complete --json-out' }}" >> $GITHUB_STEP_SUMMARY
           echo "**Anti-parallel:** concurrency group \`verify-decomposition-\${{ github.ref }}\` serializes runs." >> $GITHUB_STEP_SUMMARY
           echo "**Anti-duplicate:** dedup checks ALL issues (open+closed) via stable \`dedup_key\`." >> $GITHUB_STEP_SUMMARY
-          echo "**Auto-close stale:** open verify-task issues whose dedup_key is no longer in current violations are auto-closed (skips \`in-progress\`)." >> $GITHUB_STEP_SUMMARY
+          echo "**Issue cap:** max \`MAX_NEW_ISSUES\` per run (round-robin across F22–F25)." >> $GITHUB_STEP_SUMMARY
+          echo "**Auto-close stale:** open verify-task issues whose dedup_key is no longer in current violations are auto-closed (skips \`in-progress\`; runs only on complete violation list)." >> $GITHUB_STEP_SUMMARY
