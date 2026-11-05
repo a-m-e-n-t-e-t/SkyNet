@@ -137,6 +137,42 @@ jobs:
               labels: ['pre-commit-failed', 'auto-generated'],
             });
 
+      - name: Close recovered pre-commit-failed issues
+        # v9.39.6: симметрия recover-логики как в telemetry-update.yml.
+        # Когда pre-commit PASS, открытые pre-commit-failed issues закрываются
+        # автоматически (раньше висели вечно — 4 накопленных исторических).
+        if: steps.precommit.outputs.exit_code == '0'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const resp = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: 'pre-commit-failed',
+              state: 'open',
+              per_page: 50,
+            });
+            let closed = 0;
+            for (const issue of resp.data) {
+              if (issue.pull_request) continue;
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: `✅ **Pre-commit recovered** — pre-commit-hook.py PASS на коммите ${context.sha.slice(0,7)}.\n\n**Run:** ${context.runId} • ${new Date().toISOString()}`,
+              });
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed',
+                state_reason: 'completed',
+              });
+              closed++;
+            }
+            console.log(`Closed ${closed} recovered pre-commit-failed issues`);
+
       - name: Fail job if pre-commit failed
         if: steps.precommit.outputs.exit_code != '0' && steps.precommit.outputs.exit_code != ''
         run: |
