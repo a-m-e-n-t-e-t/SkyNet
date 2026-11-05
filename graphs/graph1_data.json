@@ -12337,7 +12337,7 @@
     },
     {
       "src": "часть_termoelektricheskii_postoyannyi_magnit_teg_modules",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_bi₂te₃",
       "type": "uses_material",
       "meta": {}
     },
@@ -23480,7 +23480,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_bi₂te₃",
       "dst": "часть_termoelektricheskii_postoyannyi_magnit_teg_modules",
       "type": "used_in",
       "meta": {
@@ -28165,6 +28165,7 @@
       "standart_TSO-C112e",
       "standart_TSO-C166b",
       "standart_TSO-C88b",
+      "standart_TXL-127-25Q datasheet",
       "standart_TechInsights 3D XPoint Teardown (2017)",
       "standart_Teledyne Mechanical IDD",
       "standart_Teledyne Mechanical IDD (Boson+)",
@@ -28344,7 +28345,7 @@
     "nodes": 937,
     "edges": 3144,
     "dangling": {
-      "complies_with": 237,
+      "complies_with": 238,
       "has_part": 1,
       "researched_by": 43,
       "uses_material": 105

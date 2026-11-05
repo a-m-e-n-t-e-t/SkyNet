@@ -249,7 +249,6 @@ graph LR
     часть_reversivnye_pelte_peltier_couples -->|материал| material_ti_6al_4v
     часть_termoelektricheskii_postoyannyi_magnit_heat_sink_hot -->|материал| material_al_6061_t6
     часть_termoelektricheskii_postoyannyi_magnit_heat_sink_cold -->|материал| material_al_6061_t6
-    часть_termoelektricheskii_postoyannyi_magnit_teg_modules -->|материал| material_ti_6al_4v
     часть_termoelektricheskii_postoyannyi_magnit_clamping -->|материал| material_ti_6al_4v
     часть_svobodnoporshnevoi_stirling_regenerator -->|материал| material_ti_6al_4v
     часть_svobodnoporshnevoi_stirling_piston -->|материал| material_al_6061_t6
@@ -357,11 +356,11 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 91 |
+| `Ti-6Al-4V` | 90 |
 | `Al 6061-T6` | 20 |
 | `Inconel 718` | 9 |
 | `SS AISI 304` | 8 |
-| `Bi₂Te₃` | 5 |
+| `Bi₂Te₃` | 6 |
 | `Сталь Ст3` | 5 |
 | `Inconel 625` | 4 |
 | `NdFeB` | 4 |
