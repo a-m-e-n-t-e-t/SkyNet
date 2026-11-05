@@ -7,13 +7,13 @@ id: часть_svintsovo-kislotnye_akb_anode
 подсистема: энергетическая
 подтип: PbO2_анод
 стандарты:
-  - ISO 9001
+  - IEC 60095
 исследовательская_группа: null
 родитель: izdelie_svintsovo-kislotnye_akb
 дочерние_части: []
 материалы_частей:
   - часть: часть_svintsovo-kislotnye_akb_anode
-    материал: ti-6al-4v
+    материал: pbo2
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -26,12 +26,12 @@ scaling_type: количественный
   статус: false
   верификация: []
 основные:
-  масса_kg: 2.0
-  доля_массы_родителя: 0.2
+  масса_kg: 0.247
+  доля_массы_родителя: 0.0164
   габариты_mm:
-    l: 100
-    w: 100
-    h: 50
+    l: 160
+    w: 146
+    h: 2.2
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
@@ -40,14 +40,14 @@ scaling_type: количественный
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: канон
+источник_url: https://patents.google.com/patent/CN112103513A/en
+источник_дата: 2026-11-05
 ---
 # Часть: часть_svintsovo-kislotnye_akb_anode
 
 ## Описание
 
-Дочерняя часть изделия.
-
-Родитель: `izdelie_svintsovo-kislotnye_akb` (подсистема: энергетическая).
+Положительная пластина свинцово-кислотной АКБ: решётка (токоотвод) из сплава Pb-Sb/Pb-Ca с рамкой 1.8–2.0 мм и 15–16 поперечными рёбрами, заполнена пастой активной массы PbO2 (β-фаза, пористость ~50 %). Пластина 160×146×2.2 мм — типовой формат DIN-батареи с корпусом 350×175×190 мм (6 ячеек вдоль длины, шаг 58.3 мм; высота пластин ~146 мм). Масса пластины ~0.25 кг (объём 51.4 см³ × ~4.8 г/см³ кажущейся плотности пасты).
 
 ## Технические характеристики
 
@@ -55,16 +55,16 @@ scaling_type: количественный
 |---|---|---|---|
 | подсистема | энергетическая | — | canon |
 | подтип | PbO2_анод | — | canon |
-| масса | 2.0 | kg | canon |
-| доля массы родителя | 0.2 | — | canon |
-| габариты (Д×Ш×В) | 100×100×50 | mm | canon |
+| масса | 0.247 | kg | Chaowei Power patent CN112103513A (2020): positive grid frame 1.8–2.0 mm / 15–16 ribs, negative grid frame 1.2–1.4 mm / 12–15 ribs; plate L×W derived from canon DIN-format case 350×175×190 (6 cells, cell pitch 58.3 mm → plate 160×146 mm); Suzuki Battery engineering blog (PbO2 positive / sponge lead negative) |
+| доля массы родителя | 0.0164 | — | оценка |
+| габариты (Д×Ш×В) | 160×146×2.2 | mm | Chaowei Power patent CN112103513A (2020): positive grid frame 1.8–2.0 mm / 15–16 ribs, negative grid frame 1.2–1.4 mm / 12–15 ribs; plate L×W derived from canon DIN-format case 350×175×190 (6 cells, cell pitch 58.3 mm → plate 160×146 mm); Suzuki Battery engineering blog (PbO2 positive / sponge lead negative) |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | ti-6al-4v | — | canon |
+| материал | pbo2 | — | pbo2.md |
 
 ## Принцип работы
 
-Определяется типом и назначением родительского изделия.
+При разряде PbO2 восстанавливается до PbSO4 с поглощением электронов: PbO2 + SO4²⁻ + 4H⁺ + 2e⁻ → PbSO4 + 2H2O (E° ≈ +1.69 В). При заряде реакция идёт в обратную сторону с выделением PbO2; решётка служит токоотводом и каркасом, пористая паста — местом электрохимической реакции.
 
 ## Состав
 
@@ -72,9 +72,9 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `ti-6al-4v` → [`ti-6al-4v.md`](../../../../материалы/ti-6al-4v.md)
+- `pbo2` → [`pbo2.md`](../../../../материалы/pbo2.md)
 
 ## Источники
 
-- Канон: декомпозиция `izdelie_svintsovo-kislotnye_akb` (web search 2026-11-03)
+- Chaowei Power patent CN112103513A (2020): positive grid frame 1.8–2.0 mm / 15–16 ribs, negative grid frame 1.2–1.4 mm / 12–15 ribs; plate L×W derived from canon DIN-format case 350×175×190 (6 cells, cell pitch 58.3 mm → plate 160×146 mm); Suzuki Battery engineering blog (PbO2 positive / sponge lead negative): https://patents.google.com/patent/CN112103513A/en (проверено 2026-11-05)
 - Материалы: реальные данные/материалы/
