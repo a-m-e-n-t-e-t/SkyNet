@@ -12048,12 +12048,6 @@
       "meta": {}
     },
     {
-      "src": "часть_tpv_pv_cell",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_tpv_cooling",
       "dst": "izdelie_tpv",
       "type": "child_of",
@@ -12081,12 +12075,6 @@
       "src": "часть_tpv_filter",
       "dst": "izdelie_tpv",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_tpv_filter",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -12181,7 +12169,7 @@
     },
     {
       "src": "часть_asrg_cooler",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -12361,7 +12349,7 @@
     },
     {
       "src": "часть_termoelektricheskii_postoyannyi_magnit_clamping",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -12369,12 +12357,6 @@
       "src": "часть_svobodnoporshnevoi_stirling_regenerator",
       "dst": "izdelie_svobodnoporshnevoi_stirling",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_svobodnoporshnevoi_stirling_regenerator",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -12409,7 +12391,7 @@
     },
     {
       "src": "часть_svobodnoporshnevoi_stirling_alternator",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ndfeb",
       "type": "uses_material",
       "meta": {}
     },
@@ -12666,12 +12648,6 @@
       "meta": {}
     },
     {
-      "src": "часть_vodorodnye_toplivnye_elementy_bipolar_plate",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_vodorodnye_toplivnye_elementy_gdl_cathode",
       "dst": "izdelie_vodorodnye_toplivnye_elementy",
       "type": "child_of",
@@ -12679,7 +12655,7 @@
     },
     {
       "src": "часть_vodorodnye_toplivnye_elementy_gdl_cathode",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_carbon_ptfe",
       "type": "uses_material",
       "meta": {}
     },
@@ -12703,7 +12679,7 @@
     },
     {
       "src": "часть_vodorodnye_toplivnye_elementy_gdl_anode",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_carbon_ptfe",
       "type": "uses_material",
       "meta": {}
     },
@@ -12799,7 +12775,7 @@
     },
     {
       "src": "часть_4h-sic_betavoltaik_isotope",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ni-63",
       "type": "uses_material",
       "meta": {}
     },
@@ -12811,7 +12787,7 @@
     },
     {
       "src": "часть_4h-sic_betavoltaik_substrate",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_monokristallicheskogo_sic",
       "type": "uses_material",
       "meta": {}
     },
@@ -12861,12 +12837,6 @@
       "src": "часть_svintsovo-kislotnye_akb_separator",
       "dst": "izdelie_svintsovo-kislotnye_akb",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_svintsovo-kislotnye_akb_separator",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -13027,7 +12997,7 @@
     },
     {
       "src": "часть_ni-63_betavoltaik_4h-sic_substrate",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_monokristallicheskogo_sic",
       "type": "uses_material",
       "meta": {}
     },
@@ -13051,7 +13021,7 @@
     },
     {
       "src": "часть_ni-63_betavoltaik_4h-sic_isotope",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ni-63",
       "type": "uses_material",
       "meta": {}
     },
@@ -13074,21 +13044,9 @@
       "meta": {}
     },
     {
-      "src": "часть_termomoduli_pelte_wires",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_termomoduli_pelte_electrodes",
       "dst": "izdelie_termomoduli_pelte",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_termomoduli_pelte_electrodes",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -13123,7 +13081,7 @@
     },
     {
       "src": "часть_termomoduli_pelte_solder",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_splav_sn-pb",
       "type": "uses_material",
       "meta": {}
     },
@@ -13212,33 +13170,15 @@
       "meta": {}
     },
     {
-      "src": "часть_tpv-lenty_cooling",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_tpv-lenty_pv_cells",
       "dst": "izdelie_tpv-lenty",
       "type": "child_of",
       "meta": {}
     },
     {
-      "src": "часть_tpv-lenty_pv_cells",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_tpv-lenty_emitter_ribbon",
       "dst": "izdelie_tpv-lenty",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_tpv-lenty_emitter_ribbon",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -13257,12 +13197,6 @@
       "src": "часть_superkondensatory_electrolyte",
       "dst": "izdelie_superkondensatory",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_superkondensatory_electrolyte",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -13285,7 +13219,7 @@
     },
     {
       "src": "часть_superkondensatory_current_collector",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -13573,7 +13507,7 @@
     },
     {
       "src": "часть_betavoltaiki_isotope",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ni-63",
       "type": "uses_material",
       "meta": {}
     },
@@ -13639,7 +13573,7 @@
     },
     {
       "src": "часть_3d_sic-mikropillarnyi_tritii-betavoltaik_substrate",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_monokristallicheskogo_sic",
       "type": "uses_material",
       "meta": {}
     },
@@ -13663,7 +13597,7 @@
     },
     {
       "src": "часть_3d_sic-mikropillarnyi_tritii-betavoltaik_micropillars",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_monokristallicheskogo_sic",
       "type": "uses_material",
       "meta": {}
     },
@@ -14031,12 +13965,6 @@
       "src": "часть_lt-sofc_seal",
       "dst": "izdelie_lt-sofc",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_lt-sofc_seal",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15804,12 +15732,6 @@
       "meta": {}
     },
     {
-      "src": "часть_halve_capacitors",
-      "dst": "material_b₄c",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_halve_encapsulant",
       "dst": "izdelie_halve",
       "type": "child_of",
@@ -15846,12 +15768,6 @@
       "meta": {}
     },
     {
-      "src": "часть_halve_pcb",
-      "dst": "material_ptfe",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_halve_die",
       "dst": "izdelie_halve",
       "type": "child_of",
@@ -15877,7 +15793,7 @@
     },
     {
       "src": "часть_litii-tionilhloridnye_batarei_cathode",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_carbon_ptfe",
       "type": "uses_material",
       "meta": {}
     },
@@ -15889,7 +15805,7 @@
     },
     {
       "src": "часть_litii-tionilhloridnye_batarei_case",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -15930,12 +15846,6 @@
       "meta": {}
     },
     {
-      "src": "часть_litii-tionilhloridnye_batarei_anode",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_memristornye_matritsy_crossbar",
       "dst": "izdelie_memristornye_matritsy",
       "type": "child_of",
@@ -15943,7 +15853,7 @@
     },
     {
       "src": "часть_memristornye_matritsy_crossbar",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_hfo₂",
       "type": "uses_material",
       "meta": {}
     },
@@ -15955,7 +15865,7 @@
     },
     {
       "src": "часть_memristornye_matritsy_word_drivers",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -16003,7 +15913,7 @@
     },
     {
       "src": "часть_sot-mram_periphery",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -16038,12 +15948,6 @@
       "meta": {}
     },
     {
-      "src": "часть_sot-mram_cell_array",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_sot-mram_io_interface",
       "dst": "izdelie_sot-mram",
       "type": "child_of",
@@ -16051,7 +15955,7 @@
     },
     {
       "src": "часть_sot-mram_io_interface",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -16063,7 +15967,7 @@
     },
     {
       "src": "часть_sic_mosfet_encapsulant",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_epotek_301-2",
       "type": "uses_material",
       "meta": {}
     },
@@ -16075,7 +15979,7 @@
     },
     {
       "src": "часть_sic_mosfet_die",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_monokristallicheskogo_sic",
       "type": "uses_material",
       "meta": {}
     },
@@ -16104,12 +16008,6 @@
       "meta": {}
     },
     {
-      "src": "часть_sic_mosfet_gate_terminal",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_sic_mosfet_solder",
       "dst": "izdelie_sic_mosfet",
       "type": "child_of",
@@ -16128,12 +16026,6 @@
       "meta": {}
     },
     {
-      "src": "часть_brainchip_akida_2_pcb",
-      "dst": "material_ptfe",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_brainchip_akida_2_thermal_spreader",
       "dst": "izdelie_brainchip_akida_2",
       "type": "child_of",
@@ -16143,12 +16035,6 @@
       "src": "часть_brainchip_akida_2_capacitors",
       "dst": "izdelie_brainchip_akida_2",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_brainchip_akida_2_capacitors",
-      "dst": "material_b₄c",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16197,12 +16083,6 @@
       "src": "часть_intel_loihi_2_pcb",
       "dst": "izdelie_intel_loihi_2",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_intel_loihi_2_pcb",
-      "dst": "material_ptfe",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16260,12 +16140,6 @@
       "meta": {}
     },
     {
-      "src": "часть_intel_loihi_2_capacitors",
-      "dst": "material_b₄c",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_pcm_controller",
       "dst": "izdelie_pcm",
       "type": "child_of",
@@ -16281,12 +16155,6 @@
       "src": "часть_pcm_cell_array",
       "dst": "izdelie_pcm",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_pcm_cell_array",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16309,7 +16177,7 @@
     },
     {
       "src": "часть_pcm_periphery",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -16321,7 +16189,7 @@
     },
     {
       "src": "часть_pcm_io_interface",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -16380,12 +16248,6 @@
       "meta": {}
     },
     {
-      "src": "часть_gr801_noel-v_risc-v_crystal_osc",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_gr801_noel-v_risc-v_flash",
       "dst": "izdelie_gr801_noel-v_risc-v",
       "type": "child_of",
@@ -16393,7 +16255,7 @@
     },
     {
       "src": "часть_gr801_noel-v_risc-v_flash",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -16441,7 +16303,7 @@
     },
     {
       "src": "часть_gr801_noel-v_risc-v_sram",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -16465,7 +16327,7 @@
     },
     {
       "src": "часть_gr801_noel-v_risc-v_thermal_pad",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_silikon_40_50_shore_a",
       "type": "uses_material",
       "meta": {}
     },
@@ -23270,14 +23132,6 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_tpv_pv_cell",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_al_6061-t6",
       "dst": "часть_tpv_cooling",
       "type": "used_in",
@@ -23288,14 +23142,6 @@
     {
       "src": "material_karbon",
       "dst": "часть_tpv_heat_source",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_tpv_filter",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -23358,7 +23204,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_asrg_cooler",
       "type": "used_in",
       "meta": {
@@ -23478,16 +23324,8 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_termoelektricheskii_postoyannyi_magnit_clamping",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_svobodnoporshnevoi_stirling_regenerator",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -23510,7 +23348,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ndfeb",
       "dst": "часть_svobodnoporshnevoi_stirling_alternator",
       "type": "used_in",
       "meta": {
@@ -23678,15 +23516,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_vodorodnye_toplivnye_elementy_bipolar_plate",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
+      "src": "material_carbon_ptfe",
       "dst": "часть_vodorodnye_toplivnye_elementy_gdl_cathode",
       "type": "used_in",
       "meta": {
@@ -23702,7 +23532,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_carbon_ptfe",
       "dst": "часть_vodorodnye_toplivnye_elementy_gdl_anode",
       "type": "used_in",
       "meta": {
@@ -23766,7 +23596,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ni-63",
       "dst": "часть_4h-sic_betavoltaik_isotope",
       "type": "used_in",
       "meta": {
@@ -23774,7 +23604,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_monokristallicheskogo_sic",
       "dst": "часть_4h-sic_betavoltaik_substrate",
       "type": "used_in",
       "meta": {
@@ -23800,14 +23630,6 @@
     {
       "src": "material_ti-6al-4v",
       "dst": "часть_svintsovo-kislotnye_akb_anode",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_svintsovo-kislotnye_akb_separator",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -23910,7 +23732,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_monokristallicheskogo_sic",
       "dst": "часть_ni-63_betavoltaik_4h-sic_substrate",
       "type": "used_in",
       "meta": {
@@ -23926,7 +23748,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ni-63",
       "dst": "часть_ni-63_betavoltaik_4h-sic_isotope",
       "type": "used_in",
       "meta": {
@@ -23936,22 +23758,6 @@
     {
       "src": "material_ti-6al-4v",
       "dst": "часть_ni-63_betavoltaik_4h-sic_case",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_termomoduli_pelte_wires",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_termomoduli_pelte_electrodes",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -23974,7 +23780,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_splav_sn-pb",
       "dst": "часть_termomoduli_pelte_solder",
       "type": "used_in",
       "meta": {
@@ -24031,39 +23837,7 @@
     },
     {
       "src": "material_ti-6al-4v",
-      "dst": "часть_tpv-lenty_cooling",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_tpv-lenty_pv_cells",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_tpv-lenty_emitter_ribbon",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
       "dst": "часть_superkondensatory_separator",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_superkondensatory_electrolyte",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -24078,7 +23852,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_superkondensatory_current_collector",
       "type": "used_in",
       "meta": {
@@ -24262,7 +24036,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ni-63",
       "dst": "часть_betavoltaiki_isotope",
       "type": "used_in",
       "meta": {
@@ -24302,7 +24076,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_monokristallicheskogo_sic",
       "dst": "часть_3d_sic-mikropillarnyi_tritii-betavoltaik_substrate",
       "type": "used_in",
       "meta": {
@@ -24318,7 +24092,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_monokristallicheskogo_sic",
       "dst": "часть_3d_sic-mikropillarnyi_tritii-betavoltaik_micropillars",
       "type": "used_in",
       "meta": {
@@ -24544,14 +24318,6 @@
     {
       "src": "material_ti-6al-4v",
       "dst": "часть_lt-sofc_interconnect",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_lt-sofc_seal",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -26326,14 +26092,6 @@
       }
     },
     {
-      "src": "material_b₄c",
-      "dst": "часть_halve_capacitors",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_epoksid_epon_828_+_teta",
       "dst": "часть_halve_encapsulant",
       "type": "used_in",
@@ -26350,14 +26108,6 @@
       }
     },
     {
-      "src": "material_ptfe",
-      "dst": "часть_halve_pcb",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_si",
       "dst": "часть_halve_die",
       "type": "used_in",
@@ -26366,7 +26116,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_carbon_ptfe",
       "dst": "часть_litii-tionilhloridnye_batarei_cathode",
       "type": "used_in",
       "meta": {
@@ -26374,7 +26124,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_aisi_304",
       "dst": "часть_litii-tionilhloridnye_batarei_case",
       "type": "used_in",
       "meta": {
@@ -26398,15 +26148,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_litii-tionilhloridnye_batarei_anode",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
+      "src": "material_hfo₂",
       "dst": "часть_memristornye_matritsy_crossbar",
       "type": "used_in",
       "meta": {
@@ -26414,7 +26156,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_memristornye_matritsy_word_drivers",
       "type": "used_in",
       "meta": {
@@ -26446,7 +26188,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_sot-mram_periphery",
       "type": "used_in",
       "meta": {
@@ -26470,15 +26212,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_sot-mram_cell_array",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_sot-mram_io_interface",
       "type": "used_in",
       "meta": {
@@ -26486,7 +26220,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_epotek_301-2",
       "dst": "часть_sic_mosfet_encapsulant",
       "type": "used_in",
       "meta": {
@@ -26494,7 +26228,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_monokristallicheskogo_sic",
       "dst": "часть_sic_mosfet_die",
       "type": "used_in",
       "meta": {
@@ -26510,32 +26244,8 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_sic_mosfet_gate_terminal",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_splav_sn-pb",
       "dst": "часть_sic_mosfet_solder",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ptfe",
-      "dst": "часть_brainchip_akida_2_pcb",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_b₄c",
-      "dst": "часть_brainchip_akida_2_capacitors",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -26567,14 +26277,6 @@
     },
     {
       "src": "material_ptfe",
-      "dst": "часть_intel_loihi_2_pcb",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ptfe",
       "dst": "часть_intel_loihi_2_substrate",
       "type": "used_in",
       "meta": {
@@ -26598,24 +26300,8 @@
       }
     },
     {
-      "src": "material_b₄c",
-      "dst": "часть_intel_loihi_2_capacitors",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_si",
       "dst": "часть_pcm_controller",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_pcm_cell_array",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -26630,7 +26316,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_pcm_periphery",
       "type": "used_in",
       "meta": {
@@ -26638,7 +26324,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_pcm_io_interface",
       "type": "used_in",
       "meta": {
@@ -26662,15 +26348,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_gr801_noel-v_risc-v_crystal_osc",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_gr801_noel-v_risc-v_flash",
       "type": "used_in",
       "meta": {
@@ -26702,7 +26380,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_si",
       "dst": "часть_gr801_noel-v_risc-v_sram",
       "type": "used_in",
       "meta": {
@@ -26718,7 +26396,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_silikon_40_50_shore_a",
       "dst": "часть_gr801_noel-v_risc-v_thermal_pad",
       "type": "used_in",
       "meta": {
@@ -28194,7 +27872,9 @@
       "group_zeno_power"
     ],
     "uses_material": [
+      "material_acetonitrile_teabf4",
       "material_aerogel",
+      "material_agm_steklovolokno",
       "material_al_bondwire",
       "material_alumina",
       "material_aluminum",
@@ -28202,6 +27882,7 @@
       "material_aluminum_6063",
       "material_aluminum_electrolytic",
       "material_barium_titanate",
+      "material_batio3",
       "material_bearing_steel_52100",
       "material_biological_tissue",
       "material_bt_resin",
@@ -28212,6 +27893,7 @@
       "material_cellulose",
       "material_ceramic_capacitors",
       "material_ceramic_mlcc",
+      "material_coefeb_mgo",
       "material_composite_material",
       "material_concrete_barite",
       "material_copper",
@@ -28227,20 +27909,25 @@
       "material_fr4",
       "material_gaSb",
       "material_generic_material",
+      "material_glass_ceramic_bcas",
       "material_gold_coating",
       "material_gps_ins_an_vsn_8",
+      "material_grafit_kompozit_bpp",
       "material_graphite",
+      "material_gst",
       "material_gst_chalcogenide",
       "material_h2so4_aqueous",
       "material_hyperalloy_t800",
       "material_hyperalloy_t850",
       "material_hyperalloy_tx",
       "material_inconel_718_turbine",
+      "material_ingaassb",
       "material_iron_powder",
       "material_koh_aqueous",
       "material_lead_free_solder",
       "material_lini_mn_co_o2",
       "material_lipf6_ec_dmc",
+      "material_lithium",
       "material_lithium_hydrogen_cell",
       "material_lithium_metal",
       "material_living_tissue_clone",
@@ -28277,6 +27964,7 @@
       "material_sodium",
       "material_spongy_lead",
       "material_spring_steel",
+      "material_ss_316l",
       "material_stainless_steel_304",
       "material_stainless_steel_316",
       "material_stainless_steel_440c",
@@ -28303,12 +27991,12 @@
   },
   "stats": {
     "nodes": 937,
-    "edges": 3138,
+    "edges": 3092,
     "dangling": {
       "complies_with": 240,
       "has_part": 1,
       "researched_by": 43,
-      "uses_material": 105
+      "uses_material": 115
     },
     "by_type": {
       "chast": 628,

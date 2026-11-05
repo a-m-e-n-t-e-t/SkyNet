@@ -103,69 +103,34 @@ graph LR
     часть_t1000_миметический_полисплав[mimetic_polyalloy]
     часть_t1001_миметический_полисплав[mimetic_polyalloy_t1001]
     material_al_6061_t6[Al 6061-T6]
-    material_b₄c[B₄C]
-    material_epoksid_epon_828_+_teta[Эпоксид Epon 828 + TETA]
-    material_gallinstan[Галлинстан]
-    material_latun_c36000[Cu 60–63% (основа), Zn…]
-    material_pcm[PCM]
-    material_poliimid[Полиимид]
-    material_ptfe[PTFE]
-    material_si[Si]
-    material_splav_sn_pb[Сплав Sn-Pb]
     material_ti_6al_4v[Ti-6Al-4V]
-    material_tin[TiN]
-    izdelie_kondensatory_keramicheskie -->|материал| material_tin
-    часть_halve_capacitors -->|материал| material_b₄c
-    часть_halve_encapsulant -->|материал| material_epoksid_epon_828_+_teta
-    часть_halve_substrate -->|материал| material_ptfe
-    часть_halve_pcb -->|материал| material_ptfe
+    material_si[Si]
+    material_latun_c36000[Cu 60–63% (основа), Zn…]
+    material_ss_aisi_304[SS AISI 304]
     часть_halve_die -->|материал| material_si
-    часть_litii_tionilhloridnye_batarei_cathode -->|материал| material_ti_6al_4v
-    часть_litii_tionilhloridnye_batarei_case -->|материал| material_ti_6al_4v
+    часть_litii_tionilhloridnye_batarei_case -->|материал| material_ss_aisi_304
     часть_litii_tionilhloridnye_batarei_terminal -->|материал| material_ti_6al_4v
     часть_litii_tionilhloridnye_batarei_separator -->|материал| material_ti_6al_4v
-    часть_litii_tionilhloridnye_batarei_anode -->|материал| material_ti_6al_4v
-    часть_memristornye_matritsy_crossbar -->|материал| material_ti_6al_4v
-    часть_memristornye_matritsy_word_drivers -->|материал| material_ti_6al_4v
+    часть_memristornye_matritsy_word_drivers -->|материал| material_si
     часть_memristornye_matritsy_adc -->|материал| material_si
     часть_memristornye_matritsy_controller -->|материал| material_si
     часть_memristornye_matritsy_bit_sense -->|материал| material_si
-    часть_sot_mram_periphery -->|материал| material_ti_6al_4v
+    часть_sot_mram_periphery -->|материал| material_si
     часть_sot_mram_sense_amplifiers -->|материал| material_si
     часть_sot_mram_row_decoders -->|материал| material_si
-    часть_sot_mram_cell_array -->|материал| material_ti_6al_4v
-    часть_sot_mram_io_interface -->|материал| material_ti_6al_4v
-    часть_sic_mosfet_encapsulant -->|материал| material_ti_6al_4v
-    часть_sic_mosfet_die -->|материал| material_ti_6al_4v
+    часть_sot_mram_io_interface -->|материал| material_si
     часть_sic_mosfet_lead_frame -->|материал| material_ti_6al_4v
-    часть_sic_mosfet_gate_terminal -->|материал| material_ti_6al_4v
-    часть_sic_mosfet_solder -->|материал| material_splav_sn_pb
-    часть_brainchip_akida_2_pcb -->|материал| material_ptfe
-    часть_brainchip_akida_2_capacitors -->|материал| material_b₄c
-    часть_brainchip_akida_2_substrate -->|материал| material_ptfe
-    часть_brainchip_akida_2_encapsulant -->|материал| material_epoksid_epon_828_+_teta
     часть_brainchip_akida_2_die -->|материал| material_si
-    часть_intel_loihi_2_pcb -->|материал| material_ptfe
-    часть_intel_loihi_2_substrate -->|материал| material_ptfe
     часть_intel_loihi_2_die -->|материал| material_si
-    часть_intel_loihi_2_encapsulant -->|материал| material_epoksid_epon_828_+_teta
-    часть_intel_loihi_2_capacitors -->|материал| material_b₄c
     часть_pcm_controller -->|материал| material_si
-    часть_pcm_cell_array -->|материал| material_ti_6al_4v
-    часть_pcm_selector -->|материал| material_pcm
-    часть_pcm_periphery -->|материал| material_ti_6al_4v
-    часть_pcm_io_interface -->|материал| material_ti_6al_4v
+    часть_pcm_periphery -->|материал| material_si
+    часть_pcm_io_interface -->|материал| material_si
     часть_kondensatory_keramicheskie_inner_electrodes -->|материал| material_ti_6al_4v
     часть_gr801_noel_v_risc_v_die -->|материал| material_si
-    часть_gr801_noel_v_risc_v_crystal_osc -->|материал| material_ti_6al_4v
-    часть_gr801_noel_v_risc_v_flash -->|материал| material_ti_6al_4v
-    часть_gr801_noel_v_risc_v_substrate -->|материал| material_epoksid_epon_828_+_teta
-    часть_gr801_noel_v_risc_v_pcb -->|материал| material_poliimid
+    часть_gr801_noel_v_risc_v_flash -->|материал| material_si
     часть_gr801_noel_v_risc_v_pins -->|материал| material_ti_6al_4v
-    часть_gr801_noel_v_risc_v_sram -->|материал| material_ti_6al_4v
+    часть_gr801_noel_v_risc_v_sram -->|материал| material_si
     часть_gr801_noel_v_risc_v_capacitors -->|материал| material_ti_6al_4v
-    часть_gr801_noel_v_risc_v_thermal_pad -->|материал| material_ti_6al_4v
-    часть_gr801_noel_v_risc_v_package -->|материал| material_epoksid_epon_828_+_teta
     часть_ibm_northpole_package -->|материал| material_ti_6al_4v
     часть_ibm_northpole_substrate -->|материал| material_ti_6al_4v
     часть_ibm_northpole_die -->|материал| material_si
@@ -179,28 +144,30 @@ graph LR
     часть_nvidia_jetson_orin_nano_storage -->|материал| material_ti_6al_4v
     часть_nvidia_jetson_orin_nano_heat_sink -->|материал| material_ti_6al_4v
     часть_nvidia_jetson_orin_nano_memory -->|материал| material_ti_6al_4v
-    часть_cameron_cpu -->|материал| material_poliimid
     часть_t850_cpu -->|материал| material_al_6061_t6
-    часть_rev9_полисплав_оболочка -->|материал| material_gallinstan
     часть_t800_cpu -->|материал| material_si
     часть_marcus_человеческий_мозг -->|материал| material_ti_6al_4v
     часть_t_x_cpu -->|материал| material_al_6061_t6
     часть_t600_cpu -->|материал| material_si
-    часть_t1000_миметический_полисплав -->|материал| material_gallinstan
     часть_t1001_миметический_полисплав -->|материал| material_ti_6al_4v
 ```
 
+_Показаны 5 наиболее часто используемых материалов (полный список — в graph1_data.json)._
+
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 35 |
-| `Si` | 14 |
-| `PTFE` | 6 |
+| `Si` | 21 |
+| `Ti-6Al-4V` | 17 |
 | `Эпоксид Epon 828 + TETA` | 5 |
-| `B₄C` | 3 |
+| `PTFE` | 3 |
 | `Al 6061-T6` | 3 |
 | `Полиимид` | 2 |
 | `Галлинстан` | 2 |
 | `TiN` | 1 |
+| `углеродная сажа (токопроводящий наполнитель) + PTFE 20% (связующее), опционально катализатор MnO₂; токосъёмник — никелевая сетка` | 1 |
+| `SS AISI 304` | 1 |
+| `HfO₂` | 1 |
+| `Epotek 301-2` | 1 |
+| `монокристаллического SiC` | 1 |
 | `Сплав Sn-Pb` | 1 |
 | `PCM` | 1 |
-| `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 1 |

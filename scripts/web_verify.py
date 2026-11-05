@@ -219,7 +219,7 @@ def set_body_param_rows(body: str, mass_kg: float | None, share: float | None,
 
 def set_body_materials_link(body: str, material_id: str) -> str:
     pattern = r'(?m)^- `[^`]+` → \[`[^`]+`\]\(([^)]+)\)$'
-    rel_dir = '../' * 3  # часть_*/*/ → материалы/
+    rel_dir = '../' * 4  # реальные данные/изделия/<кат>/<изделие>/часть_*/ → реальные данные/материалы/
     new, n = re.subn(pattern, f'- `{material_id}` → [`{material_id}.md`]({rel_dir}материалы/{material_id}.md)', body, count=1)
     return new if n else body
 
