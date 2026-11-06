@@ -33,15 +33,15 @@ scaling_type: количественный
     w: 6
     h: 0.2
   выработка_энергии_W: 0
-  выработка_тепла_W: 1
+  выработка_тепла_W: 0.012
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-07
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.nature.com/articles/s44306-023-00003-2
-источник_дата: 2026-11-05
+источник_дата: 2026-11-07
 ---
 # Часть: часть_sot-mram_cell_array
 
@@ -59,7 +59,7 @@ scaling_type: количественный
 | доля массы родителя | 0.4 | — | canon |
 | габариты (Д×Ш×В) | 6×6×0.2 | mm | Igarashi et al., npj Spintronics 2024 — single-nanometer CoFeB/MgO MTJ |
 | выработка энергии | 0 | W | canon |
-| выработка тепла | 1 | W | canon |
+| выработка тепла | 0.012 | W | расчёт: <100 fJ/бит (imec 2023) / 350 fJ@280 ps (VLSI 2018) при пиковой полосе записи ~120 Гбит/с + омический нагрев SOT-линий |
 | материал | coefeb_mgo | — | coefeb_mgo.md |
 
 ## Принцип работы
@@ -77,4 +77,6 @@ scaling_type: количественный
 ## Источники
 
 - Igarashi et al., npj Spintronics 2024 — single-nanometer CoFeB/MgO MTJ: https://www.nature.com/articles/s44306-023-00003-2 (проверено 2026-11-05)
+- imec-int.com/en/press — Extremely scaled SOT-MRAM: record-low switching energy (Dec 2023): https://www.imec-int.com/en/press/imecs-extremely-scaled-sot-mram-devices-show-record-low-switching-energy-and-virtually (проверено 2026-11-07)
+- Garello et al., VLSI 2018 — SOT-MRAM 300 mm integration (350 fJ @ 280 ps): https://ethz.ch/content/dam/ethz/special-interest/matl/intermag-dam/Publications/Papers/2018/VLSI_2018.pdf (проверено 2026-11-07)
 - Материалы: реальные данные/материалы/

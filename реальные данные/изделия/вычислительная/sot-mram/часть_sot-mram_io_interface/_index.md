@@ -33,15 +33,15 @@ scaling_type: количественный
     w: 1
     h: 0.35
   выработка_энергии_W: 0
-  выработка_тепла_W: 1
+  выработка_тепла_W: 0.008
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-07
 источник: web_search
 источник_разбора: канон
 источник_url: https://ieeexplore.ieee.org/iel8/6570653/10879154/11202876.pdf
-источник_дата: 2026-11-05
+источник_дата: 2026-11-07
 ---
 # Часть: часть_sot-mram_io_interface
 
@@ -59,7 +59,7 @@ scaling_type: количественный
 | доля массы родителя | 0.2 | — | canon |
 | габариты (Д×Ш×В) | 1.2×1×0.35 | mm | SOT-MRAM device-to-system co-design: write drivers, sensing circuits, level shifters (IEEE 2025) |
 | выработка энергии | 0 | W | canon |
-| выработка тепла | 1 | W | canon |
+| выработка тепла | 0.008 | W | расчёт: DDR-выходные каскады, ~10 мА суммарно при 0.8 В swinging |
 | материал | si | — | si.md |
 
 ## Принцип работы
@@ -77,4 +77,6 @@ I/O-блок принимает адреса/команды по внешней 
 ## Источники
 
 - SOT-MRAM device-to-system co-design: write drivers, sensing circuits, level shifters (IEEE 2025): https://ieeexplore.ieee.org/iel8/6570653/10879154/11202876.pdf (проверено 2026-11-05)
+- imec-int.com/en/press — Extremely scaled SOT-MRAM: record-low switching energy (Dec 2023): https://www.imec-int.com/en/press/imecs-extremely-scaled-sot-mram-devices-show-record-low-switching-energy-and-virtually (проверено 2026-11-07)
+- Garello et al., VLSI 2018 — SOT-MRAM 300 mm integration (350 fJ @ 280 ps): https://ethz.ch/content/dam/ethz/special-interest/matl/intermag-dam/Publications/Papers/2018/VLSI_2018.pdf (проверено 2026-11-07)
 - Материалы: реальные данные/материалы/

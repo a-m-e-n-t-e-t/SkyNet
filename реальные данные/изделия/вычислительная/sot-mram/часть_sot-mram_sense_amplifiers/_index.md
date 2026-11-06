@@ -34,15 +34,15 @@ scaling_type: количественный
     w: 0.9
     h: 0.4
   выработка_энергии_W: 0
-  выработка_тепла_W: 1
+  выработка_тепла_W: 0.010
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-07
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.imec-int.com/en/articles/novel-sot-mram-architecture-opens-doors-high-density-last-level-cache-memory-applications
-источник_дата: 2026-11-05
+источник_дата: 2026-11-07
 ---
 # Часть: часть_sot-mram_sense_amplifiers
 
@@ -60,7 +60,7 @@ scaling_type: количественный
 | доля массы родителя | 0.1667 | — | оценка |
 | габариты (Д×Ш×В) | 1.4×0.9×0.4 | mm | IMEC SOT-MRAM (2023) + демонстрация 1 Kb SOT-MRAM MUX-массива (researching.cn, 2024): чтение состояния MTJ через развязку записи |
 | выработка энергии | 0 | W | canon |
-| выработка тепла | 1 | W | canon |
+| выработка тепла | 0.010 | W | расчёт: 512 SA × ~20 µA × ~1 V опорное напряжение считывания (импульс ~2 нс, imec SOT-MRAM) |
 | материал | si | — | si.md |
 
 ## Принцип работы
@@ -78,4 +78,6 @@ Sense-усилитель сравнивает сопротивление выб�
 ## Источники
 
 - IMEC SOT-MRAM (2023) + демонстрация 1 Kb SOT-MRAM MUX-массива (researching.cn, 2024): чтение состояния MTJ через развязку записи: https://www.imec-int.com/en/articles/novel-sot-mram-architecture-opens-doors-high-density-last-level-cache-memory-applications (проверено 2026-11-05)
+- imec-int.com/en/press — Extremely scaled SOT-MRAM: record-low switching energy (Dec 2023): https://www.imec-int.com/en/press/imecs-extremely-scaled-sot-mram-devices-show-record-low-switching-energy-and-virtually (проверено 2026-11-07)
+- Garello et al., VLSI 2018 — SOT-MRAM 300 mm integration (350 fJ @ 280 ps): https://ethz.ch/content/dam/ethz/special-interest/matl/intermag-dam/Publications/Papers/2018/VLSI_2018.pdf (проверено 2026-11-07)
 - Материалы: реальные данные/материалы/
