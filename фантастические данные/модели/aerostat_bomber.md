@@ -46,6 +46,8 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/Aerostat
+источник_дата: 2026-11-06
 источник_разбора: канон
 ии_перепроектирован:
   статус: false
@@ -100,13 +102,15 @@ relations:
 alice_specs: ALICE sync protocol v9.31 (SkyNet hive-mind)
 original_improved: canon
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-06
 ---
 # SkyNet-AerostatBomber
 
 ## Описание
 
 Aerostat Bomber — увеличенный Aerostat; несёт плазменные бомбы; групповая атака.
+
+Семейство Aerostat (прозвища «Flyer» / «Wasps») — неантропоморфные Hunter-Killer Skynet, серийно выпускавшиеся до 2018 года; базовая машина ведёт воздушную разведку местности и сил Сопротивления и способна передавать сигналы Harvester'ам для наведения на убежища людей (Terminator: Salvation, 2009 — фильм и игра Terminator Salvation). Бомбардировочный вариант увеличен относительно разведчика (размах 2 м против 1,2 м у базового Aerostat, масса 60 кг против 25 кг) и переведён из разведывательной роли в ударную: групповая атака плазменными бомбами по наземным целям.
 
 ## Источник канон
 
@@ -154,3 +158,4 @@ Aerostat Bomber — увеличенный Aerostat; несёт плазменн
 ## Источники
 
 - Канон: Terminator: Salvation (2009)
+- [Aerostat | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/Aerostat)
