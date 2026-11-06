@@ -29,6 +29,7 @@ id: izdelie_SkyNet-PowerBackpack
     доля_массы: 0.15
   - часть: часть_SkyNet-PowerBackpack_mounting
     материал: ss_aisi_304
+    форма: крепёж_пружины_холоднодеформ
     доля_массы: 0.08
 scaling_type: количественный
 соединители: []
