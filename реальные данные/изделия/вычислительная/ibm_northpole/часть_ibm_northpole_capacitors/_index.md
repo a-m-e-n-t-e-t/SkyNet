@@ -42,8 +42,10 @@ scaling_type: количественный
   источник_url: 'https://www.murata.com/en-global/products/productdetail?partno=GRM21BR61E106KA73L'
   источник_дата: '2026-11-05'
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 источник: web_search
+источник_url: https://www.murata.com/en-global/products/productdetail?partno=GRM21BR61E106KA73L
+источник_дата: '2026-11-06'
 источник_разбора: канон
 ---
 # Часть: часть_ibm_northpole_capacitors
