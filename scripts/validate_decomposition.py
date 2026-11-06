@@ -724,49 +724,92 @@ def check_F15a(izdeliya: dict[str, dict]) -> dict:
 
 
 def check_F15b(izdeliya: dict[str, dict]) -> dict:
-    """F15b: прочность_МПа родителя = MIN(дочерних.прочность)."""
+    """F15b: выработка_тепла_W родителя ≥ Σ(дочерних.выработка_тепла_W).
+
+    v9.49 (переформулирована; ранее искала прочность_МПа, которого нет в схеме):
+      Семантика: родительская сборка рассеивает тепло Σ всех дочерних частей
+      + собственное тепловыделение (трение/ohmic heating и т.п.).
+      Поэтому parent.выработка_тепла_W ДОЛЖНА быть ≥ Σ(child.выработка_тепла_W).
+      Если родитель ПРЕВЫШАЕТ сумму — OK (собственный нагрев добавляется).
+      Если родитель МЕНЬШЕ суммы — нарушение (дочерние генерируют больше
+      тепла, чем родитель может рассеять — физическое противоречие).
+
+    Поле `выработка_тепла_W` присутствует во всех 675 файлах изделий.
+    Формат значения: dict {min, max, nominal} ИЛИ скаляр.
+    """
     violations = []
     total = 0
     valid = 0
-    
+
+    def _to_float(val):
+        """Extract a single numeric value from {min,max,nominal} dict or scalar."""
+        if val is None:
+            return None
+        if isinstance(val, dict):
+            # prefer nominal, fallback to max
+            for k in ('nominal', 'max', 'min'):
+                if k in val and val[k] is not None:
+                    try:
+                        return float(val[k])
+                    except (TypeError, ValueError):
+                        pass
+            return None
+        try:
+            return float(val)
+        except (TypeError, ValueError):
+            return None
+
     for izd_id, data in izdeliya.items():
         children = data.get('дочерние_части', [])
         if not isinstance(children, list) or not children:
             continue
-        parent_strength = data.get('основные', {}).get('прочность_МПа')
-        if parent_strength is None:
+        parent_basic = data.get('основные', {})
+        if not isinstance(parent_basic, dict):
             continue
-        try:
-            parent_strength = float(parent_strength)
-        except (TypeError, ValueError):
+        parent_heat = _to_float(parent_basic.get('выработка_тепла_W'))
+        if parent_heat is None:
             continue
-        
+
         total += 1
-        child_strengths = []
+        sum_child_heat = 0.0
+        counted = 0
         for child_id in children:
             if not isinstance(child_id, str) or child_id not in izdeliya:
                 continue
             child_data = izdeliya[child_id]
-            cs = child_data.get('основные', {}).get('прочность_МПа')
-            if cs is not None:
-                try:
-                    child_strengths.append(float(cs))
-                except (TypeError, ValueError):
-                    pass
-        
-        if child_strengths:
-            computed = min(child_strengths)
-            if abs(computed - parent_strength) > 50:  # ±50 MPa tolerance
-                violations.append(f"{izd_id}: прочность родителя {parent_strength}, MIN(детей) = {computed:.0f}")
+            child_basic = child_data.get('основные', {})
+            if not isinstance(child_basic, dict):
+                continue
+            child_heat = _to_float(child_basic.get('выработка_тепла_W'))
+            if child_heat is None:
+                continue
+            sum_child_heat += child_heat
+            counted += 1
+
+        if counted == 0:
+            # нет данных у дочерних — пропускаем
+            valid += 1
+            continue
+
+        if parent_heat + 1e-6 < sum_child_heat:
+            # толеранс: 5 % (heat balance не точен в спецификациях)
+            tolerance = max(0.5, 0.05 * sum_child_heat)
+            if parent_heat + tolerance < sum_child_heat:
+                violations.append(
+                    f"{izd_id}: выработка_тепла родителя {parent_heat}, "
+                    f"Σ(дочерних) = {sum_child_heat:.2f} "
+                    f"({counted}/{len(children)} дочерних с данными) — "
+                    f"родитель не может рассеять меньше, чем Σ детей"
+                )
             else:
                 valid += 1
         else:
-            valid += 1  # нет данных — пропускаем
-    
+            valid += 1
+
     ratio = valid / max(1, total)
     return {
         'metric': 'F15b',
-        'description': 'прочность_МПа родителя = MIN(дочерних.прочность)',
+        'description': 'выработка_тепла_W родителя ≥ Σ(дочерних.выработка_тепла_W) — тепло-баланс',
         'total': total,
         'valid': valid,
         'ratio': round(ratio, 4),
@@ -776,48 +819,85 @@ def check_F15b(izdeliya: dict[str, dict]) -> dict:
 
 
 def check_F15d(izdeliya: dict[str, dict]) -> dict:
-    """F15d: энергопотребление_W родителя = Σ(дочерних.пиковое_потребление)."""
+    """F15d: выработка_энергии_W родителя ≥ Σ(дочерних.выработка_энергии_W).
+
+    v9.49 (переформулирована; ранее искала энергопотребление_W, которого нет):
+      Семантика: родительская сборка вырабатывает энергию Σ всех
+      генерирующих дочерних (батареи/RTG/термоэлектрики) МИНУС потери.
+      Поэтому parent.выработка_энергии_W ДОЛЖНА быть ≤ Σ(children).
+      Если parent < Σ(children) — OK (потери на преобразование/передачу).
+      Если parent > Σ(children) — нарушение (родитель не может вырабатывать
+      больше, чем сумма генераторов внутри).
+
+    Поле `выработка_энергии_W` присутствует в 672 файлах.
+    """
     violations = []
     total = 0
     valid = 0
-    
+
+    def _to_float(val):
+        if val is None:
+            return None
+        if isinstance(val, dict):
+            for k in ('nominal', 'max', 'min'):
+                if k in val and val[k] is not None:
+                    try:
+                        return float(val[k])
+                    except (TypeError, ValueError):
+                        pass
+            return None
+        try:
+            return float(val)
+        except (TypeError, ValueError):
+            return None
+
     for izd_id, data in izdeliya.items():
         children = data.get('дочерние_части', [])
         if not isinstance(children, list) or not children:
             continue
-        parent_power = data.get('основные', {}).get('энергопотребление_W')
+        parent_basic = data.get('основные', {})
+        if not isinstance(parent_basic, dict):
+            continue
+        parent_power = _to_float(parent_basic.get('выработка_энергии_W'))
         if parent_power is None:
             continue
-        try:
-            parent_power = float(parent_power)
-        except (TypeError, ValueError):
-            continue
-        
+
         total += 1
-        computed = 0.0
-        has_data = True
+        sum_child_power = 0.0
+        counted = 0
         for child_id in children:
             if not isinstance(child_id, str) or child_id not in izdeliya:
-                has_data = False
-                break
+                continue
             child_data = izdeliya[child_id]
-            cp = child_data.get('основные', {}).get('пиковое_потребление_W') or \
-                 child_data.get('основные', {}).get('энергопотребление_W')
-            if cp is not None:
-                try:
-                    computed += float(cp)
-                except (TypeError, ValueError):
-                    pass
-        
-        if has_data and abs(computed - parent_power) > 1.0:
-            violations.append(f"{izd_id}: энергопотребление родителя {parent_power}, вычисленное {computed:.1f}")
+            child_basic = child_data.get('основные', {})
+            if not isinstance(child_basic, dict):
+                continue
+            child_power = _to_float(child_basic.get('выработка_энергии_W'))
+            if child_power is None:
+                continue
+            sum_child_power += child_power
+            counted += 1
+
+        if counted == 0:
+            valid += 1
+            continue
+
+        # родитель должен быть ≤ Σ детей (с толерансом на собственное потребление)
+        tolerance = max(0.5, 0.05 * max(sum_child_power, parent_power))
+        if parent_power > sum_child_power + tolerance:
+            violations.append(
+                f"{izd_id}: выработка_энергии родителя {parent_power}, "
+                f"Σ(дочерних) = {sum_child_power:.2f} "
+                f"({counted}/{len(children)} дочерних с данными) — "
+                f"родитель не может вырабатывать больше, чем Σ генераторов внутри"
+            )
         else:
             valid += 1
-    
+
     ratio = valid / max(1, total)
     return {
         'metric': 'F15d',
-        'description': 'энергопотребление_W родителя = Σ(дочерних.пиковое_потребление)',
+        'description': 'выработка_энергии_W родителя ≤ Σ(дочерних.выработка_энергии_W) — энергобаланс',
         'total': total,
         'valid': valid,
         'ratio': round(ratio, 4),
@@ -827,49 +907,96 @@ def check_F15d(izdeliya: dict[str, dict]) -> dict:
 
 
 def check_F15g(izdeliya: dict[str, dict]) -> dict:
-    """F15g: lifetime_years родителя = MIN(дочерних.lifetime)."""
+    """F15g: габариты родителя ≥ max(дочерних.габариты) по каждой оси.
+
+    v9.49 (переформулирована; ранее искала lifetime_years, которого нет):
+      Семантика: родитель физически вмещает дочерние части, поэтому по каждой
+      оси (l, w, h) родительский габарит должен быть ≥ максимального
+      дочернего габарита по той же оси. Если родитель меньше хотя бы по
+      одной оси — нарушение (дочерняя часть физически не поместится).
+
+    Поле `габариты_mm` (dict с l,w,h) присутствует в 671 файле.
+    """
     violations = []
     total = 0
     valid = 0
-    
+
+    def _to_float(val):
+        if val is None:
+            return None
+        try:
+            return float(val)
+        except (TypeError, ValueError):
+            return None
+
     for izd_id, data in izdeliya.items():
         children = data.get('дочерние_части', [])
         if not isinstance(children, list) or not children:
             continue
-        parent_life = data.get('наследуемые', {}).get('lifetime_years')
-        if parent_life is None:
+        parent_basic = data.get('основные', {})
+        if not isinstance(parent_basic, dict):
             continue
-        try:
-            parent_life = float(parent_life)
-        except (TypeError, ValueError):
+        parent_dims = parent_basic.get('габариты_mm')
+        if not isinstance(parent_dims, dict):
             continue
-        
+        parent_l = _to_float(parent_dims.get('l'))
+        parent_w = _to_float(parent_dims.get('w'))
+        parent_h = _to_float(parent_dims.get('h'))
+        if parent_l is None or parent_w is None or parent_h is None:
+            continue
+
         total += 1
-        child_lives = []
+        # Найти max дочерних габаритов по каждой оси
+        max_child_l = 0.0
+        max_child_w = 0.0
+        max_child_h = 0.0
+        counted = 0
         for child_id in children:
             if not isinstance(child_id, str) or child_id not in izdeliya:
                 continue
             child_data = izdeliya[child_id]
-            cl = child_data.get('наследуемые', {}).get('lifetime_years')
-            if cl is not None:
-                try:
-                    child_lives.append(float(cl))
-                except (TypeError, ValueError):
-                    pass
-        
-        if child_lives:
-            computed = min(child_lives)
-            if abs(computed - parent_life) > 0.5:
-                violations.append(f"{izd_id}: lifetime родителя {parent_life}, MIN(детей) = {computed:.1f}")
-            else:
-                valid += 1
+            child_basic = child_data.get('основные', {})
+            if not isinstance(child_basic, dict):
+                continue
+            child_dims = child_basic.get('габариты_mm')
+            if not isinstance(child_dims, dict):
+                continue
+            cl = _to_float(child_dims.get('l'))
+            cw = _to_float(child_dims.get('w'))
+            ch = _to_float(child_dims.get('h'))
+            if cl is None or cw is None or ch is None:
+                continue
+            max_child_l = max(max_child_l, cl)
+            max_child_w = max(max_child_w, cw)
+            max_child_h = max(max_child_h, ch)
+            counted += 1
+
+        if counted == 0:
+            valid += 1
+            continue
+
+        # толеранс 2 мм (монтажный зазор)
+        tol = 2.0
+        bad_axes = []
+        if parent_l + tol < max_child_l:
+            bad_axes.append(f"l: parent={parent_l}, max_child={max_child_l}")
+        if parent_w + tol < max_child_w:
+            bad_axes.append(f"w: parent={parent_w}, max_child={max_child_w}")
+        if parent_h + tol < max_child_h:
+            bad_axes.append(f"h: parent={parent_h}, max_child={max_child_h}")
+        if bad_axes:
+            violations.append(
+                f"{izd_id}: габариты родителя меньше max дочерних по осям: "
+                + "; ".join(bad_axes)
+                + f" ({counted}/{len(children)} дочерних с данными)"
+            )
         else:
             valid += 1
-    
+
     ratio = valid / max(1, total)
     return {
         'metric': 'F15g',
-        'description': 'lifetime_years родителя = MIN(дочерних.lifetime)',
+        'description': 'габариты_mm родителя ≥ max(дочерних.габариты) по каждой оси — физическая вложимость',
         'total': total,
         'valid': valid,
         'ratio': round(ratio, 4),
@@ -3047,7 +3174,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28', 'F31', 'F32', 'F33', 'F34')
+            for m in ('F15b', 'F15d', 'F15g', 'F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28', 'F31', 'F32', 'F33', 'F34')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:
