@@ -52,6 +52,8 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/Category:Submarines
+источник_дата: 2026-11-06
 источник_разбора: канон
 ии_перепроектирован:
   статус: false
@@ -95,13 +97,15 @@ relations:
 alice_specs: ALICE sync protocol v9.31 (SkyNet hive-mind)
 original_improved: canon
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-06
 ---
 # SkyNet-MKSub
 
 ## Описание
 
 MK-Sub — усовершенствованная подводная лодка Скайнет; меньше HK-Sub; специализирована на разведке.
+
+По верифицированным данным веб-поиска (проверено 2026-11-06): обозначение «MK-Sub» НЕ найдено ни в одном канонном источнике франшизы. Категория «Submarines» Terminator Wiki (Fandom, получена через web-архив) содержит ровно 10 подводных машин франшизы — Aquatic Work Bot, ASW Bot, Gorshkov, HK-Hydrofoil, Hydrobot, USS Jimmy Carter, Korolev, Kraken, USS Roosevelt, USS Wilmington — ни одной с префиксом «MK». Атрибуция Resistance (2019) опровергнута полным списком врагов игры (StrategyWiki): базовая игра — Spider Scout, Silverfish, Scout Drone, Armored Drone, Armored Spider, Plasma Turret, T-47, T-800, HK-Aerial, HK-Tank; DLC Annihilation Line — HK-Centurion, T-600, T-650; подводных/морских юнитов в игре нет. Ближайшие канонные аналоги для ниши «малая подводная машина»: HK-Hydrofoil (Cyberdyne Systems C Series Autonomous Submersible Hydroplane, «Sea HK», Skynet 2.0 — гибрид канонерской лодки, подлодки и глиссера), Kraken (класс противолодочной войны Skynet, патрулирует океаны в 2027 г.), Hydrobot (малый подводный инфильтратор), ASW Bot. Файл, по-видимому, порождён процедурой разложения; РАСХОЖДЕНИЕ С ФАЙЛОМ: атрибуция work_046 и идентификатор «MK» источниками не подтверждаются; связь successor_of: SkyNet-HKSubmarine сохранена; таксономия (водный_подводный) оставлена до отдельной реклассификации/слияния с канонными HK-Hydrofoil/Kraken (F13/F33-таксономия), как для T-300 (#705)/T-950 (#708)/T-400 (#707)/T-20 (#709)/T-202 (#712)/T-204 (#710).
 
 ## Источник канон
 
@@ -150,4 +154,8 @@ MK-Sub — усовершенствованная подводная лодка 
 
 ## Источники
 
-- Канон: Terminator: Resistance (2019)
+- Канон: Terminator: Resistance (2019) — атрибуция опровергнута: в игре нет подводных/морских юнитов (см. описание)
+- [Category:Submarines | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/Category:Submarines) — полный список подводных машин франшизы (10 позиций, без «MK»); проверено 2026-11-06 через web-архив
+- [Terminator: Resistance/Enemies — StrategyWiki](https://strategywiki.org/wiki/Terminator:_Resistance/Enemies) — полный список врагов игры (Spider Scout, Silverfish, Scout/Armored Drone, Armored Spider, Plasma Turret, T-47, T-800, HK-Aerial, HK-Tank; DLC: HK-Centurion, T-600, T-650) (проверено 2026-11-06)
+- [HK-Hydrofoil | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/HK-Hydrofoil) — канонный подводный HK Skynet 2.0 (проверено 2026-11-06)
+- [Kraken | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/Kraken) — класс противолодочных машин Skynet, 2027 г. (проверено 2026-11-06)
