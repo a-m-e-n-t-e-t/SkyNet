@@ -175,18 +175,19 @@ graph LR
     часть_t800_оптический_сенсор_1[optical_camera]
     часть_t800_аудио_сенсор[audio_microphone]
     izdelie_zvukovaya_linza__ii[прочее]
-    material_al_6061_t6[Al 6061-T6]
+    material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_aln[AlN]
-    material_becu[BeCu]
+    material_becu[Cu основа; Be 1.90–2.1…]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
+    material_magnitnaya_rezina_ferritovyi_poroshok[Fe₃O₄ (магнетит) 1–20 …]
     material_metapoverhnost[метаповерхность]
-    material_monokristallicheskogo_sic[монокристаллического SiC]
+    material_monokristallicheskogo_sic[SiC — стехиометрически…]
     material_peek[PEEK]
-    material_poliimid[Полиимид]
+    material_poliimid[Ароматический полиимид…]
     material_si[Si]
     material_silikon_80_shore_a_+_steklyannye_mikrosfery[Силикон 80 Shore A + с…]
     material_ss_aisi_304[SS AISI 304]
-    material_stal_st3[Сталь Ст3]
+    material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_ti_6al_4v[Ti-6Al-4V]
     izdelie_aesa_radar -->|материал| material_al_6061_t6
     часть_event_cameras_housing -->|материал| material_al_6061_t6
@@ -320,6 +321,7 @@ graph LR
     часть_ferritovye_klinya_na_kabelyah_sensorov_mounting -->|материал| material_peek
     часть_ferritovye_klinya_na_kabelyah_sensorov_connectors -->|материал| material_stal_st3
     часть_ferritovye_klinya_na_kabelyah_sensorov_housing -->|материал| material_al_6061_t6
+    часть_ferritovye_klinya_na_kabelyah_sensorov_core -->|материал| material_magnitnaya_rezina_ferritovyi_poroshok
     часть_t_x_сенсоры -->|материал| material_ti_6al_4v
     часть_hk_aerial_сенсоры -->|материал| material_al_6061_t6
     часть_t850_сенсоры -->|материал| material_ti_6al_4v
@@ -330,16 +332,17 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 79 |
+| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 79 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 17 |
-| `BeCu` | 8 |
-| `Сталь Ст3` | 8 |
-| `Полиимид` | 5 |
+| `Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)` | 8 |
+| `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 8 |
+| `Ароматический полиимид PMDA-ODA (тип Kapton): повторяющееся звено C22H10N2O5 (M ≈ 382.2 г/моль) из пиромеллитового диангидрида (PMDA) и 4,4′-оксианилина (ODA); чередующиеся имидные циклы C(=O)–N–C(=O) и фениленовые/дифениловый эфирный сегменты` | 5 |
 | `Si` | 5 |
 | `Ti-6Al-4V` | 4 |
 | `AlN` | 4 |
 | `SS AISI 304` | 4 |
 | `метаповерхность` | 1 |
-| `монокристаллического SiC` | 1 |
+| `SiC — стехиометрический карбид кремния (50 ат.% Si / 50 ат.% C); монокристалл 4H-SiC, n-легирование азотом (подложки) или высокочистый без легирования` | 1 |
 | `Силикон 80 Shore A + стеклянные микросферы` | 1 |
 | `PEEK` | 1 |
+| `Fe₃O₄ (магнетит) 1–20 wt% + силиконовый каучук (Ecoflex/PDMS)` | 1 |

@@ -16,6 +16,8 @@ graph TB
     script_generate_decomposition_py(("generate_decomposition.py"))
     script_generate_graphs_py(("generate_graphs.py"))
     script_generate_wrapper_izdeliya_py(("generate_wrapper_izdeliya.py"))
+    script_migrate_aliases_py(("migrate_aliases.py"))
+    script_migrate_dedup_materials_py(("migrate_dedup_materials.py"))
     script_migrate_material_form_py(("migrate_material_form.py"))
     script_pipeline_py(("pipeline.py"))
     script_pre-commit-hook_py(("pre-commit-hook.py"))
@@ -196,6 +198,7 @@ graph TB
     script_generate_wrapper_izdeliya_py -.->|imports| script_validate_decomposition_py
     script_generate_wrapper_izdeliya_py -.->|imports| script__helpers_py
     script_generate_wrapper_izdeliya_py -.->|imports| script_generate_decomposition_py
+    script_migrate_dedup_materials_py -.->|imports| script_validate_decomposition_py
     script_pipeline_py -.->|imports| script__helpers_py
     script_pre-commit-hook_py -.->|imports| script_validate_decomposition_py
     script_pre-commit-hook_py -.->|imports| script__helpers_py
@@ -238,15 +241,14 @@ graph TB
     section_§11_6_МНОГОСЛОЙНАЯ_БРОНЯ_(v9_22_НОВОЕ_—_5_слоёв) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§9_5_Авто-отчёт_после_batch_(v9_24_НОВОЕ_—_из_аудита_диалога -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§9_6_Запрет_эвристик_без_явного_правила_(v9_24_НОВОЕ_—_из_ау -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
-    section_§9_7_Прозрачная_остановка_(v9_24_НОВОЕ_—_из_аудита_диалога) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 187, рёбер: 216 (показано топ-50)._
+_Узлов: 189, рёбер: 217 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|
 | spec_section | 146 |
-| script | 21 |
+| script | 23 |
 | concept_doc | 17 |
 | catalog | 1 |
 | readme | 1 |

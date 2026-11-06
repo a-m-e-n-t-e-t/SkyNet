@@ -180,9 +180,13 @@ def graph1_build() -> dict:
         stds = d.get("стандарты", []) or []
         if isinstance(stds, list):
             for s in stds:
-                if s and s != "null":
-                    target = s if s.startswith("standart_") else f"standart_{s}"
-                    add_edge(nid, target, "complies_with")
+                # v9.44 fix: стандарт может быть dict/числом (мусор CSV) —
+                # краш 'dict' object has no attribute 'startswith' ронял
+                # генератор графов целиком (и pre-commit). Нестроки — skip.
+                if not isinstance(s, str) or not s or s == "null":
+                    continue
+                target = s if s.startswith("standart_") else f"standart_{s}"
+                add_edge(nid, target, "complies_with")
 
         # researched_by (исследовательская группа)
         ig = d.get("исследовательская_группа")
@@ -201,9 +205,13 @@ def graph1_build() -> dict:
         stds = d.get("стандарты", []) or []
         if isinstance(stds, list):
             for s in stds:
-                if s and s != "null":
-                    target = s if s.startswith("standart_") else f"standart_{s}"
-                    add_edge(nid, target, "complies_with")
+                # v9.44 fix: стандарт может быть dict/числом (мусор CSV) —
+                # краш 'dict' object has no attribute 'startswith' ронял
+                # генератор графов целиком (и pre-commit). Нестроки — skip.
+                if not isinstance(s, str) or not s or s == "null":
+                    continue
+                target = s if s.startswith("standart_") else f"standart_{s}"
+                add_edge(nid, target, "complies_with")
 
         # researched_by
         ig = d.get("исследовательская_группа")
@@ -222,9 +230,13 @@ def graph1_build() -> dict:
         stds = d.get("стандарты", []) or []
         if isinstance(stds, list):
             for s in stds:
-                if s and s != "null":
-                    target = s if s.startswith("standart_") else f"standart_{s}"
-                    add_edge(nid, target, "complies_with")
+                # v9.44 fix: стандарт может быть dict/числом (мусор CSV) —
+                # краш 'dict' object has no attribute 'startswith' ронял
+                # генератор графов целиком (и pre-commit). Нестроки — skip.
+                if not isinstance(s, str) or not s or s == "null":
+                    continue
+                target = s if s.startswith("standart_") else f"standart_{s}"
+                add_edge(nid, target, "complies_with")
 
     # 4) Стандарты
     for f in sorted((REAL_DATA / "стандарты").glob("*.md")):

@@ -2212,6 +2212,222 @@ def check_F30(izdeliya: dict[str, dict]) -> dict:
 
 
 # ============================================================================
+# F31: УНИКАЛЬНОСТЬ ID/АЛИАСОВ МАТЕРИАЛОВ И ТЕХНОЛОГИЙ (v9.44, дедупликация)
+# ============================================================================
+
+def _norm_id_key(s: str) -> str:
+    """Агрессивная нормализация id: lowercase, убрать [-_ и пробелы].
+
+    'material_ni-ysz' == 'material_ni_ysz'; 'material_p_vdf-trfe-ctfe' ==
+    'material_pvdftrfectfe'. Ловит дубли, созданные из-за вариаций
+    транслитерации/префиксов одного и того же имени.
+    """
+    return re.sub(r'[\s_\-]+', '', str(s or '').lower())
+
+
+def _load_materials_and_techs() -> list[tuple[Path, dict]]:
+    """Загрузить front matter всех материалов и технологий (для F31/F32)."""
+    entries = []
+    for sub in ("материалы", "технологии"):
+        d = SKYNET_REPO / "реальные данные" / sub
+        for f in sorted(d.glob("*.md")):
+            if f.name.startswith('_'):
+                continue
+            data, _, _ = read_yaml_frontmatter(f)
+            if isinstance(data, dict) and data.get('id'):
+                entries.append((f, data))
+    return entries
+
+
+def check_F31(entries: list[tuple[Path, dict]] | None = None) -> dict:
+    """F31: Уникальность id — дубли id, неконсистентные алиасы, битые ссылки.
+
+    BLOCKING (после стабилизации): создание второго файла с существующим id
+    (или нормализованным вариантом id) — источник «тихих» рассинхронизаций
+    (см. #661: material_ni-ysz создан поверх material_ni_ysz_cermet).
+
+    Критерии нарушения (все в формате '<id>: ...' — совместим с дефолтной
+    веткой normalizeViolationKey и титульником '[F31] Verify: <id>'):
+      a. литеральный дубликат id в двух файлах
+      b. канонический_id ссылается на несуществующий id
+      c. алиас (файл с каноническим_id != id) НЕ перечислен в псевдонимах
+         канонического файла (несимметричная пара)
+      d. псевдоним в каноническом файле не имеет файла-алиаса с обратным
+         канонический_id (висячая запись)
+      e. нормализованная коллизия id ([-_ ] игнорируются) без объявленной
+         алиас-связи
+    """
+    violations = []
+    if entries is None:
+        entries = _load_materials_and_techs()
+
+    by_id: dict[str, tuple[Path, dict]] = {}
+    by_norm: dict[str, list[str]] = {}
+    for f, data in entries:
+        mid = str(data.get('id', '')).strip()
+        by_norm.setdefault(_norm_id_key(mid), []).append(mid)
+        if mid in by_id:
+            violations.append(
+                f"{mid}: литеральный дубликат id в {f.name} и {by_id[mid][0].name}")
+        else:
+            by_id[mid] = (f, data)
+
+    total = len(entries)
+    valid = 0
+
+    # Канонический план: mid → canonical (по канонический_id != id)
+    alias_of: dict[str, str] = {}
+    for mid, (_f, data) in by_id.items():
+        canon = str(data.get('канонический_id', '') or '').strip() or mid
+        if canon != mid:
+            alias_of[mid] = canon
+
+    # (b) битая ссылка канонический_id
+    for mid, canon in sorted(alias_of.items()):
+        if canon not in by_id:
+            violations.append(
+                f"{mid}: канонический_id='{canon}' не существует (битая alias-ссылка)")
+
+    # (c)+(d) симметрия псевдонимов
+    for mid, canon in sorted(alias_of.items()):
+        canon_data = by_id.get(canon)
+        if not canon_data:
+            continue
+        aliases_list = canon_data[1].get('псевдонимы') or []
+        if not isinstance(aliases_list, list):
+            aliases_list = []
+        if mid not in [str(a).strip() for a in aliases_list]:
+            violations.append(
+                f"{mid}: канонический_id='{canon}', но '{canon}' не перечисляет "
+                f"его в псевдонимах (несимметричная алиас-связь)")
+    for canon, (_f, data) in sorted(by_id.items()):
+        aliases_list = data.get('псевдонимы') or []
+        if not isinstance(aliases_list, list):
+            continue
+        for a in aliases_list:
+            a = str(a).strip()
+            if not a:
+                continue
+            a_data = by_id.get(a)
+            if a_data is None:
+                # алиас без файла — допустимо только если файл уже слит и
+                # удалён (id остался в истории ссылок) — НЕ нарушение
+                continue
+            a_canon = str(a_data[1].get('канонический_id', '') or '').strip() or a
+            if a_canon != canon:
+                violations.append(
+                    f"{canon}: псевдоним '{a}' указывает на канонический_id="
+                    f"'{a_canon}' (висячая/конфликтная запись)")
+
+    # (e) нормализованная коллизия без объявленной связи
+    for norm_key, mids in sorted(by_norm.items()):
+        if len(mids) < 2:
+            continue
+        related = all(
+            alias_of.get(a) == mids[0] or alias_of.get(mids[0]) == a
+            for a in mids[1:]
+        )
+        if not related:
+            violations.append(
+                f"{mids[0]}: нормализованная коллизия id с {mids[1:]} "
+                f"(ключ '{norm_key}') — объявите канонический_id/псевдонимы "
+                f"или переименуйте")
+
+    valid = total - len(set(
+        v.split(':')[0] for v in violations if not v.startswith('Дубликат')))
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F31',
+        'description': 'Уникальность id материалов/технологий: дубли id, алиас-связность, битые канонический_id',
+        'total': total,
+        'valid': max(0, valid),
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
+# F32: СЕМАНТИЧЕСКИЕ ДУБЛИ МАТЕРИАЛОВ (v9.44, дедупликация)
+# ============================================================================
+
+def _sig_figs(x, digits: int = 2):
+    """Округление до N значащих цифр (None → None)."""
+    try:
+        x = float(x)
+    except (TypeError, ValueError):
+        return None
+    if x != x or x in (float('inf'), float('-inf')) or x == 0:
+        return 0.0 if x == 0 else None
+    from math import floor, log10
+    return round(x, -int(floor(log10(abs(x)))) + (digits - 1))
+
+
+def check_F32(entries: list[tuple[Path, dict]] | None = None) -> dict:
+    """F32: Семантические дубли материалов — разные id, один материал.
+
+    REVIEW-метрика (issue с меткой f32 = ручная проверка агентом):
+    сигнатура (класс, ρ 2 з.ц., k 2 з.ц.) совпадает у 2+ канонических
+    материалов → кандидат на слияние. Ложные срабатывания закрываются
+    агентом как false-positive с обоснованием (заведомо известный:
+    material_pbo2 vs material_spongy_lead — общий источник_url, но разные
+    материалы).
+
+    Требование строгости: ρ И k оба non-null и совпадают до 2 значащих
+    цифр в пределах одного класса — для случайной пары разных материалов
+    это маловероятно (~совпадение трёх независимых величин).
+
+    Формат violation: '<id>: семантический дубль <other_id> (класс=..., ρ≈..., k≈...)'.
+    """
+    violations = []
+    if entries is None:
+        entries = _load_materials_and_techs()
+
+    groups: dict[tuple, list[str]] = {}
+    total = 0
+    for _f, data in entries:
+        # технологии без ρ/k не участвуют
+        if str(data.get('тип', '')).strip() != 'материал':
+            continue
+        mid = str(data.get('id', '')).strip()
+        canon = str(data.get('канонический_id', '') or '').strip() or mid
+        if canon != mid:
+            continue  # алиасы исключены — их слияние делает migrate-скрипт
+        klass = str(data.get('класс', '')).strip().lower()
+        basic = data.get('основные') or {}
+        if not isinstance(basic, dict):
+            continue
+        total += 1
+        rho = _sig_figs(basic.get('плотность_kg_m3'))
+        k = _sig_figs(basic.get('теплопроводность_W_mK'))
+        if rho is None or k is None:
+            continue
+        key = (klass, rho, k)
+        groups.setdefault(key, []).append(mid)
+
+    valid = total
+    for (klass, rho, k), mids in sorted(groups.items()):
+        if len(mids) > 1:
+            violations.append(
+                f"{mids[0]}: семантический дубль {mids[1:]} "
+                f"(класс={klass}, ρ≈{rho:g}, k≈{k:g}) — проверить и слить "
+                f"через scripts/migrate_dedup_materials.py или закрыть как "
+                f"false-positive")
+            valid -= len(mids)
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F32',
+        'description': 'Семантические дубли материалов (класс+ρ+k совпадают) — review-метрика',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
 # MAIN
 # ============================================================================
 
@@ -2424,6 +2640,30 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
+    # F31 — уникальность id/алиасов материалов и технологий (v9.44, дедупликация;
+    # аннотация: #661 — material_ni-ysz создан поверх material_ni_ysz_cermet)
+    print()
+    print("=== F31: Уникальность id/алиасов (дедупликация) ===")
+    mat_tech_entries = _load_materials_and_techs()
+    r = check_F31(mat_tech_entries)
+    results['F31'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
+    # F32 — семантические дубли материалов (v9.44; review-метрика: класс+ρ+k)
+    print()
+    print("=== F32: Семантические дубли материалов (review) ===")
+    r = check_F32(mat_tech_entries)
+    results['F32'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
     # Сводка
     print()
     print("=== Сводка ===")
@@ -2460,6 +2700,9 @@ def main():
         if check_fn:
             if args.metric in ['F13', 'F17', 'F21']:
                 r = check_fn(models, izdeliya)
+            elif args.metric in ('F31', 'F32'):
+                # F31/F32 работают с материалами+технологиями, не с изделиями
+                r = check_fn(_load_materials_and_techs())
             else:
                 r = check_fn(izdeliya)
             print(f"{args.metric}: pass={r['pass']}, ratio={r['ratio']}")
@@ -2473,7 +2716,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28')
+            for m in ('F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28', 'F31', 'F32')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:

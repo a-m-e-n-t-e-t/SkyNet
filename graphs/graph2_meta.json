@@ -87,6 +87,18 @@
       "path": "scripts/generate_wrapper_izdeliya.py"
     },
     {
+      "id": "script:migrate_aliases.py",
+      "type": "script",
+      "label": "migrate_aliases.py",
+      "path": "scripts/migrate_aliases.py"
+    },
+    {
+      "id": "script:migrate_dedup_materials.py",
+      "type": "script",
+      "label": "migrate_dedup_materials.py",
+      "path": "scripts/migrate_dedup_materials.py"
+    },
+    {
       "id": "script:migrate_material_form.py",
       "type": "script",
       "label": "migrate_material_form.py",
@@ -1165,6 +1177,12 @@
     {
       "src": "script:generate_wrapper_izdeliya.py",
       "dst": "script:generate_decomposition.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
+      "src": "script:migrate_dedup_materials.py",
+      "dst": "script:validate_decomposition.py",
       "type": "imports",
       "meta": {}
     },
@@ -2424,13 +2442,13 @@
     }
   ],
   "stats": {
-    "nodes": 187,
-    "edges": 216,
+    "nodes": 189,
+    "edges": 217,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,
       "readme": 1,
-      "script": 21,
+      "script": 23,
       "spec": 1,
       "spec_section": 146
     }

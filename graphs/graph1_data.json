@@ -5297,7 +5297,7 @@
     {
       "id": "material_100cr6",
       "type": "material",
-      "label": "100Cr6 (EN 683-17) / AISI 52100 / ГОСТ ШХ15: C 0.95–1.10 %, Cr 1.35–1.65 %, Mn 0.25–0.45 %, Si 0.15–0.35 %",
+      "label": "100Cr6 (ISO 683-17) / AISI 52100 / ГОСТ ШХ15: C 0.95–1.10 %, Cr 1.35–1.65 %, Mn 0.25–0.45 %, Si 0.15–0.35 %",
       "path": "реальные данные/материалы/100cr6.md",
       "subsystem": ""
     },
@@ -5316,10 +5316,24 @@
       "subsystem": ""
     },
     {
+      "id": "material_acetonitrile_teabf4",
+      "type": "material",
+      "label": "1M тетраэтиламмоний тетрафторборат (TEABF4, CAS 429-06-1) в ацетонитриле CH3CN ≥99.9% (стандартный органический электролит EDLC)",
+      "path": "реальные данные/материалы/acetonitrile_teabf4.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_ag-pena",
       "type": "material",
       "label": "Ag-пена",
       "path": "реальные данные/материалы/ag-pena.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_agm_steklovolokno",
+      "type": "material",
+      "label": "AGM-сепаратор (absorptive glass mat): нетканое полотно из микростекловолокна (боросиликатное E-стекло), в композициях — большинство стеклянных волокон в сочетании с полимерными волокнами",
+      "path": "реальные данные/материалы/agm_steklovolokno.md",
       "subsystem": ""
     },
     {
@@ -5332,7 +5346,7 @@
     {
       "id": "material_al_6061-t6",
       "type": "material",
-      "label": "Al 6061-T6",
+      "label": "Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6",
       "path": "реальные данные/материалы/al_6061-t6.md",
       "subsystem": ""
     },
@@ -5341,6 +5355,13 @@
       "type": "material",
       "label": "Al 97.5–99.35% + Mg 0.45–0.9% + Si 0.2–0.6% (Fe ≤0.35%, Cr/Cu/Mn/Ti/Zn ≤0.1%)",
       "path": "реальные данные/материалы/al_6063-t5.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_al_bondwire",
+      "type": "material",
+      "label": "Al ≥99.99% (heavy bonding wire, класс Al-H11/Al-CR)",
+      "path": "реальные данные/материалы/al_bondwire.md",
       "subsystem": ""
     },
     {
@@ -5386,9 +5407,16 @@
       "subsystem": ""
     },
     {
+      "id": "material_batio3",
+      "type": "material",
+      "label": "BaTiO3 ≥98.5% (титанат бария, перовскит ABO3); для X5R/X7R-диэлектриков MLCC легируется Dy2O3, Ho2O3, Y2O3, Mg, Si, Mn (core-shell BME с Ni-электродами)",
+      "path": "реальные данные/материалы/batio3.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_becu",
       "type": "material",
-      "label": "BeCu",
+      "label": "Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)",
       "path": "реальные данные/материалы/becu.md",
       "subsystem": ""
     },
@@ -5409,14 +5437,21 @@
     {
       "id": "material_bi₂te₃",
       "type": "material",
-      "label": "Bi₂Te₃",
+      "label": "Bi₂Te₃ (теллурид висмута; промышленные марки легированы: p-тип — Bi₀.₅Sb₁.₅Te₃ (Sb), n-тип — Bi₂Te₂.₇Se₀.₃ (Se); M = 800.8 г/моль)",
       "path": "реальные данные/материалы/bi₂te₃.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_bt_abf_substrate",
+      "type": "material",
+      "label": "Органическая пакетная подложка: жёсткое ядро из BT-смолы (бисмалеимид-триазин, Mitsubishi Gas Chemical) + build-up слои Ajinomoto Build-up Film (ABF — эпоксидная система с кремнезёмным наполнителем, SAP-совместимая) + медная фольга проводящих слоёв; лазерные микровии, паяльная маска",
+      "path": "реальные данные/материалы/bt_abf_substrate.md",
       "subsystem": ""
     },
     {
       "id": "material_b₄c",
       "type": "material",
-      "label": "B₄C",
+      "label": "B₄C (карбид бора, стехиометрия ~B4C при 78.2–81.4 ат.% B); для ядерных марок — обогащение по изотопу ¹⁰B (природный: 19.9 % ¹⁰B / 80.1 % ¹¹B)",
       "path": "реальные данные/материалы/b₄c.md",
       "subsystem": ""
     },
@@ -5435,9 +5470,16 @@
       "subsystem": ""
     },
     {
+      "id": "material_cellulose",
+      "type": "material",
+      "label": "Целлюлоза (C6H10O5)n — бумага-сепаратор из древесной/регенерированной целлюлозы (крафт-процесс); зольность < 0.5 %, влагосодержание 3–8 %; для EDLC — без поверхностных ПАВ, совместима с ацетонитрильным электролитом TEABF4",
+      "path": "реальные данные/материалы/cellulose.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_cfrp_t1100g",
       "type": "material",
-      "label": "CFRP T1100G",
+      "label": "углеродное волокно Toray TORAYCA T1100G (PAN-based, intermediate modulus) ~60 об.% + эпоксидная матрица (система 3960, отверждение 177 °C) ~40 об.%",
       "path": "реальные данные/материалы/cfrp_t1100g.md",
       "subsystem": ""
     },
@@ -5467,6 +5509,27 @@
       "type": "material",
       "label": "CNT-волокно",
       "path": "реальные данные/материалы/cnt-volokno.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_coefeb_mgo",
+      "type": "material",
+      "label": "Стек MTJ: Co20Fe60B20 (свободный/опорный ферромагнитные слои) / MgO (туннельный барьер, эпитаксиальный (001)); опорный слой синтезированный антиферромагнетик [Co/Pt]n",
+      "path": "реальные данные/материалы/coefeb_mgo.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_concrete_barite",
+      "type": "material",
+      "label": "Тяжёлый баритовый бетон: портландцемент + заполнитель из барита BaSO4 (мелкий и крупный заполнитель, Z_Ba = 56) + вода; плотность по заполнителю 3.2–4.2 г/см³, готовый бетон 3.2–3.5 г/см³ (обычный ~2.3)",
+      "path": "реальные данные/материалы/concrete_barite.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_copper",
+      "type": "material",
+      "label": "Cu ≥99.9% (электролитическая медь C11000/ETP)",
+      "path": "реальные данные/материалы/copper.md",
       "subsystem": ""
     },
     {
@@ -5514,14 +5577,14 @@
     {
       "id": "material_dioksid_plutoniya-238",
       "type": "material",
-      "label": "диоксид плутония-238",
+      "label": "PuO2 на основе изотопа Pu-238 (диоксид плутония-238): для RTG-топлива изотопная доля Pu-238 > 80 % (остальное Pu-239/Pu-240 и дочерние продукты распада, прежде всего U-234); стехиометрия O/Pu ≈ 2.00",
       "path": "реальные данные/материалы/dioksid_plutoniya-238.md",
       "subsystem": ""
     },
     {
       "id": "material_elastomernaya_matritsa",
       "type": "material",
-      "label": "Эластомерная матрица",
+      "label": "PDMS — полидиметилсилоксан (эталонная система Dow SYLGARD 184: двухкомпонентный силиконовый эластомер 10:1, ненаполненный, прозрачный)",
       "path": "реальные данные/материалы/elastomernaya_matritsa.md",
       "subsystem": ""
     },
@@ -5530,6 +5593,13 @@
       "type": "material",
       "label": "Электрохромный полимер ECP",
       "path": "реальные данные/материалы/elektrohromnyi_polimer_ecp.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_emc_underfill",
+      "type": "material",
+      "label": "Кварценаполненная эпоксидная система пакования flip-chip: двухкомпонентная эпоксидная смола с отвердителем + сферический кремнезём SiO₂ 65–75 мас.% (наполнитель CTE-снижения), безгалогенная; классы — капиллярный underfill (CUF) и формовочный компаунд (EMC)",
+      "path": "реальные данные/материалы/emc_underfill.md",
       "subsystem": ""
     },
     {
@@ -5556,14 +5626,14 @@
     {
       "id": "material_epotek_301-2",
       "type": "material",
-      "label": "Epotek 301-2",
+      "label": "двухкомпонентный ненаполненный эпоксидный адгезив EPO-TEK 301-2: эпоксидная смола Part A (SG 1.02) + отвердитель Part B (SG 0.89), пропорция 100:35 по массе; без наполнителей — оптически прозрачный",
       "path": "реальные данные/материалы/epotek_301-2.md",
       "subsystem": ""
     },
     {
       "id": "material_etfe",
       "type": "material",
-      "label": "ETFE",
+      "label": "Сополимер этилена и тетрафторэтилена (ETFE) со строгим чередованием звеньев ~1:1: (–CH₂–CH₂–)ₙ(–CF₂–CF₂–)ₘ, содержание фтора ~59–60 масс.%, без наполнителей (базовые марки); промышленные марки: Tefzel 200/280/750/HT-2184/HT-2004 (Chemours), Fluon ETFE (AGC), Neoflon EP (Daikin)",
       "path": "реальные данные/материалы/etfe.md",
       "subsystem": ""
     },
@@ -5577,7 +5647,7 @@
     {
       "id": "material_fkm-silikon",
       "type": "material",
-      "label": "FKM-силикон",
+      "label": "двухэластомерная композиция: винилиденфторидный фторэластомер FKM (Viton A-класс, ~66% F) + метилвинилсилоксановый каучук VMQ (Si-O-Si основа); вулканизация бисфенольная/пероксидная, наполнитель — техуглерод",
       "path": "реальные данные/материалы/fkm-silikon.md",
       "subsystem": ""
     },
@@ -5586,6 +5656,13 @@
       "type": "material",
       "label": "фотонный кристалл-фильтр",
       "path": "реальные данные/материалы/fotonnyi_kristall-filtr.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_fr4",
+      "type": "material",
+      "label": "Стеклотекстолит FR-4: ткань E-glass (~55 мас.%) + эпоксидная смола multifunctional (bis-/tetrafunctional, система Isola); медная фольга с двух сторон в ламинате",
+      "path": "реальные данные/материалы/fr4.md",
       "subsystem": ""
     },
     {
@@ -5598,7 +5675,7 @@
     {
       "id": "material_gallinstan",
       "type": "material",
-      "label": "Галлинстан",
+      "label": "Эвтектика Ga-In-Sn: Ga 68.5% / In 21.5% / Sn 10.0% (коммерческий Galinstan); жидкий металл при комнатной температуре, нетоксичная замена ртути",
       "path": "реальные данные/материалы/gallinstan.md",
       "subsystem": ""
     },
@@ -5638,6 +5715,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_graphite",
+      "type": "material",
+      "label": "Ядерный графит (изотропный мелкозернистый, класс IG-110/Toyo Tanso): C > 99.9 %, зольность < 20 ppm (B, Fe, V — примеси, влияющие на σa), связующее — пек, спечённый и графитизированный при ~3000 °C",
+      "path": "реальные данные/материалы/graphite.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_gst",
       "type": "material",
       "label": "Ge2Sb2Te5 (GST-225, соединение 225 стехиометрии GeTe:Sb2Te3 1:1); легирование N/C для повышения сопротивления аморфной фазы",
@@ -5654,7 +5738,7 @@
     {
       "id": "material_halve_p_vdf-trfe-cfe",
       "type": "material",
-      "label": "HALVE P",
+      "label": "Терполимер P(VDF-TrFE-CFE): звенья винилиденфторида CH2=CF2 (VDF), трифторэтилена CHF=CF2 (TrFE) и хлорфтормонофторэтилена (CFE); типовой состав 64.8/27.4/7.8 мол.% (J. Materiomics 2023); промышленная марка Piezotech RT-FS (Arkema)",
       "path": "реальные данные/материалы/halve_p_vdf-trfe-cfe.md",
       "subsystem": ""
     },
@@ -5668,15 +5752,22 @@
     {
       "id": "material_inconel_625",
       "type": "material",
-      "label": "Inconel 625",
+      "label": "Ni баланс; Cr 20.0–23.0; Mo 8.0–10.0; Nb+Ta 3.15–4.15; Fe ≤5.0; Co ≤1.0; C ≤0.10; Mn ≤0.50; Si ≤0.50; Al ≤0.40; Ti ≤0.40; P ≤0.015; S ≤0.015",
       "path": "реальные данные/материалы/inconel_625.md",
       "subsystem": ""
     },
     {
       "id": "material_inconel_718",
       "type": "material",
-      "label": "Inconel 718",
+      "label": "Ni+Co 50.0–55.0; Cr 17.0–21.0; Fe баланс; Nb+Ta 4.75–5.50; Mo 2.80–3.30; Ti 0.65–1.15; Al 0.35–0.80; Co ≤1.0; C ≤0.08; Mn ≤0.35; Si ≤0.35; Cu ≤0.15; B 0.001–0.006; P ≤0.015; S ≤0.015",
       "path": "реальные данные/материалы/inconel_718.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_ingaassb",
+      "type": "material",
+      "label": "In(1-x)Ga(x)As(1-y)Sb(y) (InGaAsSb) на подложке GaSb: прямой запрет зоны 0.50–0.55 эВ (λcutoff ≈ 2.3–2.5 мкм), LPE/MBE-эпитаксия",
+      "path": "реальные данные/материалы/ingaassb.md",
       "subsystem": ""
     },
     {
@@ -5698,13 +5789,6 @@
       "type": "material",
       "label": "Ir",
       "path": "реальные данные/материалы/ir.md",
-      "subsystem": ""
-    },
-    {
-      "id": "material_karbon",
-      "type": "material",
-      "label": "карбон",
-      "path": "реальные данные/материалы/karbon.md",
       "subsystem": ""
     },
     {
@@ -5792,6 +5876,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_magnitnaya_rezina_ferritovyi_poroshok",
+      "type": "material",
+      "label": "Fe₃O₄ (магнетит) 1–20 wt% + силиконовый каучук (Ecoflex/PDMS)",
+      "path": "реальные данные/материалы/magnitnaya_rezina_ferritovyi_poroshok.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_magnitoelastomery",
       "type": "material",
       "label": "Магнитоэластомеры",
@@ -5815,7 +5906,7 @@
     {
       "id": "material_mednyi_provod",
       "type": "material",
-      "label": "медный провод",
+      "label": "Cu-ETP (C11000), ≥99.90% Cu, кислородсодержащая электротехническая медь",
       "path": "реальные данные/материалы/mednyi_provod.md",
       "subsystem": ""
     },
@@ -5871,7 +5962,7 @@
     {
       "id": "material_monokristallicheskogo_sic",
       "type": "material",
-      "label": "монокристаллического SiC",
+      "label": "SiC — стехиометрический карбид кремния (50 ат.% Si / 50 ат.% C); монокристалл 4H-SiC, n-легирование азотом (подложки) или высокочистый без легирования",
       "path": "реальные данные/материалы/monokristallicheskogo_sic.md",
       "subsystem": ""
     },
@@ -5892,7 +5983,7 @@
     {
       "id": "material_mxene",
       "type": "material",
-      "label": "MXene",
+      "label": "Ti₃C₂Tx — карбид титана с поверхностными терминациями –O/–OH/–F (Tx)",
       "path": "реальные данные/материалы/mxene.md",
       "subsystem": ""
     },
@@ -5901,6 +5992,13 @@
       "type": "material",
       "label": "Mylar",
       "path": "реальные данные/материалы/mylar.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_nafion",
+      "type": "material",
+      "label": "перфторсульфоновая кислота (PFSA): PTFE-подобная основа с боковыми цепями –O–CF₂–CF(CF₃)–O–CF₂–CF₂–SO₃H, EW ≈1100 г/моль (Nafion 117, Chemours)",
+      "path": "реальные данные/материалы/nafion.md",
       "subsystem": ""
     },
     {
@@ -5920,14 +6018,14 @@
     {
       "id": "material_ndfeb",
       "type": "material",
-      "label": "NdFeB",
+      "label": "интерметаллид Nd₂Fe₁₄B (тетрагональная фаза); типовой спечённый магнит ≈ Fe 64–68 мас.%, Nd 29–32 мас.%, B ~1 мас.%, добавки Dy/Tb/Pr в термостабильных грейдах",
       "path": "реальные данные/материалы/ndfeb.md",
       "subsystem": ""
     },
     {
       "id": "material_neilon_6_66",
       "type": "material",
-      "label": "Нейлон 6/66",
+      "label": "Полиамид 6/6 (PA66, нейлон 6/6): продукт поликонденсации гексаметилендиамина (6 C) и адипиновой кислоты (6 C), повторяющееся звено –[NH–(CH₂)₆–NH–OC–(CH₂)₄–CO]ₙ–; промышленные марки: Zytel 101 (DuPont), Ultramid A3K (BASF), Durethan A (Lanxess)",
       "path": "реальные данные/материалы/neilon_6_66.md",
       "subsystem": ""
     },
@@ -5955,22 +6053,15 @@
     {
       "id": "material_ni-63",
       "type": "material",
-      "label": "Ni-63",
+      "label": "никель, обогащённый радиоизотопом ⁶³Ni (Z=28, A=63); чистый металл высокой чистоты; распад → стабильный ⁶³Cu",
       "path": "реальные данные/материалы/ni-63.md",
       "subsystem": ""
     },
     {
       "id": "material_ni-ysz",
       "type": "material",
-      "label": "Ni-YSZ",
+      "label": "Ni–YSZ кермет: Ni + 8YSZ ((ZrO₂)₀.₉₂(Y₂O₃)₀.₀₈); исходный анодный порошок NiO:YSZ 50:50–65:35 масс.% (Ni 28–55 об.% после восстановления); рабочее состояние — металлический Ni + керамический каркас кубического YSZ + пористость 25–40%",
       "path": "реальные данные/материалы/ni-ysz.md",
-      "subsystem": ""
-    },
-    {
-      "id": "material_ni_ysz_cermet",
-      "type": "material",
-      "label": "Ni-YSZ кермет: NiO + 8YSZ ((Y2O3)0.08(ZrO2)0.92) в соотношении 50:50–65:35 wt.% (Ni:YSZ 35:65–55:45 об.%); после восстановления в H2 при 850–1000 °C — металлический Ni (~40 об.%) + керамический каркас YSZ + пористость 25–40%",
-      "path": "реальные данные/материалы/ni_ysz_cermet.md",
       "subsystem": ""
     },
     {
@@ -5978,6 +6069,13 @@
       "type": "material",
       "label": "Нихром 80/20 (Nikrothal 80, NiCr8020): Ni — основа (бал.), Cr 19.0–21.0 %, Si 1.0–1.7 %, Mn ≤1.0 %, Fe ≤2.0 %, C ≤0.10 %",
       "path": "реальные данные/материалы/nichrome.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_nickel",
+      "type": "material",
+      "label": "Ni ≥99.0% (электролитический никель; для паст BME-электродов — мелкодисперсный Ni-порошок, напр. сферический 0.3–0.8 мкм)",
+      "path": "реальные данные/материалы/nickel.md",
       "subsystem": ""
     },
     {
@@ -6011,14 +6109,14 @@
     {
       "id": "material_oksid_alyuminiya",
       "type": "material",
-      "label": "Оксид алюминия",
+      "label": "Оксид алюминия Al₂O₃ (глинозём): 52.9 масс.% Al / 47.1 масс.% O; технические марки 96–99.9% Al₂O₃ (остальное SiO₂, MgO, CaO — спекающие добавки); высокочистый корунд ≥99.99%",
       "path": "реальные данные/материалы/oksid_alyuminiya.md",
       "subsystem": ""
     },
     {
       "id": "material_p_vdf-trfe-cfe",
       "type": "material",
-      "label": "P",
+      "label": "Терполимер винилиденфторид–трифторэтилен–хлорфторэтилен P(VDF-TrFE-CFE): типично 58.5–72.2 мол.% VDF / 17.8–31.5 TrFE / 7–11.5 CFE (референс LIST/Arkema: 64.8/27.4/7.8 мол.%); Mw 400–600 кг/моль (Piezotech RT); полукристаллический, кристалличность 20–35%",
       "path": "реальные данные/материалы/p_vdf-trfe-cfe.md",
       "subsystem": ""
     },
@@ -6037,9 +6135,30 @@
       "subsystem": ""
     },
     {
+      "id": "material_pb_sb_alloy",
+      "type": "material",
+      "label": "Pb-4.5Sb (свинец с 4–6 % сурьмы; патент US3993480A допускает 4–11 % Sb для решёток АКБ) — литейный сплав токоотводов (решёток) свинцово-кислотных аккумуляторов; примеси: Sn 0.1–0.3 %, As 0.1–0.2 %, Cu < 0.05 %",
+      "path": "реальные данные/материалы/pb_sb_alloy.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_pbo2",
+      "type": "material",
+      "label": "PbO2 (диоксид свинца, β-фаза) — активная масса положительных пластин свинцово-кислотных АКБ; паста из свинцового сурика/литиевого оксида с пористостью ~50%",
+      "path": "реальные данные/материалы/pbo2.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_pbte_teg",
+      "type": "material",
+      "label": "Термоэлектрическая пара PbTe/TAGS-85: n-нога — легированный PbTe-сплав TE1010; p-нога — двухсегментная: PbSnTe-сплав TE2003 у горячего спая + TAGS-85 ((GeTe)0.85(AgSbTe2)0.15 — теллурид-антимонид-германий-серебро) у холодного спая",
+      "path": "реальные данные/материалы/pbte_teg.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_pcm",
       "type": "material",
-      "label": "PCM",
+      "label": "Хлорид кальция шестиводный CaCl₂·6H₂O (минерал антарктицит): 18.3 масс.% Ca / 32.4 масс.% Cl / 49.3 масс.% H₂O; технический ≥94–99 %, реактивный ≥99 %",
       "path": "реальные данные/материалы/pcm.md",
       "subsystem": ""
     },
@@ -6095,7 +6214,7 @@
     {
       "id": "material_poliimid",
       "type": "material",
-      "label": "Полиимид",
+      "label": "Ароматический полиимид PMDA-ODA (тип Kapton): повторяющееся звено C22H10N2O5 (M ≈ 382.2 г/моль) из пиромеллитового диангидрида (PMDA) и 4,4′-оксианилина (ODA); чередующиеся имидные циклы C(=O)–N–C(=O) и фениленовые/дифениловый эфирный сегменты",
       "path": "реальные данные/материалы/poliimid.md",
       "subsystem": ""
     },
@@ -6142,10 +6261,10 @@
       "subsystem": ""
     },
     {
-      "id": "material_pvdf-trfe-ctfe",
+      "id": "material_quartz",
       "type": "material",
-      "label": "PVDF-TrFE-CTFE",
-      "path": "реальные данные/материалы/pvdf-trfe-ctfe.md",
+      "label": "SiO2 ≥99.99% (синтетический пьезокварц, гидротермальный автоклавный синтез; природный — α-кварц)",
+      "path": "реальные данные/материалы/quartz.md",
       "subsystem": ""
     },
     {
@@ -6275,6 +6394,20 @@
       "subsystem": ""
     },
     {
+      "id": "material_soCl2_lialcl4_electrolit",
+      "type": "material",
+      "label": "Раствор LiAlCl₄ ~1.5 М в тионилхлориде SOCl₂",
+      "path": "реальные данные/материалы/soCl2_lialcl4_electrolit.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_sodium",
+      "type": "material",
+      "label": "Натрий металлический (Na-23, ядерной чистоты): O < 10 ppm, C < 10 ppm — примеси контролируются для исключения коррозии стали и образования Na2O/NaH в контуре",
+      "path": "реальные данные/материалы/sodium.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_spectra",
       "type": "material",
       "label": "Spectra (UHMWPE волокно Honeywell)",
@@ -6286,6 +6419,13 @@
       "type": "material",
       "label": "Сплав Sn-Pb",
       "path": "реальные данные/материалы/splav_sn-pb.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_spongy_lead",
+      "type": "material",
+      "label": "Pb (губчатый свинец, ~99.99 %) — активная масса отрицательных пластин свинцово-кислотных АКБ; высокопористая губчатая структура ~40–50 %",
+      "path": "реальные данные/материалы/spongy_lead.md",
       "subsystem": ""
     },
     {
@@ -6310,6 +6450,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_ss_316l",
+      "type": "material",
+      "label": "Нержавеющая сталь 316L (AISI 316L / SUS316L): Fe + Cr 16–18 мас.%, Ni 10–14 мас.%, Mo 2–3 мас.%, C ≤ 0.03 мас.% (низкоуглеродистая для сварки без сенсибилизации)",
+      "path": "реальные данные/материалы/ss_316l.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_ss_aisi_304",
       "type": "material",
       "label": "SS AISI 304",
@@ -6319,7 +6466,7 @@
     {
       "id": "material_stal_st3",
       "type": "material",
-      "label": "Сталь Ст3",
+      "label": "Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.",
       "path": "реальные данные/материалы/stal_st3.md",
       "subsystem": ""
     },
@@ -6424,8 +6571,15 @@
     {
       "id": "material_tin",
       "type": "material",
-      "label": "TiN",
+      "label": "TiN — нитрид титана, стехиометрия TiN_x (x = 0.6–1.0; рабочая ~1.0); тонкие плёнки PVD/CVD, объёмный спечённый",
       "path": "реальные данные/материалы/tin.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_tin_metal",
+      "type": "material",
+      "label": "Sn ≥99.9% (matte tin финишное покрытие, Pb-free)",
+      "path": "реальные данные/материалы/tin_metal.md",
       "subsystem": ""
     },
     {
@@ -6436,6 +6590,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_tungsten",
+      "type": "material",
+      "label": "W ≥99.95% (вольфрам, спечённый/кованый; примеси Mo, Fe <0.05%)",
+      "path": "реальные данные/материалы/tungsten.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_u-235",
       "type": "material",
       "label": "U-235 (уран-235)",
@@ -6443,16 +6604,9 @@
       "subsystem": ""
     },
     {
-      "id": "material_uglevolokno",
-      "type": "material",
-      "label": "Углеволокно",
-      "path": "реальные данные/материалы/uglevolokno.md",
-      "subsystem": ""
-    },
-    {
       "id": "material_uhmwpe_dyneema",
       "type": "material",
-      "label": "UHMWPE Dyneema",
+      "label": "UHMWPE — сверхвысокомолекулярный полиэтилен (C2H4)n, Mw 2–7.5 млн г/моль (типично 3.5–6 млн); Dyneema® — гель-прядёное мультифиламентное волокно UHMWPE марки DSM (с 2022 — Avient)",
       "path": "реальные данные/материалы/uhmwpe_dyneema.md",
       "subsystem": ""
     },
@@ -8014,6 +8168,18 @@
       "meta": {}
     },
     {
+      "src": "izdelie_intel_loihi_2",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_intel_loihi_2",
+      "dst": "material_fr4",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_sot-mram",
       "dst": "часть_sot-mram_cell_array",
       "type": "has_part",
@@ -8128,6 +8294,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_nvidia_jetson_orin_nano",
+      "dst": "material_fr4",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_gr801_noel-v_risc-v",
       "dst": "часть_gr801_noel-v_risc-v_die",
       "type": "has_part",
@@ -8189,6 +8361,12 @@
     },
     {
       "src": "izdelie_gr801_noel-v_risc-v",
+      "dst": "material_quartz",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_gr801_noel-v_risc-v",
       "dst": "group_cobham_gaisler",
       "type": "researched_by",
       "meta": {}
@@ -8221,6 +8399,18 @@
       "src": "izdelie_kondensatory_keramicheskie",
       "dst": "часть_kondensatory_keramicheskie_plating",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_kondensatory_keramicheskie",
+      "dst": "material_nickel",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_kondensatory_keramicheskie",
+      "dst": "material_copper",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8272,6 +8462,18 @@
       "meta": {}
     },
     {
+      "src": "izdelie_halve",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_halve",
+      "dst": "material_fr4",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_ibm_northpole",
       "dst": "часть_ibm_northpole_die",
       "type": "has_part",
@@ -8305,6 +8507,12 @@
       "src": "izdelie_ibm_northpole",
       "dst": "часть_ibm_northpole_capacitors",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_ibm_northpole",
+      "dst": "material_copper",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8387,6 +8595,18 @@
     },
     {
       "src": "izdelie_brainchip_akida_2",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_brainchip_akida_2",
+      "dst": "material_fr4",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_brainchip_akida_2",
       "dst": "group_brainchip_team",
       "type": "researched_by",
       "meta": {}
@@ -8458,6 +8678,12 @@
       "meta": {}
     },
     {
+      "src": "часть_litii-tionilhloridnye_batarei_separator",
+      "dst": "material_agm_steklovolokno",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_litii-tionilhloridnye_batarei_anode",
       "dst": "izdelie_litii-tionilhloridnye_batarei",
       "type": "child_of",
@@ -8512,6 +8738,12 @@
       "meta": {}
     },
     {
+      "src": "часть_litii-tionilhloridnye_batarei_electrolyte",
+      "dst": "material_soCl2_lialcl4_electrolit",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_intel_loihi_2_encapsulant",
       "dst": "izdelie_intel_loihi_2",
       "type": "child_of",
@@ -8530,9 +8762,21 @@
       "meta": {}
     },
     {
+      "src": "часть_intel_loihi_2_pcb",
+      "dst": "material_fr4",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_intel_loihi_2_thermal_spreader",
       "dst": "izdelie_intel_loihi_2",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_intel_loihi_2_thermal_spreader",
+      "dst": "material_copper",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8578,6 +8822,12 @@
       "meta": {}
     },
     {
+      "src": "часть_intel_loihi_2_capacitors",
+      "dst": "material_batio3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_sot-mram_periphery",
       "dst": "izdelie_sot-mram",
       "type": "child_of",
@@ -8605,6 +8855,12 @@
       "src": "часть_sot-mram_cell_array",
       "dst": "izdelie_sot-mram",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_sot-mram_cell_array",
+      "dst": "material_coefeb_mgo",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8770,15 +9026,33 @@
       "meta": {}
     },
     {
+      "src": "часть_nvidia_jetson_orin_nano_wifi_bt",
+      "dst": "material_fr4",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_nvidia_jetson_orin_nano_pcb",
       "dst": "izdelie_nvidia_jetson_orin_nano",
       "type": "child_of",
       "meta": {}
     },
     {
+      "src": "часть_nvidia_jetson_orin_nano_pcb",
+      "dst": "material_fr4",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_gr801_noel-v_risc-v_crystal_osc",
       "dst": "izdelie_gr801_noel-v_risc-v",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_gr801_noel-v_risc-v_crystal_osc",
+      "dst": "material_quartz",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8860,6 +9134,12 @@
       "meta": {}
     },
     {
+      "src": "часть_gr801_noel-v_risc-v_capacitors",
+      "dst": "material_batio3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_gr801_noel-v_risc-v_package",
       "dst": "izdelie_gr801_noel-v_risc-v",
       "type": "child_of",
@@ -8896,6 +9176,12 @@
       "meta": {}
     },
     {
+      "src": "часть_kondensatory_keramicheskie_ceramic_layers",
+      "dst": "material_batio3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_kondensatory_keramicheskie_inner_electrodes",
       "dst": "izdelie_kondensatory_keramicheskie",
       "type": "child_of",
@@ -8903,7 +9189,7 @@
     },
     {
       "src": "часть_kondensatory_keramicheskie_inner_electrodes",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_nickel",
       "type": "uses_material",
       "meta": {}
     },
@@ -8914,15 +9200,33 @@
       "meta": {}
     },
     {
+      "src": "часть_kondensatory_keramicheskie_termination",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_kondensatory_keramicheskie_plating",
       "dst": "izdelie_kondensatory_keramicheskie",
       "type": "child_of",
       "meta": {}
     },
     {
+      "src": "часть_kondensatory_keramicheskie_plating",
+      "dst": "material_tin_metal",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_kondensatory_keramicheskie_outer_electrodes",
       "dst": "izdelie_kondensatory_keramicheskie",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_kondensatory_keramicheskie_outer_electrodes",
+      "dst": "material_copper",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8968,9 +9272,21 @@
       "meta": {}
     },
     {
+      "src": "часть_halve_pcb",
+      "dst": "material_fr4",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_halve_thermal_spreader",
       "dst": "izdelie_halve",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_halve_thermal_spreader",
+      "dst": "material_copper",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8992,6 +9308,12 @@
       "meta": {}
     },
     {
+      "src": "часть_halve_capacitors",
+      "dst": "material_batio3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_ibm_northpole_die",
       "dst": "izdelie_ibm_northpole",
       "type": "child_of",
@@ -9010,6 +9332,12 @@
       "meta": {}
     },
     {
+      "src": "часть_ibm_northpole_capacitors",
+      "dst": "material_batio3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_ibm_northpole_substrate",
       "dst": "izdelie_ibm_northpole",
       "type": "child_of",
@@ -9017,7 +9345,7 @@
     },
     {
       "src": "часть_ibm_northpole_substrate",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_bt_abf_substrate",
       "type": "uses_material",
       "meta": {}
     },
@@ -9029,7 +9357,7 @@
     },
     {
       "src": "часть_ibm_northpole_package",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_emc_underfill",
       "type": "uses_material",
       "meta": {}
     },
@@ -9037,6 +9365,12 @@
       "src": "часть_ibm_northpole_thermal_spreader",
       "dst": "izdelie_ibm_northpole",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_ibm_northpole_thermal_spreader",
+      "dst": "material_copper",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -9082,9 +9416,21 @@
       "meta": {}
     },
     {
+      "src": "часть_sic_mosfet_wire_bonds",
+      "dst": "material_al_bondwire",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_sic_mosfet_gate_terminal",
       "dst": "izdelie_sic_mosfet",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_sic_mosfet_gate_terminal",
+      "dst": "material_al_bondwire",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -9106,6 +9452,12 @@
       "meta": {}
     },
     {
+      "src": "часть_sic_mosfet_lead_frame",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_brainchip_akida_2_substrate",
       "dst": "izdelie_brainchip_akida_2",
       "type": "child_of",
@@ -9121,6 +9473,12 @@
       "src": "часть_brainchip_akida_2_pcb",
       "dst": "izdelie_brainchip_akida_2",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_brainchip_akida_2_pcb",
+      "dst": "material_fr4",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -9166,9 +9524,21 @@
       "meta": {}
     },
     {
+      "src": "часть_brainchip_akida_2_thermal_spreader",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_brainchip_akida_2_capacitors",
       "dst": "izdelie_brainchip_akida_2",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_brainchip_akida_2_capacitors",
+      "dst": "material_batio3",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -13360,6 +13730,12 @@
       "meta": {}
     },
     {
+      "src": "часть_ferritovye_klinya_na_kabelyah_sensorov_core",
+      "dst": "material_magnitnaya_rezina_ferritovyi_poroshok",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_tverdooksidnyi_toplivnyi_element",
       "dst": "часть_tverdooksidnyi_toplivnyi_element_anode",
       "type": "has_part",
@@ -13397,7 +13773,7 @@
     },
     {
       "src": "izdelie_tverdooksidnyi_toplivnyi_element",
-      "dst": "material_ni_ysz_cermet",
+      "dst": "material_ni-ysz",
       "type": "uses_material",
       "meta": {}
     },
@@ -13447,6 +13823,12 @@
       "src": "izdelie_superkondensatory",
       "dst": "часть_superkondensatory_case",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_superkondensatory",
+      "dst": "material_cellulose",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -13744,6 +14126,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_termoelektricheskii_postoyannyi_magnit",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_emi-generator",
       "dst": "часть_emi-generator_capacitor_bank",
       "type": "has_part",
@@ -13840,6 +14228,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_termomoduli_pelte",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_tpv-lenty",
       "dst": "часть_tpv-lenty_emitter_ribbon",
       "type": "has_part",
@@ -13861,6 +14255,12 @@
       "src": "izdelie_tpv-lenty",
       "dst": "часть_tpv-lenty_cooling",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_tpv-lenty",
+      "dst": "material_tungsten",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -13901,7 +14301,7 @@
     },
     {
       "src": "izdelie_lt-sofc",
-      "dst": "material_ni_ysz_cermet",
+      "dst": "material_ni-ysz",
       "type": "uses_material",
       "meta": {}
     },
@@ -13991,6 +14391,12 @@
     },
     {
       "src": "izdelie_reversivnye_pelte",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_reversivnye_pelte",
       "dst": "material_splav_sn-pb",
       "type": "uses_material",
       "meta": {}
@@ -14035,6 +14441,18 @@
       "src": "izdelie_svintsovo-kislotnye_akb",
       "dst": "часть_svintsovo-kislotnye_akb_terminal",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_svintsovo-kislotnye_akb",
+      "dst": "material_spongy_lead",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_svintsovo-kislotnye_akb",
+      "dst": "material_pb_sb_alloy",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -14111,7 +14529,25 @@
     },
     {
       "src": "izdelie_mikroreaktor_deleniya",
+      "dst": "material_graphite",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_mikroreaktor_deleniya",
       "dst": "material_inconel_625",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_mikroreaktor_deleniya",
+      "dst": "material_concrete_barite",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_mikroreaktor_deleniya",
+      "dst": "material_sodium",
       "type": "uses_material",
       "meta": {}
     },
@@ -14314,6 +14750,18 @@
       "meta": {}
     },
     {
+      "src": "izdelie_tverdotelnye_akkumulyatory",
+      "dst": "material_graphite",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_tverdotelnye_akkumulyatory",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_mmrtg",
       "dst": "часть_mmrtg_isotope",
       "type": "has_part",
@@ -14353,6 +14801,12 @@
       "src": "izdelie_mmrtg",
       "dst": "часть_mmrtg_connector",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_mmrtg",
+      "dst": "material_pbte_teg",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -14431,6 +14885,12 @@
       "src": "izdelie_tpv",
       "dst": "часть_tpv_cooling",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_tpv",
+      "dst": "material_tungsten",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -14627,7 +15087,7 @@
     },
     {
       "src": "часть_tverdooksidnyi_toplivnyi_element_anode",
-      "dst": "material_ni_ysz_cermet",
+      "dst": "material_ni-ysz",
       "type": "uses_material",
       "meta": {}
     },
@@ -14687,7 +15147,7 @@
     },
     {
       "src": "часть_superkondensatory_separator",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_cellulose",
       "type": "uses_material",
       "meta": {}
     },
@@ -14695,12 +15155,6 @@
       "src": "часть_superkondensatory_electrode_pos",
       "dst": "izdelie_superkondensatory",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_superkondensatory_electrode_pos",
-      "dst": "material_uglevolokno",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -14734,6 +15188,12 @@
       "meta": {}
     },
     {
+      "src": "часть_superkondensatory_electrolyte",
+      "dst": "material_acetonitrile_teabf4",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_superkondensatory_terminal",
       "dst": "izdelie_superkondensatory",
       "type": "child_of",
@@ -14741,7 +15201,7 @@
     },
     {
       "src": "часть_superkondensatory_terminal",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -14753,7 +15213,7 @@
     },
     {
       "src": "часть_vodorodnye_toplivnye_elementy_gasket",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_fkm-silikon",
       "type": "uses_material",
       "meta": {}
     },
@@ -14765,7 +15225,7 @@
     },
     {
       "src": "часть_vodorodnye_toplivnye_elementy_membrane",
-      "dst": "material_p_vdf-trfe-cfe",
+      "dst": "material_nafion",
       "type": "uses_material",
       "meta": {}
     },
@@ -15100,12 +15560,6 @@
       "meta": {}
     },
     {
-      "src": "часть_alyuminievo-vozdushnye_toplivnye_elementy_cathode",
-      "dst": "material_karbon",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_alyuminievo-vozdushnye_toplivnye_elementy_air_electrode",
       "dst": "izdelie_alyuminievo-vozdushnye_toplivnye_elementy",
       "type": "child_of",
@@ -15238,9 +15692,21 @@
       "meta": {}
     },
     {
+      "src": "часть_emi-generator_waveguide",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_emi-generator_source",
       "dst": "izdelie_emi-generator",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_emi-generator_source",
+      "dst": "material_copper",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15274,6 +15740,12 @@
       "meta": {}
     },
     {
+      "src": "часть_emi-generator_switch",
+      "dst": "material_tungsten",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_induktivnyi_nakopitel_housing",
       "dst": "izdelie_induktivnyi_nakopitel",
       "type": "child_of",
@@ -15289,12 +15761,6 @@
       "src": "часть_induktivnyi_nakopitel_core",
       "dst": "izdelie_induktivnyi_nakopitel",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_induktivnyi_nakopitel_core",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15316,9 +15782,21 @@
       "meta": {}
     },
     {
+      "src": "часть_induktivnyi_nakopitel_switch",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_induktivnyi_nakopitel_cooling",
       "dst": "izdelie_induktivnyi_nakopitel",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_induktivnyi_nakopitel_cooling",
+      "dst": "material_copper",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15340,9 +15818,21 @@
       "meta": {}
     },
     {
+      "src": "часть_termomoduli_pelte_wires",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_termomoduli_pelte_electrodes",
       "dst": "izdelie_termomoduli_pelte",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_termomoduli_pelte_electrodes",
+      "dst": "material_copper",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15388,15 +15878,33 @@
       "meta": {}
     },
     {
+      "src": "часть_tpv-lenty_pv_cells",
+      "dst": "material_ingaassb",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_tpv-lenty_emitter_ribbon",
       "dst": "izdelie_tpv-lenty",
       "type": "child_of",
       "meta": {}
     },
     {
+      "src": "часть_tpv-lenty_emitter_ribbon",
+      "dst": "material_tungsten",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_tpv-lenty_cooling",
       "dst": "izdelie_tpv-lenty",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_tpv-lenty_cooling",
+      "dst": "material_copper",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15550,6 +16058,12 @@
       "meta": {}
     },
     {
+      "src": "часть_reversivnye_pelte_electrodes",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_reversivnye_pelte_solder",
       "dst": "izdelie_reversivnye_pelte",
       "type": "child_of",
@@ -15586,15 +16100,33 @@
       "meta": {}
     },
     {
+      "src": "часть_svintsovo-kislotnye_akb_anode",
+      "dst": "material_pbo2",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_svintsovo-kislotnye_akb_cathode",
       "dst": "izdelie_svintsovo-kislotnye_akb",
       "type": "child_of",
       "meta": {}
     },
     {
+      "src": "часть_svintsovo-kislotnye_akb_cathode",
+      "dst": "material_spongy_lead",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_svintsovo-kislotnye_akb_separator",
       "dst": "izdelie_svintsovo-kislotnye_akb",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_svintsovo-kislotnye_akb_separator",
+      "dst": "material_agm_steklovolokno",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15617,7 +16149,7 @@
     },
     {
       "src": "часть_svintsovo-kislotnye_akb_grid_pos",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_pb_sb_alloy",
       "type": "uses_material",
       "meta": {}
     },
@@ -15670,6 +16202,12 @@
       "meta": {}
     },
     {
+      "src": "часть_mptm_heat_exchanger",
+      "dst": "material_ss_316l",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_mptm_controls",
       "dst": "izdelie_mptm",
       "type": "child_of",
@@ -15689,7 +16227,7 @@
     },
     {
       "src": "часть_mikroreaktor_deleniya_coolant",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_sodium",
       "type": "uses_material",
       "meta": {}
     },
@@ -15712,12 +16250,6 @@
       "meta": {}
     },
     {
-      "src": "часть_mikroreaktor_deleniya_fuel",
-      "dst": "material_karbon",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_mikroreaktor_deleniya_moderator",
       "dst": "izdelie_mikroreaktor_deleniya",
       "type": "child_of",
@@ -15725,7 +16257,7 @@
     },
     {
       "src": "часть_mikroreaktor_deleniya_moderator",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_graphite",
       "type": "uses_material",
       "meta": {}
     },
@@ -15737,7 +16269,7 @@
     },
     {
       "src": "часть_mikroreaktor_deleniya_vessel",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_ss_316l",
       "type": "uses_material",
       "meta": {}
     },
@@ -15749,7 +16281,7 @@
     },
     {
       "src": "часть_mikroreaktor_deleniya_shielding",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_concrete_barite",
       "type": "uses_material",
       "meta": {}
     },
@@ -15757,6 +16289,12 @@
       "src": "часть_mikroreaktor_deleniya_heat_exchanger",
       "dst": "izdelie_mikroreaktor_deleniya",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_mikroreaktor_deleniya_heat_exchanger",
+      "dst": "material_ss_316l",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15940,9 +16478,21 @@
       "meta": {}
     },
     {
+      "src": "часть_marx_generator_output_terminal",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_marx_generator_capacitors",
       "dst": "izdelie_marx_generator",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_marx_generator_capacitors",
+      "dst": "material_batio3",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15989,7 +16539,7 @@
     },
     {
       "src": "часть_tverdotelnye_akkumulyatory_current_collector_cu",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
     },
@@ -16001,7 +16551,7 @@
     },
     {
       "src": "часть_tverdotelnye_akkumulyatory_anode",
-      "dst": "material_si",
+      "dst": "material_nmc_graphite",
       "type": "uses_material",
       "meta": {}
     },
@@ -16013,7 +16563,7 @@
     },
     {
       "src": "часть_tverdotelnye_akkumulyatory_cathode",
-      "dst": "material_si",
+      "dst": "material_nmc_graphite",
       "type": "uses_material",
       "meta": {}
     },
@@ -16049,7 +16599,7 @@
     },
     {
       "src": "часть_tverdotelnye_akkumulyatory_current_collector_al",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_bondwire",
       "type": "uses_material",
       "meta": {}
     },
@@ -16097,7 +16647,7 @@
     },
     {
       "src": "часть_mmrtg_thermal_insulation",
-      "dst": "material_grafen-aerogel",
+      "dst": "material_silica_aerogel_blanket",
       "type": "uses_material",
       "meta": {}
     },
@@ -16109,7 +16659,7 @@
     },
     {
       "src": "часть_mmrtg_cold_side",
-      "dst": "material_al_6061-t6",
+      "dst": "material_al_6063-t5",
       "type": "uses_material",
       "meta": {}
     },
@@ -16133,7 +16683,7 @@
     },
     {
       "src": "часть_mmrtg_thermocouples",
-      "dst": "material_bi₂te₃",
+      "dst": "material_pbte_teg",
       "type": "uses_material",
       "meta": {}
     },
@@ -16156,12 +16706,6 @@
       "meta": {}
     },
     {
-      "src": "часть_coilgun_capacitor_bank",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_coilgun_housing",
       "dst": "izdelie_coilgun",
       "type": "child_of",
@@ -16181,7 +16725,7 @@
     },
     {
       "src": "часть_coilgun_switch",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -16205,7 +16749,7 @@
     },
     {
       "src": "часть_coilgun_coil",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
     },
@@ -16228,9 +16772,21 @@
       "meta": {}
     },
     {
+      "src": "часть_tpv_pv_cell",
+      "dst": "material_ingaassb",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_tpv_filter",
       "dst": "izdelie_tpv",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_tpv_filter",
+      "dst": "material_quartz",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16249,12 +16805,6 @@
       "src": "часть_tpv_heat_source",
       "dst": "izdelie_tpv",
       "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_tpv_heat_source",
-      "dst": "material_karbon",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16492,6 +17042,12 @@
       "meta": {}
     },
     {
+      "src": "часть_svobodnoporshnevoi_stirling_regenerator",
+      "dst": "material_ss_316l",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_svobodnoporshnevoi_stirling_alternator",
       "dst": "izdelie_svobodnoporshnevoi_stirling",
       "type": "child_of",
@@ -16523,7 +17079,7 @@
     },
     {
       "src": "часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_stal_st3",
       "type": "uses_material",
       "meta": {}
     },
@@ -16547,7 +17103,7 @@
     },
     {
       "src": "часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_stal_st3",
       "type": "uses_material",
       "meta": {}
     },
@@ -16999,6 +17555,24 @@
       "src": "izdelie_SkyNet-T800",
       "dst": "часть_t800_ткань_кожа",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-T800",
+      "dst": "material_si",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-T800",
+      "dst": "material_poliimid",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-T800",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -17639,7 +18213,7 @@
     },
     {
       "src": "часть_cameron_ткань_кожа",
-      "dst": "material_ti-6al-4v",
+      "dst": "material_silicone-textile_composite",
       "type": "uses_material",
       "meta": {}
     },
@@ -19096,6 +19670,22 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "izdelie_intel_loihi_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_fr4",
+      "dst": "izdelie_intel_loihi_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_sot-mram_cell_array",
       "dst": "izdelie_sot-mram",
       "type": "part_of",
@@ -19248,6 +19838,14 @@
       }
     },
     {
+      "src": "material_fr4",
+      "dst": "izdelie_nvidia_jetson_orin_nano",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_gr801_noel-v_risc-v_die",
       "dst": "izdelie_gr801_noel-v_risc-v",
       "type": "part_of",
@@ -19328,6 +19926,14 @@
       }
     },
     {
+      "src": "material_quartz",
+      "dst": "izdelie_gr801_noel-v_risc-v",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "group_cobham_gaisler",
       "dst": "izdelie_gr801_noel-v_risc-v",
       "type": "researches",
@@ -19373,6 +19979,22 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_nickel",
+      "dst": "izdelie_kondensatory_keramicheskie",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "izdelie_kondensatory_keramicheskie",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -19440,6 +20062,22 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "izdelie_halve",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_fr4",
+      "dst": "izdelie_halve",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_ibm_northpole_die",
       "dst": "izdelie_ibm_northpole",
       "type": "part_of",
@@ -19485,6 +20123,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "izdelie_ibm_northpole",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -19592,6 +20238,22 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "izdelie_brainchip_akida_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_fr4",
+      "dst": "izdelie_brainchip_akida_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "group_brainchip_team",
       "dst": "izdelie_brainchip_akida_2",
       "type": "researches",
@@ -19640,6 +20302,14 @@
       }
     },
     {
+      "src": "material_agm_steklovolokno",
+      "dst": "часть_litii-tionilhloridnye_batarei_separator",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_lithium",
       "dst": "часть_litii-tionilhloridnye_batarei_anode",
       "type": "used_in",
@@ -19672,8 +20342,32 @@
       }
     },
     {
+      "src": "material_soCl2_lialcl4_electrolit",
+      "dst": "часть_litii-tionilhloridnye_batarei_electrolyte",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_epoksid_epon_828_+_teta",
       "dst": "часть_intel_loihi_2_encapsulant",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_fr4",
+      "dst": "часть_intel_loihi_2_pcb",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_intel_loihi_2_thermal_spreader",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -19704,6 +20398,14 @@
       }
     },
     {
+      "src": "material_batio3",
+      "dst": "часть_intel_loihi_2_capacitors",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_si",
       "dst": "часть_sot-mram_periphery",
       "type": "used_in",
@@ -19714,6 +20416,14 @@
     {
       "src": "material_si",
       "dst": "часть_sot-mram_row_decoders",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_coefeb_mgo",
+      "dst": "часть_sot-mram_cell_array",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -19824,6 +20534,30 @@
       }
     },
     {
+      "src": "material_fr4",
+      "dst": "часть_nvidia_jetson_orin_nano_wifi_bt",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_fr4",
+      "dst": "часть_nvidia_jetson_orin_nano_pcb",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_quartz",
+      "dst": "часть_gr801_noel-v_risc-v_crystal_osc",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_si",
       "dst": "часть_gr801_noel-v_risc-v_flash",
       "type": "used_in",
@@ -19872,6 +20606,14 @@
       }
     },
     {
+      "src": "material_batio3",
+      "dst": "часть_gr801_noel-v_risc-v_capacitors",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_epoksid_epon_828_+_teta",
       "dst": "часть_gr801_noel-v_risc-v_package",
       "type": "used_in",
@@ -19896,8 +20638,40 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_batio3",
+      "dst": "часть_kondensatory_keramicheskie_ceramic_layers",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_nickel",
       "dst": "часть_kondensatory_keramicheskie_inner_electrodes",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_kondensatory_keramicheskie_termination",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_tin_metal",
+      "dst": "часть_kondensatory_keramicheskie_plating",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_kondensatory_keramicheskie_outer_electrodes",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -19928,8 +20702,32 @@
       }
     },
     {
+      "src": "material_fr4",
+      "dst": "часть_halve_pcb",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_halve_thermal_spreader",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_splav_sn-pb",
       "dst": "часть_halve_pins_balls",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_batio3",
+      "dst": "часть_halve_capacitors",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -19944,7 +20742,15 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_batio3",
+      "dst": "часть_ibm_northpole_capacitors",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_bt_abf_substrate",
       "dst": "часть_ibm_northpole_substrate",
       "type": "used_in",
       "meta": {
@@ -19952,8 +20758,16 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_emc_underfill",
       "dst": "часть_ibm_northpole_package",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_ibm_northpole_thermal_spreader",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -19984,6 +20798,22 @@
       }
     },
     {
+      "src": "material_al_bondwire",
+      "dst": "часть_sic_mosfet_wire_bonds",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_bondwire",
+      "dst": "часть_sic_mosfet_gate_terminal",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_splav_sn-pb",
       "dst": "часть_sic_mosfet_solder",
       "type": "used_in",
@@ -19992,8 +20822,24 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "часть_sic_mosfet_lead_frame",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_ptfe",
       "dst": "часть_brainchip_akida_2_substrate",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_fr4",
+      "dst": "часть_brainchip_akida_2_pcb",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -20018,6 +20864,22 @@
     {
       "src": "material_splav_sn-pb",
       "dst": "часть_brainchip_akida_2_pins_balls",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_brainchip_akida_2_thermal_spreader",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_batio3",
+      "dst": "часть_brainchip_akida_2_capacitors",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -23752,6 +24614,14 @@
       }
     },
     {
+      "src": "material_magnitnaya_rezina_ferritovyi_poroshok",
+      "dst": "часть_ferritovye_klinya_na_kabelyah_sensorov_core",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_tverdooksidnyi_toplivnyi_element_anode",
       "dst": "izdelie_tverdooksidnyi_toplivnyi_element",
       "type": "part_of",
@@ -23800,7 +24670,7 @@
       }
     },
     {
-      "src": "material_ni_ysz_cermet",
+      "src": "material_ni-ysz",
       "dst": "izdelie_tverdooksidnyi_toplivnyi_element",
       "type": "used_in",
       "meta": {
@@ -23869,6 +24739,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_cellulose",
+      "dst": "izdelie_superkondensatory",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -24264,6 +25142,14 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "izdelie_termoelektricheskii_postoyannyi_magnit",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_emi-generator_capacitor_bank",
       "dst": "izdelie_emi-generator",
       "type": "part_of",
@@ -24392,6 +25278,14 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "izdelie_termomoduli_pelte",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_tpv-lenty_emitter_ribbon",
       "dst": "izdelie_tpv-lenty",
       "type": "part_of",
@@ -24421,6 +25315,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_tungsten",
+      "dst": "izdelie_tpv-lenty",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -24472,7 +25374,7 @@
       }
     },
     {
-      "src": "material_ni_ysz_cermet",
+      "src": "material_ni-ysz",
       "dst": "izdelie_lt-sofc",
       "type": "used_in",
       "meta": {
@@ -24592,6 +25494,14 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "izdelie_reversivnye_pelte",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_splav_sn-pb",
       "dst": "izdelie_reversivnye_pelte",
       "type": "used_in",
@@ -24653,6 +25563,22 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_spongy_lead",
+      "dst": "izdelie_svintsovo-kislotnye_akb",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_pb_sb_alloy",
+      "dst": "izdelie_svintsovo-kislotnye_akb",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -24752,7 +25678,31 @@
       }
     },
     {
+      "src": "material_graphite",
+      "dst": "izdelie_mikroreaktor_deleniya",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_inconel_625",
+      "dst": "izdelie_mikroreaktor_deleniya",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_concrete_barite",
+      "dst": "izdelie_mikroreaktor_deleniya",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_sodium",
       "dst": "izdelie_mikroreaktor_deleniya",
       "type": "used_in",
       "meta": {
@@ -25024,6 +25974,22 @@
       }
     },
     {
+      "src": "material_graphite",
+      "dst": "izdelie_tverdotelnye_akkumulyatory",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "izdelie_tverdotelnye_akkumulyatory",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_mmrtg_isotope",
       "dst": "izdelie_mmrtg",
       "type": "part_of",
@@ -25077,6 +26043,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_pbte_teg",
+      "dst": "izdelie_mmrtg",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -25181,6 +26155,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_tungsten",
+      "dst": "izdelie_tpv",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -25424,7 +26406,7 @@
       }
     },
     {
-      "src": "material_ni_ysz_cermet",
+      "src": "material_ni-ysz",
       "dst": "часть_tverdooksidnyi_toplivnyi_element_anode",
       "type": "used_in",
       "meta": {
@@ -25464,16 +26446,8 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_cellulose",
       "dst": "часть_superkondensatory_separator",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_uglevolokno",
-      "dst": "часть_superkondensatory_electrode_pos",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -25496,7 +26470,15 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_acetonitrile_teabf4",
+      "dst": "часть_superkondensatory_electrolyte",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
       "dst": "часть_superkondensatory_terminal",
       "type": "used_in",
       "meta": {
@@ -25504,7 +26486,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_fkm-silikon",
       "dst": "часть_vodorodnye_toplivnye_elementy_gasket",
       "type": "used_in",
       "meta": {
@@ -25512,7 +26494,7 @@
       }
     },
     {
-      "src": "material_p_vdf-trfe-cfe",
+      "src": "material_nafion",
       "dst": "часть_vodorodnye_toplivnye_elementy_membrane",
       "type": "used_in",
       "meta": {
@@ -25736,14 +26718,6 @@
       }
     },
     {
-      "src": "material_karbon",
-      "dst": "часть_alyuminievo-vozdushnye_toplivnye_elementy_cathode",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_carbon_ptfe",
       "dst": "часть_alyuminievo-vozdushnye_toplivnye_elementy_air_electrode",
       "type": "used_in",
@@ -25824,6 +26798,22 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "часть_emi-generator_waveguide",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_emi-generator_source",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_ss_aisi_304",
       "dst": "часть_emi-generator_capacitor_bank",
       "type": "used_in",
@@ -25840,16 +26830,16 @@
       }
     },
     {
-      "src": "material_stal_st3",
-      "dst": "часть_induktivnyi_nakopitel_housing",
+      "src": "material_tungsten",
+      "dst": "часть_emi-generator_switch",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_induktivnyi_nakopitel_core",
+      "src": "material_stal_st3",
+      "dst": "часть_induktivnyi_nakopitel_housing",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -25864,8 +26854,40 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "часть_induktivnyi_nakopitel_switch",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_induktivnyi_nakopitel_cooling",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_oksid_alyuminiya",
       "dst": "часть_termomoduli_pelte_ceramic_top",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_termomoduli_pelte_wires",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_termomoduli_pelte_electrodes",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -25890,6 +26912,30 @@
     {
       "src": "material_al_6061-t6",
       "dst": "часть_tpv-lenty_reflector",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ingaassb",
+      "dst": "часть_tpv-lenty_pv_cells",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_tungsten",
+      "dst": "часть_tpv-lenty_emitter_ribbon",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_tpv-lenty_cooling",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -25992,6 +27038,14 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "часть_reversivnye_pelte_electrodes",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_splav_sn-pb",
       "dst": "часть_reversivnye_pelte_solder",
       "type": "used_in",
@@ -26008,6 +27062,30 @@
       }
     },
     {
+      "src": "material_pbo2",
+      "dst": "часть_svintsovo-kislotnye_akb_anode",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_spongy_lead",
+      "dst": "часть_svintsovo-kislotnye_akb_cathode",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_agm_steklovolokno",
+      "dst": "часть_svintsovo-kislotnye_akb_separator",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_uhmwpe_dyneema",
       "dst": "часть_svintsovo-kislotnye_akb_case",
       "type": "used_in",
@@ -26016,7 +27094,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_pb_sb_alloy",
       "dst": "часть_svintsovo-kislotnye_akb_grid_pos",
       "type": "used_in",
       "meta": {
@@ -26048,6 +27126,14 @@
       }
     },
     {
+      "src": "material_ss_316l",
+      "dst": "часть_mptm_heat_exchanger",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_al_6061-t6",
       "dst": "часть_mptm_controls",
       "type": "used_in",
@@ -26056,7 +27142,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_sodium",
       "dst": "часть_mikroreaktor_deleniya_coolant",
       "type": "used_in",
       "meta": {
@@ -26072,15 +27158,7 @@
       }
     },
     {
-      "src": "material_karbon",
-      "dst": "часть_mikroreaktor_deleniya_fuel",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_ti-6al-4v",
+      "src": "material_graphite",
       "dst": "часть_mikroreaktor_deleniya_moderator",
       "type": "used_in",
       "meta": {
@@ -26088,7 +27166,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_ss_316l",
       "dst": "часть_mikroreaktor_deleniya_vessel",
       "type": "used_in",
       "meta": {
@@ -26096,8 +27174,16 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_concrete_barite",
       "dst": "часть_mikroreaktor_deleniya_shielding",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ss_316l",
+      "dst": "часть_mikroreaktor_deleniya_heat_exchanger",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -26216,6 +27302,22 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "часть_marx_generator_output_terminal",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_batio3",
+      "dst": "часть_marx_generator_capacitors",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_oksid_alyuminiya",
       "dst": "часть_marx_generator_spark_gaps",
       "type": "used_in",
@@ -26240,7 +27342,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_copper",
       "dst": "часть_tverdotelnye_akkumulyatory_current_collector_cu",
       "type": "used_in",
       "meta": {
@@ -26248,7 +27350,7 @@
       }
     },
     {
-      "src": "material_si",
+      "src": "material_nmc_graphite",
       "dst": "часть_tverdotelnye_akkumulyatory_anode",
       "type": "used_in",
       "meta": {
@@ -26256,7 +27358,7 @@
       }
     },
     {
-      "src": "material_si",
+      "src": "material_nmc_graphite",
       "dst": "часть_tverdotelnye_akkumulyatory_cathode",
       "type": "used_in",
       "meta": {
@@ -26280,7 +27382,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_bondwire",
       "dst": "часть_tverdotelnye_akkumulyatory_current_collector_al",
       "type": "used_in",
       "meta": {
@@ -26312,7 +27414,7 @@
       }
     },
     {
-      "src": "material_grafen-aerogel",
+      "src": "material_silica_aerogel_blanket",
       "dst": "часть_mmrtg_thermal_insulation",
       "type": "used_in",
       "meta": {
@@ -26320,7 +27422,7 @@
       }
     },
     {
-      "src": "material_al_6061-t6",
+      "src": "material_al_6063-t5",
       "dst": "часть_mmrtg_cold_side",
       "type": "used_in",
       "meta": {
@@ -26336,7 +27438,7 @@
       }
     },
     {
-      "src": "material_bi₂te₃",
+      "src": "material_pbte_teg",
       "dst": "часть_mmrtg_thermocouples",
       "type": "used_in",
       "meta": {
@@ -26352,14 +27454,6 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_coilgun_capacitor_bank",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
       "src": "material_stal_st3",
       "dst": "часть_coilgun_housing",
       "type": "used_in",
@@ -26368,7 +27462,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_al_6061-t6",
       "dst": "часть_coilgun_switch",
       "type": "used_in",
       "meta": {
@@ -26384,7 +27478,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_copper",
       "dst": "часть_coilgun_coil",
       "type": "used_in",
       "meta": {
@@ -26400,16 +27494,24 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
-      "dst": "часть_tpv_housing",
+      "src": "material_ingaassb",
+      "dst": "часть_tpv_pv_cell",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
       }
     },
     {
-      "src": "material_karbon",
-      "dst": "часть_tpv_heat_source",
+      "src": "material_quartz",
+      "dst": "часть_tpv_filter",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ti-6al-4v",
+      "dst": "часть_tpv_housing",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -26568,6 +27670,14 @@
       }
     },
     {
+      "src": "material_ss_316l",
+      "dst": "часть_svobodnoporshnevoi_stirling_regenerator",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_ndfeb",
       "dst": "часть_svobodnoporshnevoi_stirling_alternator",
       "type": "used_in",
@@ -26584,7 +27694,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_stal_st3",
       "dst": "часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator",
       "type": "used_in",
       "meta": {
@@ -26600,7 +27710,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_stal_st3",
       "dst": "часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor",
       "type": "used_in",
       "meta": {
@@ -27184,6 +28294,30 @@
       }
     },
     {
+      "src": "material_si",
+      "dst": "izdelie_SkyNet-T800",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_poliimid",
+      "dst": "izdelie_SkyNet-T800",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "izdelie_SkyNet-T800",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_ti-6al-4v",
       "dst": "часть_t_x_эндоскелет",
       "type": "used_in",
@@ -27568,7 +28702,7 @@
       }
     },
     {
-      "src": "material_ti-6al-4v",
+      "src": "material_silicone-textile_composite",
       "dst": "часть_cameron_ткань_кожа",
       "type": "used_in",
       "meta": {
@@ -27694,47 +28828,118 @@
       "standart_10 CFR 50",
       "standart_AEC-Q101",
       "standart_AEC-Q200",
-      "standart_AISI 52100",
+      "standart_AMS 2408",
+      "standart_AMS 4025/4026/4027 (лист, плита, пруток T6/T651)",
       "standart_AMS 4027",
+      "standart_AMS 4530 (брусок/пруток, закалённый и состаренный)",
       "standart_AMS 4928",
+      "standart_AMS 5596/5597 (лист/плита)",
+      "standart_AMS 5599 (лист/плита)",
       "standart_AMS 5662",
       "standart_AMS 5662 (Inconel 718)",
+      "standart_AMS 5662 (прутки/поковки, закалка+двойное старение)",
       "standart_AMS 5663 (Inconel 718)",
+      "standart_AMS 5663 (прямое старение)",
+      "standart_AMS 5666 (прутки/поковки)",
+      "standart_AMS 6440 (авиационные подшипниковые стали)",
       "standart_ANSI/ASME B1.1 (1/4-20 UNC)",
+      "standart_API 6A / NACE MR0175 (кислые среды)",
       "standart_ASHRAE 15",
       "standart_ASME BPVC Section III",
       "standart_ASTM A228/A228M-18",
       "standart_ASTM A240 (AISI 304)",
       "standart_ASTM A240 (sheet/strip)",
+      "standart_ASTM A240/A240M (316L)",
+      "standart_ASTM A295/A295M (AISI 52100, UNS G52986)",
       "standart_ASTM A36",
+      "standart_ASTM B1 (твёрдотянутая медная проволока)",
       "standart_ASTM B152",
+      "standart_ASTM B152 (лист, полоса, плита и катаный пруток C11000)",
       "standart_ASTM B16",
+      "standart_ASTM B160 (пруток, стержень Ni 200/201)",
       "standart_ASTM B194 (BeCu)",
+      "standart_ASTM B194 (лист и плита из медно-бериллиевого сплава)",
+      "standart_ASTM B196 (пруток и брусок)",
+      "standart_ASTM B197 (проволока)",
+      "standart_ASTM B198 (полоса)",
+      "standart_ASTM B2 (среднеотожжённая проволока)",
       "standart_ASTM B209",
+      "standart_ASTM B209 (лист и плита)",
       "standart_ASTM B221",
+      "standart_ASTM B221 (прутки, профили и проволока)",
+      "standart_ASTM B241 / B241M (трубы)",
+      "standart_ASTM B247 (поковки)",
+      "standart_ASTM B3 (мягкая/отожжённая проволока)",
       "standart_ASTM B344 (NiCr electrical resistance wire)",
       "standart_ASTM B348",
+      "standart_ASTM B443 (лист/плита)",
+      "standart_ASTM B446 (прутки/поковки)",
       "standart_ASTM B483",
       "standart_ASTM B488 (Au-покрытие)",
+      "standart_ASTM B521",
+      "standart_ASTM B545",
       "standart_ASTM B633",
       "standart_ASTM B637",
+      "standart_ASTM B760",
+      "standart_ASTM C1161",
+      "standart_ASTM C1161 (изгиб технической керамики)",
+      "standart_ASTM C1259 (модуль упругости импульсным возбуждением)",
+      "standart_ASTM C1326 / ISO 14705 (твёрдость HV керамик)",
+      "standart_ASTM C1327",
+      "standart_ASTM C1421",
       "standart_ASTM C1728",
       "standart_ASTM C1728 Type III Grade 1A",
       "standart_ASTM C534",
+      "standart_ASTM C638",
+      "standart_ASTM C638 (aggregates for radiation-shielding concrete)",
+      "standart_ASTM C697",
       "standart_ASTM C750",
+      "standart_ASTM C750 (порошок карбида бора ядерной чистоты)",
+      "standart_ASTM C751 (гранулы карбида бора ядерной чистоты)",
+      "standart_ASTM D1002",
+      "standart_ASTM D1418",
+      "standart_ASTM D149/D150/D257 (электрические испытания)",
+      "standart_ASTM D150 (диэлектрическая проницаемость и тангенс потерь)",
+      "standart_ASTM D2240",
       "standart_ASTM D2240 (Shore A)",
+      "standart_ASTM D2344 (короткопролётный изгиб)",
+      "standart_ASTM D3039 (растяжение полимерных композитов)",
+      "standart_ASTM D4020",
       "standart_ASTM D412",
       "standart_ASTM D4802 (акриловый лист, спецификация)",
       "standart_ASTM D4894",
+      "standart_ASTM D570 (влагопоглощение)",
       "standart_ASTM D638",
+      "standart_ASTM D638 (механические испытания пластмасс)",
+      "standart_ASTM D646 (граммаж бумаги)",
+      "standart_ASTM D6641 (сжатие UD-композитов)",
+      "standart_ASTM D7219",
+      "standart_ASTM D7219 (ядерный графит блоков HTGR)",
+      "standart_ASTM D8202 (свойства ядерного графита)",
       "standart_ASTM D882",
+      "standart_ASTM D882 (механика плёнок)",
+      "standart_ASTM D882 (растяжение тонких пластиковых плёнок)",
+      "standart_ASTM D98 (спецификация на хлорид кальция)",
+      "standart_ASTM E1225 (сравнительный метод измерения теплопроводности, round-robin ТЭ-испытания)",
+      "standart_ASTM E1269 (удельная теплоёмкость, DSC)",
       "standart_ASTM E1289",
+      "standart_ASTM E1461 (теплопроводность лазерной вспышкой)",
+      "standart_ASTM E2653",
+      "standart_ASTM E2653 (sodium technology)",
+      "standart_ASTM E793 (энтальпия плавления/кристаллизации, DSC)",
       "standart_ASTM E8",
+      "standart_ASTM E831/E228 (ТКЛР дилатометрией)",
       "standart_ASTM F136",
       "standart_ASTM F136 (Ti-6Al-4V)",
+      "standart_ASTM F2029-22 (практика измерения водородного кроссовера PEM-мембран)",
+      "standart_ASTM F3 (Ni для электронных применений)",
+      "standart_ASTM F648",
       "standart_Aguirre 2024 (ADC area 70-90%)",
+      "standart_AlN substrate grade (PCAN1000 / CeramTec ALN)",
       "standart_Arbe Phoenix Integration Guide",
+      "standart_BASF CIP grades (EW/HQ/HS/SM)",
       "standart_Bosch Sensortec PCB Guide",
+      "standart_CAS 174899-82-2",
       "standart_CDE WL-Series Datasheet",
       "standart_CISPR 25",
       "standart_Cedrat Mechanical Interface",
@@ -27742,26 +28947,32 @@
       "standart_City Labs NanoTritium P100",
       "standart_Coherent Integration Guide",
       "standart_DIN 17230 (100Cr6)",
+      "standart_DIN 17230 / W-Nr 1.3505 (100Cr6)",
       "standart_DIN 2093",
       "standart_DIN 69051",
       "standart_DIN 912",
+      "standart_DIN EN 60672 (керамические электроизоляционные материалы, класс C-7xx)",
       "standart_DIN VDE 0580",
       "standart_DMP Photonics Spark Gaps",
       "standart_DOE 10 CFR 71",
+      "standart_DOE Fuel Cell Tech Team MEFED-PEM (технические требования к мембранам тяговых ТЭ)",
       "standart_DOE GPHS Rev.5",
       "standart_DOE targets (bipolar plates)",
       "standart_Deublin Mounting Instructions",
       "standart_Doodle Labs Helix Datasheet",
       "standart_ECSS-Q-ST-60-15",
       "standart_EIA RS-198",
+      "standart_EIA RS-198 (X7R)",
+      "standart_EIA RS-198 (класс II, X5R/X7R/Y5V)",
       "standart_EJMA (монтаж компенсаторов)",
+      "standart_EN 10025-2 / S235JR (европейский аналог Ст3сп/пс)",
       "standart_EN 1090-2",
       "standart_EN 1092-1 (Type 01, PN10 DN50)",
       "standart_EN 12164",
       "standart_EN 13345",
       "standart_EN 50342-1",
+      "standart_EN 50342-1 (стартерные свинцово-кислотные АКБ)",
       "standart_EN 50598",
-      "standart_EN 683-17",
       "standart_EN 755-9 (EN AW-6063-T5)",
       "standart_EPJ Appl. Phys. 80, 20901 (2017)",
       "standart_ETSI EN 301 489",
@@ -27771,6 +28982,7 @@
       "standart_FLIR Tau 2 IDD",
       "standart_Fair-Rite Material 43/31 DS",
       "standart_IAEA SSR-4",
+      "standart_IAEA SSR-6 (перевозка радиоактивных материалов)",
       "standart_IBM 2nm",
       "standart_IDTechEx Die-Attach Trend (2024)",
       "standart_IEC 60034",
@@ -27780,7 +28992,11 @@
       "standart_IEC 60068",
       "standart_IEC 60086",
       "standart_IEC 60095",
+      "standart_IEC 60095 (SLI lead-acid batteries)",
+      "standart_IEC 60095 (SLI lead-acid)",
       "standart_IEC 60095-2",
+      "standart_IEC 60122 (кварцевые резонаторы)",
+      "standart_IEC 60243 / ASTM D149 (электрическая прочность)",
       "standart_IEC 60243-1",
       "standart_IEC 60317 (обмоточный провод)",
       "standart_IEC 60384-10",
@@ -27799,10 +29015,17 @@
       "standart_IEC 62133-2 (безопасность Li-ion)",
       "standart_IEC 62282",
       "standart_IEC 62282 (SOFC)",
+      "standart_IEC 62282-1/-2 (топливные элементы, испытания модулей SOFC)",
       "standart_IEC 62282-2",
+      "standart_IEC 62282-2 (модули топливных элементов — безопасность)",
       "standart_IEC 62391",
+      "standart_IEC 62391-1",
+      "standart_IEC 62391-1 (EDLC)",
+      "standart_IEC 62391-1 (двухслойные конденсаторы для электронной аппаратуры)",
+      "standart_IEC 62576 (EDLC для гибридных транспортных средств — методы испытаний)",
       "standart_IEC 62619",
       "standart_IEC 62619 (промышленные Li-ion)",
+      "standart_IEC 62830 (полупроводниковые приборы — термоэлектрические приборы)",
       "standart_IEEE 1625",
       "standart_IEEE 1625 (многоэлементные сборки)",
       "standart_IEEE C57.12.00",
@@ -27816,17 +29039,29 @@
       "standart_IPC TM-650 2.4.24",
       "standart_IPC-2221",
       "standart_IPC-2223",
+      "standart_IPC-4101",
+      "standart_IPC-4101 (ламинаты)",
+      "standart_IPC-4101/101",
+      "standart_IPC-4101/126",
+      "standart_IPC-4101/98",
+      "standart_IPC-4101/99",
+      "standart_IPC-4204/4206 (гибкие диэлектрики для FPC)",
+      "standart_IPC-6012",
+      "standart_IPC-6012 (жёсткие платы)",
       "standart_IPC-6013",
       "standart_IPC-A-600",
       "standart_IPC-A-610",
       "standart_IPG Installation Manual",
       "standart_IPG Mechanical Interface",
+      "standart_ISO 10993",
       "standart_ISO 10993-1 (биосовместимость)",
       "standart_ISO 1179 (пневмопорты)",
       "standart_ISO 14687",
       "standart_ISO 15241",
       "standart_ISO 16028",
+      "standart_ISO 1874 (материалы для литья PA66)",
       "standart_ISO 1940",
+      "standart_ISO 22007 (теплопроводность)",
       "standart_ISO 261 (M1.6)",
       "standart_ISO 261 (M2)",
       "standart_ISO 261 (M2.5)",
@@ -27838,6 +29073,7 @@
       "standart_ISO 2919",
       "standart_ISO 2919 (герметичные источники)",
       "standart_ISO 3506 A2-70",
+      "standart_ISO 3601",
       "standart_ISO 4115 (металлический фетр)",
       "standart_ISO 4762 (M2)",
       "standart_ISO 4762 (M2.5)",
@@ -27846,8 +29082,13 @@
       "standart_ISO 4762 (M5)",
       "standart_ISO 4762 (M6)",
       "standart_ISO 4762 (M8)",
+      "standart_ISO 5834-1",
+      "standart_ISO 5834-2",
       "standart_ISO 6149-1 (fluid ports)",
       "standart_ISO 630",
+      "standart_ISO 6474 (имплантационная керамика Al₂O₃)",
+      "standart_ISO 683-17 (шарико- и роликоподшипниковые стали; марки 100Cr6, 100CrMnSi6-4, 100CrMo7, 100CrMo7-3)",
+      "standart_ISO 6872",
       "standart_ISO 7823-1 (PMMA листы, литые)",
       "standart_ISO 7823-2 (PMMA листы, экструзионные)",
       "standart_ISO 898-1",
@@ -27859,13 +29100,19 @@
       "standart_Intel 4 process",
       "standart_Intel Optane PM Guide",
       "standart_Iridium 9603 Developer Guide",
+      "standart_JEDEC J-STD-020",
+      "standart_JEDEC J-STD-020 (классификация MSL/reflow)",
       "standart_JEDEC J-STD-020D",
       "standart_JEDEC JESD22",
       "standart_JEDEC JESD22-A104",
+      "standart_JEDEC JESD22-A104 (термоциклирование пакета)",
+      "standart_JEDEC JESD22-A104 (термоциклирование)",
+      "standart_JEDEC JESD235 (STT-MRAM, для сравнения)",
       "standart_JEDEC JESD47",
       "standart_JEDEC MS-001 (DIP)",
       "standart_JIS C 5101-11",
       "standart_JIS D5301",
+      "standart_JIS G4805 (SUJ2)",
       "standart_Jülich Kuriakose 2024",
       "standart_MIL-DTL-11821",
       "standart_MIL-DTL-12560K",
@@ -27884,6 +29131,8 @@
       "standart_MIL-STD-883 M2011.9",
       "standart_MIL-STD-883 Method 1010 (термоциклирование)",
       "standart_MIL-STD-883 TM1019",
+      "standart_MIL-STD-883, метод 2011.9 (испытание прочности проволочных соединений, pull test)",
+      "standart_MIL-T-10727",
       "standart_MSFC-STD-5003",
       "standart_Microgen Engine Corporation Specs",
       "standart_Micromachines 12:913 (2021)",
@@ -27898,6 +29147,8 @@
       "standart_NASA/TM-2008-215282",
       "standart_NASA/TM—2018-219944",
       "standart_NEMA 17",
+      "standart_NIST-JANAF Thermochemical Tables, 4th ed. (Chase 1998) — теплофизика PbO₂",
+      "standart_NP-086-15 (теплоносители ЯЭУ, РФ)",
       "standart_NREL 89857 (2024)",
       "standart_New Way Design Guide",
       "standart_ONR EMRG Program",
@@ -27912,16 +29163,20 @@
       "standart_RV64GC ISA",
       "standart_RoHS 2011/65/EU",
       "standart_RoHS 2011/65/EU (exemption 6c)",
+      "standart_RoHS-совместимая замена ртути (2011/65/EU)",
       "standart_RoboSense AC1 Datasheet",
       "standart_Royal C4-250III Datasheet",
       "standart_S-mount (M12×0.5)",
       "standart_SAE J1962_201607",
+      "standart_SEMI / корпоративные спеки подложек 96/99.5%",
       "standart_SEMI M1",
       "standart_STANAG 4294",
       "standart_Schaeffler TPI 291",
       "standart_Sony IMX992 SenSWIR Flyer",
       "standart_Starlink Mini Specification Sheet",
       "standart_TE LDT Mounting Note",
+      "standart_TORAYCA T1100G fiber spec / prepreg 3960 (отверждение 177 °C)",
+      "standart_TPV cell practice (NTRS/OSTI)",
       "standart_TSO-C112e",
       "standart_TSO-C166b",
       "standart_TSO-C88b",
@@ -27931,21 +29186,43 @@
       "standart_Teledyne Mechanical IDD (Boson+)",
       "standart_The Aluminum Association: AA 6063 (ASTM B221)",
       "standart_Thorlabs Mounting Note",
+      "standart_UL 746B (RTI)",
       "standart_UL 94 V-0",
+      "standart_UL 94 V-0 (горючесть)",
+      "standart_UL 94 V-2 (неармированный PA66)",
       "standart_UN 3090",
       "standart_UN 38.3",
       "standart_UN 38.3 (транспорт литий-ионных батарей)",
       "standart_UN 38.3 (транспорт)",
+      "standart_UNS A96061 / EN AW-6061 (AlSi1MgCu, 3.3211)",
+      "standart_UNS C11000 (EN CW004A / JIS C110)",
+      "standart_UNS C17200 (Alloy 25 / CuBe2, EN CW101C)",
+      "standart_UNS N02200/N02201 (Ni ≥99.0/99.6%)",
+      "standart_UNS N06625",
+      "standart_UNS N07718",
       "standart_USB Type-C Spec Rev 2.2 (USB-IF)",
       "standart_Unitree H1 Datasheet",
       "standart_VITA 65",
+      "standart_VRLA separator practice",
       "standart_VectorNav VN-300 Datasheet",
+      "standart_W.Nr. 2.4668",
+      "standart_W.Nr. 2.4856",
       "standart_Wang 2021 interface",
       "standart_Werfel ISMB7",
       "standart_X20 Mounting Guide",
       "standart_Zeno Power Tech",
+      "standart_battery grade >99.5 % (Rocolab)",
       "standart_battery-component.com Container Spec",
-      "standart_ГОСТ 8774-75 (литий металлический, марки ЛЭ1/ЛЭ2)"
+      "standart_electronic grade H₂O <20 ppmw (proionic)",
+      "standart_ГОСТ 27006 (бетоны тяжёлые)",
+      "standart_ГОСТ 380-2005 (стали углеродистые обыкновенного качества, марки Ст0–Ст6)",
+      "standart_ГОСТ 535-2005 (прокат сортовой из стали обыкновенного качества)",
+      "standart_ГОСТ 5744-75 (порошки карбида бора)",
+      "standart_ГОСТ 801-78 (ШХ15)",
+      "standart_ГОСТ 859-2014 (марки меди, М1)",
+      "standart_ГОСТ 8774-75 (литий металлический, марки ЛЭ1/ЛЭ2)",
+      "standart_спецификация топлива Pu-238 программы Cassini (DOE/OSTI 10123416)",
+      "standart_чистота 4N/5N (99.99 %/99.999 % Al) — товарные классы heavy bonding wire (Inseto IKB-037)"
     ],
     "has_part": [
       "часть_ni-63_betavoltaik_4h-sic_case",
@@ -27954,8 +29231,15 @@
       "часть_nvidia_jetson_orin_nano_soc"
     ],
     "researched_by": [
+      "group_Acheson (1891 — открытие карбида кремния); J.A. Lely (1955 — метод сублимационного роста монокристаллов); Cree/Wolfspeed (осн. 1987 — первые коммерческие SiC-пластины, 1992); ключевые производители подложек: Wolfspeed, Coherent, SiCrystal (ROHM)",
+      "group_F. Bauer, E. Fousson (ISL Saint-Louis) и Q.M. Zhang (Penn State, ONR) — открытие класса 2002–2006; Arkema-Piezotech (F. Domingues Dos Santos) — промышленная марка RT; Lei Zhu (Case Western), Xin Chen et al. — тетраполимеры FA",
+      "group_INCO Alloys International (разработка, 1962) → Special Metals Corporation (владелец марки INCONEL®)",
+      "group_INCO Alloys International (разработка, нач. 1960-х) → Special Metals Corporation (владелец марки INCONEL®)",
       "group_J. Han и соавт. (Kyungpook National University, Тэгу, Корея) — UV-curable ionogel для всётвердотельного суперконденсатора, Chem. Eng. J. 416, 129089 (2021)",
+      "group_Masato Sagawa (Sumitomo Special Metals) и John Croat (General Motors) — независимое открытие Nd₂Fe₁₄B в 1984 г.; производители: Shin-Etsu, Hitachi, TDK, Neo (старое GM Magnequench)",
+      "group_Michael Naguib, Yury Gogotsi, Michel W. Barsoum — Drexel University (открытие MXene в 2011 г.: травление Ti₃AlC₂ в HF)",
       "group_Murata_TDK",
+      "group_Pierre Bonhôte и соавт. (EPFL, Швейцария) — синтез гидрофобных EMIM-имидных комнатнотемпературных расплавов, Inorg. Chem. 1996, 35(5), 1168–1178",
       "group_advanced_research",
       "group_ballard_power",
       "group_bloom_energy",
@@ -27974,6 +29258,7 @@
       "group_general_electric",
       "group_gsk_rollvis",
       "group_harris_thales",
+      "group_high-k затворы — Intel (2007, 45 нм); ферроэлектрическая HfO₂ — широкое сообщество (обзоры Zhao 2022, Pavoni 2022)",
       "group_hp_labs",
       "group_ibm_research",
       "group_ii_vi_marlow",
@@ -27998,20 +29283,19 @@
       "group_westinghouse_oklo",
       "group_widetronix",
       "group_wolfspeed",
-      "group_zeno_power"
+      "group_zeno_power",
+      "group_группа Q. M. Zhang (Penn State University); промышленная марка Piezotech (Arkema)",
+      "group_группа Капассо (Harvard) — пионерские металлинзы; Capasso Group / Metalenz (коммерциализация)",
+      "group_производство изотопа — Oak Ridge National Laboratory / US DOE Isotope Program (захват нейтрона на обогащённом ⁶²Ni); бетавольтаика — Betavolt (Китай, BV100, 2024); метрология — NIST"
     ],
     "uses_material": [
-      "material_acetonitrile_teabf4",
       "material_aerogel",
-      "material_agm_steklovolokno",
-      "material_al_bondwire",
       "material_alumina",
       "material_aluminum",
       "material_aluminum_1100",
       "material_aluminum_6063",
       "material_aluminum_electrolytic",
       "material_barium_titanate",
-      "material_batio3",
       "material_bearing_steel_52100",
       "material_biological_tissue",
       "material_bt_resin",
@@ -28019,13 +29303,9 @@
       "material_carbon_fiber_endoskeleton",
       "material_carbon_paper",
       "material_cast_iron",
-      "material_cellulose",
       "material_ceramic_capacitors",
       "material_ceramic_mlcc",
-      "material_coefeb_mgo",
       "material_composite_material",
-      "material_concrete_barite",
-      "material_copper",
       "material_copper_alloy",
       "material_copper_wire",
       "material_cybernetic_alloy",
@@ -28033,20 +29313,18 @@
       "material_epoxy",
       "material_epoxy_molding",
       "material_eva",
-      "material_fr4",
       "material_gaSb",
       "material_generic_material",
       "material_gold_coating",
       "material_gps_ins_an_vsn_8",
-      "material_graphite",
       "material_gst_chalcogenide",
       "material_h2so4_aqueous",
       "material_hyperalloy_t800",
       "material_hyperalloy_t850",
       "material_hyperalloy_tx",
       "material_inconel_718_turbine",
-      "material_ingaassb",
       "material_iron_powder",
+      "material_karbon",
       "material_koh_aqueous",
       "material_lead_free_solder",
       "material_lini_mn_co_o2",
@@ -28055,15 +29333,10 @@
       "material_lithium_metal",
       "material_living_tissue_clone",
       "material_m829a4_apfsds",
-      "material_magnitnaya_rezina_ferritovyi_poroshok",
       "material_mimetic_polyalloy",
       "material_monocrystalline_si",
       "material_nafion_117",
       "material_ni63_metal",
-      "material_nickel",
-      "material_pb_sb_alloy",
-      "material_pbo2",
-      "material_pbte_teg",
       "material_pe_pp",
       "material_pe_separator",
       "material_plastic_qfp",
@@ -28071,7 +29344,6 @@
       "material_pp_membrane",
       "material_pt_carbon",
       "material_pu238_oxide",
-      "material_quartz",
       "material_raytheon_an_vlg8_flir",
       "material_rha_steel_class_a",
       "material_rha_steel_class_b",
@@ -28080,11 +29352,7 @@
       "material_silicon_carbide",
       "material_silicon_neural_net",
       "material_silicon_wafer",
-      "material_soCl2_lialcl4_electrolit",
       "material_socl2",
-      "material_sodium",
-      "material_spongy_lead",
-      "material_ss_316l",
       "material_stainless_steel_304",
       "material_stainless_steel_316",
       "material_stainless_steel_440c",
@@ -28094,33 +29362,30 @@
       "material_steel_track_links_t158",
       "material_synthetic_rubber",
       "material_tebabf4_acn",
-      "material_tin_metal",
       "material_tio2_memristor",
       "material_titanium_alloy",
-      "material_tungsten",
       "material_tungsten_alloy",
       "material_tungsten_electrodes",
       "material_uo2_pellets",
       "material_ybco_bulk",
       "material_ysz_electrolyte",
-      "material_керамические_материалы",
       "material_полиуретан"
     ]
   },
   "stats": {
-    "nodes": 947,
-    "edges": 3097,
+    "nodes": 969,
+    "edges": 3237,
     "dangling": {
-      "complies_with": 256,
+      "complies_with": 399,
       "has_part": 4,
-      "researched_by": 45,
-      "uses_material": 104
+      "researched_by": 56,
+      "uses_material": 81
     },
     "by_type": {
       "chast": 625,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 131,
-      "material": 173,
+      "material": 195,
       "standart": 8
     }
   }

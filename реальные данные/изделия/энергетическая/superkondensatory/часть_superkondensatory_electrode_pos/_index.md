@@ -14,7 +14,7 @@ id: часть_superkondensatory_electrode_pos
 дочерние_части: []
 материалы_частей:
   - часть: часть_superkondensatory_electrode_pos
-    материал: uglevolokno
+    материал: karbon
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -73,7 +73,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 1720×60×0.15 | mm | web (Maxwell BCAP3000 геометрия) |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | uglevolokno | — | web (активированный уголь EDLC) |
+| материал | karbon | — | web (активированный уголь EDLC) |
 
 ## Принцип работы
 
@@ -85,7 +85,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `uglevolokno` → [`uglevolokno.md`](../../../../материалы/uglevolokno.md)
+- `karbon` → [`karbon.md`](../../../../материалы/karbon.md)
 
 ## Источники
 

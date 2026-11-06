@@ -19,7 +19,7 @@ id: izdelie_lt-sofc
   - часть_lt-sofc_manifold
 материалы_частей:
   - часть: часть_lt-sofc_anode
-    материал: ni_ysz_cermet
+    материал: ni-ysz
     доля_массы: 0.18
   - часть: часть_lt-sofc_electrolyte
     материал: ysz_electrolyte

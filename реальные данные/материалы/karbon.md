@@ -40,7 +40,7 @@ id: material_karbon
     применение: прототипные и серийные ламинаты, ремонтные накладки, оболочки
     источник_url: https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=1036&context=mae_stures
 исследовательская_группа: 'Toray Industries (Torayca™ T300 — первое серийное высокопрочное PAN-волокно, выпущено в 1971 г.; >93 % C, Na+K следы)'
-стандарты: []
+стандарты: ['ASTM D4018', 'ISO 10618']
 версия: реальная
 статус_реальности: real
 доступность: промышленный
@@ -60,14 +60,16 @@ id: material_karbon
   коэффициент_Пуассона: null
   ударная_вязкость_Дж_см2: null
   усталостная_прочность_МПа: {min: null, max: null, nominal: null}
-  температура_плавления_C: null
+  температура_плавления_C: 3650
+...
   теплопроводность_W_mK: 10.5
   теплоёмкость_J_kgK: 795
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: 5.88e+04
 наследуемые: {}
 дополнительные:
-  цена_usd_kg: null
+  цена_usd_kg: 21.5
+...
   твердость_vickers_HV: null
   твердость_rockwell_HRC: null
   твердость_по_моосу: null
@@ -181,4 +183,17 @@ _Обратные ссылки ещё не проставлены._
 - arXiv 2602.04020 (k девяти CFRP: волокно/доля/структура укладки): https://arxiv.org/html/2602.04020v2
 - Nielsen 2024, Utah State Univ. (ламинат 12 слоёв T300-3K полотняной ткани): https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=1036&context=mae_stures
 - ResearchGate, Cryogenic performances of T700/T800 (k ~3.2 Вт/(м·К) @ 0° при КТ): https://www.researchgate.net/publication/287506004
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+## Источники (слиты из material_uglevolokno)
+
+- Toray T300 Data Sheet (PDF) — ρ 1.76 г/см³, σ 3530 МПа, E 230 ГПа, ε 1.5%: https://www.toraycma.com/wp-content/uploads/T300-Data-Sheet.pdf
+- JinJiuYi, T300 vs T700 vs T800 — модули 230/230/294 ГПа, плотности 1.76/1.80/1.80, σ 3530 МПа, теплопроводность 0.105 Дж/(см·с·°C): https://www.jinjiuyi.net/news/difference-between-t300-t700-and-t800-carbon-fiber.html
+- Rock West Composites, T300 tow — σ 3530 МПа, теплопроводность 0.025 cal/(cm·s·°C): https://www.rockwestcomposites.com/
+- Toray CMA, carbon fiber lineup — T300 1K/3K/6K/12K: https://www.toraycma.com/products/carbon-fiber
+- Wikipedia, Carbon fibers — Ø 5–10 мкм: https://en.wikipedia.org/wiki/Carbon_fibers
+- Instron, ASTM D4018 — испытание жгутов: https://www.instron.com/en/testing-solutions/astm-standards/astm-d4018
+- Research&Markets, carbon fiber market — средняя цена PAN вне aerospace ~21.5 USD/кг: https://www.researchandmarkets.com/reports/5864773/
+- USM Procurement SSP23-004 — HexTow IM7/12K по 42 USD/lb: https://www.usm.edu/procurement-contract-services/_documents/ssp23_004.pdf
+- Income Pultrusion — 12K = 12 000 филаментов, large tow дешевле 3K/6K на 30–50%: https://incomepultrusion.com/carbon-fiber-roving-calculator
 - CSV: `начальные данные_final.csv` (пользовательский ввод)

@@ -224,18 +224,16 @@ graph LR
     часть_cameron_топливная_ячейка_2[fuel_cell_small]
     часть_cameron_топливная_ячейка_1[fuel_cell_small]
     часть_t800_топливная_ячейка_1[hydrogen_fuel_cell]
-    material_al_6061_t6[Al 6061-T6]
+    material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_ti_6al_4v[Ti-6Al-4V]
-    material_stal_st3[Сталь Ст3]
+    material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_si[Si]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
     izdelie_nasa_asc_e_srsc -->|материал| material_al_6061_t6
     izdelie_4h_sic_betavoltaik -->|материал| material_ti_6al_4v
-    часть_superkondensatory_separator -->|материал| material_ti_6al_4v
     часть_superkondensatory_current_collector -->|материал| material_al_6061_t6
     часть_superkondensatory_case -->|материал| material_al_6061_t6
-    часть_superkondensatory_terminal -->|материал| material_ti_6al_4v
-    часть_vodorodnye_toplivnye_elementy_gasket -->|материал| material_ti_6al_4v
+    часть_superkondensatory_terminal -->|материал| material_al_6061_t6
     часть_vodorodnye_toplivnye_elementy_end_plate -->|материал| material_ti_6al_4v
     часть_asrg_cooler -->|материал| material_al_6061_t6
     часть_asrg_housing -->|материал| material_al_6061_t6
@@ -249,43 +247,30 @@ graph LR
     часть_emi_generator_antenna -->|материал| material_al_6061_t6
     часть_emi_generator_housing -->|материал| material_stal_st3
     часть_induktivnyi_nakopitel_housing -->|материал| material_stal_st3
-    часть_induktivnyi_nakopitel_core -->|материал| material_ti_6al_4v
     часть_tpv_lenty_reflector -->|материал| material_al_6061_t6
     часть_4h_sic_betavoltaik_case -->|материал| material_ti_6al_4v
-    часть_svintsovo_kislotnye_akb_grid_pos -->|материал| material_ti_6al_4v
     часть_svintsovo_kislotnye_akb_terminal -->|материал| material_latun_c36000
     часть_mptm_housing -->|материал| material_al_6061_t6
     часть_mptm_controls -->|материал| material_al_6061_t6
-    часть_mikroreaktor_deleniya_coolant -->|материал| material_ti_6al_4v
-    часть_mikroreaktor_deleniya_moderator -->|материал| material_ti_6al_4v
-    часть_mikroreaktor_deleniya_vessel -->|материал| material_ti_6al_4v
-    часть_mikroreaktor_deleniya_shielding -->|материал| material_ti_6al_4v
     часть_perovskite_tandem_cells -->|материал| material_si
     часть_zeno_power_am_241_housing -->|материал| material_al_6061_t6
     часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_housing -->|материал| material_al_6061_t6
     часть_marx_generator_housing -->|материал| material_stal_st3
-    часть_tverdotelnye_akkumulyatory_current_collector_cu -->|материал| material_ti_6al_4v
-    часть_tverdotelnye_akkumulyatory_anode -->|материал| material_si
-    часть_tverdotelnye_akkumulyatory_cathode -->|материал| material_si
     часть_tverdotelnye_akkumulyatory_case -->|материал| material_al_6061_t6
-    часть_tverdotelnye_akkumulyatory_current_collector_al -->|материал| material_ti_6al_4v
     часть_mmrtg_connector -->|материал| material_al_6061_t6
-    часть_mmrtg_cold_side -->|материал| material_al_6061_t6
     часть_mmrtg_housing -->|материал| material_al_6061_t6
-    часть_coilgun_capacitor_bank -->|материал| material_ti_6al_4v
     часть_coilgun_housing -->|материал| material_stal_st3
-    часть_coilgun_switch -->|материал| material_ti_6al_4v
+    часть_coilgun_switch -->|материал| material_al_6061_t6
     часть_coilgun_projectile -->|материал| material_stal_st3
-    часть_coilgun_coil -->|материал| material_ti_6al_4v
     часть_tpv_housing -->|материал| material_ti_6al_4v
     часть_tpv_cooling -->|материал| material_al_6061_t6
     часть_betavoltaiki_case -->|материал| material_ti_6al_4v
     часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_housing -->|материал| material_al_6061_t6
     часть_3d_sic_mikropillarnyi_tritii_betavoltaik_case -->|материал| material_ti_6al_4v
     часть_svobodnoporshnevoi_stirling_piston -->|материал| material_al_6061_t6
-    часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator -->|материал| material_ti_6al_4v
+    часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator -->|материал| material_stal_st3
     часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_housing -->|материал| material_stal_st3
-    часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor -->|материал| material_ti_6al_4v
+    часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor -->|материал| material_stal_st3
     часть_t_x_топливная_ячейка_1 -->|материал| material_ti_6al_4v
     часть_marcus_сердце_гибрид -->|материал| material_ti_6al_4v
     часть_marcus_топливная_ячейка -->|материал| material_ti_6al_4v
@@ -299,18 +284,18 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Ti-6Al-4V` | 31 |
-| `Al 6061-T6` | 23 |
+| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 24 |
+| `Cu ≥99.9% (электролитическая медь C11000/ETP)` | 15 |
+| `Ti-6Al-4V` | 15 |
 | `SS AISI 304` | 11 |
-| `Inconel 718` | 9 |
-| `Bi₂Te₃` | 8 |
-| `монокристаллического SiC` | 6 |
-| `Сталь Ст3` | 6 |
-| `Оксид алюминия` | 5 |
-| `NdFeB` | 5 |
+| `Ni+Co 50.0–55.0; Cr 17.0–21.0; Fe баланс; Nb+Ta 4.75–5.50; Mo 2.80–3.30; Ti 0.65–1.15; Al 0.35–0.80; Co ≤1.0; C ≤0.08; Mn ≤0.35; Si ≤0.35; Cu ≤0.15; B 0.001–0.006; P ≤0.015; S ≤0.015` | 9 |
+| `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 8 |
+| `Bi₂Te₃ (теллурид висмута; промышленные марки легированы: p-тип — Bi₀.₅Sb₁.₅Te₃ (Sb), n-тип — Bi₂Te₂.₇Se₀.₃ (Se); M = 800.8 г/моль)` | 7 |
+| `SiC — стехиометрический карбид кремния (50 ат.% Si / 50 ат.% C); монокристалл 4H-SiC, n-легирование азотом (подложки) или высокочистый без легирования` | 6 |
+| `Оксид алюминия Al₂O₃ (глинозём): 52.9 масс.% Al / 47.1 масс.% O; технические марки 96–99.9% Al₂O₃ (остальное SiO₂, MgO, CaO — спекающие добавки); высокочистый корунд ≥99.99%` | 5 |
+| `интерметаллид Nd₂Fe₁₄B (тетрагональная фаза); типовой спечённый магнит ≈ Fe 64–68 мас.%, Nd 29–32 мас.%, B ~1 мас.%, добавки Dy/Tb/Pr в термостабильных грейдах` | 5 |
+| `Ni–YSZ кермет: Ni + 8YSZ ((ZrO₂)₀.₉₂(Y₂O₃)₀.₀₈); исходный анодный порошок NiO:YSZ 50:50–65:35 масс.% (Ni 28–55 об.% после восстановления); рабочее состояние — металлический Ni + керамический каркас кубического YSZ + пористость 25–40%` | 4 |
 | `LSM-20: (La0.8Sr0.2)MnO3-δ — манганит лантана, легированный 20 мол.% Sr (перовскит ABO3); катодный композит LSM/YSZ — 50 wt% (La0.80Sr0.20)0.95MnO3-X + 50 wt% (Y2O3)0.08(ZrO2)0.92 (8YSZ)` | 4 |
 | `Ферритная жаростойкая сталь X1CrTiLa22 (1.4760, UNS S44535): Fe — основа, Cr 20.0–24.0 %, Ti 0.03–0.20 %, La 0.04–0.20 %, C ≤0.03 %, Mn ≤0.50 %, Si ≤0.50 %, Cu ≤0.50 %, Al ≤0.50 %, P ≤0.05 %` | 4 |
-| `Inconel 625` | 4 |
+| `Ni баланс; Cr 20.0–23.0; Mo 8.0–10.0; Nb+Ta 3.15–4.15; Fe ≤5.0; Co ≤1.0; C ≤0.10; Mn ≤0.50; Si ≤0.50; Al ≤0.40; Ti ≤0.40; P ≤0.015; S ≤0.015` | 4 |
 | `углеродная сажа (токопроводящий наполнитель) + PTFE 20% (связующее), опционально катализатор MnO₂; токосъёмник — никелевая сетка` | 4 |
-| `100Cr6 (EN 683-17) / AISI 52100 / ГОСТ ШХ15: C 0.95–1.10 %, Cr 1.35–1.65 %, Mn 0.25–0.45 %, Si 0.15–0.35 %` | 4 |
-| `Ni-YSZ кермет: NiO + 8YSZ ((Y2O3)0.08(ZrO2)0.92) в соотношении 50:50–65:35 wt.% (Ni:YSZ 35:65–55:45 об.%); после восстановления в H2 при 850–1000 °C — металлический Ni (~40 об.%) + керамический каркас YSZ + пористость 25–40%` | 3 |

@@ -67,6 +67,13 @@ DUPLICATE_PAIRS = [
     ('material_p_vdf-trfe-ctfe', 'material_pvdf-trfe-ctfe',
      'терполимер P(VDF-TrFE-CTFE); оба — заглушки; консистентно с p_vdf-trfe-cfe'),
 
+    # Найдено F32 (v9.44): material_copper (Cu ≥99.9%, C11000/ETP) и
+    # material_mednyi_provod (Cu-ETP C11000, ≥99.90% Cu) — оба металл,
+    # ρ≈8900 kg/m³, k≈390 W/mK, идентичный хим.состав. copper.md — короче
+    # id, сохраняем как канон; mednyi_provod.md — алиас.
+    ('material_copper', 'material_mednyi_provod',
+     'электротехническая медь C11000/Cu-ETP; mednyi_provod = медный провод'),
+
     # material_pbo2.md vs material_spongy_lead.md: PbO₂ (диоксид свинца,
     # керамика) и пористый свинец (металл) — принципиально разные материалы.
     # Совпадение source_url — ошибка заполнения spongy_lead (нужно исправить

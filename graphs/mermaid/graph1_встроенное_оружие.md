@@ -16,10 +16,10 @@ graph LR
     часть_t_x_нанотех_инъектор[nanotech_injector]
     часть_hk_tank_плазма_пушка_1[plasma_cannon]
     часть_hk_aerial_плазма_пушка[plasma_cannon]
-    material_al_6061_t6[Al 6061-T6]
-    material_becu[BeCu]
-    material_gallinstan[Галлинстан]
-    material_stal_st3[Сталь Ст3]
+    material_al_6061_t6[Al основа; Si 0.4–0.8 …]
+    material_becu[Cu основа; Be 1.90–2.1…]
+    material_gallinstan[Эвтектика Ga-In-Sn: Ga…]
+    material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_ti_6al_4v[Ti-6Al-4V]
     material_w_ni_fe[W-Ni-Fe]
     izdelie_granatomet_m320 -->|материал| material_al_6061_t6
@@ -40,9 +40,9 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al 6061-T6` | 5 |
-| `BeCu` | 2 |
-| `Сталь Ст3` | 2 |
+| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 5 |
+| `Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)` | 2 |
+| `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 2 |
 | `Ti-6Al-4V` | 2 |
 | `W-Ni-Fe` | 2 |
-| `Галлинстан` | 1 |
+| `Эвтектика Ga-In-Sn: Ga 68.5% / In 21.5% / Sn 10.0% (коммерческий Galinstan); жидкий металл при комнатной температуре, нетоксичная замена ртути` | 1 |

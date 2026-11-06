@@ -19,7 +19,7 @@ id: izdelie_tverdooksidnyi_toplivnyi_element
   - часть_tverdooksidnyi_toplivnyi_element_manifold
 материалы_частей:
   - часть: часть_tverdooksidnyi_toplivnyi_element_anode
-    материал: ni_ysz_cermet
+    материал: ni-ysz
     доля_массы: 0.18
   - часть: часть_tverdooksidnyi_toplivnyi_element_electrolyte
     материал: ysz_electrolyte

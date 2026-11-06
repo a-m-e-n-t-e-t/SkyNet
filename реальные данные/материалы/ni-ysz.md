@@ -174,3 +174,12 @@ _Обратные ссылки ещё не проставлены._ (типов�
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
 - Веб-верификация (issue #661): см. «Источники (F28)»
+
+## Источники (слиты из material_ni_ysz_cermet)
+
+- https://ebrary.net/203870/engineering/anodes (Anodes: Ni-YSZ Cermet Anode — Solid Oxide Fuel Cells: ТКЛР 12.7×10⁻⁶ К⁻¹ при 40 об.% Ni, Ni:YSZ 35:65–55:45 об.%, σ 0.1–1000 S/см)
+- https://publications.rwth-aachen.de/record/687380/files/687380.pdf (RWTH: σ 400–600 S/см при 800 °C, ТКЛР 11.4×10⁻⁶ К⁻¹)
+- https://www.mdpi.com/2227-9717/13/11/3747 (Processes 2025: анодная поддержка NiO/YSZ 400 мкм, пористость 0.4, 700–800 °C, термоциклирование 200↔800 °C)
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC12673522 (ACS AMI 2025: NiO:YSZ 65:35 → 383.9 мВт/см² при 800 °C, DA-SOFC)
+- https://pmc.ncbi.nlm.nih.gov/articles/PMC7321227 (Materials 2020: NiO 6.72 г/см³, изгибная прочность плотного Ni-YSZ 245 МПа, ионная проводимость YSZ ~80 S/м при 1000 °C)
+- https://materialsfutures.org/article/doi/10.1088/2752-5724/ac88e7 (Materials Futures 2023: обзор микроструктуры и стабильности Ni-YSZ анодов)
