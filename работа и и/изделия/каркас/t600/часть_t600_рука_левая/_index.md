@@ -42,14 +42,16 @@ scaling_type: количественный
   степеней_свободы: 7
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/T-600
+источник_дата: 2026-11-06
 источник_разбора: канон
 ---
 # Часть: часть_t600_рука_левая (×2)
 ## Описание
 
-Дочерняя часть изделия.
+Левая приводная рука T-600: гидравлический сервопривод на титановом сплаве Ti-6Al-4V; руки эндоскелета T-600 поднимают почти пятикратный собственный вес (~800 lb общая масса, canon Fandom), сила захвата 200 кг, 7 степеней свободы.
 
 Родитель: `izdelie_SkyNet-T600` (подсистема: приводная_система).
 
@@ -81,6 +83,8 @@ Hydraulic actuators + axial drive motors. 40% сильнее T-600.
 ## Источники
 
 - Канон: декомпозиция `izdelie_SkyNet-T600` (web search 2026-11-03)
+- [T-600 (Original timeline) | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/T-600)
+- [T-600 (Salvation timeline) | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/T-600/Salvation)
 - Материалы: реальные данные/материалы/
 
 
