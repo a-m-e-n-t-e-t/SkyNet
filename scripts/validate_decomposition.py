@@ -1006,6 +1006,179 @@ def check_F15g(izdeliya: dict[str, dict]) -> dict:
 
 
 # ============================================================================
+# F15h: LIFETIME INHERITANCE (v9.50)
+# ============================================================================
+
+# Все имена lifetime-полей, которые могут встречаться в дополнительные/блоке.
+# Приводятся к единому знаменателю через нормализацию в СЕКУНДЫ.
+LIFETIME_FIELD_NAMES = (
+    'T_жизни_лет',           # годы (наиболее частый для RTG/батарей)
+    'T_жизни_циклы',          # циклы заряда-разряда
+    'период_полураспада_лет',  # для радионуклидов (в материалах)
+    'ресурс_ч',               # часы наработки на отказ
+    'MTBF_ч',                 # mean time between failures
+    'MTTF_ч',                 # mean time to failure
+)
+
+
+def _normalize_lifetime_to_years(value) -> float | None:
+    """Нормализовать значение lifetime в ГОДЫ.
+
+    Поддерживает:
+      - числовые значения (предполагаем единицы измерения по имени поля)
+      - строки вида '1000', 'MTTF > 200 000 ч', '40000 при 500°C'
+        — извлекаем первое число и контекст единиц
+    """
+    if value is None:
+        return None
+    if isinstance(value, (int, float)):
+        return float(value)
+    if isinstance(value, str):
+        import re
+        s = value.strip()
+        # Match '40000 при 500-800 °C' → 40000
+        # Match 'MTTF > 200 000 ч' → 200000
+        # Strip thousand separators (space)
+        cleaned = re.sub(r'[\s\u00a0]', '', s)
+        # find first number
+        m = re.search(r'(\d+(?:\.\d+)?)', cleaned)
+        if not m:
+            return None
+        try:
+            num = float(m.group(1))
+        except (TypeError, ValueError):
+            return None
+        # Determine unit from context
+        if 'ч' in s or 'h' in s.lower() or 'MTBF' in s or 'MTTF' in s or 'ресурс' in s:
+            # hours → years (8760 ч/год; 200000 ч ≈ 22.8 лет)
+            return num / 8760.0
+        if 'цикл' in s.lower() or 'cycle' in s.lower():
+            # cycles — НЕ переводим в годы (возвращаем как есть, но это другой scale)
+            # caller должен знать, что циклы — не годы. Возвращаем None для смешивания.
+            return None
+        # default: assume years
+        return num
+    return None
+
+
+def _collect_lifetime(data: dict) -> tuple[float | None, str | None]:
+    """Вернуть (lifetime_in_years, source_field) для изделия.
+
+    Ищет в дополнительные/блоке все возможные имена lifetime-полей.
+    Возвращает первое найденное значение (с приоритетом T_жизни_лет > ресурс_ч
+    > MTBF > период_полураспада).
+    """
+    dop = data.get('дополнительные', {}) or {}
+    if not isinstance(dop, dict):
+        return None, None
+    # Приоритет поиска
+    priority = (
+        'T_жизни_лет',
+        'период_полураспада_лет',
+        'ресурс_ч',
+        'MTBF_ч',
+        'MTTF_ч',
+        'T_жизни_циклы',  # самый низкий приоритет — не лет
+    )
+    for field_name in priority:
+        if field_name in dop and dop[field_name] is not None:
+            val = _normalize_lifetime_to_years(dop[field_name])
+            if val is not None:
+                return val, field_name
+    return None, None
+
+
+def check_F15h(izdeliya: dict[str, dict]) -> dict:
+    """F15h: lifetime_years родителя ≤ MIN(дочерних.lifetime).
+
+    v9.50 (новая метрика, переформулированная из оригинальной F15g):
+
+    Семантика: родитель НЕ МОЖЕТ ЖИТЬ дольше своего самого короткоживущего
+    ребёнка. Если у ребёнка отказывает критический компонент (батарея,
+    изотоп, подшипник, диэлектрик) — весь родитель выходит из строя.
+
+    Поэтому:
+      - parent.T_жизни ≤ MIN(children.T_жизни) — корректно
+      - parent.T_жизни > MIN(children.T_жизни) — нарушение (parent
+        волшебным образом переживает отказавшего ребёнка)
+
+    Источники lifetime (для web_search / compute):
+      - **Радионуклидные источники (RTG/betavoltaik)**: T½ изотопа
+        (Pu-238: 87.7 г, Am-241: 432.2 г, Ni-63: 100.1 г, H-3: 12.32 г)
+        → parent.T_жизни ≤ isotope.T_жизни = T½
+      - **Электрохимические батареи**: cycle life × DoD × C-rate
+        (Li-ion: 500-2000 циклов, Pb-acid: 300-500, Li-SOCl2: 10-25 лет)
+      - **Подшипники**: L10 = (C/P)^p × 1e6 оборотов
+      - **Конденсаторы**: 2000-10000 ч при 85°C, уменьшается вдвое на
+        каждые 10°C выше
+      - **MIL-HDBK-217**: MTBF = Σ(part_failure_rates × π_factors)
+
+    Толеранс: 5 % (допускает rounding и инженерные запасы)
+
+    Fields searched (в дополнительные/блоке):
+      T_жизни_лет (years), T_жизни_циклы (cycles — not normalized),
+      период_полураспада_лет (half-life), ресурс_ч (hours),
+      MTBF_ч / MTTF_ч (mean time to/between failures)
+    """
+    violations = []
+    total = 0
+    valid = 0
+
+    for izd_id, data in izdeliya.items():
+        children = data.get('дочерние_части', [])
+        if not isinstance(children, list) or not children:
+            continue
+
+        parent_life, parent_field = _collect_lifetime(data)
+        if parent_life is None:
+            continue  # нет lifetime у родителя — пропускаем
+
+        total += 1
+
+        # Найти lifetime всех детей
+        child_lives = []  # list of (lifetime, child_id, field_name)
+        for child_id in children:
+            if not isinstance(child_id, str) or child_id not in izdeliya:
+                continue
+            child_data = izdeliya[child_id]
+            cl, cf = _collect_lifetime(child_data)
+            if cl is not None:
+                child_lives.append((cl, child_id, cf))
+
+        if not child_lives:
+            # у детей нет lifetime — пропускаем
+            valid += 1
+            continue
+
+        min_child_life = min(cl for cl, _, _ in child_lives)
+        min_child = next(c for cl, _, c in child_lives if cl == min_child_life)
+
+        # parent ≤ MIN(children) с толерансом 5 %
+        tolerance = max(0.1, 0.05 * min_child_life)
+        if parent_life > min_child_life + tolerance:
+            violations.append(
+                f"{izd_id}: lifetime родителя {parent_life} ({parent_field}), "
+                f"MIN(детей) = {min_child_life:.2f} "
+                f"(короткоживущий: {min_child}, "
+                f"из {len(child_lives)}/{len(children)} детей с lifetime) — "
+                f"родитель не может жить дольше самого короткоживущего ребёнка"
+            )
+        else:
+            valid += 1
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F15h',
+        'description': 'lifetime родителя ≤ MIN(дочерних.lifetime) — родитель не переживёт отказ ребёнка',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': True if total == 0 else ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
 # F16: ИЕРАРХИЯ УРОВНЕЙ
 # ============================================================================
 
@@ -2918,12 +3091,23 @@ def run_all_checks() -> dict:
     results['F15d'] = r
     print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
     
-    # F15g — lifetime
+    # F15g — габариты (v9.49: переформулирована с lifetime на габариты)
     print()
-    print("=== F15g: lifetime_years родителя ===")
+    print("=== F15g: габариты_mm родителя ≥ max(дочерних.габариты) ===")
     r = check_F15g(izdeliya)
     results['F15g'] = r
     print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+
+    # F15h — lifetime (v9.50: переформирована из оригинальной F15g lifetime)
+    print()
+    print("=== F15h: lifetime родителя ≤ MIN(дочерних.lifetime) ===")
+    r = check_F15h(izdeliya)
+    results['F15h'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
     
     # F16 — иерархия уровней
     print()
@@ -3174,7 +3358,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F15b', 'F15d', 'F15g', 'F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28', 'F31', 'F32', 'F33', 'F34')
+            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28', 'F31', 'F32', 'F33', 'F34')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:
