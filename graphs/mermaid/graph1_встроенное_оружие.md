@@ -15,7 +15,6 @@ graph LR
     часть_minigun_m134_core_rotor[ротор]
     часть_minigun_m134_connectors[разъёмы]
     часть_minigun_m134_mounting[крепёж]
-    часть_minigun_m134_core_housing[корпус]
     часть_hk_tank_плазма_пушка_1[plasma_cannon]
     часть_t_x_нанотех_инъектор[nanotech_injector]
     часть_t_x_плазма_пушка[built_in_plasma_cannon]
@@ -39,7 +38,6 @@ graph LR
     часть_minigun_m134_core_rotor -->|материал| material_stal_st3
     часть_minigun_m134_connectors -->|материал| material_al_6061_t6
     часть_minigun_m134_mounting -->|материал| material_stal_st3
-    часть_minigun_m134_core_housing -->|материал| material_al_6061_t6
     часть_hk_tank_плазма_пушка_1 -->|материал| material_w_ni_fe
     часть_t_x_нанотех_инъектор -->|материал| material_gallinstan
     часть_t_x_плазма_пушка -->|материал| material_ti_6al_4v
@@ -48,7 +46,7 @@ graph LR
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 6 |
+| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 5 |
 | `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 5 |
 | `Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)` | 2 |
 | `Ti-6Al-4V (Grade 5, UNS R56400): Al 5.5–6.75 %, V 3.5–4.5 %, Fe ≤0.30 %, O ≤0.20 %, C ≤0.08 %, N ≤0.05 %, H ≤0.015 %, Y ≤0.005 %, Ti — остальное (ASTM-спецификация, Wikipedia/ASM)` | 2 |

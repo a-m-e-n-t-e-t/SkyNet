@@ -94,13 +94,6 @@
       "subsystem": "встроенное_оружие"
     },
     {
-      "id": "часть_minigun_m134_core_housing",
-      "type": "chast",
-      "label": "корпус",
-      "path": "реальные данные/изделия/встроенное_оружие/minigun_m134/часть_minigun_m134_core_housing/_index.md",
-      "subsystem": "встроенное_оружие"
-    },
-    {
       "id": "izdelie_zubchataya_mufta",
       "type": "izdelie",
       "label": "прочее",
@@ -7492,12 +7485,6 @@
     },
     {
       "src": "часть_minigun_m134_core",
-      "dst": "часть_minigun_m134_core_housing",
-      "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "часть_minigun_m134_core",
       "dst": "izdelie_minigun_m134",
       "type": "child_of",
       "meta": {}
@@ -7553,18 +7540,6 @@
     {
       "src": "часть_minigun_m134_mounting",
       "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_minigun_m134_core_housing",
-      "dst": "часть_minigun_m134_core",
-      "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_minigun_m134_core_housing",
-      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -19223,14 +19198,6 @@
       }
     },
     {
-      "src": "часть_minigun_m134_core_housing",
-      "dst": "часть_minigun_m134_core",
-      "type": "part_of",
-      "meta": {
-        "forward": "has_part"
-      }
-    },
-    {
       "src": "material_stal_st3",
       "dst": "часть_minigun_m134_core",
       "type": "used_in",
@@ -19265,14 +19232,6 @@
     {
       "src": "material_stal_st3",
       "dst": "часть_minigun_m134_mounting",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_al_6061-t6",
-      "dst": "часть_minigun_m134_core_housing",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -30301,8 +30260,8 @@
     ]
   },
   "stats": {
-    "nodes": 1048,
-    "edges": 3281,
+    "nodes": 1047,
+    "edges": 3276,
     "dangling": {
       "complies_with": 461,
       "has_part": 4,
@@ -30310,7 +30269,7 @@
       "uses_material": 79
     },
     "by_type": {
-      "chast": 629,
+      "chast": 628,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 132,
       "material": 196,
