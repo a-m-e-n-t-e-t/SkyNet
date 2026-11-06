@@ -19,7 +19,7 @@ id: izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist
     материал: ndfeb
     доля_массы: 0.475
   - часть: часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_coil
-    материал: copper_wire
+    материал: copper
     доля_массы: 0.18
   - часть: часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_spring
     материал: spring_steel

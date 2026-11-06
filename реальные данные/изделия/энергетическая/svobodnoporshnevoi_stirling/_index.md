@@ -24,7 +24,7 @@ id: izdelie_svobodnoporshnevoi_stirling
     материал: inconel_718
     доля_массы: 0.27
   - часть: часть_svobodnoporshnevoi_stirling_alternator
-    материал: copper_wire
+    материал: copper
     доля_массы: 0.24
 scaling_type: количественный
 соединители: []

@@ -2387,9 +2387,9 @@ def check_F32(entries: list[tuple[Path, dict]] | None = None) -> dict:
     # Пары исключаются из violations навсегда — sig (класс, ρ, k) совпадает,
     # но это разные каталожные сущности одного вещества.
     f32_fp_exclude: set[frozenset[str]] = {
-        # #751: базовая медь (лист/паста, ASTM B152) vs медный провод
-        # (проволока, ASTM B1/B2/B3, temper'ы) — разные сущности Cu-ETP.
-        frozenset({'material_copper', 'material_mednyi_provod'}),
+        # #751 (v2): pair REMOVED — material_mednyi_provod реклассифицирован
+        # в изделие (см. изделия/система_питания/mednyi_provod/_index.md),
+        # поэтому F32 его больше не сравнивает с material_copper.
         # pbo2 (керамика PbO2) vs spongy_lead (пористый металл Pb) —
         # общий source_url, разные материалы.
         frozenset({'material_pbo2', 'material_spongy_lead'}),
@@ -2440,6 +2440,155 @@ def check_F32(entries: list[tuple[Path, dict]] | None = None) -> dict:
         'description': 'Семантические дубли материалов (класс+ρ+k совпадают) — review-метрика',
         'total': total,
         'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
+# F33: КЛАССИФИКАЦИОННАЯ КОНСИСТЕНТНОСТЬ (v9.46)
+# — тип ↔ директория; коллизии нормализованных имён между категориями
+# ============================================================================
+
+# Префиксы ID, отделяющие категорию (например, material_copper,
+# izdelie_pcm, tekhnologia_parylene_c, часть_intel_loihi_2_die).
+# Используется для выделения «человекочитаемого имени» (id без префикса).
+_CATEGORY_PREFIXES = ('material_', 'izdelie_', 'tekhnologia_', 'часть_')
+
+# Какое значение поля `тип` ожидается в каждой директории категории.
+_EXPECTED_TYPE_BY_DIR = {
+    'материалы': 'материал',
+    'изделия':   'изделие',
+    'технологии': 'технология',
+}
+
+
+def _load_all_catalog_entries() -> list[tuple[Path, str, dict]]:
+    """Загрузить front matter всех каталог-файлов 3-х категорий.
+
+    Возвращает список (path, category, data). Включая `часть_*` (дочерние
+    части изделий) — они нужны для F33b (коллизия имён часть_ vs материал_).
+    """
+    out: list[tuple[Path, str, dict]] = []
+    for cat in ('материалы', 'изделия', 'технологии'):
+        d = SKYNET_REPO / "реальные данные" / cat
+        if not d.exists():
+            continue
+        for f in sorted(d.rglob("*.md")):
+            # _index.md в изделиях — это полноценный файл, НЕ пропускаем
+            # (но _префиксные_ служебные _список_изделий.md, _CATALOG.md и т.д. — да)
+            if f.name.startswith('_') and f.name != '_index.md':
+                continue
+            data, _, _ = read_yaml_frontmatter(f)
+            if isinstance(data, dict) and data.get('id'):
+                out.append((f, cat, data))
+    return out
+
+
+def _strip_category_prefix(id_str: str) -> str:
+    """Убрать префикс категории из id — оставить человекочитаемое имя.
+
+    'material_copper' → 'copper'
+    'izdelie_pcm' → 'pcm'
+    'tekhnologia_parylene_c' → 'parylene_c'
+    'часть_intel_loihi_2_die' → 'intel_loihi_2_die'
+    """
+    s = id_str
+    for pfx in _CATEGORY_PREFIXES:
+        if s.startswith(pfx):
+            return s[len(pfx):]
+    return s
+
+
+def check_F33(entries: list[tuple[Path, str, dict]] | None = None) -> dict:
+    """F33: Консистентность классификации (v9.46).
+
+    WARNING-метрика (не блокирующая): проверяет две ортогональные проблемы
+    классификации каталога.
+
+    (a) type-vs-directory mismatch — каждый .md в `материалы/` обязан иметь
+        `тип: материал`, в `изделия/` — `тип: изделие`, в `технологии/` —
+        `тип: технология`. Любое отклонение — нарушение: либо файл попал не
+        в ту директорию, либо его `тип` заполнен неверно. Это смысловое
+        правило каталога (в v9.46 введено после реклассификации #751).
+
+    (b) normalized-name collision — два файла в РАЗНЫХ категориях с
+        одинаковым человекочитаемым именем (id без префикса). Это НЕ ошибка
+        (онтологическая двойственность: 'parylene_c' может быть и материалом
+        и технологией CVD; 'pcm' — материалом Phase-Change и изделием
+        Phase-Change Memory chip). Но это требует review при добавлении
+        новых коллизий. Существующие коллизии перечислены в
+        `f33_known_name_collisions` как допустимые.
+
+    Формат violation: '<id>: ...' — совместим с дефолтной веткой
+    normalizeViolationKey и титульником '[F33] Verify: <id>'.
+    """
+    violations = []
+    if entries is None:
+        entries = _load_all_catalog_entries()
+
+    # Известные допустимые коллизии имён между категориями (v9.46).
+    # Добавлять сюда ТОЛЬКО после review и фиксации в комментарии почему это OK.
+    # Ключ — нормализованное имя (id без префикса), значение — короткое объяснение.
+    f33_known_collisions_set: dict[str, str] = {
+        # parylene_c: вещество (полимер Parylene C) vs технология CVD-нанесения
+        'parylene_c': 'вещество (полимер) vs CVD-процесс нанесения',
+        # pcm: Phase-Change Material (вещество) vs Phase-Change Memory (изделие-ИС)
+        'pcm': 'Phase-Change Material (вещество) vs Phase-Change Memory chip (изделие)',
+    }
+
+    total = len(entries)
+    valid = 0
+
+    # (a) type-vs-directory mismatch
+    type_mismatch_files: set[str] = set()
+    for f, cat, data in entries:
+        t = str(data.get('тип', '')).strip()
+        expected = _EXPECTED_TYPE_BY_DIR.get(cat)
+        if expected and t and t != expected:
+            mid = str(data.get('id', '')).strip() or f.name
+            violations.append(
+                f"{mid}: тип={t!r} не соответствует директории {cat!r} "
+                f"(ожидается {expected!r}) — реклассифицируйте файл или "
+                f"исправьте тип")
+            type_mismatch_files.add(mid)
+
+    # (b) normalized-name collision between categories
+    by_name: dict[str, list[tuple[str, str]]] = {}  # name → [(cat, id), ...]
+    for _f, cat, data in entries:
+        mid = str(data.get('id', '')).strip()
+        if not mid:
+            continue
+        name = _strip_category_prefix(mid)
+        by_name.setdefault(name, []).append((cat, mid))
+
+    cross_name_collisions: list[tuple[str, list[tuple[str, str]]]] = []
+    for name, occ in sorted(by_name.items()):
+        cats = {c for c, _ in occ}
+        if len(cats) > 1:
+            # Допустимая коллизия?
+            if name in f33_known_collisions_set:
+                continue
+            cross_name_collisions.append((name, occ))
+            for _c, mid in occ:
+                type_mismatch_files.add(mid)
+
+    for name, occ in cross_name_collisions:
+        locations = ", ".join(f"[{c}] {mid}" for c, mid in occ)
+        violations.append(
+            f"имя='{name}' в нескольких категориях: {locations} — "
+            f"разные каталожные сущности с одним именем; проверьте что это "
+            f"онтологическая двойственность, а не дубликат (если OK, "
+            f"добавьте имя в f33_known_collisions_set в check_F33)")
+
+    valid = total - len(type_mismatch_files)
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F33',
+        'description': 'Классификационная консистентность: тип↔директория + коллизии имён между категориями',
+        'total': total,
+        'valid': max(0, valid),
         'ratio': round(ratio, 4),
         'pass': ratio >= 1.0,
         'violations': violations,
@@ -2683,6 +2832,19 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
+    # F33 — классификационная консистентность (v9.46; тип↔директория +
+    # коллизии имён между категориями; warning-метрика после реклассификации #751)
+    print()
+    print("=== F33: Классификационная консистентность (тип↔каталог + коллизии имён) ===")
+    catalog_entries = _load_all_catalog_entries()
+    r = check_F33(catalog_entries)
+    results['F33'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
     # Сводка
     print()
     print("=== Сводка ===")
@@ -2722,6 +2884,9 @@ def main():
             elif args.metric in ('F31', 'F32'):
                 # F31/F32 работают с материалами+технологиями, не с изделиями
                 r = check_fn(_load_materials_and_techs())
+            elif args.metric == 'F33':
+                # F33 работает со всеми .md 3-х категорий (материалы/изделия/технологии)
+                r = check_fn(_load_all_catalog_entries())
             else:
                 r = check_fn(izdeliya)
             print(f"{args.metric}: pass={r['pass']}, ratio={r['ratio']}")
@@ -2735,7 +2900,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28', 'F31', 'F32')
+            for m in ('F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28', 'F31', 'F32', 'F33')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:

@@ -19,7 +19,7 @@ id: izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza
   - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_housing
 материалы_частей:
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil
-    материал: copper_wire
+    материал: copper
     доля_массы: 0.18
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor
     материал: steel_1045

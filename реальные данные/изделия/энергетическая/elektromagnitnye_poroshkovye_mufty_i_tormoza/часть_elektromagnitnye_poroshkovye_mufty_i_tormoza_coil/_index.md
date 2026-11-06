@@ -14,7 +14,7 @@ id: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil
 дочерние_части: []
 материалы_частей:
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil
-    материал: mednyi_provod
+    материал: copper
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -61,7 +61,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 120×40×50 | mm | Mitsubishi Electric magnetic particle clutch/brake catalog SH-170030ENG — катушка возбуждения без тока муфта расцеплена, момент линеен по току |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | mednyi_provod | — | mednyi_provod.md |
+| материал | copper | — | copper.md |
 
 ## Принцип работы
 
@@ -73,7 +73,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `mednyi_provod` → [`mednyi_provod.md`](../../../материалы/mednyi_provod.md)
+- `copper` → [`copper.md`](../../../../материалы/copper.md)
 
 ## Источники
 

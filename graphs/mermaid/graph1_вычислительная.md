@@ -104,14 +104,20 @@ graph LR
     часть_t1000_миметический_полисплав[mimetic_polyalloy]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_ti_6al_4v[Ti-6Al-4V]
+    material_copper[Cu ≥99.9% (электролити…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_si[Si]
-    material_latun_c36000[Cu 60–63% (основа), Zn…]
+    izdelie_intel_loihi_2 -->|материал| material_copper
+    izdelie_kondensatory_keramicheskie -->|материал| material_copper
+    izdelie_halve -->|материал| material_copper
+    izdelie_ibm_northpole -->|материал| material_copper
+    izdelie_brainchip_akida_2 -->|материал| material_copper
     часть_memristornye_matritsy_adc -->|материал| material_si
     часть_memristornye_matritsy_word_drivers -->|материал| material_si
     часть_memristornye_matritsy_controller -->|материал| material_si
     часть_memristornye_matritsy_bit_sense -->|материал| material_si
     часть_litii_tionilhloridnye_batarei_terminal -->|материал| material_stal_st3
+    часть_intel_loihi_2_thermal_spreader -->|материал| material_copper
     часть_intel_loihi_2_die -->|материал| material_si
     часть_sot_mram_periphery -->|материал| material_si
     часть_sot_mram_row_decoders -->|материал| material_si
@@ -121,14 +127,19 @@ graph LR
     часть_pcm_controller -->|материал| material_si
     часть_pcm_io_interface -->|материал| material_si
     часть_nvidia_jetson_orin_nano_enclosure -->|материал| material_al_6061_t6
-    часть_nvidia_jetson_orin_nano_connectors -->|материал| material_latun_c36000
     часть_gr801_noel_v_risc_v_flash -->|материал| material_si
     часть_gr801_noel_v_risc_v_die -->|материал| material_si
     часть_gr801_noel_v_risc_v_sram -->|материал| material_si
+    часть_kondensatory_keramicheskie_termination -->|материал| material_copper
+    часть_kondensatory_keramicheskie_outer_electrodes -->|материал| material_copper
     часть_halve_die -->|материал| material_si
+    часть_halve_thermal_spreader -->|материал| material_copper
     часть_ibm_northpole_die -->|материал| material_si
+    часть_ibm_northpole_thermal_spreader -->|материал| material_copper
     часть_ibm_northpole_hbm -->|материал| material_si
+    часть_sic_mosfet_lead_frame -->|материал| material_copper
     часть_brainchip_akida_2_die -->|материал| material_si
+    часть_brainchip_akida_2_thermal_spreader -->|материал| material_copper
     часть_t_x_cpu -->|материал| material_al_6061_t6
     часть_marcus_человеческий_мозг -->|материал| material_ti_6al_4v
     часть_t600_cpu -->|материал| material_si

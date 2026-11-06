@@ -353,6 +353,13 @@
       "subsystem": "встроенное_оружие"
     },
     {
+      "id": "izdelie_mednyi_provod",
+      "type": "izdelie",
+      "label": "обмоточный_провод",
+      "path": "реальные данные/изделия/система_питания/mednyi_provod/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
       "id": "izdelie_SkyNet-PowerBackpack",
       "type": "izdelie",
       "label": "батарейный_блок",
@@ -5911,13 +5918,6 @@
       "subsystem": ""
     },
     {
-      "id": "material_mednyi_provod",
-      "type": "material",
-      "label": "Cu-ETP (C11000), ≥99.90% Cu, кислородсодержащая электротехническая медь",
-      "path": "реальные данные/материалы/mednyi_provod.md",
-      "subsystem": ""
-    },
-    {
       "id": "material_metapoverhnost",
       "type": "material",
       "label": "метаповерхность",
@@ -6242,14 +6242,14 @@
     {
       "id": "material_pt",
       "type": "material",
-      "label": "Pt",
+      "label": "Pt (платина ≥99.9%, CAS 7440-06-4); для термопар и фильеров — родственные сплавы Pt-Rh (тип S: Pt-10%Rh/Pt, тип R: Pt-13%Rh/Pt; фильеры стекловолокна Pt-Rh 10–25%)",
       "path": "реальные данные/материалы/pt.md",
       "subsystem": ""
     },
     {
       "id": "material_ptfe-kompozit_du_vtulki",
       "type": "material",
-      "label": "PTFE-композит DU втулки",
+      "label": "трёхслойный металл-полимерный композит (DU-тип): низкоуглеродистая сталь (подложка 0.7–2.0 мм, Cu/Sn-плакировка) + спечённая пористая бронза (промежуточный слой 0.20–0.35 мм) + рабочий слой PTFE с наполнителями 0.01–0.03 мм (бессвинцовые марки DU-B/lead-free; классический DU — PTFE+Pb)",
       "path": "реальные данные/материалы/ptfe-kompozit_du_vtulki.md",
       "subsystem": ""
     },
@@ -6340,7 +6340,7 @@
     {
       "id": "material_silicone-textile_composite",
       "type": "material",
-      "label": "Silicone-Textile composite",
+      "label": "Гибкий слоистый композит: ткань из E-стекла (алюмоборосиликатное волокно, σрасч ≥1100 МПа по волокну), покрытая с одной/двух сторон вулканизованной силиконовой резиной (полидиметилсилоксан, PDMS, метил/метилфенил-каучук с оксидными наполнителями). Поверхностная плотность ткани 350–1800 г/м², покрытия 80–2000 г/м², суммарная 350–3000 г/м²",
       "path": "реальные данные/материалы/silicone-textile_composite.md",
       "subsystem": ""
     },
@@ -8045,6 +8045,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_mednyi_provod",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_SkyNet-PowerBackpack",
       "dst": "часть_SkyNet-PowerBackpack_cells",
       "type": "has_part",
@@ -8484,7 +8490,7 @@
     },
     {
       "src": "часть_kapillyarnaya_teplovaya_trubka_core",
-      "dst": "material_mednyi_provod",
+      "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
     },
@@ -8556,7 +8562,7 @@
     },
     {
       "src": "часть_mikrokanalnye_ohlazhdayuschie_plastiny_core",
-      "dst": "material_mednyi_provod",
+      "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
     },
@@ -11142,7 +11148,7 @@
     },
     {
       "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
-      "dst": "material_mednyi_provod",
+      "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
     },
@@ -14460,6 +14466,12 @@
     },
     {
       "src": "izdelie_asrg",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_asrg",
       "dst": "group_nasa_glenn",
       "type": "researched_by",
       "meta": {}
@@ -14557,6 +14569,12 @@
     {
       "src": "izdelie_nasa_asc-e_srsc",
       "dst": "material_inconel_718",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_nasa_asc-e_srsc",
+      "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
     },
@@ -14720,6 +14738,12 @@
       "src": "izdelie_induktivnyi_nakopitel",
       "dst": "часть_induktivnyi_nakopitel_cooling",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_induktivnyi_nakopitel",
+      "dst": "material_copper",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15011,6 +15035,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_mptm",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_mikroreaktor_deleniya",
       "dst": "часть_mikroreaktor_deleniya_fuel",
       "type": "has_part",
@@ -15187,6 +15217,12 @@
     {
       "src": "izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist",
       "dst": "material_ndfeb",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist",
+      "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
     },
@@ -15377,6 +15413,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_coilgun",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_tpv",
       "dst": "часть_tpv_emitter",
       "type": "has_part",
@@ -15557,6 +15599,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_svobodnoporshnevoi_stirling",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza",
       "dst": "часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil",
       "type": "has_part",
@@ -15590,6 +15638,12 @@
       "src": "izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza",
       "dst": "часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_housing",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza",
+      "dst": "material_copper",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16020,7 +16074,7 @@
     },
     {
       "src": "часть_nasa_asc-e_srsc_alternator",
-      "dst": "material_mednyi_provod",
+      "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
     },
@@ -16709,6 +16763,12 @@
       "meta": {}
     },
     {
+      "src": "часть_mptm_generator",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_mptm_engine",
       "dst": "izdelie_mptm",
       "type": "child_of",
@@ -16974,7 +17034,7 @@
     },
     {
       "src": "часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_coil",
-      "dst": "material_mednyi_provod",
+      "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
     },
@@ -17688,7 +17748,7 @@
     },
     {
       "src": "часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil",
-      "dst": "material_mednyi_provod",
+      "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
     },
@@ -19579,6 +19639,14 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "izdelie_mednyi_provod",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_SkyNet-PowerBackpack_cells",
       "dst": "izdelie_SkyNet-PowerBackpack",
       "type": "part_of",
@@ -20003,7 +20071,7 @@
       }
     },
     {
-      "src": "material_mednyi_provod",
+      "src": "material_copper",
       "dst": "часть_kapillyarnaya_teplovaya_trubka_core",
       "type": "used_in",
       "meta": {
@@ -20051,7 +20119,7 @@
       }
     },
     {
-      "src": "material_mednyi_provod",
+      "src": "material_copper",
       "dst": "часть_mikrokanalnye_ohlazhdayuschie_plastiny_core",
       "type": "used_in",
       "meta": {
@@ -22427,7 +22495,7 @@
       }
     },
     {
-      "src": "material_mednyi_provod",
+      "src": "material_copper",
       "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
       "type": "used_in",
       "meta": {
@@ -25435,6 +25503,14 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "izdelie_asrg",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "group_nasa_glenn",
       "dst": "izdelie_asrg",
       "type": "researches",
@@ -25564,6 +25640,14 @@
     },
     {
       "src": "material_inconel_718",
+      "dst": "izdelie_nasa_asc-e_srsc",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
       "dst": "izdelie_nasa_asc-e_srsc",
       "type": "used_in",
       "meta": {
@@ -25784,6 +25868,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "izdelie_induktivnyi_nakopitel",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -26171,6 +26263,14 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "izdelie_mptm",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_mikroreaktor_deleniya_fuel",
       "dst": "izdelie_mikroreaktor_deleniya",
       "type": "part_of",
@@ -26404,6 +26504,14 @@
     },
     {
       "src": "material_ndfeb",
+      "dst": "izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
       "dst": "izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist",
       "type": "used_in",
       "meta": {
@@ -26659,6 +26767,14 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "izdelie_coilgun",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_tpv_emitter",
       "dst": "izdelie_tpv",
       "type": "part_of",
@@ -26899,6 +27015,14 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "izdelie_svobodnoporshnevoi_stirling",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil",
       "dst": "izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza",
       "type": "part_of",
@@ -26944,6 +27068,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -27227,7 +27359,7 @@
       }
     },
     {
-      "src": "material_mednyi_provod",
+      "src": "material_copper",
       "dst": "часть_nasa_asc-e_srsc_alternator",
       "type": "used_in",
       "meta": {
@@ -27675,6 +27807,14 @@
       }
     },
     {
+      "src": "material_copper",
+      "dst": "часть_mptm_generator",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_ss_aisi_304",
       "dst": "часть_mptm_engine",
       "type": "used_in",
@@ -27843,7 +27983,7 @@
       }
     },
     {
-      "src": "material_mednyi_provod",
+      "src": "material_copper",
       "dst": "часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_coil",
       "type": "used_in",
       "meta": {
@@ -28315,7 +28455,7 @@
       }
     },
     {
-      "src": "material_mednyi_provod",
+      "src": "material_copper",
       "dst": "часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil",
       "type": "used_in",
       "meta": {
@@ -29459,6 +29599,7 @@
       "standart_ASTM B488 (Au-покрытие)",
       "standart_ASTM B521",
       "standart_ASTM B545",
+      "standart_ASTM B561 (рафинированная платина, поставка)",
       "standart_ASTM B633",
       "standart_ASTM B637",
       "standart_ASTM B760",
@@ -29488,6 +29629,7 @@
       "standart_ASTM D2344 (короткопролётный изгиб)",
       "standart_ASTM D3039 (растяжение полимерных композитов)",
       "standart_ASTM D3574 (испытания эластичных ячеистых материалов)",
+      "standart_ASTM D3786 (разрывное давление Mullen burst)",
       "standart_ASTM D395 (остаточная деформация при сжатии)",
       "standart_ASTM D4018",
       "standart_ASTM D4020",
@@ -29496,6 +29638,7 @@
       "standart_ASTM D4802 (акриловый лист, спецификация)",
       "standart_ASTM D4894",
       "standart_ASTM D570 (влагопоглощение)",
+      "standart_ASTM D578 (стеклоткань E-типа)",
       "standart_ASTM D638",
       "standart_ASTM D638 (механические испытания пластмасс)",
       "standart_ASTM D638 (растяжение, параллельный метод)",
@@ -29534,6 +29677,7 @@
       "standart_Celsius Design Guide",
       "standart_City Labs NanoTritium P100",
       "standart_Coherent Integration Guide",
+      "standart_DIN 1494 (втулки DU/DX-типа, германская классификация)",
       "standart_DIN 17230 (100Cr6)",
       "standart_DIN 17230 / W-Nr 1.3505 (100Cr6)",
       "standart_DIN 2093",
@@ -29587,6 +29731,7 @@
       "standart_IEC 60122 (кварцевые резонаторы)",
       "standart_IEC 60243 / ASTM D149 (электрическая прочность)",
       "standart_IEC 60243-1",
+      "standart_IEC 60317 (обмоточные провода с эмалевой изоляцией)",
       "standart_IEC 60317 (обмоточный провод)",
       "standart_IEC 60384-10",
       "standart_IEC 60404-8-1",
@@ -29594,6 +29739,7 @@
       "standart_IEC 60529",
       "standart_IEC 60529 (IP54)",
       "standart_IEC 60529 (IP67)",
+      "standart_IEC 60584-1 (термопары тип S/R, классы допусков)",
       "standart_IEC 60603",
       "standart_IEC 60904",
       "standart_IEC 61076-2-101",
@@ -29653,6 +29799,7 @@
       "standart_ISO 1874 (материалы для литья PA66)",
       "standart_ISO 1940",
       "standart_ISO 22007 (теплопроводность)",
+      "standart_ISO 2286-2 (поверхностная плотность и толщина покрытых тканей)",
       "standart_ISO 261 (M1.6)",
       "standart_ISO 261 (M2)",
       "standart_ISO 261 (M2.5)",
@@ -29664,6 +29811,7 @@
       "standart_ISO 2919",
       "standart_ISO 2919 (герметичные источники)",
       "standart_ISO 3506 A2-70",
+      "standart_ISO 3547-1 (цилиндрические втулки скольжения, размеры/допуски серии)",
       "standart_ISO 3601",
       "standart_ISO 4115 (металлический фетр)",
       "standart_ISO 4762 (M2)",
@@ -29690,6 +29838,7 @@
       "standart_ISO 9283",
       "standart_ISO 9283 (промышленные роботы — точность позы)",
       "standart_ISO 9283 (точность позы)",
+      "standart_ITS-90 (международная температурная шкала, Pt-термометры сопротивления 13.8–1235 K)",
       "standart_Intel 4 process",
       "standart_Intel Optane PM Guide",
       "standart_Iridium 9603 Developer Guide",
@@ -29903,7 +30052,6 @@
       "material_ceramic_mlcc",
       "material_composite_material",
       "material_copper_alloy",
-      "material_copper_wire",
       "material_cybernetic_alloy",
       "material_electrical_steel",
       "material_epoxy",
@@ -29969,18 +30117,18 @@
   },
   "stats": {
     "nodes": 1044,
-    "edges": 3245,
+    "edges": 3265,
     "dangling": {
-      "complies_with": 413,
+      "complies_with": 422,
       "has_part": 4,
       "researched_by": 57,
-      "uses_material": 80
+      "uses_material": 79
     },
     "by_type": {
       "chast": 625,
       "issledovatelskaya_gruppa": 10,
-      "izdelie": 131,
-      "material": 197,
+      "izdelie": 132,
+      "material": 196,
       "standart": 8,
       "tekhnologia": 73
     }

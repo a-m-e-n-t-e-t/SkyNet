@@ -226,11 +226,23 @@ graph LR
     часть_t800_топливная_ячейка_1[hydrogen_fuel_cell]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_ti_6al_4v[Ti-6Al-4V]
+    material_copper[Cu ≥99.9% (электролити…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_si[Si]
-    material_latun_c36000[Cu 60–63% (основа), Zn…]
+    izdelie_asrg -->|материал| material_copper
+    izdelie_nasa_asc_e_srsc -->|материал| material_copper
     izdelie_nasa_asc_e_srsc -->|материал| material_al_6061_t6
+    izdelie_termoelektricheskii_postoyannyi_magnit -->|материал| material_copper
+    izdelie_induktivnyi_nakopitel -->|материал| material_copper
+    izdelie_termomoduli_pelte -->|материал| material_copper
     izdelie_4h_sic_betavoltaik -->|материал| material_ti_6al_4v
+    izdelie_reversivnye_pelte -->|материал| material_copper
+    izdelie_mptm -->|материал| material_copper
+    izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist -->|материал| material_copper
+    izdelie_tverdotelnye_akkumulyatory -->|материал| material_copper
+    izdelie_coilgun -->|материал| material_copper
+    izdelie_svobodnoporshnevoi_stirling -->|материал| material_copper
+    izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza -->|материал| material_copper
     часть_superkondensatory_current_collector -->|материал| material_al_6061_t6
     часть_superkondensatory_case -->|материал| material_al_6061_t6
     часть_superkondensatory_terminal -->|материал| material_al_6061_t6
@@ -238,6 +250,7 @@ graph LR
     часть_asrg_cooler -->|материал| material_al_6061_t6
     часть_asrg_housing -->|материал| material_al_6061_t6
     часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_housing -->|материал| material_al_6061_t6
+    часть_nasa_asc_e_srsc_alternator -->|материал| material_copper
     часть_nasa_asc_e_srsc_power_piston -->|материал| material_ti_6al_4v
     часть_nasa_asc_e_srsc_cooler -->|материал| material_al_6061_t6
     часть_nasa_asc_e_srsc_displacer_piston -->|материал| material_ti_6al_4v
@@ -245,23 +258,35 @@ graph LR
     часть_termoelektricheskii_postoyannyi_magnit_heat_sink_cold -->|материал| material_al_6061_t6
     часть_termoelektricheskii_postoyannyi_magnit_heat_sink_hot -->|материал| material_al_6061_t6
     часть_emi_generator_antenna -->|материал| material_al_6061_t6
+    часть_emi_generator_waveguide -->|материал| material_copper
+    часть_emi_generator_source -->|материал| material_copper
     часть_emi_generator_housing -->|материал| material_stal_st3
     часть_induktivnyi_nakopitel_housing -->|материал| material_stal_st3
+    часть_induktivnyi_nakopitel_switch -->|материал| material_copper
+    часть_induktivnyi_nakopitel_cooling -->|материал| material_copper
+    часть_termomoduli_pelte_wires -->|материал| material_copper
+    часть_termomoduli_pelte_electrodes -->|материал| material_copper
     часть_tpv_lenty_reflector -->|материал| material_al_6061_t6
+    часть_tpv_lenty_cooling -->|материал| material_copper
     часть_4h_sic_betavoltaik_case -->|материал| material_ti_6al_4v
-    часть_svintsovo_kislotnye_akb_terminal -->|материал| material_latun_c36000
+    часть_reversivnye_pelte_electrodes -->|материал| material_copper
+    часть_mptm_generator -->|материал| material_copper
     часть_mptm_housing -->|материал| material_al_6061_t6
     часть_mptm_controls -->|материал| material_al_6061_t6
     часть_perovskite_tandem_cells -->|материал| material_si
     часть_zeno_power_am_241_housing -->|материал| material_al_6061_t6
     часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_housing -->|материал| material_al_6061_t6
+    часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_coil -->|материал| material_copper
+    часть_marx_generator_output_terminal -->|материал| material_copper
     часть_marx_generator_housing -->|материал| material_stal_st3
+    часть_tverdotelnye_akkumulyatory_current_collector_cu -->|материал| material_copper
     часть_tverdotelnye_akkumulyatory_case -->|материал| material_al_6061_t6
     часть_mmrtg_connector -->|материал| material_al_6061_t6
     часть_mmrtg_housing -->|материал| material_al_6061_t6
     часть_coilgun_housing -->|материал| material_stal_st3
     часть_coilgun_switch -->|материал| material_al_6061_t6
     часть_coilgun_projectile -->|материал| material_stal_st3
+    часть_coilgun_coil -->|материал| material_copper
     часть_tpv_housing -->|материал| material_ti_6al_4v
     часть_tpv_cooling -->|материал| material_al_6061_t6
     часть_betavoltaiki_case -->|материал| material_ti_6al_4v
@@ -271,6 +296,7 @@ graph LR
     часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator -->|материал| material_stal_st3
     часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_housing -->|материал| material_stal_st3
     часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor -->|материал| material_stal_st3
+    часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil -->|материал| material_copper
     часть_t_x_топливная_ячейка_1 -->|материал| material_ti_6al_4v
     часть_marcus_сердце_гибрид -->|материал| material_ti_6al_4v
     часть_marcus_топливная_ячейка -->|материал| material_ti_6al_4v
@@ -284,8 +310,8 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
+| `Cu ≥99.9% (электролитическая медь C11000/ETP)` | 27 |
 | `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 24 |
-| `Cu ≥99.9% (электролитическая медь C11000/ETP)` | 15 |
 | `Ti-6Al-4V` | 15 |
 | `SS AISI 304` | 11 |
 | `Ni+Co 50.0–55.0; Cr 17.0–21.0; Fe баланс; Nb+Ta 4.75–5.50; Mo 2.80–3.30; Ti 0.65–1.15; Al 0.35–0.80; Co ≤1.0; C ≤0.08; Mn ≤0.35; Si ≤0.35; Cu ≤0.15; B 0.001–0.006; P ≤0.015; S ≤0.015` | 9 |

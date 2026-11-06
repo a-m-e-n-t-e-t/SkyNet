@@ -20,7 +20,7 @@ id: izdelie_mptm
     материал: cast_iron
     доля_массы: 0.28
   - часть: часть_mptm_generator
-    материал: copper_wire
+    материал: copper
     доля_массы: 0.15
   - часть: часть_mptm_heat_exchanger
     материал: stainless_steel_316

@@ -18,7 +18,7 @@ id: izdelie_coilgun
   - часть_coilgun_housing
 материалы_частей:
   - часть: часть_coilgun_coil
-    материал: copper_wire
+    материал: copper
     доля_массы: 0.38
   - часть: часть_coilgun_capacitor_bank
     материал: aluminum_electrolytic

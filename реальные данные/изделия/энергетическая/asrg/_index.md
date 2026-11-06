@@ -32,7 +32,7 @@ id: izdelie_asrg
     материал: inconel_718
     доля_массы: 0.1425
   - часть: часть_asrg_alternator
-    материал: copper_wire
+    материал: copper
     доля_массы: 0.12
 scaling_type: количественный
 соединители: []

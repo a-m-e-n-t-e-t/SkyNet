@@ -4433,6 +4433,18 @@
       "meta": {}
     },
     {
+      "src": "F33",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F33",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "script:validate_decomposition.py",
       "dst": "pattern:_index.md",
       "type": "checks_files",
@@ -4831,7 +4843,7 @@
   ],
   "stats": {
     "nodes": 327,
-    "edges": 477,
+    "edges": 479,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,

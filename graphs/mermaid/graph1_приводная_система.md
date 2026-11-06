@@ -102,14 +102,13 @@ graph LR
     часть_t800_рука_левая[servo_arm]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_ti_6al_4v[Ti-6Al-4V]
+    material_copper[Cu ≥99.9% (электролити…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
-    material_ss_aisi_304[SS AISI 304]
     часть_tsa_housing -->|материал| material_al_6061_t6
     часть_tsa_mounting -->|материал| material_al_6061_t6
     часть_tsa_connectors -->|материал| material_al_6061_t6
     часть_elektroflyuidnye_volokna_mit_housing -->|материал| material_al_6061_t6
-    часть_elektroflyuidnye_volokna_mit_mounting -->|материал| material_ss_aisi_304
     часть_apa_connectors -->|материал| material_al_6061_t6
     часть_apa_mounting -->|материал| material_al_6061_t6
     часть_apa_housing -->|материал| material_al_6061_t6
@@ -121,7 +120,6 @@ graph LR
     часть_povorotnoe_uplotnenie_mounting -->|материал| material_stal_st3
     часть_povorotnoe_uplotnenie_housing -->|материал| material_al_6061_t6
     часть_povorotnoe_uplotnenie_connectors -->|материал| material_al_6061_t6
-    часть_fleksury_8_diskov_po_0_15_mm_mounting -->|материал| material_ss_aisi_304
     часть_fleksury_8_diskov_po_0_15_mm_housing -->|материал| material_al_6061_t6
     часть_fleksury_8_diskov_po_0_15_mm_connectors -->|материал| material_latun_c36000
     часть_belleville_shaiby_core -->|материал| material_stal_st3
@@ -142,8 +140,8 @@ graph LR
     часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting -->|материал| material_al_6061_t6
     часть_tcp_housing -->|материал| material_al_6061_t6
     часть_tcp_mounting -->|материал| material_al_6061_t6
-    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting -->|материал| material_ss_aisi_304
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors -->|материал| material_al_6061_t6
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core -->|материал| material_copper
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing -->|материал| material_al_6061_t6
     часть_zubchataya_mufta_mounting -->|материал| material_stal_st3
     часть_zubchataya_mufta_housing -->|материал| material_al_6061_t6
@@ -181,7 +179,7 @@ _Показаны 5 наиболее часто используемых мат�
 | `Силикон 40–50 Shore A` | 2 |
 | `Spectra (UHMWPE волокно Honeywell)` | 1 |
 | `Ионная жидкость [EMIM][TFSI]` | 1 |
-| `PTFE-композит DU втулки` | 1 |
+| `трёхслойный металл-полимерный композит (DU-тип): низкоуглеродистая сталь (подложка 0.7–2.0 мм, Cu/Sn-плакировка) + спечённая пористая бронза (промежуточный слой 0.20–0.35 мм) + рабочий слой PTFE с наполнителями 0.01–0.03 мм (бессвинцовые марки DU-B/lead-free; классический DU — PTFE+Pb)` | 1 |
 | `100Cr6 (ISO 683-17) / AISI 52100 / ГОСТ ШХ15: C 0.95–1.10 %, Cr 1.35–1.65 %, Mn 0.25–0.45 %, Si 0.15–0.35 %` | 1 |
 | `PDMS — полидиметилсилоксан (эталонная система Dow SYLGARD 184: двухкомпонентный силиконовый эластомер 10:1, ненаполненный, прозрачный)` | 1 |
-| `Silicone-Textile composite` | 1 |
+| `Гибкий слоистый композит: ткань из E-стекла (алюмоборосиликатное волокно, σрасч ≥1100 МПа по волокну), покрытая с одной/двух сторон вулканизованной силиконовой резиной (полидиметилсилоксан, PDMS, метил/метилфенил-каучук с оксидными наполнителями). Поверхностная плотность ткани 350–1800 г/м², покрытия 80–2000 г/м², суммарная 350–3000 г/м²` | 1 |

@@ -2184,6 +2184,12 @@
     },
     {
       "src": "catalog:scripts/_CATALOG.md",
+      "dst": "script:migrate_aliases.py",
+      "type": "references",
+      "meta": {}
+    },
+    {
+      "src": "catalog:scripts/_CATALOG.md",
       "dst": "script:pipeline.py",
       "type": "references",
       "meta": {}
@@ -2455,7 +2461,7 @@
   ],
   "stats": {
     "nodes": 190,
-    "edges": 218,
+    "edges": 219,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,

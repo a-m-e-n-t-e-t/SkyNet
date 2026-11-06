@@ -18,7 +18,7 @@ id: izdelie_induktivnyi_nakopitel
   - часть_induktivnyi_nakopitel_cooling
 материалы_частей:
   - часть: часть_induktivnyi_nakopitel_coil
-    материал: copper_wire
+    материал: copper
     доля_массы: 0.475
   - часть: часть_induktivnyi_nakopitel_core
     материал: electrical_steel
