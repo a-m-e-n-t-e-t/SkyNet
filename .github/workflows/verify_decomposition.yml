@@ -286,15 +286,15 @@ jobs:
                       `   - источник нарушения указан в тексте (parent value vs Σ/max/MIN children) — открыть YAML основные/ и дополнительные/ блоки у родителя и детей, сверить значения`,
                       `   - типичные причины: (a) родителю прописали номинал из spec, а детям — 0/заглушку (нужно заполнить детей из datasheet); (b) у детей нет поля (нужно добавить); (c) родитель и дети физически несовместимы (нужно уточнить габариты/номиналы из реального источника)`,
                       metric === 'F15h'
-                        ? `   - **Источники lifetime через web_search или compute**:`
-                          + `\n     · RTG/radioisotope (Pu-238: T½=87.7 г, Am-241: 432.2 г, Ni-63: 100.1 г, H-3: 12.32 г) — parent ≤ isotope.T½`
-                          + `\n     · Li-ion батареи: cycle life (500-2000) × DoD × C-rate → years (1 цикл/день ≈ 1.4-5.5 лет)`
-                          + `\n     · Pb-acid: 300-500 циклов / 3-10 лет float`
-                          + `\n     · Li-SOCl2: 10-25 лет (datasheet Saft/Tadiran)`
-                          + `\n     · Подшипники: L10 = (C/P)^p × 1e6 оборотов, p=3 (ball) / 10/3 (roller)`
-                          + `\n     · MLCC/конденсаторы: 2000-10000 ч @85°C, Arrhenius ×2 per -10°C`
-                          + `\n     · MIL-HDBK-217: MTBF = Σ(part_failure_rates × π_factors)`
-                          + `\n     · SOFC seal: 40000 ч @ 500-800°C (ресурс_ч)`,
+                        ? `   - **Источники lifetime через web_search или compute**:
+                            · RTG/radioisotope (Pu-238: T½=87.7 г, Am-241: 432.2 г, Ni-63: 100.1 г, H-3: 12.32 г) — parent ≤ isotope.T½
+                            · Li-ion батареи: cycle life (500-2000) × DoD × C-rate → years (1 цикл/день ≈ 1.4-5.5 лет)
+                            · Pb-acid: 300-500 циклов / 3-10 лет float
+                            · Li-SOCl2: 10-25 лет (datasheet Saft/Tadiran)
+                            · Подшипники: L10 = (C/P)^p × 1e6 оборотов, p=3 (ball) / 10/3 (roller)
+                            · MLCC/конденсаторы: 2000-10000 ч @85°C, Arrhenius ×2 per -10°C
+                            · MIL-HDBK-217: MTBF = Σ(part_failure_rates × π_factors)
+                            · SOFC seal: 40000 ч @ 500-800°C (ресурс_ч)`
                         : `   - исправить: прописать реальные значения в YAML основные/ или дополнительные/ блок; для габаритов — сверить с datasheet/CAD-моделью; для выработки — сверить с спецификацией`,
                       `   - перегенерировать графы: python3 scripts/generate_graphs.py --all`,
                     ]
