@@ -71,6 +71,8 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/HK-Tank
+источник_дата: 2026-11-06
 источник_разбора: канон
 ии_перепроектирован:
   статус: false
@@ -118,7 +120,7 @@ relations:
 alice_specs: ALICE sync protocol v9.31 (SkyNet hive-mind)
 original_improved: canon
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-06
 ---
 # SkyNet-HKTank
 
@@ -176,6 +178,8 @@ HK-Tank — крупный гусеничный охотник-убийца; о�
 ## Источники
 
 - Канон: T1 (1984), T2 (1991), T:S (2009)
+- [HK-Tank | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/HK-Tank)
+- [HK-Tank | Robots Wiki — Fandom](https://robots.fandom.com/wiki/HK-Tank)
 
 ## Декомпозиция
 
