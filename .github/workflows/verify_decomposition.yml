@@ -116,6 +116,9 @@ jobs:
           # v9.54: добавлена метрика F27c (mirror F27b для каталога технологии/:
           #        проверяет структурные id-ссылки в frontmatter — `технологии_частей`
           #        для часть-level и `технологии` для изделия-level).
+          # v9.55: добавлена метрика F27d (обратная связь F27b/F27c): проверяет
+          #        валидность id в `материалы_для_процесса` файлов технологий —
+          #        замыкает треугольник изделие↔технология↔материал.
           # v9.41: расширение F27 — критерий (e): вариант_структуры должен быть
           #        указан (preventive); checklist уточнён — web_search ищет ВСЕ
           #        структурные формы (mono/poly/amorphous/...), полиморфные кристаллы
@@ -145,7 +148,7 @@ jobs:
           d = json.load(open('violations.json'))
           total = sum(len(v) for v in d.values())
           print(f"total_violations={total}")
-          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F27c','F28','F29','F31','F33','F34'):
+          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F27c','F27d','F28','F29','F31','F33','F34'):
               print(f"{M}_count={len(d.get(M, []))}")
           PYEOF
           # info-лог в stdout шага (одинарные кавычки — без bash-интерполяции):
@@ -153,7 +156,7 @@ jobs:
           import json
           d = json.load(open('violations.json'))
           print(f"[info] Total violations: {sum(len(v) for v in d.values())}")
-          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F27c','F28','F29','F31','F33','F34'):
+          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F27c','F27d','F28','F29','F31','F33','F34'):
               print(f"[info]   {M}: {len(d.get(M, []))} violations")
           PYEOF
 
@@ -280,9 +283,10 @@ jobs:
                 //        отличается (создать файл vs заполнить существующий).
                 // v9.54: F27c — mirror F27b для каталога технологии/. Чек-лист
                 //        почти идентичен F27b, но создаёт файл в технологии/.
-                const isMaterial = metric === 'F27' || metric === 'F28' || metric === 'F27b' || metric === 'F27c';
+                const isMaterial = metric === 'F27' || metric === 'F28' || metric === 'F27b' || metric === 'F27c' || metric === 'F27d';
                 const isMissingMaterial = metric === 'F27b';
                 const isMissingTech = metric === 'F27c';
+                const isMissingProcessMat = metric === 'F27d';
                 const isForms = metric === 'F28';
                 // v9.52: merged metrics
                 //   F22 ← F23+F24 (url/stub/schema)
@@ -399,6 +403,33 @@ jobs:
                       `   - источник=web_search, источник_url (URL веб-источника — datasheet оборудования / учебник / review) + источник_дата`,
                       `   - описание процесса в body: физический принцип, ключевые параметры, типичные применения, альтернативы`,
                     ]
+                  : isMissingProcessMat
+                  ? [
+                      `   - ВНИМАНИЕ: в frontmatter технологии в поле \`материалы_для_процесса\` указан id материала, для которого НЕТ файла в каталоге \`материалы/\`.`,
+                      `   - Возможно две причины:`,
+                      `     (a) опечатка в id (например, material_alluminium вместо material_aluminum) — нужно сверить с существующими id в материалы/ и исправить`,
+                      `     (b) файл материала действительно отсутствует — нужно СОЗДАТЬ новый через web_search (см. чек-лист F27b для материалов)`,
+                      `   - Формат \`материалы_для_процесса\` (v9.55 — ролевая структура, mirror \`материалы_частей\`):`,
+                      `     \`\`\`yaml`,
+                      `     материалы_для_процесса:`,
+                      `       - материал: material_<stem>`,
+                      `         роль: обрабатываемый         # обрабатываемый/прекурсор/катализатор/расходник/атмосфера/подложка/легирующая_добавка/связующее/побочный_продукт/оснастка`,
+                      `         доля_массы: 0.95            # опционально (для обрабатываемого/легирующего)`,
+                      `     \`\`\``,
+                      `   - Роли материалов в процессе:`,
+                      `     · обрабатываемый — становится частью изделия (должен совпадать с \`материал\` в \`материалы_частей\` связанной части)`,
+                      `     · прекурсор — реагент, преобразуется в обрабатываемый или побочный продукт (SiH₄ → Si)`,
+                      `     · катализатор — ускоряет реакцию, не расходуется (Pt, Pd)`,
+                      `     · расходник — расходуется, не входит в изделие (травитель, флюс, газ-реагент)`,
+                      `     · атмосфера — защитная/рабочая среда (Ar, H₂, вакуум, N₂)`,
+                      `     · подложка — носитель (Si-wafer, металлическая фольга)`,
+                      `     · легирующая_добавка — модифицирует свойства в малых дозах (Al₂O₃ в LLZO; Y₂O₃ в ZrO₂)`,
+                      `     · связующее — временное, удаляется (PVA в tape casting)`,
+                      `     · побочный_продукт — получается в процессе (шлак, H₂O, CO₂)`,
+                      `     · оснастка — графитовая форма, стеклоформа (расходник, не входит в изделие)`,
+                      `   - Если создаёте новый материал через web_search — заполнить frontmatter по чек-листу F27b (id=material_<stem>, основные плотность/теплопроводность/плавление, химический_состав, вариант_структуры, источник_url)`,
+                      `   - Поддерживается и legacy-формат (простой список id строк), но для новых заполнений используйте ролевую структуру (v9.55)`,
+                    ]
                   : isMaterial
                   ? [
                       `   - свойства: плотность_kg_m3, теплопроводность_W_mK, температура_плавления_C (или макс_рабочая_температура_C) из datasheet/справочника`,
@@ -469,6 +500,14 @@ jobs:
                       `- F33: тип=технология, каталог=технологии/ (классификационная консистентность)`,
                       `- материалы_для_процесса заполнены реальными id материалов (mirror frontmatter — обратная связь)`,
                     ]
+                  : isMissingProcessMat
+                  ? [
+                      `- F27d: id материала в материалы_для_процесса валиден (файл существует в материалы/) — ИЛИ опечатка исправлена, ИЛИ новый файл создан (см. чек-лист F27b для материалов)`,
+                      `- F27d: ролевая структура v9.55 заполнена (если новая запись): {материал, роль, доля_массы?}`,
+                      `- F27d: роль указана из стандартного enum (обрабатываемый/прекурсор/катализатор/расходник/атмосфера/подложка/легирующая_добавка/связующее/побочный_продукт/оснастка)`,
+                      `- F27 (если создавался новый материал): плотность_kg_m3 и теплопроводность_W_mK заполнены`,
+                      `- F22 (если создавался новый материал): источник_url заполнен конкретным URL`,
+                    ]
                   : isMaterial
                   ? [
                       `- F27: плотность_kg_m3 и теплопроводность_W_mK заполнены реальными значениями из источника`,
@@ -535,7 +574,7 @@ jobs:
           script: |
             const fs = require('fs');
             const { normalizeViolationKey, legacyMetricFromTitle } = require('./scripts/_dedup_keys.js');
-            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[], F27:[], F27b:[], F27c:[], F28:[], F31:[], F32:[]};
+            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[], F27:[], F27b:[], F27c:[], F27d:[], F28:[], F31:[], F32:[]};
             try {
               violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
             } catch (e) {
@@ -660,6 +699,7 @@ jobs:
           echo "| F27 | ${{ steps.violations.outputs.F27_count }} | Unfilled materials (used by izdeliya) |" >> $GITHUB_STEP_SUMMARY
           echo "| F27b | ${{ steps.violations.outputs.F27b_count }} | Missing material files (referenced in frontmatter but file does not exist) |" >> $GITHUB_STEP_SUMMARY
           echo "| F27c | ${{ steps.violations.outputs.F27c_count }} | Missing technology files (referenced in frontmatter but file does not exist) |" >> $GITHUB_STEP_SUMMARY
+          echo "| F27d | ${{ steps.violations.outputs.F27d_count }} | Missing material files referenced in tech frontmatter (материалы_для_процесса) |" >> $GITHUB_STEP_SUMMARY
           echo "| F28 | ${{ steps.violations.outputs.F28_count }} | Materials without alternative forms/variants (for AI product variants) |" >> $GITHUB_STEP_SUMMARY
           echo "| **Total** | **${{ steps.violations.outputs.total_violations }}** | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY

@@ -2531,6 +2531,126 @@ def check_F27c(izdeliya: dict[str, dict]) -> dict:
     }
 
 
+# ============================================================================
+# F27d: БИТЫЕ ССЫЛКИ НА МАТЕРИАЛЫ В ТЕХНОЛОГИЯХ (v9.55; обратная связь F27c)
+# ============================================================================
+# Контекст: F27b проверяет ссылки изделия → материал (frontmatter материалы_частей),
+# F27c — изделия → технология (frontmatter технологии_частей/технологии). F27d
+# замыкает треугольник: проверяет обратную связь технология → материал в поле
+# `материалы_для_процесса` (в frontmatter файлов технологий).
+#
+# Формат поля (v9.55 — ролевая структура, mirror материалы_частей):
+#   материалы_для_процесса:        # внутри блока дополнительные:
+#     - материал: material_<stem>
+#       роль: обрабатываемый         # обрабатываемый/прекурсор/катализатор/...
+#       доля_массы: 0.95             # опционально
+#
+# Поддерживается и legacy-формат (простой список id строк), для обратной
+# совместимости с файлами, заполненными до v9.55.
+#
+# Скоуп: только frontmatter `материалы_для_процесса` файлов технологий.
+# Изделия/части не проверяются (для них есть F27b).
+
+PROCESS_MATERIAL_ROLES = (
+    'обрабатываемый', 'прекурсор', 'катализатор', 'расходник',
+    'атмосфера', 'подложка', 'легирующая_добавка', 'связующее',
+    'побочный_продукт', 'оснастка',
+)
+
+
+def check_F27d(izdeliya: dict[str, dict] | None = None) -> dict:
+    """F27d: Битые ссылки на материалы в frontmatter технологий.
+
+    BLOCKING (mirror F27b/F27c, обратная связь): поле `материалы_для_процесса`
+    в frontmatter технологии содержит id материалов, которые участвуют в
+    процессе (обрабатываемый/катализатор/атмосфера/...). Если id указывает
+    на несуществующий файл в каталоге материалы/ — это битая ссылка.
+
+    Скоуп: только frontmatter `материалы_для_процесса` (внутри блока
+    `дополнительные:`) файлов из реальные данные/технологии/.
+
+    Поддерживаемые форматы:
+      (1) v9.55 — ролевая структура (список объектов с {материал, роль, доля_массы?}):
+            материалы_для_процесса:
+              - материал: material_li7la3zr2o12
+                роль: обрабатываемый
+      (2) legacy — простой список id строк:
+            материалы_для_процесса:
+              - material_li7la3zr2o12
+
+    Критерий нарушения: для материала с id `material_<stem>` (или просто `<stem>`)
+    не существует файла реальные данные/материалы/<stem>.md.
+
+    Формат violation: 'tekhnologia_<tech_stem>: материалы_для_процесса ссылается
+    на несуществующий материал material_<stem>' — совместим с дефолтной веткой
+    normalizeViolationKey (dedup F27d:tekhnologia_<tech_stem>:material_<stem>).
+    """
+    violations = []
+    tech_dir = SKYNET_REPO / "реальные данные" / "технологии"
+    mat_dir = SKYNET_REPO / "реальные данные" / "материалы"
+
+    total = 0
+    valid = 0
+    seen = set()  # (tech_id, mat_stem) — dedup
+
+    for f in sorted(tech_dir.glob("*.md")):
+        if f.name.startswith('_'):
+            continue
+        data, _, _ = read_yaml_frontmatter(f)
+        if not isinstance(data, dict):
+            continue
+        tech_id = str(data.get('id', '')).strip() or ('tekhnologia_' + f.stem)
+        # материалы_для_процесса находится внутри блока `дополнительные:`
+        extras = data.get('дополнительные') or {}
+        if not isinstance(extras, dict):
+            continue
+        proc_mats = extras.get('материалы_для_процесса')
+        if not isinstance(proc_mats, list) or not proc_mats:
+            continue
+
+        for entry in proc_mats:
+            mat_id = None
+            role = None
+            if isinstance(entry, dict):
+                # v9.55 — ролевая структура
+                mat_id = str(entry.get('материал', '')).strip()
+                role = str(entry.get('роль', '') or '').strip() or None
+            elif isinstance(entry, str):
+                # legacy — простой список id строк
+                mat_id = entry.strip()
+            if not mat_id:
+                continue
+
+            total += 1
+            stem = mat_id[9:] if mat_id.startswith('material_') else mat_id
+            if not stem:
+                continue
+
+            dedup_key = (tech_id, stem)
+            if dedup_key in seen:
+                continue
+            seen.add(dedup_key)
+
+            if _resolve_material_file(stem, mat_dir) is not None:
+                valid += 1
+            else:
+                role_suffix = f" (роль={role})" if role else ""
+                violations.append(
+                    f"{tech_id}: материалы_для_процесса ссылается на "
+                    f"несуществующий материал material_{stem}{role_suffix}")
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F27d',
+        'description': 'Битые ссылки на материалы в frontmatter технологий (материалы_для_процесса)',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
 # F28: АЛЬТЕРНАТИВНЫЕ ФОРМЫ МАТЕРИАЛА (v9.42)
 # Идея: при вебпоиске материала искать ВСЕ его формы (монокристалл/
 # поликристалл/аморфный/полиморфы; для аморфных систем — вариант_составов:
@@ -3431,6 +3551,19 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
+    # F27d — обратная связь: материалы в frontmatter технологий (v9.55;
+    # проверяет валидность id в `материалы_для_процесса` файлов технологий —
+    # mirror F27b/F27c, замыкает треугольник изделие↔технология↔материал)
+    print()
+    print("=== F27d: Битые ссылки на материалы в frontmatter технологий ===")
+    r = check_F27d()
+    results['F27d'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
     # F28 — альтернативные формы материалов (v9.42; идея: вебпоиск всех форм
     # mono/poly/amorphous/составов — выбор формы для AI-вариантов изделий)
     print()
@@ -3544,6 +3677,9 @@ def main():
             elif args.metric == 'F33':
                 # F33 работает со всеми .md 3-х категорий (материалы/изделия/технологии)
                 r = check_fn(_load_all_catalog_entries())
+            elif args.metric == 'F27d':
+                # F27d (v9.55) работает с frontmatter файлов технологий (не izdeliya)
+                r = check_fn()
             else:
                 # F12a, F14, F15a-h, F16, F18, F19, F20, F25, F27-F30, F34 — работают с изделиями
                 r = check_fn(izdeliya)
@@ -3558,7 +3694,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F28', 'F29', 'F31', 'F33', 'F34')
+            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F27d', 'F28', 'F29', 'F31', 'F33', 'F34')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:

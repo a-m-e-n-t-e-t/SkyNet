@@ -31,15 +31,27 @@ id: tekhnologia_hip
   сертификация: {computed_from: прототип}
 дополнительные:
   оборудование: []
-  # v9.54: обратная связь — материалы, обрабатываемые этой технологией
-  # (mirror frontmatter `технологии_частей` в изделиях/частях). Заполнено по
-  # мигрированным изделиям (часть_tverdotelnye_akkumulyatory_electrolyte → li7la3zr2o12).
+  # v9.55: ролевая структура материалы_для_процесса (mirror материалы_частей).
+  # Заполнено по web_search (Patsnap Eureka 2025-08, MDPI 2021):
+  #   - LLZO-порошок → спечённая керамика (обрабатываемый, становится частью изделия)
+  #   - Аргон (100 МПа) — защитная/передающая давление среда в HIP
+  #   - Al-/Ta-/Ga-/Nb-допинг для стабилизации кубической фазы LLZO (легирующая
+  #     добавка) — НЕТ файлов в каталоге (future web_search: al2o3, ta2o5)
+  # Источник: Patsnap Eureka "LLZO electrolyte densification techniques" (2025);
+  #           Raju et al., MDPI Crystals 2021, 2(3):26.
   материалы_для_процесса:
-    - material_li7la3zr2o12
+    - материал: material_li7la3zr2o12
+      роль: обрабатываемый
+      доля_массы: 1.0
+    - материал: material_argon
+      роль: атмосфера
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-07
+источник: web_search
+источник_url: https://eureka.patsnap.com/report-comparison-of-llzo-electrolyte-densification-techniques-hot-pressing-spark-plasma-sintering-and-sinter-aids
+источник_дата: 2026-11-07
 ---
 ## Описание
 

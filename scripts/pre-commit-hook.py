@@ -315,6 +315,10 @@ def main():
     # `технологии` изделие-level). Сейчас 0 ссылок (поле только введено,
     # миграция 3 файлов с известными соответствиями). После полной миграции
     # F27c станет блокирующей.
+    # v9.55: F27d (обратная связь F27b/F27c) — warning: проверяет валидность
+    # id материалов в `материалы_для_процесса` файлов технологий. Замыкает
+    # треугольник изделие↔технология↔материал. Поддерживает legacy-формат
+    # (список id строк) и ролевую структуру v9.55 ({материал, роль, доля_массы?}).
     try:
         sys.path.insert(0, os.path.join(SKYNET_REPO, 'scripts'))
         from validate_decomposition import run_all_checks
@@ -331,7 +335,7 @@ def main():
         #   F29 ← F30 (BOM-материалы: форма + наследование)
         #   F31 ← F32 (дедупликация: syntactic + semantic)
         # F23, F24, F17, F26, F30, F32 убраны — auto-close stale issues для них
-        WARNING_METRICS = {'F13', 'F15b', 'F15d', 'F15g', 'F15h', 'F16', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F28', 'F29', 'F31', 'F34'}
+        WARNING_METRICS = {'F13', 'F15b', 'F15d', 'F15g', 'F15h', 'F16', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F27d', 'F28', 'F29', 'F31', 'F34'}
         for metric, result in decomp_results['results'].items():
             if metric in WARNING_METRICS:
                 if not result['pass']:
