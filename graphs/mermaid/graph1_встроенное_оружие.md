@@ -5,16 +5,16 @@ graph LR
     izdelie_minigun_m134[прочее]
     izdelie_granatomet_m320[прочее]
     часть_minigun_m134_connectors[разъёмы]
-    часть_minigun_m134_housing[корпус]
-    часть_minigun_m134_mounting[крепёж]
     часть_minigun_m134_core[основной_элемент]
-    часть_granatomet_m320_core[основной_элемент]
-    часть_granatomet_m320_housing[корпус]
-    часть_granatomet_m320_connectors[разъёмы]
+    часть_minigun_m134_mounting[крепёж]
+    часть_minigun_m134_housing[корпус]
     часть_granatomet_m320_mounting[крепёж]
-    часть_hk_tank_плазма_пушка_1[plasma_cannon]
+    часть_granatomet_m320_core[основной_элемент]
+    часть_granatomet_m320_connectors[разъёмы]
+    часть_granatomet_m320_housing[корпус]
     часть_t_x_плазма_пушка[built_in_plasma_cannon]
     часть_t_x_нанотех_инъектор[nanotech_injector]
+    часть_hk_tank_плазма_пушка_1[plasma_cannon]
     часть_hk_aerial_плазма_пушка[plasma_cannon]
     material_al_6061_t6[Al 6061-T6]
     material_becu[BeCu]
@@ -25,16 +25,16 @@ graph LR
     izdelie_granatomet_m320 -->|материал| material_al_6061_t6
     izdelie_granatomet_m320 -->|материал| material_becu
     часть_minigun_m134_connectors -->|материал| material_al_6061_t6
-    часть_minigun_m134_housing -->|материал| material_ti_6al_4v
-    часть_minigun_m134_mounting -->|материал| material_stal_st3
     часть_minigun_m134_core -->|материал| material_stal_st3
-    часть_granatomet_m320_core -->|материал| material_al_6061_t6
-    часть_granatomet_m320_housing -->|материал| material_al_6061_t6
-    часть_granatomet_m320_connectors -->|материал| material_becu
+    часть_minigun_m134_mounting -->|материал| material_stal_st3
+    часть_minigun_m134_housing -->|материал| material_ti_6al_4v
     часть_granatomet_m320_mounting -->|материал| material_al_6061_t6
-    часть_hk_tank_плазма_пушка_1 -->|материал| material_w_ni_fe
+    часть_granatomet_m320_core -->|материал| material_al_6061_t6
+    часть_granatomet_m320_connectors -->|материал| material_becu
+    часть_granatomet_m320_housing -->|материал| material_al_6061_t6
     часть_t_x_плазма_пушка -->|материал| material_ti_6al_4v
     часть_t_x_нанотех_инъектор -->|материал| material_gallinstan
+    часть_hk_tank_плазма_пушка_1 -->|материал| material_w_ni_fe
     часть_hk_aerial_плазма_пушка -->|материал| material_w_ni_fe
 ```
 
@@ -42,7 +42,7 @@ graph LR
 |---|---:|
 | `Al 6061-T6` | 5 |
 | `BeCu` | 2 |
-| `Ti-6Al-4V` | 2 |
 | `Сталь Ст3` | 2 |
+| `Ti-6Al-4V` | 2 |
 | `W-Ni-Fe` | 2 |
 | `Галлинстан` | 1 |
