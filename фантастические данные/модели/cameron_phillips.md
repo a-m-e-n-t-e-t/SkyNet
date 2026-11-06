@@ -66,6 +66,8 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/Cameron
+источник_дата: 2026-11-06
 источник_разбора: канон
 ии_перепроектирован:
   статус: false
@@ -143,7 +145,7 @@ relations:
 alice_specs: ALICE sync protocol v9.31 (SkyNet hive-mind)
 original_improved: canon
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-06
 ---
 # SkyNet-Cameron
 
@@ -196,6 +198,8 @@ Cameron Phillips — перепрограммированный терминат
 ## Источники
 
 - Канон: Terminator: The Sarah Connor Chronicles (2008-2009)
+- [Cameron | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/Cameron)
+- [Cameron (Terminator) — Wikipedia](https://en.wikipedia.org/wiki/Cameron_(Terminator))
 
 ## Декомпозиция
 
