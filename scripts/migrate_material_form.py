@@ -34,7 +34,7 @@ PILOT_FORMAS = {
         "ti-6al-4v": "forged_bar_ams_4928",            # AMS 4928 уже в стандартах части
     },
     "часть_ni-63_betavoltaik_4h-sic_encapsulant": {
-        "epoksid_epon_828_+_teta": "cast_resin_ambient_cure",  # EPON 828 + TETA, комнатная полимеризация
+        "epoksid_epon_828_teta": "cast_resin_ambient_cure",  # EPON 828 + TETA, комнатная полимеризация
     },
     "часть_ni-63_betavoltaik_4h-sic_isotope": {
         "ni-63": "electroplated_foil",                  # Widetronix: Ni-63 plated on foil

@@ -14,7 +14,7 @@ id: часть_gr801_noel-v_risc-v_package
 дочерние_части: []
 материалы_частей:
   - часть: часть_gr801_noel-v_risc-v_package
-    материал: epoksid_epon_828_+_teta
+    материал: epoksid_epon_828_teta
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -70,7 +70,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 23×23×1.5 | mm | Gaisler (23×23 мм) + типовая высота FC-BGA |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | epoksid_epon_828_+_teta | — | база EMC (бисфенол-А эпоксид) |
+| материал | epoksid_epon_828_teta | — | база EMC (бисфенол-А эпоксид) |
 | корпус | FCTEBGA, 441 шар, 23×23 мм | — | Cobham Gaisler |
 | шаг шариков | 1.0 | mm | Cobham Gaisler |
 | технология кристалла | 28 нм FDSOI (ST) | — | Cobham Gaisler |
@@ -86,7 +86,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `epoksid_epon_828_+_teta` → [`epoksid_epon_828_+_teta.md`](../../../../материалы/epoksid_epon_828_+_teta.md) — эпоксидная основа компаунда корпуса (с плавленым кварцевым наполнителем в реальном EMC)
+- `epoksid_epon_828_teta` → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md) — эпоксидная основа компаунда корпуса (с плавленым кварцевым наполнителем в реальном EMC)
 
 ## Источники
 
@@ -95,4 +95,4 @@ scaling_type: количественный
 - Cobham Gaisler, «NOEL-V»: https://www.gaisler.com/products/noel-v — процессорное ядро RV64GC, отказоустойчивые кэши
 - IEEE IEMT 2014, «Comprehensive Study in Mold Compound»: https://ewh.ieee.org/r10/malaysia/cpmt/IEMT2014/Technical%20Paper/oral%20paper/IEMT2014-P041.pdf — плавленый кварц как наполнитель EMC, КТР ~0.55 ppm/°C
 - Polymer Innovation Blog, «Epoxy Mold Compounds in Semiconductor Packaging» (2017): https://polymerinnovationblog.com/polymers-electronic-packaging-part-one-introduction-mold-compounds — состав EMC: эпоксид, отвердитель, наполнитель, антипирены
-- Материалы: реальные данные/материалы/ (epoksid_epon_828_+_teta.md)
+- Материалы: реальные данные/материалы/ (epoksid_epon_828_teta.md)

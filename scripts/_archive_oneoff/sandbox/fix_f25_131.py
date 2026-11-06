@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """fix(verify): issue #131 — F25: 12 файлов 100×100×50/0.1kg/ti-6al-4v → реальные данные.
 
-+ 1 новый материал: soCl2_lialcl4_electrolit (LiSOCl2-электролит).
++ 1 новый материал: socl2_lialcl4_electrolit (LiSOCl2-электролит).
 """
 import re, io, os
 
@@ -152,7 +152,7 @@ FIXES = [
     ),
     dict(
         path=P('энергетическая/tpv/часть_tpv_emitter'),
-        l='400', w='100', h='0.25', mat='tasi₂',
+        l='400', w='100', h='0.25', mat='tasi2',
         url='https://pmc.ncbi.nlm.nih.gov/articles/PMC9007744',
         add=("  тип_эмиттера: 'селективный ИК-эмиттер (тантал-силицидная фольга)'\n"
              "  рабочая_температура_C: 2127\n"
@@ -207,7 +207,7 @@ FIXES = [
     ),
     dict(
         path=P('вычислительная/litii-tionilhloridnye_batarei/часть_litii-tionilhloridnye_batarei_electrolyte'),
-        l='30', w='30', h='50', mat='soCl2_lialcl4_electrolit',
+        l='30', w='30', h='50', mat='socl2_lialcl4_electrolit',
         url='https://tadiranbatteries.de/lithium-thionyl-chloride',
         add=("  тип_электролита: 'раствор LiAlCl₄ в SOCl₂ (тионилхлорид, ~1.5 М)'\n"
              "  катод_жидкий: 'SOCl₂ одновременно жидкий катод'\n"
@@ -218,16 +218,16 @@ FIXES = [
               "растворителя, и жидкого деполяризующего катода (cathode-active solvent). Референс — линейки Tadiran/"
               "Saft Li-SOCl₂: D-ячейка Ø33×61 мм содержит ~18 мл электролита (объёмный эквивалент заливки "
               "30×30×50 мм), рабочий диапазон −55…+85 °C, срок хранения 10–20 лет, удельная энергия до 650 Вт·ч/кг.\n\n"
-              "Материал — новая каталожная позиция `soCl2_lialcl4_electrolit` (неорганическая жидкость). Масса "
+              "Материал — новая каталожная позиция `socl2_lialcl4_electrolit` (неорганическая жидкость). Масса "
               "0.1 кг — канон декомпозиции (реальная заливка 18 мл × ρ1.63 г/см³ ≈ 29 г; канон агрегирует "
               "электролит двух ячеек). Габарит 30×30×50 мм — объёмный эквивалент заливки D-ячейки, не дефолтный "
               "fallback."),
         dim_src='web (Tadiran Li-SOCl2 D-cell)', mat_src='new (LiAlCl4/SOCl2)',
         new_material=dict(
-            fname='soCl2_lialcl4_electrolit.md',
+            fname='socl2_lialcl4_electrolit.md',
             body="""---
 применяется_в_изделиях_счёт: 1
-id: material_soCl2_lialcl4_electrolit
+id: material_socl2_lialcl4_electrolit
 тип: материал
 класс: неорганическая_жидкость
 химический_состав: 'Раствор LiAlCl₄ ~1.5 М в тионилхлориде SOCl₂'

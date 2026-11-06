@@ -320,8 +320,8 @@ VERIFIED_TECH: dict[str, dict] = {
         },
         'источник_верификации': 'Wikipedia CVD + scientific literature (2026-11-03)',
     },
-    'tekhnologia_ald_al₂o₃': {
-        'file': 'ald_al₂o₃.md',
+    'tekhnologia_ald_al2o3': {
+        'file': 'ald_al2o3.md',
         'основные': {
             'температура_режима_C': {'min': 100, 'max': 350, 'nominal': 250},
             'давление_Pa': {'min': 1, 'max': 100, 'nominal': 10},

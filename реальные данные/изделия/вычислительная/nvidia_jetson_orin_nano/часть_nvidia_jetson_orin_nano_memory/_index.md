@@ -13,7 +13,7 @@ id: часть_nvidia_jetson_orin_nano_memory
 дочерние_части: []
 материалы_частей:
   - часть: часть_nvidia_jetson_orin_nano_memory
-    материал: epoksid_epon_828_+_teta
+    материал: epoksid_epon_828_teta
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -64,7 +64,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 11.5×13×0.6 | mm | TFBGA 200-ball LPDDR5 x32 (JEDEC JESD209-5C, Micron) |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | epoksid_epon_828_+_teta | — | canon (эпоксидный компаунд корпуса) |
+| материал | epoksid_epon_828_teta | — | canon (эпоксидный компаунд корпуса) |
 | шина | LPDDR5 128-bit, 2133 МГц, 68 ГБ/с | — | DS-11105-001 v1.2 (Memory Subsystem: ON 8GB 128-bit / ON 4GB 64-bit) |
 | питание | VDD1 0.5 В | — | JEDEC JESD209-5C |
 
@@ -78,7 +78,7 @@ LPDDR5 работает в реверсивном режиме тактиров�
 
 ## Используемые материалы
 
-- `epoksid_epon_828_+_teta` (эпоксидный компаунд корпуса) → [`epoksid_epon_828_+_teta.md`](../../../../материалы/epoksid_epon_828_+_teta.md)
+- `epoksid_epon_828_teta` (эпоксидный компаунд корпуса) → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
 
 ## Источники
 

@@ -25,7 +25,7 @@ files:
   - file: реальные данные/изделия/вычислительная/intel_loihi_2/часть_intel_loihi_2_encapsulant/_index.md
     url: https://polymerinnovationblog.com/polymers-electronic-packaging-part-one-introduction-mold-compounds
     source_note: "Polymer Innovation Blog, Polymers in Electronic Packaging Pt.1: эпоксидные mold compounds для инкапсуляции кристаллов (glob-top)"
-    material: epoksid_epon_828_+_teta
+    material: epoksid_epon_828_teta
   - file: реальные данные/изделия/вычислительная/intel_loihi_2/часть_intel_loihi_2_pins_balls/_index.md
     url: https://www.jedec.org/sites/default/files/docs/DGuide4-5H.pdf
     source_note: "JEDEC Design Guide 4.5: FBGA — шаг шариков 0.8 мм"

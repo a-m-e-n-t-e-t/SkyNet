@@ -6,7 +6,7 @@ files:
   - file: реальные данные/изделия/энергетическая/termoelektricheskii_postoyannyi_magnit/часть_termoelektricheskii_postoyannyi_magnit_teg_modules/_index.md
     url: https://customthermoelectric.com/txl-127-25qteg-40-x-40mm.html
     source_note: "Custom Thermoelectric TXL-127-25Q TEG 40×40 мм: 127 couples, Bi2Te3, шлифованные керамические (Al2O3) грани, H=4.70 мм, VOC 1.5 В / ISC 311 мА / PML 119 мВт @ ΔT=30 °C, до 125 °C непрерывно"
-    material: "bi₂te₃"
+    material: "bi2te3"
     dims: 40,40,4.7
     mass: 0.18
     share: 0.36

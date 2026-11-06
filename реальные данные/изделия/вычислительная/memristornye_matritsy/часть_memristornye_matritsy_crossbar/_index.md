@@ -13,7 +13,7 @@ id: часть_memristornye_matritsy_crossbar
 дочерние_части: []
 материалы_частей:
   - часть: часть_memristornye_matritsy_crossbar
-    материал: hfo₂
+    материал: hfo2
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -60,7 +60,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 10×10×0.25 | mm | Frontiers in Nanotechnology — TCAD HfO2 memristor: HfOx 5 нм, ширина 40 нм, Ti/TiN |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | hfo₂ | — | hfo₂.md |
+| материал | hfo2 | — | hfo2.md |
 
 ## Принцип работы
 
@@ -72,7 +72,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `hfo₂` → [`hfo₂.md`](../../../материалы/hfo₂.md)
+- `hfo2` → [`hfo2.md`](../../../материалы/hfo2.md)
 
 ## Источники
 

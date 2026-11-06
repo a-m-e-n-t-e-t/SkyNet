@@ -84,7 +84,7 @@ def read_md(path: Path) -> dict:
 # ============================================================================
 
 def _slug(s) -> str:
-    """'Ti-6Al-4V'→'ti-6al-4v', 'bi₂te₃'≡'bi2te3' (subscript-цифры нормализуются)."""
+    """'Ti-6Al-4V'→'ti-6al-4v', 'bi2te3'≡'bi2te3' (subscript-цифры нормализуются)."""
     s = str(s).translate(str.maketrans("₀₁₂₃₄₅₆₇₈₉", "0123456789"))
     return re.sub(r"[^a-z0-9а-яё]+", "-", s.lower()).strip("-")
 
@@ -96,7 +96,7 @@ def graph1_build() -> dict:
     by_id: dict[str, dict] = {}
     _seen_edges: set[tuple[str, str, str]] = set()
 
-    # Индекс материалов: 'bi2te3'→'material_bi₂te₃' (матчинг упоминаний с файлами)
+    # Индекс материалов: 'bi2te3'→'material_bi2te3' (матчинг упоминаний с файлами)
     mat_index: dict[str, str] = {}
     for _mf in sorted((REAL_DATA / "материалы").glob("*.md")):
         _md = read_md(_mf)

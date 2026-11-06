@@ -13,7 +13,7 @@ id: часть_nvidia_jetson_orin_nano_pmic
 дочерние_части: []
 материалы_частей:
   - часть: часть_nvidia_jetson_orin_nano_pmic
-    материал: epoksid_epon_828_+_teta
+    материал: epoksid_epon_828_teta
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -65,7 +65,7 @@ PMIC (Power Management IC) модуля Jetson Orin Nano — контролле�
 | габариты (Д×Ш×В) | 6×6×0.9 | mm | типовой QFN для модульных PMIC (оценка; BOM NVIDIA не публикует — DS-11105-001 v1.2) |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | epoksid_epon_828_+_teta | — | canon (эпоксидный компаунд корпуса) |
+| материал | epoksid_epon_828_teta | — | canon (эпоксидный компаунд корпуса) |
 
 ## Принцип работы
 
@@ -77,7 +77,7 @@ PMIC синхронизирует последовательность вклю�
 
 ## Используемые материалы
 
-- `epoksid_epon_828_+_teta` (эпоксидный компаунд корпуса) → [`epoksid_epon_828_+_teta.md`](../../../../материалы/epoksid_epon_828_+_teta.md)
+- `epoksid_epon_828_teta` (эпоксидный компаунд корпуса) → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
 
 ## Источники
 

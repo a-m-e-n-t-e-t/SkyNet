@@ -13,7 +13,7 @@ id: часть_4h-sic_betavoltaik_encapsulant
 дочерние_части: []
 материалы_частей:
   - часть: часть_4h-sic_betavoltaik_encapsulant
-    материал: epoksid_epon_828_+_teta
+    материал: epoksid_epon_828_teta
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -67,7 +67,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 21×21×1.5 | mm | расчёт: полость корпуса 22×22×3 минус стек подложки/ячеек |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 0 | W | canon |
-| материал | epoksid_epon_828_+_teta | — | web_search (TDS Westlake EPON 828) |
+| материал | epoksid_epon_828_teta | — | web_search (TDS Westlake EPON 828) |
 | эпоксидный эквивалент смолы | 185–192 | g/eq | Westlake TDS |
 | Tg (Ambient Cure, DSC) | 130 | °C | база материалов (125–127 °C) |
 | объёмное сопротивление | 1×10^16 | Ом·см | Westlake TDS |
@@ -83,7 +83,7 @@ Cast resin (заливка): EPON 828 смешивается с TETA в стех
 
 ## Используемые материалы
 
-- `epoksid_epon_828_+_teta` → [`epoksid_epon_828_+_teta.md`](../../../../материалы/epoksid_epon_828_+_teta.md)
+- `epoksid_epon_828_teta` → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
 
 ## Источники
 
@@ -91,4 +91,4 @@ Cast resin (заливка): EPON 828 смешивается с TETA в стех
 - TDS EPON Resin 828 (Westlake Epoxy): https://www.westlakeepoxy.com/sites/default/files/downloads/gfqy40X24W.pdf
 - Свойства EPON 828 (Nagase): https://www.nagase.com/us/en/products/epon-resin-828
 - Betavoltaic device (упаковка и принципы): https://en.wikipedia.org/wiki/Betavoltaic_device
-- Материалы: реальные данные/материалы/epoksid_epon_828_+_teta.md
+- Материалы: реальные данные/материалы/epoksid_epon_828_teta.md

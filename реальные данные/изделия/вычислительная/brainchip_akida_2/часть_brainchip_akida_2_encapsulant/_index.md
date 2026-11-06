@@ -13,7 +13,7 @@ id: часть_brainchip_akida_2_encapsulant
 дочерние_части: []
 материалы_частей:
   - часть: часть_brainchip_akida_2_encapsulant
-    материал: epoksid_epon_828_+_teta
+    материал: epoksid_epon_828_teta
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -68,7 +68,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 15×15×1 | mm | canon |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 0 | W | canon |
-| материал | epoksid_epon_828_+_teta | — | canon (DGEBA + TETA) |
+| материал | epoksid_epon_828_teta | — | canon (DGEBA + TETA) |
 | плотность компаунда | 1.16 | g/cm³ | EPON 828 TDS (RP: 3075) |
 | Tg∞ (пост-отверждение) | ~150 | °C | Data Brief 63:112109 (DMA tanδ) |
 | HDT | 120 | °C | EPON 828 TDS (EPIKURE 3234/TETA) |
@@ -88,7 +88,7 @@ Transfer molding / заливка: жидкая система Epon 828 + ТЭТ
 
 ## Используемые материалы
 
-- `epoksid_epon_828_+_teta` → [`epoksid_epon_828_+_teta.md`](../../../../материалы/epoksid_epon_828_+_teta.md)
+- `epoksid_epon_828_teta` → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
 
 ## Источники
 

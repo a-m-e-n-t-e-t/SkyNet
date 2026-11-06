@@ -13,7 +13,7 @@ id: часть_intel_loihi_2_encapsulant
 дочерние_части: []
 материалы_частей:
   - часть: часть_intel_loihi_2_encapsulant
-    материал: epoksid_epon_828_+_teta
+    материал: epoksid_epon_828_teta
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -69,9 +69,9 @@ scaling_type: количественный
 | доля массы родителя | 0.0025 | — | расчёт от canon массы родителя |
 | габариты (Д×Ш×В) | 5.5×5.5×0.7 | mm | расчёт: die ~30 мм² (½ от 60 мм² Loihi 1) + glob-top 0.7 мм |
 | выработка энергии | 0 | W | canon |
-| материал | epoksid_epon_828_+_teta | — | epoksid_epon_828_+_teta.md |
-| Tg | ~150 | °C | материал epoksid_epon_828_+_teta |
-| КТР | 79 | ppm/К | материал epoksid_epon_828_+_teta |
+| материал | epoksid_epon_828_teta | — | epoksid_epon_828_teta.md |
+| Tg | ~150 | °C | материал epoksid_epon_828_teta |
+| КТР | 79 | ppm/К | материал epoksid_epon_828_teta |
 
 ## Принцип работы
 
@@ -83,7 +83,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `epoksid_epon_828_+_teta` (DGEBA EPON 828 + ТЭТА, Tg 150°C) → [`epoksid_epon_828_+_teta.md`](../../../../материалы/epoksid_epon_828_+_teta.md)
+- `epoksid_epon_828_teta` (DGEBA EPON 828 + ТЭТА, Tg 150°C) → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
 
 ## Источники
 

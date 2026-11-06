@@ -52,7 +52,7 @@ id: izdelie_ni-63_betavoltaik_4h-sic
     форма: electroplated_foil
     суммарная_доля_массы: 0.2375
     источники_частей: [часть_ni-63_betavoltaik_4h-sic_isotope]
-  - материал: epoksid_epon_828_+_teta
+  - материал: epoksid_epon_828_teta
     форма: cast_resin_ambient_cure
     суммарная_доля_массы: 0.095
     источники_частей: [часть_ni-63_betavoltaik_4h-sic_encapsulant]

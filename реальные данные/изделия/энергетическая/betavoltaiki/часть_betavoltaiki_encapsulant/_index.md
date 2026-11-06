@@ -14,7 +14,7 @@ id: часть_betavoltaiki_encapsulant
 дочерние_части: []
 материалы_частей:
   - часть: часть_betavoltaiki_encapsulant
-    материал: epoksid_epon_828_+_teta
+    материал: epoksid_epon_828_teta
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -72,7 +72,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 33×12×3.5 | mm | внутренняя полость корпуса 35×14×4.5 (стенка 1 мм) |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 0 | W | canon |
-| материал | epoksid_epon_828_+_teta | — | canon |
+| материал | epoksid_epon_828_teta | — | canon |
 | Tg / HDT | 150 / 120 | °C | TDS EPON 828 |
 | слой над активной областью | 1.5 | mm | расчёт: 3.5 − 0.55 − стенки |
 
@@ -86,7 +86,7 @@ Transfer molding: жидкая композиция Epon 828 (13 phr TETA) за�
 
 ## Используемые материалы
 
-- `epoksid_epon_828_+_teta` → [`epoksid_epon_828_+_teta.md`](../../../../материалы/epoksid_epon_828_+_teta.md)
+- `epoksid_epon_828_teta` → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
 
 ## Источники
 

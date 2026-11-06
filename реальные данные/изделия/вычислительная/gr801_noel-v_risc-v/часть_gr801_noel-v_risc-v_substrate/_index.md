@@ -13,7 +13,7 @@ id: часть_gr801_noel-v_risc-v_substrate
 дочерние_части: []
 материалы_частей:
   - часть: часть_gr801_noel-v_risc-v_substrate
-    материал: epoksid_epon_828_+_teta
+    материал: epoksid_epon_828_teta
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -68,7 +68,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 23×23×1.0 | mm | web (gaisler.com GR801) |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | epoksid_epon_828_+_teta | — | web (FC-BGA epoxy core) |
+| материал | epoksid_epon_828_teta | — | web (FC-BGA epoxy core) |
 
 ## Принцип работы
 
@@ -80,7 +80,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `epoksid_epon_828_+_teta` → [`epoksid_epon_828_+_teta.md`](../../../../материалы/epoksid_epon_828_+_teta.md)
+- `epoksid_epon_828_teta` → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
 
 ## Источники
 

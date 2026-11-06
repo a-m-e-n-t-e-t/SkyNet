@@ -14,7 +14,7 @@ id: часть_mikroreaktor_deleniya_control_rods
 дочерние_части: []
 материалы_частей:
   - часть: часть_mikroreaktor_deleniya_control_rods
-    материал: b₄c
+    материал: b4c
     доля_массы: 0.55
 
 scaling_type: количественный
@@ -70,7 +70,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 160×160×2100 | mm | расчёт: пучок 2×2 Ø60, шаг 100, длина 2000 + привод |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | b₄c | — | ANL / Wikipedia Kilopower |
+| материал | b4c | — | ANL / Wikipedia Kilopower |
 | поглотитель | B₄C, 19.9% B-10 | — | ASTM C750 |
 | сечение поглощения B-10 (тепл.) | 3837 | барн | nuclear data |
 | длина стержня | 2000 | mm | NRC/SCALE generic HP-MR (зона ~2 м) |
@@ -86,7 +86,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `b₄c` → [`b₄c.md`](../../../../материалы/b₄c.md) — горячепрессованный карбид бора (поглотитель нейтронов)
+- `b4c` → [`b4c.md`](../../../../материалы/b4c.md) — горячепрессованный карбид бора (поглотитель нейтронов)
 - нержавеющая сталь SS-316 — оболочка стержней (≈45% массы сборки)
 
 ## Источники
@@ -97,4 +97,4 @@ scaling_type: количественный
 - INL Virtual Test Bed, «Heat Pipe Micro Reactor Description» (MRAD): https://mooseframework.inl.gov/virtual_test_bed/microreactors/mrad/reactor_description.html — геометрия зоны эталонного HP-микрореактора
 - Kennard M.W. (Westinghouse), OSTI 20045869 (2000): https://www.osti.gov/etdeweb/servlets/purl/20045869 — реакция B-10(n,α)Li-7 с выделением He и Li в B₄C-стержнях
 - Goodfellow, «Boron Carbide — Hot-Pressed»: https://www.goodfellow.com/global/resources/boron-carbide-hot-pressed-b4c-material-information — плотность 2.52 г/см³
-- Материалы: реальные данные/материалы/ (b₄c.md)
+- Материалы: реальные данные/материалы/ (b4c.md)

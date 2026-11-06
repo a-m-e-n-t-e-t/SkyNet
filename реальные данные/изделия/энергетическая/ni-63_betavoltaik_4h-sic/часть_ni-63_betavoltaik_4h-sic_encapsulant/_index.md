@@ -14,7 +14,7 @@ id: часть_ni-63_betavoltaik_4h-sic_encapsulant
 дочерние_части: []
 материалы_частей:
   - часть: часть_ni-63_betavoltaik_4h-sic_encapsulant
-    материал: epoksid_epon_828_+_teta
+    материал: epoksid_epon_828_teta
     форма: cast_resin_ambient_cure
     доля_массы: 1.0
 
@@ -66,7 +66,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 19×19×2 | mm | canon |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 0 | W | canon |
-| материал | epoksid_epon_828_+_teta | — | canon |
+| материал | epoksid_epon_828_teta | — | canon |
 | эпоксидный эквивалент смолы | 185–192 | g/eq | Westlake TDS |
 | плотность смолы | 1.16 | g/cm³ | Westlake TDS |
 | Tg (EPON 828 + TETA, стехиометрия) | 130 | °C | Ecker 2016 (DMA/DSC) |
@@ -83,7 +83,7 @@ Cast resin (заливка): EPON 828 смешивается с отвердит
 
 ## Используемые материалы
 
-- `epoksid_epon_828_+_teta` → [`epoksid_epon_828_+_teta.md`](../../../../материалы/epoksid_epon_828_+_teta.md)
+- `epoksid_epon_828_teta` → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
 
 ## Источники
 

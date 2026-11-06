@@ -13,7 +13,7 @@ id: часть_nvidia_jetson_orin_nano_storage
 дочерние_части: []
 материалы_частей:
   - часть: часть_nvidia_jetson_orin_nano_storage
-    материал: epoksid_epon_828_+_teta
+    материал: epoksid_epon_828_teta
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -66,7 +66,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 11.5×13×0.8 | mm | Samsung eMMC 5.1, 153 FBGA (официальная спецификация) |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | epoksid_epon_828_+_teta | — | canon (эпоксидный компаунд корпуса) |
+| материал | epoksid_epon_828_teta | — | canon (эпоксидный компаунд корпуса) |
 | интерфейс | eMMC 5.1 HS400 | — | Samsung |
 | ёмкость | 64 ГБ | — | конфигурация Orin Nano 8GB |
 
@@ -80,7 +80,7 @@ eMMC подключён к SoC шиной HS400 (до 400 МБ/с) и служи
 
 ## Используемые материалы
 
-- `epoksid_epon_828_+_teta` (эпоксидный компаунд корпуса) → [`epoksid_epon_828_+_teta.md`](../../../../материалы/epoksid_epon_828_+_teta.md)
+- `epoksid_epon_828_teta` (эпоксидный компаунд корпуса) → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
 
 ## Источники
 

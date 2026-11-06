@@ -13,7 +13,7 @@ id: часть_tverdotelnye_akkumulyatory_electrolyte
 дочерние_части: []
 материалы_частей:
   - часть: часть_tverdotelnye_akkumulyatory_electrolyte
-    материал: li₇la₃zr₂o₁₂
+    материал: li7la3zr2o12
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -71,7 +71,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 100×50×0.15 | mm | расчёт по площади ячейки |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | li₇la₃zr₂o₁₂ | — | web_search |
+| материал | li7la3zr2o12 | — | web_search |
 | ионная проводимость (25 °C) | 4.7×10⁻⁴ (до 1×10⁻³) | S/cm | web_search |
 | плотность LLZO | 5.1 | г/см³ | web_search |
 | толщина листа | 150 | мкм | web_search |
@@ -86,11 +86,11 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `li₇la₃zr₂o₁₂` → [`li₇la₃zr₂o₁₂.md`](../../../../материалы/li₇la₃zr₂o₁₂.md)
+- `li7la3zr2o12` → [`li7la3zr2o12.md`](../../../../материалы/li7la3zr2o12.md)
 
 ## Источники
 
 - Kravchyk K. V. et al. *On the feasibility of all-solid-state batteries with LLZO as a solid electrolyte* — ETH Zürich Research Collection, 2022: https://www.research-collection.ethz.ch/entities/publication/bc88006b-0e7d-438b-a778-04177cf7dfef (плотность 5.1 г/см³; σ ≤ 1 мСм/см при RT)
 - Wang P. et al. *Research Progress and Prospect of Solid Electrolyte* — Inorganics (MDPI), 2026: https://www.mdpi.com/2304-6740/14/6/148 (Li₆.₂₅Al₀.₂₅La₃Zr₂O₁₂: σ = 4.7×10⁻⁴ S/cm)
 - Канон: декомпозиция `izdelie_tverdotelnye_akkumulyatory` (web search 2026-11-03)
-- Материалы: реальные данные/материалы/li₇la₃zr₂o₁₂.md
+- Материалы: реальные данные/материалы/li7la3zr2o12.md

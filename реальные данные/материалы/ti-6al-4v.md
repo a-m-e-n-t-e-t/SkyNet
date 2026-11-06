@@ -207,9 +207,9 @@ Grade 5 (ASTM-спецификация, wt %): Al 5.5–6.75; V 3.5–4.5; Fe �
 - `часть_betavoltaiki_isotope` — Ni-63_источник
 - `часть_betavoltaiki_semiconductor` — SiC_преобразователь
 - `часть_betavoltaiki_terminal` — вывод
-- `часть_bldc_+_enkoder_core` — основной_элемент
-- `часть_bldc_+_enkoder_housing` — корпус
-- `часть_bldc_+_enkoder_mounting` — крепёж
+- `часть_bldc_enkoder_core` — основной_элемент
+- `часть_bldc_enkoder_housing` — корпус
+- `часть_bldc_enkoder_mounting` — крепёж
 - `часть_bldc_core` — основной_элемент
 - `часть_bldc_housing` — корпус
 - `часть_bldc_mounting` — крепёж

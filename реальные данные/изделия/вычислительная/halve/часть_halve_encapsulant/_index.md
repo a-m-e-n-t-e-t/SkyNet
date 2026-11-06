@@ -13,7 +13,7 @@ id: часть_halve_encapsulant
 дочерние_части: []
 материалы_частей:
   - часть: часть_halve_encapsulant
-    материал: epoksid_epon_828_+_teta
+    материал: epoksid_epon_828_teta
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -70,9 +70,9 @@ scaling_type: количественный
 | доля массы родителя | 0.0058 | — | расчёт от canon массы родителя |
 | габариты (Д×Ш×В) | 10.0×10.0×0.5 | mm | расчёт: canon кристалла 10×10 мм (часть_halve_die) + glob-top 0.5 мм |
 | выработка энергии | 0 | W | canon |
-| материал | epoksid_epon_828_+_teta (DGEBA EPON 828 + ТЭТА 13 phr) | — | web_search (TDS Epon 828) |
-| Tg | ~150 | °C | материал epoksid_epon_828_+_teta |
-| КТР | 79 | ppm/К | материал epoksid_epon_828_+_teta |
+| материал | epoksid_epon_828_teta (DGEBA EPON 828 + ТЭТА 13 phr) | — | web_search (TDS Epon 828) |
+| Tg | ~150 | °C | материал epoksid_epon_828_teta |
+| КТР | 79 | ppm/К | материал epoksid_epon_828_teta |
 
 ## Принцип работы
 
@@ -84,7 +84,7 @@ Glob-top заливка формует купол над кристаллом и
 
 ## Используемые материалы
 
-- `epoksid_epon_828_+_teta` (DGEBA EPON 828 + ТЭТА, Tg 150°C) → [`epoksid_epon_828_+_teta.md`](../../../../материалы/epoksid_epon_828_+_teta.md)
+- `epoksid_epon_828_teta` (DGEBA EPON 828 + ТЭТА, Tg 150°C) → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
 
 ## Источники
 

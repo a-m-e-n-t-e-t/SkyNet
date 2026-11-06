@@ -17,7 +17,7 @@ id: izdelie_reversivnye_pelte
   - часть_reversivnye_pelte_solder
 материалы_частей:
   - часть: часть_reversivnye_pelte_peltier_couples
-    материал: bi₂te₃
+    материал: bi2te3
     доля_массы: 0.137
   - часть: часть_reversivnye_pelte_ceramic_top
     материал: oksid_alyuminiya

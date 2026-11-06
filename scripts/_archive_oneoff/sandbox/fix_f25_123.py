@@ -75,7 +75,7 @@ FIXES = [
     # 4. GR801 substrate
     dict(
         path=P('вычислительная/gr801_noel-v_risc-v/часть_gr801_noel-v_risc-v_substrate'),
-        l='23', w='23', h='1.0', mat='epoksid_epon_828_+_teta',
+        l='23', w='23', h='1.0', mat='epoksid_epon_828_teta',
         url='https://www.gaisler.com/products/gr801',
         add=("  число_слоёв: '4–6 сигнальных (типовой FC-BGA substrate под 441 шар)'\n"
              "  шаг_шаров_мм: 1.0\n"
@@ -113,7 +113,7 @@ FIXES = [
     # 6. Peltier couples
     dict(
         path=P('энергетическая/termomoduli_pelte/часть_termomoduli_pelte_peltier_couples'),
-        l='40', w='40', h='2.5', mat='bi₂te₃',
+        l='40', w='40', h='2.5', mat='bi2te3',
         url='https://www.thermonamic.com/TEC1-12706-English-%2020220521.pdf',
         add=("  число_пар: 127\n"
              "  материал_пар: 'Bi₂Te₃ p/n-колонки, припои Sn-Sb/BiSn'\n"

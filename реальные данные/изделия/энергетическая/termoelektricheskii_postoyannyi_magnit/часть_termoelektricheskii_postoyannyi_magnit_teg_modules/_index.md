@@ -14,7 +14,7 @@ id: часть_termoelektricheskii_postoyannyi_magnit_teg_modules
 дочерние_части: []
 материалы_частей:
   - часть: часть_termoelektricheskii_postoyannyi_magnit_teg_modules
-    материал: bi₂te₃
+    материал: bi2te3
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -61,7 +61,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 40×40×4.7 | mm | Custom Thermoelectric TXL-127-25Q TEG 40×40 мм: 127 couples, Bi2Te3, шлифованные керамические (Al2O3) грани, H=4.70 мм, VOC 1.5 В / ISC 311 мА / PML 119 мВт @ ΔT=30 °C, до 125 °C непрерывно |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 1 | W | canon |
-| материал | bi₂te₃ | — | bi₂te₃.md |
+| материал | bi2te3 | — | bi2te3.md |
 
 ## Принцип работы
 
@@ -73,7 +73,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `bi₂te₃` → [`bi₂te₃.md`](../../../материалы/bi₂te₃.md)
+- `bi2te3` → [`bi2te3.md`](../../../материалы/bi2te3.md)
 
 ## Источники
 
