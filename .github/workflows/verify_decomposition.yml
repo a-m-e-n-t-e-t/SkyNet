@@ -110,6 +110,9 @@ jobs:
           # v9.35: добавлена метрика F26 (внутри-родительские дубликаты).
           # v9.40: добавлена метрика F27 (незаполненные материалы, используемые изделиями).
           # v9.42: добавлена метрика F28 (альтернативные формы материалов для AI-вариантов изделий).
+          # v9.53: добавлена метрика F27b (битые ссылки на материалы: файл отсутствует
+          #        в каталоге — F27 итерирует существующие файлы, F27b ловит пробел
+          #        и даёт cron-агенту явный сигнал «СОЗДАЙ файл через web_search»).
           # v9.41: расширение F27 — критерий (e): вариант_структуры должен быть
           #        указан (preventive); checklist уточнён — web_search ищет ВСЕ
           #        структурные формы (mono/poly/amorphous/...), полиморфные кристаллы
@@ -139,7 +142,7 @@ jobs:
           d = json.load(open('violations.json'))
           total = sum(len(v) for v in d.values())
           print(f"total_violations={total}")
-          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F28','F29','F31','F33','F34'):
+          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F28','F29','F31','F33','F34'):
               print(f"{M}_count={len(d.get(M, []))}")
           PYEOF
           # info-лог в stdout шага (одинарные кавычки — без bash-интерполяции):
@@ -147,7 +150,7 @@ jobs:
           import json
           d = json.load(open('violations.json'))
           print(f"[info] Total violations: {sum(len(v) for v in d.values())}")
-          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F28','F29','F31','F33','F34'):
+          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F28','F29','F31','F33','F34'):
               print(f"[info]   {M}: {len(d.get(M, []))} violations")
           PYEOF
 
@@ -268,7 +271,12 @@ jobs:
                 //        (для AI-генерации вариантов изделий) — в структурные_формы_альтернативы.
                 // v9.42: F28 — отдельный чек-лист перечня форм (полиморфы/составы) в
                 //        схемных полях сравнение_структур / варианты_по_применению.
-                const isMaterial = metric === 'F27' || metric === 'F28';
+                // v9.53: F27b — отдельный чек-лист для СОЗДАНИЯ файла (материал
+                //        отсутствует в каталоге, F27 не видит). isMissingMaterial
+                //        вставлен ПЕРЕД isMaterial, т.к. чек-лист существенно
+                //        отличается (создать файл vs заполнить существующий).
+                const isMaterial = metric === 'F27' || metric === 'F28' || metric === 'F27b';
+                const isMissingMaterial = metric === 'F27b';
                 const isForms = metric === 'F28';
                 // v9.52: merged metrics
                 //   F22 ← F23+F24 (url/stub/schema)
@@ -342,6 +350,27 @@ jobs:
                       `     · обновить дочерние_части текущей части списком id новых детей`,
                       `   - перегенерировать графы: python3 scripts/generate_graphs.py --all --mermaid`,
                     ]
+                  : isMissingMaterial
+                  ? [
+                      `   - ВНИМАНИЕ: файла материала в каталоге НЕТ — нужно СОЗДАТЬ новый файл реальные данные/материалы/<stem>.md`,
+                      `   - <stem> = id без префикса material_ (например, 'aluminum', 'silicon_carbide', 'stainless_steel_316')`,
+                      `   - frontmatter нового файла:`,
+                      `     · id=material_<stem>`,
+                      `     · класс (металл/сплав/керамика/полимер/композит/жидкость/газ/...)`,
+                      `     · тип, исследовательская_группа (НЕ 'требует_верификации' — заполняется после web_search)`,
+                      `   - основные (обязательно):`,
+                      `     · плотность_kg_m3`,
+                      `     · теплопроводность_W_mK`,
+                      `     · температура_плавления_C (для металлов/керамики) ИЛИ макс_рабочая_температура_C (для полимеров/жидкостей/газов)`,
+                      `   - химический_состав (формула или состав сплава/полимера)`,
+                      `   - вариант_структуры: КОНКРЕТНАЯ форма — web_search ищет ВСЕ формы материала:`,
+                      `     · monocrystalline | polycrystalline | amorphous | nanocrystalline | thin_film | layered | fiber_reinforced | composite | porous_foam | ...`,
+                      `     · для полиморфных кристаллов (Si, SiO₂, Al₂O₃, TiO₂, C, BaTiO₃, YBCO, Si₃N₄-α/β, ZrO₂-cubic/tetragonal/monoclinic, ...) — конкретная фаза; НЕ generic 'single_phase'`,
+                      `     · для сплавов/полимеров/стёкол 'single_phase' допустим (металлургическая/морфологическая корректность)`,
+                      `   - альтернативные формы — сразу в сравнение_структур/варианты_по_применению или структурные_формы_альтернативы (заодно закроет F28 для нового файла)`,
+                      `   - источник=web_search, источник_url (URL веб-источника) + источник_дата`,
+                      `   - заполнить пустые остальные поля основные/дополнительные (null → реальные значения или обоснованный null)`,
+                    ]
                   : isMaterial
                   ? [
                       `   - свойства: плотность_kg_m3, теплопроводность_W_mK, температура_плавления_C (или макс_рабочая_температура_C) из datasheet/справочника`,
@@ -393,6 +422,15 @@ jobs:
                       `- F12a: граф parent↔children остаётся целостным (дети включены в дочерние_части родителя и обратно)`,
                       `- F16: иерархия уровней корректна (ребёнок = родитель + 1; 'неделимый' не имеет детей)`,
                       `- графы обновлены (graphs/graph1_data.json)`,
+                    ]
+                  : isMissingMaterial
+                  ? [
+                      `- F27b: файл реальные данные/материалы/<stem>.md создан (новый — ранее отсутствовал, F27 не видел)`,
+                      `- F27: плотность_kg_m3 и теплопроводность_W_mK заполнены реальными значениями из источника (заглушка ≠ 0/null)`,
+                      `- F27: вариант_структуры заполнен конкретной формой (для полиморфных кристаллов — НЕ 'single_phase' generic; для сплавов/полимеров 'single_phase' допустим)`,
+                      `- F27: исследовательская_группа заполнена (НЕ 'требует_верификации')`,
+                      `- F22: источник_url заполнен конкретным URL (если источник=web_search)`,
+                      `- F31: id уникален (нет коллизии с алиасом другого материала — проверить scripts/_dedup_keys.js)`,
                     ]
                   : isMaterial
                   ? [
@@ -460,7 +498,7 @@ jobs:
           script: |
             const fs = require('fs');
             const { normalizeViolationKey, legacyMetricFromTitle } = require('./scripts/_dedup_keys.js');
-            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[], F27:[], F28:[], F31:[], F32:[]};
+            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[], F27:[], F27b:[], F28:[], F31:[], F32:[]};
             try {
               violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
             } catch (e) {
@@ -583,6 +621,7 @@ jobs:
           echo "| F25 | ${{ steps.violations.outputs.F25_count }} | Data uniqueness |" >> $GITHUB_STEP_SUMMARY
           echo "| F26 | ${{ steps.violations.outputs.F26_count }} | Within-parent duplicates |" >> $GITHUB_STEP_SUMMARY
           echo "| F27 | ${{ steps.violations.outputs.F27_count }} | Unfilled materials (used by izdeliya) |" >> $GITHUB_STEP_SUMMARY
+          echo "| F27b | ${{ steps.violations.outputs.F27b_count }} | Missing material files (referenced in frontmatter but file does not exist) |" >> $GITHUB_STEP_SUMMARY
           echo "| F28 | ${{ steps.violations.outputs.F28_count }} | Materials without alternative forms/variants (for AI product variants) |" >> $GITHUB_STEP_SUMMARY
           echo "| **Total** | **${{ steps.violations.outputs.total_violations }}** | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY

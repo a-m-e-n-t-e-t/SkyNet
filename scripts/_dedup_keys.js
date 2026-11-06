@@ -28,8 +28,11 @@ function normalizeViolationKey(metric, violation) {
 // Legacy-fallback: метрика для старых issues без [F2x] в заголовке.
 // v9.42: диапазон расширен до F28 (альтернативные формы материалов).
 // v9.44: добавлены F31/F32 (дедупликация id/алиасов, семантические дубли).
+// v9.53: добавлена F27b (битые ссылки на материалы — файл отсутствует в
+//        каталоге материалы/; mirror F27 для случая, когда F27 не видит
+//        ссылку, потому что файла нет).
 function legacyMetricFromTitle(title, violation) {
-  const metricMatch = (title || '').match(/\[(F2[2-9]|F3[0-2])\]/);
+  const metricMatch = (title || '').match(/\[(F2[2-9](?:[a-z])?|F3[0-2])\]/);
   return metricMatch ? metricMatch[1] : (violation.startsWith('Родитель') ? 'F26' : 'F25');
 }
 

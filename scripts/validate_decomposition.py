@@ -2292,6 +2292,108 @@ def check_F27(izdeliya: dict[str, dict]) -> dict:
     }
 
 
+# ============================================================================
+# F27b: БИТЫЕ ССЫЛКИ НА МАТЕРИАЛЫ (v9.53; mirror F27 для отсутствующих файлов)
+# ============================================================================
+# Контекст: F27 итерирует mat_dir.glob("*.md") — т.е. проверяет ТОЛЬКО
+# существующие файлы. Если изделие/часть ссылается в материалы_частей на
+# material_id, для которого НЕТ файла в каталоге материалы/ — F27 такого
+# материала не видит (молчаливый пробел). F27b закрывает этот пробел:
+# итерирует сами ссылки в frontmatter изделий/частей и проверяет, существует
+# ли файл. Это даёт cron-агенту явный сигнал «нужно СОЗДАТЬ файл материала
+# через web_search», а не просто «заполнить существующий».
+#
+# Аналогично F27 — итерируем только ссылки из frontmatter (структурные
+# материал_частей), не трогая body markdown ссылки [../материалы/...].
+# Body-ссылки — отдельная задача (потенциальная метрика F27c).
+
+MATERIAL_FILE_EXTENSIONS = ('.md',)  # каталог материалы/ — только markdown
+
+
+def _resolve_material_file(stem: str, mat_dir) -> 'Path | None':
+    """По stem-у ссылки (без/с префикса material_) возвращает Path файла
+    в каталоге материалы/, если он существует; иначе None.
+    """
+    s = stem.strip()
+    if not s:
+        return None
+    # Нормализуем: убираем префикс 'material_', если он есть в ссылке
+    if s.startswith('material_'):
+        s = s[len('material_'):]
+    if not s:
+        return None
+    for ext in MATERIAL_FILE_EXTENSIONS:
+        candidate = mat_dir / f"{s}{ext}"
+        if candidate.is_file():
+            return candidate
+    return None
+
+
+def check_F27b(izdeliya: dict[str, dict]) -> dict:
+    """F27b: Битые ссылки на материалы в frontmatter (файл отсутствует).
+
+    BLOCKING (mirror F27): цепочка «часть → материал» не должна вести в
+    несуществующий файл. F27 проверяет заполненность существующих файлов;
+    F27b ловит пробел — ссылка на материал, для которого нет файла вообще.
+
+    Скоуп — только frontmatter `материалы_частей` изделий и частей
+    (структурные ссылки). Body markdown-ссылки не проверяются.
+
+    Критерий нарушения: для элемента `материал: <id>` в материалы_частей
+    не существует файла реальные данные/материалы/<stem>.md (stem = id без
+    префикса material_, и имена файлов в каталоге без этого префикса).
+
+    Формат violation: 'material_<stem>: файл материалы/<stem>.md отсутствует
+    в каталоге (битая ссылка из материалы_частей в <izdelie_id>)' —
+    совместим с дефолтной веткой normalizeViolationKey (dedup
+    F27b:material_<stem>) и титульником '[F27b] Verify: material_<stem>'
+    (verify_decomposition.yml).
+    """
+    violations = []
+    seen = {}  # stem → izdelie_id (для текста violation)
+    mat_dir = SKYNET_REPO / "реальные данные" / "материалы"
+
+    # Идём по ссылкам прямо из frontmatter, чтобы сохранить изделие-источник
+    for izd_id, data in izdeliya.items():
+        mats = data.get('материалы_частей', []) if isinstance(data, dict) else None
+        if not isinstance(mats, list):
+            continue
+        for m in mats:
+            if not isinstance(m, dict):
+                continue
+            mat = str(m.get('материал', '')).strip()
+            if not mat:
+                continue
+            stem = mat[9:] if mat.startswith('material_') else mat
+            if not stem:
+                continue
+            if stem in seen:
+                continue  # уже видели эту ссылку — dedup по файлу
+            seen[stem] = izd_id  # первый источник (для текста violation)
+
+    # Подсчёт по уникальным referenced stems (одно нарушение на файл, как в F27)
+    total_unique = len(seen)
+    valid_unique = 0
+    for stem in seen:
+        if _resolve_material_file(stem, mat_dir) is not None:
+            valid_unique += 1
+        else:
+            violations.append(
+                f"material_{stem}: файл материалы/{stem}.md отсутствует в "
+                f"каталоге (битая ссылка из материалы_частей в {seen[stem]})")
+
+    ratio = valid_unique / max(1, total_unique)
+    return {
+        'metric': 'F27b',
+        'description': 'Битые ссылки на материалы в frontmatter (файл отсутствует в каталоге материалы/)',
+        'total': total_unique,
+        'valid': valid_unique,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
 # F28: АЛЬТЕРНАТИВНЫЕ ФОРМЫ МАТЕРИАЛА (v9.42)
 # Идея: при вебпоиске материала искать ВСЕ его формы (монокристалл/
 # поликристалл/аморфный/полиморфы; для аморфных систем — вариант_составов:
@@ -3167,6 +3269,18 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
+    # F27b — битые ссылки на материалы (v9.53; mirror F27 для отсутствующих
+    # файлов: F27 итерирует существующие файлы, F27b — ссылки в frontmatter)
+    print()
+    print("=== F27b: Битые ссылки на материалы (файл отсутствует в каталоге) ===")
+    r = check_F27b(izdeliya)
+    results['F27b'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
     # F28 — альтернативные формы материалов (v9.42; идея: вебпоиск всех форм
     # mono/poly/amorphous/составов — выбор формы для AI-вариантов изделий)
     print()
@@ -3294,7 +3408,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F28', 'F29', 'F31', 'F33', 'F34')
+            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F27b', 'F28', 'F29', 'F31', 'F33', 'F34')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:

@@ -305,6 +305,11 @@ def main():
     # v9.44: F31 (уникальность id/алиасов) + F32 (семантические дубли) — warnings:
     # дедупликация (3 пары слиты через migrate_dedup_materials.py); F31 станет
     # блокирующим после стабилизации (plan: когда violations=0 в 3 прогонах).
+    # v9.53: F27b (битые ссылки на материалы — файл отсутствует в каталоге) — warning:
+    # 79 битых ссылок в backlog (mirror F27: F27 итерирует существующие файлы,
+    # F27b — ссылки в frontmatter на отсутствующие файлы). Cron-агент постепенно
+    # создаст недостающие файлы через web_search; после stabilisation (violations=0
+    # в 3 прогонах) F27b станет блокирующей, как F27 после разбора backlog.
     try:
         sys.path.insert(0, os.path.join(SKYNET_REPO, 'scripts'))
         from validate_decomposition import run_all_checks
@@ -321,7 +326,7 @@ def main():
         #   F29 ← F30 (BOM-материалы: форма + наследование)
         #   F31 ← F32 (дедупликация: syntactic + semantic)
         # F23, F24, F17, F26, F30, F32 убраны — auto-close stale issues для них
-        WARNING_METRICS = {'F13', 'F15b', 'F15d', 'F15g', 'F15h', 'F16', 'F22', 'F25', 'F27', 'F28', 'F29', 'F31', 'F34'}
+        WARNING_METRICS = {'F13', 'F15b', 'F15d', 'F15g', 'F15h', 'F16', 'F22', 'F25', 'F27', 'F27b', 'F28', 'F29', 'F31', 'F34'}
         for metric, result in decomp_results['results'].items():
             if metric in WARNING_METRICS:
                 if not result['pass']:
