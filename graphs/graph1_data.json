@@ -7568,6 +7568,18 @@
       "meta": {}
     },
     {
+      "src": "izdelie_zubchataya_mufta",
+      "dst": "material_stal_st3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_zubchataya_mufta",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_povorotnoe_uplotnenie",
       "dst": "часть_povorotnoe_uplotnenie_core",
       "type": "has_part",
@@ -19270,6 +19282,22 @@
       }
     },
     {
+      "src": "material_stal_st3",
+      "dst": "izdelie_zubchataya_mufta",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "izdelie_zubchataya_mufta",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_povorotnoe_uplotnenie_core",
       "dst": "izdelie_povorotnoe_uplotnenie",
       "type": "part_of",
@@ -30261,7 +30289,7 @@
   },
   "stats": {
     "nodes": 1047,
-    "edges": 3276,
+    "edges": 3280,
     "dangling": {
       "complies_with": 461,
       "has_part": 4,
