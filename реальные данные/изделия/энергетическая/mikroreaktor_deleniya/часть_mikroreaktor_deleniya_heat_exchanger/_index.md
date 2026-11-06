@@ -19,6 +19,16 @@ id: часть_mikroreaktor_deleniya_heat_exchanger
   - часть: часть_mikroreaktor_deleniya_heat_exchanger
     технология: diffuzionnaya_svarka
     доля_использования: 1.0
+    # v9.56: материалы_для_процесса перенесены из файла технологии в изделие
+    # (та же технология diffuzionnaya_svarka применяется к разным материалам
+    # в разных изделиях — здесь конкретно: PCHE из 316L).
+    # Источник: Thermal Processing / PVA TePla (2022); Alfa Laval OptiBond.
+    материалы_для_процесса:
+      - материал: material_ss_316l
+        роль: обрабатываемый
+        доля_массы: 1.0
+      - материал: material_argon
+        роль: атмосфера
 
 scaling_type: количественный
 соединители: []

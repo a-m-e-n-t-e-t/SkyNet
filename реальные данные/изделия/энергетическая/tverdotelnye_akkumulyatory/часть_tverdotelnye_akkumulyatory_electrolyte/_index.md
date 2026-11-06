@@ -19,6 +19,17 @@ id: часть_tverdotelnye_akkumulyatory_electrolyte
   - часть: часть_tverdotelnye_akkumulyatory_electrolyte
     технология: hip
     доля_использования: 1.0
+    # v9.56: материалы_для_процесса перенесены из файла технологии в изделие
+    # (та же технология HIP применяется к разным материалам в разных изделиях —
+    # здесь конкретно: LLZO solid electrolyte для tverdotelnye_akkumulyatory).
+    # Источник: Patsnap Eureka "LLZO densification techniques" (2025);
+    #           Raju et al., MDPI Crystals 2021, 2(3):26.
+    материалы_для_процесса:
+      - материал: material_li7la3zr2o12
+        роль: обрабатываемый
+        доля_массы: 1.0
+      - материал: material_argon
+        роль: атмосфера
 
 scaling_type: количественный
 соединители: []

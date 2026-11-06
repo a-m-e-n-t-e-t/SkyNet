@@ -19,6 +19,15 @@ id: часть_tverdooksidnyi_toplivnyi_element_electrolyte
   - часть: часть_tverdooksidnyi_toplivnyi_element_electrolyte
     технология: vakuumnoe_spekanie
     доля_использования: 1.0
+    # v9.56: материалы_для_процесса перенесены из файла технологии в изделие
+    # (та же технология vakuumnoe_spekanie применяется к разным материалам в
+    # разных изделиях — здесь конкретно: 8YSZ-электролит SOFC).
+    # Источник: J. Adv. Ceram. 2018, 7(4):325-335 (review of 8YSZ sintering);
+    #           Lewis/Atkinson/Steele, J. Mater. Sci. Lett. 2001, 20:1155-1157.
+    материалы_для_процесса:
+      - материал: material_8ysz
+        роль: обрабатываемый
+        доля_массы: 1.0
 
 scaling_type: количественный
 соединители: []

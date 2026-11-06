@@ -119,6 +119,14 @@ jobs:
           # v9.55: добавлена метрика F27d (обратная связь F27b/F27c): проверяет
           #        валидность id в `материалы_для_процесса` файлов технологий —
           #        замыкает треугольник изделие↔технология↔материал.
+          # v9.56: F27d переориентирована на soft-check `типичные_материалы_для_процесса`
+          #        в файлах технологий (опциональное). Конкретные материалы процесса
+          #        перенесены в ИЗДЕЛИЕ, в поле `материалы_для_процесса` внутри
+          #        `технологии_частей[]` (одна технология — разные материалы в разных
+          #        изделиях). Добавлены:
+          #        F27e — обязательность технологии_частей для частей с материалы_частей
+          #        F27f — обязательность материалы_для_процесса внутри технологии_частей
+          #        F27g — валидность id материалов в технологии_частей.материалы_для_процесса
           # v9.41: расширение F27 — критерий (e): вариант_структуры должен быть
           #        указан (preventive); checklist уточнён — web_search ищет ВСЕ
           #        структурные формы (mono/poly/amorphous/...), полиморфные кристаллы
@@ -148,7 +156,7 @@ jobs:
           d = json.load(open('violations.json'))
           total = sum(len(v) for v in d.values())
           print(f"total_violations={total}")
-          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F27c','F27d','F28','F29','F31','F33','F34'):
+          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F27c','F27d','F27e','F27f','F27g','F28','F29','F31','F33','F34'):
               print(f"{M}_count={len(d.get(M, []))}")
           PYEOF
           # info-лог в stdout шага (одинарные кавычки — без bash-интерполяции):
@@ -156,7 +164,7 @@ jobs:
           import json
           d = json.load(open('violations.json'))
           print(f"[info] Total violations: {sum(len(v) for v in d.values())}")
-          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F27c','F27d','F28','F29','F31','F33','F34'):
+          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F27c','F27d','F27e','F27f','F27g','F28','F29','F31','F33','F34'):
               print(f"[info]   {M}: {len(d.get(M, []))} violations")
           PYEOF
 
@@ -574,7 +582,7 @@ jobs:
           script: |
             const fs = require('fs');
             const { normalizeViolationKey, legacyMetricFromTitle } = require('./scripts/_dedup_keys.js');
-            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[], F27:[], F27b:[], F27c:[], F27d:[], F28:[], F31:[], F32:[]};
+            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[], F27:[], F27b:[], F27c:[], F27d:[], F27e:[], F27f:[], F27g:[], F28:[], F31:[], F32:[]};
             try {
               violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
             } catch (e) {
@@ -699,7 +707,10 @@ jobs:
           echo "| F27 | ${{ steps.violations.outputs.F27_count }} | Unfilled materials (used by izdeliya) |" >> $GITHUB_STEP_SUMMARY
           echo "| F27b | ${{ steps.violations.outputs.F27b_count }} | Missing material files (referenced in frontmatter but file does not exist) |" >> $GITHUB_STEP_SUMMARY
           echo "| F27c | ${{ steps.violations.outputs.F27c_count }} | Missing technology files (referenced in frontmatter but file does not exist) |" >> $GITHUB_STEP_SUMMARY
-          echo "| F27d | ${{ steps.violations.outputs.F27d_count }} | Missing material files referenced in tech frontmatter (материалы_для_процесса) |" >> $GITHUB_STEP_SUMMARY
+          echo "| F27d | ${{ steps.violations.outputs.F27d_count }} | Broken typical material refs in tech frontmatter (типичные_материалы_для_процесса, soft) |" >> $GITHUB_STEP_SUMMARY
+          echo "| F27e | ${{ steps.violations.outputs.F27e_count }} | Parts with материалы_частей missing технологии_частей (обязательность связи) |" >> $GITHUB_STEP_SUMMARY
+          echo "| F27f | ${{ steps.violations.outputs.F27f_count }} | технологии_частей entries missing материалы_для_процесса (обязательность) |" >> $GITHUB_STEP_SUMMARY
+          echo "| F27g | ${{ steps.violations.outputs.F27g_count }} | Broken material refs in технологии_частей.материалы_для_процесса |" >> $GITHUB_STEP_SUMMARY
           echo "| F28 | ${{ steps.violations.outputs.F28_count }} | Materials without alternative forms/variants (for AI product variants) |" >> $GITHUB_STEP_SUMMARY
           echo "| **Total** | **${{ steps.violations.outputs.total_violations }}** | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
