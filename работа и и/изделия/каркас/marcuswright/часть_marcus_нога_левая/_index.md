@@ -42,14 +42,16 @@ scaling_type: количественный
   степеней_свободы: 6
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/Marcus_Wright
+источник_дата: 2026-11-06
 источник_разбора: канон
 ---
 # Часть: часть_marcus_нога_левая (×2)
 ## Описание
 
-Дочерняя часть изделия.
+Левая нога гибрида Marcus Wright: титановый эндоскелет с сервоприводами; уникальная конструкция, построенная Skynet для поддержки человеческих компонентов носителя (canon Terminator Salvation 2009).
 
 Родитель: `izdelie_SkyNet-MarcusWright` (подсистема: приводная_система).
 
@@ -81,6 +83,7 @@ scaling_type: количественный
 ## Источники
 
 - Канон: декомпозиция `izdelie_SkyNet-MarcusWright` (web search 2026-11-03)
+- [Marcus Wright | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/Marcus_Wright)
 - Материалы: реальные данные/материалы/
 
 

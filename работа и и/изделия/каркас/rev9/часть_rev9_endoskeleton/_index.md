@@ -41,8 +41,10 @@ scaling_type: количественный
   muscle: 'synthetic muscle fibers (not hydraulics)'
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-06
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/Rev-9
+источник_дата: 2026-11-06
 источник_разбора: канон
 ---
 
@@ -50,7 +52,7 @@ scaling_type: количественный
 
 ## Описание
 
-Дочерняя часть изделия.
+Твёрдый углеродный эндоскелет Rev-9 (CFRP T1100G): способен отделяться от полисплавовой оболочки и действовать как самостоятельная боевая единица (canon Terminator: Dark Fate 2019).
 
 Родитель: `izdelie_SkyNet-Rev9` (подсистема: каркас).
 
@@ -82,4 +84,5 @@ Half-structure (hollow chest+head). Polyallyo заполняет cavities. Extre
 ## Источники
 
 - Канон: декомпозиция `izdelie_SkyNet-Rev9` (web search 2026-11-03)
+- [Rev-9 | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/Rev-9)
 - Материалы: реальные данные/материалы/
