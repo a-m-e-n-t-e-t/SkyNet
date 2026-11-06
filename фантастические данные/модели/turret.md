@@ -52,6 +52,7 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/Turret
 источник_разбора: канон
 ии_перепроектирован:
   статус: false
@@ -96,13 +97,15 @@ relations:
 alice_specs: ALICE sync protocol v9.31 (SkyNet hive-mind)
 original_improved: canon
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-06
 ---
 # SkyNet-Turret
 
 ## Описание
 
 Turret — стационарная плазменная пушка; устанавливается на стенах Skynet-объектов; автономная; локальный ИИ.
+
+По верифицированным данным веб-поиска (проверено 2026-11-06, страница Fandom «Turret» выкачана целиком через web.archive.org): Skynet обычно устанавливает турели на крупных объектах как оборонительную сетку (defense grid). Для Salvation-таймлайна (канон файла) описан Gun Turret — стационарная многоствольная турель в двух вариациях: установленная в Skynet VLA с 4 «руками»-стволами и в Skynet Central с 2 «руками». В финале фильма турель Skynet Central просканировала Маркуса Райта и опознала его перед пропуском внутрь; Маркус отключил North Gun Turret, чтобы отряд Tech-Com Джона Коннора смог войти в периметр и атаковать Skynet Central. Семейство турелей канона шире: F/K Turret (таймлайн Rise of the Machines) — неподвижная орудийная батарея для охраны зоны или создания коридоров поражения (kill-zones); F/K Sentry Gun — уменьшенная версия для охраны внутренних помещений объектов Skynet; Plasma Turret (Resistance-таймлайн) — два типа: с красной плазменной ячейкой (2022 г.) и с фиолетовой (2028 г.); Defense Turret установлена снаружи комплекса Skynet у Шайенн-Маунтин. Часть турелей вооружена плазменным оружием; некоторые турели могут быть перехвачены Сопротивлением (захват центра управления). Появления: The Terminator: Future Shock (1995), The Terminator: SkyNET (1996), T2 3-D: Battle Across Time, The Terminator: Dawn of Fate, T3 (игра, 2003), Terminator Salvation (фильм и игра, 2009), Terminator Genisys, Terminator: Resistance, The Terminator RPG. РАСХОЖДЕНИЕ С ФАЙЛОМ: по канону турель — стационарное пушечное/плазменное вооружение оборонительного периметра, а категория «ИИ-ядро» и ТТХ второго YAML-блока (серверная стойка, faraday cage, серверная в бункере) — шаблон SkyNet Core, оставлены до отдельной реклассификации (F13/F33-таксономия), как для T-300 (#705)/T-950 (#708)/T-400 (#707)/T-20 (#709)/T-204 (#710)/T-202 (#712)/T-200 (#713).
 
 ## Источник канон
 
@@ -146,4 +149,6 @@ Turret — стационарная плазменная пушка; устан�
 
 ## Источники
 
-- Канон: T: Salvation (2009)
+- Канон: T: Salvation (2009) — подтверждается (Gun Turret в Skynet Central/VLA, сцены с Маркусом Райтом)
+- [Turret | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/Turret) — F/K Turret и F/K Sentry Gun (T3), Gun Turret (Salvation: 4 «руки» в VLA, 2 — в Central, сканирование Маркуса, North Gun Turret), Plasma Turret (Resistance: красная 2022/фиолетовая 2028), Defense Turret у Шайенн-Маунтин; список появлений 1995–2019 (проверено 2026-11-06 через web.archive.org)
+- [10 Coolest Weapons in the Terminator Movie Franchise — The Flagship Eclipse](https://www.theflagshipeclipse.com/2025/06/17/10-coolest-weapons-in-the-terminator-movie-franchise) — Skynet Gun Turrets (Terminator: Salvation): полностью автоматические турели на заводах, бункерах и оборонительных аванпостах Skynet как эталон обороны периметра (проверено 2026-11-06)
