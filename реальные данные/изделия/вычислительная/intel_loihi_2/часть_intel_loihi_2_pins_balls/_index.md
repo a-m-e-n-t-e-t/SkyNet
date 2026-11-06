@@ -47,9 +47,11 @@ scaling_type: количественный
   источник_дата: '2026-11-05'
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 источник: web_search
 источник_разбора: канон
+источник_url: https://www.jedec.org/sites/default/files/docs/DGuide4-5H.pdf
+источник_дата: 2026-11-06
 ---
 # Часть: часть_intel_loihi_2_pins_balls
 
@@ -70,7 +72,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 8.4×8.4×0.4 | mm | расчёт: размах 11×0.8 мм + Ø0.4 мм; h = Ø шарика |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 0.01 | W | canon |
-| материал | splav_sn-pb | — | web_search (Sn63/Pb37, tпл 183 °C) |
+| материал | splav_sn-pb | — | splav_sn-pb.md |
 | шаг массива | 0.8 | mm | JEDEC Design Guide 4.5 (FBGA) |
 | число шариков | 121 | шт | расчёт: массив 11×11 под подложку 10×10 мм |
 | диаметр шарика | 0.4 | mm | 50 % шага (типовое правило выбора) |
@@ -90,6 +92,7 @@ scaling_type: количественный
 
 ## Источники
 
+- JEDEC Design Guide 4.5: FBGA — шаг шариков 0.8 мм: https://www.jedec.org/sites/default/files/docs/DGuide4-5H.pdf (проверено 2026-11-06)
 - JEDEC Design Guide 4.5, FBGA 0.8 mm ball pitch: https://www.jedec.org/sites/default/files/docs/DGuide4-5H.pdf
 - LINQALLOY Sn63Pb37 eutectic solder spheres для BGA/CSP (диаметры 0.1–0.89 мм, tпл 183 °C): https://www.krayden.com/products/linq-sn63pb37
 - ρ(Sn63Pb37) = 8.4 г/см³: https://www.microsolder.hu/doc/8/TDS_Sn60-Sn63_EN.pdf

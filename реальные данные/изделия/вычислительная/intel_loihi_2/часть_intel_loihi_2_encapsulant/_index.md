@@ -45,11 +45,12 @@ scaling_type: количественный
   источник_дата: 2026-11-05
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 источник: web_search
 источник_разбора: канон
+источник_url: https://polymerinnovationblog.com/polymers-electronic-packaging-part-one-introduction-mold-compounds
+источник_дата: 2026-11-06
 ---
-
 # Часть: часть_intel_loihi_2_encapsulant
 
 ## Описание
@@ -68,7 +69,7 @@ scaling_type: количественный
 | доля массы родителя | 0.0025 | — | расчёт от canon массы родителя |
 | габариты (Д×Ш×В) | 5.5×5.5×0.7 | mm | расчёт: die ~30 мм² (½ от 60 мм² Loihi 1) + glob-top 0.7 мм |
 | выработка энергии | 0 | W | canon |
-| материал | epoksid_epon_828_+_teta (DGEBA EPON 828 + ТЭТА 13 phr) | — | web_search (TDS Epon 828) |
+| материал | epoksid_epon_828_+_teta | — | epoksid_epon_828_+_teta.md |
 | Tg | ~150 | °C | материал epoksid_epon_828_+_teta |
 | КТР | 79 | ppm/К | материал epoksid_epon_828_+_teta |
 
@@ -86,6 +87,7 @@ scaling_type: количественный
 
 ## Источники
 
+- Polymer Innovation Blog, Polymers in Electronic Packaging Pt.1: эпоксидные mold compounds для инкапсуляции кристаллов (glob-top): https://polymerinnovationblog.com/polymers-electronic-packaging-part-one-introduction-mold-compounds (проверено 2026-11-06)
 - https://polymerinnovationblog.com/polymers-electronic-packaging-part-one-introduction-mold-compounds
 - Kyocera, Epoxy Molding Compounds for Semiconductors (класс материалов): https://global.kyocera.com/prdct/chem/list/emc
 - open-neuromorphic, Loihi 2 (площадь кристалла вдвое меньше Loihi 1): https://open-neuromorphic.org/neuromorphic-computing/hardware/loihi-2-intel

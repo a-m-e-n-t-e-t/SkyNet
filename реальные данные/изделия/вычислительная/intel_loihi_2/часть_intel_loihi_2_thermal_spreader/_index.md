@@ -45,11 +45,12 @@ scaling_type: количественный
   источник_дата: '2026-11-05'
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 источник: web_search
 источник_разбора: канон
+источник_url: https://open-neuromorphic.org/neuromorphic-computing/hardware/loihi-2-intel
+источник_дата: 2026-11-06
 ---
-
 # Часть: часть_intel_loihi_2_thermal_spreader
 
 ## Описание
@@ -69,7 +70,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 5.7×5.7×0.5 | mm | расчёт: перекрытие кристалла 5.57 мм (31 мм²) |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 0.01 | W | canon |
-| материал | copper (C11000/ETP, Cu ≥99.9%) | — | web_search |
+| материал | copper | — | copper.md |
 | теплопроводность | ~400 | W/(m·K) | copper.md |
 
 ## Принцип работы
@@ -86,6 +87,7 @@ scaling_type: количественный
 
 ## Источники
 
+- open-neuromorphic, Loihi 2: 128 асинхронных нейронных ядер, мощность ~1 Вт (теплосъём с кристалла 31 мм²): https://open-neuromorphic.org/neuromorphic-computing/hardware/loihi-2-intel (проверено 2026-11-06)
 - https://www.tomshardware.com/news/intel-reveals-loihi-2-neuromorphic-research-chip (31 мм², 2.3 млрд транзисторов)
 - https://www.pcworld.com/article/539928/intel-debuts-its-next-gen-brain-chip-loihi-2.html (Intel 4, ранее 7 нм)
 - https://open-neuromorphic.org/neuromorphic-computing/hardware/loihi-2-intel

@@ -44,11 +44,12 @@ scaling_type: количественный
   источник_дата: 2026-11-05
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 источник: web_search
 источник_разбора: канон
+источник_url: https://www.nextpcb.com/blog/ic-substrate
+источник_дата: 2026-11-06
 ---
-
 # Часть: часть_intel_loihi_2_substrate
 
 ## Описание
@@ -67,7 +68,7 @@ scaling_type: количественный
 | доля массы родителя | 0.0132 | — | расчёт от canon массы родителя |
 | габариты (Д×Ш×В) | 10.0×10.0×0.6 | mm | расчёт: die 5.5×5.5 мм (~30 мм²) + запас под BGA fanout; толщина 0.6 мм — из диапазона IC-подложек 0.1–1.5 мм |
 | выработка энергии | 0 | W | canon |
-| материал | ptfe (PTFE-основание; пром. альтернатива — BT-ламинат) | — | web_search (NextPCB, IPCB) |
+| материал | ptfe | — | ptfe.md |
 | толщина подложки | 0.6 | mm | диапазон IC-подложек 0.1–1.5 мм (NextPCB) |
 
 ## Принцип работы
@@ -84,6 +85,7 @@ scaling_type: количественный
 
 ## Источники
 
+- NextPCB, IC Substrate Guide: типовые толщины IC-подложек 0.1–1.5 мм, 2–4 слоя для BGA fanout: https://www.nextpcb.com/blog/ic-substrate (проверено 2026-11-06)
 - https://www.nextpcb.com/blog/ic-substrate
 - QueenEms, BT PCB for IC Substrate & BGA Packaging (BT-ламинат, КТР 3–8 ppm/°C): https://www.queenems.com/bt-pcb-manufacturer
 - open-neuromorphic, Loihi 2: https://open-neuromorphic.org/neuromorphic-computing/hardware/loihi-2-intel

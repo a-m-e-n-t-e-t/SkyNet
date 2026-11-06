@@ -49,9 +49,11 @@ scaling_type: количественный
   источник_дата: '2026-11-05'
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 источник: web_search
 источник_разбора: канон
+источник_url: https://www.intel.com/content/dam/www/central-libraries/us/en/documents/neuromorphic-computing-loihi-2-brief.pdf
+источник_дата: 2026-11-06
 ---
 # Часть: часть_intel_loihi_2_die
 
@@ -72,7 +74,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 5.57×5.57×0.5 | mm | 31 мм² (Tom's Hardware), √31 ≈ 5.57 |
 | выработка энергии | 1.0 | W | open-neuromorphic.org (Power ~1 W) |
 | выработка тепла | 1.0 | W | open-neuromorphic.org (Power ~1 W) |
-| материал | si | — | canon (монокристаллический Si, SEMI M1) |
+| материал | si | — | si.md |
 | техпроцесс | Intel 4 (pre-production, EUV) | — | PCWorld |
 | транзисторы | 2.3 | млрд | Tom's Hardware |
 | нейронные ядра | 128 NC + 6 Lakemont x86 | — | open-neuromorphic.org |
@@ -91,7 +93,7 @@ scaling_type: количественный
 
 ## Источники
 
-- https://www.tomshardware.com/news/intel-reveals-loihi-2-neuromorphic-research-chip
+- Intel Labs, Loihi 2 Product Brief: 31 мм², Intel 4 (EUV), 128 NC + 6 Lakemont x86, до 1 млн нейронов, ~1 Вт: https://www.intel.com/content/dam/www/central-libraries/us/en/documents/neuromorphic-computing-loihi-2-brief.pdf (проверено 2026-11-06)
 - https://www.pcworld.com/article/539928/intel-debuts-its-next-gen-brain-chip-loihi-2.html
 - https://open-neuromorphic.org/neuromorphic-computing/hardware/loihi-2-intel
 - https://open-neuromorphic.org/neuromorphic-computing/hardware/loihi-intel
