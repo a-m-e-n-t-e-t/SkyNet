@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 0
 id: material_skoropolimerizuyuschiisya_poliuretan
+псевдонимы: []
+канонический_id: material_skoropolimerizuyuschiisya_poliuretan
 тип: материал
 класс: полимер
 химический_состав: Скорополимеризующийся полиуретан
@@ -49,7 +51,6 @@ id: material_skoropolimerizuyuschiisya_poliuretan
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 ---
-
 # Материал: Скорополимеризующийся полиуретан
 
 ## Описание

@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 0
 id: material_mosi₂_tasi₂_keramicheskoe_pokrytie
+псевдонимы: []
+канонический_id: 'material_mosi₂_tasi₂_keramicheskoe_pokrytie'
 тип: материал
 класс: металл
 химический_состав: MoSi₂–TaSi₂ керамическое покрытие
@@ -49,7 +51,6 @@ id: material_mosi₂_tasi₂_keramicheskoe_pokrytie
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 ---
-
 # Материал: MoSi₂–TaSi₂ керамическое покрытие
 
 ## Описание

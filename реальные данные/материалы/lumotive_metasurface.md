@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 0
 id: material_lumotive_metasurface
+псевдонимы: []
+канонический_id: material_lumotive_metasurface
 тип: материал
 класс: прочее
 химический_состав: Lumotive Metasurface
@@ -49,7 +51,6 @@ id: material_lumotive_metasurface
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 ---
-
 # Материал: Lumotive Metasurface
 
 ## Описание

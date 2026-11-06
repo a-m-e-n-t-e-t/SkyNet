@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 1
 id: material_low_iron_glass
+псевдонимы: []
+канонический_id: material_low_iron_glass
 тип: материал
 класс: стекло
 химический_состав: 'Низкожелезистое содово-известковое (soda-lime) стекло: SiO2 ~72%, Na2O ~14%, CaO/MgO ~10%, Fe2O3 <=0.015%'
@@ -87,7 +89,6 @@ id: material_low_iron_glass
 источник_url: https://borosilrenewables.com/images/products/Borosil-Glass-Specification-01.05.24.pdf
 источник_дата: 2026-11-06
 ---
-
 # Материал: Низкожелезистое солнечное стекло (low-iron solar glass)
 
 ## Описание

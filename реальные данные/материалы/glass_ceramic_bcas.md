@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 0
 id: material_glass_ceramic_bcas
+псевдонимы: []
+канонический_id: material_glass_ceramic_bcas
 тип: материал
 класс: керамика
 химический_состав: 'BaO-CaO-Al2O3-SiO2 стеклокерамика (PNNL G18-тип): 35 mol.% BaO, 15 mol.% CaO, 10 mol.% B2O3, 5 mol.% Al2O3, bal. SiO2; коммерческий аналог — Schott 394'

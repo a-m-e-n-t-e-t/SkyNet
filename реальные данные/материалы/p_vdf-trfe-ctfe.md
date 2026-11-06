@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 0
 id: material_p_vdf-trfe-ctfe
+псевдонимы: [material_pvdf-trfe-ctfe]
+канонический_id: material_p_vdf-trfe-ctfe
 тип: материал
 класс: металл
 химический_состав: P
@@ -49,7 +51,6 @@ id: material_p_vdf-trfe-ctfe
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 ---
-
 # Материал: P(VDF-TrFE-CTFE)
 
 ## Описание

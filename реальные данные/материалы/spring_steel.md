@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 1
 id: material_spring_steel
+псевдонимы: []
+канонический_id: material_spring_steel
 тип: материал
 класс: металл
 химический_состав: 'Пружинная сталь ASTM A228 (music wire): C 0.70-1.00%, Mn 0.20-0.60%, Fe ост.'
@@ -94,7 +96,6 @@ id: material_spring_steel
 источник_url: https://www.fushunspecialsteel.com/astm-a228-music-wire
 источник_дата: 2026-11-05
 ---
-
 # Материал: Пружинная сталь (music wire ASTM A228)
 
 ## Описание

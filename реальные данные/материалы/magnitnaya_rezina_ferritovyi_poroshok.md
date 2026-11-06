@@ -1,5 +1,7 @@
 ---
 id: material_magnitnaya_rezina_ferritovyi_poroshok
+псевдонимы: []
+канонический_id: material_magnitnaya_rezina_ferritovyi_poroshok
 тип: материал
 класс: композит
 химический_состав: 'Fe₃O₄ (магнетит) 1–20 wt% + силиконовый каучук (Ecoflex/PDMS)'
@@ -80,7 +82,6 @@ id: material_magnitnaya_rezina_ferritovyi_poroshok
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-
 # Материал: Магнитная резина: ферритовый порошок
 
 ## Описание

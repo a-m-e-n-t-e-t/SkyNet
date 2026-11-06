@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 0
 id: material_mikrokapsuly_dcpd_v_elastomere
+псевдонимы: []
+канонический_id: material_mikrokapsuly_dcpd_v_elastomere
 тип: материал
 класс: полимер
 химический_состав: Микрокапсулы DCPD в эластомере
@@ -49,7 +51,6 @@ id: material_mikrokapsuly_dcpd_v_elastomere
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 ---
-
 # Материал: Микрокапсулы DCPD в эластомере
 
 ## Описание

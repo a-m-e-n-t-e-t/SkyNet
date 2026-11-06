@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 0
 id: material_silikon_80_shore_a_+_steklyannye_mikrosfery
+псевдонимы: []
+канонический_id: 'material_silikon_80_shore_a_+_steklyannye_mikrosfery'
 тип: материал
 класс: полимер
 химический_состав: Силикон 80 Shore A + стеклянные микросферы
@@ -49,7 +51,6 @@ id: material_silikon_80_shore_a_+_steklyannye_mikrosfery
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 ---
-
 # Материал: Силикон 80 Shore A + стеклянные микросферы
 
 ## Описание

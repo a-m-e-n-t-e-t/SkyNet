@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 0
 id: material_uv-absorbing_pmma
+псевдонимы: []
+канонический_id: material_uv-absorbing_pmma
 тип: материал
 класс: полимер
 химический_состав: 'полиметилметакрилат [–CH2–C(CH3)(COOCH3)–]n (атактический) + бензотриазольный УФ-абсорбер (класс 2-(2H-бензотриазол-2-ил)-фенолов, ~0.2–1 масс.%) в объёме листа'
@@ -75,7 +77,6 @@ id: material_uv-absorbing_pmma
 источник_url: https://www.acrylite.co/files/content/acrylite.co/documents/product-information/ACRYLITE-Gallery-UV-filtering-OP3-technical-information.pdf
 источник_дата: 2026-11-06
 ---
-
 # Материал: UV-absorbing PMMA (УФ-абсорбирующий полиметилметакрилат)
 
 ## Описание

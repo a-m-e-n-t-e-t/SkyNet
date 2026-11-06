@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 1
 id: material_soCl2_lialcl4_electrolit
+псевдонимы: []
+канонический_id: material_soCl2_lialcl4_electrolit
 тип: материал
 класс: неорганическая_жидкость
 химический_состав: 'Раствор LiAlCl₄ ~1.5 М в тионилхлориде SOCl₂'
@@ -72,9 +74,7 @@ id: material_soCl2_lialcl4_electrolit
     свойства: молекулярный катализ I₂ тейлорит механизмы заряд-разряда, превращая первичную систему в мощную перезаряжаемую (ResearchGate 2023); сохраняется высокая плотность энергии.
     применение: перспективные перезаряжаемые высокомощные Li-SOCl₂ системы, R&D первичных элементов с увеличенным ресурсом.
     источник_url: https://www.researchgate.net/publication/374398347_Transforming_a_Primary_Li-SOCl_2_Battery_into_a_High-Power_Rechargeable_System_via_Molecular_Catalysis
-
 ---
-
 # Материал: Электролит LiAlCl₄/SOCl₂
 
 ## Описание

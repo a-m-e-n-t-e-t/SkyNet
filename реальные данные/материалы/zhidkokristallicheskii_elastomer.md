@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 0
 id: material_zhidkokristallicheskii_elastomer
+псевдонимы: []
+канонический_id: material_zhidkokristallicheskii_elastomer
 тип: материал
 класс: полимер
 химический_состав: Жидкокристаллический эластомер
@@ -49,7 +51,6 @@ id: material_zhidkokristallicheskii_elastomer
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 ---
-
 # Материал: Жидкокристаллический эластомер
 
 ## Описание

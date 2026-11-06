@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 0
 id: material_sic_b₄c_nanostrukturirovannyi_gibrid
+псевдонимы: []
+канонический_id: 'material_sic_b₄c_nanostrukturirovannyi_gibrid'
 тип: материал
 класс: металл
 химический_состав: SiC/B₄C наноструктурированный гибрид
@@ -49,7 +51,6 @@ id: material_sic_b₄c_nanostrukturirovannyi_gibrid
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 ---
-
 # Материал: SiC/B₄C наноструктурированный гибрид
 
 ## Описание

@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 0
 id: material_avesta_yfoa_yb_caf₂
+псевдонимы: []
+канонический_id: 'material_avesta_yfoa_yb_caf₂'
 тип: материал
 класс: полупроводник
 химический_состав: Avesta YFOA [Yb:CaF₂]
@@ -49,7 +51,6 @@ id: material_avesta_yfoa_yb_caf₂
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
 ---
-
 # Материал: Avesta YFOA [Yb:CaF₂]
 
 ## Описание

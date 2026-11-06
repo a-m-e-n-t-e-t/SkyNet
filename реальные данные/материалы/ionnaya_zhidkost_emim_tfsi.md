@@ -1,6 +1,8 @@
 ---
 применяется_в_изделиях_счёт: 0
 id: material_ionnaya_zhidkost_emim_tfsi
+псевдонимы: []
+канонический_id: material_ionnaya_zhidkost_emim_tfsi
 тип: материал
 класс: органический_жидкий_электролит
 химический_состав: Ионная жидкость [EMIM][TFSI]
