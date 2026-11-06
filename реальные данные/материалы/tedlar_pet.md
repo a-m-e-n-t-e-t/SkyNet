@@ -11,7 +11,32 @@ id: material_tedlar_pet
   обоснование_выбора: "Фторполимерные наружные плёнки Tedlar® PVF дают атмосферо- и УФ-стойкость, низкое влагопоглощение (≤0.5%, ASTM D570) и минимальный дефектооборот за 30 лет службы; ПЭТ-сердцевина несёт диэлектрическую прочность и жёсткость; сочетание — отраслевой стандарт TPT-подложек PV-модулей"
   применение_по_умолчанию: тыльная_подложка_PV_модуля
   источник_обоснования: web_search
-варианты_по_применению: {}
+варианты_по_применению:
+  tpt_классическая_двусторонняя:
+    описание: 'Симметричная TPT: плёнки Tedlar® PVF ~25 мкм с обеих сторон ПЭТ-сердцевины 150–280 мкм — максимальная атмосферная и диэлектрическая защита, подтверждённая 30+ годами полевой эксплуатации PV-модулей'
+    свойства:
+      mvtr_г_м2_сут: 1.7
+      предел_прочности_МПа: 90
+    применение: тыльные подложки PV-модулей 1000/1500 В (UL E353124, IEC 61730), расчётный срок службы 30 лет
+    источник_url: https://www.ooitech.com/Photovoltaic-Backsheet-The-Critical-Protective-Layer-for-Solar-Modules.html
+  tpe_экономичная_односторонняя:
+    описание: 'TPE (DUN-SOLAR TPE, Dunmore): один слой Tedlar® PVF снаружи + ПЭТ-сердцевина + герметизирующий полиэтиленовый слой изнутри вместо второй плёнки PVF — снижение стоимости при сохранении УФ/атмосферной стойкости наружной стороны'
+    свойства:
+      фторполимерные_слои: '1 (наружный)'
+    применение: PV-модули эконом-сегмента, ламинация к EVA-инкапсулянту
+    источник_url: https://www.dunmore.com/products/tedlar-pv-backsheet.html
+  kpk_pvdf_аналог:
+    описание: 'KPK: та же трёхслойная схема, но фторполимерные слои из PVDF (Kynar, Arkema) вместо PVF; MVTR PVDF-подложки 1.6 г/(м²·сут) против 1.7 у Tedlar-версии'
+    свойства:
+      mvtr_г_м2_сут: 1.6
+    применение: альтернатива TPT при недоступности PVF — доказанные 30+ лет полевой службы
+    источник_url: https://www.ooitech.com/Photovoltaic-Backsheet-The-Critical-Protective-Layer-for-Solar-Modules.html
+  ppe_безфторная_конфигурация:
+    описание: 'PPE: УФ-стабилизированная двуосно-ориентированная ПЭТ в наружных слоях вместо фторполимера — безфторная конфигурация дешевле, но уступает по долговечности при влажном тепле; дальнейшая эволюция — покровные CPC/TPC и полиолефиновые KPO/TPO'
+    свойства:
+      фторполимерные_слои: '0'
+    применение: бюджетные PV-модули, сегменты с меньшими требованиями к 30-летней долговечности
+    источник_url: https://taiyangnews.info/technology/different-backsheet-structures-in-pv-modules
 исследовательская_группа: требует_верификации
 стандарты:
   - IEC 61215
@@ -50,9 +75,29 @@ id: material_tedlar_pet
   относительное_удлинение_процентов: 90
   магнитная_проницаемость: null
   коэффициент_демпфирования: null
-сравнение_структур: {}
+сравнение_структур:
+  плёнка_tedlar_белоориентированная:
+    структура: 'двуосно-ориентированная пигментированная плёнка PVF (TWH20BS3 satin white, 20 мкм): полукристаллический фторполимер с двуосной ориентацией, плотность 1.71 г/см³ (ASTM D1505)'
+    свойства:
+      плотность_kg_m3: 1710
+      секущий_модуль_ГПа: 2.65
+    применение: наружный воздушный слой TPT — защита от УФ и влаги на 30 лет
+    источник_url: https://www.lookpolymers.com/polymer_DuPont-Tedlar-TWH20BS3-Satin-White-Polyvinyl-Fluoride-Film.php
+  плёнка_tedlar_прозрачная_обработанная_или_pristine:
+    структура: 'прозрачная плёнка PVF: толщины 12.5–50 мкм (типовой ряд DuPont 13–100 мкм); поверхность pristine (для release-применений) или обработанная для адгезии'
+    свойства:
+      толщина_мкм: '12.5–50 (типовой ряд 13–100)'
+    применение: release-плёнка при горячем прессовании композитов, прозрачные защитные облицовки, авиационные интерьеры
+    источник_url: https://www.emcoplastics.com/tedlar-pvf
+  пэт_сердцевина_двоосно_ориентированная:
+    структура: 'двуосно-ориентированная ПЭТ-плёнка (boPET): несущая диэлектрическая сердцевина 150–280 мкм — жёсткость и электрическая прочность подложки'
+    свойства:
+      толщина_мкм: '150–280'
+      модуль_упругости_ГПа: 4
+    применение: диэлектрический барьер между слоями PVF, механическая основа подложек 1000/1500 В
+    источник_url: https://taiyangnews.info/technology/different-backsheet-structures-in-pv-modules
 дата_создания: 2026-11-05
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 ---
 
 # Материал: tedlar_pet (TPT — Tedlar/PET/Tedlar)
@@ -105,3 +150,8 @@ id: material_tedlar_pet
 - DuPont Tedlar® TWH20BS3 — плотность 1.71 г/см³ (ASTM D1505), секущий модуль 2.65 ГПа, ТКЛР 83–97 мкм/(м·°C): https://www.lookpolymers.com/polymer_DuPont-Tedlar-TWH20BS3-Satin-White-Polyvinyl-Fluoride-Film.php (проверено 2026-11-05)
 - Welch Fluorocarbon — Tedlar® PVF: удельный вес 1.77, прочность 104 МПа (ASTM D882): https://welchfluorocarbon.com/material-profiles/films/pvf (проверено 2026-11-05)
 - Wikipedia — Polyvinyl fluoride, T плавления 185–210 °C: https://en.wikipedia.org/wiki/Polyvinyl_fluoride (проверено 2026-11-05)
+- Taiyang News, Different Backsheet Structures In PV Modules (2025): таксономия TPT/TPE/KPK/KPE/PPE/CPC/TPC/KPO/TPO/PPO/PPU/all-PP, эволюция к снижению стоимости: https://taiyangnews.info/technology/different-backsheet-structures-in-pv-modules (проверено 2026-11-06)
+- Dun-more DUN-SOLAR TPE: трёхслойная конструкция Tedlar® PVF + ПЭТ-сердцевина + PE-герметизирующий слой: https://www.dunmore.com/products/tedlar-pv-backsheet.html (проверено 2026-11-06)
+- Ooitech, PV Backsheet — TPT, KPK, PVDF: TPT и KPK — 30+ лет полевой эксплуатации: https://www.ooitech.com/Photovoltaic-Backsheet-The-Critical-Protective-Layer-for-Solar-Modules.html (проверено 2026-11-06)
+- Emco Plastics — Tedlar PVF: толщины плёнки 12.5–50 мкм (0.5–2 mil), обработанная/pristine поверхность: https://www.emcoplastics.com/tedlar-pvf (проверено 2026-11-06)
+- DuPont EI00241 General Properties of Tedlar® PVF Films: типовые толщины 13–100 мкм, поверхность pristine или обработанная: https://www.dupont.com/content/dam/dupont/amer/us/en/tedlar-pvf-films/public/documents/EI00241-Dupont_TedlarGeneralProperty-Digital.pdf (проверено 2026-11-06)
