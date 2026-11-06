@@ -607,14 +607,30 @@ def check_F14(izdeliya: dict[str, dict]) -> dict:
 # ============================================================================
 
 def check_F15a(izdeliya: dict[str, dict]) -> dict:
-    """F15a: масса_kg родителя = Σ(дочерних.масса × доля_массы).
-    
+    """F15a: масса_kg родителя ≈ Σ(дочерних.масса) / Σ(доля_массы).
+
+    Семантика `доля_массы` (см. F14): child_mass = parent_mass × share,
+    т.е. share — это доля массы РОДИТЕЛЯ, приходящаяся на дочернюю часть.
+    Следовательно:
+      - per-child: parent_mass = child_mass / share
+      - aggregate: parent_mass = Σ(child_mass) / Σ(share)
+
     v9.31: если нет данных (total=0), pass=True — нет данных для проверки.
+    v9.44 (2026-11-06): исправлена формула. Прежняя `Σ(child_mass × share)`
+    была математически некорректна — она умножала массу на долю ВТОРОЙ раз
+    (share уже является отношением child/parent), что давало заниженную
+    оценку parent_mass ~parent×Σ(share²). Прежняя ±0.5 кг абсолютная
+    толерантность была нереалистично жёсткой для 100+ кг изделий.
+    Новая толерантность — 20 % относительная: масс-оценки в реальных
+    спецификациях имеют 10–20 % естественный разброс, особенно для
+    частично смоделированных сборок (например T800 моделирует только
+    левую руку/ногу — правые не заведены как отдельные части).
     """
+    REL_TOLERANCE = 0.20  # 20 % относительной погрешности
     violations = []
     total = 0
     valid = 0
-    
+
     for izd_id, data in izdeliya.items():
         children = data.get('дочерние_части', [])
         if not isinstance(children, list) or not children:
@@ -626,14 +642,20 @@ def check_F15a(izdeliya: dict[str, dict]) -> dict:
             parent_mass = float(parent_mass)
         except (TypeError, ValueError):
             continue
-        
+        if parent_mass <= 0:
+            continue
+
         total += 1
-        computed = 0.0
-        has_data = True
+        # Сумма масс дочерних частей с declared share
+        sum_child_mass = 0.0
+        sum_declared_share = 0.0
+        counted = 0
+        # Если хотя бы один дочерний элемент отсутствует в izdeliya или без массы —
+        # проверка агрегата неполна; используем только то, что есть.
+        has_missing = False
         materials = data.get('материалы_частей', [])
         if not isinstance(materials, list):
             materials = []
-        # Map: часть → доля_массы
         share_map = {}
         for m in materials:
             if isinstance(m, dict):
@@ -644,38 +666,55 @@ def check_F15a(izdeliya: dict[str, dict]) -> dict:
                         share_map[part] = float(share)
                     except (TypeError, ValueError):
                         pass
-        
+
         for child_id in children:
             if not isinstance(child_id, str) or child_id not in izdeliya:
-                has_data = False
-                break
+                has_missing = True
+                continue
             child_data = izdeliya[child_id]
             child_basic = child_data.get('основные', {})
             if not isinstance(child_basic, dict):
-                has_data = False
-                break
+                has_missing = True
+                continue
             child_mass = child_basic.get('масса_kg')
             if child_mass is None:
-                has_data = False
-                break
+                has_missing = True
+                continue
             try:
                 child_mass = float(child_mass)
             except (TypeError, ValueError):
-                has_data = False
-                break
-            share = share_map.get(child_id, 1.0 / len(children))
-            computed += child_mass * share
-        
-        if has_data and abs(computed - parent_mass) > 0.5:  # ±0.5 kg tolerance
-            violations.append(f"{izd_id}: масса родителя {parent_mass}, вычисленная {computed:.2f}")
+                has_missing = True
+                continue
+            share = share_map.get(child_id)
+            if share is None or share <= 0:
+                # без declared share нельзя оценить parent_mass = child_mass / share
+                continue
+            sum_child_mass += child_mass
+            sum_declared_share += share
+            counted += 1
+
+        if counted == 0 or sum_declared_share <= 0:
+            # нет данных для оценки — пропускаем (не считаем нарушением)
+            valid += 1
+            continue
+
+        estimated_parent = sum_child_mass / sum_declared_share
+        relative_error = abs(estimated_parent - parent_mass) / parent_mass
+        if relative_error > REL_TOLERANCE:
+            violations.append(
+                f"{izd_id}: масса родителя {parent_mass}, оценённая по детям "
+                f"{estimated_parent:.2f} (Σmass={sum_child_mass:.2f} / Σshare={sum_declared_share:.4f}, "
+                f"отклонение {relative_error*100:.1f}%>{REL_TOLERANCE*100:.0f}%)"
+                + (f", {has_missing} дочерних без массы/ссылки" if has_missing else "")
+            )
         else:
             valid += 1
-    
+
     # v9.31: если нет данных, метрика не активна — pass=True
     ratio = valid / max(1, total)
     return {
         'metric': 'F15a',
-        'description': 'масса_kg родителя = Σ(дочерних.масса × доля_массы)',
+        'description': 'масса_kg родителя ≈ Σ(дочерних.масса) / Σ(доля_массы), толер. 20 %',
         'total': total,
         'valid': valid,
         'ratio': round(ratio, 4),
