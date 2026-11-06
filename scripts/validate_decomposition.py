@@ -2596,6 +2596,137 @@ def check_F33(entries: list[tuple[Path, str, dict]] | None = None) -> dict:
 
 
 # ============================================================================
+# F34: ГЛУБИНА ДЕКОМПОЗИЦИИ (v9.47)
+# ============================================================================
+
+# Подтипы level-2 узлов, которые могут быть АТОМАРНЫМИ (не требуют дальнейшей
+# декомпозиции до уровня 3/4). Anything else with дочерние_части = [] AND
+# уровень_иерархии = 'промежуточный' (вместо 'неделимый') — это нарушение F34.
+#
+# Эти подтипы — GENUINELY неделимые конструктивные элементы (закупаемые как
+# отдельная деталь, не разборная в полевых условиях):
+F34_ATOMIC_SUBTYPES = {
+    'корпус',          # корпусная деталь — цельнолитая/фрезерованная
+    'крепёж',          # винт/болт/шайба — стандартный закупочный элемент
+    'разъёмы',         # connector — закупочный элемент (MIL-DTL-38999 etc.)
+    'инкапсулянт',     # эпоксид/гель — материал, не сборка
+    'припой',          # solder — материал
+    'изоляция',        # изоляционная прокладка — листовой материал
+    'экранирование',   # EMI shield — фольга/сетка
+    'уплотнение',      # gasket — формованная резина
+    'кожух',           # крышка — листовой металл
+    'крышка',          # cover
+    'теплораспределитель',  # heat spreader — однородная пластина
+    'теплообменник',   # heat exchanger — fabricated assembly (но обычно как готовый Сomponent)
+    'охладитель',      # heatsink — закупочный
+    'герметизация',    # sealant — материал
+    'прокладка',       # gasket — листовой
+    'демпфер',         # damper — закупочный
+    'амортизатор',     # damper — закупочный
+    'пружина',         # spring — закупочный
+    'подшипники',      # bearing — закупочный (bearing assembly)
+    'фланец',          # flange — фрезерованная
+    'вал',             # shaft — точёная
+    'заглушка',        # plug — закупочная
+    'ручка',           # handle — закупочная
+}
+
+def check_F34(izdeliya: dict[str, dict]) -> dict:
+    """F34: Глубина декомпозиции — top-level изделие должно достигать уровня ≥3
+    ИЛИ все его дочерние части уровня 2 должны быть помечены как 'неделимый'.
+
+    v9.47: ранее воркфлоу не проверял глубину; декомпозиция всех 120 top-level
+    изделий останавливалась на уровне 2 (555 узлов с пустым дочерние_части,
+    но уровень_иерархии='промежуточный' вместо 'неделимый').
+
+    Логика:
+      - Для каждого top-level (уровень 1) изделия:
+        - Найти все его level-2 дочерние части (рекурсивно через дочерние_части)
+        - Если ВСЕ они имеют уровень_номер >= 3 — OK (максимальная глубина достигнута)
+        - Иначе для каждой level-2 части с дочерние_части = [] или None:
+          - Если подтип в F34_ATOMIC_SUBTYPES → OK (легитимно атомарная)
+          - Иначе → НАРУШЕНИЕ (требует декомпозиции до уровня 3)
+
+    Returns:
+        {metric, description, total, valid, ratio, pass, violations}
+    """
+    violations = []
+    total = 0
+    valid = 0
+
+    # Index by id for quick lookup
+    by_id = {izd_id: data for izd_id, data in izdeliya.items()}
+
+    for izd_id, data in izdeliya.items():
+        try:
+            lvl = int(data.get('уровень_номер', 0) or 0)
+        except (TypeError, ValueError):
+            continue
+        if lvl != 1:
+            continue  # только top-level
+
+        # Найти все дочерние части уровня 2
+        children = data.get('дочерние_части', []) or []
+        if not children:
+            # top-level без детей — это уже отмечено в F12a как orphan
+            continue
+
+        # Для каждой level-2 части проверить глубину
+        for child_id in children:
+            child = by_id.get(child_id)
+            if not child:
+                continue  # F12a уже отметит
+
+            try:
+                child_lvl = int(child.get('уровень_номер', 0) or 0)
+            except (TypeError, ValueError):
+                child_lvl = 0
+
+            grand_children = child.get('дочерние_части', []) or []
+
+            # Если уровень >= 3 ИЛИ есть внуки — декомпозиция продолжена, OK
+            if child_lvl >= 3 or grand_children:
+                total += 1
+                valid += 1
+                continue
+
+            # level-2 leaf: проверить, атомарный ли подтип
+            sub_type = child.get('подтип', '')
+            if sub_type in F34_ATOMIC_SUBTYPES:
+                total += 1
+                valid += 1
+                continue
+
+            # Также проверить уровень_иерархии: если 'неделимый' — это OK
+            # (но по факту в репо сейчас 0 узлов с 'неделимый')
+            hier = child.get('уровень_иерархии', '')
+            if hier == 'неделимый':
+                total += 1
+                valid += 1
+                continue
+
+            # Нарушение: level-2 leaf, промежуточный, подтип не атомарный
+            total += 1
+            violations.append(
+                f"{izd_id}: часть '{child_id}' (подтип='{sub_type}', "
+                f"уровень {child_lvl}) — не декомпозирована до уровня 3/4 "
+                f"и не помечена как 'неделимый' (подтип не в atomic-whitelist)"
+            )
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F34',
+        'description': 'Глубина декомпозиции — top-level должен достигать уровня ≥3 '
+                       'или иметь атомарные части',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
 # MAIN
 # ============================================================================
 
@@ -2845,6 +2976,18 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
+    # F34 — глубина декомпозиции (v9.47; warning-метрика: top-level должен
+    # достигать уровня ≥3 ИЛИ иметь атомарные части)
+    print()
+    print("=== F34: Глубина декомпозиции ===")
+    r = check_F34(izdeliya)
+    results['F34'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
     # Сводка
     print()
     print("=== Сводка ===")
@@ -2888,6 +3031,7 @@ def main():
                 # F33 работает со всеми .md 3-х категорий (материалы/изделия/технологии)
                 r = check_fn(_load_all_catalog_entries())
             else:
+                # F12a, F14, F15a-g, F16, F18, F19, F20, F22-F26, F34 — работают с изделиями
                 r = check_fn(izdeliya)
             print(f"{args.metric}: pass={r['pass']}, ratio={r['ratio']}")
             if r['violations']:
@@ -2900,7 +3044,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28', 'F31', 'F32', 'F33')
+            for m in ('F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28', 'F31', 'F32', 'F33', 'F34')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:

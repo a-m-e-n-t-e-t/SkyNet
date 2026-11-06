@@ -140,7 +140,7 @@ graph LR
     F3 --> script_pre-commit-hook_py
 ```
 
-_Показаны топ-20 метрик по числу скриптов-валидаторов (из 73 метрик)._
+_Показаны топ-20 метрик по числу скриптов-валидаторов (из 74 метрик)._
 
 | Метрика | Скрипты-валидаторы | Контракты |
 |---|---|---|
@@ -166,6 +166,7 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F31` | migrate_aliases.py, migrate_dedup_materials.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F32` | migrate_aliases.py, migrate_dedup_materials.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F33` | validate_decomposition.py | — |
+| `F34` | pre-commit-hook.py, validate_decomposition.py | — |
 | `F36` | generate_graphs.py, pre-commit-hook.py | — |
 | `F37` | generate_graphs.py, pipeline.py | — |
 | `F38` | generate_graphs.py, pipeline.py | — |
