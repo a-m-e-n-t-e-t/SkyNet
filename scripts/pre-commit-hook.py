@@ -310,6 +310,11 @@ def main():
     # F27b — ссылки в frontmatter на отсутствующие файлы). Cron-агент постепенно
     # создаст недостающие файлы через web_search; после stabilisation (violations=0
     # в 3 прогонах) F27b станет блокирующей, как F27 после разбора backlog.
+    # v9.54: F27c (mirror F27b для каталога технологии/) — warning: проверяет
+    # структурные id-ссылки в frontmatter (`технологии_частей` часть-level и
+    # `технологии` изделие-level). Сейчас 0 ссылок (поле только введено,
+    # миграция 3 файлов с известными соответствиями). После полной миграции
+    # F27c станет блокирующей.
     try:
         sys.path.insert(0, os.path.join(SKYNET_REPO, 'scripts'))
         from validate_decomposition import run_all_checks
@@ -326,7 +331,7 @@ def main():
         #   F29 ← F30 (BOM-материалы: форма + наследование)
         #   F31 ← F32 (дедупликация: syntactic + semantic)
         # F23, F24, F17, F26, F30, F32 убраны — auto-close stale issues для них
-        WARNING_METRICS = {'F13', 'F15b', 'F15d', 'F15g', 'F15h', 'F16', 'F22', 'F25', 'F27', 'F27b', 'F28', 'F29', 'F31', 'F34'}
+        WARNING_METRICS = {'F13', 'F15b', 'F15d', 'F15g', 'F15h', 'F16', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F28', 'F29', 'F31', 'F34'}
         for metric, result in decomp_results['results'].items():
             if metric in WARNING_METRICS:
                 if not result['pass']:

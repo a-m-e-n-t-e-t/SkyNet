@@ -1511,6 +1511,12 @@ SCHEMA_IZDELIE = {
         "родитель": {"type": ["string", "null"]},
         "дочерние_части": {"type": "array"},
         "материалы_частей": {"type": "array"},
+        # v9.54 НОВОЕ — технологии: часть-level (обработка детали) и изделие-level (сборка)
+        # Mirror материалы_частей, но для каталога технологии/.
+        # Формат технологии_частей: список объектов {часть, технология, доля_использования}
+        # Формат технологии: простой список id строк (как стандарты)
+        "технологии_частей": {"type": "array"},
+        "технологии": {"type": "array"},
         # v9.35 НОВОЕ — количество одинаковых экземпляров (default=1)
         "количество": {"type": "integer", "minimum": 1},
         "статус_реальности": {"type": "string", "enum": ["real", "canon", "canon_realizable"]},
@@ -2386,6 +2392,137 @@ def check_F27b(izdeliya: dict[str, dict]) -> dict:
     return {
         'metric': 'F27b',
         'description': 'Битые ссылки на материалы в frontmatter (файл отсутствует в каталоге материалы/)',
+        'total': total_unique,
+        'valid': valid_unique,
+        'ratio': round(ratio, 4),
+        'pass': ratio >= 1.0,
+        'violations': violations,
+    }
+
+
+# ============================================================================
+# F27c: БИТЫЕ ССЫЛКИ НА ТЕХНОЛОГИИ (v9.54; mirror F27b для каталога технологии/)
+# ============================================================================
+# Контекст: F27b ловит битые ссылки на материалы_частей (отсутствующие файлы
+# в материалы/). Аналогично — если изделие/часть ссылается на id технологии
+# в frontmatter (через структурное поле `технологии_частей` для части-level
+# или `технологии` для изделия-level), и файла в каталоге технологии/ нет —
+# это пробел, который F31/F33 не видят (F31 проверяет только дедупликацию,
+# F33 — классификационную консистентность, но не существование файла по id).
+#
+# Формат нового структурного поля (mirror материалы_частей):
+#   технологии_частей:        # часть-level — обработка конкретной детали
+#     - часть: часть_<...>
+#       технология: <stem>     # stem без префикса tekhnologia_
+#       доля_использования: 1.0   # 1.0 = единственная технология для этой части
+#   технологии:               # изделие-level — сборка/фабрикация в целом
+#     - tekhnologia_<stem>    # простой список id (без объекта часть:)
+#
+# Скоуп: только frontmatter `технологии_частей` и `технологии` изделий и частей
+# (структурные id-ссылки). Body markdown-ссылки не проверяются (как в F27b).
+#
+# Замечание: старое поле `технология:` (строка, свободный текст описания
+# процесса, например "tape casting / мокрое осаждение + коспекание") — НЕ
+# структурная id-ссылка и НЕ проверяется F27c. При миграции на структурное
+# поле старое `технология:` удаляется, заменяется на `технологии_частей`.
+
+
+TECH_FILE_EXTENSIONS = ('.md',)  # каталог технологии/ — только markdown
+
+
+def _resolve_tech_file(stem: str, tech_dir) -> 'Path | None':
+    """По stem-у ссылки (без/с префикса tekhnologia_) возвращает Path файла
+    в каталоге технологии/, если он существует; иначе None.
+    """
+    s = stem.strip()
+    if not s:
+        return None
+    # Нормализуем: убираем префикс 'tekhnologia_', если он есть в ссылке
+    if s.startswith('tekhnologia_'):
+        s = s[len('tekhnologia_'):]
+    if not s:
+        return None
+    for ext in TECH_FILE_EXTENSIONS:
+        candidate = tech_dir / f"{s}{ext}"
+        if candidate.is_file():
+            return candidate
+    return None
+
+
+def check_F27c(izdeliya: dict[str, dict]) -> dict:
+    """F27c: Битые ссылки на технологии в frontmatter (файл отсутствует).
+
+    BLOCKING (mirror F27b): цепочка «часть → технология» (или «изделие →
+    технология сборки») не должна вести в несуществующий файл. F31/F33
+    проверяют дедупликацию/классификацию существующих файлов; F27c ловит
+    пробел — ссылка на технологию, для которой нет файла вообще.
+
+    Скоуп — frontmatter `технологии_частей` (часть-level, объекты с часть:)
+    и `технологии` (изделие-level, простой список id) изделий и частей.
+
+    Критерий нарушения: для элемента `технология: <id>` в технологии_частей
+    (или для id в списке `технологии:`) не существует файла реальные
+    данные/технологии/<stem>.md (stem = id без префикса tekhnologia_, и
+    имена файлов в каталоге без этого префикса).
+
+    Формат violation: 'tekhnologia_<stem>: файл технологии/<stem>.md
+    отсутствует в каталоге (битая ссылка из <поле> в <izdelie_id>)' —
+    совместим с дефолтной веткой normalizeViolationKey (dedup
+    F27c:tekhnologia_<stem>) и титульником '[F27c] Verify: tekhnologia_<stem>'
+    (verify_decomposition.yml).
+    """
+    violations = []
+    seen = {}  # stem → (izdelie_id, field) для текста violation
+    tech_dir = SKYNET_REPO / "реальные данные" / "технологии"
+
+    # Идём по ссылкам прямо из frontmatter, чтобы сохранить изделие-источник
+    for izd_id, data in izdeliya.items():
+        if not isinstance(data, dict):
+            continue
+
+        # (1) технологии_частей — часть-level (объекты с часть/технология)
+        techs_parts = data.get('технологии_частей', [])
+        if isinstance(techs_parts, list):
+            for t in techs_parts:
+                if not isinstance(t, dict):
+                    continue
+                tech = str(t.get('технология', '')).strip()
+                if not tech:
+                    continue
+                stem = tech[11:] if tech.startswith('tekhnologia_') else tech
+                if not stem:
+                    continue
+                if stem not in seen:
+                    seen[stem] = (izd_id, 'технологии_частей')
+
+        # (2) технологии — изделие-level (простой список id строк)
+        techs_top = data.get('технологии', [])
+        if isinstance(techs_top, list):
+            for tech in techs_top:
+                tech = str(tech).strip()
+                if not tech:
+                    continue
+                stem = tech[11:] if tech.startswith('tekhnologia_') else tech
+                if not stem:
+                    continue
+                if stem not in seen:
+                    seen[stem] = (izd_id, 'технологии')
+
+    # Подсчёт по уникальным referenced stems (одно нарушение на файл, как в F27b)
+    total_unique = len(seen)
+    valid_unique = 0
+    for stem, (izd_id, field) in seen.items():
+        if _resolve_tech_file(stem, tech_dir) is not None:
+            valid_unique += 1
+        else:
+            violations.append(
+                f"tekhnologia_{stem}: файл технологии/{stem}.md отсутствует в "
+                f"каталоге (битая ссылка из {field} в {izd_id})")
+
+    ratio = valid_unique / max(1, total_unique)
+    return {
+        'metric': 'F27c',
+        'description': 'Битые ссылки на технологии в frontmatter (файл отсутствует в каталоге технологии/)',
         'total': total_unique,
         'valid': valid_unique,
         'ratio': round(ratio, 4),
@@ -3281,6 +3418,19 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
+    # F27c — битые ссылки на технологии (v9.54; mirror F27b для каталога
+    # технологии/: проверяет структурные id-ссылки в frontmatter — поле
+    # `технологии_частей` для часть-level и `технологии` для изделия-level)
+    print()
+    print("=== F27c: Битые ссылки на технологии (файл отсутствует в каталоге) ===")
+    r = check_F27c(izdeliya)
+    results['F27c'] = r
+    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
     # F28 — альтернативные формы материалов (v9.42; идея: вебпоиск всех форм
     # mono/poly/amorphous/составов — выбор формы для AI-вариантов изделий)
     print()
@@ -3408,7 +3558,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F27b', 'F28', 'F29', 'F31', 'F33', 'F34')
+            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F28', 'F29', 'F31', 'F33', 'F34')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:

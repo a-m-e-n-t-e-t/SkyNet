@@ -15,6 +15,10 @@ id: часть_tverdooksidnyi_toplivnyi_element_electrolyte
   - часть: часть_tverdooksidnyi_toplivnyi_element_electrolyte
     материал: 8ysz
     доля_массы: 1.0
+технологии_частей:
+  - часть: часть_tverdooksidnyi_toplivnyi_element_electrolyte
+    технология: vakuumnoe_spekanie
+    доля_использования: 1.0
 
 scaling_type: количественный
 соединители: []
@@ -40,9 +44,13 @@ scaling_type: количественный
   ионная_проводимость_S_cm: 0.1
   T_рабочая_C: 750
   толщина_плёнки_мкм: 10
-  технология: 'tape casting / мокрое осаждение + коспекание с электродами при 1350–1450°C'
+  # v9.54: старое поле `технология:` (строка) мигрировано в top-level структурное
+  # поле `технологии_частей` (список объектов с часть/технология). См. строки 19-22.
+  # Соответствие: 'коспекание при 1350–1450°C' ≈ vakuumnoe_spekanie (близкая
+  # технология порошковой металлургии). 'Tape casting' — будущая tekhnologia_tape_casting
+  # (нужно создать через web_search в отдельном цикле).
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-04
+дата_обновления: 2026-11-07
 источник: web_search
 источник_url: https://en.zz-zirconia.com/8ysz-yttria-stabilized-zirconia-properties-applications-selection-guide
 источник_дата: 2026-11-04

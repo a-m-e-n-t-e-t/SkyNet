@@ -15,6 +15,10 @@ id: часть_mikroreaktor_deleniya_heat_exchanger
   - часть: часть_mikroreaktor_deleniya_heat_exchanger
     материал: ss_316l
     доля_массы: 1.0
+технологии_частей:
+  - часть: часть_mikroreaktor_deleniya_heat_exchanger
+    технология: diffuzionnaya_svarka
+    доля_использования: 1.0
 
 scaling_type: количественный
 соединители: []
@@ -40,10 +44,12 @@ scaling_type: количественный
   серия: 'Alfa Laval PCHE (316/316L SST)'
   P_расч_бар: 1250
   T_расч_C: '-196…+800'
-  технология: 'химическое травление микроканалов + диффузионная сварка в вакууме'
+  # v9.54: старое поле `технология:` (строка) мигрировано в top-level структурное
+  # поле `технологии_частей` (список объектов с часть/технология). См. строки 18-21.
+  # Описание сохранено в body (см. раздел "Применяемые технологии").
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-07
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.alfalaval.us/products/heat-transfer/plate-heat-exchangers/printed-circuit-heat-exchangers/printed-circuit-heat-exchangers

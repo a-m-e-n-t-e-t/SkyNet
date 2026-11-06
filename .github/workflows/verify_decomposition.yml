@@ -112,7 +112,10 @@ jobs:
           # v9.42: добавлена метрика F28 (альтернативные формы материалов для AI-вариантов изделий).
           # v9.53: добавлена метрика F27b (битые ссылки на материалы: файл отсутствует
           #        в каталоге — F27 итерирует существующие файлы, F27b ловит пробел
-          #        и даёт cron-агенту явный сигнал «СОЗДАЙ файл через web_search»).
+          #        и даёт cron-агенту явный сигнал «СОЗДАЙ файл через web_search»).)
+          # v9.54: добавлена метрика F27c (mirror F27b для каталога технологии/:
+          #        проверяет структурные id-ссылки в frontmatter — `технологии_частей`
+          #        для часть-level и `технологии` для изделия-level).
           # v9.41: расширение F27 — критерий (e): вариант_структуры должен быть
           #        указан (preventive); checklist уточнён — web_search ищет ВСЕ
           #        структурные формы (mono/poly/amorphous/...), полиморфные кристаллы
@@ -142,7 +145,7 @@ jobs:
           d = json.load(open('violations.json'))
           total = sum(len(v) for v in d.values())
           print(f"total_violations={total}")
-          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F28','F29','F31','F33','F34'):
+          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F27c','F28','F29','F31','F33','F34'):
               print(f"{M}_count={len(d.get(M, []))}")
           PYEOF
           # info-лог в stdout шага (одинарные кавычки — без bash-интерполяции):
@@ -150,7 +153,7 @@ jobs:
           import json
           d = json.load(open('violations.json'))
           print(f"[info] Total violations: {sum(len(v) for v in d.values())}")
-          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F28','F29','F31','F33','F34'):
+          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F27c','F28','F29','F31','F33','F34'):
               print(f"[info]   {M}: {len(d.get(M, []))} violations")
           PYEOF
 
@@ -275,8 +278,11 @@ jobs:
                 //        отсутствует в каталоге, F27 не видит). isMissingMaterial
                 //        вставлен ПЕРЕД isMaterial, т.к. чек-лист существенно
                 //        отличается (создать файл vs заполнить существующий).
-                const isMaterial = metric === 'F27' || metric === 'F28' || metric === 'F27b';
+                // v9.54: F27c — mirror F27b для каталога технологии/. Чек-лист
+                //        почти идентичен F27b, но создаёт файл в технологии/.
+                const isMaterial = metric === 'F27' || metric === 'F28' || metric === 'F27b' || metric === 'F27c';
                 const isMissingMaterial = metric === 'F27b';
+                const isMissingTech = metric === 'F27c';
                 const isForms = metric === 'F28';
                 // v9.52: merged metrics
                 //   F22 ← F23+F24 (url/stub/schema)
@@ -371,6 +377,28 @@ jobs:
                       `   - источник=web_search, источник_url (URL веб-источника) + источник_дата`,
                       `   - заполнить пустые остальные поля основные/дополнительные (null → реальные значения или обоснованный null)`,
                     ]
+                  : isMissingTech
+                  ? [
+                      `   - ВНИМАНИЕ: файла технологии в каталоге НЕТ — нужно СОЗДАТЬ новый файл реальные данные/технологии/<stem>.md`,
+                      `   - <stem> = id без префикса tekhnologia_ (например, 'diffuzionnaya_svarka', 'tape_casting', 'phase_change_deposition')`,
+                      `   - frontmatter нового файла:`,
+                      `     · id=tekhnologia_<stem>`,
+                      `     · псевдонимы: [] (заполнять только при наличии alt-имён через migrate_aliases.py)`,
+                      `     · канонический_id=tekhnologia_<stem>`,
+                      `     · тип=технология, категория (обработка/сборка/монтаж/контроль/...)`,
+                      `     · область_применения: список (например, [микроэлектроника, нанесение_покрытий, CVD_химическое_осаждение])`,
+                      `   - основные (обязательно для процесса):`,
+                      `     · температура_режима_C (min/max/nominal) — если тепловой процесс`,
+                      `     · давление_Pa (min/max/nominal) — если давление важно (CVD, спекание, ...)`,
+                      `     · время_обработки_с / мин — если лимитировано`,
+                      `   - дополнительные:`,
+                      `     · оборудование: [] (типы установок)`,
+                      `     · материалы_для_процесса: [список id материалов, которые обрабатываются этой технологией — mirror frontmatter ссылки]`,
+                      `     · допуски: {} (геометрические/поверхностные)`,
+                      `     · ограничения: null ИЛИ строка с противопоказаниями (например, 'только для кубических кристаллов')`,
+                      `   - источник=web_search, источник_url (URL веб-источника — datasheet оборудования / учебник / review) + источник_дата`,
+                      `   - описание процесса в body: физический принцип, ключевые параметры, типичные применения, альтернативы`,
+                    ]
                   : isMaterial
                   ? [
                       `   - свойства: плотность_kg_m3, теплопроводность_W_mK, температура_плавления_C (или макс_рабочая_температура_C) из datasheet/справочника`,
@@ -431,6 +459,15 @@ jobs:
                       `- F27: исследовательская_группа заполнена (НЕ 'требует_верификации')`,
                       `- F22: источник_url заполнен конкретным URL (если источник=web_search)`,
                       `- F31: id уникален (нет коллизии с алиасом другого материала — проверить scripts/_dedup_keys.js)`,
+                    ]
+                  : isMissingTech
+                  ? [
+                      `- F27c: файл реальные данные/технологии/<stem>.md создан (новый — ранее отсутствовал, F31/F33 не видели)`,
+                      `- F18: frontmatter проходит JSON schema (id/тип/категория/область_применения/основные/дополнительные)`,
+                      `- F22: источник_url заполнен конкретным URL (если источник=web_search)`,
+                      `- F31: id=tekhnologia_<stem> уникален, канонический_id совпадает с id (если это не алиас)`,
+                      `- F33: тип=технология, каталог=технологии/ (классификационная консистентность)`,
+                      `- материалы_для_процесса заполнены реальными id материалов (mirror frontmatter — обратная связь)`,
                     ]
                   : isMaterial
                   ? [
@@ -498,7 +535,7 @@ jobs:
           script: |
             const fs = require('fs');
             const { normalizeViolationKey, legacyMetricFromTitle } = require('./scripts/_dedup_keys.js');
-            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[], F27:[], F27b:[], F28:[], F31:[], F32:[]};
+            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[], F27:[], F27b:[], F27c:[], F28:[], F31:[], F32:[]};
             try {
               violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
             } catch (e) {
@@ -622,6 +659,7 @@ jobs:
           echo "| F26 | ${{ steps.violations.outputs.F26_count }} | Within-parent duplicates |" >> $GITHUB_STEP_SUMMARY
           echo "| F27 | ${{ steps.violations.outputs.F27_count }} | Unfilled materials (used by izdeliya) |" >> $GITHUB_STEP_SUMMARY
           echo "| F27b | ${{ steps.violations.outputs.F27b_count }} | Missing material files (referenced in frontmatter but file does not exist) |" >> $GITHUB_STEP_SUMMARY
+          echo "| F27c | ${{ steps.violations.outputs.F27c_count }} | Missing technology files (referenced in frontmatter but file does not exist) |" >> $GITHUB_STEP_SUMMARY
           echo "| F28 | ${{ steps.violations.outputs.F28_count }} | Materials without alternative forms/variants (for AI product variants) |" >> $GITHUB_STEP_SUMMARY
           echo "| **Total** | **${{ steps.violations.outputs.total_violations }}** | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
