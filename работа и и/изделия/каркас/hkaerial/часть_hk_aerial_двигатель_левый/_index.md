@@ -41,14 +41,16 @@ scaling_type: количественный
   тяга_kN: 500
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/Hunter-Killer_Aerial_Weapons_Platform
+источник_дата: 2026-11-06
 источник_разбора: канон
 ---
 # Часть: часть_hk_aerial_двигатель_левый (×2)
 ## Описание
 
-Дочерняя часть изделия.
+Левый ядерный VTOL-двигатель HK-Aerial (один из двух, `количество: 2`): вентильруемый контур с ядерным нагревом рабочего тела и турбоприводом вентилятора; тяга 500 кН на двигатель, тепловая мощность 2 МВт; горячая секция — никелевый суперсплав Inconel 718 (AMS 5662).
 
 Родитель: `izdelie_SkyNet-HKAerial` (подсистема: энергетическая).
 
@@ -80,6 +82,8 @@ Heat from nuclear reactor → steam turbine → ducted fan thrust.
 ## Источники
 
 - Канон: декомпозиция `izdelie_SkyNet-HKAerial` (web search 2026-11-03)
+- [Hunter-Killer Aerial Weapons Platform | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/Hunter-Killer_Aerial_Weapons_Platform)
+- [HK Aerial | Worldofjaymz Wiki — Fandom](https://worldofjaymz.fandom.com/wiki/HK_Aerial)
 - Материалы: реальные данные/материалы/
 
 
