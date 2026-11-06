@@ -3911,6 +3911,18 @@
       "meta": {}
     },
     {
+      "src": "F16",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "F16",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "F22",
       "dst": "script:pre-commit-hook.py",
       "type": "validated_by",
@@ -4867,7 +4879,7 @@
   ],
   "stats": {
     "nodes": 327,
-    "edges": 483,
+    "edges": 485,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,

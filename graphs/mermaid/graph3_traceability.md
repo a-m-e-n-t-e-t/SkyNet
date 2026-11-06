@@ -11,6 +11,15 @@ graph LR
     F70 --> script_validate_decomposition_py
     script_validate_field_contracts_py[validate_field_contracts.py]
     F70 --> script_validate_field_contracts_py
+    F16([F16])
+    script_generate_decomposition_py[generate_decomposition.py]
+    F16 --> script_generate_decomposition_py
+    script_generate_wrapper_izdeliya_py[generate_wrapper_izdeliya.py]
+    F16 --> script_generate_wrapper_izdeliya_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F16 --> script_pre-commit-hook_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F16 --> script_validate_decomposition_py
     F27([F27])
     script_migrate_aliases_py[migrate_aliases.py]
     F27 --> script_migrate_aliases_py
@@ -68,13 +77,6 @@ graph LR
     F14 --> script_generate_wrapper_izdeliya_py
     script_validate_decomposition_py[validate_decomposition.py]
     F14 --> script_validate_decomposition_py
-    F16([F16])
-    script_generate_decomposition_py[generate_decomposition.py]
-    F16 --> script_generate_decomposition_py
-    script_generate_wrapper_izdeliya_py[generate_wrapper_izdeliya.py]
-    F16 --> script_generate_wrapper_izdeliya_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F16 --> script_validate_decomposition_py
     F19([F19])
     script_generate_decomposition_py[generate_decomposition.py]
     F19 --> script_generate_decomposition_py
@@ -147,7 +149,7 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F13` | generate_decomposition.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F14` | generate_decomposition.py, generate_wrapper_izdeliya.py, validate_decomposition.py | — |
 | `F15` | generate_decomposition.py | — |
-| `F16` | generate_decomposition.py, generate_wrapper_izdeliya.py, validate_decomposition.py | — |
+| `F16` | generate_decomposition.py, generate_wrapper_izdeliya.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F17` | generate_decomposition.py, validate_decomposition.py | — |
 | `F18` | validate_decomposition.py | — |
 | `F19` | generate_decomposition.py, generate_wrapper_izdeliya.py, validate_decomposition.py | — |

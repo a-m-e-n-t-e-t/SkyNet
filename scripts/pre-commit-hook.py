@@ -310,7 +310,11 @@ def main():
         from validate_decomposition import run_all_checks
         decomp_results = run_all_checks()
         # Метрики которые пока warning (не блокирующие)
-        WARNING_METRICS = {'F13', 'F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28', 'F29', 'F30', 'F31', 'F32', 'F34'}
+        # v9.48: F16 добавлена в warnings — новая проверка 'промежуточный без
+        # дочерних_частей' концептуально эквивалентна F34 (раньше F16 проверяла
+        # только уровень 4 без детей, теперь проверяет ВСЕ 'промежуточный' без
+        # детей); пока 629 таких узлов в backlog F34, F16 также warning.
+        WARNING_METRICS = {'F13', 'F16', 'F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28', 'F29', 'F30', 'F31', 'F32', 'F34'}
         for metric, result in decomp_results['results'].items():
             if metric in WARNING_METRICS:
                 if not result['pass']:
