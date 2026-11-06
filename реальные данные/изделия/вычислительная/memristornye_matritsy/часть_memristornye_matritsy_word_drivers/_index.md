@@ -33,11 +33,11 @@ scaling_type: количественный
     w: 1.2
     h: 0.4
   выработка_энергии_W: 0
-  выработка_тепла_W: 1
+  выработка_тепла_W: 0.1
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-07
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.mpflynngroup.com/rram-crossbar-computing.html
@@ -59,7 +59,7 @@ scaling_type: количественный
 | доля массы родителя | 0.2 | — | canon |
 | габариты (Д×Ш×В) | 2×1.2×0.4 | mm | Hybrid memristor–CMOS chip with mixed-signal interface blocks: Flynn/Lu groups (Nature Electronics 2019) |
 | выработка энергии | 0 | W | canon |
-| выработка тепла | 1 | W | canon |
+| выработка тепла | 0.1 | W | строчные драйверы (word line drivers) |
 | материал | si | — | si.md |
 
 ## Принцип работы
