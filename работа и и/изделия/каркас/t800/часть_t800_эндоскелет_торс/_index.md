@@ -41,8 +41,10 @@ scaling_type: количественный
   тип: 'microprocessor-controlled combat chassis'
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-06
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/T-800
+источник_дата: 2026-11-06
 источник_разбора: канон
 ---
 
@@ -50,7 +52,7 @@ scaling_type: количественный
 
 ## Описание
 
-Дочерняя часть изделия.
+Торс эндоскелета T-800 из гиперсплава (титановый сплав): несёт грудную клетку с топливными ячейками и узлы крепления рук; живая ткань монтируется поверх каркаса (canon T1/T2).
 
 Родитель: `izdelie_SkyNet-T800` (подсистема: каркас).
 
@@ -82,4 +84,5 @@ Limbs controlled by axial drive motors and clavicular trailing links. Frictionle
 ## Источники
 
 - Канон: декомпозиция `izdelie_SkyNet-T800` (web search 2026-11-03)
+- [T-800 (Original timeline) | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/T-800)
 - Материалы: реальные данные/материалы/
