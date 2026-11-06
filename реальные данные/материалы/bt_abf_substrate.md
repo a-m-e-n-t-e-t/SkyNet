@@ -20,7 +20,7 @@ id: material_bt_abf_substrate
   build_up_ABF:
     марка: 'Ajinomoto ABF: GX-92 (стандарт), GX-T31 (низкая шероховатость/CTE), GZ-41 (низкая шероховатость, низкий CTE, высокая Tg), GL-102 (низкий Df)'
     примечание: '8–20+ build-up слоёв, L/S 8–15 мкм, трассы до 8/8 мкм; трёхслойная плёнка PET/ABF/защита; структура до 10-n-10, ленд вии от 85 мкм (Kyocera)'
-исследовательская_группа: требует_верификации
+исследовательская_группа: 'BT-смола: Mitsubishi Gas Chemical (MGC) — разработана и запатентована в 1978 г., коммерциализирована в 1980-е (MGC: «MGC invented a revolutionary thermal-hardened bismaleimide triazine (BT) resin»); ABF: Ajinomoto (R&D на базе аминокислотной химии с 1970-х, первая адопция крупным производителем полупроводников в 1999 г., автор — Shigeo Nakamura, с 2025 г. CEO Ajinomoto Group)'
 стандарты:
   - IPC-4101 (ламинаты)
   - IPC-6012 (жёсткие платы)
@@ -66,7 +66,7 @@ id: material_bt_abf_substrate
 
 ## Описание
 
-Стандартный материал высокоплотных пакетных подложек FCBGA: жёсткое ядро из BT-смолы (бисмалеимид-триазин, Mitsubishi Gas Chemical) обкладывается слоями Ajinomoto Build-up Film — эпоксидной плёнки с кремнезёмным наполнителем, специально созданной для полуб additive-процесса (SAP). FC-BGA подложки строятся «on BT resin or glass-epoxy cores using Ajinomoto Build-up Film (ABF) forming circuit traces down to 8/8 μm» (Exponential Industry, 2026); ABF работает межслойным диэлектриком над и под ядром (TheElec). BT-ядро держит 2–10 слоёв с L/S 30–40 мкм, ABF — 8–20+ слоёв с L/S 8–15 мкм (Kingsun PCB); Kyocera серийно даёт структуру до 10-n-10 слоёв с лендом вии от 85 мкм. Референс-модель FCBGA в Reliability Evaluation of Board-Level Flip-Chip Package (Shih et al., 2023) — 8-слойная build-up органическая подложка толщиной 1.2 мм; этот параметр принят для подложки чипа NorthPole с footprint 55×55 мм (референс-класс FCBGA-2743 пакета A100 PCIe). Свойства (плотность 2100 кг/м³, λ 0.5 Вт/(м·К), CTE in-plane 15 ppm/K, Tg 150–230 °C) — класс-типичные для BT/ABF-ламината с медными слоями; CTE соответствует диапазону органических пакетных подложек 14–17 ppm/K (EpoxySet). Термопластического плавления нет: термореактивный ламинат разлагается (~350 °C), поэтому температура_плавления_C = null (обоснованный null).
+Стандартный материал высокоплотных пакетных подложек FCBGA: жёсткое ядро из BT-смолы (бисмалеимид-триазин, Mitsubishi Gas Chemical) обкладывается слоями Ajinomoto Build-up Film — эпоксидной плёнки с кремнезёмным наполнителем, специально созданной для полуб additive-процесса (SAP). FC-BGA подложки строятся «on BT resin or glass-epoxy cores using Ajinomoto Build-up Film (ABF) forming circuit traces down to 8/8 μm» (Exponential Industry, 2026); ABF работает межслойным диэлектриком над и под ядром (TheElec). BT-ядро держит 2–10 слоёв с L/S 30–40 мкм, ABF — 8–20+ слоёв с L/S 8–15 мкм (Kingsun PCB); Kyocera серийно даёт структуру до 10-n-10 слоёв с лендом вии от 85 мкм. Референс-модель FCBGA в Reliability Evaluation of Board-Level Flip-Chip Package (Shih et al., 2023) — 8-слойная build-up органическая подложка толщиной 1.2 мм; этот параметр принят для подложки чипа NorthPole с footprint 55×55 мм (референс-класс FCBGA-2743 пакета A100 PCIe). Свойства (плотность 2100 кг/м³, λ 0.5 Вт/(м·К), CTE in-plane 15 ppm/K, Tg 150–230 °C) — класс-типичные для BT/ABF-ламината с медными слоями; CTE соответствует диапазону органических пакетных подложек 14–17 ppm/K (EpoxySet). Термопластического плавления нет: термореактивный ламинат разлагается (~350 °C), поэтому температура_плавления_C = null (обоснованный null). История: BT-смола изобретена и запатентована Mitsubishi Gas Chemical в 1978 г.; ABF создана Ajinomoto (развитие аминокислотной химии с 1970-х, переход от жидких изоляторов к плёнке) и впервые принята крупным производителем полупроводников в 1999 г., после чего стала стандартом межслойного диэлектрика почти всех высокопроизводительных CPU.
 
 ## Источники
 
@@ -78,3 +78,6 @@ id: material_bt_abf_substrate
 - https://global.kyocera.com/prdct/organic/prdct/package/fcbga/std (Kyocera FC-BGA: до 10-n-10 слоёв, ленд вии ≥85 мкм)
 - https://thor.inemi.org/webdownload/newsroom/Presentations/Pkg_Substrates_Nov09/Large_body.pdf (ядро 0.4–0.8 мм, build-up слой 30–35 мкм)
 - https://epoxysetinc.com/epoxy-adhesive/epoxy-underfill-for-electronics-assembly (CTE органических подложек 14–17 ppm/°C)
+- https://www.mgc.co.jp/eng/rd/technology/bt.html (MGC: изобретение BT-смолы, лидерство рынка)
+- https://www.ajinomoto.com/innovation/our_innovation/buildupfilm (Ajinomoto: история ABF, первая адопция 1999)
+- https://www.convergenceanalysis.org/fellowships/economics/securing-the-substrate-behind-every-chip-a-us-strategy-for-ajinomoto-build-up-film-abf (Shigeo Nakamura — автор ABF)
