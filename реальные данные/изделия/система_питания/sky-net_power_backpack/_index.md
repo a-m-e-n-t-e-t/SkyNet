@@ -45,9 +45,9 @@ scaling_type: количественный
     max: 12.0
     nominal: 7.5
   габариты_mm:
-    l: 320
-    w: 220
-    h: 140
+    l: 360
+    w: 280
+    h: 200
   выработка_энергии_W:
     min: 0
     max: 1500
@@ -62,7 +62,7 @@ scaling_type: количественный
   время_разряда_ч: 4
   циклов_до_80_pct: 1000
 дата_создания: 2026-11-05
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-07
 источник: web_search
 источник_разбора: канон
 источник_url: https://bostondynamics.com/products/atlas
@@ -72,7 +72,7 @@ scaling_type: количественный
 
 ## Описание
 
-Батарейный рюкзак гуманоидной платформы: модульный Li-ion (NMC/graphite) блок 48 В × ~31 А·ч (~1500 Вт·ч), размещённый в спинном отсеке гуманоида класса Atlas/Optimus. Аналог системы питания SkyNet-гуманоидов (T700/T900/T950/TRIP): 4 часа непрерывной ходьбы с нагрузкой 30 кг (sustained) или 50 кг (instant). Корпус 320×220×140 мм, масса 7.5 кг (≈10% массы робота). Активный BMS (battery management system) с поканальным мониторингом температуры, тока и напряжения; система терморегуляции (heat-pipe + forced air) отводит 250 Вт пикового тепла.
+Батарейный рюкзак гуманоидной платформы: модульный Li-ion (NMC/graphite) блок 48 В × ~31 А·ч (~1500 Вт·ч), размещённый в спинном отсеке гуманоида класса Atlas/Optimus. Аналог системы питания SkyNet-гуманоидов (T700/T900/T950/TRIP): 4 часа непрерывной ходьбы с нагрузкой 30 кг (sustained) или 50 кг (instant). Батарейный отсек 320×220×140 мм; рюкзак в сборе с несущей рамой, быстросъёмным посадочным лотком и вентиляционным каналом — 360×280×200 мм, масса 7.5 кг (≈10% массы робота). Активный BMS (battery management system) с поканальным мониторингом температуры, тока и напряжения; система терморегуляции (heat-pipe + forced air) отводит 250 Вт пикового тепла.
 
 Родитель: верхний уровень иерархии (подсистема: `система_питания`).
 
@@ -83,7 +83,7 @@ scaling_type: количественный
 | подсистема | система_питания | — | canon |
 | подтип | батарейный_блок | — | canon |
 | масса (nominal) | 7.5 | kg | web_search (Atlas-class battery backpack) |
-| габариты (Д×Ш×В) | 320×220×140 | mm | оценка по спинному отсеку гуманоида |
+| габариты в сборе (Д×Ш×В) | 360×280×200 | mm | рюкзак в сборе (отсек 320×220×140 + несущая рама с посадочным лотком); масштабирование от Spot battery 324×168×93 мм / payload mounting area 850×240×270 мм (batterydesign.net, bostondynamics.com) |
 | химия | NMC / graphite | — | web_search (Boston Dynamics Atlas) |
 | ёмкость | 1500 | Wh | web_search (Atlas spec: 4h runtime) |
 | напряжение номинал | 48 | V | canon (промышленный standard) |
@@ -121,5 +121,7 @@ graph TD
 
 - Канон: декомпозиция SkyNet-гуманоидных моделей (web_search 2026-11-05)
 - Boston Dynamics Atlas (4h battery, 50 kg capacity): https://bostondynamics.com/products/atlas
+- Boston Dynamics Spot battery pack (референс компоновки: 324×168×93 мм, 605 Wh, 14s4p, hot-swap): https://www.batterydesign.net/boston-dynamics-spot-battery/
+- Boston Dynamics Spot payload mounting area 850×240×270 мм, интерфейс M5 T-slot rails: https://bostondynamics.com/products/spot
 - IEC 62133-2 + UN 38.3 safety standards
 - Материалы: реальные данные/материалы/
