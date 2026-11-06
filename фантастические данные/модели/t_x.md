@@ -67,6 +67,8 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/T-X
+источник_дата: 2026-11-06
 источник_разбора: канон
 ии_перепроектирован:
   статус: false
@@ -148,7 +150,7 @@ relations:
 alice_specs: ALICE sync protocol v9.31 (SkyNet hive-mind)
 original_improved: canon
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-06
 ---
 # SkyNet-TX
 
@@ -203,6 +205,8 @@ T-X (T-Xa) — гибрид: эндоскелет T-900 покрыт мимет�
 ## Источники
 
 - Канон: Terminator 3: Rise of the Machines (2003)
+- [T-X | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/T-X)
+- [T-X — Wikipedia](https://en.wikipedia.org/wiki/T-X)
 
 ## Декомпозиция
 
