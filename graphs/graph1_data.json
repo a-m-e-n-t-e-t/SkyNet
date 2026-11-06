@@ -52,10 +52,31 @@
       "subsystem": "встроенное_оружие"
     },
     {
+      "id": "часть_minigun_m134_core_barrels",
+      "type": "chast",
+      "label": "стволы",
+      "path": "реальные данные/изделия/встроенное_оружие/minigun_m134/часть_minigun_m134_core_barrels/_index.md",
+      "subsystem": "встроенное_оружие"
+    },
+    {
       "id": "часть_minigun_m134_core",
       "type": "chast",
       "label": "основной_элемент",
       "path": "реальные данные/изделия/встроенное_оружие/minigun_m134/часть_minigun_m134_core/_index.md",
+      "subsystem": "встроенное_оружие"
+    },
+    {
+      "id": "часть_minigun_m134_core_motor",
+      "type": "chast",
+      "label": "электропривод",
+      "path": "реальные данные/изделия/встроенное_оружие/minigun_m134/часть_minigun_m134_core_motor/_index.md",
+      "subsystem": "встроенное_оружие"
+    },
+    {
+      "id": "часть_minigun_m134_core_rotor",
+      "type": "chast",
+      "label": "ротор",
+      "path": "реальные данные/изделия/встроенное_оружие/minigun_m134/часть_minigun_m134_core_rotor/_index.md",
       "subsystem": "встроенное_оружие"
     },
     {
@@ -70,6 +91,13 @@
       "type": "chast",
       "label": "крепёж",
       "path": "реальные данные/изделия/встроенное_оружие/minigun_m134/часть_minigun_m134_mounting/_index.md",
+      "subsystem": "встроенное_оружие"
+    },
+    {
+      "id": "часть_minigun_m134_core_housing",
+      "type": "chast",
+      "label": "корпус",
+      "path": "реальные данные/изделия/встроенное_оружие/minigun_m134/часть_minigun_m134_core_housing/_index.md",
       "subsystem": "встроенное_оружие"
     },
     {
@@ -7433,6 +7461,42 @@
       "meta": {}
     },
     {
+      "src": "часть_minigun_m134_core_barrels",
+      "dst": "часть_minigun_m134_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_minigun_m134_core_barrels",
+      "dst": "material_stal_st3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_minigun_m134_core",
+      "dst": "часть_minigun_m134_core_barrels",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_minigun_m134_core",
+      "dst": "часть_minigun_m134_core_rotor",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_minigun_m134_core",
+      "dst": "часть_minigun_m134_core_motor",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_minigun_m134_core",
+      "dst": "часть_minigun_m134_core_housing",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
       "src": "часть_minigun_m134_core",
       "dst": "izdelie_minigun_m134",
       "type": "child_of",
@@ -7440,6 +7504,30 @@
     },
     {
       "src": "часть_minigun_m134_core",
+      "dst": "material_stal_st3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_minigun_m134_core_motor",
+      "dst": "часть_minigun_m134_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_minigun_m134_core_motor",
+      "dst": "material_stal_st3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_minigun_m134_core_rotor",
+      "dst": "часть_minigun_m134_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_minigun_m134_core_rotor",
       "dst": "material_stal_st3",
       "type": "uses_material",
       "meta": {}
@@ -7465,6 +7553,18 @@
     {
       "src": "часть_minigun_m134_mounting",
       "dst": "material_stal_st3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_minigun_m134_core_housing",
+      "dst": "часть_minigun_m134_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_minigun_m134_core_housing",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -19092,7 +19192,63 @@
     },
     {
       "src": "material_stal_st3",
+      "dst": "часть_minigun_m134_core_barrels",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "часть_minigun_m134_core_barrels",
       "dst": "часть_minigun_m134_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_minigun_m134_core_rotor",
+      "dst": "часть_minigun_m134_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_minigun_m134_core_motor",
+      "dst": "часть_minigun_m134_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_minigun_m134_core_housing",
+      "dst": "часть_minigun_m134_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_stal_st3",
+      "dst": "часть_minigun_m134_core",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_stal_st3",
+      "dst": "часть_minigun_m134_core_motor",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_stal_st3",
+      "dst": "часть_minigun_m134_core_rotor",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -19109,6 +19265,14 @@
     {
       "src": "material_stal_st3",
       "dst": "часть_minigun_m134_mounting",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_minigun_m134_core_housing",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -30137,8 +30301,8 @@
     ]
   },
   "stats": {
-    "nodes": 1044,
-    "edges": 3261,
+    "nodes": 1048,
+    "edges": 3281,
     "dangling": {
       "complies_with": 461,
       "has_part": 4,
@@ -30146,7 +30310,7 @@
       "uses_material": 79
     },
     "by_type": {
-      "chast": 625,
+      "chast": 629,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 132,
       "material": 196,

@@ -377,13 +377,24 @@ def check_F12a(izdeliya: dict[str, dict]) -> dict:
     color: dict[str, int] = {izd_id: WHITE for izd_id in izdeliya}
     
     def detect_cycle_from(start: str) -> str | None:
-        """Walk parent pointers; return cycle anchor if found, else None."""
+        """Walk parent pointers; return cycle anchor if found, else None.
+
+        v9.52 fix: при раннем выходе (текущий узел уже BLACK) помечаем
+        накопленный path как BLACK тоже — иначе эти узлы остаются GRAY и
+        следующий DFS ложно детектирует цикл (баг проявился с sub-parts
+        уровня 3: DFS от barrels останавливался на BLACK-izdelie, core
+        оставался GRAY, DFS от core ложно находил «цикл»).
+        """
         path = []
         current = start
         while current is not None and current != 'null':
-            if color.get(current) == BLACK:
-                return None  # уже проверено — цикла нет
-            if color.get(current) == GRAY:
+            c = color.get(current)
+            if c == BLACK:
+                # уже проверено — цикла нет; пометить путь и выйти
+                for node in path:
+                    color[node] = BLACK
+                return None
+            if c == GRAY:
                 return current  # найден цикл
             color[current] = GRAY
             path.append(current)

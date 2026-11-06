@@ -10,7 +10,11 @@ id: часть_minigun_m134_core
   - ISO 9001
 исследовательская_группа: null
 родитель: izdelie_minigun_m134
-дочерние_части: []
+дочерние_части:
+  - часть_minigun_m134_core_barrels
+  - часть_minigun_m134_core_rotor
+  - часть_minigun_m134_core_motor
+  - часть_minigun_m134_core_housing
 материалы_частей:
   - часть: часть_minigun_m134_core
     материал: stal_st3
@@ -82,3 +86,18 @@ scaling_type: количественный
 - M134 Minigun вращательный блок (6 стволов + ротор, оценка) — https://en.wikipedia.org/wiki/Minigun (обращение 2026-11-05)
 - Канон: декомпозиция `izdelie_minigun_m134` (web search 2026-11-03)
 - Материалы: реальные данные/материалы/
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    core["часть_minigun_m134_core"]
+    barrels["часть_minigun_m134_core_barrels"]
+    core --> barrels
+    rotor["часть_minigun_m134_core_rotor"]
+    core --> rotor
+    motor["часть_minigun_m134_core_motor"]
+    core --> motor
+    housing["часть_minigun_m134_core_housing"]
+    core --> housing
+```
