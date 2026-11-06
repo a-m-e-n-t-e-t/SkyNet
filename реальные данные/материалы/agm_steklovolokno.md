@@ -12,7 +12,7 @@ id: material_agm_steklovolokno
   применение_по_умолчанию: сепаратор_VRLA_AKB
   источник_обоснования: web_search
 варианты_по_применению: {}
-исследовательская_группа: требует_верификации
+исследовательская_группа: null
 стандарты:
   - VRLA separator practice
 версия: реальная
@@ -34,8 +34,8 @@ id: material_agm_steklovolokno
   коэффициент_Пуассона: null
   ударная_вязкость_Дж_см2: null
   усталостная_прочность_МПа: {min: null, max: null, nominal: null}
-  температура_плавления_C: null
-  теплопроводность_W_mK: null
+  температура_плавления_C: 840
+  теплопроводность_W_mK: 0.040
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: null
@@ -50,7 +50,7 @@ id: material_agm_steklovolokno
   коэффициент_демпфирования: null
 сравнение_структур: {}
 дата_создания: 2026-11-05
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-06
 
 # Материал: AGM-сепараторное стекловолокно (absorptive glass mat)
 
@@ -67,3 +67,6 @@ id: material_agm_steklovolokno
 
 - BNF Tech, AGM battery separator (технические характеристики): толщина 0.30–3.50 мм, basis weight ≥140 г/(м²·мм), капиллярный подъём ≥75 мм/5 мин, для VRLA: http://www.bnf-tech.com/products-separator.html (проверено 2026-11-05)
 - US10141556B2 (Separators for VRLA batteries): AGM-слой — как минимум преимущественно стекловолокно, сжимаемость 10–40% при >10 кПа: https://patents.google.com/patent/US10141556B2/en (проверено 2026-11-05)
+- Heaterk, Fiberglass Needle Mat (E-glass, плотность ~130 кг/м³): теплопроводность ≤0.035 Вт/(м·К) при 25 °C — аналог AGM-мата по структуре и плотности: https://www.heaterk.com/products/fiberglass-chopped-strand-mat (проверено 2026-11-06)
+- Huamei, Glass wool: при плотности выше 64–96 кг/м³ λ ≈ 0.030–0.040 Вт/(м·К); принято 0.040 для AGM 140 кг/м³: https://www.huameiworld.com/news/what-is-thermal-conductivity-of-glass-wool.html (проверено 2026-11-06)
+- AZoM, Properties E-Glass Fibre: точка размягчения E-стекла ~840 °C (значение температура_плавления_C): https://www.azom.com/properties.aspx?ArticleID=764 (проверено 2026-11-06)
