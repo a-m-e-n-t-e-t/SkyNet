@@ -82,7 +82,11 @@ graph LR
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting[крепёж]
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing[корпус]
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors[разъёмы]
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda[силовые_цепи]
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran[экранирование]
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda[сигнальные_цепи]
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core[основной_элемент]
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka[изоляция]
     часть_tsa_core[основной_элемент]
     часть_tsa_connectors[разъёмы]
     часть_tsa_housing[корпус]
@@ -148,6 +152,9 @@ graph LR
     часть_apa_core -->|материал| material_ti_6al_4v
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing -->|материал| material_al_6061_t6
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors -->|материал| material_al_6061_t6
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda -->|материал| material_copper
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran -->|материал| material_copper
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda -->|материал| material_copper
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core -->|материал| material_copper
     часть_tsa_connectors -->|материал| material_al_6061_t6
     часть_tsa_housing -->|материал| material_al_6061_t6
@@ -176,12 +183,12 @@ _Показаны 5 наиболее часто используемых мат�
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 6 |
 | `Ароматический полиимид PMDA-ODA (тип Kapton): повторяющееся звено C22H10N2O5 (M ≈ 382.2 г/моль) из пиромеллитового диангидрида (PMDA) и 4,4′-оксианилина (ODA); чередующиеся имидные циклы C(=O)–N–C(=O) и фениленовые/дифениловый эфирный сегменты` | 4 |
 | `Полиамид 6/6 (PA66, нейлон 6/6): продукт поликонденсации гексаметилендиамина (6 C) и адипиновой кислоты (6 C), повторяющееся звено –[NH–(CH₂)₆–NH–OC–(CH₂)₄–CO]ₙ–; промышленные марки: Zytel 101 (DuPont), Ultramid A3K (BASF), Durethan A (Lanxess)` | 4 |
+| `Cu ≥99.9% (электролитическая медь C11000/ETP)` | 4 |
 | `Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)` | 3 |
 | `нержавеющая сталь AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240)` | 3 |
 | `Полидиметилсилоксан (PDMS, VMQ): основа –[Si(CH₃)₂–O]ₙ– с винильными сшивочными группами (~0.05–0.5 мол. %), наполнитель — пирогенный кремнезём SiO₂ 10–30 мас.% (типа HDK®), вулканизация пероксидная (HCR-марки) или платиновая присоединительная (RTV-2/LSR)` | 2 |
+| `Трёхслойная ламинация TPT (Tedlar/PET/Tedlar): плёнки Tedlar® PVF (поливинилфторид) ~25 мкм с обеих сторон + двуосно-ориентированная ПЭТ-сердцевина (полиэтилентерефталат) 150–280 мкм + праймерные/адгезионные слои` | 2 |
 | `трёхслойный металл-полимерный композит (DU-тип): низкоуглеродистая сталь (подложка 0.7–2.0 мм, Cu/Sn-плакировка) + спечённая пористая бронза (промежуточный слой 0.20–0.35 мм) + рабочий слой PTFE с наполнителями 0.01–0.03 мм (бессвинцовые марки DU-B/lead-free; классический DU — PTFE+Pb)` | 1 |
 | `UV-отверждаемая полиуретанакрилатная сеть (PUA) 25 масс. % + ионная жидкость [EMIM][TFSI] 75 масс. % (оптимум Han 2021)` | 1 |
 | `Гибкий слоистый композит: ткань из E-стекла (алюмоборосиликатное волокно, σрасч ≥1100 МПа по волокну), покрытая с одной/двух сторон вулканизованной силиконовой резиной (полидиметилсилоксан, PDMS, метил/метилфенил-каучук с оксидными наполнителями). Поверхностная плотность ткани 350–1800 г/м², покрытия 80–2000 г/м², суммарная 350–3000 г/м²` | 1 |
 | `Ионная жидкость [EMIM][TFSI]` | 1 |
-| `PDMS — полидиметилсилоксан (эталонная система Dow SYLGARD 184: двухкомпонентный силиконовый эластомер 10:1, ненаполненный, прозрачный)` | 1 |
-| `Терполимер P(VDF-TrFE-CFE): звенья винилиденфторида CH2=CF2 (VDF), трифторэтилена CHF=CF2 (TrFE) и хлорфтормонофторэтилена (CFE); типовой состав 64.8/27.4/7.8 мол.% (J. Materiomics 2023); промышленная марка Piezotech RT-FS (Arkema)` | 1 |

@@ -654,10 +654,38 @@
       "subsystem": "приводная_система"
     },
     {
+      "id": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda",
+      "type": "chast",
+      "label": "силовые_цепи",
+      "path": "реальные данные/изделия/приводная_система/opletku_iz_tokoprovodyaschih_izolirovannyh_provodov/часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda/_index.md",
+      "subsystem": "приводная_система"
+    },
+    {
+      "id": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran",
+      "type": "chast",
+      "label": "экранирование",
+      "path": "реальные данные/изделия/приводная_система/opletku_iz_tokoprovodyaschih_izolirovannyh_provodov/часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran/_index.md",
+      "subsystem": "приводная_система"
+    },
+    {
+      "id": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda",
+      "type": "chast",
+      "label": "сигнальные_цепи",
+      "path": "реальные данные/изделия/приводная_система/opletku_iz_tokoprovodyaschih_izolirovannyh_provodov/часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda/_index.md",
+      "subsystem": "приводная_система"
+    },
+    {
       "id": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
       "type": "chast",
       "label": "основной_элемент",
       "path": "реальные данные/изделия/приводная_система/opletku_iz_tokoprovodyaschih_izolirovannyh_provodov/часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core/_index.md",
+      "subsystem": "приводная_система"
+    },
+    {
+      "id": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka",
+      "type": "chast",
+      "label": "изоляция",
+      "path": "реальные данные/изделия/приводная_система/opletku_iz_tokoprovodyaschih_izolirovannyh_provodov/часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka/_index.md",
       "subsystem": "приводная_система"
     },
     {
@@ -8732,6 +8760,66 @@
       "meta": {}
     },
     {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
       "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
       "dst": "izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov",
       "type": "child_of",
@@ -8740,6 +8828,24 @@
     {
       "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
       "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "dst": "material_tedlar_pet",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka",
+      "dst": "material_tedlar_pet",
       "type": "uses_material",
       "meta": {}
     },
@@ -20331,7 +20437,79 @@
     },
     {
       "src": "material_copper",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda",
       "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_tedlar_pet",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_tedlar_pet",
+      "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -29871,6 +30049,7 @@
       "standart_IEC 60095-2",
       "standart_IEC 60112 (трекингостойкость, CTI 600)",
       "standart_IEC 60122 (кварцевые резонаторы)",
+      "standart_IEC 60228",
       "standart_IEC 60243 / ASTM D149 (электрическая прочность)",
       "standart_IEC 60243-1",
       "standart_IEC 60243-1 (электрическая прочность диэлектриков)",
@@ -29886,6 +30065,7 @@
       "standart_IEC 60529 (IP67)",
       "standart_IEC 60584-1 (термопары тип S/R, классы допусков)",
       "standart_IEC 60603",
+      "standart_IEC 60684",
       "standart_IEC 60904",
       "standart_IEC 61076-2-101",
       "standart_IEC 61215",
@@ -30012,6 +30192,7 @@
       "standart_Jülich Kuriakose 2024",
       "standart_MIL-DTL-11821",
       "standart_MIL-DTL-12560K",
+      "standart_MIL-DTL-17",
       "standart_MIL-DTL-28876",
       "standart_MIL-DTL-38999",
       "standart_MIL-DTL-39029",
@@ -30087,6 +30268,9 @@
       "standart_Teledyne Mechanical IDD (Boson+)",
       "standart_The Aluminum Association: AA 6063 (ASTM B221)",
       "standart_Thorlabs Mounting Note",
+      "standart_UL 2517",
+      "standart_UL 2547",
+      "standart_UL 3239",
       "standart_UL 746B (RTI)",
       "standart_UL 94 (горючесть V-0…HB)",
       "standart_UL 94 V-0",
@@ -30288,16 +30472,16 @@
     ]
   },
   "stats": {
-    "nodes": 1047,
-    "edges": 3280,
+    "nodes": 1051,
+    "edges": 3302,
     "dangling": {
-      "complies_with": 461,
+      "complies_with": 467,
       "has_part": 4,
       "researched_by": 67,
       "uses_material": 79
     },
     "by_type": {
-      "chast": 628,
+      "chast": 632,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 132,
       "material": 196,
