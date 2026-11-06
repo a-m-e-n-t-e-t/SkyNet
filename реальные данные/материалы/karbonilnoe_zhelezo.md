@@ -11,9 +11,30 @@ id: material_karbonilnoe_zhelezo
   обоснование_выбора: "Сферический порошок карбонильного железа — стандартный магнитомягкий наполнитель магнитореологических жидкостей и рабочих камер индукционных порошковых муфт/тормозов: высокая магнитная индукция насыщения, низкая остаточная намагниченность (обзор MR-жидкостей на CIP)"
   применение_по_умолчанию: рабочий_тело_порошковых_муфт
   источник_обоснования: web_search
-варианты_по_применению: {}
-исследовательская_группа: требует_верификации
-стандарты: []
+варианты_по_применению:
+  mr_fluid_cip_ew:
+    описание: "MR-класс: сферический CIP типа EW/SM (BASF) 1.5–4.5 мкм — стандартный наполнитель магнитореологических жидкостей и порошковых муфт"
+    свойства: "Fe ≥ 99.5%; индукция насыщения ~2.1 Тл; низкая остаточная намагниченность/коэрцитивность; плотность частиц 7.86 г/см³; сферическая морфология — быстрая перестройка цепочек в поле"
+    применение: "MR-жидкости, электромагнитные порошковые муфты/тормозы (рабочее тело в зазоре ротор-статор)"
+  rf_absorber_cip:
+    описание: "Радиопоглощающий класс (BASF CIP для microwave absorption): эффективное поглощение с 1 ГГц и выше"
+    свойства: "высокая удельная магнитная проницаемость в СВЧ-диапазоне; дисперсность по сорту (HQ/HS/EW); компаундируется в полимерные матрицы для радиопоглощающих покрытий"
+    применение: "EMI-экранирование, радиопоглощающие покрытия/камеры, антенны"
+  smc_inductor_cip:
+    описание: "Изолированный порошок для мягкомагнитных композитов (SMC): сорт EW с сопротивлением >10¹⁰ Ом, сорт HQ — минимальный разброс размеров"
+    свойства: "диэлектрическая изоляция частиц (снижение вихревых токов), высокая магнитная насыщение, компактируемость при низких потерях"
+    применение: "сердечники индукторов/дросселей силовой электроники (powder cores)"
+  mim_pm_cip:
+    описание: "Класс порошковой металлургии/MIM: сферический CIP с хорошей текучестью и насыпной плотностью 2.5–3.0 г/см³"
+    свойства: "Fe ≥ 99.5%, сферичность обеспечивает заполнение форм; спекается до плотности ~7.6 г/см³; мягкий магнитный материал"
+    применение: "MIM/пресс-спекание магнитных и конструкционных деталей"
+  food_grade_cip:
+    описание: "Пищевой/нутрицевтический сорт (BASF CIP for food and nutrition): D50 5.2–9.5 мкм"
+    свойства: "высокая чистота Fe ≥ 99.5%, контролируемый гранулометрический состав (D10 ≤ 3.5–4.1, D50 ≤ 5.2–9.5); биодоступное железо"
+    применение: "обогащение продуктов железом, БАДы"
+исследовательская_группа: null
+стандарты:
+  - BASF CIP grades (EW/HQ/HS/SM)
 версия: реальная
 статус_реальности: real
 доступность: промышленный
@@ -56,3 +77,8 @@ id: material_karbonilnoe_zhelezo
 
 - [Review: fabrication of enhanced-performance magnetorheological fluids using carbonyl iron powder](https://www.researchgate.net/publication/381533557_A_review_of_the_fabrication_of_enhanced-performance_magnetorheological_fluids_using_carbonyl_iron_powder)
 - [Magnetorheological fluid CIP suspension — плотность карбонильного железа 7.86 г/мл](https://www.academia.edu/113188110/The_magnetorheological_fluid_of_carbonyl_iron_suspension_blended_with_grafted_MWCNT_or_graphene)
+- BASF, Carbonyl Iron Powder — General brochure 2024 (сорта HQ/HS/EW/SM по дисперсности, жёсткие и мягкие сорта): https://electronics-electric.basf.com/dam/jcr:bf6b9e08-c9cc-33f3-8080-17021bd324bc/basf/electronics-electric/global/G-EDM-Electronic-Materials/metal-systems/carbonyl-iron-powder/2024-02-21%20CIP-Brochure_General.pdf (проверено 2026-11-06)
+- BASF, CIP for Microwave Absorption (EMI-экранирование и радары, поглощение с 1 ГГц): https://electronics-electric.basf.com/dam/jcr:04cd9254-43b5-3b82-bb41-fc32579b27f1/basf/electronics-electric/global/G-EDM-Electronic-Materials/metal-systems/carbonyl-iron-powder/2024-02-21%20CIP-Brochure_Absorption.pdf (проверено 2026-11-06)
+- BASF, CIP for Inductors (сорт EW: сопротивление >10¹⁰ Ом для SMC-сердечников; сорт HQ — минимальный разброс размеров): https://electronics-electric.basf.com/dam/jcr:05603bc3-a727-35dc-abc2-ad79d1d5bad6/basf/electronics-electric/global/G-EDM-Electronic-Materials/metal-systems/carbonyl-iron-powder/2024-02-21%20CIP-Brochure_Inductor.pdf (проверено 2026-11-06)
+- BASF, CIP for food and nutrition (пищевые сорта D50 5.2–9.5 мкм): https://electronics-electric.basf.com/dam/jcr:a3fdaf3e-8a65-4c55-bcfd-24aadb2f3c9f/basf/electronics-electric/global/G-EDM-Electronic-Materials/metal-systems/carbonyl-iron-powder/2024-10-24-BASF-CIP-for-food-and-nutrition-relevant-applications.pdf (проверено 2026-11-06)
+- Wikipedia, Carbonyl iron (высокоочищенное железо из Fe(CO)₅): https://en.wikipedia.org/wiki/Carbonyl_iron (проверено 2026-11-06)
