@@ -907,19 +907,38 @@ def check_F15d(izdeliya: dict[str, dict]) -> dict:
 
 
 def check_F15g(izdeliya: dict[str, dict]) -> dict:
-    """F15g: габариты родителя ≥ max(дочерних.габариты) по каждой оси.
+    """F15g: ВСЕ дочерние части должны помещаться в родителе.
 
-    v9.49 (переформулирована; ранее искала lifetime_years, которого нет):
-      Семантика: родитель физически вмещает дочерние части, поэтому по каждой
-      оси (l, w, h) родительский габарит должен быть ≥ максимального
-      дочернего габарита по той же оси. Если родитель меньше хотя бы по
-      одной оси — нарушение (дочерняя часть физически не поместится).
+    v9.51 (переформулирована; v9.50 проверяла только max(child) — слишком слабо):
+      Пользователь: 'должны помещаться все части изделия'.
+
+    Два необходимых условия (оба должны выполняться):
+
+    Чек A — объёмный: V(parent) ≥ Σ V(children) × упаковочный_коэффициент
+      - V = l × w × h
+      - упаковочный_коэффициент = 1.15 (15 % зазор на стенки/крепёж/каналы
+        охлаждения; реальные packed плотности 80-90 % для dense packing)
+      - покрывает случай, когда 4 части по 50×50×50 (Σ V = 500000) формально
+        проходят max-check (50<100), но в линию не помещаются (200>100)
+
+    Чек B — индивидуальный: parent.{l,w,h} ≥ max(child.{l,w,h}) по каждой оси
+      - каждый дочерний элемент должен физически влезть в родитель
+        (самый большой дочерний габарит не превышает родительский)
+      - толеранс 2 мм (монтажный зазор)
+
+    Если хотя бы один чек FAIL → нарушение. Каждый чек даёт отдельное
+    нарушение с понятным описанием.
 
     Поле `габариты_mm` (dict с l,w,h) присутствует в 671 файле.
     """
     violations = []
     total = 0
     valid = 0
+
+    # Упаковочный коэффициент: V(parent) должен быть ≥ Σ V(children) × 1.15
+    # (15 % запас на стенки, крепёж, кабельные каналы, тепловые зазоры)
+    PACKING_FACTOR = 1.15
+    AXIS_TOLERANCE_MM = 2.0  # монтажный зазор для чека B
 
     def _to_float(val):
         if val is None:
@@ -929,6 +948,23 @@ def check_F15g(izdeliya: dict[str, dict]) -> dict:
         except (TypeError, ValueError):
             return None
 
+    def _dims(d):
+        """Извлечь (l, w, h) из dict; вернуть None если хоть одно отсутствует."""
+        if not isinstance(d, dict):
+            return None
+        l = _to_float(d.get('l'))
+        w = _to_float(d.get('w'))
+        h = _to_float(d.get('h'))
+        if l is None or w is None or h is None:
+            return None
+        if l <= 0 or w <= 0 or h <= 0:
+            return None
+        return (l, w, h)
+
+    def _volume(dims):
+        l, w, h = dims
+        return l * w * h
+
     for izd_id, data in izdeliya.items():
         children = data.get('дочерние_части', [])
         if not isinstance(children, list) or not children:
@@ -936,21 +972,15 @@ def check_F15g(izdeliya: dict[str, dict]) -> dict:
         parent_basic = data.get('основные', {})
         if not isinstance(parent_basic, dict):
             continue
-        parent_dims = parent_basic.get('габариты_mm')
-        if not isinstance(parent_dims, dict):
+        parent_dims_raw = parent_basic.get('габариты_mm')
+        parent_dims = _dims(parent_dims_raw)
+        if parent_dims is None:
             continue
-        parent_l = _to_float(parent_dims.get('l'))
-        parent_w = _to_float(parent_dims.get('w'))
-        parent_h = _to_float(parent_dims.get('h'))
-        if parent_l is None or parent_w is None or parent_h is None:
-            continue
+        parent_l, parent_w, parent_h = parent_dims
+        parent_volume = _volume(parent_dims)
 
-        total += 1
-        # Найти max дочерних габаритов по каждой оси
-        max_child_l = 0.0
-        max_child_w = 0.0
-        max_child_h = 0.0
-        counted = 0
+        # Собрать все дочерние габариты
+        child_dims_list = []  # list of (child_id, (l, w, h))
         for child_id in children:
             if not isinstance(child_id, str) or child_id not in izdeliya:
                 continue
@@ -958,37 +988,51 @@ def check_F15g(izdeliya: dict[str, dict]) -> dict:
             child_basic = child_data.get('основные', {})
             if not isinstance(child_basic, dict):
                 continue
-            child_dims = child_basic.get('габариты_mm')
-            if not isinstance(child_dims, dict):
+            cd = _dims(child_basic.get('габариты_mm'))
+            if cd is None:
                 continue
-            cl = _to_float(child_dims.get('l'))
-            cw = _to_float(child_dims.get('w'))
-            ch = _to_float(child_dims.get('h'))
-            if cl is None or cw is None or ch is None:
-                continue
-            max_child_l = max(max_child_l, cl)
-            max_child_w = max(max_child_w, cw)
-            max_child_h = max(max_child_h, ch)
-            counted += 1
+            child_dims_list.append((child_id, cd))
 
-        if counted == 0:
-            valid += 1
-            continue
+        if not child_dims_list:
+            continue  # нет данных у дочерних — пропускаем
 
-        # толеранс 2 мм (монтажный зазор)
-        tol = 2.0
+        total += 1
+
+        # Чек A: объёмный — Σ V(children) ≤ V(parent) / PACKING_FACTOR
+        sum_child_volume = sum(_volume(cd) for _, cd in child_dims_list)
+        max_allowed_child_volume = parent_volume / PACKING_FACTOR
+        volume_violation = sum_child_volume > max_allowed_child_volume
+
+        # Чек B: индивидуальный — parent.{l,w,h} ≥ max(child.{l,w,h})
+        max_child_l = max(cd[0] for _, cd in child_dims_list)
+        max_child_w = max(cd[1] for _, cd in child_dims_list)
+        max_child_h = max(cd[2] for _, cd in child_dims_list)
         bad_axes = []
-        if parent_l + tol < max_child_l:
+        if parent_l + AXIS_TOLERANCE_MM < max_child_l:
             bad_axes.append(f"l: parent={parent_l}, max_child={max_child_l}")
-        if parent_w + tol < max_child_w:
+        if parent_w + AXIS_TOLERANCE_MM < max_child_w:
             bad_axes.append(f"w: parent={parent_w}, max_child={max_child_w}")
-        if parent_h + tol < max_child_h:
+        if parent_h + AXIS_TOLERANCE_MM < max_child_h:
             bad_axes.append(f"h: parent={parent_h}, max_child={max_child_h}")
-        if bad_axes:
+        axis_violation = bool(bad_axes)
+
+        # Формируем violation (если есть)
+        if volume_violation or axis_violation:
+            parts = []
+            if volume_violation:
+                parts.append(
+                    f"объём: V(parent)={parent_volume:.0f} < Σ V(детей)×{PACKING_FACTOR}="
+                    f"{sum_child_volume * PACKING_FACTOR:.0f} "
+                    f"(Σ V детей={sum_child_volume:.0f})"
+                )
+            if axis_violation:
+                parts.append(
+                    "габариты по осям: parent < max(детей) — "
+                    + "; ".join(bad_axes)
+                )
             violations.append(
-                f"{izd_id}: габариты родителя меньше max дочерних по осям: "
-                + "; ".join(bad_axes)
-                + f" ({counted}/{len(children)} дочерних с данными)"
+                f"{izd_id}: {'; '.join(parts)} "
+                f"({len(child_dims_list)}/{len(children)} детей с габаритами)"
             )
         else:
             valid += 1
@@ -996,7 +1040,8 @@ def check_F15g(izdeliya: dict[str, dict]) -> dict:
     ratio = valid / max(1, total)
     return {
         'metric': 'F15g',
-        'description': 'габариты_mm родителя ≥ max(дочерних.габариты) по каждой оси — физическая вложимость',
+        'description': (f'ВСЕ дочерние части помещаются: V(parent) ≥ Σ V(детей)×{PACKING_FACTOR} '
+                        'И parent.{l,w,h} ≥ max(детей.{l,w,h})'),
         'total': total,
         'valid': valid,
         'ratio': round(ratio, 4),
