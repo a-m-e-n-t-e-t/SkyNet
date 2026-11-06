@@ -2,166 +2,166 @@
 
 ```mermaid
 graph LR
-    izdelie_hasel[прочее]
+    izdelie_zubchataya_mufta[прочее]
+    izdelie_povorotnoe_uplotnenie[прочее]
+    izdelie_ipmc[прочее]
     izdelie_fleksury_8_diskov_po_0_15_mm[прочее]
     izdelie_bldc[прочее]
-    izdelie_zubchataya_mufta[прочее]
-    izdelie_ipmc[прочее]
-    izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena[прочее]
-    izdelie_3d_pechatnye_dea[прочее]
-    izdelie_dea[прочее]
     izdelie_bldc_enkoder[прочее]
+    izdelie_tcp[прочее]
+    izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena[прочее]
+    izdelie_elektroflyuidnye_volokna_mit[прочее]
+    izdelie_dea[прочее]
     izdelie_pezoelektricheskii_gromkogovoritel[прочее]
+    izdelie_hasel[прочее]
+    izdelie_3d_pechatnye_dea[прочее]
     izdelie_belleville_shaiby[прочее]
     izdelie_apa[прочее]
-    izdelie_tsa[прочее]
-    izdelie_povorotnoe_uplotnenie[прочее]
     izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov[прочее]
-    izdelie_tcp[прочее]
-    izdelie_elektroflyuidnye_volokna_mit[прочее]
-    часть_hasel_housing[корпус]
-    часть_hasel_connectors[разъёмы]
-    часть_hasel_mounting[крепёж]
-    часть_hasel_core[основной_элемент]
-    часть_fleksury_8_diskov_po_0_15_mm_housing[корпус]
-    часть_fleksury_8_diskov_po_0_15_mm_mounting[крепёж]
-    часть_fleksury_8_diskov_po_0_15_mm_connectors[разъёмы]
-    часть_fleksury_8_diskov_po_0_15_mm_core[основной_элемент]
-    часть_bldc_mounting[крепёж]
-    часть_bldc_core[основной_элемент]
-    часть_bldc_connectors[разъёмы]
-    часть_bldc_housing[корпус]
-    часть_zubchataya_mufta_core[основной_элемент]
-    часть_zubchataya_mufta_mounting[крепёж]
-    часть_zubchataya_mufta_housing[корпус]
+    izdelie_tsa[прочее]
     часть_zubchataya_mufta_connectors[разъёмы]
-    часть_ipmc_housing[корпус]
+    часть_zubchataya_mufta_mounting[крепёж]
+    часть_zubchataya_mufta_core[основной_элемент]
+    часть_zubchataya_mufta_housing[корпус]
+    часть_povorotnoe_uplotnenie_housing[корпус]
+    часть_povorotnoe_uplotnenie_mounting[крепёж]
+    часть_povorotnoe_uplotnenie_connectors[разъёмы]
+    часть_povorotnoe_uplotnenie_core[основной_элемент]
     часть_ipmc_core[основной_элемент]
-    часть_ipmc_connectors[разъёмы]
     часть_ipmc_mounting[крепёж]
-    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing[корпус]
-    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting[крепёж]
-    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors[разъёмы]
-    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core[основной_элемент]
-    часть_3d_pechatnye_dea_housing[корпус]
-    часть_3d_pechatnye_dea_mounting[крепёж]
-    часть_3d_pechatnye_dea_connectors[разъёмы]
-    часть_3d_pechatnye_dea_core[основной_элемент]
-    часть_dea_connectors[разъёмы]
-    часть_dea_mounting[крепёж]
-    часть_dea_housing[корпус]
-    часть_dea_core[основной_элемент]
+    часть_ipmc_connectors[разъёмы]
+    часть_ipmc_housing[корпус]
+    часть_fleksury_8_diskov_po_0_15_mm_connectors[разъёмы]
+    часть_fleksury_8_diskov_po_0_15_mm_mounting[крепёж]
+    часть_fleksury_8_diskov_po_0_15_mm_core[основной_элемент]
+    часть_fleksury_8_diskov_po_0_15_mm_housing[корпус]
+    часть_bldc_connectors[разъёмы]
+    часть_bldc_core[основной_элемент]
+    часть_bldc_housing[корпус]
+    часть_bldc_mounting[крепёж]
     часть_bldc_enkoder_core[основной_элемент]
     часть_bldc_enkoder_housing[корпус]
-    часть_bldc_enkoder_connectors[разъёмы]
     часть_bldc_enkoder_mounting[крепёж]
-    часть_pezoelektricheskii_gromkogovoritel_connectors[разъёмы]
+    часть_bldc_enkoder_connectors[разъёмы]
+    часть_tcp_core[основной_элемент]
+    часть_tcp_housing[корпус]
+    часть_tcp_mounting[крепёж]
+    часть_tcp_connectors[разъёмы]
+    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting[крепёж]
+    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing[корпус]
+    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors[разъёмы]
+    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core[основной_элемент]
+    часть_elektroflyuidnye_volokna_mit_core[основной_элемент]
+    часть_elektroflyuidnye_volokna_mit_housing[корпус]
+    часть_elektroflyuidnye_volokna_mit_connectors[разъёмы]
+    часть_elektroflyuidnye_volokna_mit_mounting[крепёж]
+    часть_dea_mounting[крепёж]
+    часть_dea_connectors[разъёмы]
+    часть_dea_core[основной_элемент]
+    часть_dea_housing[корпус]
     часть_pezoelektricheskii_gromkogovoritel_housing[корпус]
-    часть_pezoelektricheskii_gromkogovoritel_core[основной_элемент]
+    часть_pezoelektricheskii_gromkogovoritel_connectors[разъёмы]
     часть_pezoelektricheskii_gromkogovoritel_mounting[крепёж]
-    часть_belleville_shaiby_housing[корпус]
-    часть_belleville_shaiby_connectors[разъёмы]
+    часть_pezoelektricheskii_gromkogovoritel_core[основной_элемент]
+    часть_hasel_housing[корпус]
+    часть_hasel_core[основной_элемент]
+    часть_hasel_mounting[крепёж]
+    часть_hasel_connectors[разъёмы]
+    часть_3d_pechatnye_dea_core[основной_элемент]
+    часть_3d_pechatnye_dea_connectors[разъёмы]
+    часть_3d_pechatnye_dea_housing[корпус]
+    часть_3d_pechatnye_dea_mounting[крепёж]
     часть_belleville_shaiby_mounting[крепёж]
     часть_belleville_shaiby_core[основной_элемент]
+    часть_belleville_shaiby_housing[корпус]
+    часть_belleville_shaiby_connectors[разъёмы]
+    часть_apa_connectors[разъёмы]
     часть_apa_housing[корпус]
     часть_apa_mounting[крепёж]
     часть_apa_core[основной_элемент]
-    часть_apa_connectors[разъёмы]
-    часть_tsa_housing[корпус]
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting[крепёж]
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing[корпус]
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors[разъёмы]
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core[основной_элемент]
     часть_tsa_core[основной_элемент]
     часть_tsa_connectors[разъёмы]
+    часть_tsa_housing[корпус]
     часть_tsa_mounting[крепёж]
-    часть_povorotnoe_uplotnenie_mounting[крепёж]
-    часть_povorotnoe_uplotnenie_core[основной_элемент]
-    часть_povorotnoe_uplotnenie_housing[корпус]
-    часть_povorotnoe_uplotnenie_connectors[разъёмы]
-    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors[разъёмы]
-    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing[корпус]
-    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core[основной_элемент]
-    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting[крепёж]
-    часть_tcp_housing[корпус]
-    часть_tcp_core[основной_элемент]
-    часть_tcp_mounting[крепёж]
-    часть_tcp_connectors[разъёмы]
-    часть_elektroflyuidnye_volokna_mit_core[основной_элемент]
-    часть_elektroflyuidnye_volokna_mit_housing[корпус]
-    часть_elektroflyuidnye_volokna_mit_mounting[крепёж]
-    часть_elektroflyuidnye_volokna_mit_connectors[разъёмы]
+    часть_hk_tank_гусеница_левая[tank_track]
+    часть_t_x_рука_левая[servo_arm]
+    часть_t_x_нога_левая[servo_leg]
     часть_t600_нога_левая[servo_leg]
     часть_t600_рука_левая[servo_arm]
-    часть_t800_рука_левая[servo_arm]
-    часть_t800_нога_левая[servo_leg]
     часть_marcus_рука_левая[servo_arm]
     часть_marcus_нога_левая[servo_leg]
     часть_cameron_рука_левая[servo_arm_small]
     часть_cameron_нога_левая[servo_leg_small]
+    часть_t800_нога_левая[servo_leg]
+    часть_t800_рука_левая[servo_arm]
     часть_t850_рука_левая[servo_arm_improved]
     часть_t850_нога_левая[servo_leg_improved]
-    часть_hk_tank_гусеница_левая[tank_track]
-    часть_t_x_нога_левая[servo_leg]
-    часть_t_x_рука_левая[servo_arm]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
     material_copper[Cu ≥99.9% (электролити…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
-    часть_hasel_housing -->|материал| material_al_6061_t6
-    часть_fleksury_8_diskov_po_0_15_mm_housing -->|материал| material_al_6061_t6
-    часть_fleksury_8_diskov_po_0_15_mm_connectors -->|материал| material_latun_c36000
-    часть_bldc_mounting -->|материал| material_al_6061_t6
-    часть_bldc_core -->|материал| material_al_6061_t6
-    часть_bldc_connectors -->|материал| material_al_6061_t6
-    часть_bldc_housing -->|материал| material_al_6061_t6
-    часть_zubchataya_mufta_core -->|материал| material_stal_st3
-    часть_zubchataya_mufta_mounting -->|материал| material_stal_st3
-    часть_zubchataya_mufta_housing -->|материал| material_al_6061_t6
     часть_zubchataya_mufta_connectors -->|материал| material_al_6061_t6
-    часть_ipmc_housing -->|материал| material_al_6061_t6
+    часть_zubchataya_mufta_mounting -->|материал| material_stal_st3
+    часть_zubchataya_mufta_core -->|материал| material_stal_st3
+    часть_zubchataya_mufta_housing -->|материал| material_al_6061_t6
+    часть_povorotnoe_uplotnenie_housing -->|материал| material_al_6061_t6
+    часть_povorotnoe_uplotnenie_mounting -->|материал| material_stal_st3
+    часть_povorotnoe_uplotnenie_connectors -->|материал| material_al_6061_t6
     часть_ipmc_mounting -->|материал| material_latun_c36000
-    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing -->|материал| material_al_6061_t6
-    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting -->|материал| material_al_6061_t6
-    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors -->|материал| material_al_6061_t6
-    часть_dea_connectors -->|материал| material_latun_c36000
-    часть_dea_mounting -->|материал| material_al_6061_t6
-    часть_dea_housing -->|материал| material_al_6061_t6
+    часть_ipmc_housing -->|материал| material_al_6061_t6
+    часть_fleksury_8_diskov_po_0_15_mm_connectors -->|материал| material_latun_c36000
+    часть_fleksury_8_diskov_po_0_15_mm_housing -->|материал| material_al_6061_t6
+    часть_bldc_connectors -->|материал| material_al_6061_t6
+    часть_bldc_core -->|материал| material_al_6061_t6
+    часть_bldc_housing -->|материал| material_al_6061_t6
+    часть_bldc_mounting -->|материал| material_al_6061_t6
     часть_bldc_enkoder_core -->|материал| material_al_6061_t6
     часть_bldc_enkoder_housing -->|материал| material_al_6061_t6
-    часть_bldc_enkoder_connectors -->|материал| material_al_6061_t6
     часть_bldc_enkoder_mounting -->|материал| material_stal_st3
-    часть_pezoelektricheskii_gromkogovoritel_connectors -->|материал| material_latun_c36000
+    часть_bldc_enkoder_connectors -->|материал| material_al_6061_t6
+    часть_tcp_housing -->|материал| material_al_6061_t6
+    часть_tcp_mounting -->|материал| material_al_6061_t6
+    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting -->|материал| material_al_6061_t6
+    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing -->|материал| material_al_6061_t6
+    часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors -->|материал| material_al_6061_t6
+    часть_elektroflyuidnye_volokna_mit_housing -->|материал| material_al_6061_t6
+    часть_dea_mounting -->|материал| material_al_6061_t6
+    часть_dea_connectors -->|материал| material_latun_c36000
+    часть_dea_housing -->|материал| material_al_6061_t6
     часть_pezoelektricheskii_gromkogovoritel_housing -->|материал| material_al_6061_t6
-    часть_pezoelektricheskii_gromkogovoritel_core -->|материал| material_latun_c36000
+    часть_pezoelektricheskii_gromkogovoritel_connectors -->|материал| material_latun_c36000
     часть_pezoelektricheskii_gromkogovoritel_mounting -->|материал| material_latun_c36000
-    часть_belleville_shaiby_housing -->|материал| material_al_6061_t6
+    часть_pezoelektricheskii_gromkogovoritel_core -->|материал| material_latun_c36000
+    часть_hasel_housing -->|материал| material_al_6061_t6
     часть_belleville_shaiby_core -->|материал| material_stal_st3
+    часть_belleville_shaiby_housing -->|материал| material_al_6061_t6
+    часть_apa_connectors -->|материал| material_al_6061_t6
     часть_apa_housing -->|материал| material_al_6061_t6
     часть_apa_mounting -->|материал| material_al_6061_t6
     часть_apa_core -->|материал| material_ti_6al_4v
-    часть_apa_connectors -->|материал| material_al_6061_t6
-    часть_tsa_housing -->|материал| material_al_6061_t6
-    часть_tsa_connectors -->|материал| material_al_6061_t6
-    часть_tsa_mounting -->|материал| material_al_6061_t6
-    часть_povorotnoe_uplotnenie_mounting -->|материал| material_stal_st3
-    часть_povorotnoe_uplotnenie_housing -->|материал| material_al_6061_t6
-    часть_povorotnoe_uplotnenie_connectors -->|материал| material_al_6061_t6
-    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors -->|материал| material_al_6061_t6
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing -->|материал| material_al_6061_t6
+    часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors -->|материал| material_al_6061_t6
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core -->|материал| material_copper
-    часть_tcp_housing -->|материал| material_al_6061_t6
-    часть_tcp_mounting -->|материал| material_al_6061_t6
-    часть_elektroflyuidnye_volokna_mit_housing -->|материал| material_al_6061_t6
+    часть_tsa_connectors -->|материал| material_al_6061_t6
+    часть_tsa_housing -->|материал| material_al_6061_t6
+    часть_tsa_mounting -->|материал| material_al_6061_t6
+    часть_t_x_рука_левая -->|материал| material_ti_6al_4v
+    часть_t_x_нога_левая -->|материал| material_ti_6al_4v
     часть_t600_нога_левая -->|материал| material_ti_6al_4v
     часть_t600_рука_левая -->|материал| material_ti_6al_4v
-    часть_t800_рука_левая -->|материал| material_ti_6al_4v
-    часть_t800_нога_левая -->|материал| material_ti_6al_4v
     часть_marcus_рука_левая -->|материал| material_ti_6al_4v
     часть_marcus_нога_левая -->|материал| material_ti_6al_4v
     часть_cameron_рука_левая -->|материал| material_ti_6al_4v
     часть_cameron_нога_левая -->|материал| material_ti_6al_4v
+    часть_t800_нога_левая -->|материал| material_ti_6al_4v
+    часть_t800_рука_левая -->|материал| material_ti_6al_4v
     часть_t850_рука_левая -->|материал| material_ti_6al_4v
     часть_t850_нога_левая -->|материал| material_ti_6al_4v
-    часть_t_x_нога_левая -->|материал| material_ti_6al_4v
-    часть_t_x_рука_левая -->|материал| material_ti_6al_4v
 ```
 
 _Показаны 5 наиболее часто используемых материалов (полный список — в graph1_data.json)._
@@ -177,9 +177,9 @@ _Показаны 5 наиболее часто используемых мат�
 | `Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)` | 3 |
 | `нержавеющая сталь AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240)` | 3 |
 | `Полидиметилсилоксан (PDMS, VMQ): основа –[Si(CH₃)₂–O]ₙ– с винильными сшивочными группами (~0.05–0.5 мол. %), наполнитель — пирогенный кремнезём SiO₂ 10–30 мас.% (типа HDK®), вулканизация пероксидная (HCR-марки) или платиновая присоединительная (RTV-2/LSR)` | 2 |
-| `PEEK — полиэфирэфиркетон (PAEK): повторяющееся звено (C19H12O3)n, M = 288.3 г/моль; синтез из 4,4′-дифторбензофенона и динатриевой соли гидрохинона в дифенилсульфоне при ~300 °C` | 1 |
-| `Терполимер P(VDF-TrFE-CFE): звенья винилиденфторида CH2=CF2 (VDF), трифторэтилена CHF=CF2 (TrFE) и хлорфтормонофторэтилена (CFE); типовой состав 64.8/27.4/7.8 мол.% (J. Materiomics 2023); промышленная марка Piezotech RT-FS (Arkema)` | 1 |
+| `трёхслойный металл-полимерный композит (DU-тип): низкоуглеродистая сталь (подложка 0.7–2.0 мм, Cu/Sn-плакировка) + спечённая пористая бронза (промежуточный слой 0.20–0.35 мм) + рабочий слой PTFE с наполнителями 0.01–0.03 мм (бессвинцовые марки DU-B/lead-free; классический DU — PTFE+Pb)` | 1 |
 | `UV-отверждаемая полиуретанакрилатная сеть (PUA) 25 масс. % + ионная жидкость [EMIM][TFSI] 75 масс. % (оптимум Han 2021)` | 1 |
 | `Гибкий слоистый композит: ткань из E-стекла (алюмоборосиликатное волокно, σрасч ≥1100 МПа по волокну), покрытая с одной/двух сторон вулканизованной силиконовой резиной (полидиметилсилоксан, PDMS, метил/метилфенил-каучук с оксидными наполнителями). Поверхностная плотность ткани 350–1800 г/м², покрытия 80–2000 г/м², суммарная 350–3000 г/м²` | 1 |
+| `Ионная жидкость [EMIM][TFSI]` | 1 |
 | `PDMS — полидиметилсилоксан (эталонная система Dow SYLGARD 184: двухкомпонентный силиконовый эластомер 10:1, ненаполненный, прозрачный)` | 1 |
-| `100Cr6 (ISO 683-17) / AISI 52100 / ГОСТ ШХ15: C 0.95–1.10 %, Cr 1.35–1.65 %, Mn 0.25–0.45 %, Si 0.15–0.35 %` | 1 |
+| `Терполимер P(VDF-TrFE-CFE): звенья винилиденфторида CH2=CF2 (VDF), трифторэтилена CHF=CF2 (TrFE) и хлорфтормонофторэтилена (CFE); типовой состав 64.8/27.4/7.8 мол.% (J. Materiomics 2023); промышленная марка Piezotech RT-FS (Arkema)` | 1 |

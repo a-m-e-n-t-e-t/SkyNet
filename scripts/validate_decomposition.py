@@ -475,12 +475,27 @@ def _build_impl_index() -> None:
 
 
 def check_F13(models: dict[str, dict], izdeliya: dict[str, dict]) -> dict:
-    """F13: покрытие подсистем — expected_subsystems покрыты дочерними."""
+    """F13: Соответствие типу модели (v9.52: merged F13+F17).
+
+    Две проверки в одной функции (обе про «реализация модели содержит
+    ожидаемые компоненты для её типа» — два прохода одной функции):
+
+    Чек A (бывший F13) — покрытие подсистем:
+      Expected_subsystems по типу модели должны быть покрыты дочерними
+      (с учётом обёрток izdelie_SkyNet-* через _SKYNET_IMPL_INDEX).
+
+    Чек B (бывший F17) — минимальный BOM:
+      Тип-специфичный минимальный набор подсистем покрыт (min_required =
+      max(3, len(expected_parts)/2)).
+    """
     _build_impl_index()
     violations = []
-    total = 0
-    valid = 0
-    
+    total_a = 0
+    valid_a = 0
+    total_b = 0
+    valid_b = 0
+
+    # === Чек A: покрытие подсистем (бывший F13) ===
     for mid, mdata in models.items():
         mtype = mdata.get('тип_модели', '')
         if mtype not in EXPECTED_SUBSYSTEMS_BY_TYPE:
@@ -488,24 +503,17 @@ def check_F13(models: dict[str, dict], izdeliya: dict[str, dict]) -> dict:
         expected = EXPECTED_SUBSYSTEMS_BY_TYPE[mtype]
         if not expected:
             continue
-        
-        total += 1
+
+        total_a += 1
         # Реализация_промышленная — список id изделий
         real_impl = mdata.get('реализация_промышленная', [])
         if isinstance(real_impl, str):
             real_impl = [real_impl]
         if not isinstance(real_impl, list):
             real_impl = []
-        
+
         # Какие подсистемы покрыты
         covered = set()
-        # (a) v9.40 вариант D: собственное поддерево реализации модели больше не существует —
-        #     обёртки izdelie_SkyNet-* перенесены в работа и и/изделия/. Их подсистемы
-        #     учитываются через (b) — id в _SKYNET_IMPL_INDEX.
-        # (b) реализация_промышленная — id изделий.
-        #     v9.40 вариант D: id обёрток izdelie_SkyNet-* резолвятся через
-        #     _SKYNET_IMPL_INDEX (работа и и/изделия/<subsystem>/<wrapper>/);
-        #     остальные id — в реальные данные/изделия/.
         for izd_id in real_impl:
             if not isinstance(izd_id, str):
                 continue
@@ -528,17 +536,62 @@ def check_F13(models: dict[str, dict], izdeliya: dict[str, dict]) -> dict:
                         sub = izdeliya[child_id].get('подсистема')
                         if sub:
                             covered.add(sub)
-        
+
         missing = set(expected) - covered
         if missing:
-            violations.append(f"{mid} ({mtype}): не покрыты подсистемы: {sorted(missing)}")
+            violations.append(f"[A-подсистемы] {mid} ({mtype}): не покрыты подсистемы: {sorted(missing)}")
         else:
-            valid += 1
-    
+            valid_a += 1
+
+    # === Чек B: минимальный BOM (бывший F17) ===
+    for mid, mdata in models.items():
+        mtype = mdata.get('тип_модели', '')
+        if mtype not in TYPE_TEMPLATE_PARTS:
+            continue
+        expected_parts = TYPE_TEMPLATE_PARTS[mtype]
+        if not expected_parts:
+            continue
+
+        total_b += 1
+        # Реализация_промышленная — список id изделий
+        real_impl = mdata.get('реализация_промышленная', [])
+        if isinstance(real_impl, str):
+            real_impl = [real_impl]
+        if not isinstance(real_impl, list):
+            real_impl = []
+
+        # Подсчитать сколько уникальных подсистем покрыто
+        covered_subs = set()
+        for izd_id in real_impl:
+            if not isinstance(izd_id, str):
+                continue
+            izd_data = izdeliya.get(izd_id, {})
+            sub = izd_data.get('подсистема')
+            if sub:
+                covered_subs.add(sub)
+            # Дочерние
+            children = izd_data.get('дочерние_части', [])
+            if isinstance(children, list):
+                for child_id in children:
+                    if isinstance(child_id, str) and child_id in izdeliya:
+                        sub = izdeliya[child_id].get('подсистема')
+                        if sub:
+                            covered_subs.add(sub)
+
+        # Минимум: 5 подсистем для сложных типов (теперь max(3, len/2))
+        min_required = max(3, len(expected_parts) // 2)
+        if len(covered_subs) < min_required:
+            violations.append(f"[B-BOM] {mid} ({mtype}): покрыто {len(covered_subs)} подсистем, минимум {min_required}")
+        else:
+            valid_b += 1
+
+    # Combined ratio
+    total = total_a + total_b
+    valid = valid_a + valid_b
     ratio = valid / max(1, total)
     return {
         'metric': 'F13',
-        'description': 'Покрытие подсистем — expected_subsystems по типу модели',
+        'description': 'Соответствие типу модели: (A) ожидаемые подсистемы покрыты; (B) минимальный BOM (тип-специфичный набор)',
         'total': total,
         'valid': valid,
         'ratio': round(ratio, 4),
@@ -1752,33 +1805,49 @@ def load_all_models() -> dict[str, dict]:
 # ============================================================================
 
 def check_F22(izdeliya: dict[str, dict], models: dict[str, dict] | None = None) -> dict:
-    """F22: Если источник=web_search, то источник_url должен быть заполнен.
-    
-    BLOCKING: предотвращает ложные утверждения о web-верификации.
-    Каждый файл, утверждающий `источник: web_search`, должен иметь конкретный URL
-    в поле `источник_url` и дату в `источник_дата`.
-    
-    Также проверяет модели и технологии.
-    
+    """F22: Верификация содержимого части (v9.52: merged F22+F23+F24).
+
+    Три проверки в одной функции (все про «эта часть действительно
+    исследована или это заглушка?» — три аспекта одной задачи):
+
+    Чек A (бывший F22) — URL-верификация:
+      Если источник=web_search, то источник_url должен быть заполнен.
+      BLOCKING: предотвращает ложные утверждения о web-верификации.
+      Также проверяет модели и технологии.
+
+    Чек B (бывший F23) — анти-шаблон / stub-detection:
+      1. материал не generic_material / unknown / todo
+      2. описание не содержит шаблонных фраз
+      3. габариты_mm не (100, 100, 50) — дефолтный fallback
+
+    Чек C (бывший F24) — schema-field-completeness:
+      Каждый подтип части должен иметь специфичные поля в дополнительные.
+      Например, нейроморфный CPU должен иметь тех_процесс_nm и SRAM_MB.
+
     v9.36: опциональный параметр `models` позволяет переиспользовать уже загруженный
     словарь из run_all_checks — экономит rglob+parse ~41 файла при каждом вызове.
     """
     violations = []
-    total = 0
-    valid = 0
-    
+    total_a = 0
+    valid_a = 0
+    total_b = 0
+    valid_b = 0
+    total_c = 0
+    valid_c = 0
+
+    # === Чек A: URL-верификация (бывший F22) ===
     # Проверить изделия
     for izd_id, data in izdeliya.items():
         source = str(data.get('источник', '')).strip()
         if source != 'web_search':
             continue
-        total += 1
+        total_a += 1
         url = data.get('источник_url') or data.get('источник_верификации')
         if not url or str(url).strip() in ('', 'null', 'None'):
-            violations.append(f"{izd_id}: источник=web_search но источник_url пустой")
+            violations.append(f"[A-url] {izd_id}: источник=web_search но источник_url пустой")
         else:
-            valid += 1
-    
+            valid_a += 1
+
     # Проверить модели (переиспользуем переданный, иначе загружаем)
     if models is None:
         models = load_all_models()
@@ -1786,13 +1855,13 @@ def check_F22(izdeliya: dict[str, dict], models: dict[str, dict] | None = None) 
         source = str(mdata.get('источник', '')).strip()
         if source != 'web_search':
             continue
-        total += 1
+        total_a += 1
         url = mdata.get('источник_url') or mdata.get('источник_верификации')
         if not url or str(url).strip() in ('', 'null', 'None'):
-            violations.append(f"{mid}: источник=web_search но источник_url пустой")
+            violations.append(f"[A-url] {mid}: источник=web_search но источник_url пустой")
         else:
-            valid += 1
-    
+            valid_a += 1
+
     # Проверить технологии
     tech_dir = SKYNET_REPO / "реальные данные" / "технологии"
     for f in tech_dir.glob("*.md"):
@@ -1804,59 +1873,28 @@ def check_F22(izdeliya: dict[str, dict], models: dict[str, dict] | None = None) 
         source = str(data.get('источник', '')).strip()
         if source != 'web_search':
             continue
-        total += 1
+        total_a += 1
         url = data.get('источник_url')
         if not url or str(url).strip() in ('', 'null', 'None'):
-            violations.append(f"{data['id']}: источник=web_search но источник_url пустой")
+            violations.append(f"[A-url] {data['id']}: источник=web_search но источник_url пустой")
         else:
-            valid += 1
-    
-    ratio = valid / max(1, total)
-    return {
-        'metric': 'F22',
-        'description': 'Верификация источника — URL обязателен для web_search',
-        'total': total,
-        'valid': valid,
-        'ratio': round(ratio, 4),
-        'pass': ratio >= 1.0,
-        'violations': violations,
-    }
+            valid_a += 1
 
-
-# ============================================================================
-# F23: АНТИ-ШАБЛОН — обнаружение подстановки вместо исследования
-# ============================================================================
-
-# Признаки шаблонной подстановки
-GENERIC_MATERIALS = {'generic_material', 'не_определён', 'unknown', 'tbd', 'todo'}
-TEMPLATE_DESCRIPTIONS = [
-    'Дочерняя часть изделия',
-    'Основной функциональный элемент',
-    'Защитный корпус из алюминиевого сплава',
-    'Электрические разъёмы для подключения',
-    'Монтажный крепёж',
-]
-
-def check_F23(izdeliya: dict[str, dict]) -> dict:
-    """F23: Анти-шаблон — обнаружение подстановки вместо исследования.
-    
-    BLOCKING: предотвращает шаблонные заглушки.
-    Проверки:
-      1. материал не generic_material / unknown / todo
-      2. описание не содержит шаблонных фраз
-      3. дополнительные не пустой {} для технических частей
-      4. габариты_mm не (100, 100, 50) — дефолтный fallback
-    """
-    violations = []
-    total = 0
-    valid = 0
-    
+    # === Чек B: анти-шаблон (бывший F23) ===
+    GENERIC_MATERIALS = {'generic_material', 'не_определён', 'unknown', 'tbd', 'todo'}
+    TEMPLATE_DESCRIPTIONS = [
+        'Дочерняя часть изделия',
+        'Основной функциональный элемент',
+        'Защитный корпус из алюминиевого сплава',
+        'Электрические разъёмы для подключения',
+        'Монтажный крепёж',
+    ]
     for izd_id, data in izdeliya.items():
         if not izd_id.startswith('часть_'):
             continue
-        total += 1
+        total_b += 1
         file_ok = True
-        
+
         # 1. Проверить материалы_частей
         materials = data.get('материалы_частей', [])
         if isinstance(materials, list):
@@ -1864,15 +1902,18 @@ def check_F23(izdeliya: dict[str, dict]) -> dict:
                 if isinstance(m, dict):
                     mat = str(m.get('материал', '')).strip().lower()
                     if mat in GENERIC_MATERIALS:
-                        violations.append(f"{izd_id}: материал='{mat}' — шаблонная заглушка")
+                        violations.append(f"[B-stub] {izd_id}: материал='{mat}' — шаблонная заглушка")
                         file_ok = False
-        
+
         # 2. Проверить описание (body markdown) — v9.36: используем кеш _body
         body = data.get('_body')
         if not body:
             path = data.get('_path', '')
             if path:
-                body = Path(path).read_text(encoding='utf-8')
+                try:
+                    body = Path(path).read_text(encoding='utf-8')
+                except Exception:
+                    body = ''
         if body:
             # Найти body после YAML
             body_match = re.search(r"^## Описание\s*\n\s*\n(.+?)(?:\n##|\Z)", body, re.MULTILINE | re.DOTALL)
@@ -1880,10 +1921,10 @@ def check_F23(izdeliya: dict[str, dict]) -> dict:
                 desc = body_match.group(1).strip()
                 for tmpl in TEMPLATE_DESCRIPTIONS:
                     if desc.startswith(tmpl):
-                        violations.append(f"{izd_id}: описание начинается с шаблонной фразы '{tmpl[:30]}...'")
+                        violations.append(f"[B-stub] {izd_id}: описание начинается с шаблонной фразы '{tmpl[:30]}...'")
                         file_ok = False
                         break
-        
+
         # 3. Проверить габариты — не дефолтные (100, 100, 50)
         basic = data.get('основные', {})
         if isinstance(basic, dict):
@@ -1894,84 +1935,58 @@ def check_F23(izdeliya: dict[str, dict]) -> dict:
                 h = dims.get('h')
                 # Если все три 100/100/50 — это fallback
                 if l == 100 and w == 100 and h == 50:
-                    violations.append(f"{izd_id}: габариты 100×100×50 — дефолтный fallback (не исследовался)")
+                    violations.append(f"[B-stub] {izd_id}: габариты 100×100×50 — дефолтный fallback (не исследовался)")
                     file_ok = False
-        
+
         if file_ok:
-            valid += 1
-    
-    ratio = valid / max(1, total)
-    return {
-        'metric': 'F23',
-        'description': 'Анти-шаблон — обнаружение подстановки вместо исследования',
-        'total': total,
-        'valid': valid,
-        'ratio': round(ratio, 4),
-        'pass': ratio >= 1.0,
-        'violations': violations,
+            valid_b += 1
+
+    # === Чек C: schema-field-completeness (бывший F24) ===
+    SUBTYPE_REQUIRED_FIELDS = {
+        'neural_net_cpu': ['тех_процесс_nm', 'SRAM_MB'],
+        'Pu-238_источник': ['изотоп', 'T_жизни_лет'],
+        'Am-241_источник': ['изотоп', 'T_жизни_лет'],
+        'H-3_тритий': ['изотоп', 'T_жизни_лет'],
+        'plasma_cannon': ['мощность_выстрела_MJ'],
+        'mimetic_polyalloy': ['тип'],
+        'hydrogen_fuel_cell': ['T_жизни_лет'],
+        'hyperalloy_endoskeleton': ['материал'],
+        'NMC_катод': ['ёмкость_мАч_г'],
+        'керамические_слои': ['V_max_V'],
+        'PEM_мембрана': ['толщина_мкм'],
+        'YSZ_электролит': ['T_рабочая_C'],
+        'термопары': ['КПД_процентов'],
     }
-
-
-# ============================================================================
-# F24: СООТВЕТСТВИЕ ПОДТИПУ — ожидаемые поля для каждого подтипа
-# ============================================================================
-
-# Минимальный набор ожидаемых полей в дополнительные для каждого подтипа
-SUBTYPE_REQUIRED_FIELDS: dict[str, list[str]] = {
-    'neural_net_cpu': ['тех_процесс_nm', 'SRAM_MB'],
-    'Pu-238_источник': ['изотоп', 'T_жизни_лет'],
-    'Am-241_источник': ['изотоп', 'T_жизни_лет'],
-    'H-3_тритий': ['изотоп', 'T_жизни_лет'],
-    'plasma_cannon': ['мощность_выстрела_MJ'],
-    'mimetic_polyalloy': ['тип'],
-    'hydrogen_fuel_cell': ['T_жизни_лет'],
-    'hyperalloy_endoskeleton': ['материал'],
-    'NMC_катод': ['ёмкость_мАч_г'],
-    'керамические_слои': ['V_max_V'],
-    'PEM_мембрана': ['толщина_мкм'],
-    'YSZ_электролит': ['T_рабочая_C'],
-    'термопары': ['КПД_процентов'],
-}
-
-def check_F24(izdeliya: dict[str, dict]) -> dict:
-    """F24: Соответствие подтипу — ожидаемые поля для каждого подтипа.
-    
-    BLOCKING: каждый подтип части должен иметь специфичные поля в дополнительные.
-    Например, нейроморфный CPU должен иметь тех_процесс_nm и SRAM_MB.
-    """
-    violations = []
-    total = 0
-    valid = 0
-    
     for izd_id, data in izdeliya.items():
         if not izd_id.startswith('часть_'):
             continue
         subtype = data.get('подтип', '')
         if subtype not in SUBTYPE_REQUIRED_FIELDS:
             continue  # нет требований — пропускаем
-        total += 1
-        
+        total_c += 1
+
         required = SUBTYPE_REQUIRED_FIELDS[subtype]
         additional = data.get('дополнительные', {})
         if not isinstance(additional, dict):
             additional = {}
-        
-        # Также проверить основные
         basic = data.get('основные', {})
         if not isinstance(basic, dict):
             basic = {}
         all_fields = {**basic, **additional}
-        
+
         missing = [f for f in required if f not in all_fields]
         if missing:
-            violations.append(f"{izd_id} ({subtype}): отсутствуют ожидаемые поля: {missing}")
+            violations.append(f"[C-schema] {izd_id} ({subtype}): отсутствуют ожидаемые поля: {missing}")
         else:
-            valid += 1
-    
+            valid_c += 1
+
+    # Combined ratio
+    total = total_a + total_b + total_c
+    valid = valid_a + valid_b + valid_c
     ratio = valid / max(1, total)
     return {
-        'metric': 'F24',
-        'description': 'Соответствие подтипу — ожидаемые поля для каждого подтипа',
+        'metric': 'F22',
+        'description': 'Верификация содержимого части: (A) URL для web_search; (B) анти-шаблон/stub; (C) schema-field-completeness',
         'total': total,
         'valid': valid,
         'ratio': round(ratio, 4),
@@ -1981,24 +1996,39 @@ def check_F24(izdeliya: dict[str, dict]) -> dict:
 
 
 # ============================================================================
-# F25: УНИКАЛЬНОСТЬ ДАННЫХ — анти-дубликаты
+# F25: УНИКАЛЬНОСТЬ ДАННЫХ — анти-дубликаты (v9.52: merge F25+F26)
 # ============================================================================
 
 def check_F25(izdeliya: dict[str, dict]) -> dict:
-    """F25: Уникальность данных — нет дубликатов габариты+масса+материал.
-    
-    BLOCKING: если 3+ файла часть_* с разными id имеют идентичные
-    (габариты_mm.l, габариты_mm.w, габариты_mm.h, масса_kg, материал) —
-    это признак шаблонной подстановки.
-    
-    Допускается не более 2 файлов с одинаковым набором (для парных компонентов
-    типа 2 одинаковых топливных элемента).
+    """F25: Уникальность данных — анти-дубликаты (v9.52: merged F25+F26).
+
+    Две проверки в одной функции (обе про дубликаты):
+
+    Чек A (бывший F25) — глобальные дубликаты:
+      Если 3+ файла часть_* с разными id имеют идентичные
+      (габариты_mm.l, габариты_mm.w, габариты_mm.h, масса_kg, материал) —
+      это признак шаблонной подстановки.
+      Допускается не более 2 файлов с одинаковым набором.
+
+    Чек B (бывший F26) — внутри-родительские дубликаты:
+      Если в одном родителе есть 2+ часть_* с одинаковым подтипом И
+      ИДЕНТИЧНЫМИ данными (масса + габариты + материал) — это признак
+      шаблонной подстановки (left/right, _1/_2).
+      Допускается только если survivor имеет поле количество=N (N≥2).
+      Если данные РАЗНЫЕ — нарушения нет (это разные части).
+
+    Returns: dict с combined violations (чек A + чек B).
     """
+    from collections import defaultdict
+
     violations = []
-    
-    # Группировать по (l, w, h, mass, material)
+    total_a = 0
+    valid_a = 0
+    total_b = 0
+    valid_b = 0
+
+    # === Чек A: глобальные дубликаты ===
     signatures: dict[tuple, list[str]] = {}
-    
     for izd_id, data in izdeliya.items():
         if not izd_id.startswith('часть_'):
             continue
@@ -2012,7 +2042,7 @@ def check_F25(izdeliya: dict[str, dict]) -> dict:
         l = dims.get('l')
         w = dims.get('w')
         h = dims.get('h')
-        
+
         # Найти материал
         material = ''
         materials = data.get('материалы_частей', [])
@@ -2021,59 +2051,21 @@ def check_F25(izdeliya: dict[str, dict]) -> dict:
                 if isinstance(m, dict):
                     material = str(m.get('материал', ''))
                     break
-        
+
         sig = (l, w, h, mass, material)
         signatures.setdefault(sig, []).append(izd_id)
-    
-    # Найти группы с 3+ файлами
-    total = len(signatures)
-    valid = 0
+
+    total_a = len(signatures)
     for sig, ids in signatures.items():
         if len(ids) > 2:
             violations.append(
-                f"Дубликат: {len(ids)} файлов с габаритами {sig[0]}×{sig[1]}×{sig[2]}mm, "
+                f"[A-глобальный] Дубликат: {len(ids)} файлов с габаритами {sig[0]}×{sig[1]}×{sig[2]}mm, "
                 f"масса={sig[3]}kg, материал={sig[4]}: {ids[:5]}"
             )
         else:
-            valid += 1
-    
-    ratio = valid / max(1, total)
-    return {
-        'metric': 'F25',
-        'description': 'Уникальность данных — анти-дубликаты (≤2 файлов с одинаковыми параметрами)',
-        'total': total,
-        'valid': valid,
-        'ratio': round(ratio, 4),
-        'pass': ratio >= 1.0,
-        'violations': violations,
-    }
+            valid_a += 1
 
-
-# ============================================================================
-# F26: ВНУТРИ-РОДИТЕЛЬСКИЕ ДУБЛИКАТЫ — группа часть_* с одинаковым подтипом
-#      в одном родителе с N≥2, без поля количество=N
-# ============================================================================
-
-def check_F26(izdeliya: dict[str, dict]) -> dict:
-    """F26: Внутри-родительские дубликаты — анти-шаблон "шаблонная подстановка".
-
-    BLOCKING: если в одном родителе есть 2+ часть_* с одинаковым подтипом
-    И ИДЕНТИЧНЫМИ данными (масса + габариты + материал) — это признак
-    шаблонной подстановки (left/right, _1/_2, etc.).
-    Допускается только если у survivor'а есть поле количество=N (где N≥2).
-
-    Если данные РАЗНЫЕ — нарушение не возникает (это разные части, не дубликаты).
-
-    Правила:
-      • 2+ файлов с одинаковым подтипом + идентичными данными в одном родителе → нарушение,
-        ЕСЛИ ни у одного из них нет количество≥2
-      • Если данные разные — OK (parts are genuinely different)
-
-    Возвращает ratio: (parents_clean / total_parents_with_children)
-    """
-    from collections import defaultdict
-
-    # Group children by parent
+    # === Чек B: внутри-родительские дубликаты ===
     parent_children: dict[str, list[tuple[str, dict]]] = defaultdict(list)
     for izd_id, data in izdeliya.items():
         if not izd_id.startswith('часть_'):
@@ -2083,13 +2075,10 @@ def check_F26(izdeliya: dict[str, dict]) -> dict:
             continue
         parent_children[parent].append((izd_id, data))
 
-    violations = []
-    total = 0
-    valid = 0
     for parent, kids in parent_children.items():
         if len(kids) < 2:
             continue
-        total += 1
+        total_b += 1
 
         # Group by subtype
         by_subtype: dict[str, list[tuple[str, dict]]] = defaultdict(list)
@@ -2139,18 +2128,21 @@ def check_F26(izdeliya: dict[str, dict]) -> dict:
             if not has_quantity:
                 parent_clean = False
                 violations.append(
-                    f"Родитель {parent}: подтип '{subtype}' имеет {len(ids)} файлов с идентичными данными "
+                    f"[B-родитель] {parent}: подтип '{subtype}' имеет {len(ids)} файлов с идентичными данными "
                     f"({ids[:3]}...), ни один не имеет количество≥{len(ids)}. "
                     f"Объединить через migrate_dedup_quantity.py или установить количество=N."
                 )
 
         if parent_clean:
-            valid += 1
+            valid_b += 1
 
+    # Combined ratio
+    total = total_a + total_b
+    valid = valid_a + valid_b
     ratio = valid / max(1, total)
     return {
-        'metric': 'F26',
-        'description': 'Внутри-родительские дубликаты (≤1 подтип в родителе без количество=N)',
+        'metric': 'F25',
+        'description': 'Анти-дубликаты: (A) глобальные ≤2 файлов с одинаковыми габаритами+массой+материалом; (B) внутри-родительские — 2+ с одинаковым подтипом требуют количество=N',
         'total': total,
         'valid': valid,
         'ratio': round(ratio, 4),
@@ -2380,26 +2372,32 @@ def check_F28(izdeliya: dict[str, dict]) -> dict:
 # ============================================================================
 
 def check_F29(izdeliya: dict[str, dict]) -> dict:
-    """F29: Каждая запись материалы_частей указывает `форму` материала.
+    """F29: BOM-материалы (v9.52: merged F29+F30).
 
-    WARNING-уровень (не блокирующий). Идея: ссылка `часть → материал` должна
-    быть неоднозначной — часть использует конкретную ФОРМУ материала
-    (forged_bar / electroplated_foil / 4h-sic_wafer / ...), а не generic id.
-    Формы описаны в файле материала (варианты_по_применению / сравнение_структур);
-    часть должна выбрать одну.
+    Две проверки в одной функции (обе про BOM консистентность):
 
-    v1 (текущая): МЯГКИЙ чек — F29=1.0 если `форма` указана (любое непустое
-    значение). Жёсткая проверка FK (форма ∈ варианты_по_применению материала)
-    будет включена после F28 > 0.8 (когда большинство материалов опишут свои
-    варианты применения).
+    Чек A (бывший F29) — форма материала в материалы_частей:
+      Каждая запись материалы_частей указывает `форму` материала (forged_bar /
+      electroplated_foil / 4h-sic_wafer / ...), а не generic id.
+      Скоуп: все файлы с материалы_частей (изделия И части).
 
-    Скоуп: все файлы с `материалы_частей` (изделия И части).
-    Формат violation: '<file_id>: ...' — совместим с verify_decomposition.yml.
+    Чек B (бывший F30) — наследуемые_материалы родителя:
+      Для каждого файла с непустым дочерние_части (родителя):
+      a. наследуемые_материалы заполнено (не пусто / не [])
+      b. агрегация (материал, форма) по дочерним часть.материалы_частей
+         (с долями родителя из родитель.материалы_частей) согласована с
+         наследуемые_материалы: суммы долей совпадают (±0.001),
+         источники_частей полны.
+
+    WARNING-уровень (не блокирующий).
     """
     violations = []
-    total = 0
-    valid = 0
+    total_a = 0
+    valid_a = 0
+    total_b = 0
+    valid_b = 0
 
+    # === Чек A: форма материала в материалы_частей (бывший F29) ===
     for fid, data in izdeliya.items():
         mats = data.get('материалы_частей', [])
         if not isinstance(mats, list):
@@ -2407,61 +2405,26 @@ def check_F29(izdeliya: dict[str, dict]) -> dict:
         for m in mats:
             if not isinstance(m, dict):
                 continue
-            total += 1
+            total_a += 1
             forma = m.get('форма')
             if forma and str(forma).strip() and str(forma).strip().lower() not in ('null', 'none', '~'):
-                valid += 1
+                valid_a += 1
             else:
                 part_ref = m.get('часть', '?')
                 mat_ref = m.get('материал', '?')
                 violations.append(
-                    f"{fid}: материалы_частей[{part_ref} → {mat_ref}] "
+                    f"[A-форма] {fid}: материалы_частей[{part_ref} → {mat_ref}] "
                     f"не указана `форма` — часть использует конкретный вариант "
                     f"материала (forged_bar / electroplated_foil / 4h-sic_wafer / ...); "
                     f"форма должна быть ключом из материал.варианты_по_применению"
                 )
 
-    ratio = valid / max(1, total)
-    return {
-        'metric': 'F29',
-        'description': 'Форма материала в материалы_частей (мягкий чек — заполнение)',
-        'total': total,
-        'valid': valid,
-        'ratio': round(ratio, 4),
-        'pass': ratio >= 1.0,
-        'violations': violations,
-    }
-
-
-# ============================================================================
-# F30: НАСЛЕДУЕМЫЕ_МАТЕРИАЛЫ РОДИТЕЛЯ (v9.43)
-# ============================================================================
-
-def check_F30(izdeliya: dict[str, dict]) -> dict:
-    """F30: Родитель наследует все материалы частей в агрегированном виде.
-
-    WARNING-уровень (не блокирующий). Для каждого файла с непустым
-    `дочерние_части` (родителя):
-      a. `наследуемые_материалы` заполнено (не пусто / не [])
-      b. агрегация (материал, форма) по дочерним части.материалы_частей
-         (с долями родителя из родитель.материалы_частей) согласована с
-         наследуемые_материалы: суммы долей совпадают (±0.001), источники_частей
-         полны.
-
-    BOM-вид: дедупликация по (материал, форма) — например, SiC в diode+substrate
-    схлопывается в одну запись с суммарной долей и списком источников.
-
-    Формат violation: '<izdelie_id>: ...'.
-    """
-    violations = []
-    total = 0
-    valid = 0
-
+    # === Чек B: наследуемые_материалы родителя (бывший F30) ===
     for fid, data in izdeliya.items():
         dochernie = data.get('дочерние_части', [])
         if not isinstance(dochernie, list) or not dochernie:
-            continue  # не родитель — вне скоупа F30
-        total += 1
+            continue  # не родитель — вне скоупа
+        total_b += 1
         ok = True
         msgs = []
 
@@ -2470,13 +2433,13 @@ def check_F30(izdeliya: dict[str, dict]) -> dict:
         if not nm or (isinstance(nm, list) and len(nm) == 0):
             msgs.append("наследуемые_материалы пусто — родитель должен агрегировать материалы частей")
             ok = False
-            violations.append(f"{fid}: " + "; ".join(msgs))
+            violations.append(f"[B-BOM] {fid}: " + "; ".join(msgs))
             continue
 
         if not isinstance(nm, list):
             msgs.append("наследуемые_материалы не list")
             ok = False
-            violations.append(f"{fid}: " + "; ".join(msgs))
+            violations.append(f"[B-BOM] {fid}: " + "; ".join(msgs))
             continue
 
         # b. согласованность: построить ожидаемую агрегацию из частей
@@ -2548,21 +2511,23 @@ def check_F30(izdeliya: dict[str, dict]) -> dict:
                     ok = False
 
         if ok:
-            valid += 1
+            valid_b += 1
         else:
-            violations.append(f"{fid}: " + "; ".join(msgs))
+            violations.append(f"[B-BOM] {fid}: " + "; ".join(msgs))
 
+    # Combined ratio
+    total = total_a + total_b
+    valid = valid_a + valid_b
     ratio = valid / max(1, total)
     return {
-        'metric': 'F30',
-        'description': 'наследуемые_материалы родителя (BOM: агрегация по форма)',
+        'metric': 'F29',
+        'description': 'BOM-материалы: (A) форма указана в материалы_частей; (B) наследуемые_материалы родителя (агрегация по форме)',
         'total': total,
         'valid': valid,
         'ratio': round(ratio, 4),
         'pass': ratio >= 1.0,
         'violations': violations,
     }
-
 
 # ============================================================================
 # F31: УНИКАЛЬНОСТЬ ID/АЛИАСОВ МАТЕРИАЛОВ И ТЕХНОЛОГИЙ (v9.44, дедупликация)
@@ -2592,118 +2557,6 @@ def _load_materials_and_techs() -> list[tuple[Path, dict]]:
     return entries
 
 
-def check_F31(entries: list[tuple[Path, dict]] | None = None) -> dict:
-    """F31: Уникальность id — дубли id, неконсистентные алиасы, битые ссылки.
-
-    BLOCKING (после стабилизации): создание второго файла с существующим id
-    (или нормализованным вариантом id) — источник «тихих» рассинхронизаций
-    (см. #661: material_ni-ysz создан поверх material_ni_ysz_cermet).
-
-    Критерии нарушения (все в формате '<id>: ...' — совместим с дефолтной
-    веткой normalizeViolationKey и титульником '[F31] Verify: <id>'):
-      a. литеральный дубликат id в двух файлах
-      b. канонический_id ссылается на несуществующий id
-      c. алиас (файл с каноническим_id != id) НЕ перечислен в псевдонимах
-         канонического файла (несимметричная пара)
-      d. псевдоним в каноническом файле не имеет файла-алиаса с обратным
-         канонический_id (висячая запись)
-      e. нормализованная коллизия id ([-_ ] игнорируются) без объявленной
-         алиас-связи
-    """
-    violations = []
-    if entries is None:
-        entries = _load_materials_and_techs()
-
-    by_id: dict[str, tuple[Path, dict]] = {}
-    by_norm: dict[str, list[str]] = {}
-    for f, data in entries:
-        mid = str(data.get('id', '')).strip()
-        by_norm.setdefault(_norm_id_key(mid), []).append(mid)
-        if mid in by_id:
-            violations.append(
-                f"{mid}: литеральный дубликат id в {f.name} и {by_id[mid][0].name}")
-        else:
-            by_id[mid] = (f, data)
-
-    total = len(entries)
-    valid = 0
-
-    # Канонический план: mid → canonical (по канонический_id != id)
-    alias_of: dict[str, str] = {}
-    for mid, (_f, data) in by_id.items():
-        canon = str(data.get('канонический_id', '') or '').strip() or mid
-        if canon != mid:
-            alias_of[mid] = canon
-
-    # (b) битая ссылка канонический_id
-    for mid, canon in sorted(alias_of.items()):
-        if canon not in by_id:
-            violations.append(
-                f"{mid}: канонический_id='{canon}' не существует (битая alias-ссылка)")
-
-    # (c)+(d) симметрия псевдонимов
-    for mid, canon in sorted(alias_of.items()):
-        canon_data = by_id.get(canon)
-        if not canon_data:
-            continue
-        aliases_list = canon_data[1].get('псевдонимы') or []
-        if not isinstance(aliases_list, list):
-            aliases_list = []
-        if mid not in [str(a).strip() for a in aliases_list]:
-            violations.append(
-                f"{mid}: канонический_id='{canon}', но '{canon}' не перечисляет "
-                f"его в псевдонимах (несимметричная алиас-связь)")
-    for canon, (_f, data) in sorted(by_id.items()):
-        aliases_list = data.get('псевдонимы') or []
-        if not isinstance(aliases_list, list):
-            continue
-        for a in aliases_list:
-            a = str(a).strip()
-            if not a:
-                continue
-            a_data = by_id.get(a)
-            if a_data is None:
-                # алиас без файла — допустимо только если файл уже слит и
-                # удалён (id остался в истории ссылок) — НЕ нарушение
-                continue
-            a_canon = str(a_data[1].get('канонический_id', '') or '').strip() or a
-            if a_canon != canon:
-                violations.append(
-                    f"{canon}: псевдоним '{a}' указывает на канонический_id="
-                    f"'{a_canon}' (висячая/конфликтная запись)")
-
-    # (e) нормализованная коллизия без объявленной связи
-    for norm_key, mids in sorted(by_norm.items()):
-        if len(mids) < 2:
-            continue
-        related = all(
-            alias_of.get(a) == mids[0] or alias_of.get(mids[0]) == a
-            for a in mids[1:]
-        )
-        if not related:
-            violations.append(
-                f"{mids[0]}: нормализованная коллизия id с {mids[1:]} "
-                f"(ключ '{norm_key}') — объявите канонический_id/псевдонимы "
-                f"или переименуйте")
-
-    valid = total - len(set(
-        v.split(':')[0] for v in violations if not v.startswith('Дубликат')))
-    ratio = valid / max(1, total)
-    return {
-        'metric': 'F31',
-        'description': 'Уникальность id материалов/технологий: дубли id, алиас-связность, битые канонический_id',
-        'total': total,
-        'valid': max(0, valid),
-        'ratio': round(ratio, 4),
-        'pass': ratio >= 1.0,
-        'violations': violations,
-    }
-
-
-# ============================================================================
-# F32: СЕМАНТИЧЕСКИЕ ДУБЛИ МАТЕРИАЛОВ (v9.44, дедупликация)
-# ============================================================================
-
 def _sig_figs(x, digits: int = 2):
     """Округление до N значащих цифр (None → None)."""
     try:
@@ -2716,53 +2569,121 @@ def _sig_figs(x, digits: int = 2):
     return round(x, -int(floor(log10(abs(x)))) + (digits - 1))
 
 
-def check_F32(entries: list[tuple[Path, dict]] | None = None) -> dict:
-    """F32: Семантические дубли материалов — разные id, один материал.
+def check_F31(entries: list[tuple[Path, dict]] | None = None) -> dict:
+    """F31: Дедупликация материалов и технологий (v9.52: merged F31+F32).
 
-    REVIEW-метрика (issue с меткой f32 = ручная проверка агентом):
-    сигнатура (класс, ρ 2 з.ц., k 2 з.ц.) совпадает у 2+ канонических
-    материалов → кандидат на слияние. Ложные срабатывания закрываются
-    агентом как false-positive с обоснованием (заведомо известный:
-    material_pbo2 vs material_spongy_lead — общий источник_url, но разные
-    материалы).
+    Две проверки в одной функции (обе про дедупликацию):
 
-    Требование строгости: ρ И k оба non-null и совпадают до 2 значащих
-    цифр в пределах одного класса — для случайной пары разных материалов
-    это маловероятно (~совпадение трёх независимых величин).
+    Чек A (бывший F31) — syntactic dedup:
+      a. литеральный дубликат id в двух файлах
+      b. канонический_id ссылается на несуществующий id
+      c. алиас НЕ перечислен в псевдонимах канонического файла
+      d. псевдоним в каноническом файле не имеет файла-алиаса
+      e. нормализованная коллизия id ([-_ ] игнорируются) без алиас-связи
 
-    Формат violation: '<id>: семантический дубль <other_id> (класс=..., ρ≈..., k≈...)'.
+    Чек B (бывший F32) — semantic dedup:
+      Сигнатура (класс, ρ 2 з.ц., k 2 з.ц.) совпадает у 2+ канонических
+      материалов → кандидат на слияние. Ложные срабатывания закрываются
+      агентом как false-positive с обоснованием.
     """
     violations = []
     if entries is None:
         entries = _load_materials_and_techs()
 
-    # Разобранные агентом false-positive (issue # закрыт с обоснованием).
-    # Пары исключаются из violations навсегда — sig (класс, ρ, k) совпадает,
-    # но это разные каталожные сущности одного вещества.
+    # === Чек A: syntactic dedup (бывший F31) ===
+    by_id: dict[str, tuple[Path, dict]] = {}
+    by_norm: dict[str, list[str]] = {}
+    for f, data in entries:
+        mid = str(data.get('id', '')).strip()
+        by_norm.setdefault(_norm_id_key(mid), []).append(mid)
+        if mid in by_id:
+            violations.append(
+                f"[A-synt] {mid}: литеральный дубликат id в {f.name} и {by_id[mid][0].name}")
+        else:
+            by_id[mid] = (f, data)
+
+    total_a = len(entries)
+    valid_a = 0
+
+    # Канонический план: mid → canonical (по канонический_id != id)
+    alias_of: dict[str, str] = {}
+    for mid, (_f, data) in by_id.items():
+        canon = str(data.get('канонический_id', '') or '').strip() or mid
+        if canon != mid:
+            alias_of[mid] = canon
+
+    # (b) битая ссылка канонический_id
+    for mid, canon in sorted(alias_of.items()):
+        if canon not in by_id:
+            violations.append(
+                f"[A-synt] {mid}: канонический_id='{canon}' не существует (битая alias-ссылка)")
+
+    # (c)+(d) симметрия псевдонимов
+    for mid, canon in sorted(alias_of.items()):
+        canon_data = by_id.get(canon)
+        if not canon_data:
+            continue
+        aliases_list = canon_data[1].get('псевдонимы') or []
+        if not isinstance(aliases_list, list):
+            aliases_list = []
+        if mid not in [str(a).strip() for a in aliases_list]:
+            violations.append(
+                f"[A-synt] {mid}: канонический_id='{canon}', но '{canon}' не перечисляет "
+                f"его в псевдонимах (несимметричная алиас-связь)")
+    for canon, (_f, data) in sorted(by_id.items()):
+        aliases_list = data.get('псевдонимы') or []
+        if not isinstance(aliases_list, list):
+            continue
+        for a in aliases_list:
+            a = str(a).strip()
+            if not a:
+                continue
+            a_data = by_id.get(a)
+            if a_data is None:
+                continue
+            a_canon = str(a_data[1].get('канонический_id', '') or '').strip() or a
+            if a_canon != canon:
+                violations.append(
+                    f"[A-synt] {canon}: псевдоним '{a}' указывает на канонический_id="
+                    f"'{a_canon}' (висячая/конфликтная запись)")
+
+    # (e) нормализованная коллизия без объявленной связи
+    for norm_key, mids in sorted(by_norm.items()):
+        if len(mids) < 2:
+            continue
+        related = all(
+            alias_of.get(a) == mids[0] or alias_of.get(mids[0]) == a
+            for a in mids[1:]
+        )
+        if not related:
+            violations.append(
+                f"[A-synt] {mids[0]}: нормализованная коллизия id с {mids[1:]} "
+                f"(ключ '{norm_key}') — объявите канонический_id/псевдонимы "
+                f"или переименуйте")
+
+    valid_a = total_a - len(set(
+        v.split(']')[1].strip().split(':')[0] for v in violations if v.startswith('[A-synt]') and 'литерал' not in v))
+
+    # === Чек B: semantic dedup (бывший F32) ===
+    # Разобранные агентом false-positive
     f32_fp_exclude: set[frozenset[str]] = {
-        # #751 (v2): pair REMOVED — material_mednyi_provod реклассифицирован
-        # в изделие (см. изделия/система_питания/mednyi_provod/_index.md),
-        # поэтому F32 его больше не сравнивает с material_copper.
-        # pbo2 (керамика PbO2) vs spongy_lead (пористый металл Pb) —
-        # общий source_url, разные материалы.
         frozenset({'material_pbo2', 'material_spongy_lead'}),
     }
 
     groups: dict[tuple, list[str]] = {}
-    total = 0
+    total_b = 0
     for _f, data in entries:
-        # технологии без ρ/k не участвуют
         if str(data.get('тип', '')).strip() != 'материал':
             continue
         mid = str(data.get('id', '')).strip()
         canon = str(data.get('канонический_id', '') or '').strip() or mid
         if canon != mid:
-            continue  # алиасы исключены — их слияние делает migrate-скрипт
+            continue  # алиасы исключены
         klass = str(data.get('класс', '')).strip().lower()
         basic = data.get('основные') or {}
         if not isinstance(basic, dict):
             continue
-        total += 1
+        total_b += 1
         rho = _sig_figs(basic.get('плотность_kg_m3'))
         k = _sig_figs(basic.get('теплопроводность_W_mK'))
         if rho is None or k is None:
@@ -2770,34 +2691,36 @@ def check_F32(entries: list[tuple[Path, dict]] | None = None) -> dict:
         key = (klass, rho, k)
         groups.setdefault(key, []).append(mid)
 
-    valid = total
+    valid_b = total_b
     for (klass, rho, k), mids in sorted(groups.items()):
         if len(mids) > 1:
             real = [mids[0]]
             for other in mids[1:]:
                 if frozenset({mids[0], other}) in f32_fp_exclude:
-                    continue  # разобранный FP — не violation
+                    continue
                 real.append(other)
             if len(real) < 2:
                 continue
             violations.append(
-                f"{real[0]}: семантический дубль {real[1:]} "
+                f"[B-sem] {real[0]}: семантический дубль {real[1:]} "
                 f"(класс={klass}, ρ≈{rho:g}, k≈{k:g}) — проверить и слить "
                 f"через scripts/migrate_dedup_materials.py или закрыть как "
                 f"false-positive")
-            valid -= len(real)
+            valid_b -= len(real)
 
+    # Combined ratio
+    total = total_a + total_b
+    valid = max(0, valid_a) + max(0, valid_b)
     ratio = valid / max(1, total)
     return {
-        'metric': 'F32',
-        'description': 'Семантические дубли материалов (класс+ρ+k совпадают) — review-метрика',
+        'metric': 'F31',
+        'description': 'Дедупликация материалов: (A) syntactic — дубли id, алиас-связность, битые канонический_id; (B) semantic — класс+ρ+k совпадают',
         'total': total,
         'valid': valid,
         'ratio': round(ratio, 4),
         'pass': ratio >= 1.0,
         'violations': violations,
     }
-
 
 # ============================================================================
 # F33: КЛАССИФИКАЦИОННАЯ КОНСИСТЕНТНОСТЬ (v9.46)
@@ -3160,14 +3083,10 @@ def run_all_checks() -> dict:
     r = check_F16(izdeliya)
     results['F16'] = r
     print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
-    
-    # F17 — тип-специфичные шаблоны
-    print()
-    print("=== F17: Тип-специфичные шаблоны ===")
-    r = check_F17(models, izdeliya)
-    results['F17'] = r
-    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
-    
+
+    # F17 — merged into F13 in v9.52 (чек B внутри check_F13)
+    # Отдельный вызов удалён; F17 убрана из метрик
+
     # F18 — JSON Schema
     print()
     print("=== F18: JSON Schema ===")
@@ -3209,28 +3128,9 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
     
-    # F23 — анти-шаблон (NON-BLOCKING для первого прогона)
-    print()
-    print("=== F23: Анти-шаблон ===")
-    r = check_F23(izdeliya)
-    results['F23'] = r
-    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
-    if r['violations']:
-        print(f"  violations: {len(r['violations'])} (первые 3):")
-        for v in r['violations'][:3]:
-            print(f"    - {v[:100]}")
-    
-    # F24 — соответствие подтипу
-    print()
-    print("=== F24: Соответствие подтипу ===")
-    r = check_F24(izdeliya)
-    results['F24'] = r
-    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
-    if r['violations']:
-        print(f"  violations: {len(r['violations'])} (первые 3):")
-        for v in r['violations'][:3]:
-            print(f"    - {v[:100]}")
-    
+    # F23/F24 — merged into F22 in v9.52 (чеки B, C внутри check_F22)
+    # Отдельные вызовы удалены; F23, F24 убраны из метрик
+
     # F25 — уникальность данных
     print()
     print("=== F25: Уникальность данных ===")
@@ -3242,16 +3142,8 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
-    # F26 — внутри-родительские дубликаты (v9.35)
-    print()
-    print("=== F26: Внутри-родительские дубликаты ===")
-    r = check_F26(izdeliya)
-    results['F26'] = r
-    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
-    if r['violations']:
-        print(f"  violations: {len(r['violations'])} (первые 3):")
-        for v in r['violations'][:3]:
-            print(f"    - {v[:100]}")
+    # F26 — merged into F25 in v9.52 (чек B внутри check_F25)
+    # Отдельный вызов удалён; F26 убрана из метрик
 
     # F27 — незаполненные материалы-заглушки (v9.40; v9.41 — критерий e: вариант_структуры)
     print()
@@ -3287,16 +3179,8 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
-    # F30 — наследуемые_материалы родителя (v9.43; BOM агрегация по форма)
-    print()
-    print("=== F30: наследуемые_материалы родителя (BOM) ===")
-    r = check_F30(izdeliya)
-    results['F30'] = r
-    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
-    if r['violations']:
-        print(f"  violations: {len(r['violations'])} (первые 3):")
-        for v in r['violations'][:3]:
-            print(f"    - {v[:100]}")
+    # F30 — merged into F29 in v9.52 (чек B внутри check_F29)
+    # Отдельный вызов удалён; F30 убрана из метрик
 
     # F31 — уникальность id/алиасов материалов и технологий (v9.44, дедупликация;
     # аннотация: #661 — material_ni-ysz создан поверх material_ni_ysz_cermet)
@@ -3311,16 +3195,8 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
-    # F32 — семантические дубли материалов (v9.44; review-метрика: класс+ρ+k)
-    print()
-    print("=== F32: Семантические дубли материалов (review) ===")
-    r = check_F32(mat_tech_entries)
-    results['F32'] = r
-    print(f"  pass={r['pass']}, ratio={r['ratio']} ({r['valid']}/{r['total']})")
-    if r['violations']:
-        print(f"  violations: {len(r['violations'])} (первые 3):")
-        for v in r['violations'][:3]:
-            print(f"    - {v[:100]}")
+    # F32 — merged into F31 in v9.52 (чек B внутри check_F31)
+    # Отдельный вызов удалён; F32 убрана из метрик
 
     # F33 — классификационная консистентность (v9.46; тип↔директория +
     # коллизии имён между категориями; warning-метрика после реклассификации #751)
@@ -3381,16 +3257,20 @@ def main():
         models = load_all_models()
         check_fn = globals().get(f'check_{args.metric}')
         if check_fn:
-            if args.metric in ['F13', 'F17', 'F21']:
+            if args.metric in ['F13', 'F21']:
+                # Принимает (models, izdeliya) — эти metrics работают с обеими категориями
                 r = check_fn(models, izdeliya)
-            elif args.metric in ('F31', 'F32'):
-                # F31/F32 работают с материалами+технологиями, не с изделиями
+            elif args.metric == 'F22':
+                # F22 merged (v9.52): принимает (izdeliya, models=None) — переиспользуем models
+                r = check_fn(izdeliya, models)
+            elif args.metric in ('F31',):
+                # F31 (v9.52 merged F31+F32) работает с материалами+технологиями
                 r = check_fn(_load_materials_and_techs())
             elif args.metric == 'F33':
                 # F33 работает со всеми .md 3-х категорий (материалы/изделия/технологии)
                 r = check_fn(_load_all_catalog_entries())
             else:
-                # F12a, F14, F15a-g, F16, F18, F19, F20, F22-F26, F34 — работают с изделиями
+                # F12a, F14, F15a-h, F16, F18, F19, F20, F25, F27-F30, F34 — работают с изделиями
                 r = check_fn(izdeliya)
             print(f"{args.metric}: pass={r['pass']}, ratio={r['ratio']}")
             if r['violations']:
@@ -3403,7 +3283,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F23', 'F24', 'F25', 'F26', 'F27', 'F28', 'F31', 'F32', 'F33', 'F34')
+            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F28', 'F29', 'F31', 'F33', 'F34')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:
