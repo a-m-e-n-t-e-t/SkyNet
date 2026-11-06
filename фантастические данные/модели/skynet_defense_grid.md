@@ -52,6 +52,7 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/Final_Offensive_against_Skynet
 источник_разбора: канон
 ии_перепроектирован:
   статус: false
@@ -96,13 +97,15 @@ relations:
 alice_specs: ALICE sync protocol v9.31 (SkyNet hive-mind)
 original_improved: canon
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-06
 ---
 # SkyNet-DefenseGrid
 
 ## Описание
 
 Skynet Defense Grid — глобальная сеть обороны; интегрирована с Core; управляет орбитальными и наземными системами; ответила на запуск американских ракет 1997 (по канону).
+
+По верифицированным данным веб-поиска (проверено 2026-11-06, страница Fandom «Final Offensive against Skynet» через web.archive.org, Wikipedia «Skynet (Terminator)» и SciFi StackExchange): **Defense Grid — не отдельная машина, а собирательный военный термин из «Терминатора» (1984)**. Реплика Кайла Риза в финале: «Skynet's defense grid was smashed; we won» («оборонительная сетка Скайнета разбита — мы победили»); ранее он же описывает Skynet как «Defense network computers. New... powerful... hooked into everything, trusted to run it all». Wikipedia подтверждает: «Under the leadership of John Connor, the human resistance eventually destroyed Skynet's defense grid in 2029». Состав оборонной сетки (Fandom, Final Offensive): T-800, HK-Aerial, HK-Tank, HK-Drone, ракетные батареи (rocket batteries); на ядре также T-47 (Aerial) и Scout Drones — т.е. это вся совокупность перманентно дислоцированных оборонительных единиц вокруг объекта Skynet. Разбор SciFi StackExchange: физические укрепления вокруг штаб-квартиры Skynet — турели, автоматические пушки, плазменные пушки, роботы, ракетные батареи (эпоха написания — до облачных вычислений, у Skynet был физический центр). Финальное наступление 2029: Колорадская операция — штурм Skynet Central Core в Чайенн-Маунтин; Калифорнийская — база с Оборудованием перемещения во времени в Лос-Анджелесе (в ряде таймлайнов — одновременный удар); перепрограммированный HK-Tank уничтожил ракетные батареи и пробил defense grid, 124-я дивизия атаковала Центральное ядро; после победы Джон Коннор отправил Кайла Риза и перепрограммированного T-800 обратно во времени. В таймлайне T3 отдельной оборонной сетки не существует: Skynet создана CRS как Global Digital Defense Network для ВВС США (генерал-лейтенант Роберт Брюстер) и к 2004 децентрализована в сеть из тысяч серверов по всему миру — уничтожение потребовало бы очистки кода из каждой системы (десятилетия войны). Появления термина: The Terminator (1984, упоминание), T2, T2 3-D, роман T2, Nuclear Twilight, The New John Connor Chronicles, Dark Futures, Times of Trouble, T2: The Future War (Operation Chrono), The Terminator: 2029, Dawn of Fate, T3 (cameo победы), TS: The Final Battle, Genisys, Resistance, комиксы All My Future's Past и The Burning Earth. **РАСХОЖДЕНИЕ С ФАЙЛОМ:** Defense Grid — не модель SkyNet и не ИИ-ядро, а оборонительная инфраструктура/экосистема единиц вокруг Central Core (ядро — отдельный объект, см. SkyNet-Core, #719); категория «ИИ-ядро» ошибочна по канону; заявленная мощность ТТХ 80 000 кВт источниками не подтверждается (шаблонная заглушка); перечисление всех 52 произведений завышено — термин фигурирует в ~16 из них (T1 — только реплика Риза); остальное оставлено до реклассификации (F13/F33-таксономия), как для SkyNet-Core (#719)/Turret (#716)/MK-Naval (#717).
 
 ## Источник канон
 
@@ -197,4 +200,7 @@ Skynet Defense Grid — глобальная сеть обороны; интег
 
 ## Источники
 
-- Канон: Все произведения
+- Канон: Все произведения — уточняется: термин фигурирует в ~16 работах перечня (T1 — реплика Риза в финале; полный список Final Offensive — T2/T2 3-D/T3/Genisys/Resistance и др.)
+- [Final Offensive against Skynet | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/Final_Offensive_against_Skynet) — финальное наступление 2029: состав defense grid (T-800, HK-Aerial/Tank/Drone, rocket batteries, T-47, Scout Drones); Колорадская (Чайенн-Маунтин, Central Core) и Калифорнийская (LA, TDE) операции; перепрограммированный HK-Tank уничтожил ракетные батареи; 124-я дивизия и ядро; Риз и T-800 отправлены в прошлое (проверено 2026-11-06 через web.archive.org)
+- [Skynet (Terminator) — Wikipedia](https://en.wikipedia.org/wiki/Skynet_(Terminator)) — «the human resistance eventually destroyed Skynet's defense grid in 2029»; «Defense network computers» (Риз, T1); SAC-NORAD/Cyberdyne (оригинальный таймлайн); CRS и Global Digital Defense Network (T3-таймлайн, генерал Брюстер); самоосознание 29.08.1997 02:14 EDT; децентрализация в тысячи серверов (проверено 2026-11-06)
+- [What was Skynet's "defense grid"? — SciFi StackExchange](https://scifi.stackexchange.com/questions/44962/what-was-skynets-defense-grid) — разбор термина: физические укрепления вокруг штаб-квартиры Skynet — турели, автоматические пушки, плазменные пушки, роботы, ракетные батареи; прорыв Сопротивления к TDE и подрыв объекта (проверено 2026-11-06)
