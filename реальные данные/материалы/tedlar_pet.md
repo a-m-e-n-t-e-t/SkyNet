@@ -39,7 +39,7 @@ id: material_tedlar_pet
       фторполимерные_слои: '0'
     применение: бюджетные PV-модули, сегменты с меньшими требованиями к 30-летней долговечности
     источник_url: https://taiyangnews.info/technology/different-backsheet-structures-in-pv-modules
-исследовательская_группа: требует_верификации
+исследовательская_группа: 'DuPont — изобретатель поливинилфторида (PVF, 1940-е), товарный знак Tedlar® и коммерческий выпуск плёнки с 1961 г.; ПЭТ-сердцевина boPET — DuPont/ICI/Hoechst (середина 1950-х — первая двуосно-ориентированная полимерная плёнка массового производства; бренды Mylar®/Melinex®, ныне Mylar Specialty Films — ребрендинг DuPont Teijin Films, 2024)'
 стандарты:
   - IEC 61215
   - IEC 61730
@@ -156,3 +156,6 @@ id: material_tedlar_pet
 - Ooitech, PV Backsheet — TPT, KPK, PVDF: TPT и KPK — 30+ лет полевой эксплуатации: https://www.ooitech.com/Photovoltaic-Backsheet-The-Critical-Protective-Layer-for-Solar-Modules.html (проверено 2026-11-06)
 - Emco Plastics — Tedlar PVF: толщины плёнки 12.5–50 мкм (0.5–2 mil), обработанная/pristine поверхность: https://www.emcoplastics.com/tedlar-pvf (проверено 2026-11-06)
 - DuPont EI00241 General Properties of Tedlar® PVF Films: типовые толщины 13–100 мкм, поверхность pristine или обработанная: https://www.dupont.com/content/dam/dupont/amer/us/en/tedlar-pvf-films/public/documents/EI00241-Dupont_TedlarGeneralProperty-Digital.pdf (проверено 2026-11-06)
+- DuPont, 60th Anniversary of DuPont™ Tedlar (30.04.2021): PVF-полимер изобретён DuPont в 1940-х; в 1961 г. получен оригинальный товарный знак Tedlar® и начат официальный коммерческий выпуск плёнки: https://www.dupont.com/content/dupont/amer/us/en/news/tedlar/2021/press-releases/20210430-60th-anniversary-of-dupont-tedlar.html (проверено 2026-11-06)
+- Mylar Specialty Films (бывш. DuPont Teijin Films), The History of Polyester Film: изобретение двуосно-ориентированных ПЭТ-плёнок в 1952 г., развитие индустрии ICI и DuPont с 1950-х: https://mylar.com/history-of-polyester-film (проверено 2026-11-06)
+- Wikipedia — Mylar (boPET): разработка в середине 1950-х DuPont, ICI и Hoechst; первая двуосно-ориентированная полимерная плёнка массового коммерческого производства: https://en.wikipedia.org/wiki/Mylar (проверено 2026-11-06)
