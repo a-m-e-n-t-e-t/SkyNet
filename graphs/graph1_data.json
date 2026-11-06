@@ -5792,6 +5792,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_karbon",
+      "type": "material",
+      "label": "Углерод >93 % (PAN-волокно, Toray T300); в композите CFRP — волокно + эпоксидная матрица",
+      "path": "реальные данные/материалы/karbon.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_karbonilnoe_zhelezo",
       "type": "material",
       "label": "Карбонильное железо CIP: Fe ≥ 99.5 % (карбонильный синтез Fe(CO)5 → Fe + 5CO)",
@@ -5957,6 +5964,13 @@
       "type": "material",
       "label": "Mo-покрытие",
       "path": "реальные данные/материалы/mo-pokrytie.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_mo_hf_w_ti_si₂_+_nb-podsloi",
+      "type": "material",
+      "label": "(Mo,Hf,W,Ti)Si₂ (основная фаза, структура C40/C11b) + Nb (подслой, чистый ниобий для адгезии к Mo-сплаву). Атомные доли замещения в подрешётке Mo: Hf~5-10%, W~5-10%, Ti~5-10%; Si~66.7% (дисилицид stoichiometry MoSi₂). Nb-подслой — чистый Nb (>99.5%).",
+      "path": "реальные данные/материалы/mo_hf_w_ti_si₂_+_nb-podsloi.md",
       "subsystem": ""
     },
     {
@@ -6186,7 +6200,7 @@
     {
       "id": "material_peek",
       "type": "material",
-      "label": "PEEK",
+      "label": "PEEK — полиэфирэфиркетон (PAEK): повторяющееся звено (C19H12O3)n, M = 288.3 г/моль; синтез из 4,4′-дифторбензофенона и динатриевой соли гидрохинона в дифенилсульфоне при ~300 °C",
       "path": "реальные данные/материалы/peek.md",
       "subsystem": ""
     },
@@ -6221,7 +6235,7 @@
     {
       "id": "material_poliuretan",
       "type": "material",
-      "label": "полиуретан",
+      "label": "Полиуретан — блок-сополимер диизоцианатов (MDI/TDI/NDI), макродиолов (полиэфирные, полиэфиркарбонатные, политетраметиленгликолевые) и удлинителей цепи (1,4-бутандиол, MOCA); повторяющееся уретановое звено –NH–C(=O)–O–; чередование жёстких (изоцианатных) и мягких (полиольных) сегментов с микрофазовым разделением",
       "path": "реальные данные/материалы/poliuretan.md",
       "subsystem": ""
     },
@@ -6657,6 +6671,517 @@
       "type": "material",
       "label": "β-метал",
       "path": "реальные данные/материалы/β-metal.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_3d-stacking_tsv",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/3d-stacking_tsv.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_aktivnaya_matritsa",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/aktivnaya_matritsa.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_aktivnoe_shumopodavlenie",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/aktivnoe_shumopodavlenie.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_ald-barery",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/ald-barery.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_ald_al₂o₃",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/ald_al₂o₃.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_algoritm_spgd",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/algoritm_spgd.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_anderfill",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/anderfill.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_antagonisticheskoi_sheme_biran",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/antagonisticheskoi_sheme_biran.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_area-selective_ald",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/area-selective_ald.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_bare-die_integration",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/bare-die_integration.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_body_biasing",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/body_biasing.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_cmp",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/cmp.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_cvd",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/cvd.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_cvd_tab₂_+_mosi₂-tasi₂",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/cvd_tab₂_+_mosi₂-tasi₂.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_dc_magnetron_sputtering",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/dc_magnetron_sputtering.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_diffuzionnaya_svarka",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/diffuzionnaya_svarka.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_ebw",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/ebw.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_ecap",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/ecap.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_edge-on_lamellyarnaya_struktura",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/edge-on_lamellyarnaya_struktura.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_elektroosazhdenie_iridiya",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/elektroosazhdenie_iridiya.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_event-driven_arhitektura",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/event-driven_arhitektura.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_explosive_flux_compression",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/explosive_flux_compression.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_fd-soi_22_nm",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/fd-soi_22_nm.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_galogenoaktivirovannaya_tsementatsiya",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/galogenoaktivirovannaya_tsementatsiya.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_galvanika",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/galvanika.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_generativnyi_dizain",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/generativnyi_dizain.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_gidrofobnoe_pokrytie",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/gidrofobnoe_pokrytie.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_hamming_ecc",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/hamming_ecc.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_hip-cvd",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/hip-cvd.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_hip",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/hip.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_honing_+_plateau_finish",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/honing_+_plateau_finish.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_hvof",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/hvof.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_ion_implantation_si",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/ion_implantation_si.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_iron_beam_shema",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/iron_beam_shema.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_izolirovannye_emalyu",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/izolirovannye_emalyu.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_kobaltovye_kolpachki",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/kobaltovye_kolpachki.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_kogerentnoe_slozhenie_puchkov",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/kogerentnoe_slozhenie_puchkov.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_lazernaya_udarnaya_obrabotka",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/lazernaya_udarnaya_obrabotka.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_lazernoe_teksturirovanie_poverhnosti",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/lazernoe_teksturirovanie_poverhnosti.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_lbw",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/lbw.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_lfw",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/lfw.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_mikropolyarizatsiya",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/mikropolyarizatsiya.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_mikrotubulyarnaya_konstruktsiya",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/mikrotubulyarnaya_konstruktsiya.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_mnogosloinyi_dlc_s_legirovaniem_cr_si_ti",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/mnogosloinyi_dlc_s_legirovaniem_cr_si_ti.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_mppt",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/mppt.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_nanesennoe_pvd-metodom",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/nanesennoe_pvd-metodom.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_otzhig",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/otzhig.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_pack_aluminizing",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/pack_aluminizing.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_parylene_c",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/parylene_c.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_plazmennaya_aktivatsiya",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/plazmennaya_aktivatsiya.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_pogruzhenie_v_mo-shliker",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/pogruzhenie_v_mo-shliker.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_pol-lwir",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/pol-lwir.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_prectrein_9",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/prectrein_9.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_pvd_dlc",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/pvd_dlc.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_radiatsionnoe_ohlazhdenie",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/radiatsionnoe_ohlazhdenie.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_sborka_v_termoizolyatsionnoi_opravke",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/sborka_v_termoizolyatsionnoi_opravke.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_sem",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/sem.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_shot_peening",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/shot_peening.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_si-fotonika",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/si-fotonika.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_silikonovaya_fotonika",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/silikonovaya_fotonika.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_sls",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/sls.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_soglasovanie_ktr",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/soglasovanie_ktr.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_spiralnaya_navivka",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/spiralnaya_navivka.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_superhydrophobic_coating",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/superhydrophobic_coating.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_ta-10w_sps",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/ta-10w_sps.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_thermal-inertial_slam",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/thermal-inertial_slam.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_tmr",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/tmr.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_ultrazvukovoe_poverhnostnoe_prokatyvanie",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/ultrazvukovoe_poverhnostnoe_prokatyvanie.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_vakuumnaya_infiltratsiya_mos₂",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/vakuumnaya_infiltratsiya_mos₂.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_vakuumnoe_spekanie",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/vakuumnoe_spekanie.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_var_ebr",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/var_ebr.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_vio",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/vio.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_γ-obluchenie_100_kgts",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/γ-obluchenie_100_kgts.md",
       "subsystem": ""
     },
     {
@@ -15158,6 +15683,12 @@
       "meta": {}
     },
     {
+      "src": "часть_superkondensatory_electrode_pos",
+      "dst": "material_karbon",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_superkondensatory_current_collector",
       "dst": "izdelie_superkondensatory",
       "type": "child_of",
@@ -15557,6 +16088,12 @@
       "src": "часть_alyuminievo-vozdushnye_toplivnye_elementy_cathode",
       "dst": "izdelie_alyuminievo-vozdushnye_toplivnye_elementy",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_alyuminievo-vozdushnye_toplivnye_elementy_cathode",
+      "dst": "material_karbon",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16250,6 +16787,12 @@
       "meta": {}
     },
     {
+      "src": "часть_mikroreaktor_deleniya_fuel",
+      "dst": "material_karbon",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_mikroreaktor_deleniya_moderator",
       "dst": "izdelie_mikroreaktor_deleniya",
       "type": "child_of",
@@ -16805,6 +17348,12 @@
       "src": "часть_tpv_heat_source",
       "dst": "izdelie_tpv",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_tpv_heat_source",
+      "dst": "material_karbon",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -26454,6 +27003,14 @@
       }
     },
     {
+      "src": "material_karbon",
+      "dst": "часть_superkondensatory_electrode_pos",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_al_6061-t6",
       "dst": "часть_superkondensatory_current_collector",
       "type": "used_in",
@@ -26712,6 +27269,14 @@
     {
       "src": "material_ti-6al-4v",
       "dst": "часть_nasa_asc-e_srsc_displacer_piston",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_karbon",
+      "dst": "часть_alyuminievo-vozdushnye_toplivnye_elementy_cathode",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -27158,6 +27723,14 @@
       }
     },
     {
+      "src": "material_karbon",
+      "dst": "часть_mikroreaktor_deleniya_fuel",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_graphite",
       "dst": "часть_mikroreaktor_deleniya_moderator",
       "type": "used_in",
@@ -27512,6 +28085,14 @@
     {
       "src": "material_ti-6al-4v",
       "dst": "часть_tpv_housing",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_karbon",
+      "dst": "часть_tpv_heat_source",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -28889,6 +29470,7 @@
       "standart_ASTM C1421",
       "standart_ASTM C1728",
       "standart_ASTM C1728 Type III Grade 1A",
+      "standart_ASTM C177 (теплопроводность методом теплопоточной плиты — пены)",
       "standart_ASTM C534",
       "standart_ASTM C638",
       "standart_ASTM C638 (aggregates for radiation-shielding concrete)",
@@ -28902,15 +29484,21 @@
       "standart_ASTM D150 (диэлектрическая проницаемость и тангенс потерь)",
       "standart_ASTM D2240",
       "standart_ASTM D2240 (Shore A)",
+      "standart_ASTM D2240 (твёрдость по Шору A/D)",
       "standart_ASTM D2344 (короткопролётный изгиб)",
       "standart_ASTM D3039 (растяжение полимерных композитов)",
+      "standart_ASTM D3574 (испытания эластичных ячеистых материалов)",
+      "standart_ASTM D395 (остаточная деформация при сжатии)",
+      "standart_ASTM D4018",
       "standart_ASTM D4020",
       "standart_ASTM D412",
+      "standart_ASTM D412 (растяжение вулканизованных резин и термопластичных эластомеров)",
       "standart_ASTM D4802 (акриловый лист, спецификация)",
       "standart_ASTM D4894",
       "standart_ASTM D570 (влагопоглощение)",
       "standart_ASTM D638",
       "standart_ASTM D638 (механические испытания пластмасс)",
+      "standart_ASTM D638 (растяжение, параллельный метод)",
       "standart_ASTM D646 (граммаж бумаги)",
       "standart_ASTM D6641 (сжатие UD-композитов)",
       "standart_ASTM D7219",
@@ -28949,6 +29537,7 @@
       "standart_DIN 17230 (100Cr6)",
       "standart_DIN 17230 / W-Nr 1.3505 (100Cr6)",
       "standart_DIN 2093",
+      "standart_DIN 53516 (истирание абразивом)",
       "standart_DIN 69051",
       "standart_DIN 912",
       "standart_DIN EN 60672 (керамические электроизоляционные материалы, класс C-7xx)",
@@ -29053,8 +29642,10 @@
       "standart_IPC-A-610",
       "standart_IPG Installation Manual",
       "standart_IPG Mechanical Interface",
+      "standart_ISO 10618",
       "standart_ISO 10993",
       "standart_ISO 10993-1 (биосовместимость)",
+      "standart_ISO 11359 (ТКЛР ТМА)",
       "standart_ISO 1179 (пневмопорты)",
       "standart_ISO 14687",
       "standart_ISO 15241",
@@ -29082,6 +29673,7 @@
       "standart_ISO 4762 (M5)",
       "standart_ISO 4762 (M6)",
       "standart_ISO 4762 (M8)",
+      "standart_ISO 527 (растяжение пластиков)",
       "standart_ISO 5834-1",
       "standart_ISO 5834-2",
       "standart_ISO 6149-1 (fluid ports)",
@@ -29089,6 +29681,7 @@
       "standart_ISO 6474 (имплантационная керамика Al₂O₃)",
       "standart_ISO 683-17 (шарико- и роликоподшипниковые стали; марки 100Cr6, 100CrMnSi6-4, 100CrMo7, 100CrMo7-3)",
       "standart_ISO 6872",
+      "standart_ISO 75 (HDT/B — теплостойкость под нагрузкой)",
       "standart_ISO 7823-1 (PMMA листы, литые)",
       "standart_ISO 7823-2 (PMMA листы, экструзионные)",
       "standart_ISO 898-1",
@@ -29187,8 +29780,10 @@
       "standart_The Aluminum Association: AA 6063 (ASTM B221)",
       "standart_Thorlabs Mounting Note",
       "standart_UL 746B (RTI)",
+      "standart_UL 94 (горючесть V-0…HB)",
       "standart_UL 94 V-0",
       "standart_UL 94 V-0 (горючесть)",
+      "standart_UL 94 V-0 (горючесть, для электротехнических марок)",
       "standart_UL 94 V-2 (неармированный PA66)",
       "standart_UN 3090",
       "standart_UN 38.3",
@@ -29240,6 +29835,7 @@
       "group_Michael Naguib, Yury Gogotsi, Michel W. Barsoum — Drexel University (открытие MXene в 2011 г.: травление Ti₃AlC₂ в HF)",
       "group_Murata_TDK",
       "group_Pierre Bonhôte и соавт. (EPFL, Швейцария) — синтез гидрофобных EMIM-имидных комнатнотемпературных расплавов, Inorg. Chem. 1996, 35(5), 1168–1178",
+      "group_Toray Industries (Torayca™ T300 — первое серийное высокопрочное PAN-волокно, выпущено в 1971 г.; >93 % C, Na+K следы)",
       "group_advanced_research",
       "group_ballard_power",
       "group_bloom_energy",
@@ -29324,7 +29920,6 @@
       "material_hyperalloy_tx",
       "material_inconel_718_turbine",
       "material_iron_powder",
-      "material_karbon",
       "material_koh_aqueous",
       "material_lead_free_solder",
       "material_lini_mn_co_o2",
@@ -29373,20 +29968,21 @@
     ]
   },
   "stats": {
-    "nodes": 969,
-    "edges": 3237,
+    "nodes": 1044,
+    "edges": 3245,
     "dangling": {
-      "complies_with": 399,
+      "complies_with": 413,
       "has_part": 4,
-      "researched_by": 56,
-      "uses_material": 81
+      "researched_by": 57,
+      "uses_material": 80
     },
     "by_type": {
       "chast": 625,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 131,
-      "material": 195,
-      "standart": 8
+      "material": 197,
+      "standart": 8,
+      "tekhnologia": 73
     }
   }
 }

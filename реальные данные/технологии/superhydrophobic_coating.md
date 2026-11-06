@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_superhydrophobic_coating
+псевдонимы: []
+канонический_id: tekhnologia_superhydrophobic_coating
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_superhydrophobic_coating
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: Superhydrophobic coating
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 Superhydrophobic coating (SiO₂-наночастицы, контактный угол >150°)

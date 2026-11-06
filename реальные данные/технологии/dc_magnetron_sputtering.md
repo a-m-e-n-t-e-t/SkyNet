@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_dc_magnetron_sputtering
+псевдонимы: []
+канонический_id: tekhnologia_dc_magnetron_sputtering
 тип: технология
 категория: обработка
 область_применения: 
@@ -47,9 +49,8 @@ id: tekhnologia_dc_magnetron_sputtering
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: DC magnetron sputtering
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 DC magnetron sputtering

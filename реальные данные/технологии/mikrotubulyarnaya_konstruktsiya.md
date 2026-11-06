@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_mikrotubulyarnaya_konstruktsiya
+псевдонимы: []
+канонический_id: tekhnologia_mikrotubulyarnaya_konstruktsiya
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_mikrotubulyarnaya_konstruktsiya
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: микротубулярная конструкция
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 микротубулярная конструкция

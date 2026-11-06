@@ -13,6 +13,7 @@ graph TB
     script_check_model_completeness_py(("check_model_completeness.py"))
     script_classify_subsystem_py(("classify_subsystem.py"))
     script_decompose_all_izdeliya_py(("decompose_all_izdeliya.py"))
+    script_fix_yaml_corruption_py(("fix_yaml_corruption.py"))
     script_generate_decomposition_py(("generate_decomposition.py"))
     script_generate_graphs_py(("generate_graphs.py"))
     script_generate_wrapper_izdeliya_py(("generate_wrapper_izdeliya.py"))
@@ -193,6 +194,7 @@ graph TB
     concept_диалог_CHANGELOG_md(("CHANGELOG.md"('[', ']')
     script_decompose_all_izdeliya_py -.->|imports| script_validate_decomposition_py
     script_decompose_all_izdeliya_py -.->|imports| script__helpers_py
+    script_fix_yaml_corruption_py -.->|imports| script_migrate_aliases_py
     script_generate_decomposition_py -.->|imports| script_validate_decomposition_py
     script_generate_decomposition_py -.->|imports| script__helpers_py
     script_generate_wrapper_izdeliya_py -.->|imports| script_validate_decomposition_py
@@ -240,15 +242,14 @@ graph TB
     section_§11_5__Разделение_уровней__паттерн_vs_экземпляр -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§11_6_МНОГОСЛОЙНАЯ_БРОНЯ_(v9_22_НОВОЕ_—_5_слоёв) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§9_5_Авто-отчёт_после_batch_(v9_24_НОВОЕ_—_из_аудита_диалога -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
-    section_§9_6_Запрет_эвристик_без_явного_правила_(v9_24_НОВОЕ_—_из_ау -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 189, рёбер: 217 (показано топ-50)._
+_Узлов: 190, рёбер: 218 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|
 | spec_section | 146 |
-| script | 23 |
+| script | 24 |
 | concept_doc | 17 |
 | catalog | 1 |
 | readme | 1 |

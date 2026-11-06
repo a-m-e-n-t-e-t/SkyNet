@@ -2383,6 +2383,18 @@ def check_F32(entries: list[tuple[Path, dict]] | None = None) -> dict:
     if entries is None:
         entries = _load_materials_and_techs()
 
+    # Разобранные агентом false-positive (issue # закрыт с обоснованием).
+    # Пары исключаются из violations навсегда — sig (класс, ρ, k) совпадает,
+    # но это разные каталожные сущности одного вещества.
+    f32_fp_exclude: set[frozenset[str]] = {
+        # #751: базовая медь (лист/паста, ASTM B152) vs медный провод
+        # (проволока, ASTM B1/B2/B3, temper'ы) — разные сущности Cu-ETP.
+        frozenset({'material_copper', 'material_mednyi_provod'}),
+        # pbo2 (керамика PbO2) vs spongy_lead (пористый металл Pb) —
+        # общий source_url, разные материалы.
+        frozenset({'material_pbo2', 'material_spongy_lead'}),
+    }
+
     groups: dict[tuple, list[str]] = {}
     total = 0
     for _f, data in entries:
@@ -2408,12 +2420,19 @@ def check_F32(entries: list[tuple[Path, dict]] | None = None) -> dict:
     valid = total
     for (klass, rho, k), mids in sorted(groups.items()):
         if len(mids) > 1:
+            real = [mids[0]]
+            for other in mids[1:]:
+                if frozenset({mids[0], other}) in f32_fp_exclude:
+                    continue  # разобранный FP — не violation
+                real.append(other)
+            if len(real) < 2:
+                continue
             violations.append(
-                f"{mids[0]}: семантический дубль {mids[1:]} "
+                f"{real[0]}: семантический дубль {real[1:]} "
                 f"(класс={klass}, ρ≈{rho:g}, k≈{k:g}) — проверить и слить "
                 f"через scripts/migrate_dedup_materials.py или закрыть как "
                 f"false-positive")
-            valid -= len(mids)
+            valid -= len(real)
 
     ratio = valid / max(1, total)
     return {

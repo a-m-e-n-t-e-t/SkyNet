@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_ion_implantation_si
+псевдонимы: []
+канонический_id: tekhnologia_ion_implantation_si
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_ion_implantation_si
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: Ion implantation Si
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 Ion implantation Si (10 кэВ, 10¹⁴ см⁻²)

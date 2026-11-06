@@ -69,6 +69,12 @@
       "path": "scripts/decompose_all_izdeliya.py"
     },
     {
+      "id": "script:fix_yaml_corruption.py",
+      "type": "script",
+      "label": "fix_yaml_corruption.py",
+      "path": "scripts/fix_yaml_corruption.py"
+    },
+    {
       "id": "script:generate_decomposition.py",
       "type": "script",
       "label": "generate_decomposition.py",
@@ -1147,6 +1153,12 @@
     {
       "src": "script:decompose_all_izdeliya.py",
       "dst": "script:_helpers.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
+      "src": "script:fix_yaml_corruption.py",
+      "dst": "script:migrate_aliases.py",
       "type": "imports",
       "meta": {}
     },
@@ -2442,13 +2454,13 @@
     }
   ],
   "stats": {
-    "nodes": 189,
-    "edges": 217,
+    "nodes": 190,
+    "edges": 218,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,
       "readme": 1,
-      "script": 23,
+      "script": 24,
       "spec": 1,
       "spec_section": 146
     }

@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_lazernoe_teksturirovanie_poverhnosti
+псевдонимы: []
+канонический_id: tekhnologia_lazernoe_teksturirovanie_poverhnosti
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_lazernoe_teksturirovanie_poverhnosti
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: лазерное текстурирование поверхности
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 лазерное текстурирование поверхности (dimples)

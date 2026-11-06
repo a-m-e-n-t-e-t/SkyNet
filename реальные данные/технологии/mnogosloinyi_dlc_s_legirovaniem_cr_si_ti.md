@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_mnogosloinyi_dlc_s_legirovaniem_cr_si_ti
+псевдонимы: []
+канонический_id: tekhnologia_mnogosloinyi_dlc_s_legirovaniem_cr_si_ti
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_mnogosloinyi_dlc_s_legirovaniem_cr_si_ti
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: Многослойный DLC с легированием Cr/Si/Ti
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 Многослойный DLC с легированием Cr/Si/Ti

@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_antagonisticheskoi_sheme_biran
+псевдонимы: []
+канонический_id: tekhnologia_antagonisticheskoi_sheme_biran
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_antagonisticheskoi_sheme_biran
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: антагонистической схеме BIRAN
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 антагонистической схеме BIRAN

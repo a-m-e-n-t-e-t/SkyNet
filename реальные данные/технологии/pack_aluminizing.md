@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_pack_aluminizing
+псевдонимы: []
+канонический_id: tekhnologia_pack_aluminizing
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_pack_aluminizing
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: Pack aluminizing
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 Pack aluminizing — внедрение Al в поверхность Ta-10W с образованием интерметаллидов TaAl₃ и WAl₅

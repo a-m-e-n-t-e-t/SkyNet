@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_lazernaya_udarnaya_obrabotka
+псевдонимы: []
+канонический_id: tekhnologia_lazernaya_udarnaya_obrabotka
 тип: технология
 категория: обработка
 область_применения: 
@@ -47,9 +49,8 @@ id: tekhnologia_lazernaya_udarnaya_obrabotka
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: Лазерная ударная обработка
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 Лазерная ударная обработка (LSP)

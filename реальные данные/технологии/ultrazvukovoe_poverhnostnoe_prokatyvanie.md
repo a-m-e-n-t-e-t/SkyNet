@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_ultrazvukovoe_poverhnostnoe_prokatyvanie
+псевдонимы: []
+канонический_id: tekhnologia_ultrazvukovoe_poverhnostnoe_prokatyvanie
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_ultrazvukovoe_poverhnostnoe_prokatyvanie
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: Ультразвуковое поверхностное прокатывание
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 Ультразвуковое поверхностное прокатывание (USRP)

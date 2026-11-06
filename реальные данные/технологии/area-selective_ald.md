@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_area-selective_ald
+псевдонимы: []
+канонический_id: tekhnologia_area-selective_ald
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_area-selective_ald
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: Area-selective ALD
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 Area-selective ALD

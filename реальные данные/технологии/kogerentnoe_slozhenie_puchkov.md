@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_kogerentnoe_slozhenie_puchkov
+псевдонимы: []
+канонический_id: tekhnologia_kogerentnoe_slozhenie_puchkov
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_kogerentnoe_slozhenie_puchkov
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: Когерентное сложение пучков
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 Когерентное сложение пучков (Coherent Beam Combining)

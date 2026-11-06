@@ -182,7 +182,7 @@ graph LR
     material_magnitnaya_rezina_ferritovyi_poroshok[Fe₃O₄ (магнетит) 1–20 …]
     material_metapoverhnost[метаповерхность]
     material_monokristallicheskogo_sic[SiC — стехиометрически…]
-    material_peek[PEEK]
+    material_peek[PEEK — полиэфирэфиркет…]
     material_poliimid[Ароматический полиимид…]
     material_si[Si]
     material_silikon_80_shore_a_+_steklyannye_mikrosfery[Силикон 80 Shore A + с…]
@@ -344,5 +344,5 @@ graph LR
 | `метаповерхность` | 1 |
 | `SiC — стехиометрический карбид кремния (50 ат.% Si / 50 ат.% C); монокристалл 4H-SiC, n-легирование азотом (подложки) или высокочистый без легирования` | 1 |
 | `Силикон 80 Shore A + стеклянные микросферы` | 1 |
-| `PEEK` | 1 |
+| `PEEK — полиэфирэфиркетон (PAEK): повторяющееся звено (C19H12O3)n, M = 288.3 г/моль; синтез из 4,4′-дифторбензофенона и динатриевой соли гидрохинона в дифенилсульфоне при ~300 °C` | 1 |
 | `Fe₃O₄ (магнетит) 1–20 wt% + силиконовый каучук (Ecoflex/PDMS)` | 1 |

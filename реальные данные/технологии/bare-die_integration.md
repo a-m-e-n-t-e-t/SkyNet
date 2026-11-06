@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_bare-die_integration
+псевдонимы: []
+канонический_id: tekhnologia_bare-die_integration
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_bare-die_integration
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: Bare-die integration
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 Bare-die integration (на flex)

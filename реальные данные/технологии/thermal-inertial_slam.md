@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_thermal-inertial_slam
+псевдонимы: []
+канонический_id: tekhnologia_thermal-inertial_slam
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_thermal-inertial_slam
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: Thermal-Inertial SLAM
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 Thermal-Inertial SLAM

@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_honing_+_plateau_finish
+псевдонимы: []
+канонический_id: 'tekhnologia_honing_+_plateau_finish'
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_honing_+_plateau_finish
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: Honing + plateau finish
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 Honing + plateau finish (хонингование + плато-финиш), Ra 0,02 мкм

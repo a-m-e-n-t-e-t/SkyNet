@@ -1,5 +1,7 @@
 ---
 id: tekhnologia_vakuumnaya_infiltratsiya_mos₂
+псевдонимы: []
+канонический_id: 'tekhnologia_vakuumnaya_infiltratsiya_mos₂'
 тип: технология
 категория: обработка
 область_применения: 
@@ -46,9 +48,8 @@ id: tekhnologia_vakuumnaya_infiltratsiya_mos₂
   допуски: null
   ограничения: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03# Технология: Вакуумная инфильтрация MoS₂
+дата_обновления: 2026-11-03
 ---
-
 ## Описание
 
 Вакуумная инфильтрация MoS₂

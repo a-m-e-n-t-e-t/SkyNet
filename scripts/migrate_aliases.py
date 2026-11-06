@@ -67,12 +67,14 @@ DUPLICATE_PAIRS = [
     ('material_p_vdf-trfe-ctfe', 'material_pvdf-trfe-ctfe',
      'терполимер P(VDF-TrFE-CTFE); оба — заглушки; консистентно с p_vdf-trfe-cfe'),
 
-    # Найдено F32 (v9.44): material_copper (Cu ≥99.9%, C11000/ETP) и
-    # material_mednyi_provod (Cu-ETP C11000, ≥99.90% Cu) — оба металл,
-    # ρ≈8900 kg/m³, k≈390 W/mK, идентичный хим.состав. copper.md — короче
-    # id, сохраняем как канон; mednyi_provod.md — алиас.
-    ('material_copper', 'material_mednyi_provod',
-     'электротехническая медь C11000/Cu-ETP; mednyi_provod = медный провод'),
+    # F32-кандидат (issue #751) РАЗОБРАН как false-positive: это разные
+    # каталожные сущности одного вещества. material_copper — базовый металл
+    # (лист/паста: терминация MLCC, шины, теплоотводы; ASTM B152/ГОСТ 859),
+    # material_mednyi_provod — проволочный прокат (жилы, воздушные линии,
+    # обмоточный провод; ASTM B1/B2/B3, temper'ы, прочность 205–455 МПа —
+    # собственных свойств у меди-листа нет). Слияние потеряло бы стандарты
+    # и механику проволоки. Исключено также в check_F32 (F32_FP_EXCLUDE).
+    # ('material_copper', 'material_mednyi_provod', ...) — изъято.
 
     # material_pbo2.md vs material_spongy_lead.md: PbO₂ (диоксид свинца,
     # керамика) и пористый свинец (металл) — принципиально разные материалы.
