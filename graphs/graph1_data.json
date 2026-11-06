@@ -45,6 +45,27 @@
       "subsystem": "встроенное_оружие"
     },
     {
+      "id": "часть_granatomet_m320_core_resiver",
+      "type": "chast",
+      "label": "ресивер",
+      "path": "реальные данные/изделия/встроенное_оружие/granatomet_m320/часть_granatomet_m320_core/часть_granatomet_m320_core_resiver/_index.md",
+      "subsystem": "встроенное_оружие"
+    },
+    {
+      "id": "часть_granatomet_m320_core_usm",
+      "type": "chast",
+      "label": "ударно-спусковой_механизм",
+      "path": "реальные данные/изделия/встроенное_оружие/granatomet_m320/часть_granatomet_m320_core/часть_granatomet_m320_core_usm/_index.md",
+      "subsystem": "встроенное_оружие"
+    },
+    {
+      "id": "часть_granatomet_m320_core_stvol",
+      "type": "chast",
+      "label": "ствол",
+      "path": "реальные данные/изделия/встроенное_оружие/granatomet_m320/часть_granatomet_m320_core/часть_granatomet_m320_core_stvol/_index.md",
+      "subsystem": "встроенное_оружие"
+    },
+    {
       "id": "часть_minigun_m134_housing",
       "type": "chast",
       "label": "корпус",
@@ -7435,6 +7456,24 @@
     },
     {
       "src": "часть_granatomet_m320_core",
+      "dst": "часть_granatomet_m320_core_stvol",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_granatomet_m320_core",
+      "dst": "часть_granatomet_m320_core_resiver",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_granatomet_m320_core",
+      "dst": "часть_granatomet_m320_core_usm",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_granatomet_m320_core",
       "dst": "izdelie_granatomet_m320",
       "type": "child_of",
       "meta": {}
@@ -7466,6 +7505,42 @@
     {
       "src": "часть_granatomet_m320_connectors",
       "dst": "material_becu",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_granatomet_m320_core_resiver",
+      "dst": "часть_granatomet_m320_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_granatomet_m320_core_resiver",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_granatomet_m320_core_usm",
+      "dst": "часть_granatomet_m320_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_granatomet_m320_core_usm",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_granatomet_m320_core_stvol",
+      "dst": "часть_granatomet_m320_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_granatomet_m320_core_stvol",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -19252,6 +19327,30 @@
       }
     },
     {
+      "src": "часть_granatomet_m320_core_stvol",
+      "dst": "часть_granatomet_m320_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_granatomet_m320_core_resiver",
+      "dst": "часть_granatomet_m320_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_granatomet_m320_core_usm",
+      "dst": "часть_granatomet_m320_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
       "src": "material_al_6061-t6",
       "dst": "часть_granatomet_m320_core",
       "type": "used_in",
@@ -19270,6 +19369,30 @@
     {
       "src": "material_becu",
       "dst": "часть_granatomet_m320_connectors",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_granatomet_m320_core_resiver",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_granatomet_m320_core_usm",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_granatomet_m320_core_stvol",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -30472,8 +30595,8 @@
     ]
   },
   "stats": {
-    "nodes": 1051,
-    "edges": 3302,
+    "nodes": 1054,
+    "edges": 3317,
     "dangling": {
       "complies_with": 467,
       "has_part": 4,
@@ -30481,7 +30604,7 @@
       "uses_material": 79
     },
     "by_type": {
-      "chast": 632,
+      "chast": 635,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 132,
       "material": 196,
