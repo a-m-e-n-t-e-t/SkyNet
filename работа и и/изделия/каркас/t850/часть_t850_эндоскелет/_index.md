@@ -41,8 +41,10 @@ scaling_type: количественный
   тип: 'microprocessor-controlled combat chassis'
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-06
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/T-850
+источник_дата: 2026-11-06
 источник_разбора: канон
 ---
 
@@ -50,7 +52,7 @@ scaling_type: количественный
 
 ## Описание
 
-Дочерняя часть изделия.
+Несущий эндоскелет T-850 из гиперсплава (титановый сплав Cyberdyne, triple-armored): усиленная броня и сервоприводы по сравнению с серией 800; живая тканевая оболочка монтируется поверх каркаса (canon T3).
 
 Родитель: `izdelie_SkyNet-T850` (подсистема: каркас).
 
@@ -82,4 +84,5 @@ Limbs controlled by axial drive motors and clavicular trailing links. Frictionle
 ## Источники
 
 - Канон: декомпозиция `izdelie_SkyNet-T850` (web search 2026-11-03)
+- [T-850 (Rise of the Machines timeline) | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/T-850)
 - Материалы: реальные данные/материалы/
