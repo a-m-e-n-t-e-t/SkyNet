@@ -32,12 +32,12 @@ scaling_type: количественный
     l: 160
     w: 146
     h: 2.2
-  выработка_энергии_W: 0
-  выработка_тепла_W: 1
+  выработка_энергии_W: 250
+  выработка_тепла_W: 2.5
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-07
 источник: web_search
 источник_разбора: канон
 источник_url: https://patents.google.com/patent/CN112103513A/en
@@ -58,13 +58,19 @@ scaling_type: количественный
 | масса | 0.247 | kg | Chaowei Power patent CN112103513A (2020): positive grid frame 1.8–2.0 mm / 15–16 ribs, negative grid frame 1.2–1.4 mm / 12–15 ribs; plate L×W derived from canon DIN-format case 350×175×190 (6 cells, cell pitch 58.3 mm → plate 160×146 mm); Suzuki Battery engineering blog (PbO2 positive / sponge lead negative) |
 | доля массы родителя | 0.0164 | — | оценка |
 | габариты (Д×Ш×В) | 160×146×2.2 | mm | Chaowei Power patent CN112103513A (2020): positive grid frame 1.8–2.0 mm / 15–16 ribs, negative grid frame 1.2–1.4 mm / 12–15 ribs; plate L×W derived from canon DIN-format case 350×175×190 (6 cells, cell pitch 58.3 mm → plate 160×146 mm); Suzuki Battery engineering blog (PbO2 positive / sponge lead negative) |
-| выработка энергии | 0 | W | canon |
-| выработка тепла | 1 | W | canon |
+| выработка энергии | 250 | W | вклад пары PbO2↔Pb (канон-модель; web_search 2026-11-07) |
+| выработка тепла | 2.5 | W | I²R пасты + перенапряжение (BU-802a; web_search 2026-11-07) |
 | материал | pbo2 | — | pbo2.md |
 
 ## Принцип работы
 
 При разряде PbO2 восстанавливается до PbSO4 с поглощением электронов: PbO2 + SO4²⁻ + 4H⁺ + 2e⁻ → PbSO4 + 2H2O (E° ≈ +1.69 В). При заряде реакция идёт в обратную сторону с выделением PbO2; решётка служит токоотводом и каркасом, пористая паста — местом электрохимической реакции.
+
+## Энергетический баланс (F15d/F15b)
+
+Положительная пластина — редокс-центр пары: PbO2 + H2SO4 + 2H⁺ + 2e⁻ → PbSO4 + 2H2O (E° ≈ +1.69 В). Учётная мощность пары «PbO2 ↔ Pb»: 250 Вт + 250 Вт = 500 Вт номинала родителя (I = 500/12 ≈ 41.7 А через обе пластины, мощность делится поровну; E°cell = 2.05 В — Wikipedia). По отдельности пластина мощность не отдаёт — значение отражает вклад пары.
+
+Тепло 2.5 Вт при I = 41.7 А — омические потери пасты и контакта «паста–решётка» + активационное перенапряжение восстановления PbO2 (I²R-аппроксимация — BU-802a). Ранее 1 Вт — канон-заглушка.
 
 ## Состав
 
@@ -78,3 +84,6 @@ scaling_type: количественный
 
 - Chaowei Power patent CN112103513A (2020): positive grid frame 1.8–2.0 mm / 15–16 ribs, negative grid frame 1.2–1.4 mm / 12–15 ribs; plate L×W derived from canon DIN-format case 350×175×190 (6 cells, cell pitch 58.3 mm → plate 160×146 mm); Suzuki Battery engineering blog (PbO2 positive / sponge lead negative): https://patents.google.com/patent/CN112103513A/en (проверено 2026-11-05)
 - Материалы: реальные данные/материалы/
+
+- Wikipedia — Lead–acid battery (E°cell = 2.05 В; КПД заряда/разряда 50–95 %; реакции пластин Pb/PbO2): https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery (обращение 2026-11-07)
+- Battery University BU-802a — How does Rising Internal Resistance Affect Performance (I²R — принятая производителями оценка тепловыделения при разряде): https://batteryuniversity.com/article/bu-802a-how-does-rising-internal-resistance-affect-performance (обращение 2026-11-07)
