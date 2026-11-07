@@ -3671,6 +3671,20 @@
       "subsystem": "приводная_система"
     },
     {
+      "id": "часть_bldc_enkoder_core_stator",
+      "type": "chast",
+      "label": "основной_элемент",
+      "path": "реальные данные/изделия/приводная_система/bldc_enkoder/часть_bldc_enkoder_core_stator/_index.md",
+      "subsystem": "приводная_система"
+    },
+    {
+      "id": "часть_bldc_enkoder_core_rotor",
+      "type": "chast",
+      "label": "основной_элемент",
+      "path": "реальные данные/изделия/приводная_система/bldc_enkoder/часть_bldc_enkoder_core_rotor/_index.md",
+      "subsystem": "приводная_система"
+    },
+    {
       "id": "часть_bldc_enkoder_mounting",
       "type": "chast",
       "label": "крепёж",
@@ -3689,6 +3703,13 @@
       "type": "chast",
       "label": "корпус",
       "path": "реальные данные/изделия/приводная_система/bldc_enkoder/часть_bldc_enkoder_housing/_index.md",
+      "subsystem": "приводная_система"
+    },
+    {
+      "id": "часть_bldc_enkoder_core_encoder",
+      "type": "chast",
+      "label": "основной_элемент",
+      "path": "реальные данные/изделия/приводная_система/bldc_enkoder/часть_bldc_enkoder_core_encoder/_index.md",
       "subsystem": "приводная_система"
     },
     {
@@ -15705,6 +15726,24 @@
     },
     {
       "src": "часть_bldc_enkoder_core",
+      "dst": "часть_bldc_enkoder_core_stator",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_bldc_enkoder_core",
+      "dst": "часть_bldc_enkoder_core_rotor",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_bldc_enkoder_core",
+      "dst": "часть_bldc_enkoder_core_encoder",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_bldc_enkoder_core",
       "dst": "izdelie_bldc_enkoder",
       "type": "child_of",
       "meta": {}
@@ -15712,6 +15751,30 @@
     {
       "src": "часть_bldc_enkoder_core",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_bldc_enkoder_core_stator",
+      "dst": "часть_bldc_enkoder_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_bldc_enkoder_core_stator",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_bldc_enkoder_core_rotor",
+      "dst": "часть_bldc_enkoder_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_bldc_enkoder_core_rotor",
+      "dst": "material_ndfeb",
       "type": "uses_material",
       "meta": {}
     },
@@ -15748,6 +15811,18 @@
     {
       "src": "часть_bldc_enkoder_housing",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_bldc_enkoder_core_encoder",
+      "dst": "часть_bldc_enkoder_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_bldc_enkoder_core_encoder",
+      "dst": "material_si",
       "type": "uses_material",
       "meta": {}
     },
@@ -27168,8 +27243,48 @@
       }
     },
     {
+      "src": "часть_bldc_enkoder_core_stator",
+      "dst": "часть_bldc_enkoder_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_bldc_enkoder_core_rotor",
+      "dst": "часть_bldc_enkoder_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_bldc_enkoder_core_encoder",
+      "dst": "часть_bldc_enkoder_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
       "src": "material_al_6061-t6",
       "dst": "часть_bldc_enkoder_core",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_bldc_enkoder_core_stator",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ndfeb",
+      "dst": "часть_bldc_enkoder_core_rotor",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -27194,6 +27309,14 @@
     {
       "src": "material_al_6061-t6",
       "dst": "часть_bldc_enkoder_housing",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_si",
+      "dst": "часть_bldc_enkoder_core_encoder",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -31281,8 +31404,8 @@
     ]
   },
   "stats": {
-    "nodes": 1071,
-    "edges": 3399,
+    "nodes": 1074,
+    "edges": 3414,
     "dangling": {
       "complies_with": 469,
       "has_part": 4,
@@ -31290,7 +31413,7 @@
       "uses_material": 82
     },
     "by_type": {
-      "chast": 647,
+      "chast": 650,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
       "material": 196,
