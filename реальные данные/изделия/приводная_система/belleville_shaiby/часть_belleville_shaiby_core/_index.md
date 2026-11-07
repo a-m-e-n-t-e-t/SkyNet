@@ -36,6 +36,17 @@ scaling_type: количественный
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
+масштабируемость:
+  режим: квантуемая
+  параметры: [наружный_диаметр_De_mm, толщина_t_mm]
+  пределы:
+    min: {наружный_диаметр_De_mm: 6, толщина_t_mm: 0.4}
+    max: {наружный_диаметр_De_mm: 250, толщина_t_mm: 14}
+  шаг: [6, 8, 10, 12.5, 14, 16, 18, 20, 22.5, 25, 28, 31.5, 35.5, 40, 45, 50, 56, 63, 71, 80, 90, 100, 112, 125, 140, 160, 180, 200, 224, 250]
+  закон_масштабирования:
+    масса: кубический
+    сила: квадратичный
+    ход: линейный
 дополнительные: {}
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-08
@@ -50,6 +61,8 @@ scaling_type: количественный
 ## Описание
 
 Неделимый закупочный пружинный элемент (пакет тарельчатых (бельвильских) дисковых пружин DIN 2093) — осевая упругая связь с высокой жёсткостью в компактном объёме: конические шайбы в стеке, число шайб задаёт характеристику заказа. Шайбы пакета идентичны (не разные подузлы), при обслуживании пакет заменяется целиком. По каталогу Schnorr (metricmcc.com) DIN 2093 disc springs — «conical spring washers used with threaded fasteners to maintain preload and counteract joint settling and thrust loads» (пружинный крепёж). Референсное исполнение — пакет Ø25 (типовой стек DIN 2093); габариты 25×25×15 мм, масса 0.03 кг. Материал — stal_st3 (форма: строительные_конструкции_и_крепёж).
+
+Масштабирование (P087 §12.6, режим «квантуемая»): типоразмеры заданы рядом DIN 2093 (DIN EN 16983) по наружному диаметру De от 6 мм (Group 1, Lee Spring: 88 размеров Group 1 от 6 до 40 мм) до 250 мм (Schnorr: ~250 типоразмеров в диапазоне 6–250 мм; Daemar: 246 размеров 8–250 мм); толщина t по группам стандарта: Group 1 <1.25 мм, Group 2 1.25–6 мм, Group 3 >6–14 мм; минимальный типоразмер 6×3.2×0.4 мм. Закон масштабирования для геометрически подобных пружин (De/t и h0/t постоянны): F ≈ 4E·t³·h0/(α·De²)·… — сила ∝ k² (квадратично), масса ∝ k³ (кубически), ход s ∝ k (линейно); шаг ряда De — прогрессия R20 (6…250).
 
 Родитель: `izdelie_belleville_shaiby` (подсистема: приводная_система).
 
@@ -81,6 +94,9 @@ scaling_type: количественный
 ## Источники
 
 - DIN 2093 Disc Springs | Schnorr Washers (Metric McC) — «conical spring washers used with threaded fasteners to maintain preload» — https://www.metricmcc.com/disc-spring-washers (обращение 2026-11-08)
+- Schnorr Disc Springs handbook (De до 250 мм, ~250 типоразмеров 6–250 мм в стоке) — http://www2.schnorr-group.com/uploads/media/handbuch_en.pdf (обращение 2026-11-08)
+- Lee Spring — Learn About Belleville Washers: «DIN 2093 standard size tables… 88 sizes in Group 1, outside diameters from 6 mm to 40 mm» — https://www.leespring.com/learn-about-belleville-washers (обращение 2026-11-08)
+- Daemar Disc Spring Catalogue: 246 размеров с OD 8–250 мм — http://daemar.com/wp-content/uploads/2013/11/Daemar-DMR-DiscSpringCatalogue-C0O-002-W.pdf (обращение 2026-11-08)
 - Lee Spring — Belleville Washers (bolted joint preloading, valve applications) — https://www.leespring.com/belleville-washers/61
 - Канон: декомпозиция `izdelie_belleville_shaiby` (web search 2026-11-03)
 - Материалы: реальные данные/материалы/
