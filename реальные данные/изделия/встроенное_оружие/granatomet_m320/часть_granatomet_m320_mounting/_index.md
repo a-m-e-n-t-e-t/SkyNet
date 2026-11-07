@@ -14,6 +14,7 @@ id: часть_granatomet_m320_mounting
 материалы_частей:
   - часть: часть_granatomet_m320_mounting
     материал: al_6061-t6
+    форма: крепёж_и_монтажные_плиты
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -39,7 +40,7 @@ scaling_type: количественный
   материал: 'Алюминиевый сплав AL 6061-T6, анодированный'
   крепление: 'быстроразъёмный кронштейн на планку MIL-STD-1913 (Picatinny)'
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-08
 источник: web_search
 источник_разбора: канон
 источник_url: https://en.wikipedia.org/wiki/M320_Grenade_Launcher_Module
@@ -64,7 +65,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 100×70×45 | mm | оценка: envelope кронштейна на планке |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 0 | W | canon |
-| материал | al_6061-t6 | — | алюминиевый quick-release кронштейн (wetworx/H&K) |
+| материал | al_6061-t6 (форма: крепёж_и_монтажные_плиты) | — | алюминиевый quick-release кронштейн (wetworx/H&K) |
 | интерфейс | MIL-STD-1913 (Picatinny) | — | Wikipedia, фото M320A1 на M4 |
 | совместимость | M4 (M320A1), M16 (M320), приклад standalone | — | Wikipedia |
 
@@ -82,6 +83,7 @@ scaling_type: количественный
 
 ## Источники
 
+- HK M320 40mm Grenade Launcher Front Mounting Bracket (quick-release кронштейн, закупочный аналог) — https://wetworxoutfitters.com/hk-m320-40mm-grenade-launcher-front-mounting-bracket-for-m4 (обращение 2026-11-08)
 - https://en.wikipedia.org/wiki/M320_Grenade_Launcher_Module (масса 1,5 кг, длина 350 мм, M320/M320A1 на M16/M4)
 - https://api.army.mil/e2/c/downloads/2023/01/31/6411baed/17965.pdf (fact sheet M320/M320A1)
 - Материалы: реальные данные/материалы/
