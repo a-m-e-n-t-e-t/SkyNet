@@ -1737,6 +1737,12 @@
       "path": "scripts/decompose_all_izdeliya.py"
     },
     {
+      "id": "script:fix_801.py",
+      "type": "script",
+      "label": "fix_801.py",
+      "path": "scripts/fix_801.py"
+    },
+    {
       "id": "script:fix_yaml_corruption.py",
       "type": "script",
       "label": "fix_yaml_corruption.py",
@@ -3821,6 +3827,18 @@
       "meta": {}
     },
     {
+      "src": "F22",
+      "dst": "script:fix_801.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:fix_801.py",
+      "dst": "F22",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "script:fix_yaml_corruption.py",
       "dst": "pattern:*.md",
       "type": "checks_files",
@@ -5112,13 +5130,13 @@
     }
   ],
   "stats": {
-    "nodes": 329,
-    "edges": 522,
+    "nodes": 330,
+    "edges": 524,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,
       "metric": 217,
-      "script": 25,
+      "script": 26,
       "spec_section": 58,
       "stub": 13
     }
