@@ -34,11 +34,11 @@ scaling_type: количественный
     w: 0.5
     h: 0.02
   выработка_энергии_W: 0
-  выработка_тепла_W: 1
+  выработка_тепла_W: 0.002
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-08
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.tdk-electronics.tdk.com/en/374108/tech-library/articles/products-technologies/products-technologies/tdk-expands-mlcc-lineup-with-new-state-of-the-art-low-resistance-soft-termination-types/3181946
@@ -60,7 +60,7 @@ Cu-терминационный слой MLCC 0402: непрерывная пл�
 | доля массы родителя | 0.09 | — | оценка |
 | габариты (Д×Ш×В) | 0.4×0.5×0.02 | mm | TDK Tech Library: стандартная терминация MLCC — базовые электроды Cu с двухслойным Ni-Sn покрытием |
 | выработка энергии | 0 | W | canon |
-| выработка тепла | 1 | W | canon |
+| выработка тепла | 0.002 | W | контактное сопротивление заделки (Ag-эпоксид/пайка, TDK soft termination types) |
 | материал | copper | — | copper.md |
 
 ## Принцип работы
