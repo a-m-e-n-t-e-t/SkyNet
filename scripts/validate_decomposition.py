@@ -3710,6 +3710,128 @@ def check_F_scal(izdeliya: dict[str, dict]) -> dict:
     }
 
 
+def check_F_ai_lineage(izdeliya: dict[str, dict]) -> dict:
+    """F-ai-lineage: ancestry-проверка для AI-улучшенных версий (v9.32 / §12.7).
+
+    SOFT-метрика (warning, не блокирующая). Для каждого файла с
+    `версия: ии-улучшенная` проверяет:
+      (a) `предок` — непустое поле, ссылка на real-компонент
+      (b) `предок` существует в `реальные данные/` (поиск по id)
+      (c) `улучшения` — непустой список (≥1 запись)
+      (d) каждое улучшение имеет тип/что/причина/источник
+      (e) `real_check.статус` — заполнен и из enum {проверен, требует_проверки, отклонён}
+
+    pass=True всегда (soft-метрика) — violations возвращаются для issue-очереди.
+    """
+    ENUM_REZHIM_CHECK = {'проверен', 'требует_проверки', 'отклонён'}
+    ENUM_TIP_ULUCHSHENIA = {
+        'замена_материала', 'замена_технологии', 'добавление_технологии',
+        'оптимизация_геометрии', 'замена_параметра',
+    }
+    violations = []
+    total = 0
+    valid = 0
+
+    # Сбор множества real-id для проверки существования предка
+    real_ids = set()
+    real_root = SKYNET_REPO / 'реальные данные'
+    if real_root.exists():
+        for f in real_root.rglob('*.md'):
+            if f.name.startswith('_') and f.name != '_index.md':
+                continue
+            data, _, _ = read_yaml_frontmatter(f)
+            if isinstance(data, dict) and data.get('id'):
+                real_ids.add(str(data['id']).strip())
+
+    for izd_id, data in izdeliya.items():
+        if str(data.get('версия', '')).strip() != 'ии-улучшенная':
+            continue
+        total += 1
+
+        errs = []
+
+        # (a) предок
+        predok = data.get('предок')
+        predok_str = str(predok or '').strip()
+        if not predok_str or predok_str in ('null', 'None'):
+            errs.append(
+                f"{izd_id}: отсутствует поле `предок` (real-компонент-источник) — "
+                f"AI-улучшенная версия ОБЯЗАНА ссылаться на real-предка (§12.7)"
+            )
+        else:
+            # (b) предок существует в реальные данные/
+            if predok_str not in real_ids:
+                errs.append(
+                    f"{izd_id}: предок='{predok_str}' не найден в реальные данные/ "
+                    f"(orphan AI-файл без real-предка)"
+                )
+
+        # (c) улучшения — непустой список
+        uluch = data.get('улучшения')
+        if not isinstance(uluch, list) or len(uluch) < 1:
+            errs.append(
+                f"{izd_id}: отсутствует или пуст список `улучшения` — "
+                f"AI-улучшенная версия обязана описать что улучшено (§12.7)"
+            )
+        else:
+            # (d) каждая запись имеет тип/что/причина/источник
+            for i, entry in enumerate(uluch, 1):
+                if not isinstance(entry, dict):
+                    errs.append(f"{izd_id}: улучшения[{i}] не dict")
+                    continue
+                tip = str(entry.get('тип', '') or '').strip()
+                chto = str(entry.get('что', '') or '').strip()
+                prichina = str(entry.get('причина', '') or '').strip()
+                istochnik = str(entry.get('источник', '') or '').strip()
+                if not tip:
+                    errs.append(f"{izd_id}: улучшения[{i}].тип пустой")
+                elif tip not in ENUM_TIP_ULUCHSHENIA:
+                    errs.append(
+                        f"{izd_id}: улучшения[{i}].тип='{tip}' не из enum "
+                        f"{sorted(ENUM_TIP_ULUCHSHENIA)} (§12.7)"
+                    )
+                if not chto:
+                    errs.append(f"{izd_id}: улучшения[{i}].что пусто")
+                if not prichina:
+                    errs.append(f"{izd_id}: улучшения[{i}].причина пуста")
+                if not istochnik:
+                    errs.append(f"{izd_id}: улучшения[{i}].источник пуст")
+
+        # (e) real_check.статус
+        rc = data.get('real_check')
+        if not isinstance(rc, dict):
+            errs.append(
+                f"{izd_id}: отсутствует блок `real_check` — "
+                f"AI-улучшенная версия требует усиленной проверки реалистичности (§12.7)"
+            )
+        else:
+            rc_status = str(rc.get('статус', '') or '').strip()
+            if not rc_status:
+                errs.append(f"{izd_id}: real_check.статус пустой")
+            elif rc_status not in ENUM_REZHIM_CHECK:
+                errs.append(
+                    f"{izd_id}: real_check.статус='{rc_status}' не из enum "
+                    f"{sorted(ENUM_REZHIM_CHECK)} (§12.7)"
+                )
+
+        if errs:
+            violations.extend(errs)
+        else:
+            valid += 1
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F-ai-lineage',
+        'description': 'AI-lineage (§12.7): предок + улучшения + real_check для версия: ии-улучшенная',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        # SOFT-метрика: pass=True всегда
+        'pass': True,
+        'violations': violations,
+    }
+
+
 def run_all_checks() -> dict:
     """Запустить все проверки и вернуть сводку."""
     print("=== SkyNet Decomposition Validator v9.31 ===")
@@ -4018,6 +4140,17 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
+    # F-ai-lineage — AI-ancestry (v9.32 / §12.7; SOFT-метрика)
+    print()
+    print("=== F-ai-lineage: AI-lineage (предок+улучшения+real_check, §12.7, soft) ===")
+    r = check_F_ai_lineage(izdeliya)
+    results['F-ai-lineage'] = r
+    print(f"  pass={r['pass']} (SOFT), ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
     # Сводка
     print()
     print("=== Сводка ===")
@@ -4081,7 +4214,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F27d', 'F27e', 'F27f', 'F27g', 'F28', 'F29', 'F31', 'F33', 'F34', 'F-scal')
+            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F27d', 'F27e', 'F27f', 'F27g', 'F28', 'F29', 'F31', 'F33', 'F34', 'F-scal', 'F-ai-lineage')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:

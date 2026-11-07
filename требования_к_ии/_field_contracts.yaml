@@ -196,3 +196,40 @@ field_contracts:
     verifies: [P087]
     blocker_if_unfilled: false
     is_orphan: false
+
+  # === AI-LINEAGE (§12.7, v9.32 — ОБЯЗАТЕЛЬНО для версия: ии-улучшенная) ===
+  - id: fc_ии_предок
+    schema: §12.7
+    поле: предок
+    tier: 4
+    executor_type: semantic
+    source_kind: derived_from_real_catalog
+    executor: scripts/web_verify.py
+    algorithm: "id real-компонента в реальные данные/; ОБЯЗАТЕЛЬНО для версия: ии-улучшенная; orphan (предок не найден) — нарушение F-ai-lineage"
+    verifies: [F-ai-lineage]
+    blocker_if_unfilled: false  # soft-метрика: violations через validate_decomposition.py
+    is_orphan: false
+
+  - id: fc_ии_улучшения
+    schema: §12.7
+    поле: улучшения
+    tier: 4
+    executor_type: semantic
+    source_kind: ai_analysis
+    executor: scripts/web_verify.py
+    algorithm: "список ≥1 записи с тип/что/причина/источник; enum тип: замена_материала|замена_технологии|добавление_технологии|оптимизация_геометрии|замена_параметра"
+    verifies: [F-ai-lineage]
+    blocker_if_unfilled: false
+    is_orphan: false
+
+  - id: fc_ии_real_check
+    schema: §12.7
+    поле: real_check
+    tier: 4
+    executor_type: semantic
+    source_kind: ai_analysis
+    executor: scripts/web_verify.py
+    algorithm: "блок проверки реалистичности: статус (проверен|требует_проверки|отклонён), метод, итерации, исправлено_ошибок, галлюцинации_исправлены, физические_пределы_соблюдены"
+    verifies: [F-ai-lineage]
+    blocker_if_unfilled: false
+    is_orphan: false
