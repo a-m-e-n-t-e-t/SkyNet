@@ -2,54 +2,54 @@
 
 ```mermaid
 graph LR
-    izdelie_minigun_m134[прочее]
     izdelie_granatomet_m320[прочее]
-    часть_minigun_m134_core[основной_элемент]
-    часть_minigun_m134_core_barrels[стволы]
-    часть_minigun_m134_core_rotor[ротор]
-    часть_minigun_m134_mounting[крепёж]
-    часть_minigun_m134_housing[корпус]
-    часть_minigun_m134_connectors[разъёмы]
-    часть_minigun_m134_core_motor[электропривод]
-    часть_granatomet_m320_core[основной_элемент]
+    izdelie_minigun_m134[прочее]
     часть_granatomet_m320_connectors[разъёмы]
     часть_granatomet_m320_housing[корпус]
+    часть_granatomet_m320_core[основной_элемент]
     часть_granatomet_m320_mounting[крепёж]
-    часть_granatomet_m320_core_resiver[ресивер]
     часть_granatomet_m320_core_usm[ударно-спусковой_механизм]
     часть_granatomet_m320_core_stvol[ствол]
-    часть_hk_aerial_плазма_пушка[plasma_cannon]
-    часть_t_x_нанотех_инъектор[nanotech_injector]
+    часть_granatomet_m320_core_resiver[ресивер]
+    часть_minigun_m134_connectors[разъёмы]
+    часть_minigun_m134_core_motor[электропривод]
+    часть_minigun_m134_core_barrels[стволы]
+    часть_minigun_m134_core[основной_элемент]
+    часть_minigun_m134_core_rotor[ротор]
+    часть_minigun_m134_housing[корпус]
+    часть_minigun_m134_mounting[крепёж]
     часть_t_x_плазма_пушка[built_in_plasma_cannon]
+    часть_t_x_нанотех_инъектор[nanotech_injector]
     часть_hk_tank_плазма_пушка_1[plasma_cannon]
+    часть_hk_aerial_плазма_пушка[plasma_cannon]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_becu[Cu основа; Be 1.90–2.1…]
     material_gallinstan[Эвтектика Ga-In-Sn: Ga…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
     material_w_ni_fe[Вольфрамовый тяжёлый с…]
-    izdelie_minigun_m134 -->|материал| material_stal_st3
-    izdelie_minigun_m134 -->|материал| material_ti_6al_4v
     izdelie_granatomet_m320 -->|материал| material_al_6061_t6
     izdelie_granatomet_m320 -->|материал| material_becu
-    часть_minigun_m134_core -->|материал| material_stal_st3
-    часть_minigun_m134_core_barrels -->|материал| material_stal_st3
-    часть_minigun_m134_core_rotor -->|материал| material_stal_st3
-    часть_minigun_m134_mounting -->|материал| material_stal_st3
-    часть_minigun_m134_housing -->|материал| material_ti_6al_4v
-    часть_minigun_m134_connectors -->|материал| material_al_6061_t6
-    часть_minigun_m134_core_motor -->|материал| material_stal_st3
-    часть_granatomet_m320_core -->|материал| material_al_6061_t6
+    izdelie_minigun_m134 -->|материал| material_stal_st3
+    izdelie_minigun_m134 -->|материал| material_ti_6al_4v
     часть_granatomet_m320_connectors -->|материал| material_becu
     часть_granatomet_m320_housing -->|материал| material_al_6061_t6
+    часть_granatomet_m320_core -->|материал| material_al_6061_t6
     часть_granatomet_m320_mounting -->|материал| material_al_6061_t6
-    часть_granatomet_m320_core_resiver -->|материал| material_al_6061_t6
     часть_granatomet_m320_core_usm -->|материал| material_al_6061_t6
     часть_granatomet_m320_core_stvol -->|материал| material_al_6061_t6
-    часть_hk_aerial_плазма_пушка -->|материал| material_w_ni_fe
-    часть_t_x_нанотех_инъектор -->|материал| material_gallinstan
+    часть_granatomet_m320_core_resiver -->|материал| material_al_6061_t6
+    часть_minigun_m134_connectors -->|материал| material_al_6061_t6
+    часть_minigun_m134_core_motor -->|материал| material_stal_st3
+    часть_minigun_m134_core_barrels -->|материал| material_stal_st3
+    часть_minigun_m134_core -->|материал| material_stal_st3
+    часть_minigun_m134_core_rotor -->|материал| material_stal_st3
+    часть_minigun_m134_housing -->|материал| material_ti_6al_4v
+    часть_minigun_m134_mounting -->|материал| material_stal_st3
     часть_t_x_плазма_пушка -->|материал| material_ti_6al_4v
+    часть_t_x_нанотех_инъектор -->|материал| material_gallinstan
     часть_hk_tank_плазма_пушка_1 -->|материал| material_w_ni_fe
+    часть_hk_aerial_плазма_пушка -->|материал| material_w_ni_fe
 ```
 
 | Материал | Используется в частях |

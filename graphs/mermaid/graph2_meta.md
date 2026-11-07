@@ -14,7 +14,6 @@ graph TB
     script_check_model_completeness_py(("check_model_completeness.py"))
     script_classify_subsystem_py(("classify_subsystem.py"))
     script_decompose_all_izdeliya_py(("decompose_all_izdeliya.py"))
-    script_fix_801_py(("fix_801.py"))
     script_fix_yaml_corruption_py(("fix_yaml_corruption.py"))
     script_generate_decomposition_py(("generate_decomposition.py"))
     script_generate_graphs_py(("generate_graphs.py"))
@@ -249,12 +248,12 @@ graph TB
     section_§11_4_Полный_реестр_подтипов_(146_подтипов) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 195, рёбер: 225 (показано топ-50)._
+_Узлов: 194, рёбер: 225 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|
 | spec_section | 149 |
-| script | 26 |
+| script | 25 |
 | concept_doc | 17 |
 | catalog | 1 |
 | readme | 1 |

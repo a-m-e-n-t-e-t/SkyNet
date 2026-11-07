@@ -75,12 +75,6 @@
       "path": "scripts/decompose_all_izdeliya.py"
     },
     {
-      "id": "script:fix_801.py",
-      "type": "script",
-      "label": "fix_801.py",
-      "path": "scripts/fix_801.py"
-    },
-    {
       "id": "script:fix_yaml_corruption.py",
       "type": "script",
       "label": "fix_yaml_corruption.py",
@@ -2526,13 +2520,13 @@
     }
   ],
   "stats": {
-    "nodes": 195,
+    "nodes": 194,
     "edges": 225,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,
       "readme": 1,
-      "script": 26,
+      "script": 25,
       "spec": 1,
       "spec_section": 149
     }
