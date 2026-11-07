@@ -11614,6 +11614,18 @@
       "meta": {}
     },
     {
+      "src": "izdelie_minigun_m134",
+      "dst": "material_stal_st3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_minigun_m134",
+      "dst": "material_ti-6al-4v",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_granatomet_m320",
       "dst": "часть_granatomet_m320_core",
       "type": "has_part",
@@ -23290,6 +23302,22 @@
       }
     },
     {
+      "src": "material_stal_st3",
+      "dst": "izdelie_minigun_m134",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ti-6al-4v",
+      "dst": "izdelie_minigun_m134",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_granatomet_m320_core",
       "dst": "izdelie_granatomet_m320",
       "type": "part_of",
@@ -30923,7 +30951,7 @@
   },
   "stats": {
     "nodes": 1061,
-    "edges": 3357,
+    "edges": 3361,
     "dangling": {
       "complies_with": 468,
       "has_part": 4,
