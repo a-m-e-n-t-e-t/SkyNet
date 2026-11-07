@@ -483,6 +483,18 @@
       "path": ""
     },
     {
+      "id": "P087",
+      "type": "metric",
+      "label": "P087",
+      "path": ""
+    },
+    {
+      "id": "P040",
+      "type": "metric",
+      "label": "P040",
+      "path": ""
+    },
+    {
       "id": "F4",
       "type": "metric",
       "label": "F4",
@@ -1551,12 +1563,6 @@
       "path": ""
     },
     {
-      "id": "P040",
-      "type": "metric",
-      "label": "P040",
-      "path": ""
-    },
-    {
       "id": "P041",
       "type": "metric",
       "label": "P041",
@@ -2310,6 +2316,18 @@
     },
     {
       "src": "P071",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P087",
+      "dst": "section:(без секции)",
+      "type": "defined_in",
+      "meta": {}
+    },
+    {
+      "src": "P040",
       "dst": "section:(без секции)",
       "type": "defined_in",
       "meta": {}
@@ -3198,12 +3216,6 @@
     },
     {
       "src": "P039",
-      "dst": "section:§18. ФИНАЛЬНЫЕ ТРЕБОВАНИЯ",
-      "type": "defined_in",
-      "meta": {}
-    },
-    {
-      "src": "P040",
       "dst": "section:§18. ФИНАЛЬНЫЕ ТРЕБОВАНИЯ",
       "type": "defined_in",
       "meta": {}
@@ -4890,12 +4902,12 @@
     }
   ],
   "stats": {
-    "nodes": 327,
-    "edges": 487,
+    "nodes": 328,
+    "edges": 488,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,
-      "metric": 216,
+      "metric": 217,
       "script": 24,
       "spec_section": 58,
       "stub": 13

@@ -171,3 +171,28 @@ field_contracts:
     verifies: [F26]
     blocker_if_unfilled: false
     is_orphan: false
+
+  # === МАСШТАБИРУЕМОСТЬ (§12.6, v9.32 — ОПЦИОНАЛЬНОЕ) ===
+  - id: fc_изделие_масштабируемость
+    schema: §12.6
+    поле: масштабируемость
+    tier: 7
+    executor_type: web_enriched
+    source_kind: web_search
+    executor: scripts/web_verify.py
+    algorithm: "опциональный блок: режим (масштабируемая|квантуемая|фиксированная) + параметры + пределы + закон_масштабирования + ограничивающие_части"
+    verifies: [P087]
+    blocker_if_unfilled: false
+    is_orphan: false
+
+  - id: fc_часть_масштабируемость
+    schema: §12.6
+    поле: масштабируемость
+    tier: 7
+    executor_type: web_enriched
+    source_kind: web_search
+    executor: scripts/web_verify.py
+    algorithm: "опциональный блок для части; обычно заполняется когда часть ограничивает масштаб родителя (ограничивающие_части в родителе ссылаются сюда)"
+    verifies: [P087]
+    blocker_if_unfilled: false
+    is_orphan: false
