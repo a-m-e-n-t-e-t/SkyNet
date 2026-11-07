@@ -67,6 +67,8 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
+источник_url: https://terminator.fandom.com/wiki/HK-Aerial
+источник_дата: 2026-11-07
 источник_разбора: канон
 ии_перепроектирован:
   статус: false
