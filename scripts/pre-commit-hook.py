@@ -343,7 +343,9 @@ def main():
         #   F29 ← F30 (BOM-материалы: форма + наследование)
         #   F31 ← F32 (дедупликация: syntactic + semantic)
         # F23, F24, F17, F26, F30, F32 убраны — auto-close stale issues для них
-        WARNING_METRICS = {'F13', 'F15b', 'F15d', 'F15g', 'F15h', 'F16', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F27d', 'F27e', 'F27f', 'F27g', 'F28', 'F29', 'F31', 'F34'}
+        # v9.32: F-scal (P087 §12.6) — опциональное поле `масштабируемость`;
+        #        SOFT-метрика, pass=True всегда, violations → verify-task issues
+        WARNING_METRICS = {'F13', 'F15b', 'F15d', 'F15g', 'F15h', 'F16', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F27d', 'F27e', 'F27f', 'F27g', 'F28', 'F29', 'F31', 'F34', 'F-scal'}
         for metric, result in decomp_results['results'].items():
             if metric in WARNING_METRICS:
                 if not result['pass']:

@@ -4211,6 +4211,18 @@
       "meta": {}
     },
     {
+      "src": "P087",
+      "dst": "script:pre-commit-hook.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:pre-commit-hook.py",
+      "dst": "P087",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "script:pre-commit-hook.py",
       "dst": "pattern:{models_dir}/*.md",
       "type": "checks_files",
@@ -4501,6 +4513,18 @@
     {
       "src": "script:validate_decomposition.py",
       "dst": "F34",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "P087",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "P087",
       "type": "triggers_metric",
       "meta": {}
     },
@@ -4903,7 +4927,7 @@
   ],
   "stats": {
     "nodes": 328,
-    "edges": 488,
+    "edges": 492,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,

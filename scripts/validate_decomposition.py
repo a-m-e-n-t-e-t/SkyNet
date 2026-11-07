@@ -3624,6 +3624,86 @@ def check_F34(izdeliya: dict[str, dict]) -> dict:
 # MAIN
 # ============================================================================
 
+def check_F_scal(izdeliya: dict[str, dict]) -> dict:
+    """F-scal: наличие и заполненность опционального блока `масштабируемость` (v9.32 / P087).
+
+    SOFT-метрика (warning, не блокирующая) — поле опциональное по схеме §12.6.
+    Создаёт verify-task issues через workflow verify_decomposition.yml, чтобы
+    cron-агент поэтапно заполнял блок у top-level изделий с декомпозицией.
+
+    Логика (только для top-level изделий: тип=изделие, уровень_номер=1,
+    родитель=null, есть непустые дочерние_части):
+      - блок `масштабируемость` отсутствует → нарушение "отсутствует"
+      - блок есть, но `режим` отсутствует ИЛИ не из enum → нарушение "невалидный режим"
+      - `ограничивающие_части` (если есть) содержит `часть` не из дочерних_части → нарушение "битая ссылка"
+
+    pass=True всегда (soft-метрика) — но violations возвращаются для issue-очереди.
+    """
+    ENUM_REZHIM = {'масштабируемая', 'квантуемая', 'фиксированная'}
+    violations = []
+    total = 0
+    valid = 0
+
+    for izd_id, data in izdeliya.items():
+        if data.get('тип') != 'изделие':
+            continue
+        if data.get('уровень_номер') != 1:
+            continue
+        if data.get('родитель') is not None and data.get('родитель') != 'null':
+            # родитель: null в YAML загружается как None; 'null' как строка — не top-level
+            continue
+        children = data.get('дочерние_части', [])
+        if not isinstance(children, list) or not children:
+            continue
+        total += 1
+
+        scal = data.get('масштабируемость')
+        if not scal or not isinstance(scal, dict):
+            violations.append(
+                f"{izd_id}: отсутствует блок масштабируемость "
+                f"(требуется P087: режим {sorted(ENUM_REZHIM)} + параметры + пределы + "
+                f"закон_масштабирования + ограничивающие_части)"
+            )
+            continue
+
+        rezhim = scal.get('режим')
+        if not rezhim or rezhim not in ENUM_REZHIM:
+            violations.append(
+                f"{izd_id}: масштабируемость.режим='{rezhim}' не из enum "
+                f"{sorted(ENUM_REZHIM)} (P087 §12.6)"
+            )
+            continue
+
+        # Проверка ограничивающие_части (если есть) — каждый `часть` должен быть в дочерние_части
+        op = scal.get('ограничивающие_части')
+        if isinstance(op, list):
+            for entry in op:
+                if not isinstance(entry, dict):
+                    continue
+                cid = entry.get('часть')
+                if cid and cid not in children:
+                    violations.append(
+                        f"{izd_id}: масштабируемость.ограничивающие_части ссылается на '{cid}' "
+                        f"не из дочерние_части (P087 §12.6)"
+                    )
+                    # не continue — проверяем остальные записи
+
+        valid += 1
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F-scal',
+        'description': 'масштабируемость (P087 §12.6): блок присутствует и режим валиден для top-level изделий с декомпозицией',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        # SOFT-метрика: pass=True всегда — не блокирует pre-commit, но violations
+        # попадают в JSON --json-out → workflow создаёт verify-task issues
+        'pass': True,
+        'violations': violations,
+    }
+
+
 def run_all_checks() -> dict:
     """Запустить все проверки и вернуть сводку."""
     print("=== SkyNet Decomposition Validator v9.31 ===")
@@ -3920,6 +4000,18 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
+    # F-scal — масштабируемость (v9.32 / P087; SOFT-метрика: pass=True всегда,
+    # violations идут в --json-out → workflow создаёт verify-task issues)
+    print()
+    print("=== F-scal: Масштабируемость (P087 §12.6, soft) ===")
+    r = check_F_scal(izdeliya)
+    results['F-scal'] = r
+    print(f"  pass={r['pass']} (SOFT), ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
     # Сводка
     print()
     print("=== Сводка ===")
@@ -3983,7 +4075,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F27d', 'F27e', 'F27f', 'F27g', 'F28', 'F29', 'F31', 'F33', 'F34')
+            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F27d', 'F27e', 'F27f', 'F27g', 'F28', 'F29', 'F31', 'F33', 'F34', 'F-scal')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:
