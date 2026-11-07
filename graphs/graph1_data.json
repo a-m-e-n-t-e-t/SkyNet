@@ -45,6 +45,27 @@
       "subsystem": "система_питания"
     },
     {
+      "id": "часть_SkyNet-PowerBackpack_bms_теплоотвод",
+      "type": "chast",
+      "label": "теплораспределитель",
+      "path": "реальные данные/изделия/система_питания/sky-net_power_backpack/часть_SkyNet-PowerBackpack_bms/часть_SkyNet-PowerBackpack_bms_теплоотвод/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
+      "id": "часть_SkyNet-PowerBackpack_bms_шины",
+      "type": "chast",
+      "label": "силовые_шины",
+      "path": "реальные данные/изделия/система_питания/sky-net_power_backpack/часть_SkyNet-PowerBackpack_bms/часть_SkyNet-PowerBackpack_bms_шины/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
+      "id": "часть_SkyNet-PowerBackpack_bms_плата",
+      "type": "chast",
+      "label": "электроника_управления",
+      "path": "реальные данные/изделия/система_питания/sky-net_power_backpack/часть_SkyNet-PowerBackpack_bms/часть_SkyNet-PowerBackpack_bms_плата/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
       "id": "часть_SkyNet-PowerBackpack_cells_ячейки",
       "type": "chast",
       "label": "накопитель_энергии",
@@ -6863,6 +6884,13 @@
       "subsystem": ""
     },
     {
+      "id": "tekhnologia_anodirovanie",
+      "type": "tekhnologia",
+      "label": "покрытие",
+      "path": "реальные данные/технологии/anodirovanie.md",
+      "subsystem": ""
+    },
+    {
       "id": "tekhnologia_antagonisticheskoi_sheme_biran",
       "type": "tekhnologia",
       "label": "обработка",
@@ -6972,6 +7000,13 @@
       "type": "tekhnologia",
       "label": "обработка",
       "path": "реальные данные/технологии/fd-soi_22_nm.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_frezervanie_chpu",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/frezervanie_chpu.md",
       "subsystem": ""
     },
     {
@@ -7157,6 +7192,13 @@
       "subsystem": ""
     },
     {
+      "id": "tekhnologia_payka_silovyh_kontaktov",
+      "type": "tekhnologia",
+      "label": "сборка",
+      "path": "реальные данные/технологии/payka_silovyh_kontaktov.md",
+      "subsystem": ""
+    },
+    {
       "id": "tekhnologia_plazmennaya_aktivatsiya",
       "type": "tekhnologia",
       "label": "обработка",
@@ -7238,6 +7280,13 @@
       "type": "tekhnologia",
       "label": "обработка",
       "path": "реальные данные/технологии/sls.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_smd_montazh_oplavleniem",
+      "type": "tekhnologia",
+      "label": "сборка",
+      "path": "реальные данные/технологии/smd_montazh_oplavleniem.md",
       "subsystem": ""
     },
     {
@@ -7502,6 +7551,24 @@
     },
     {
       "src": "часть_SkyNet-PowerBackpack_bms",
+      "dst": "часть_SkyNet-PowerBackpack_bms_теплоотвод",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms",
+      "dst": "часть_SkyNet-PowerBackpack_bms_плата",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms",
+      "dst": "часть_SkyNet-PowerBackpack_bms_шины",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms",
       "dst": "izdelie_SkyNet-PowerBackpack",
       "type": "child_of",
       "meta": {}
@@ -7509,6 +7576,18 @@
     {
       "src": "часть_SkyNet-PowerBackpack_bms",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms",
+      "dst": "material_fr4",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms",
+      "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
     },
@@ -7575,6 +7654,42 @@
     {
       "src": "часть_SkyNet-PowerBackpack_mounting",
       "dst": "material_ss_aisi_304",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms_теплоотвод",
+      "dst": "часть_SkyNet-PowerBackpack_bms",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms_теплоотвод",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms_шины",
+      "dst": "часть_SkyNet-PowerBackpack_bms",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms_шины",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms_плата",
+      "dst": "часть_SkyNet-PowerBackpack_bms",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms_плата",
+      "dst": "material_fr4",
       "type": "uses_material",
       "meta": {}
     },
@@ -19589,7 +19704,47 @@
       }
     },
     {
+      "src": "часть_SkyNet-PowerBackpack_bms_теплоотвод",
+      "dst": "часть_SkyNet-PowerBackpack_bms",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms_плата",
+      "dst": "часть_SkyNet-PowerBackpack_bms",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms_шины",
+      "dst": "часть_SkyNet-PowerBackpack_bms",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
       "src": "material_al_6061-t6",
+      "dst": "часть_SkyNet-PowerBackpack_bms",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_fr4",
+      "dst": "часть_SkyNet-PowerBackpack_bms",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
       "dst": "часть_SkyNet-PowerBackpack_bms",
       "type": "used_in",
       "meta": {
@@ -19655,6 +19810,30 @@
     {
       "src": "material_ss_aisi_304",
       "dst": "часть_SkyNet-PowerBackpack_mounting",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_SkyNet-PowerBackpack_bms_теплоотвод",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_SkyNet-PowerBackpack_bms_шины",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_fr4",
+      "dst": "часть_SkyNet-PowerBackpack_bms_плата",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -30697,6 +30876,7 @@
       "standart_IEC 61730",
       "standart_IEC 61960",
       "standart_IEC 62133-2",
+      "standart_IEC 62133-2 (Li-ion аккумулирование)",
       "standart_IEC 62133-2 (безопасность Li-ion)",
       "standart_IEC 62282",
       "standart_IEC 62282 (SOFC)",
@@ -31101,21 +31281,21 @@
     ]
   },
   "stats": {
-    "nodes": 1064,
-    "edges": 3380,
+    "nodes": 1071,
+    "edges": 3399,
     "dangling": {
-      "complies_with": 468,
+      "complies_with": 469,
       "has_part": 4,
       "researched_by": 67,
       "uses_material": 82
     },
     "by_type": {
-      "chast": 644,
+      "chast": 647,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
       "material": 196,
       "standart": 8,
-      "tekhnologia": 73
+      "tekhnologia": 77
     }
   }
 }
