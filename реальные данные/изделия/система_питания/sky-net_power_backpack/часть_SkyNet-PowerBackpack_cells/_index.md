@@ -11,11 +11,39 @@ id: часть_SkyNet-PowerBackpack_cells
   - UN 38.3 (транспорт)
 исследовательская_группа: null
 родитель: izdelie_SkyNet-PowerBackpack
-дочерние_части: []
+дочерние_части:
+  - часть_SkyNet-PowerBackpack_cells_ячейки
+  - часть_SkyNet-PowerBackpack_cells_шины
+  - часть_SkyNet-PowerBackpack_cells_термопрокладки
 материалы_частей:
-  - часть: часть_SkyNet-PowerBackpack_cells
+  - часть: часть_SkyNet-PowerBackpack_cells_ячейки
     материал: nmc_graphite
-    доля_массы: 1.0
+    форма: nmc811_graphite_baseline
+    доля_массы: 0.99
+  - часть: часть_SkyNet-PowerBackpack_cells_шины
+    материал: nickel
+    форма: легирующий_элемент_и_покрытия
+    доля_массы: 0.006
+  - часть: часть_SkyNet-PowerBackpack_cells_термопрокладки
+    материал: pcm_rt35
+    форма: аккумуляторные_термопрокладки
+    доля_массы: 0.003
+наследуемые_материалы:
+  - материал: nmc_graphite
+    форма: nmc811_graphite_baseline
+    суммарная_доля_массы: 0.99
+    источники_частей:
+      - часть_SkyNet-PowerBackpack_cells_ячейки
+  - материал: nickel
+    форма: легирующий_элемент_и_покрытия
+    суммарная_доля_массы: 0.006
+    источники_частей:
+      - часть_SkyNet-PowerBackpack_cells_шины
+  - материал: pcm_rt35
+    форма: аккумуляторные_термопрокладки
+    суммарная_доля_массы: 0.003
+    источники_частей:
+      - часть_SkyNet-PowerBackpack_cells_термопрокладки
 
 scaling_type: количественный
 соединители: []
@@ -71,11 +99,28 @@ scaling_type: количественный
 
 ## Состав
 
-Промежуточная часть (уровень 2). Дочерних частей нет.
+Промежуточная часть (уровень 2), сборка. Дочерние части (уровень 3):
+
+- `часть_SkyNet-PowerBackpack_cells_ячейки` — 70× Samsung INR21700-50E (неделимая закупочная ячейка);
+- `часть_SkyNet-PowerBackpack_cells_шины` — никелевые соединительные шины (spot-weld 10p);
+- `часть_SkyNet-PowerBackpack_cells_термопрокладки` — межъячеечные фазовые термопрокладки RT35.
+
+```mermaid
+graph TD
+    p_cells["часть_SkyNet-PowerBackpack_cells"]
+    p_cells_yach["часть_SkyNet-PowerBackpack_cells_ячейки"]
+    p_cells_shin["часть_SkyNet-PowerBackpack_cells_шины"]
+    p_cells_term["часть_SkyNet-PowerBackpack_cells_термопрокладки"]
+    p_cells --> p_cells_yach
+    p_cells --> p_cells_shin
+    p_cells --> p_cells_term
+```
 
 ## Используемые материалы
 
-- `nmc_graphite` → [`nmc_graphite.md`](../../../материалы/nmc_graphite.md)
+- `nmc_graphite` (форма: nmc811_graphite_baseline) → [`nmc_graphite.md`](../../../материалы/nmc_graphite.md)
+- `nickel` (форма: легирующий_элемент_и_покрытия) → [`nickel.md`](../../../материалы/nickel.md)
+- `pcm_rt35` (форма: аккумуляторные_термопрокладки) → [`pcm_rt35.md`](../../../материалы/pcm_rt35.md)
 
 ## Источники
 

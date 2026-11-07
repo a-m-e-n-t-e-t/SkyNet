@@ -45,6 +45,27 @@
       "subsystem": "система_питания"
     },
     {
+      "id": "часть_SkyNet-PowerBackpack_cells_ячейки",
+      "type": "chast",
+      "label": "накопитель_энергии",
+      "path": "реальные данные/изделия/система_питания/sky-net_power_backpack/часть_SkyNet-PowerBackpack_cells/часть_SkyNet-PowerBackpack_cells_ячейки/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
+      "id": "часть_SkyNet-PowerBackpack_cells_шины",
+      "type": "chast",
+      "label": "токопроводящие_шины",
+      "path": "реальные данные/изделия/система_питания/sky-net_power_backpack/часть_SkyNet-PowerBackpack_cells/часть_SkyNet-PowerBackpack_cells_шины/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
+      "id": "часть_SkyNet-PowerBackpack_cells_термопрокладки",
+      "type": "chast",
+      "label": "термопрокладки",
+      "path": "реальные данные/изделия/система_питания/sky-net_power_backpack/часть_SkyNet-PowerBackpack_cells/часть_SkyNet-PowerBackpack_cells_термопрокладки/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
       "id": "izdelie_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami",
       "type": "izdelie",
       "label": "планетарный_роликовинт",
@@ -6298,7 +6319,7 @@
     {
       "id": "material_pcm_rt35",
       "type": "material",
-      "label": "PCM RT35",
+      "label": "технический парафин RT35 (смесь n-алканов), фазовый переход ~35 °C",
       "path": "реальные данные/материалы/pcm_rt35.md",
       "subsystem": ""
     },
@@ -7505,6 +7526,24 @@
     },
     {
       "src": "часть_SkyNet-PowerBackpack_cells",
+      "dst": "часть_SkyNet-PowerBackpack_cells_ячейки",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells",
+      "dst": "часть_SkyNet-PowerBackpack_cells_шины",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells",
+      "dst": "часть_SkyNet-PowerBackpack_cells_термопрокладки",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells",
       "dst": "izdelie_SkyNet-PowerBackpack",
       "type": "child_of",
       "meta": {}
@@ -7512,6 +7551,18 @@
     {
       "src": "часть_SkyNet-PowerBackpack_cells",
       "dst": "material_nmc_graphite",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells",
+      "dst": "material_nickel",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells",
+      "dst": "material_pcm_rt35",
       "type": "uses_material",
       "meta": {}
     },
@@ -7524,6 +7575,42 @@
     {
       "src": "часть_SkyNet-PowerBackpack_mounting",
       "dst": "material_ss_aisi_304",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells_ячейки",
+      "dst": "часть_SkyNet-PowerBackpack_cells",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells_ячейки",
+      "dst": "material_nmc_graphite",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells_шины",
+      "dst": "часть_SkyNet-PowerBackpack_cells",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells_шины",
+      "dst": "material_nickel",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells_термопрокладки",
+      "dst": "часть_SkyNet-PowerBackpack_cells",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells_термопрокладки",
+      "dst": "material_pcm_rt35",
       "type": "uses_material",
       "meta": {}
     },
@@ -19518,7 +19605,47 @@
       }
     },
     {
+      "src": "часть_SkyNet-PowerBackpack_cells_ячейки",
+      "dst": "часть_SkyNet-PowerBackpack_cells",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells_шины",
+      "dst": "часть_SkyNet-PowerBackpack_cells",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_cells_термопрокладки",
+      "dst": "часть_SkyNet-PowerBackpack_cells",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
       "src": "material_nmc_graphite",
+      "dst": "часть_SkyNet-PowerBackpack_cells",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_nickel",
+      "dst": "часть_SkyNet-PowerBackpack_cells",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_pcm_rt35",
       "dst": "часть_SkyNet-PowerBackpack_cells",
       "type": "used_in",
       "meta": {
@@ -19528,6 +19655,30 @@
     {
       "src": "material_ss_aisi_304",
       "dst": "часть_SkyNet-PowerBackpack_mounting",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_nmc_graphite",
+      "dst": "часть_SkyNet-PowerBackpack_cells_ячейки",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_nickel",
+      "dst": "часть_SkyNet-PowerBackpack_cells_шины",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_pcm_rt35",
+      "dst": "часть_SkyNet-PowerBackpack_cells_термопрокладки",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -30950,8 +31101,8 @@
     ]
   },
   "stats": {
-    "nodes": 1061,
-    "edges": 3361,
+    "nodes": 1064,
+    "edges": 3380,
     "dangling": {
       "complies_with": 468,
       "has_part": 4,
@@ -30959,7 +31110,7 @@
       "uses_material": 82
     },
     "by_type": {
-      "chast": 641,
+      "chast": 644,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
       "material": 196,
