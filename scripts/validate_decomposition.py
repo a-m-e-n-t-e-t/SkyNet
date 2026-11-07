@@ -3939,6 +3939,98 @@ def check_F_ai_lineage(izdeliya: dict[str, dict]) -> dict:
     }
 
 
+# ============================================================================
+# F-fant-children: ССЫЛКИ МОДЕЛИ → ИЗДЕЛИЯ (v9.34 NEW)
+# Каждая канон-модель (тип: модель_SkyNet) должна иметь декомпозицию:
+# декларированные дочерние_части → соответствующие файлы в фантастические данные/модели/<stem>/<child>/
+# ============================================================================
+# Семантика (по определению пользователя):
+#   - Изделие = одна функция (узел декомпозиции)
+#   - Модель = несколько функций (top-level, тип: модель_SkyNet)
+#   - Подсистема = набор изделий со схожими функциями
+#
+# Проверка:
+#   - Если модель декларирует дочерние_части: [часть_X, часть_Y, ...]
+#     но файлов часть_X/_index.md или часть_X.md НЕТ в поддиректории модели → нарушение
+#   - Это побуждает декомпозицию фантастических моделей (которая пока не начата)
+#   - 70 битых ссылок в 11 моделях на текущий момент (T-800, HK-Aerial, etc.)
+# ============================================================================
+
+def check_F_fant_children(izdeliya: dict[str, dict]) -> dict:
+    """F-fant-children: ссылки модели → изделия (v9.34 NEW).
+
+    Для каждой канон-модели (тип: модель_SkyNet) проверяет, что все
+    декларированные в `дочерние_части` id имеют соответствующие файлы
+    в фантастические данные/модели/<stem>/<child_id>/_index.md
+    ИЛИ фантастические данные/модели/<stem>/<child_id>.md
+
+    SOFT-метрика (pass=True всегда): нарушения попадают в --json-out,
+    workflow создаёт verify-task issues для декомпозиции.
+    """
+    violations = []
+    total = 0  # количество моделей с декларированными детьми
+    valid = 0  # модели, у которых ВСЕ дети существуют
+
+    for izd_id, data in izdeliya.items():
+        # Только канон-модели
+        if data.get('тип') != 'модель_SkyNet':
+            continue
+        children = data.get('дочерние_части', [])
+        if not isinstance(children, list) or not children:
+            continue
+        total += 1
+
+        # Путь к модели: либо фантастические данные/модели/<stem>/ (если есть поддиректория),
+        # либо фантастические данные/модели/<stem>.md (если только .md)
+        path_str = data.get('_path', '')
+        # Определяем stem из id (SkyNet-T800 → t800) или из пути
+        # Проще: ищем относительно файла модели
+        from pathlib import Path
+        model_path = Path(path_str) if path_str else None
+        if model_path is None:
+            continue
+
+        # Поддиректория модели = та же папка, что и .md, но без .md
+        # Для фантастические данные/модели/t800.md → stem = 't800'
+        # Поддиректория для детей: фантастические данные/модели/t800/
+        model_stem = model_path.stem  # 't800' (без .md)
+        model_dir = model_path.parent / model_stem
+
+        missing = []
+        for child_id in children:
+            if not isinstance(child_id, str):
+                continue
+            # Ищем либо <model_dir>/<child_id>/_index.md
+            # либо <model_dir>/<child_id>.md
+            child_idx = model_dir / child_id / '_index.md'
+            child_md = model_dir / f'{child_id}.md'
+            if not (child_idx.exists() or child_md.exists()):
+                missing.append(child_id)
+
+        if missing:
+            violations.append(
+                f"{izd_id}: декларирует {len(children)} дочерних_частей, но "
+                f"{len(missing)} не имеют файлов в фантастические данные/модели/{model_stem}/ "
+                f"(примеры: {missing[:3]}) — выполните декомпозицию модели: "
+                f"создайте часть_*/_index.md для каждой декларированной части"
+            )
+        else:
+            valid += 1
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F-fant-children',
+        'description': 'ссылки модели → изделия: каждая модель_SkyNet должна иметь файлы для всех декларированных дочерних_частей',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        # SOFT-метрика: pass=True всегда — не блокирует pre-commit,
+        # но violations попадают в JSON --json-out → workflow создаёт verify-task issues
+        'pass': True,
+        'violations': violations,
+    }
+
+
 def run_all_checks() -> dict:
     """Запустить все проверки и вернуть сводку."""
     print("=== SkyNet Decomposition Validator v9.31 ===")
@@ -4258,6 +4350,18 @@ def run_all_checks() -> dict:
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
 
+    # F-fant-children — ссылки модели → изделия (v9.34; SOFT-метрика)
+    # Проверяет что каждая модель_SkyNet имеет файлы для всех декларированных дочерних_частей
+    print()
+    print("=== F-fant-children: ссылки модели → изделия (v9.34, soft) ===")
+    r = check_F_fant_children(izdeliya)
+    results['F-fant-children'] = r
+    print(f"  pass={r['pass']} (SOFT), ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 3):")
+        for v in r['violations'][:3]:
+            print(f"    - {v[:100]}")
+
     # Сводка
     print()
     print("=== Сводка ===")
@@ -4321,7 +4425,7 @@ def main():
     if args.json_out:
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F27d', 'F27e', 'F27f', 'F27g', 'F28', 'F29', 'F31', 'F33', 'F34', 'F-scal', 'F-ai-lineage')
+            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F27d', 'F27e', 'F27f', 'F27g', 'F28', 'F29', 'F31', 'F33', 'F34', 'F-scal', 'F-ai-lineage', 'F-fant-children')
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:

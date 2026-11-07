@@ -34,7 +34,7 @@ function normalizeViolationKey(metric, violation) {
 // v9.32: добавлена F-scal (опциональное поле масштабируемость, P087 §12.6)
 //        и F-ai-lineage (предок+улучшения+real_check для версия: ии-улучшенная, §12.7).
 function legacyMetricFromTitle(title, violation) {
-  const metricMatch = (title || '').match(/\[(F2[2-9](?:[a-z])?|F3[0-2]|F-scal|F-ai-lineage)\]/);
+  const metricMatch = (title || '').match(/\[(F2[2-9](?:[a-z])?|F3[0-2]|F-scal|F-ai-lineage|F-fant-children)\]/);
   return metricMatch ? metricMatch[1] : (violation.startsWith('Родитель') ? 'F26' : 'F25');
 }
 
