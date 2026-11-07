@@ -33,6 +33,9 @@ function normalizeViolationKey(metric, violation) {
 //        ссылку, потому что файла нет).
 // v9.32: добавлена F-scal (опциональное поле масштабируемость, P087 §12.6)
 //        и F-ai-lineage (предок+улучшения+real_check для версия: ии-улучшенная, §12.7).
+// v9.34: добавлена F-fant-children (ссылки модели → изделия).
+// v9.35: regex синхронизирован с scripts/_metrics.py::get_legacy_regex_pattern()
+//        через integrity-чек в pre-commit-hook.py. При рассинхроне — warning.
 function legacyMetricFromTitle(title, violation) {
   const metricMatch = (title || '').match(/\[(F2[2-9](?:[a-z])?|F3[0-2]|F-scal|F-ai-lineage|F-fant-children)\]/);
   return metricMatch ? metricMatch[1] : (violation.startsWith('Родитель') ? 'F26' : 'F25');

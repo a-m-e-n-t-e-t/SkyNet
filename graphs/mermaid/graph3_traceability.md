@@ -5,22 +5,17 @@ graph LR
     F22([F22])
     script__helpers_py[_helpers.py]
     F22 --> script__helpers_py
+    script__metrics_py[_metrics.py]
+    F22 --> script__metrics_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F22 --> script_pre-commit-hook_py
     script_validate_decomposition_py[validate_decomposition.py]
     F22 --> script_validate_decomposition_py
     script_web_verify_py[web_verify.py]
     F22 --> script_web_verify_py
-    F70([F70])
-    script__helpers_py[_helpers.py]
-    F70 --> script__helpers_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F70 --> script_pre-commit-hook_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F70 --> script_validate_decomposition_py
-    script_validate_field_contracts_py[validate_field_contracts.py]
-    F70 --> script_validate_field_contracts_py
     F16([F16])
+    script__metrics_py[_metrics.py]
+    F16 --> script__metrics_py
     script_generate_decomposition_py[generate_decomposition.py]
     F16 --> script_generate_decomposition_py
     script_generate_wrapper_izdeliya_py[generate_wrapper_izdeliya.py]
@@ -29,7 +24,20 @@ graph LR
     F16 --> script_pre-commit-hook_py
     script_validate_decomposition_py[validate_decomposition.py]
     F16 --> script_validate_decomposition_py
+    F25([F25])
+    script__metrics_py[_metrics.py]
+    F25 --> script__metrics_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F25 --> script_pre-commit-hook_py
+    script_real_decomposition_py[real_decomposition.py]
+    F25 --> script_real_decomposition_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F25 --> script_validate_decomposition_py
+    script_web_verify_py[web_verify.py]
+    F25 --> script_web_verify_py
     F27([F27])
+    script__metrics_py[_metrics.py]
+    F27 --> script__metrics_py
     script_migrate_aliases_py[migrate_aliases.py]
     F27 --> script_migrate_aliases_py
     script_pre-commit-hook_py[pre-commit-hook.py]
@@ -39,6 +47,8 @@ graph LR
     script_web_verify_py[web_verify.py]
     F27 --> script_web_verify_py
     F31([F31])
+    script__metrics_py[_metrics.py]
+    F31 --> script__metrics_py
     script_migrate_aliases_py[migrate_aliases.py]
     F31 --> script_migrate_aliases_py
     script_migrate_dedup_materials_py[migrate_dedup_materials.py]
@@ -48,6 +58,8 @@ graph LR
     script_validate_decomposition_py[validate_decomposition.py]
     F31 --> script_validate_decomposition_py
     F32([F32])
+    script__metrics_py[_metrics.py]
+    F32 --> script__metrics_py
     script_migrate_aliases_py[migrate_aliases.py]
     F32 --> script_migrate_aliases_py
     script_migrate_dedup_materials_py[migrate_dedup_materials.py]
@@ -56,15 +68,61 @@ graph LR
     F32 --> script_pre-commit-hook_py
     script_validate_decomposition_py[validate_decomposition.py]
     F32 --> script_validate_decomposition_py
-    F25([F25])
+    F70([F70])
+    script__helpers_py[_helpers.py]
+    F70 --> script__helpers_py
     script_pre-commit-hook_py[pre-commit-hook.py]
-    F25 --> script_pre-commit-hook_py
-    script_real_decomposition_py[real_decomposition.py]
-    F25 --> script_real_decomposition_py
+    F70 --> script_pre-commit-hook_py
     script_validate_decomposition_py[validate_decomposition.py]
-    F25 --> script_validate_decomposition_py
-    script_web_verify_py[web_verify.py]
-    F25 --> script_web_verify_py
+    F70 --> script_validate_decomposition_py
+    script_validate_field_contracts_py[validate_field_contracts.py]
+    F70 --> script_validate_field_contracts_py
+    F13([F13])
+    script__metrics_py[_metrics.py]
+    F13 --> script__metrics_py
+    script_generate_decomposition_py[generate_decomposition.py]
+    F13 --> script_generate_decomposition_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F13 --> script_pre-commit-hook_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F13 --> script_validate_decomposition_py
+    F28([F28])
+    script__metrics_py[_metrics.py]
+    F28 --> script__metrics_py
+    script_migrate_aliases_py[migrate_aliases.py]
+    F28 --> script_migrate_aliases_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F28 --> script_pre-commit-hook_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F28 --> script_validate_decomposition_py
+    F29([F29])
+    script__metrics_py[_metrics.py]
+    F29 --> script__metrics_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F29 --> script_pre-commit-hook_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F29 --> script_validate_decomposition_py
+    F3([F3])
+    script__metrics_py[_metrics.py]
+    F3 --> script__metrics_py
+    script_classify_subsystem_py[classify_subsystem.py]
+    F3 --> script_classify_subsystem_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F3 --> script_pre-commit-hook_py
+    F34([F34])
+    script__metrics_py[_metrics.py]
+    F34 --> script__metrics_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F34 --> script_pre-commit-hook_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F34 --> script_validate_decomposition_py
+    P087([P087])
+    script__metrics_py[_metrics.py]
+    P087 --> script__metrics_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    P087 --> script_pre-commit-hook_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    P087 --> script_validate_decomposition_py
     F86([F86])
     script__helpers_py[_helpers.py]
     F86 --> script__helpers_py
@@ -72,13 +130,6 @@ graph LR
     F86 --> script_check_model_completeness_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F86 --> script_pre-commit-hook_py
-    F13([F13])
-    script_generate_decomposition_py[generate_decomposition.py]
-    F13 --> script_generate_decomposition_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F13 --> script_pre-commit-hook_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F13 --> script_validate_decomposition_py
     F14([F14])
     script_generate_decomposition_py[generate_decomposition.py]
     F14 --> script_generate_decomposition_py
@@ -100,13 +151,6 @@ graph LR
     F19 --> script_generate_wrapper_izdeliya_py
     script_validate_decomposition_py[validate_decomposition.py]
     F19 --> script_validate_decomposition_py
-    F28([F28])
-    script_migrate_aliases_py[migrate_aliases.py]
-    F28 --> script_migrate_aliases_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F28 --> script_pre-commit-hook_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F28 --> script_validate_decomposition_py
     F23([F23])
     script_pre-commit-hook_py[pre-commit-hook.py]
     F23 --> script_pre-commit-hook_py
@@ -124,55 +168,36 @@ graph LR
     F70h --> script__helpers_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F70h --> script_pre-commit-hook_py
-    F81([F81])
-    script__helpers_py[_helpers.py]
-    F81 --> script__helpers_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F81 --> script_pre-commit-hook_py
-    F83([F83])
-    script__helpers_py[_helpers.py]
-    F83 --> script__helpers_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F83 --> script_pre-commit-hook_py
-    F87([F87])
-    script__helpers_py[_helpers.py]
-    F87 --> script__helpers_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F87 --> script_pre-commit-hook_py
-    F88([F88])
-    script__helpers_py[_helpers.py]
-    F88 --> script__helpers_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F88 --> script_pre-commit-hook_py
 ```
 
-_Показаны топ-20 метрик по числу скриптов-валидаторов (из 75 метрик)._
+_Показаны топ-20 метрик по числу скриптов-валидаторов (из 76 метрик)._
 
 | Метрика | Скрипты-валидаторы | Контракты |
 |---|---|---|
-| `F13` | generate_decomposition.py, pre-commit-hook.py, validate_decomposition.py | — |
+| `F13` | _metrics.py, generate_decomposition.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F14` | generate_decomposition.py, generate_wrapper_izdeliya.py, validate_decomposition.py | — |
 | `F15` | generate_decomposition.py | — |
-| `F16` | generate_decomposition.py, generate_wrapper_izdeliya.py, pre-commit-hook.py, validate_decomposition.py | — |
+| `F16` | _metrics.py, generate_decomposition.py, generate_wrapper_izdeliya.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F17` | generate_decomposition.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F18` | validate_decomposition.py | — |
 | `F19` | generate_decomposition.py, generate_wrapper_izdeliya.py, validate_decomposition.py | — |
+| `F2` | _metrics.py | — |
 | `F20` | migrate_material_form.py, validate_decomposition.py | — |
 | `F21` | generate_decomposition.py, validate_decomposition.py | — |
-| `F22` | _helpers.py, pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
+| `F22` | _helpers.py, _metrics.py, pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
 | `F23` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
 | `F24` | pre-commit-hook.py, validate_decomposition.py | — |
-| `F25` | pre-commit-hook.py, real_decomposition.py, validate_decomposition.py, web_verify.py | — |
+| `F25` | _metrics.py, pre-commit-hook.py, real_decomposition.py, validate_decomposition.py, web_verify.py | — |
 | `F26` | pre-commit-hook.py, validate_decomposition.py | — |
-| `F27` | migrate_aliases.py, pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
-| `F28` | migrate_aliases.py, pre-commit-hook.py, validate_decomposition.py | — |
-| `F29` | pre-commit-hook.py, validate_decomposition.py | — |
-| `F3` | classify_subsystem.py, pre-commit-hook.py | fc_изделие_подсистема, fc_модель_тип |
+| `F27` | _metrics.py, migrate_aliases.py, pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
+| `F28` | _metrics.py, migrate_aliases.py, pre-commit-hook.py, validate_decomposition.py | — |
+| `F29` | _metrics.py, pre-commit-hook.py, validate_decomposition.py | — |
+| `F3` | _metrics.py, classify_subsystem.py, pre-commit-hook.py | fc_изделие_подсистема, fc_модель_тип |
 | `F30` | pre-commit-hook.py, validate_decomposition.py | — |
-| `F31` | migrate_aliases.py, migrate_dedup_materials.py, pre-commit-hook.py, validate_decomposition.py | — |
-| `F32` | migrate_aliases.py, migrate_dedup_materials.py, pre-commit-hook.py, validate_decomposition.py | — |
-| `F33` | validate_decomposition.py | — |
-| `F34` | pre-commit-hook.py, validate_decomposition.py | — |
+| `F31` | _metrics.py, migrate_aliases.py, migrate_dedup_materials.py, pre-commit-hook.py, validate_decomposition.py | — |
+| `F32` | _metrics.py, migrate_aliases.py, migrate_dedup_materials.py, pre-commit-hook.py, validate_decomposition.py | — |
+| `F33` | _metrics.py, validate_decomposition.py | — |
+| `F34` | _metrics.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F36` | generate_graphs.py, pre-commit-hook.py | — |
 | `F37` | generate_graphs.py, pipeline.py | — |
 | `F38` | generate_graphs.py, pipeline.py | — |
@@ -224,4 +249,4 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F89` | _helpers.py | — |
 | `F90` | _helpers.py | — |
 | `P012` | pipeline.py | — |
-| `P087` | pre-commit-hook.py, validate_decomposition.py | — |
+| `P087` | _metrics.py, pre-commit-hook.py, validate_decomposition.py | — |

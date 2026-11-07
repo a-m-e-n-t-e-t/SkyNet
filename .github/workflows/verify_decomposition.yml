@@ -151,20 +151,25 @@ jobs:
           # v9.39.5 fix: в GITHUB_OUTPUT допустимы ТОЛЬКО строки key=value — отладочные
           # print() вида "Total violations: N" ломали парсер (Invalid format) и делали
           # workflow failure хроническим с a0c14b1. Отладка — только в stdout шага.
+          # v9.35: список метрик читается из scripts/_metrics.py (единый источник истины)
           python3 - <<'PYEOF' >> $GITHUB_OUTPUT
-          import json
+          import json, sys
+          sys.path.insert(0, 'scripts')
+          from _metrics import ALL_METRICS
           d = json.load(open('violations.json'))
           total = sum(len(v) for v in d.values())
           print(f"total_violations={total}")
-          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F27c','F27d','F27e','F27f','F27g','F28','F29','F31','F33','F34','F-scal','F-ai-lineage','F-fant-children'):
+          for M in ALL_METRICS:
               print(f"{M}_count={len(d.get(M, []))}")
           PYEOF
           # info-лог в stdout шага (одинарные кавычки — без bash-интерполяции):
           python3 - <<'PYEOF'
-          import json
+          import json, sys
+          sys.path.insert(0, 'scripts')
+          from _metrics import ALL_METRICS
           d = json.load(open('violations.json'))
           print(f"[info] Total violations: {sum(len(v) for v in d.values())}")
-          for M in ('F15b','F15d','F15g','F15h','F22','F25','F27','F27b','F27c','F27d','F27e','F27f','F27g','F28','F29','F31','F33','F34','F-scal','F-ai-lineage','F-fant-children'):
+          for M in ALL_METRICS:
               print(f"[info]   {M}: {len(d.get(M, []))} violations")
           PYEOF
 
@@ -699,7 +704,9 @@ jobs:
           script: |
             const fs = require('fs');
             const { normalizeViolationKey, legacyMetricFromTitle } = require('./scripts/_dedup_keys.js');
-            let violations = {F22:[], F23:[], F24:[], F25:[], F26:[], F27:[], F27b:[], F27c:[], F27d:[], F27e:[], F27f:[], F27g:[], F28:[], F31:[], F32:[], 'F-scal':[], 'F-ai-lineage':[], 'F-fant-children':[]};
+            // v9.35: violations.json — единственный источник; если не найден, return
+            // (раньше был hardcoded fallback с пустыми массивами — это copy-rot risk)
+            let violations;
             try {
               violations = JSON.parse(fs.readFileSync('violations.json', 'utf-8'));
             } catch (e) {

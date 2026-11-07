@@ -347,7 +347,16 @@ def main():
         #        SOFT-метрика, pass=True всегда, violations → verify-task issues
         # v9.32: F-ai-lineage (§12.7) — предок+улучшения+real_check для версия: ии-улучшенная;
         #        SOFT-метрика, pass=True всегда, violations → verify-task issues
-        WARNING_METRICS = {'F13', 'F15b', 'F15d', 'F15g', 'F15h', 'F16', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F27d', 'F27e', 'F27f', 'F27g', 'F28', 'F29', 'F31', 'F34', 'F-scal', 'F-ai-lineage', 'F-fant-children'}
+        # v9.34: F-fant-children — ссылки модели → изделия (фантастические модели);
+        #        SOFT-метрика, pass=True всегда, violations → verify-task issues
+        # v9.35: единый источник — scripts/_metrics.py (SOFT_METRICS), без copy-rot
+        try:
+            sys.path.insert(0, os.path.join(SKYNET_REPO, 'scripts'))
+            from _metrics import SOFT_METRICS
+            WARNING_METRICS = SOFT_METRICS
+        except ImportError:
+            # Fallback на хардкод (если _metrics.py недоступен)
+            WARNING_METRICS = {'F13', 'F15b', 'F15d', 'F15g', 'F15h', 'F16', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F27d', 'F27e', 'F27f', 'F27g', 'F28', 'F29', 'F31', 'F34', 'F-scal', 'F-ai-lineage', 'F-fant-children'}
         for metric, result in decomp_results['results'].items():
             if metric in WARNING_METRICS:
                 if not result['pass']:
@@ -379,6 +388,36 @@ def main():
             )
     except Exception as e:
         warnings.append(f"Генератор графов не запустился: {e}")
+
+    # v9.35: integrity-чек — проверка синхронизации _metrics.py ↔ _dedup_keys.js
+    # Если в _metrics.py добавили новую named-метрику (F-xxx) но забыли
+    # обновить regex в _dedup_keys.js — выдаём warning.
+    try:
+        sys.path.insert(0, os.path.join(SKYNET_REPO, 'scripts'))
+        from _metrics import ALL_METRICS, get_legacy_regex_pattern
+        py_regex = get_legacy_regex_pattern()
+        # Читаем JS-файл и ищем regex подстрокой
+        js_path = os.path.join(SKYNET_REPO, 'scripts', '_dedup_keys.js')
+        js_text = open(js_path, encoding='utf-8').read()
+        # Найти: match(/\[(...)\]/) — через простой поиск
+        marker_start = "match(/\\[("
+        marker_end = ")\\]/)"
+        i_start = js_text.find(marker_start)
+        if i_start >= 0:
+            i_start += len(marker_start)
+            i_end = js_text.find(marker_end, i_start)
+            if i_end > i_start:
+                js_regex = js_text[i_start:i_end].strip()
+                # Нормализация: убираем обратные слэши и пробелы для сравнения
+                py_norm = py_regex.replace('\\', '').replace(' ', '')
+                js_norm = js_regex.replace('\\', '').replace(' ', '')
+                if py_norm != js_norm:
+                    warnings.append(
+                        f"_dedup_keys.js regex рассинхронизирован с _metrics.py: "
+                        f"JS='{js_regex}' vs PY='{py_regex}' — обновите regex в _dedup_keys.js"
+                    )
+    except Exception as e:
+        warnings.append(f"Integrity-чек _metrics↔_dedup_keys не запустился: {e}")
 
     # Report
     if errors:

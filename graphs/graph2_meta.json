@@ -15,6 +15,12 @@
       "path": "scripts/_helpers.py"
     },
     {
+      "id": "script:_metrics.py",
+      "type": "script",
+      "label": "_metrics.py",
+      "path": "scripts/_metrics.py"
+    },
+    {
       "id": "script:_migrate_256_fix_links.py",
       "type": "script",
       "label": "_migrate_256_fix_links.py",
@@ -1163,6 +1169,12 @@
   ],
   "edges": [
     {
+      "src": "script:_metrics.py",
+      "dst": "script:_metrics.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
       "src": "script:decompose_all_izdeliya.py",
       "dst": "script:validate_decomposition.py",
       "type": "imports",
@@ -1235,6 +1247,12 @@
       "meta": {}
     },
     {
+      "src": "script:pre-commit-hook.py",
+      "dst": "script:_metrics.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
       "src": "script:real_decomposition.py",
       "dst": "script:validate_decomposition.py",
       "type": "imports",
@@ -1243,6 +1261,12 @@
     {
       "src": "script:real_decomposition.py",
       "dst": "script:_helpers.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "script:_metrics.py",
       "type": "imports",
       "meta": {}
     },
@@ -2496,13 +2520,13 @@
     }
   ],
   "stats": {
-    "nodes": 193,
-    "edges": 222,
+    "nodes": 194,
+    "edges": 225,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,
       "readme": 1,
-      "script": 24,
+      "script": 25,
       "spec": 1,
       "spec_section": 149
     }

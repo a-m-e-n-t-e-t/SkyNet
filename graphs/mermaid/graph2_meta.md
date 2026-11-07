@@ -4,6 +4,7 @@
 graph TB
     script___init___py(("__init__.py"))
     script__helpers_py(("_helpers.py"))
+    script__metrics_py(("_metrics.py"))
     script__migrate_256_fix_links_py(("_migrate_256_fix_links.py"))
     script__migrate_256_variant_a_py(("_migrate_256_variant_a.py"))
     script__migrate_256_variant_d_py(("_migrate_256_variant_d.py"))
@@ -195,6 +196,7 @@ graph TB
     concept_требования_к_ии__шаблоны_изделий_md(("_шаблоны_изделий.md"('[', ']')
     concept_требования_к_ии__шаблоны_подсистем_md(("_шаблоны_подсистем.md"('[', ']')
     concept_диалог_CHANGELOG_md(("CHANGELOG.md"('[', ']')
+    script__metrics_py -.->|imports| script__metrics_py
     script_decompose_all_izdeliya_py -.->|imports| script_validate_decomposition_py
     script_decompose_all_izdeliya_py -.->|imports| script__helpers_py
     script_fix_yaml_corruption_py -.->|imports| script_migrate_aliases_py
@@ -207,8 +209,10 @@ graph TB
     script_pipeline_py -.->|imports| script__helpers_py
     script_pre-commit-hook_py -.->|imports| script_validate_decomposition_py
     script_pre-commit-hook_py -.->|imports| script__helpers_py
+    script_pre-commit-hook_py -.->|imports| script__metrics_py
     script_real_decomposition_py -.->|imports| script_validate_decomposition_py
     script_real_decomposition_py -.->|imports| script__helpers_py
+    script_validate_decomposition_py -.->|imports| script__metrics_py
     script_validate_field_contracts_py -.->|imports| script__helpers_py
     script_web_verify_py -.->|imports| script_validate_decomposition_py
     script_web_verify_py -.->|imports| script__helpers_py
@@ -242,17 +246,14 @@ graph TB
     section_§11_2_Иерархия_изделий_(подсистема_=_классификация,_НЕ_урове -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§11_3_7_антипаттернов_(уроки_из_прошлых_реализаций) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§11_4_Полный_реестр_подтипов_(146_подтипов) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
-    section_§11_5__Разделение_уровней__паттерн_vs_экземпляр -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
-    section_§11_6_МНОГОСЛОЙНАЯ_БРОНЯ_(v9_22_НОВОЕ_—_5_слоёв) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
-    section_§9_5_Авто-отчёт_после_batch_(v9_24_НОВОЕ_—_из_аудита_диалога -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 193, рёбер: 222 (показано топ-50)._
+_Узлов: 194, рёбер: 225 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|
 | spec_section | 149 |
-| script | 24 |
+| script | 25 |
 | concept_doc | 17 |
 | catalog | 1 |
 | readme | 1 |

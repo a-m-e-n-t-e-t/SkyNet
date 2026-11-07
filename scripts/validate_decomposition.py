@@ -4423,9 +4423,11 @@ def main():
     results = run_all_checks()
 
     if args.json_out:
+        # v9.35: единый источник списка метрик — scripts/_metrics.py
+        from _metrics import get_metrics_for_json_out
         payload = {
             m: results['results'][m]['violations']
-            for m in ('F15b', 'F15d', 'F15g', 'F15h', 'F22', 'F25', 'F27', 'F27b', 'F27c', 'F27d', 'F27e', 'F27f', 'F27g', 'F28', 'F29', 'F31', 'F33', 'F34', 'F-scal', 'F-ai-lineage', 'F-fant-children')
+            for m in get_metrics_for_json_out()
             if m in results['results']
         }
         with open(args.json_out, 'w', encoding='utf-8') as f:

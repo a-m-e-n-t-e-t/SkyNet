@@ -1665,6 +1665,12 @@
       "path": "scripts/_helpers.py"
     },
     {
+      "id": "script:_metrics.py",
+      "type": "script",
+      "label": "_metrics.py",
+      "path": "scripts/_metrics.py"
+    },
+    {
       "id": "script:_migrate_256_fix_links.py",
       "type": "script",
       "label": "_migrate_256_fix_links.py",
@@ -3491,6 +3497,174 @@
       "meta": {}
     },
     {
+      "src": "F13",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "F13",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F16",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "F16",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F2",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "F2",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F22",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "F22",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F25",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "F25",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F27",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "F27",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F28",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "F28",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F29",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "F29",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F3",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "F3",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F31",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "F31",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F32",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "F32",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F33",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "F33",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F34",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "F34",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "P087",
+      "dst": "script:_metrics.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_metrics.py",
+      "dst": "P087",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "script:_migrate_256_fix_links.py",
       "dst": "pattern:*.md",
       "type": "checks_files",
@@ -4938,13 +5112,13 @@
     }
   ],
   "stats": {
-    "nodes": 328,
-    "edges": 494,
+    "nodes": 329,
+    "edges": 522,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,
       "metric": 217,
-      "script": 24,
+      "script": 25,
       "spec_section": 58,
       "stub": 13
     }
