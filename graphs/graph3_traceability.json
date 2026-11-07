@@ -3275,6 +3275,18 @@
       "meta": {}
     },
     {
+      "src": "F22",
+      "dst": "script:_helpers.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:_helpers.py",
+      "dst": "F22",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "F70",
       "dst": "script:_helpers.py",
       "type": "validated_by",
@@ -4536,13 +4548,13 @@
     },
     {
       "src": "script:validate_decomposition.py",
-      "dst": "pattern:*",
+      "dst": "pattern:*.md",
       "type": "checks_files",
       "meta": {}
     },
     {
       "src": "script:validate_decomposition.py",
-      "dst": "pattern:*.md",
+      "dst": "pattern:*",
       "type": "checks_files",
       "meta": {}
     },
@@ -4927,7 +4939,7 @@
   ],
   "stats": {
     "nodes": 328,
-    "edges": 492,
+    "edges": 494,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,

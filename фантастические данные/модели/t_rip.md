@@ -6,7 +6,7 @@ id: SkyNet-TRIP
 тип_модели: гуманоидный
 источник_происхождения: фильм
 функции: ["прототип T-800", "штурм"]
-канон_источник: Terminator: Salvation (2009)
+канон_источник: 'Terminator: Salvation (2009)'
 произведения: ["work_004"]
 производитель: Скайнет
 статус_реальности: canon
@@ -54,7 +54,7 @@ relations:
   - izdelie_SkyNet-PowerBackpack
 реализация_ии: []
 источник: web_search
-источник_url: https://terminator.fandom.com/wiki/T-800_(Salvation)
+источник_url: 'https://terminator.fandom.com/wiki/T-800_(Salvation)'
 источник_разбора: канон
 ии_перепроектирован:
   статус: false

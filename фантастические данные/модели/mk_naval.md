@@ -6,7 +6,7 @@ id: SkyNet-MKNaval
 тип_модели: водный_надводный
 источник_происхождения: игра
 функции: ["патруль", "штурм"]
-канон_источник: Terminator: Resistance (2019)
+канон_источник: 'Terminator: Resistance (2019)'
 произведения: ["work_046"]
 производитель: Скайнет
 статус_реальности: canon
@@ -52,7 +52,7 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
-источник_url: https://terminator.fandom.com/wiki/HK-Hydrofoil
+источник_url: 'https://terminator.fandom.com/wiki/HK-Hydrofoil'
 источник_разбора: канон
 ии_перепроектирован:
   статус: false

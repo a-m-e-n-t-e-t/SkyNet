@@ -1,6 +1,6 @@
 ---
 id: SkyNet-HKAerial
-# web_verification: terminator.fandom.com/wiki/HK-Aerial + worldofjaymz.fandom.com (2026-11-03)
+web_verification: terminator.fandom.com/wiki/HK-Aerial + worldofjaymz.fandom.com (2026-11-03)
 тактико_технические_характеристики: 
   мобильность:
           скорость_км_ч: 500
@@ -27,7 +27,7 @@ id: SkyNet-HKAerial
 тип_модели: воздушный
 источник_происхождения: фильм
 функции: ["патруль", "разведка", "удар"]
-канон_источник: T2: Judgment Day (1991), T: Salvation (2009)
+канон_источник: 'T2: Judgment Day (1991), T: Salvation (2009)'
 произведения: ["work_002", "work_004", "work_042", "work_045"]
 производитель: Скайнет
 статус_реальности: canon

@@ -1,6 +1,6 @@
 ---
 id: SkyNet-HKSubmarine
-# web_verification: The Terminator (1984) — mentioned by Kyle Reese
+web_verification: The Terminator (1984) — mentioned by Kyle Reese
 тактико_технические_характеристики: 
   мобильность:
           скорость_узлы: 25

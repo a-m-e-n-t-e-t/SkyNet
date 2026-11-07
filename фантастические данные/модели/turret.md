@@ -6,7 +6,7 @@ id: SkyNet-Turret
 тип_модели: стационарный
 источник_происхождения: фильм
 функции: ["оборона", "штурм"]
-канон_источник: T: Salvation (2009)
+канон_источник: 'T: Salvation (2009)'
 произведения: ["work_004"]
 производитель: Скайнет
 статус_реальности: canon
@@ -52,7 +52,7 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
-источник_url: https://terminator.fandom.com/wiki/Turret
+источник_url: 'https://terminator.fandom.com/wiki/Turret'
 источник_разбора: канон
 ии_перепроектирован:
   статус: false

@@ -1,6 +1,6 @@
 ---
 id: SkyNet-HKTank
-# web_verification: terminator.fandom.com/wiki/HK-Tank + robots.fandom.com (2026-11-03)
+web_verification: terminator.fandom.com/wiki/HK-Tank + robots.fandom.com (2026-11-03)
 тактико_технические_характеристики: 
   мобильность:
           скорость_км_ч: 50

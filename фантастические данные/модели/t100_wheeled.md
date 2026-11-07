@@ -6,7 +6,7 @@ id: SkyNet-T100Wheeled
 тип_модели: наземный_колёсный
 источник_происхождения: игра
 функции: ["патруль", "разведка"]
-канон_источник: Terminator: Resistance (2019)
+канон_источник: 'Terminator: Resistance (2019)'
 произведения: ["work_046"]
 производитель: Скайнет
 статус_реальности: canon
@@ -49,7 +49,7 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
-источник_url: https://tvtropes.org/pmwiki/pmwiki.php/VideoGame/TerminatorResistance
+источник_url: 'https://tvtropes.org/pmwiki/pmwiki.php/VideoGame/TerminatorResistance'
 источник_разбора: канон
 ии_перепроектирован:
   статус: false

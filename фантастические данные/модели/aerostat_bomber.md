@@ -6,7 +6,7 @@ id: SkyNet-AerostatBomber
 тип_модели: воздушный
 источник_происхождения: фильм
 функции: ["разведка", "удар", "бомбардировщик"]
-канон_источник: Terminator: Salvation (2009)
+канон_источник: 'Terminator: Salvation (2009)'
 произведения: ["work_004"]
 производитель: Скайнет
 статус_реальности: canon
@@ -46,7 +46,7 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
-источник_url: https://terminator.fandom.com/wiki/Aerostat
+источник_url: 'https://terminator.fandom.com/wiki/Aerostat'
 источник_дата: 2026-11-06
 источник_разбора: канон
 ии_перепроектирован:

@@ -1,6 +1,6 @@
 ---
 id: SkyNet-MotoTerminator
-# web_verification: terminator.fandom.com/wiki/Moto-Terminator (2026-11-03)
+web_verification: terminator.fandom.com/wiki/Moto-Terminator (2026-11-03)
 тактико_технические_характеристики: 
   мобильность:
           скорость_км_ч: 322
@@ -12,7 +12,7 @@ id: SkyNet-MotoTerminator
 тип_модели: наземный_колёсный
 источник_происхождения: фильм
 функции: ["преследование", "патруль", "штурм"]
-канон_источник: Terminator: Salvation (2009)
+канон_источник: 'Terminator: Salvation (2009)'
 произведения: ["work_004", "work_045"]
 производитель: Скайнет
 статус_реальности: canon

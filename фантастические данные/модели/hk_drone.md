@@ -1,6 +1,6 @@
 ---
 id: SkyNet-HKDrone
-# web_verification: terminator.fandom.com/wiki/HK-Drone (2026-11-03)
+web_verification: terminator.fandom.com/wiki/HK-Drone (2026-11-03)
 тактико_технические_характеристики: 
   мобильность:
           скорость_км_ч: 400
@@ -11,7 +11,7 @@ id: SkyNet-HKDrone
 тип_модели: воздушный
 источник_происхождения: фильм
 функции: ["разведка", "патруль"]
-канон_источник: T2: Judgment Day (1991), T: Salvation (2009)
+канон_источник: 'T2: Judgment Day (1991), T: Salvation (2009)'
 произведения: ["work_002", "work_004", "work_045"]
 производитель: Скайнет
 статус_реальности: canon

@@ -1,6 +1,6 @@
 ---
 id: SkyNet-TX
-# web_verification: terminator.fandom.com/wiki/T-X (2026-11-03) — "weighing in excess of 150 kilos"
+web_verification: terminator.fandom.com/wiki/T-X (2026-11-03) — "weighing in excess of 150 kilos"
 тактико_технические_характеристики: 
   мобильность:
           максимальная_скорость_км_ч: 80
@@ -21,7 +21,7 @@ id: SkyNet-TX
 тип_модели: гуманоидный
 источник_происхождения: фильм
 функции: ["инфильтрация", " assassination", "анти-терминатор"]
-канон_источник: Terminator 3: Rise of the Machines (2003)
+канон_источник: 'Terminator 3: Rise of the Machines (2003)'
 произведения: ["work_003", "work_043", "work_044"]
 производитель: Скайнет
 статус_реальности: canon
@@ -67,7 +67,7 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
-источник_url: https://terminator.fandom.com/wiki/T-X
+источник_url: 'https://terminator.fandom.com/wiki/T-X'
 источник_дата: 2026-11-06
 источник_разбора: канон
 ии_перепроектирован:

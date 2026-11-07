@@ -2,6 +2,15 @@
 
 ```mermaid
 graph LR
+    F22([F22])
+    script__helpers_py[_helpers.py]
+    F22 --> script__helpers_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F22 --> script_pre-commit-hook_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F22 --> script_validate_decomposition_py
+    script_web_verify_py[web_verify.py]
+    F22 --> script_web_verify_py
     F70([F70])
     script__helpers_py[_helpers.py]
     F70 --> script__helpers_py
@@ -98,13 +107,6 @@ graph LR
     F28 --> script_pre-commit-hook_py
     script_validate_decomposition_py[validate_decomposition.py]
     F28 --> script_validate_decomposition_py
-    F22([F22])
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F22 --> script_pre-commit-hook_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F22 --> script_validate_decomposition_py
-    script_web_verify_py[web_verify.py]
-    F22 --> script_web_verify_py
     F23([F23])
     script_pre-commit-hook_py[pre-commit-hook.py]
     F23 --> script_pre-commit-hook_py
@@ -157,7 +159,7 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F19` | generate_decomposition.py, generate_wrapper_izdeliya.py, validate_decomposition.py | — |
 | `F20` | migrate_material_form.py, validate_decomposition.py | — |
 | `F21` | generate_decomposition.py, validate_decomposition.py | — |
-| `F22` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
+| `F22` | _helpers.py, pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
 | `F23` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
 | `F24` | pre-commit-hook.py, validate_decomposition.py | — |
 | `F25` | pre-commit-hook.py, real_decomposition.py, validate_decomposition.py, web_verify.py | — |

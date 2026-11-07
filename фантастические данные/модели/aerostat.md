@@ -1,6 +1,6 @@
 ---
 id: SkyNet-Aerostat
-# web_verification: Terminator Salvation (2009)
+web_verification: Terminator Salvation (2009)
 тактико_технические_характеристики: 
   мобильность:
           тип: aerostat (легче воздуха)
@@ -11,7 +11,7 @@ id: SkyNet-Aerostat
 тип_модели: воздушный
 источник_происхождения: фильм
 функции: ["разведка", "патруль", "наблюдение"]
-канон_источник: Terminator: Salvation (2009)
+канон_источник: 'Terminator: Salvation (2009)'
 произведения: ["work_004", "work_045"]
 производитель: Скайнет
 статус_реальности: canon

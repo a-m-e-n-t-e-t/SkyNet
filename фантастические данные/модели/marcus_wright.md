@@ -1,6 +1,6 @@
 ---
 id: SkyNet-MarcusWright
-# web_verification: terminator.fandom.com/wiki/Marcus_Wright + robots.fandom.com (2026-11-03)
+web_verification: terminator.fandom.com/wiki/Marcus_Wright + robots.fandom.com (2026-11-03)
 тактико_технические_характеристики: 
   мобильность:
           максимальная_скорость_км_ч: 30
@@ -20,7 +20,7 @@ id: SkyNet-MarcusWright
 тип_модели: гуманоидный
 источник_происхождения: фильм
 функции: ["гибрид человек-киборг", "инфильтрация (осознанная)"]
-канон_источник: Terminator: Salvation (2009)
+канон_источник: 'Terminator: Salvation (2009)'
 произведения: ["work_004"]
 производитель: Cyberdyne Systems
 статус_реальности: canon

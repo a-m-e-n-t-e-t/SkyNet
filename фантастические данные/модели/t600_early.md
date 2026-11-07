@@ -6,7 +6,7 @@ id: SkyNet-T600Early
 тип_модели: наземный_гусеничный
 источник_происхождения: фильм
 функции: ["штурм", "патруль"]
-канон_источник: T: Salvation (2009) [early variant]
+канон_источник: 'T: Salvation (2009) [early variant]'
 произведения: ["work_004", "work_045"]
 производитель: Скайнет
 статус_реальности: canon
@@ -52,7 +52,7 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
-источник_url: https://terminator.fandom.com/wiki/T-600  # wayback: web.archive.org/web/20260731063644
+источник_url: 'https://terminator.fandom.com/wiki/T-600  # wayback: web.archive.org/web/20260731063644'
 источник_разбора: канон
 ии_перепроектирован:
   статус: false

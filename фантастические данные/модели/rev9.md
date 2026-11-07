@@ -1,6 +1,6 @@
 ---
 id: SkyNet-Rev9
-# web_verification: terminator.fandom.com/wiki/Rev-9 (2026-11-03)
+web_verification: terminator.fandom.com/wiki/Rev-9 (2026-11-03)
 тактико_технические_характеристики: 
   мобильность:
           максимальная_скорость_км_ч: 60
@@ -14,7 +14,7 @@ id: SkyNet-Rev9
 тип_модели: гуманоидный
 источник_происхождения: фильм
 функции: ["инфильтрация", " assassination", "двойная форма"]
-канон_источник: Terminator: Dark Fate (2019)
+канон_источник: 'Terminator: Dark Fate (2019)'
 произведения: ["work_006", "work_047"]
 производитель: Legion
 статус_реальности: canon

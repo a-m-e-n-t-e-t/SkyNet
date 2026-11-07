@@ -289,27 +289,55 @@ def _read_yaml_frontmatter_uncached(filepath: Path) -> tuple[dict, str, str]:
 # ============================================================================
 
 def load_all_izdeliya() -> dict[str, dict]:
-    """Загрузить все .md в реальные данные/изделия/ И работа и и/изделия/ в dict {id: data, ...}.
-    
-    v9.36: сохраняем markdown body в data['_body'] — F19/F23 больше не перечитывают файл.
-    v9.40 вариант D: работа и и/изделия/ содержит 11 izdelie_SkyNet-* обёрток
-    (перенесены из реальные данные → фантастические данные → работа и и).
+    """Загрузить все .md изделий/моделей в dict {id: data, ...}.
+
+    v9.33: расширено на фантастические данные/модели/ — теперь обрабатывает
+    канон-модели (тип: модель_SkyNet) так же, как реальные изделия.
+    Это включает F12a/F14/F16/F18/F19/F22/F25/F27*/F29/F34/F-scal/F-ai-lineage
+    для 41 канон-модели (T-800, HK-Aerial, и т.д.).
+
+    Источники (по приоритету):
+      1. реальные данные/изделия/ — промышленные шаблоны (тип: изделие)
+      2. работа и и/изделия/ — AI-улучшенные шаблоны (версия: ии-улучшенная)
+      3. фантастические данные/модели/ — канон-модели (тип: модель_SkyNet)
+
+    v9.36: сохраняем markdown body в data['_body'] для F19/F23.
+    v9.40: работа и и/изделия/ содержит izdelie_SkyNet-* обёртки.
     """
     result = {}
     izd_dirs = [
         SKYNET_REPO / "реальные данные" / "изделия",
         SKYNET_REPO / "работа и и" / "изделия",
+        SKYNET_REPO / "фантастические данные" / "модели",  # v9.33 NEW
     ]
     for izd_dir in izd_dirs:
         if not izd_dir.is_dir():
             continue
+        # _index.md в поддиректориях (применимо ко всем 3 базам)
         for f in izd_dir.rglob("_index.md"):
             data, _, body = read_yaml_frontmatter(f)
             if data and 'id' in data:
+                # Принимаем оба типа: изделие (real + AI) и модель_SkyNet (canon)
+                if data.get('тип') not in ('изделие', 'модель_SkyNet'):
+                    continue
                 data['_path'] = str(f)
                 data['_filename'] = f.name
-                data['_body'] = body  # v9.36: cache body to avoid re-reads in F19/F23
+                data['_body'] = body  # v9.36: cache body
                 result[data['id']] = data
+        # v9.33: для фантастических данных/модели/ — также .md файлы на верхнем уровне
+        # (модели лежат как t800.md, hk_aerial.md — без поддиректорий)
+        if izd_dir.name == 'модели':
+            for f in izd_dir.glob("*.md"):
+                if f.name.startswith('_'):
+                    continue
+                data, _, body = read_yaml_frontmatter(f)
+                if data and 'id' in data and data.get('тип') == 'модель_SkyNet':
+                    data['_path'] = str(f)
+                    data['_filename'] = f.name
+                    data['_body'] = body
+                    # не перетираем если уже есть (для случаев с _index.md)
+                    if data['id'] not in result:
+                        result[data['id']] = data
     return result
 
 
@@ -424,6 +452,10 @@ def check_F12a(izdeliya: dict[str, dict]) -> dict:
         level = data.get('уровень_иерархии', '')
         if level == 'верхний':
             continue  # OK — это верхний уровень
+        # v9.33: модель_SkyNet (канон-фантастические) — top-level по определению,
+        # не имеют поля уровень_иерархии (оно для изделий). Skip-аем сироту-проверку.
+        if data.get('тип') == 'модель_SkyNet':
+            continue  # OK — канон-модели top-level по определению
         if izd_id not in child_to_parents:
             violations.append(f"{izd_id}: сирота — нет родителя и не упомянут в дочерние_части других изделий")
     
@@ -787,6 +819,56 @@ def check_F15a(izdeliya: dict[str, dict]) -> dict:
     }
 
 
+# v9.33: общий helper для извлечения числового значения из YAML-полей.
+# Понимает sentinel-значения ('не_указано_в_произведениях', 'не_определён',
+# 'various', 'unknown', 'n/a') — возвращает None (skip), не fallback на min/max.
+# Это позволяет фантастическим моделям честно помечать неизвестные параметры
+# без ложных нарушений F15b/F15d/F15g/F15h.
+_SENTINEL_VALUES = {
+    'не_указано_в_произведениях', 'не_определён', 'не_указано',
+    'various', 'unknown', 'n/a', 'na', 'null', '-', '?',
+}
+
+
+def _to_float_with_sentinel(val):
+    """Extract a single numeric value, respecting sentinel strings.
+
+    Returns None if:
+      - val is None
+      - val is a sentinel string ('не_указано_в_произведениях' etc.)
+      - val is a dict whose `nominal` is sentinel (skip whole dict, no fallback)
+      - val is non-numeric
+    """
+    if val is None:
+        return None
+    if isinstance(val, str):
+        if val.strip().lower() in _SENTINEL_VALUES:
+            return None
+        try:
+            return float(val)
+        except (TypeError, ValueError):
+            return None
+    if isinstance(val, dict):
+        # v9.33: если nominal — sentinel, не берём fallback на min/max
+        nominal = val.get('nominal')
+        if isinstance(nominal, str) and nominal.strip().lower() in _SENTINEL_VALUES:
+            return None  # явно неизвестно — не fallback
+        for k in ('nominal', 'max', 'min'):
+            if k in val and val[k] is not None:
+                v = val[k]
+                if isinstance(v, str) and v.strip().lower() in _SENTINEL_VALUES:
+                    continue  # skip sentinel, try next key
+                try:
+                    return float(v)
+                except (TypeError, ValueError):
+                    pass
+        return None
+    try:
+        return float(val)
+    except (TypeError, ValueError):
+        return None
+
+
 def check_F15b(izdeliya: dict[str, dict]) -> dict:
     """F15b: выработка_тепла_W родителя ≥ Σ(дочерних.выработка_тепла_W).
 
@@ -805,23 +887,7 @@ def check_F15b(izdeliya: dict[str, dict]) -> dict:
     total = 0
     valid = 0
 
-    def _to_float(val):
-        """Extract a single numeric value from {min,max,nominal} dict or scalar."""
-        if val is None:
-            return None
-        if isinstance(val, dict):
-            # prefer nominal, fallback to max
-            for k in ('nominal', 'max', 'min'):
-                if k in val and val[k] is not None:
-                    try:
-                        return float(val[k])
-                    except (TypeError, ValueError):
-                        pass
-            return None
-        try:
-            return float(val)
-        except (TypeError, ValueError):
-            return None
+    _to_float = _to_float_with_sentinel  # v9.33: общий helper с sentinel-поддержкой
 
     for izd_id, data in izdeliya.items():
         children = data.get('дочерние_части', [])
@@ -1547,6 +1613,13 @@ def check_F18(izdeliya: dict[str, dict]) -> dict:
         pass
 
     for izd_id, data in izdeliya.items():
+        # v9.33: модель_SkyNet (канон-фантастические) проверяется по §12.4, не §12.1.
+        # SCHEMA_IZDELIE требует подсистема/родитель/дочерние_части/материалы_частей —
+        # модели не имеют этих полей (у них expected_subsystems, произведения, и т.д.).
+        # Skip-аем валидацию по схеме изделий для тип=модель_SkyNet.
+        if data.get('тип') == 'модель_SkyNet':
+            valid += 1
+            continue
         # Удалить служебные поля
         clean_data = {k: v for k, v in data.items() if not k.startswith('_')}
 
@@ -3167,16 +3240,23 @@ def _norm_id_key(s: str) -> str:
 
 
 def _load_materials_and_techs() -> list[tuple[Path, dict]]:
-    """Загрузить front matter всех материалов и технологий (для F31/F32)."""
+    """Загрузить front matter всех материалов и технологий (для F31/F32).
+
+    v9.33: расширено на фантастические данные/материалы + технологии/ (когда
+    они появятся). Сейчас эти папки пусты — но loader готов.
+    """
     entries = []
-    for sub in ("материалы", "технологии"):
-        d = SKYNET_REPO / "реальные данные" / sub
-        for f in sorted(d.glob("*.md")):
-            if f.name.startswith('_'):
+    for base in ("реальные данные", "фантастические данные", "работа и и"):
+        for sub in ("материалы", "технологии"):
+            d = SKYNET_REPO / base / sub
+            if not d.is_dir():
                 continue
-            data, _, _ = read_yaml_frontmatter(f)
-            if isinstance(data, dict) and data.get('id'):
-                entries.append((f, data))
+            for f in sorted(d.glob("*.md")):
+                if f.name.startswith('_'):
+                    continue
+                data, _, _ = read_yaml_frontmatter(f)
+                if isinstance(data, dict) and data.get('id'):
+                    entries.append((f, data))
     return entries
 
 
@@ -3353,13 +3433,16 @@ def check_F31(entries: list[tuple[Path, dict]] | None = None) -> dict:
 # Префиксы ID, отделяющие категорию (например, material_copper,
 # izdelie_pcm, tekhnologia_parylene_c, часть_intel_loihi_2_die).
 # Используется для выделения «человекочитаемого имени» (id без префикса).
-_CATEGORY_PREFIXES = ('material_', 'izdelie_', 'tekhnologia_', 'часть_')
+# v9.33: добавлен префикс 'SkyNet-' для канон-моделей (SkyNet-T800 → T800).
+_CATEGORY_PREFIXES = ('material_', 'izdelie_', 'tekhnologia_', 'часть_', 'SkyNet-')
 
 # Какое значение поля `тип` ожидается в каждой директории категории.
+# v9.33: добавлена категория 'модели' для фантастические данные/модели/.
 _EXPECTED_TYPE_BY_DIR = {
     'материалы': 'материал',
     'изделия':   'изделие',
     'технологии': 'технология',
+    'модели':    'модель_SkyNet',  # v9.33 NEW
 }
 
 
@@ -3368,16 +3451,40 @@ def _load_all_catalog_entries() -> list[tuple[Path, str, dict]]:
 
     Возвращает список (path, category, data). Включая `часть_*` (дочерние
     части изделий) — они нужны для F33b (коллизия имён часть_ vs материал_).
+
+    v9.33: расширено на фантастические данные/ (категория 'модели' для моделей).
+    Сейчас фантастические данные/модели/ содержит .md файлы на верхнем уровне
+    (тип: модель_SkyNet) — добавлены как category='модели'.
     """
     out: list[tuple[Path, str, dict]] = []
+    # Реальные данные: материалы, изделия, технологии
     for cat in ('материалы', 'изделия', 'технологии'):
         d = SKYNET_REPO / "реальные данные" / cat
         if not d.exists():
             continue
         for f in sorted(d.rglob("*.md")):
-            # _index.md в изделиях — это полноценный файл, НЕ пропускаем
-            # (но _префиксные_ служебные _список_изделий.md, _CATALOG.md и т.д. — да)
             if f.name.startswith('_') and f.name != '_index.md':
+                continue
+            data, _, _ = read_yaml_frontmatter(f)
+            if isinstance(data, dict) and data.get('id'):
+                out.append((f, cat, data))
+    # v9.33 NEW: Фантастические данные/модели/ (канон-модели)
+    # Модели лежат как .md на верхнем уровне + могут иметь поддиректории
+    fant_dir = SKYNET_REPO / "фантастические данные" / "модели"
+    if fant_dir.is_dir():
+        for f in sorted(fant_dir.rglob("*.md")):
+            if f.name.startswith('_') and f.name != '_index.md':
+                continue
+            data, _, _ = read_yaml_frontmatter(f)
+            if isinstance(data, dict) and data.get('id'):
+                out.append((f, 'модели', data))
+    # v9.33 NEW: работа и и/ (если есть собственные материалы/технологии)
+    for cat in ('материалы', 'технологии'):
+        d = SKYNET_REPO / "работа и и" / cat
+        if not d.exists():
+            continue
+        for f in sorted(d.glob("*.md")):
+            if f.name.startswith('_'):
                 continue
             data, _, _ = read_yaml_frontmatter(f)
             if isinstance(data, dict) and data.get('id'):

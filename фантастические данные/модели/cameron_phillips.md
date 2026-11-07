@@ -1,6 +1,6 @@
 ---
 id: SkyNet-Cameron
-# web_verification: terminator.fandom.com/wiki/Cameron + Wikipedia Cameron_(Terminator) (2026-11-03)
+web_verification: terminator.fandom.com/wiki/Cameron + Wikipedia Cameron_(Terminator) (2026-11-03)
 тактико_технические_характеристики: 
   мобильность:
           максимальная_скорость_км_ч: 40
@@ -20,7 +20,7 @@ id: SkyNet-Cameron
 тип_модели: гуманоидный
 источник_происхождения: сериал
 функции: ["телохранитель", "инфильтрация (осознанная)"]
-канон_источник: Terminator: The Sarah Connor Chronicles (2008-2009)
+канон_источник: 'Terminator: The Sarah Connor Chronicles (2008-2009)'
 произведения: ["work_007"]
 производитель: Скайнет → Resistance
 статус_реальности: canon
@@ -66,7 +66,7 @@ relations:
   - izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
-источник_url: https://terminator.fandom.com/wiki/Cameron
+источник_url: 'https://terminator.fandom.com/wiki/Cameron'
 источник_дата: 2026-11-06
 источник_разбора: канон
 ии_перепроектирован:

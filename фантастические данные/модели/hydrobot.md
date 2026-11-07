@@ -1,6 +1,6 @@
 ---
 id: SkyNet-Hydrobot
-# web_verification: Terminator Salvation (2009)
+web_verification: Terminator Salvation (2009)
 тактико_технические_характеристики: 
   мобильность:
           тип: водный змей
@@ -11,7 +11,7 @@ id: SkyNet-Hydrobot
 тип_модели: водный_подводный
 источник_происхождения: фильм
 функции: ["патруль", "охрана водных путей", "штурм"]
-канон_источник: Terminator: Salvation (2009)
+канон_источник: 'Terminator: Salvation (2009)'
 произведения: ["work_004", "work_045"]
 производитель: Скайнет
 статус_реальности: canon
