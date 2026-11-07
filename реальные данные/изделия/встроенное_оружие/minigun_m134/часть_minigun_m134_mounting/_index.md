@@ -14,6 +14,7 @@ id: часть_minigun_m134_mounting
 материалы_частей:
   - часть: часть_minigun_m134_mounting
     материал: stal_st3
+    форма: строительные_конструкции_и_крепёж
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -37,7 +38,7 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-07
 источник: web_search
 источник_url: https://www.motionpicturearmourer.com/m134_specifications.htm
 источник_дата: 2026-11-04
@@ -84,4 +85,5 @@ Pintle-штырь входит в стандартный монтажный со
 
 - Спецификация M134 Minigun (таблица Mount: yoke/pintle/vertical arm, высота 13.45 in): <https://www.motionpicturearmourer.com/m134_specifications.htm> (проверено 2026-11-04)
 - Военное крепление M134, материалы — сталь/нержавеющая сталь: Military Systems Group, каталог Weapon Mounts (<https://milsysgroup.com/product-category/land-systems/machine-gun-mounts/m134>)
+- Серийный pintle-узел M134 (продукт): M134 Vertical Arm Mounting Pintle for Turret A-Frame — <https://milsysgroup.com/product/m134-vertical-arm-mounting-pintle-for-turret-a-frame> (проверено 2026-11-07)
 - Материалы: реальные данные/материалы/
