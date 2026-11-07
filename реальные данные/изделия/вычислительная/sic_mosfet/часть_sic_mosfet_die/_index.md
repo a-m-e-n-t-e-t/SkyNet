@@ -33,11 +33,11 @@ scaling_type: количественный
     w: 4.5
     h: 0.18
   выработка_энергии_W: 0
-  выработка_тепла_W: 1
+  выработка_тепла_W: 4.95
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-08
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.infineon.com/products/power/mosfet/silicon-carbide/baredies
@@ -59,7 +59,7 @@ scaling_type: количественный
 | доля массы родителя | 0.2 | — | canon |
 | габариты (Д×Ш×В) | 5.5×4.5×0.18 | mm | Infineon CoolSiC MOSFET bare dies: 750/1200 V, chip sizes 7–11 mΩ RDS(on) |
 | выработка энергии | 0 | W | canon |
-| выработка тепла | 1 | W | canon |
+| выработка тепла | 4.95 | W | conduction+switching losses: I_rms≈10 A, RDS(on)=25 мОм → 2.5 Вт джоулевых + ~2.4 Вт переключательных (20–50 кГц); Wolfspeed C3M0030170P / MDPI Energies 18(23):6264 |
 | материал | monokristallicheskogo_sic | — | monokristallicheskogo_sic.md |
 
 ## Принцип работы
