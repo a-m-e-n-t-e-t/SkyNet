@@ -6695,6 +6695,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_tebabf4_acn",
+      "type": "material",
+      "label": "тетраэтиламмоний тетрафторборат (C2H5)4NBF4 — CAS 429-06-1, формула C8H20BF4N, молярная масса 217.06 г/моль; сухая соль для приготовления органических электролитов EDLC (готовый 1M раствор в ацетонитриле — отдельный материал material_acetonitrile_teabf4)",
+      "path": "реальные данные/материалы/tebabf4_acn.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_tedlar",
       "type": "material",
       "label": "Tedlar",
@@ -8869,6 +8876,12 @@
     {
       "src": "izdelie_superkondensatory",
       "dst": "material_cellulose",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_superkondensatory",
+      "dst": "material_tebabf4_acn",
       "type": "uses_material",
       "meta": {}
     },
@@ -21435,6 +21448,14 @@
       }
     },
     {
+      "src": "material_tebabf4_acn",
+      "dst": "izdelie_superkondensatory",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_alyuminievo-vozdushnye_toplivnye_elementy_anode",
       "dst": "izdelie_alyuminievo-vozdushnye_toplivnye_elementy",
       "type": "part_of",
@@ -31009,6 +31030,7 @@
       "standart_IEC 62391",
       "standart_IEC 62391-1",
       "standart_IEC 62391-1 (EDLC)",
+      "standart_IEC 62391-1 (двухслойные конденсаторы для электронной аппаратуры — требования к электролитным системам)",
       "standart_IEC 62391-1 (двухслойные конденсаторы для электронной аппаратуры)",
       "standart_IEC 62576 (EDLC для гибридных транспортных средств — методы испытаний)",
       "standart_IEC 62619",
@@ -31264,6 +31286,7 @@
       "group_Masato Sagawa (Sumitomo Special Metals) и John Croat (General Motors) — независимое открытие Nd₂Fe₁₄B в 1984 г.; производители: Shin-Etsu, Hitachi, TDK, Neo (старое GM Magnequench)",
       "group_Michael Naguib, Yury Gogotsi, Michel W. Barsoum — Drexel University (открытие MXene в 2011 г.: травление Ti₃AlC₂ в HF)",
       "group_Murata_TDK",
+      "group_N.F. Uvarov и соавт. (MDPI Crystals 12(4):515, 2022) — термические свойства и ионная проводимость тетра-n-алкиламмонийных солей (TBAClO4/TBABF4, пластичные кубические фазы); коммерческое производство — Ascent Petrochem (конвенциональный электролит EDLC CAS 429-06-1), ChemXpress, io-li-tec (Ultra Pure >99 %)",
       "group_Oak Ridge National Laboratory — Bulk Shielding Reactor (построен в 1950-е для систематических исследований бетонной радиационной защиты в рамках программы Aircraft Nuclear Propulsion; снесён в 2022); стандартизация заполнителей — ASTM C638",
       "group_Pierre Bonhôte и соавт. (EPFL, Швейцария) — синтез гидрофобных EMIM-имидных комнатнотемпературных расплавов, Inorg. Chem. 1996, 35(5), 1168–1178",
       "group_Scudamore Sellon (1881) — первый патент решёток из свинцово-сурьмянистого сплава (Sb упрочняет свинец); в тот же год Camille Alphonse Faure запатентовал решётчатую пластину с пастой PbO — вместе сделавшие АКБ пригодной для массового производства",
@@ -31391,7 +31414,6 @@
       "material_steel_track",
       "material_steel_track_links_t158",
       "material_synthetic_rubber",
-      "material_tebabf4_acn",
       "material_ti-6al-4v_legirovannyi_3_5_mas_tantala_ii",
       "material_tio2_memristor",
       "material_titanium_alloy",
@@ -31404,19 +31426,19 @@
     ]
   },
   "stats": {
-    "nodes": 1074,
-    "edges": 3414,
+    "nodes": 1075,
+    "edges": 3416,
     "dangling": {
-      "complies_with": 469,
+      "complies_with": 470,
       "has_part": 4,
-      "researched_by": 67,
-      "uses_material": 82
+      "researched_by": 68,
+      "uses_material": 81
     },
     "by_type": {
       "chast": 650,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 196,
+      "material": 197,
       "standart": 8,
       "tekhnologia": 77
     }
