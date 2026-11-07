@@ -14,6 +14,7 @@ id: часть_svobodnoporshnevoi_stirling_alternator
 материалы_частей:
   - часть: часть_svobodnoporshnevoi_stirling_alternator
     материал: ndfeb
+    форма: роторы_ev_и_промышленных_двигателей
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -32,22 +33,22 @@ scaling_type: количественный
     l: 90
     w: 90
     h: 70
-  выработка_энергии_W: 0
+  выработка_энергии_W: 500
   выработка_тепла_W: 1
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-08
 источник: web_search
 источник_разбора: канон
-источник_url: https://www.sunpowerinc.com/Technologies
-источник_дата: 2026-11-05
+источник_url: https://people.ohio.edu/urieli/thermo/Intro/Chapt.1_6/StirlCogen/StirlCogen.html
+источник_дата: 2026-11-08
 ---
 # Часть: часть_svobodnoporshnevoi_stirling_alternator
 
 ## Описание
 
-Линейный генератор движущегося магнита (moving-magnet) свободнопоршневого Стирлинга: NdFeB-магниты с радиальным полем соединены со штоком силового поршня и наводят синусоидальную ЭДС в катушке на железном магнитопроводе; четырёхкомпонентная топология Sunpower (катушка/железо/магнит/структура), КПД до ~83 % у 35-Вт космического аналога.
+Линейный генератор движущегося магнита (moving-magnet) свободнопоршневого Стирлинга — единственный узел, производящий электрическую энергию FPSE: NdFeB-магниты с радиальным полем соединены со штоком силового поршня и наводят синусоидальную ЭДС в катушке на железном магнитопроводе. Номинальная выработка 500 Вт (nominal родителя); класс мощности подтверждён Sunpower EG-1000 (240 В, 50 Гц, >1 кВт электрической мощности) и Sunpower 1 kW FPSE alternator (Berchowitz, 1983). Четырёхкомпонентная топология Sunpower (катушка/железо/магнит/структура), КПД до ~83 % у 35-Вт космического аналога.
 
 ## Технические характеристики
 
@@ -58,17 +59,17 @@ scaling_type: количественный
 | масса | 0.7 | kg | canon |
 | доля массы родителя | 0.4 | — | canon |
 | габариты (Д×Ш×В) | 90×90×70 | mm | Sunpower (AMETEK) — Linear Alternators and Motors (coil/iron/magnet/structure, 83% efficiency 35 W FPSE) |
-| выработка энергии | 0 | W | canon |
+| выработка энергии | 500 | W | Sunpower EG-1000 (>1 kWe, 240 V/50 Hz); Berchowitz 1983 (1 kW FPSE alternator) |
 | выработка тепла | 1 | W | canon |
-| материал | ndfeb | — | ndfeb.md |
+| материал | ndfeb (форма: роторы_ev_и_промышленных_двигателей) | — | ndfeb.md |
 
 ## Принцип работы
 
-Определяется типом и назначением родительского изделия.
+Поршень FPSE совершает свободное резонансное движение: закреплённые на штоке NdFeB-магниты движутся сквозь катушку на магнитопроводе, наводя ЭДС (moving-magnet топология); электрическая нагрузка в цепи катушки демпфирует колебания, стабилизируя резонанс двигателя — при этом вся механическая мощность двигателя преобразуется в электричество (500 Вт номинал; потери выделяются теплом в катушке и железе).
 
 ## Состав
 
-Промежуточная часть (уровень 2). Дочерних частей нет.
+Промежуточная часть (уровень 2, четырёхкомпонентная топология Sunpower: катушка / железо магнитопровода / NdFeB-магниты / структурный корпус). Каталогизация подкомпонентов не требуется: поставка цельным линейным альтернатором (Sunpower/AMETEK product line).
 
 ## Используемые материалы
 
@@ -76,5 +77,7 @@ scaling_type: количественный
 
 ## Источники
 
-- Sunpower (AMETEK) — Linear Alternators and Motors (coil/iron/magnet/structure, 83% efficiency 35 W FPSE): https://www.sunpowerinc.com/Technologies (проверено 2026-11-05)
+- Sunpower EG-1000 Stirling Engine/Generator (240 В, 50 Гц, >1 кВт электрической мощности) — https://people.ohio.edu/urieli/thermo/Intro/Chapt.1_6/StirlCogen/StirlCogen.html (обращение 2026-11-08)
+- D. Berchowitz, «The development of a 1 KW electrical output free piston Stirling engine alternator» (Sunpower, 1983) — https://www.osti.gov/biblio/5477286
+- ARPA-E: Free Piston Stirling Engine Based 1kW Generator (linear alternator производит электричество) — https://arpa-e.energy.gov/programs-and-initiatives/search-all-projects/free-piston-stirling-engine-based-1kw-g
 - Материалы: реальные данные/материалы/
