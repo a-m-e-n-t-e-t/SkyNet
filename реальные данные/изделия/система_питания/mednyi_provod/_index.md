@@ -17,6 +17,7 @@ id: izdelie_mednyi_provod
 материалы_частей:
   - часть: izdelie_mednyi_provod
     материал: copper
+    форма: обмотки_электрических_машин
     доля_массы: 1.0
 scaling_type: количественный
 соединители: []
@@ -53,7 +54,7 @@ scaling_type: количественный
     воздушные_линии: 'твёрдотянутая проволока (Hard): прочность 379 МПа для натяжки пролётов'
     обмоточный_провод: 'эмалированный/лужёный провод: обмотки трансформаторов, двигателей, катушек'
 дата_создания: 2026-11-06
-дата_обновления: 2026-11-06
+дата_обновления: 2026-11-08
 ---
 # Изделие: медный провод (Cu-ETP, C11000)
 
@@ -87,11 +88,14 @@ scaling_type: количественный
 
 ## Состав
 
-Изделие уровня 1 (верхний). Дочерних частей нет — неделимая каталожная позиция (типоразмерный ряд). Материал-основа: [`material_copper`](../../материалы/copper.md) (Cu-ETP C11000).
+Изделие уровня 1 (верхний). Дочерних частей нет — неделимая каталожная позиция (типоразмерный ряд). Материал-основа: [`material_copper`](../../материалы/copper.md) (Cu-ETP C11000), форма — **обмотки_электрических_машин**: проводник эмаль-провода (магнет-провода) для обмоток статоров электродвигателей, трансформаторов и соленоидов — вариант материала «трёхфазные обмотки BLDC/PMSM из эмаль-провода, класс изоляции H 180 °C». Проводник магнет-провода по NEMA MW 1000 — электролитическая рафинированная медь ETP (CDA C11000); температурные классы изоляции эмаль-провода 105–240 °C при ресурсе 20 000 ч при номинальной температуре.
 
 ## Источники
 
 - LFA Wire, «Copper, C11000, ETP — Round Wire» — temper-таблица (H 379 МПа, Spring 455 МПа, δ 1.5%), 100% IACS, ρ 8.89 г/см³, ASTM B1/B2/B3: <https://www.lfawire.com/copper-wire_c11000-etp.htm> (проверено 2026-11-06)
+- MWS Wire, Technical Book — ETP Copper (CDA C11000) как проводник магнет-провода (special magnet wire conductor): <https://mwswire.com/wp-content/uploads/2024/01/MWS-techbook.pdf> (проверено 2026-11-08)
+- NEMA MW 1000 «Magnet Wire» — стандарт круглого/прямоугольного провода с плёночной изоляцией (magnet/winding wire) для электрических аппаратов: <https://www.nema.org/membership/products/mw-1000> (проверено 2026-11-08)
+- Elektrisola, «Technical Data for Enamelled Copper Wire by Size acc. to IEC 60317» — типоразмерный ряд эмаль-провода по IEC 60317: <https://www.elektrisola.com/en/Products/Enamelled-Wire/Technical-Data> (проверено 2026-11-08)
 - LinsyCopper, «The Ultimate Guide to C11000 Copper» — отожнённая σв 205–260 МПа, твёрдотянутая 310–380 МПа: <https://www.linsycopper.com/blog/the-ultimate-guide-to-c11000-copper> (проверено 2026-11-06)
 - Aurubis, датащит «C11000 (Cu-ETP)»: <https://www.aurubis.com/en/dam/jcr:ec116d17-1541-419a-a897-ad31b4fa6c93/c11000-cu-etp-us.2023-12-19-10-27-57.pdf> (проверено 2026-11-06)
 - KME, датащит «Cu-ETP»: <https://www.kme.com/fileadmin/DOWNLOADCENTER/COPPER%20DIVISON/4%20Industrial%20Rolled/3_Datasheets/Datasheets_NEW_2021/kme_Cu-ETP_en.pdf> (проверено 2026-11-06)
