@@ -18,6 +18,19 @@ id: часть_minigun_m134_housing
     форма: оружейные_корпуса_и_ресиверы
     доля_массы: 1.0
 
+технологии_частей:
+  - часть: часть_minigun_m134_housing
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    # v9.56: ствольная коробка (ресивер) из Ti-6Al-4V — 5-осевое ЧПУ-
+    # фрезерование титановых корпусных деталей (Carr Machine: «structural
+    # brackets, housings, fittings… Ti-6Al-4V with 5-axis milling»; PTSMake
+    # Ti Grade 5: carbide-инструмент, 150–200 SFM, высоконапорная СОЖ;
+    # прецедент #914: housing → frezervanie_chpu).
+    материалы_для_процесса:
+      - материал: ti-6al-4v
+        роль: обрабатываемый
+
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -82,6 +95,10 @@ scaling_type: количественный
 ## Используемые материалы
 
 - `ti-6al-4v` → [`ti-6al-4v.md`](../../../../материалы/ti-6al-4v.md)
+
+## Используемые технологии
+
+- [`frezervanie_chpu`](../../../../технологии/frezervanie_chpu.md) — 5-осевое ЧПУ-фрезерование титановой ствольной коробки: авиационный стандарт обработки корпусных деталей из Ti-6Al-4V (Carr Machine: «structural brackets, housings, fittings in Ti-6Al-4V with 5-axis milling»; режимы PTSMake для Ti Grade 5: carbide-инструмент, низкие скорости резания ~150–200 SFM, высоконапорная СОЖ); skeletonized-исполнение M134D-H Dillon Aero достигается именно фрезеровкой выборок на корпусе
 
 ## Источники
 
