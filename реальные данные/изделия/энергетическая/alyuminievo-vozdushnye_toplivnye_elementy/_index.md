@@ -20,6 +20,7 @@ id: izdelie_alyuminievo-vozdushnye_toplivnye_elementy
 материалы_частей:
   - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_anode
     материал: aluminum_1100
+    форма: расходуемые_аноды_металл-воздушных_батарей
     доля_массы: 0.38
   - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_cathode
     материал: carbon_ptfe
@@ -30,6 +31,25 @@ id: izdelie_alyuminievo-vozdushnye_toplivnye_elementy
   - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_air_electrode
     материал: carbon_ptfe
     доля_массы: 0.002
+технологии_частей:
+  - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_anode
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: aluminum
+        роль: обрабатываемый
+  - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_cathode
+    технология: gidrofobnoe_pokrytie
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: carbon_ptfe
+        роль: обрабатываемый
+  - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_air_electrode
+    технология: gidrofobnoe_pokrytie
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: carbon_ptfe
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,9 +65,9 @@ scaling_type: количественный
           max: 50
           nominal: 5
   габариты_mm:
-          l: 200
-          w: 150
-          h: 100
+          l: 420
+          w: 310
+          h: 300
   выработка_энергии_W:
           min: 10
           max: 1000
@@ -60,6 +80,7 @@ scaling_type: количественный
 дополнительные: 
   T_рабочая_C: 60
   КПД_процентов: 40
+  обоснование_габаритов: 'модуль = корпус ячейки 420×300×250 (часть_housing) + воздушный коллектор с крышкой и заливочной горловиной сверху (+50 мм по h, +10 мм по w на подвод электролита) — компоновка типовых Al-air модулей: пакет пластин + верхняя крышка + система электролита (патент CN112542637B); V(bbox)=420×310×300=39 060 000 мм³ ≥ ΣV(детей)×1.15=37 538 520 мм³ (Σ V детей=32 642 191, запас ×1.04); оси: l 420 ≥ max_child 420 (housing), w 310 ≥ 300 (housing), h 300 ≥ 250 (housing)'
   источник: Al-air fuel cell research
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
