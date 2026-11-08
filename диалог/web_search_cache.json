@@ -709,6 +709,131 @@
    "used_in_issues": [
     2783
    ]
+  },
+  {
+   "query": "YBCO bulk superconducting bearing stator melt-grown block CAN Superconductors 30x30x15 mm force 77 K",
+   "keywords": [
+    "ybco_bulk",
+    "tsmg",
+    "single_grain",
+    "hts_podshipnik",
+    "magnitnyi_podves"
+   ],
+   "results": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Yttrium_barium_copper_oxide",
+     "name": "Yttrium barium copper oxide",
+     "snippet": "YBCO was the first material found to become superconducting above 77 K, the boiling point of liquid nitrogen, whereas the majority of other superconductors ..."
+    },
+    {
+     "url": "https://www.comsol.com/blogs/modeling-superconductivity-ybco-wire",
+     "name": "Modeling Superconductivity in a YBCO Wire",
+     "snippet": "Many superconducting wires are made of yttrium barium copper oxide (YBCO), a compound that displays superconductivity at relatively high ..."
+    },
+    {
+     "url": "https://www.academia.edu/55598880/Application_of_textured_YBCO_bulks_with_artificial_holes_for_superconducting_magnetic_bearing",
+     "name": "Application of textured YBCO bulks with artificial holes for",
+     "snippet": "The study aims to optimize superconducting magnetic bearings using modified YBCO materials for enhanced performance. Top-Seeded Melt Growth Method effectively ..."
+    },
+    {
+     "url": "https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.11344931",
+     "name": "Stiffness Enhancement of a Superconducting Magnetic",
+     "snippet": "by J Storey · 2023 · Cited by 23 — Here we investigate a novel thrust bearing geometry, matching superconducting toroid and puck assembly, aimed at producing high stiffness … ..."
+    },
+    {
+     "url": "https://ethw.org/First-Hand:Discovery_of_Superconductivity_at_93_K_in_YBCO:_The_View_from_Ground_Zero",
+     "name": "First-Hand:Discovery of Superconductivity at 93 K in YBCO",
+     "snippet": "... YBCO superconductor can form. This ... 7, representing the first definitive superconducting sign detected above the liquid nitrogen temperature of 77 K."
+    }
+   ],
+   "created_at": "2026-11-08T20:55:59Z",
+   "usage_count": 1,
+   "used_in_issues": [
+    2131
+   ]
+  },
+  {
+   "query": "sintered NdFeB magnets manufacturing vacuum sintering temperature powder metallurgy diamond grinding segments",
+   "keywords": [
+    "ndfeb",
+    "vakuumnoe_spekanie",
+    "1050_1080C",
+    "segmentirovannyi rotor"
+   ],
+   "results": [
+    {
+     "url": "https://radialmagnet.com/how-neodymium-magnets-are-made/?srsltid=AYCX9vI-9_GVjXgzRNOK8JoQiESjeXT1Eb8f4BOoJk3bKmTI--Z4Zfzj",
+     "name": "How Neodymium Magnets Are Made: The Full Process",
+     "snippet": "Green compacts are vacuum-sintered at roughly 1,000–1,100 °C, where the Nd-rich boundary phase becomes liquid and fuses the grains into a dense solid — the ..."
+    },
+    {
+     "url": "https://www.ccmagnetics.com/blog/preparation-process-of-sintered-ndfeb-magnets-sintering-heat-treatment-and-machining.html",
+     "name": "Preparation process of sintered NdFeB magnets",
+     "snippet": "Nd-Fe-B magnets need to be sintered at a temperature lower than 1100°C. The usual sintering temperature is 1050~1080°C, and close to zero ..."
+    },
+    {
+     "url": "https://sdmmagnets.com/neodymium-magnets/how-are-neodymium-magnets-made",
+     "name": "How Are Neodymium Magnets Made?",
+     "snippet": "The manufacturing process of sintered Neodymium (NdFeB) magnets begins with the production of an NdFeB alloy using vacuum melting and strip casting (SC) methods ..."
+    },
+    {
+     "url": "https://www.greatmagtech.com/info/preparation-process-of-sintered-ndfeb-magnets-93380508.html",
+     "name": "Preparation Process of Sintered NdFeB Magnets",
+     "snippet": "Nd-Fe-B magnets need to be sintered at a temperature lower than 1100°C. The usual sintering temperature is 1050~1080°C and can obtain close to ..."
+    },
+    {
+     "url": "https://patents.google.com/patent/US9643249B2/en",
+     "name": "Method and apparatus for sintering NdFeB rare earth",
+     "snippet": "A method for sintering NdFeB rare earth permanent magnet includes steps of: providing a continuous vacuum sintering furnace to sinter; loading a sintering ..."
+    }
+   ],
+   "created_at": "2026-11-08T20:55:59Z",
+   "usage_count": 1,
+   "used_in_issues": [
+    2131
+   ]
+  },
+  {
+   "query": "high temperature superconducting magnetic bearing cryostat assembly dimensions LN2 vacuum chamber shaft",
+   "keywords": [
+    "hts_bearing",
+    "cryostat",
+    "werfel",
+    "espenhahn",
+    "assembly"
+   ],
+   "results": [
+    {
+     "url": "https://arxiv.org/html/1706.05963v3",
+     "name": "A Large-Diameter Hollow-Shaft Cryogenic Motor Based on",
+     "snippet": "Oct 5, 2017 — boron (NdFeB) II.2 Superconducting Magnetic Bearing . Each YBCO disk is 13 mm tall, 25 mm in diameter and is specified to generate 60 N of ..."
+    },
+    {
+     "url": "https://www.magneticbearings.org/app/uploads/publications/ismb7/ismb7_submission_101.pdf",
+     "name": "Application Advances in HTS Bearing Technology",
+     "snippet": "by FN Werfel · Cited by 6 — The objective of this paper is to discuss the present status of superconducting passive magnetic bearings to suspend technical wheels and, in particular, to ... Read more"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESZwHEIkXXcbhxY5G8SzJK3nu8LFhmtqoCZWX4qMK5BNVwuwANAQQ1yN8OqNULAd9vGjjugIfIBNWXFLoZasvy7FmQk0TxmUkkJYS2J7GRp7S6NdxUg7m_-bstm6F0ETmdn-jHXNIAmcY",
+     "name": "Levitation Characteristics of an Aged Superconducting",
+     "snippet": "by T Espenhahn · 2025 — the magnet poles was 96 mm and the outer diameter was 143 mm, resulting in a 1.5 mm gap between the stator and rotor. High Temperature ..."
+    },
+    {
+     "url": "https://www.researchgate.net/publication/287704257_Fabrication_of_superconducting_magnetic_bearings",
+     "name": "Fabrication of superconducting magnetic bearings",
+     "snippet": "The magnet cryostat outside diameter is ̃1.4 meters and the cryostat length is ̃2.73 meters. The magnet warm bore is 0.4 meters. The magnet was designed to be ... Read more"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESZgHEIkXXsWRY4oBhcQP83SnJiCwKKO5JpQccNdQ_MR-1wkGwxL_7p_PCh-j4KvaVZ1kph8Lzm_QSzQwpxwdD0X7oKmdXyS7dnJrsC8lHoL3xkoUuB_af5PYt7mMipNLnlbtv19MLuA",
+     "name": "A large-diameter hollow-shaft cryogenic motor based on",
+     "snippet": "by BR Johnson · 2017 · Cited by 36 — In this paper, we present the design and measured performance of a novel cryogenic motor based on a superconducting magnetic bearing (SMB)."
+    }
+   ],
+   "created_at": "2026-11-08T20:55:59Z",
+   "usage_count": 1,
+   "used_in_issues": [
+    2131
+   ]
   }
  ]
 }
