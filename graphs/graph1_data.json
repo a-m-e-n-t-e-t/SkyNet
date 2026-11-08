@@ -5974,6 +5974,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_epoxy_molding",
+      "type": "material",
+      "label": "EMC (epoxy molding compound) — формовочная эпоксидная смола: связующее o-крезол-новолачная эпоксидная смола + фенол-новолачный отвердитель (multi-aromatic resin system) + ускоритель (имидазольного типа) + плавленый кварцевый наполнитель (fused silica, аморфный) 70–85 мас. % + агент разделения формы + сажа-пигмент; безгалогенная система (Br/Sb free) для безсвинцовых корпусов (Pb-free pkg); ионные примеси нормированы: Na⁺ ≤1 ppm, Cl⁻ ≤5 ppm (Sumitomo EME-G700LA Type L-A)",
+      "path": "реальные данные/материалы/epoxy_molding.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_etfe",
       "type": "material",
       "label": "Сополимер этилена и тетрафторэтилена (ETFE) со строгим чередованием звеньев ~1:1: (–CH₂–CH₂–)ₙ(–CF₂–CF₂–)ₘ, содержание фтора ~59–60 масс.%, без наполнителей (базовые марки); промышленные марки: Tefzel 200/280/750/HT-2184/HT-2004 (Chemours), Fluon ETFE (AGC), Neoflon EP (Daikin)",
@@ -10656,6 +10663,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_sic_mosfet",
+      "dst": "material_epoxy_molding",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_brainchip_akida_2",
       "dst": "часть_brainchip_akida_2_die",
       "type": "has_part",
@@ -10718,6 +10731,12 @@
     {
       "src": "izdelie_brainchip_akida_2",
       "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_brainchip_akida_2",
+      "dst": "material_epoxy_molding",
       "type": "uses_material",
       "meta": {}
     },
@@ -10796,6 +10815,12 @@
     {
       "src": "izdelie_intel_loihi_2",
       "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_intel_loihi_2",
+      "dst": "material_epoxy_molding",
       "type": "uses_material",
       "meta": {}
     },
@@ -11024,6 +11049,12 @@
     {
       "src": "izdelie_halve",
       "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_halve",
+      "dst": "material_epoxy_molding",
       "type": "uses_material",
       "meta": {}
     },
@@ -24206,6 +24237,14 @@
       }
     },
     {
+      "src": "material_epoxy_molding",
+      "dst": "izdelie_sic_mosfet",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_brainchip_akida_2_die",
       "dst": "izdelie_brainchip_akida_2",
       "type": "part_of",
@@ -24287,6 +24326,14 @@
     },
     {
       "src": "material_copper",
+      "dst": "izdelie_brainchip_akida_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_epoxy_molding",
       "dst": "izdelie_brainchip_akida_2",
       "type": "used_in",
       "meta": {
@@ -24391,6 +24438,14 @@
     },
     {
       "src": "material_copper",
+      "dst": "izdelie_intel_loihi_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_epoxy_molding",
       "dst": "izdelie_intel_loihi_2",
       "type": "used_in",
       "meta": {
@@ -24695,6 +24750,14 @@
     },
     {
       "src": "material_copper",
+      "dst": "izdelie_halve",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_epoxy_molding",
       "dst": "izdelie_halve",
       "type": "used_in",
       "meta": {
@@ -34471,6 +34534,7 @@
       "standart_Intel 4 process",
       "standart_Intel Optane PM Guide",
       "standart_Iridium 9603 Developer Guide",
+      "standart_J-STD-020 (MSL-классификация корпусов — влагопоглощение/popcorning)",
       "standart_JEDEC J-STD-020",
       "standart_JEDEC J-STD-020 (классификация MSL/reflow)",
       "standart_JEDEC J-STD-020D",
@@ -34545,6 +34609,7 @@
       "standart_S-mount (M12×0.5)",
       "standart_SAE AMS-T-21014 Class 1",
       "standart_SAE J1962_201607",
+      "standart_SB-U-01…04 — внутренние методики испытаний Sumitomo Bakelite",
       "standart_SEMI / корпоративные спеки подложек 96/99.5%",
       "standart_SEMI M1",
       "standart_SEMI M1 (полированные монокремниевые пластины 100–300 мм, ориентации/легирование/дефекты)",
@@ -34553,6 +34618,7 @@
       "standart_SEMI M6 (боковые поверхности/фаски) — семейство стандартов пластин",
       "standart_SEMI M8 (поликремний, сорта по содержанию доноров/акцепторов)",
       "standart_STANAG 4294",
+      "standart_SUMIKON EME-G700LA Type L-A — datasheet Sumitomo Bakelite (doc. 120495, rev. Feb 2012)",
       "standart_Schaeffler TPI 291",
       "standart_Sony IMX992 SenSWIR Flyer",
       "standart_Starlink Mini Specification Sheet",
@@ -34577,6 +34643,7 @@
       "standart_UL 94 V-0 (горючесть)",
       "standart_UL 94 V-0 (горючесть, для электротехнических марок)",
       "standart_UL 94 V-2 (неармированный PA66)",
+      "standart_UL-94 V-0 (горючесть)",
       "standart_UN 3090",
       "standart_UN 38.3",
       "standart_UN 38.3 (транспорт литий-ионных батарей)",
@@ -34652,6 +34719,7 @@
       "group_Pierre Bonhôte и соавт. (EPFL, Швейцария) — синтез гидрофобных EMIM-имидных комнатнотемпературных расплавов, Inorg. Chem. 1996, 35(5), 1168–1178",
       "group_SEMI International Standards — спецификации пластин SEMI M1 (полированные монокристаллические) и SEMI M59 (пластины 300 мм); метод Чохральского — Jan Czochralski (1916, рост металлических монокристаллов), адаптация к кремнию — Gordon Teal и Henry Theuerer (Bell Labs, 1952), первый германиевый/кремниевый транзистор на монокристалле — Gordon Teal (Texas Instruments, 1954); промышленный 300 мм — консорциум I300I/Intel/Samsung/TSMC (1995–2001)",
       "group_Scudamore Sellon (1881) — первый патент решёток из свинцово-сурьмянистого сплава (Sb упрочняет свинец); в тот же год Camille Alphonse Faure запатентовал решётчатую пластину с пастой PbO — вместе сделавшие АКБ пригодной для массового производства",
+      "group_Sumitomo Bakelite Co., Ltd. — лидер рынка формовочных смол (SUMIKON EME, multi-aromatic resin system EME-G700LA Type L-A); Renesas Electronics — MSD-документация EME-G700LA (сырьё: аморфный плавленый кварц); академическая верификация — F. Wu (2018, EMC для высокотемпературных применений), S. Chao et al. (2021, влияние кварцевого наполнителя, цит. 32), W.-C. Chuang et al. (2023, EMC в fan-out WLP, цит. 43), Y. Lv et al. (2026, высокотеплопроводный EMC 2.0 Вт/(м·К))",
       "group_Toray Industries (Torayca™ T300 — первое серийное высокопрочное PAN-волокно, выпущено в 1971 г.; >93 % C, Na+K следы)",
       "group_Wu, Ashburn, Torng, Hor, Meng, Gao, Huang, Chu (Университет Хьюстона / UAH, 1987, Tc 93 K); родоначальники купратных ВТСП Bednorz & Müller (IBM Zürich, 1986, Нобелевская премия 1987)",
       "group_Yutaka Tsukada (IBM Japan, 1992) — капиллярный underfill для надёжного монтажа flip-chip на органическую подложку (процесс SBB); C.P. Wong и S.H. Shi (Georgia Institute of Technology) — первый патент на no-flow underfill, US 6,180,696 (2001); Sumitomo Bakelite (SUMIKON EME) — пионер класса эпоксидных формовочных компаундов (EMC) для корпусирования ИС",
@@ -34723,7 +34791,6 @@
       "material_cybernetic_alloy",
       "material_electrical_steel",
       "material_epoxy",
-      "material_epoxy_molding",
       "material_eva",
       "material_gaSb",
       "material_gold_coating",
@@ -34782,19 +34849,19 @@
     ]
   },
   "stats": {
-    "nodes": 1099,
-    "edges": 3871,
+    "nodes": 1100,
+    "edges": 3879,
     "dangling": {
-      "complies_with": 491,
+      "complies_with": 495,
       "has_part": 6,
-      "researched_by": 73,
-      "uses_material": 75
+      "researched_by": 74,
+      "uses_material": 74
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 202,
+      "material": 203,
       "standart": 8,
       "tekhnologia": 77
     }
