@@ -6625,6 +6625,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_pp_membrane",
+      "type": "material",
+      "label": "изотактический полипропилен (C3H6)n — гомополимер (изотактичность ≥95 % пентад mmmm); battery-grade мембрана: низкая зольность <0.1 %, металлы и химические примеси — ppm-уровень («little to no metals, contaminants, or chemical impurities» — Hollingsworth & Vose для сепараторов первичных литиевых элементов); малые добавки фенольного антиоксиданта (100–500 ppm) без ионных поверхностно-активных веществ — ионная контаминация (Na+, Cl−) недопустима для электрохимии элемента",
+      "path": "реальные данные/материалы/pp_membrane.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_pt",
       "type": "material",
       "label": "Pt (платина ≥99.9%, CAS 7440-06-4); для термопар и фильеров — родственные сплавы Pt-Rh (тип S: Pt-10%Rh/Pt, тип R: Pt-13%Rh/Pt; фильеры стекловолокна Pt-Rh 10–25%)",
@@ -11074,6 +11081,12 @@
     {
       "src": "izdelie_litii-tionilhloridnye_batarei",
       "dst": "material_carbon_black",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_litii-tionilhloridnye_batarei",
+      "dst": "material_pp_membrane",
       "type": "uses_material",
       "meta": {}
     },
@@ -24858,6 +24871,14 @@
       }
     },
     {
+      "src": "material_pp_membrane",
+      "dst": "izdelie_litii-tionilhloridnye_batarei",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_halve_die",
       "dst": "izdelie_halve",
       "type": "part_of",
@@ -34581,6 +34602,7 @@
       "standart_ASTM F136 / ISO 5832-3 (имплантабельный Ti-6Al-4V ELI)",
       "standart_ASTM F2029-22 (практика измерения водородного кроссовера PEM-мембран)",
       "standart_ASTM F3 (Ni для электронных применений)",
+      "standart_ASTM F316 (поровые характеристики мембранных фильтров — bubble point / пористость)",
       "standart_ASTM F648",
       "standart_Aguirre 2024 (ADC area 70-90%)",
       "standart_AlN substrate grade (PCAN1000 / CeramTec ALN)",
@@ -34651,6 +34673,7 @@
       "standart_IEC 60068",
       "standart_IEC 60068-2 (климатические испытания изделий с магнитами)",
       "standart_IEC 60086",
+      "standart_IEC 60086-2 (первичные литиевые элементы — конструктивные требования к сепаратору)",
       "standart_IEC 60086-2 (первичные литиевые элементы)",
       "standart_IEC 60095",
       "standart_IEC 60095 (SLI lead-acid batteries)",
@@ -34945,6 +34968,7 @@
       "standart_ГОСТ 18175-78 (БрХ1 — бронза хромистая, аналог CuCr1)",
       "standart_ГОСТ 19658-81 (кремний монокристаллический для изделий электронной техники)",
       "standart_ГОСТ 2590-2006 (прокат сортовой стальной горячекатаный круглый Ø5–270 мм)",
+      "standart_ГОСТ 26996-86 (полипропилен и сополимеры пропилена — марки сырья)",
       "standart_ГОСТ 27006 (бетоны тяжёлые)",
       "standart_ГОСТ 380-2005 (стали углеродистые обыкновенного качества, марки Ст0–Ст6)",
       "standart_ГОСТ 535-2005 (прокат сортовой из стали обыкновенного качества)",
@@ -34953,6 +34977,7 @@
       "standart_ГОСТ 859-2014 (марки меди, М1)",
       "standart_ГОСТ 8774-75 (литий металлический, марки ЛЭ1/ЛЭ2 — канон)",
       "standart_ГОСТ 8774-75 (литий металлический, марки ЛЭ1/ЛЭ2)",
+      "standart_патент US6368742B2 (промышленная спецификация пористости PP-мембран 40–65 %)",
       "standart_спецификация топлива Pu-238 программы Cassini (DOE/OSTI 10123416)",
       "standart_чистота 4N/5N (99.99 %/99.999 % Al) — товарные классы heavy bonding wire (Inseto IKB-037)"
     ],
@@ -34969,6 +34994,7 @@
       "group_Aluminum Association — стандартизация серии 1xxx (1050/1350, UNS A91050); электролитическое производство — процесс Холла–Эру (Charles Martin Hall и Paul Héroult, независимо, 1886); первое надёжное выделение металла — Hans Christian Ørsted (1825), систематизация — Friedrich Wöhler (1827); первый промышленный (химический) процесс — Henri Sainte-Claire Deville (1854)",
       "group_Anselme Payen (Франция, 1838) — выделил целлюлозу из растительной ткани, определил формулу и ввёл название «cellulose»; Charles Frederick Cross, Edward John Bevan и Clayton Beadle (Великобритания, 1892, British Patent 8700 «Improvements in Dissolving Cellulose and Allied Compounds») — вязкозный процесс регенерированной целлюлозы, основа современных регенерированных целлюлозных бумаг-сепараторов",
       "group_BT-смола: Mitsubishi Gas Chemical (MGC) — разработана и запатентована в 1978 г., коммерциализирована в 1980-е (MGC: «MGC invented a revolutionary thermal-hardened bismaleimide triazine (BT) resin»); ABF: Ajinomoto (R&D на базе аминокислотной химии с 1970-х, первая адопция крупным производителем полупроводников в 1999 г., автор — Shigeo Nakamura, с 2025 г. CEO Ajinomoto Group)",
+      "group_Celgard, LLC (Asahi Kasei) — микропористые полиолефиновые сепараторы Celgard 2400/2500 (монослой PP 25 мкм, melt integrity 165 °C); Hollingsworth & Vose — nonwoven-сепараторы первичных литиевых элементов (Li-SOCl2, 30–35 г/м², «little to no metals»); C.T. Love 2011 (J. Power Sources, термомеханический анализ коммерческих сепараторов Celgard 2400/2500 — porosity/pore dimension, цит. 244); патент US6368742B2 (PP microporous membrane for battery separator — пористость 40–65 %, оптимум 47–57 %); NETZSCH Analyzing & Testing (термофизика iPP: cp 1.8 Дж/(г·К), CTE); INEOS Olefins & Polymers (Typical Engineering Properties of Polypropylene — ρ 905, k, механика); LabCore 2026 (разбор Celgard 2325 vs 2400: монослой PP без shutdown, Tm 165 °C)",
       "group_Denka (ацетиленовая сажа DENKA BLACK с 1940-х, марки Powder/Granule/Press 50–100 %/Li-100/Li-250 — стандарт сухих батарей); Orion Engineered Carbons, Cabot (печные марки, THERMAX); Imerys/Timcal (Super P — батарейный стандарт); AkzoNobel/Resil (Ketjenblack EC-600JD); IARC Monograph 93 (2010 — типы CB, насыпные плотности); Khodabakhshi & Forg (2020, Carbon Black Reborn — структура/химия CB для renewable applications); патент US4279880A (проводящая ацетиленовая сажа — сопротивление при 6.3 бар)",
       "group_DuPont — изобретатель поливинилфторида (PVF, 1940-е), товарный знак Tedlar® и коммерческий выпуск плёнки с 1961 г.; ПЭТ-сердцевина boPET — DuPont/ICI/Hoechst (середина 1950-х — первая двуосно-ориентированная полимерная плёнка массового производства; бренды Mylar®/Melinex®, ныне Mylar Specialty Films — ребрендинг DuPont Teijin Films, 2024)",
       "group_E.A. Skrabek и D.S. Trimmer (Teledyne Energy Systems) — изобретатели TAGS-85 ((GeTe)0.85(AgSbTe2)0.15; CRC Handbook of Thermoelectrics, гл. 22), впервые применён в РИТЭГ SNAP-19 (Viking/Pioneer); программа SNAP (США) — первый космический РИТЭГ SNAP-3 (1961) на парах PbTe; Teledyne Energy Systems — изготовитель PbTe/TAGS-пар MMRTG (Curiosity/Perseverance) по контракту с Aerojet Rocketdyne",
@@ -35089,7 +35115,6 @@
       "material_pe_pp",
       "material_pe_separator",
       "material_polypropylene",
-      "material_pp_membrane",
       "material_pt_carbon",
       "material_pu238_oxide",
       "material_raytheon_an_vlg8_flir",
@@ -35118,19 +35143,19 @@
     ]
   },
   "stats": {
-    "nodes": 1107,
-    "edges": 3907,
+    "nodes": 1108,
+    "edges": 3909,
     "dangling": {
-      "complies_with": 519,
+      "complies_with": 523,
       "has_part": 6,
-      "researched_by": 81,
-      "uses_material": 67
+      "researched_by": 82,
+      "uses_material": 66
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 210,
+      "material": 211,
       "standart": 8,
       "tekhnologia": 77
     }
