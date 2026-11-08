@@ -3699,6 +3699,27 @@
       "subsystem": "каркас"
     },
     {
+      "id": "часть_reshetchatyi_karkas_core_диафрагмы",
+      "type": "chast",
+      "label": "перфорированная_рамка",
+      "path": "реальные данные/изделия/каркас/reshetchatyi_karkas/часть_reshetchatyi_karkas_core/часть_reshetchatyi_karkas_core_диафрагмы/_index.md",
+      "subsystem": "каркас"
+    },
+    {
+      "id": "часть_reshetchatyi_karkas_core_стрингеры",
+      "type": "chast",
+      "label": "силовой_профиль",
+      "path": "реальные данные/изделия/каркас/reshetchatyi_karkas/часть_reshetchatyi_karkas_core/часть_reshetchatyi_karkas_core_стрингеры/_index.md",
+      "subsystem": "каркас"
+    },
+    {
+      "id": "часть_reshetchatyi_karkas_core_фиттинги",
+      "type": "chast",
+      "label": "узловая_бобышка",
+      "path": "реальные данные/изделия/каркас/reshetchatyi_karkas/часть_reshetchatyi_karkas_core/часть_reshetchatyi_karkas_core_фиттинги/_index.md",
+      "subsystem": "каркас"
+    },
+    {
       "id": "часть_kompensatory_core",
       "type": "chast",
       "label": "основной_элемент",
@@ -16137,12 +16158,66 @@
     },
     {
       "src": "часть_reshetchatyi_karkas_core",
+      "dst": "часть_reshetchatyi_karkas_core_стрингеры",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_reshetchatyi_karkas_core",
+      "dst": "часть_reshetchatyi_karkas_core_диафрагмы",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_reshetchatyi_karkas_core",
+      "dst": "часть_reshetchatyi_karkas_core_фиттинги",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_reshetchatyi_karkas_core",
       "dst": "izdelie_reshetchatyi_karkas",
       "type": "child_of",
       "meta": {}
     },
     {
       "src": "часть_reshetchatyi_karkas_core",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_reshetchatyi_karkas_core_диафрагмы",
+      "dst": "часть_reshetchatyi_karkas_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_reshetchatyi_karkas_core_диафрагмы",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_reshetchatyi_karkas_core_стрингеры",
+      "dst": "часть_reshetchatyi_karkas_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_reshetchatyi_karkas_core_стрингеры",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_reshetchatyi_karkas_core_фиттинги",
+      "dst": "часть_reshetchatyi_karkas_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_reshetchatyi_karkas_core_фиттинги",
       "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
@@ -27992,8 +28067,56 @@
       }
     },
     {
+      "src": "часть_reshetchatyi_karkas_core_стрингеры",
+      "dst": "часть_reshetchatyi_karkas_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_reshetchatyi_karkas_core_диафрагмы",
+      "dst": "часть_reshetchatyi_karkas_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_reshetchatyi_karkas_core_фиттинги",
+      "dst": "часть_reshetchatyi_karkas_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
       "src": "material_al_6061-t6",
       "dst": "часть_reshetchatyi_karkas_core",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_reshetchatyi_karkas_core_диафрагмы",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_reshetchatyi_karkas_core_стрингеры",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_reshetchatyi_karkas_core_фиттинги",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -31622,10 +31745,14 @@
       "standart_ASTM B198 (полоса)",
       "standart_ASTM B2 (среднеотожжённая проволока)",
       "standart_ASTM B209",
+      "standart_ASTM B209 (лист Al 6061-T6/T651)",
       "standart_ASTM B209 (лист и плита)",
       "standart_ASTM B221",
+      "standart_ASTM B221 (профили)",
       "standart_ASTM B221 (прутки, профили и проволока)",
+      "standart_ASTM B241 / B241M (трубы Al 6061-T6)",
       "standart_ASTM B241 / B241M (трубы)",
+      "standart_ASTM B247 (поковки Al 6061)",
       "standart_ASTM B247 (поковки)",
       "standart_ASTM B3 (мягкая/отожжённая проволока)",
       "standart_ASTM B32 (мягкие припои, марка Sn63)",
@@ -32213,16 +32340,16 @@
     ]
   },
   "stats": {
-    "nodes": 1089,
-    "edges": 3516,
+    "nodes": 1092,
+    "edges": 3531,
     "dangling": {
-      "complies_with": 471,
+      "complies_with": 475,
       "has_part": 6,
       "researched_by": 68,
       "uses_material": 81
     },
     "by_type": {
-      "chast": 664,
+      "chast": 667,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
       "material": 197,
