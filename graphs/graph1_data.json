@@ -5799,6 +5799,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_carbon_black",
+      "type": "material",
+      "label": "элементарный углерод C > 99 % (ацетиленовая сажа Denka — чистейшая марка для сухих батарей, зола и переходные металлы < 0.1 %); семейство технического углерода: печная сажа (furnace black, N330/N550), термическая (thermal black N990), ацетиленовая (acetylene black), батарейные проводящие марки Ketjenblack EC-600JD / Super P / Super C65; поверхностные группы (O, S — следы furnace-процесса) определяют смачиваемость в катодных пастах",
+      "path": "реальные данные/материалы/carbon_black.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_carbon_ptfe",
       "type": "material",
       "label": "углеродная сажа (токопроводящий наполнитель) + PTFE 20% (связующее), опционально катализатор MnO₂; токосъёмник — никелевая сетка",
@@ -11049,6 +11056,12 @@
       "src": "izdelie_litii-tionilhloridnye_batarei",
       "dst": "часть_litii-tionilhloridnye_batarei_terminal",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_litii-tionilhloridnye_batarei",
+      "dst": "material_carbon_black",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -24816,6 +24829,14 @@
       }
     },
     {
+      "src": "material_carbon_black",
+      "dst": "izdelie_litii-tionilhloridnye_batarei",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_halve_die",
       "dst": "izdelie_halve",
       "type": "part_of",
@@ -34488,12 +34509,15 @@
       "standart_ASTM D1418",
       "standart_ASTM D149/D150/D257 (электрические испытания)",
       "standart_ASTM D150 (диэлектрическая проницаемость и тангенс потерь)",
+      "standart_ASTM D1510 — йодное число (активность поверхности)",
       "standart_ASTM D1621 (сжатие жёстких ячеистых пластиков)",
+      "standart_ASTM D1765 — классификация углеродно-технических саж для каучука",
       "standart_ASTM D2240",
       "standart_ASTM D2240 (Shore A)",
       "standart_ASTM D2240 (твёрдость по Шору A/D)",
       "standart_ASTM D2240 / DIN ISO 48-4 (твёрдость по Шору A)",
       "standart_ASTM D2344 (короткопролётный изгиб)",
+      "standart_ASTM D2414 — маслопоглощение (DBP absorption — показатель structure)",
       "standart_ASTM D3039 (растяжение полимерных композитов)",
       "standart_ASTM D3574 (испытания эластичных ячеистых материалов)",
       "standart_ASTM D3786 (разрывное давление Mullen burst)",
@@ -34511,6 +34535,7 @@
       "standart_ASTM D638 (механические испытания пластмасс)",
       "standart_ASTM D638 (растяжение, параллельный метод)",
       "standart_ASTM D646 (граммаж бумаги)",
+      "standart_ASTM D6556 — tint strength / удельная поверхность",
       "standart_ASTM D6641 (сжатие UD-композитов)",
       "standart_ASTM D695 (сжимающие свойства жёстких пластиков/пен)",
       "standart_ASTM D7219",
@@ -34920,6 +34945,7 @@
       "group_Aluminum Association — стандартизация серии 1xxx (1050/1350, UNS A91050); электролитическое производство — процесс Холла–Эру (Charles Martin Hall и Paul Héroult, независимо, 1886); первое надёжное выделение металла — Hans Christian Ørsted (1825), систематизация — Friedrich Wöhler (1827); первый промышленный (химический) процесс — Henri Sainte-Claire Deville (1854)",
       "group_Anselme Payen (Франция, 1838) — выделил целлюлозу из растительной ткани, определил формулу и ввёл название «cellulose»; Charles Frederick Cross, Edward John Bevan и Clayton Beadle (Великобритания, 1892, British Patent 8700 «Improvements in Dissolving Cellulose and Allied Compounds») — вязкозный процесс регенерированной целлюлозы, основа современных регенерированных целлюлозных бумаг-сепараторов",
       "group_BT-смола: Mitsubishi Gas Chemical (MGC) — разработана и запатентована в 1978 г., коммерциализирована в 1980-е (MGC: «MGC invented a revolutionary thermal-hardened bismaleimide triazine (BT) resin»); ABF: Ajinomoto (R&D на базе аминокислотной химии с 1970-х, первая адопция крупным производителем полупроводников в 1999 г., автор — Shigeo Nakamura, с 2025 г. CEO Ajinomoto Group)",
+      "group_Denka (ацетиленовая сажа DENKA BLACK с 1940-х, марки Powder/Granule/Press 50–100 %/Li-100/Li-250 — стандарт сухих батарей); Orion Engineered Carbons, Cabot (печные марки, THERMAX); Imerys/Timcal (Super P — батарейный стандарт); AkzoNobel/Resil (Ketjenblack EC-600JD); IARC Monograph 93 (2010 — типы CB, насыпные плотности); Khodabakhshi & Forg (2020, Carbon Black Reborn — структура/химия CB для renewable applications); патент US4279880A (проводящая ацетиленовая сажа — сопротивление при 6.3 бар)",
       "group_DuPont — изобретатель поливинилфторида (PVF, 1940-е), товарный знак Tedlar® и коммерческий выпуск плёнки с 1961 г.; ПЭТ-сердцевина boPET — DuPont/ICI/Hoechst (середина 1950-х — первая двуосно-ориентированная полимерная плёнка массового производства; бренды Mylar®/Melinex®, ныне Mylar Specialty Films — ребрендинг DuPont Teijin Films, 2024)",
       "group_E.A. Skrabek и D.S. Trimmer (Teledyne Energy Systems) — изобретатели TAGS-85 ((GeTe)0.85(AgSbTe2)0.15; CRC Handbook of Thermoelectrics, гл. 22), впервые применён в РИТЭГ SNAP-19 (Viking/Pioneer); программа SNAP (США) — первый космический РИТЭГ SNAP-3 (1961) на парах PbTe; Teledyne Energy Systems — изготовитель PbTe/TAGS-пар MMRTG (Curiosity/Perseverance) по контракту с Aerojet Rocketdyne",
       "group_EN 12163/12164/12165 — стандартизация CW106C; UNS C18400 / ASTM B301 — американская стандартизация хромистой меди; термомеханическая обработка дисперсионно-твердеющих медных сплавов — промышленные KME/Aurubis (CCZr); применение в ITER divertor heat sink — программа EU Fusion (CuCrZr)",
@@ -35006,7 +35032,6 @@
       "material_barium_titanate",
       "material_bearing_steel_52100",
       "material_biological_tissue",
-      "material_carbon_black",
       "material_carbon_fiber_endoskeleton",
       "material_carbon_paper",
       "material_cast_iron",
@@ -35069,19 +35094,19 @@
     ]
   },
   "stats": {
-    "nodes": 1105,
-    "edges": 3903,
+    "nodes": 1106,
+    "edges": 3905,
     "dangling": {
-      "complies_with": 512,
+      "complies_with": 516,
       "has_part": 6,
-      "researched_by": 79,
-      "uses_material": 69
+      "researched_by": 80,
+      "uses_material": 68
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 208,
+      "material": 209,
       "standart": 8,
       "tekhnologia": 77
     }
