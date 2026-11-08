@@ -12322,6 +12322,18 @@
       "meta": {}
     },
     {
+      "src": "izdelie_kompensatory",
+      "dst": "material_inconel_718",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_kompensatory",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_reshetchatyi_karkas_mounting",
       "dst": "izdelie_reshetchatyi_karkas",
       "type": "child_of",
@@ -24152,6 +24164,22 @@
       }
     },
     {
+      "src": "material_inconel_718",
+      "dst": "izdelie_kompensatory",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "izdelie_kompensatory",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_stal_st3",
       "dst": "часть_reshetchatyi_karkas_mounting",
       "type": "used_in",
@@ -31621,7 +31649,7 @@
   },
   "stats": {
     "nodes": 1079,
-    "edges": 3440,
+    "edges": 3444,
     "dangling": {
       "complies_with": 472,
       "has_part": 4,
