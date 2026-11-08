@@ -7,6 +7,8 @@ graph LR
     F22 --> script__helpers_py
     script__metrics_py[_metrics.py]
     F22 --> script__metrics_py
+    script_fix_801_py[fix_801.py]
+    F22 --> script_fix_801_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F22 --> script_pre-commit-hook_py
     script_validate_decomposition_py[validate_decomposition.py]
@@ -184,7 +186,7 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F2` | _metrics.py | — |
 | `F20` | migrate_material_form.py, validate_decomposition.py | — |
 | `F21` | generate_decomposition.py, validate_decomposition.py | — |
-| `F22` | _helpers.py, _metrics.py, pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
+| `F22` | _helpers.py, _metrics.py, fix_801.py, pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
 | `F23` | pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
 | `F24` | pre-commit-hook.py, validate_decomposition.py | — |
 | `F25` | _metrics.py, pre-commit-hook.py, real_decomposition.py, validate_decomposition.py, web_verify.py | — |
