@@ -1,57 +1,81 @@
 {
-  "version": "v9.58",
-  "created_at": "2026-11-08T18:34:27.951432+00:00",
-  "entries": [
-    {
-      "id": "ws_0001",
-      "query": "Oxford PV perovskite silicon tandem solar module thickness frame dimensions datasheet",
-      "keywords": [
-        "Oxford",
-        "perovskite",
-        "tandem",
-        "solar",
-        "module",
-        "thickness",
-        "frame"
-      ],
-      "results_count": 10,
-      "key_facts": [
-        "Oxford PV 72-cell tandem modules 24.5% efficiency (Sep 2024, oxfordpv.com)",
-        "Oxford PV pilot line mini-modules 22cm x 22cm for M2 15.6cm cells (CHEOPS EC 2019)"
-      ],
-      "created_at": "2026-11-08T18:34:27.951432+00:00",
-      "last_used": "2026-11-08T18:34:27.951432+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2122
-      ]
-    },
-    {
-      "id": "ws_0002",
-      "query": "solar PV module aluminum frame profile height mm glass thickness laminate 35mm typical",
-      "keywords": [
-        "solar",
-        "PV",
-        "module",
-        "aluminum",
-        "frame",
-        "profile",
-        "thickness",
-        "35mm"
-      ],
-      "results_count": 10,
-      "key_facts": [
-        "Solar laminate main thickness = solar glass 3.2 mm (90% of 60-cell panels, aluminumsolarframe.com)",
-        "Standard aluminum frame profile depth 30-40 mm, 35 mm most common for residential (heavengreenenergy.com, Orin PV Jan 2026)",
-        "Increased frame height 35 mm for largest modules increases stiffness (Pander 2025)",
-        "Glass groove width 6.1-6.2 mm for typical 2 mm glass-glass module (Orin PV)"
-      ],
-      "created_at": "2026-11-08T18:34:27.951432+00:00",
-      "last_used": "2026-11-08T18:34:27.951432+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2122
-      ]
-    }
-  ]
+ "entries": [
+  {
+   "id": "ws_0001",
+   "query": "Oxford PV perovskite silicon tandem solar module thickness frame dimensions datasheet",
+   "keywords": [
+    "Oxford",
+    "perovskite",
+    "tandem",
+    "solar",
+    "module",
+    "thickness",
+    "frame"
+   ],
+   "results_count": 10,
+   "key_facts": [
+    "Oxford PV 72-cell tandem modules 24.5% efficiency (Sep 2024, oxfordpv.com)",
+    "Oxford PV pilot line mini-modules 22cm x 22cm for M2 15.6cm cells (CHEOPS EC 2019)"
+   ],
+   "created_at": "2026-11-08T18:34:27.951432+00:00",
+   "last_used": "2026-11-08T18:34:27.951432+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2122
+   ]
+  },
+  {
+   "id": "ws_0002",
+   "query": "solar PV module aluminum frame profile height mm glass thickness laminate 35mm typical",
+   "keywords": [
+    "solar",
+    "PV",
+    "module",
+    "aluminum",
+    "frame",
+    "profile",
+    "thickness",
+    "35mm"
+   ],
+   "results_count": 10,
+   "key_facts": [
+    "Solar laminate main thickness = solar glass 3.2 mm (90% of 60-cell panels, aluminumsolarframe.com)",
+    "Standard aluminum frame profile depth 30-40 mm, 35 mm most common for residential (heavengreenenergy.com, Orin PV Jan 2026)",
+    "Increased frame height 35 mm for largest modules increases stiffness (Pander 2025)",
+    "Glass groove width 6.1-6.2 mm for typical 2 mm glass-glass module (Orin PV)"
+   ],
+   "created_at": "2026-11-08T18:34:27.951432+00:00",
+   "last_used": "2026-11-08T18:34:27.951432+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2122
+   ]
+  },
+  {
+   "id": "ws_0003",
+   "query": "ETFE film frontsheet encapsulation perovskite silicon tandem solar module fluoropolymer",
+   "keywords": [
+    "ETFE",
+    "film",
+    "frontsheet",
+    "perovskite",
+    "tandem",
+    "encapsulation",
+    "fluoropolymer"
+   ],
+   "created_at": "2026-11-08T18:49:23.477831+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2124
+   ],
+   "results_count": 5,
+   "key_facts": [
+    "AGC Fluon ETFE film: excellent light transmittance — protective film for solar cells (agc-chem, Fluon ETFE Film V0.1)",
+    "Thermally stable perovskite solar cells with fluoropolymer covering (ResearchGate 2024)",
+    "Laminated monolithic perovskite/silicon tandem — lamination approach (2022)",
+    "ETFE film frontsheet/encapsulation аннотирован в материалы/etfe.md::варианты_по_применению.film для perovskite_tandem"
+   ],
+   "last_used": "2026-11-08T18:49:23.477831+00:00"
+  }
+ ]
 }
