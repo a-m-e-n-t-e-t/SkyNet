@@ -6233,6 +6233,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_lithium_metal",
+      "type": "material",
+      "label": "Li ≥99.9 % (battery-grade металлический литий, марка ЛЭ-1/ЛЭ-2 по ГОСТ 8774-75; примеси Na, K, Ca < 0.1 %); форма в Li-SOCl2 bobbin-элементе — прокатная/прессованная Li-фольга 0.1–0.6 мм, свёрнутая и прижатая к внутренней стенке стального корпуса как anode-лайнер (референс D-элемент Ø34.0–34.2 × 61.5 мм); канонический файл: material_lithium",
+      "path": "реальные данные/материалы/lithium_metal.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_low_iron_glass",
       "type": "material",
       "label": "Низкожелезистое содово-известковое (soda-lime) стекло: SiO2 ~72%, Na2O ~14%, CaO/MgO ~10%, Fe2O3 <=0.015%",
@@ -11056,6 +11063,12 @@
       "src": "izdelie_litii-tionilhloridnye_batarei",
       "dst": "часть_litii-tionilhloridnye_batarei_terminal",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_litii-tionilhloridnye_batarei",
+      "dst": "material_lithium_metal",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -24829,6 +24842,14 @@
       }
     },
     {
+      "src": "material_lithium_metal",
+      "dst": "izdelie_litii-tionilhloridnye_batarei",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_carbon_black",
       "dst": "izdelie_litii-tionilhloridnye_batarei",
       "type": "used_in",
@@ -34630,6 +34651,7 @@
       "standart_IEC 60068",
       "standart_IEC 60068-2 (климатические испытания изделий с магнитами)",
       "standart_IEC 60086",
+      "standart_IEC 60086-2 (первичные литиевые элементы)",
       "standart_IEC 60095",
       "standart_IEC 60095 (SLI lead-acid batteries)",
       "standart_IEC 60095 (SLI lead-acid)",
@@ -34890,6 +34912,7 @@
       "standart_UL-94 (горючесть для марок с антипиреном)",
       "standart_UL-94 V-0 (горючесть)",
       "standart_UN 3090",
+      "standart_UN 3090 (транспорт литий-металлических батарей — изделие_litii-tionilhloridnye_batarei)",
       "standart_UN 38.3",
       "standart_UN 38.3 (транспорт литий-ионных батарей)",
       "standart_UN 38.3 (транспорт)",
@@ -34928,6 +34951,7 @@
       "standart_ГОСТ 5744-75 (порошки карбида бора)",
       "standart_ГОСТ 801-78 (ШХ15)",
       "standart_ГОСТ 859-2014 (марки меди, М1)",
+      "standart_ГОСТ 8774-75 (литий металлический, марки ЛЭ1/ЛЭ2 — канон)",
       "standart_ГОСТ 8774-75 (литий металлический, марки ЛЭ1/ЛЭ2)",
       "standart_спецификация топлива Pu-238 программы Cassini (DOE/OSTI 10123416)",
       "standart_чистота 4N/5N (99.99 %/99.999 % Al) — товарные классы heavy bonding wire (Inseto IKB-037)"
@@ -34970,6 +34994,7 @@
       "group_SEMI International Standards — спецификации пластин SEMI M1 (полированные монокристаллические) и SEMI M59 (пластины 300 мм); метод Чохральского — Jan Czochralski (1916, рост металлических монокристаллов), адаптация к кремнию — Gordon Teal и Henry Theuerer (Bell Labs, 1952), первый германиевый/кремниевый транзистор на монокристалле — Gordon Teal (Texas Instruments, 1954); промышленный 300 мм — консорциум I300I/Intel/Samsung/TSMC (1995–2001)",
       "group_Scudamore Sellon (1881) — первый патент решёток из свинцово-сурьмянистого сплава (Sb упрочняет свинец); в тот же год Camille Alphonse Faure запатентовал решётчатую пластину с пастой PbO — вместе сделавшие АКБ пригодной для массового производства",
       "group_Sumitomo Bakelite Co., Ltd. — лидер рынка формовочных смол (SUMIKON EME, multi-aromatic resin system EME-G700LA Type L-A); Renesas Electronics — MSD-документация EME-G700LA (сырьё: аморфный плавленый кварц); академическая верификация — F. Wu (2018, EMC для высокотемпературных применений), S. Chao et al. (2021, влияние кварцевого наполнителя, цит. 32), W.-C. Chuang et al. (2023, EMC в fan-out WLP, цит. 43), Y. Lv et al. (2026, высокотеплопроводный EMC 2.0 Вт/(м·К))",
+      "group_Tadiran/Ultralife (white papers по пассивации Li-SOCl2 — саморазряд 0.7 %/год, voltage delay); MTI (tobmachine)/Sigma-Aldrich/MTI Corporation (спецификации battery-grade Li-фольги ≥99.9 %, 0.1–0.6 мм); Wu et al. 2023 Energy Storage Materials (Li-growth и SEI-инжиниринг anode-free); Qian et al. 2016 (anode-free концепция, 857 цитирований); S. Li 2025 sciopen Energy Material Advances (Li-metal progress/challenges)",
       "group_Toray Industries (Torayca™ T300 — первое серийное высокопрочное PAN-волокно, выпущено в 1971 г.; >93 % C, Na+K следы)",
       "group_Wolfspeed, Infineon, ROHM/SiCrystal, STMicroelectronics — серийные SiC-MOSFET die (планы 650 В–3.3 кВ); Godignon P. et al. 2024 (Surfaces and Interfaces, цит. 29 — дрифт-параметры по классам напряжения); Wang P. et al. 2025 (дрифт 9 мкм / 7×10¹⁵); Shokri A. et al. 2025 (цит. 6 — 4H-SiC бета-вольтаика 5.5%); Zhao Q. et al. 2025 (цит. 15 — 4H-SiC Ni-63 элемент 2.8%); Liu, Lu (Semantic Scholar — 4H-SiC ⁶³Ni p-n батарея); AIP Advances 14, 115024 (2024 — p-n бета-вольтаик 10.6%); Chen F. et al. 2022 (all-ceramic thermal emitter)",
       "group_Wu, Ashburn, Torng, Hor, Meng, Gao, Huang, Chu (Университет Хьюстона / UAH, 1987, Tc 93 K); родоначальники купратных ВТСП Bednorz & Müller (IBM Zürich, 1986, Нобелевская премия 1987)",
@@ -35055,7 +35080,6 @@
       "material_lini_mn_co_o2",
       "material_lipf6_ec_dmc",
       "material_lithium_hydrogen_cell",
-      "material_lithium_metal",
       "material_living_tissue_clone",
       "material_m829a4_apfsds",
       "material_mimetic_polyalloy",
@@ -35094,19 +35118,19 @@
     ]
   },
   "stats": {
-    "nodes": 1106,
-    "edges": 3905,
+    "nodes": 1107,
+    "edges": 3907,
     "dangling": {
-      "complies_with": 516,
+      "complies_with": 519,
       "has_part": 6,
-      "researched_by": 80,
-      "uses_material": 68
+      "researched_by": 81,
+      "uses_material": 67
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 209,
+      "material": 210,
       "standart": 8,
       "tekhnologia": 77
     }
