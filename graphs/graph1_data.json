@@ -8683,6 +8683,18 @@
       "meta": {}
     },
     {
+      "src": "izdelie_perovskite_tandem",
+      "dst": "material_al_6063-t5",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_perovskite_tandem",
+      "dst": "material_etfe",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_asrg",
       "dst": "часть_asrg_isotope",
       "type": "has_part",
@@ -22637,6 +22649,22 @@
       }
     },
     {
+      "src": "material_al_6063-t5",
+      "dst": "izdelie_perovskite_tandem",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_etfe",
+      "dst": "izdelie_perovskite_tandem",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_asrg_isotope",
       "dst": "izdelie_asrg",
       "type": "part_of",
@@ -35169,7 +35197,6 @@
       "material_cybernetic_alloy",
       "material_electrical_steel",
       "material_epoxy",
-      "material_eva",
       "material_gaSb",
       "material_gold_coating",
       "material_gps_ins_an_vsn_8",
@@ -35220,12 +35247,12 @@
   },
   "stats": {
     "nodes": 1112,
-    "edges": 3915,
+    "edges": 3919,
     "dangling": {
       "complies_with": 529,
       "has_part": 6,
       "researched_by": 85,
-      "uses_material": 63
+      "uses_material": 62
     },
     "by_type": {
       "chast": 669,

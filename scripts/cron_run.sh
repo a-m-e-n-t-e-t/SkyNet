@@ -142,18 +142,28 @@ data = sys.stdin.read().strip()
 if not data:
     print('no-subs')
     sys.exit(0)
-# Parse concatenated JSON arrays
+# Parse concatenated JSON arrays (GitHub API returns pretty-printed multi-line JSON;
+# raw_decode handles both compact single-line and multi-line documents, and multiple
+# concatenated pages separated by newlines)
 subs = []
-for chunk in data.split('\n'):
-    chunk = chunk.strip()
-    if not chunk:
-        continue
+dec = json.JSONDecoder()
+idx = 0
+while idx < len(data):
+    while idx < len(data) and data[idx] in ' \n\t\r':
+        idx += 1
+    if idx >= len(data):
+        break
     try:
-        arr = json.loads(chunk)
-        if isinstance(arr, list):
-            subs.extend(arr)
+        obj, end = dec.raw_decode(data, idx)
+        if isinstance(obj, list):
+            subs.extend(obj)
+        idx = end
     except Exception:
-        pass
+        # skip to next line on unparsable garbage
+        nl = data.find('\n', idx)
+        if nl == -1:
+            break
+        idx = nl + 1
 parent_marker = f'<!-- parent: ${parent_num} -->'
 parent_subs = [s for s in subs if parent_marker in (s.get('body') or '')]
 if not parent_subs:
