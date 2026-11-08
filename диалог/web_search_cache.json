@@ -2087,6 +2087,113 @@
    "used_in_issues": [
     1937
    ]
+  },
+  {
+   "query": "3D micropillar silicon carbide tritium betavoltaic battery power density efficiency 4H-SiC",
+   "keywords": [
+    "3d_sic-mikropillarnyi",
+    "tritii-betavoltaik",
+    "4h-sic",
+    "sct",
+    "izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik"
+   ],
+   "results": [
+    {
+     "url": "https://www.researchgate.net/publication/289526615_High_efficiency_4H-SiC_betavoltaic_power_sources_using_tritium_radioisotopes",
+     "name": "High efficiency 4H-SiC betavoltaic power sources using tritium",
+     "snippet": "Realization of an 18.6% efficient 4H-silicon carbide (4H-SiC) large area betavoltaic power source using the radioisotope tritium is reported.",
+     "host_name": "www.researchgate.net",
+     "rank": 0,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.semanticscholar.org/paper/A-4H%E2%80%93SiC-betavoltaic-battery-based-on-a-63-Ni-Liu-Lu/ed7e9355214d97510759d5d7c26ced47218b9282",
+     "name": "A 4H–SiC betavoltaic battery based on a 63 Ni source",
+     "snippet": "A 4H–SiC– 63 Ni p–n-junction-based betavoltaic battery is investigated. The Monte Carlo method is used to simulate the self-absorption effect of the 63 Ni ...",
+     "host_name": "www.semanticscholar.org",
+     "rank": 1,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://vtechworks.lib.vt.edu/bitstream/handle/10919/89648/Alam_TR_D_2017.pdf?sequence=1&isAllowed=y",
+     "name": "[PDF] Modeling and Design of Betavoltaic Batteries - VTechWorks",
+     "snippet": "SILICON CARBIDE BETAVOLTAICS.\" High efficiency 4H-SiC betavoltaic power sources using tritium radioisotopes. model for optimizing betavoltaic ...",
+     "host_name": "vtechworks.lib.vt.edu",
+     "rank": 2,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://ui.adsabs.harvard.edu/abs/2024nsf....2404862M/abstract",
+     "name": "Novel 4H-SiC MOS Devices for Self-Biased High-Efficiency",
+     "snippet": "The project aims to develop a novel metal oxide/4H-SiC vertical MOS betavoltaic device capable of reaching the theoretically predicted conversion efficiency of ...",
+     "host_name": "ui.adsabs.harvard.edu",
+     "rank": 3,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.academia.edu/95639805/Advancement_Of_Tritium_Powered_Betavoltaic_Battery_Systems_FY16_EOY_Report",
+     "name": "Advancement Of Tritium Powered Betavoltaic Battery Systems",
+     "snippet": "The goal of this work is to increase the power output of tritium powered betavoltaic batteries and investigate the change in power output and film ...",
+     "host_name": "www.academia.edu",
+     "rank": 4,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.osti.gov/servlets/purl/1548378",
+     "name": "[PDF] Design Considerations for Three-Dimensional Betavoltaics - OSTI",
+     "snippet": "the maximum power density and efficiency for 4H-SiC are over 85 mW/cm3 and 24%, respectively, 3D silicon betavoltaics microfabricated using a ...",
+     "host_name": "www.osti.gov",
+     "rank": 5,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12609665",
+     "name": "Structural Optimization and Trap Effects on the Output  - PMC",
+     "snippet": "In this study, structural optimization and trap effect analysis of a 4H-SiC–based p–i–n betavoltaic (BV) cell were performed using Silvaco ATLAS TCAD (version ...",
+     "host_name": "pmc.ncbi.nlm.nih.gov",
+     "rank": 6,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://citylabs.net/micropower-betavoltaic-hybrid-sources-city-labs",
+     "name": "Micropower Betavoltaic Hybrid Sources - City Labs",
+     "snippet": "City Labs' NanoTritium™ battery demonstrates the highest combination of efficiency and energy density amongst the competing betavoltaic battery companies.",
+     "host_name": "citylabs.net",
+     "rank": 7,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Betavoltaic_device",
+     "name": "Betavoltaic device - Wikipedia",
+     "snippet": "A betavoltaic device is a type of nuclear battery that generates electric current from beta particles (electrons or positrons) emitted from a radioactive ...",
+     "host_name": "en.wikipedia.org",
+     "rank": 8,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://techport.nasa.gov/projects/102318",
+     "name": "5 Watt per Kilogram Tritium Betavoltaic - NASA TechPort - Project",
+     "snippet": "The specific power of tritium is 340 W/kg with a half-life of 12.3 years and is readily available for commercial applications such as luminous ...",
+     "host_name": "techport.nasa.gov",
+     "rank": 9,
+     "date": "",
+     "favicon": ""
+    }
+   ],
+   "created_at": "2026-11-08T22:47:31Z",
+   "usage_count": 1,
+   "used_in_issues": [
+    1938
+   ]
   }
  ]
 }

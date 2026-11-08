@@ -9224,7 +9224,7 @@
     },
     {
       "src": "izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik",
-      "dst": "material_silicon_carbide",
+      "dst": "material_monokristallicheskogo_sic",
       "type": "uses_material",
       "meta": {}
     },
@@ -23529,7 +23529,7 @@
       }
     },
     {
-      "src": "material_silicon_carbide",
+      "src": "material_monokristallicheskogo_sic",
       "dst": "izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik",
       "type": "used_in",
       "meta": {
