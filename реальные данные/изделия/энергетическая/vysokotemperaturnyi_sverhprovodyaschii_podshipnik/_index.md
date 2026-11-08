@@ -23,12 +23,15 @@ id: izdelie_vysokotemperaturnyi_sverhprovodyaschii_podshipnik
     доля_массы: 0.285
   - часть: часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_magnet
     материал: ndfeb
+    форма: магнитные_подшипники_и_левитация
     доля_массы: 0.38
   - часть: часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_cryostat
     материал: stainless_steel_316
+    форма: a316l_низкоуглеродистая
     доля_массы: 0.38
   - часть: часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_shaft
     материал: titanium_alloy
+    форма: авиационные_двигатели_компрессоры
     доля_массы: 0.095
 технологии_частей:
   - часть: часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_hts_element
