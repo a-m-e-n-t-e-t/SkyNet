@@ -6814,6 +6814,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_socl2",
+      "type": "material",
+      "label": "тионилхлорид SOCl₂ — чистая безводная неорганическая молекулярная жидкость (сульфинил-дихлорид, M = 118.97 г/моль), содержание ≥99 % (anhydrous/reagent grade); полярный апротонный растворитель (дипольный момент 1.44 Д), слабо самоионизирующийся; примеси-недопуски: H₂O (реагирует), свободный Cl₂, SO₂Cl₂; в ячейке Li-SOCl₂ — и растворитель электролита, и жидкий катод (деполяризатор); производительность мировая ~45 тыс. т/год (начало 1990-х)",
+      "path": "реальные данные/материалы/socl2.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_socl2_lialcl4_electrolit",
       "type": "material",
       "label": "Раствор LiAlCl₄ ~1.5 М в тионилхлориде SOCl₂",
@@ -11081,6 +11088,12 @@
     {
       "src": "izdelie_litii-tionilhloridnye_batarei",
       "dst": "material_carbon_black",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_litii-tionilhloridnye_batarei",
+      "dst": "material_socl2",
       "type": "uses_material",
       "meta": {}
     },
@@ -24871,6 +24884,14 @@
       }
     },
     {
+      "src": "material_socl2",
+      "dst": "izdelie_litii-tionilhloridnye_batarei",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_pp_membrane",
       "dst": "izdelie_litii-tionilhloridnye_batarei",
       "type": "used_in",
@@ -34459,6 +34480,7 @@
     "complies_with": [
       "standart_1/4-20 UNC tripod",
       "standart_10 CFR 50",
+      "standart_ACS reagent / anhydrous grade (безводность — ключ для батарейного применения)",
       "standart_AEC-Q100 — квалификация ePCM-компонентов automotive",
       "standart_AEC-Q101",
       "standart_AEC-Q200",
@@ -34614,6 +34636,7 @@
       "standart_CAS 174899-82-2",
       "standart_CDE WL-Series Datasheet",
       "standart_CISPR 25",
+      "standart_CWC Schedule 3 (Конвенция о запрещении химического оружия — двухцелевой прекурсор, OPCW-декларирование)",
       "standart_Cedrat Mechanical Interface",
       "standart_Celsius Design Guide",
       "standart_City Labs NanoTritium P100",
@@ -35020,6 +35043,7 @@
       "group_SEMI International Standards — спецификации пластин SEMI M1 (полированные монокристаллические) и SEMI M59 (пластины 300 мм); метод Чохральского — Jan Czochralski (1916, рост металлических монокристаллов), адаптация к кремнию — Gordon Teal и Henry Theuerer (Bell Labs, 1952), первый германиевый/кремниевый транзистор на монокристалле — Gordon Teal (Texas Instruments, 1954); промышленный 300 мм — консорциум I300I/Intel/Samsung/TSMC (1995–2001)",
       "group_Scudamore Sellon (1881) — первый патент решёток из свинцово-сурьмянистого сплава (Sb упрочняет свинец); в тот же год Camille Alphonse Faure запатентовал решётчатую пластину с пастой PbO — вместе сделавшие АКБ пригодной для массового производства",
       "group_Sumitomo Bakelite Co., Ltd. — лидер рынка формовочных смол (SUMIKON EME, multi-aromatic resin system EME-G700LA Type L-A); Renesas Electronics — MSD-документация EME-G700LA (сырьё: аморфный плавленый кварц); академическая верификация — F. Wu (2018, EMC для высокотемпературных применений), S. Chao et al. (2021, влияние кварцевого наполнителя, цит. 32), W.-C. Chuang et al. (2023, EMC в fan-out WLP, цит. 43), Y. Lv et al. (2026, высокотеплопроводный EMC 2.0 Вт/(м·К))",
+      "group_Tadiran/Saft — технические брошюры Li-SOCl₂ (liquid cathode/catholyte, суммарная реакция 4Li + 2SOCl₂ → 4LiCl + S + SO₂); M. Jain et al. 1999, Univ. of South Carolina (проводимость католита LiAlCl₄/SOCl₂ — сильная функция T и концентрации соли, цит. 42); R.E. White et al. 1989, NASA NTRS (термическая оптимизация Li/SOCl₂ — низкая теплопроводность электролита удерживает тепло); Patsnap eureka materials DB (термофизика безводного SOCl₂: cp 1.02 Дж/(г·К), k 0.15 Вт/(м·К), вязкость 0.58 сП, ΔHисп 31.7 кДж/моль); CAMEO Chemicals NOAA (UN 1836, класс 8, PG I, ERG 137); Wikipedia/PubChem (базовые свойства, CWC Schedule 3, гидролиз)",
       "group_Tadiran/Ultralife (white papers по пассивации Li-SOCl2 — саморазряд 0.7 %/год, voltage delay); MTI (tobmachine)/Sigma-Aldrich/MTI Corporation (спецификации battery-grade Li-фольги ≥99.9 %, 0.1–0.6 мм); Wu et al. 2023 Energy Storage Materials (Li-growth и SEI-инжиниринг anode-free); Qian et al. 2016 (anode-free концепция, 857 цитирований); S. Li 2025 sciopen Energy Material Advances (Li-metal progress/challenges)",
       "group_Toray Industries (Torayca™ T300 — первое серийное высокопрочное PAN-волокно, выпущено в 1971 г.; >93 % C, Na+K следы)",
       "group_Wolfspeed, Infineon, ROHM/SiCrystal, STMicroelectronics — серийные SiC-MOSFET die (планы 650 В–3.3 кВ); Godignon P. et al. 2024 (Surfaces and Interfaces, цит. 29 — дрифт-параметры по классам напряжения); Wang P. et al. 2025 (дрифт 9 мкм / 7×10¹⁵); Shokri A. et al. 2025 (цит. 6 — 4H-SiC бета-вольтаика 5.5%); Zhao Q. et al. 2025 (цит. 15 — 4H-SiC Ni-63 элемент 2.8%); Liu, Lu (Semantic Scholar — 4H-SiC ⁶³Ni p-n батарея); AIP Advances 14, 115024 (2024 — p-n бета-вольтаик 10.6%); Chen F. et al. 2022 (all-ceramic thermal emitter)",
@@ -35123,7 +35147,6 @@
       "material_rolled_homogeneous_armor",
       "material_rt_1523_sincgars",
       "material_silicon_neural_net",
-      "material_socl2",
       "material_stainless_steel_304",
       "material_stainless_steel_316",
       "material_stainless_steel_440c",
@@ -35143,19 +35166,19 @@
     ]
   },
   "stats": {
-    "nodes": 1108,
-    "edges": 3909,
+    "nodes": 1109,
+    "edges": 3911,
     "dangling": {
-      "complies_with": 523,
+      "complies_with": 525,
       "has_part": 6,
-      "researched_by": 82,
-      "uses_material": 66
+      "researched_by": 83,
+      "uses_material": 65
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 211,
+      "material": 212,
       "standart": 8,
       "tekhnologia": 77
     }
