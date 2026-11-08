@@ -789,10 +789,11 @@
     }
    ],
    "created_at": "2026-11-08T20:55:59Z",
-   "usage_count": 1,
+   "usage_count": 2,
    "used_in_issues": [
     2131,
-    2133
+    2133,
+    1927
    ]
   },
   {
@@ -1330,6 +1331,182 @@
    "usage_count": 1,
    "used_in_issues": [
     1923
+   ]
+  },
+  {
+   "query": "UNIST double crosslinked magnetic particle magnetorheological muscle actuator research",
+   "keywords": [
+    "unist",
+    "dual_crosslinked",
+    "magnetic_muscle",
+    "aktuator"
+   ],
+   "results": [
+    {
+     "url": "https://advanced.onlinelibrary.wiley.com/doi/10.1002/adfm.202516218",
+     "name": "Soft Magnetic Artificial Muscles with High Work Density and",
+     "snippet": "by S Kim · 2026 · Cited by 13 — In contrast, our dual cross-linked actuator achieves a high actuation strain of 86.4% and a record-high work density of 1150 kJ m −3 in its soft ... Read more",
+     "host_name": "advanced.onlinelibrary.wiley.com",
+     "rank": 0,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://techxplore.com/news/2025-10-artificial-muscle-soft-rigid-weight.html",
+     "name": "Artificial muscle can switch from soft to rigid to support",
+     "snippet": "Oct 13, 2025 — Schematic image, illustrating the dual cross-linking strategy and thermomechanical actuation mechanism of the magnetic artificial muscles . Read more",
+     "host_name": "techxplore.com",
+     "rank": 1,
+     "date": "Oct 13, 2025",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAES0QEBxCJF18m5_p4Yq3vBF_JKTJ-rZhHF6NyVviFyvERndlwSaWPLlmjv0kxx7AtgvdrhILGcXSmrGdAn4zSX8Y0W6ZvC19fbA-BZsbuiJakX9_uZWnW2Te-PlIvF1DPafv6pqLUaX3Vb4F-fyW5UT_ZW63AWLa4jCGQCLWaTVqdf_P1E3eAw18X-ecX4M7cL3cLW4glqnZj3uvB3cXGD89wV-2IxDE4UBsi3MUUkNGGr7FnAbLXVBDA_YQvJyNoR3WoZonJJO9Nnq6IzpQ-SfLetAQ",
+     "name": "Researchers at UNIST in South Korea developed a soft",
+     "snippet": "Researchers at UNIST in South Korea developed a soft magnetic artificial muscle that can switch between a flexible state and a much stiffer load ... Read more",
+     "host_name": "www.google.com",
+     "rank": 2,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESZgHEIkXXeAwtiv6J5Tllic5PqZlvC5x9WqryYKDdODKvcDjqdg7vyLTnmMSP0bcs-TG1soRwcligkGGN4W5hXe1NLKZY_Nwz9Eh4TGagP0DD0z5Os15FI5bEftjffurZmI1sJrRxfA",
+     "name": "Multifunctional Magnetic Muscles for Soft Robotics",
+     "snippet": "by M Seong · 2024 · Cited by 116 — Here, we present an artificial magnetic muscle that exhibits multiple remarkable mechanical properties and demonstrates comprehensive actuating ... Read more",
+     "host_name": "www.google.com",
+     "rank": 3,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAES2wEBxCJF11OGHmJCFr93hvAFatWqX6QnK-ObW8DsxW-Sr9V9ZCniWUpkU-IbOingE_0v5eYm_eVUoHVIdydYgTEtFAHvGa7PMutnu8jIS3Vms6L7fpV_ns15SUgNTGI3TlKEBU1dqlyklTA7-990p2Z5_dJsMK1q00rD0FziCMmqxHbto1SCQtQNHZNJD0ybhrlTXBBiXIpDiouQVAyrmL6jXlu-Jab6bvQdJ5wwzbEP_18Xh7b7pps-DYfHg0EcShzafSzP31DXyLm0JZBwqR4dCwoFmV3i3S0EGe4",
+     "name": "Soft Magnetic Artificial Muscles with High Work Density and",
+     "snippet": "Sep 8, 2025 — Here, a high‐performance magnetic composite actuator is presented that addresses this limitation through an optimized dual cross‐linked polymer ... Read more",
+     "host_name": "www.google.com",
+     "rank": 4,
+     "date": "Sep 8, 2025",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESaAHEIkXXFNMJGmVWqNO-ai4wy3ppHnnLhvCURzO70Oer0Ur0VFEIe7v4krKTsPdg36FKPv9-3qpjaH98VFtsffLNwsPIiz5QgqxXBEqEm8dgfHsf_CSt0JaW_mMK6r-P-uDyUYh69UwR",
+     "name": "From Soft to Super-Strong: Artificial Muscle Lifts",
+     "snippet": "A team of researchers at UNIST ... “ Soft Magnetic Artificial Muscles with High Work Density and Actuation Strain via Dual Cross-Linking Design.",
+     "host_name": "www.google.com",
+     "rank": 5,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESdwHEIkXXyrBc-dFJom9jwV-_aYtu0y4ErfmqUVoffWYvzo82qv-iGyepIaw2vP-kf75xzmu4P7HUSLRIjuuKQtz5CvfZ86mYNfxdCXXc2F7iLpqfALx8APrhABuKrAgt_om1lpfnJmaSJI38ERLENjbMmO-KQVCf",
+     "name": "Magnetically driven soft robots: A review of actuation",
+     "snippet": "Mar 24, 2026 — Applying a uniform magnetic field results in the body undergoing periodic bending, thereby mimicking the tail-wagging swimming motion of fish. Read more",
+     "host_name": "www.google.com",
+     "rank": 6,
+     "date": "Mar 24, 2026",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESxAEBxCJF18OrXTP5ZprBIlKB7v6HVWc83aHUlKmtIsPdd7BsgPeqFGljqml1lC0VnOkhgOwjHntjbu47-oIZs6uRMdgLZHK6czg8t_lZDC_0WmtwNu9wYFTXLfeXhAxsgtIWv60uCYR9kDU4kEjqGoIbNCEh9kBDI32gpNKZPRQzykug0jC9au7H8hXFluhwibSGabka4RE6L_XroGwhj2oQLXFJRgAHDE0Ddbebyz9QDu2nTDQt3BQinkgiuYvZux7g3FQs",
+     "name": "This New Artificial Muscle Could Let Humanoid Robots Lift",
+     "snippet": "Nov 3, 2025 — Schematic image, illustrating the dual cross-linking strategy and thermomechanical actuation mechanism of the magnetic artificial muscles . Read more",
+     "host_name": "www.google.com",
+     "rank": 7,
+     "date": "Nov 3, 2025",
+     "favicon": ""
+    }
+   ],
+   "created_at": "2026-11-09T05:46:13+08:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    1927
+   ]
+  },
+  {
+   "query": "enamelled copper magnet wire coil winding electromagnetic actuator insulation varnish",
+   "keywords": [
+    "magnet_wire",
+    "copper",
+    "izolirovannye_emalyu",
+    "coil"
+   ],
+   "results": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Magnet_wire",
+     "name": "Magnet wire",
+     "snippet": "Magnet wire or enameled wire is a copper or aluminium wire coated with a very thin layer of insulation . It is used in the construction of transformers, ... Read more",
+     "host_name": "en.wikipedia.org",
+     "rank": 0,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.kukcoils.com/world-of-induction/insulation-layer-on-magnet-wires-a-common-stumbling-block-for-engineers",
+     "name": "Insulation layer on magnet wires: A common stumbling",
+     "snippet": "Self-supported coils are coils made of wire that is coated with a thermoplastic layer - the bonding varnish. The term selfbonding enamel wire already indicates ... Read more",
+     "host_name": "www.kukcoils.com",
+     "rank": 1,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESvwEBxCJF1yumu_AviVh2PSxpGfAY_QxVn7CKgC-1rqBXCB_ollU_TnbZZIsY6uQI9zX_3AKHlrsBlK_g3Dg90QR5OnRbzScTVhw8JKjhLoYls2K0VO9tH7_LXLT2iAQSlDsSpfoD6F_eg1QTuNZia-UW8zj2z0yWKF-cxyJYmPszlKG097pSYvv-yoj04GApRqHGBwQ96KcWVkJ57vpJuef9XthYW1iSdCNF09O0aD1H_k5vc0vfvplqYFzBbSZCPw",
+     "name": "What is the difference between 'magnet wire' and regular",
+     "snippet": "What is the difference between \"magnet wire\" and regular insulated copper wire (in using them as coil windings)?",
+     "host_name": "www.google.com",
+     "rank": 2,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESrgEBxCJF15vw4y8BXezuUdTkbr0fXLGTwdmZjeIg7DaSAi2be6NYTB4TIbbc-kgdD-zmiuwq_npob1ZqyiZIIqxo1La84VbrM6DFkB5_pJT6fP6ivHoYMZndjkScDzIWvfToYn2AURXsyqoyEf_WT4qNIS8VVLIM6pqKpWRYdF3nRwuCo4Gp-0odRalJdoJApBqGeN2bKPMrhz2ipCOyDdoDYqlnwT0aXh5FLy8gssk",
+     "name": "Industrial Applications for Magnet Wire",
+     "snippet": "Sep 14, 2026 — Whether made of copper or aluminum, magnet wire is insulated with a thin enamel coating and wound into tight coils to create magnetic fields. Read more",
+     "host_name": "www.google.com",
+     "rank": 3,
+     "date": "Sep 14, 2026",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESfAHEIkXXQQ-DgIu0btjle3y_Jou50LucezLVT-dbgSupmVpyCsDe_L0E1obydfXLN6Pq8kq17NCWt59fC3YqPXvtzqwmXnXZlAr_9Nlz1y9JFpBd7GS4yWws8xmBPfwBinGohxOSdWTQtArTomsqnbce0ODy26-puABHrDE",
+     "name": "Magnet Wire Insulation Types: Enamel Systems Compared",
+     "snippet": "A single polyamide-imide enamel reaches Class 220 on copper . It is used where a winding needs more thermal margin than the dual-coat 200-class system but does ... Read more",
+     "host_name": "www.google.com",
+     "rank": 4,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESpwEBxCJF1wmwLXPRt_2iUk_gLpqUhjmyh4ihtGLflkalR3pfsNrQZgpgDQpLszFkhs9bPyoPaTQRQFbphxXztGGTn4nvVo4rUFcnIKtqgo4zLVnzzrX7c4N-3aDLPq5xYW20o89RQ3etp7na20p3SNQKsAp4rRbJtwtYGKk4u8vi6oku0eGdBrg7P3xLlNwXrXvQr78Deu3vYD3iF4Rfyr9mHg67xYSD_w",
+     "name": "I need to find a lacquer, enamel, epoxy, etc coating for \"",
+     "snippet": "I need to find a lacquer , enamel , epoxy, etc coating for \" magnetic \" wire insulation . Question. I have a lot of wire that needs to be re-coated ... Read more",
+     "host_name": "www.google.com",
+     "rank": 5,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESkgEBxCJF191ALDZm3SouPDqndYUg7iI6-aGudu7bQSsvmNo0oH8xDDaE48nsGyKASxi3ADQEHXT_LxZxlZV3sIvCoc8A8z5XnLSdrag5kmaxTrV_8I5-O-ubSBTfp_KDJ_bA_S_D-TLfJi00a1JVnc9VtwAulsmtGF8L3Em0GU3ioae1-xGPgWHYQg8Dn_-__ibgBw",
+     "name": "Kanayu 211ft 18 AWG Magnet Copper Wire Enamelled",
+     "snippet": "Easy to Weld: the enamel coating can be easily removed with sandpaper or wire strippers, making it easy to solder the copper wire to other components; ... Read more",
+     "host_name": "www.google.com",
+     "rank": 6,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESrgEBxCJF1zoojWIYYK5y6vjZqpnBTogBhlZxUPPXKMq9n13_WCxfvsjCSetGcO7Q16jC8Bv_7PsOlQTTRunfz1-f0QqZ4zYIQ1cb9wNNX3a6JV2rCzBjKdyKCq2QJIm0BG9KKwoIsVK4LblW6IjAFvCbXr_KMsgBRYz4D9IRKM0zfnjx4XabjM8U3d-M5O71rBucNku9g33OHQ2scLwcEWj1FPpXL5UBtsm5XM6C02g",
+     "name": "Magnet Wire | Enameled Wire | 14-44 AWG Insulated",
+     "snippet": "Enameled wire is also the go-to choice for coil winding . sizes 14 AWG to 44 AWG. it's perfect for winding electromagnetic coils. Coil winding is required for ...",
+     "host_name": "www.google.com",
+     "rank": 7,
+     "date": "",
+     "favicon": ""
+    }
+   ],
+   "created_at": "2026-11-09T05:46:13+08:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    1927
    ]
   }
  ]
