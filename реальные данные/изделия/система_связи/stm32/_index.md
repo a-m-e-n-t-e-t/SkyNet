@@ -18,7 +18,7 @@ id: izdelie_stm32
   - часть_stm32_mounting
 материалы_частей:
   - часть: часть_stm32_core
-    материал: generic_material
+    материал: si
     доля_массы: 0.45
   - часть: часть_stm32_housing
     материал: aluminum

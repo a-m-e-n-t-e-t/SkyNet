@@ -18,7 +18,7 @@ id: izdelie_pezo-sensor
   - часть_pezo-sensor_mounting
 материалы_частей:
   - часть: часть_pezo-sensor_core
-    материал: generic_material
+    материал: aln
     доля_массы: 0.45
   - часть: часть_pezo-sensor_housing
     материал: aluminum

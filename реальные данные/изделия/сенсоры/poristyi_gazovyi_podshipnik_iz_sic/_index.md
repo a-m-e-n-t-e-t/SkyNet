@@ -18,7 +18,7 @@ id: izdelie_poristyi_gazovyi_podshipnik_iz_sic
   - часть_poristyi_gazovyi_podshipnik_iz_sic_mounting
 материалы_частей:
   - часть: часть_poristyi_gazovyi_podshipnik_iz_sic_core
-    материал: generic_material
+    материал: monokristallicheskogo_sic
     доля_массы: 0.45
   - часть: часть_poristyi_gazovyi_podshipnik_iz_sic_housing
     материал: aluminum

@@ -18,7 +18,7 @@ id: izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena
   - часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
 материалы_частей:
   - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
-    материал: generic_material
+    материал: silicone-textile_composite
     доля_массы: 0.45
   - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
     материал: aluminum

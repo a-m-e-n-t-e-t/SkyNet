@@ -18,7 +18,7 @@ id: izdelie_bldc_enkoder
   - часть_bldc_enkoder_mounting
 материалы_частей:
   - часть: часть_bldc_enkoder_core
-    материал: generic_material
+    материал: al_6061-t6
     доля_массы: 0.45
   - часть: часть_bldc_enkoder_housing
     материал: aluminum

@@ -18,7 +18,7 @@ id: izdelie_optovolokonnaya_shina
   - часть_optovolokonnaya_shina_mounting
 материалы_частей:
   - часть: часть_optovolokonnaya_shina_core
-    материал: generic_material
+    материал: al_6061-t6
     доля_массы: 0.45
   - часть: часть_optovolokonnaya_shina_housing
     материал: aluminum

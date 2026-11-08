@@ -18,7 +18,7 @@ id: izdelie_tcp
   - часть_tcp_mounting
 материалы_частей:
   - часть: часть_tcp_core
-    материал: generic_material
+    материал: neilon_6_66
     доля_массы: 0.45
   - часть: часть_tcp_housing
     материал: aluminum

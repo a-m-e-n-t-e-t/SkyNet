@@ -18,7 +18,7 @@ id: izdelie_ads-b_priemnik
   - часть_ads-b_priemnik_mounting
 материалы_частей:
   - часть: часть_ads-b_priemnik_core
-    материал: generic_material
+    материал: al_6061-t6
     доля_массы: 0.45
   - часть: часть_ads-b_priemnik_housing
     материал: aluminum

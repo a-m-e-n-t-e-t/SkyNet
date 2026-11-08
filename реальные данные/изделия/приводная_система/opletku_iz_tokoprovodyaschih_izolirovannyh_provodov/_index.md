@@ -18,7 +18,8 @@ id: izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov
   - часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting
 материалы_частей:
   - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core
-    материал: generic_material
+    материал: copper
+    форма: шины_и_заземление
     доля_массы: 0.45
   - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing
     материал: aluminum

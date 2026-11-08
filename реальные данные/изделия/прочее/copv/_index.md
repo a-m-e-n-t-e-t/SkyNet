@@ -17,7 +17,7 @@ id: izdelie_copv
   - часть_copv_mounting
 материалы_частей:
   - часть: часть_copv_core
-    материал: generic_material
+    материал: cfrp_t1100g
     доля_массы: 0.45
   - часть: часть_copv_housing
     материал: aluminum

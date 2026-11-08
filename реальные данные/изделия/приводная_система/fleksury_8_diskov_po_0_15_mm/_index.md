@@ -18,7 +18,7 @@ id: izdelie_fleksury_8_diskov_po_0_15_mm
   - часть_fleksury_8_diskov_po_0_15_mm_mounting
 материалы_частей:
   - часть: часть_fleksury_8_diskov_po_0_15_mm_core
-    материал: generic_material
+    материал: becu
     доля_массы: 0.45
   - часть: часть_fleksury_8_diskov_po_0_15_mm_housing
     материал: aluminum

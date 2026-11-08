@@ -17,7 +17,7 @@ id: izdelie_polyimide_fpc
   - часть_polyimide_fpc_mounting
 материалы_частей:
   - часть: часть_polyimide_fpc_core
-    материал: generic_material
+    материал: poliimid
     доля_массы: 0.45
   - часть: часть_polyimide_fpc_housing
     материал: aluminum

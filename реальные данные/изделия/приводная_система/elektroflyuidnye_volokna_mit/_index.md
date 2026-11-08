@@ -18,7 +18,7 @@ id: izdelie_elektroflyuidnye_volokna_mit
   - часть_elektroflyuidnye_volokna_mit_mounting
 материалы_частей:
   - часть: часть_elektroflyuidnye_volokna_mit_core
-    материал: generic_material
+    материал: ionnaya_zhidkost_emim_tfsi
     доля_массы: 0.45
   - часть: часть_elektroflyuidnye_volokna_mit_housing
     материал: aluminum

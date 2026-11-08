@@ -18,7 +18,7 @@ id: izdelie_pezo-mems
   - часть_pezo-mems_mounting
 материалы_частей:
   - часть: часть_pezo-mems_core
-    материал: generic_material
+    материал: aln
     доля_массы: 0.45
   - часть: часть_pezo-mems_housing
     материал: aluminum

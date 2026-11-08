@@ -18,7 +18,7 @@ id: izdelie_metalinza
   - часть_metalinza_mounting
 материалы_частей:
   - часть: часть_metalinza_core
-    материал: generic_material
+    материал: metapoverhnost
     доля_массы: 0.45
   - часть: часть_metalinza_housing
     материал: aluminum

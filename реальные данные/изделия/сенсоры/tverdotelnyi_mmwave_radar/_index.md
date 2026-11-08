@@ -18,7 +18,7 @@ id: izdelie_tverdotelnyi_mmwave_radar
   - часть_tverdotelnyi_mmwave_radar_mounting
 материалы_частей:
   - часть: часть_tverdotelnyi_mmwave_radar_core
-    материал: generic_material
+    материал: al_6061-t6
     доля_массы: 0.45
   - часть: часть_tverdotelnyi_mmwave_radar_housing
     материал: aluminum

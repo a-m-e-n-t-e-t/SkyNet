@@ -17,7 +17,7 @@ id: izdelie_dielektricheskie_elastomernye_datchiki
   - часть_dielektricheskie_elastomernye_datchiki_mounting
 материалы_частей:
   - часть: часть_dielektricheskie_elastomernye_datchiki_core
-    материал: generic_material
+    материал: p_vdf-trfe-cfe
     доля_массы: 0.45
   - часть: часть_dielektricheskie_elastomernye_datchiki_housing
     материал: aluminum

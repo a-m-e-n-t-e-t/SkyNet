@@ -18,7 +18,8 @@ id: izdelie_belleville_shaiby
   - часть_belleville_shaiby_mounting
 материалы_частей:
   - часть: часть_belleville_shaiby_core
-    материал: generic_material
+    материал: stal_st3
+    форма: строительные_конструкции_и_крепёж
     доля_массы: 0.45
   - часть: часть_belleville_shaiby_housing
     материал: aluminum

@@ -17,7 +17,7 @@ id: izdelie_mikrokanalnye_ohlazhdayuschie_plastiny
   - часть_mikrokanalnye_ohlazhdayuschie_plastiny_mounting
 материалы_частей:
   - часть: часть_mikrokanalnye_ohlazhdayuschie_plastiny_core
-    материал: generic_material
+    материал: copper
     доля_массы: 0.45
   - часть: часть_mikrokanalnye_ohlazhdayuschie_plastiny_housing
     материал: aluminum

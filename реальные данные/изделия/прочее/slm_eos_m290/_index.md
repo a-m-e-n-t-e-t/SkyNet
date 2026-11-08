@@ -17,7 +17,7 @@ id: izdelie_slm_eos_m290
   - часть_slm_eos_m290_mounting
 материалы_частей:
   - часть: часть_slm_eos_m290_core
-    материал: generic_material
+    материал: stal_st3
     доля_массы: 0.45
   - часть: часть_slm_eos_m290_housing
     материал: aluminum

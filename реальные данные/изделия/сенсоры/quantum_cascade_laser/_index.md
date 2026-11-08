@@ -18,7 +18,7 @@ id: izdelie_quantum_cascade_laser
   - часть_quantum_cascade_laser_mounting
 материалы_частей:
   - часть: часть_quantum_cascade_laser_core
-    материал: generic_material
+    материал: al_6061-t6
     доля_массы: 0.45
   - часть: часть_quantum_cascade_laser_housing
     материал: aluminum

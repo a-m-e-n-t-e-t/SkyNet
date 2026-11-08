@@ -18,7 +18,7 @@ id: izdelie_eo_ir_kamera
   - часть_eo_ir_kamera_mounting
 материалы_частей:
   - часть: часть_eo_ir_kamera_core
-    материал: generic_material
+    материал: al_6061-t6
     доля_массы: 0.45
   - часть: часть_eo_ir_kamera_housing
     материал: aluminum

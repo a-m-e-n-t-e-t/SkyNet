@@ -18,7 +18,7 @@ id: izdelie_ferritovye_klinya_na_kabelyah_sensorov
   - часть_ferritovye_klinya_na_kabelyah_sensorov_mounting
 материалы_частей:
   - часть: часть_ferritovye_klinya_na_kabelyah_sensorov_core
-    материал: generic_material
+    материал: magnitnaya_rezina_ferritovyi_poroshok
     доля_массы: 0.45
   - часть: часть_ferritovye_klinya_na_kabelyah_sensorov_housing
     материал: aluminum

@@ -17,7 +17,7 @@ id: izdelie_elastomernyh_dempferah
   - часть_elastomernyh_dempferah_mounting
 материалы_частей:
   - часть: часть_elastomernyh_dempferah_core
-    материал: generic_material
+    материал: silikon_40_50_shore_a
     доля_массы: 0.45
   - часть: часть_elastomernyh_dempferah_housing
     материал: aluminum

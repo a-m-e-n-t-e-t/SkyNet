@@ -18,7 +18,8 @@ id: izdelie_tsa
   - часть_tsa_mounting
 материалы_частей:
   - часть: часть_tsa_core
-    материал: generic_material
+    материал: spectra
+    форма: высоконагруженные_тонкие_шнуры
     доля_массы: 0.45
   - часть: часть_tsa_housing
     материал: aluminum

@@ -17,7 +17,7 @@ id: izdelie_kapillyarnaya_teplovaya_trubka
   - часть_kapillyarnaya_teplovaya_trubka_mounting
 материалы_частей:
   - часть: часть_kapillyarnaya_teplovaya_trubka_core
-    материал: generic_material
+    материал: copper
     доля_массы: 0.45
   - часть: часть_kapillyarnaya_teplovaya_trubka_housing
     материал: aluminum

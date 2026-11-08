@@ -18,7 +18,7 @@ id: izdelie_flat-face_couplings_iso_16028
   - часть_flat-face_couplings_iso_16028_mounting
 материалы_частей:
   - часть: часть_flat-face_couplings_iso_16028_core
-    материал: generic_material
+    материал: stal_st3
     доля_массы: 0.45
   - часть: часть_flat-face_couplings_iso_16028_housing
     материал: aluminum

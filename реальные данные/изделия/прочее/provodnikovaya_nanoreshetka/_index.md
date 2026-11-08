@@ -17,7 +17,7 @@ id: izdelie_provodnikovaya_nanoreshetka
   - часть_provodnikovaya_nanoreshetka_mounting
 материалы_частей:
   - часть: часть_provodnikovaya_nanoreshetka_core
-    материал: generic_material
+    материал: mxene
     доля_массы: 0.45
   - часть: часть_provodnikovaya_nanoreshetka_housing
     материал: aluminum

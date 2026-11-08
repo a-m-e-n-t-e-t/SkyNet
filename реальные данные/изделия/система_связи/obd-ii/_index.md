@@ -18,7 +18,7 @@ id: izdelie_obd-ii
   - часть_obd-ii_mounting
 материалы_частей:
   - часть: часть_obd-ii_core
-    материал: generic_material
+    материал: peek
     доля_массы: 0.45
   - часть: часть_obd-ii_housing
     материал: aluminum

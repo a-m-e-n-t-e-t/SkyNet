@@ -18,7 +18,7 @@ id: izdelie_flir
   - часть_flir_mounting
 материалы_частей:
   - часть: часть_flir_core
-    материал: generic_material
+    материал: si
     доля_массы: 0.45
   - часть: часть_flir_housing
     материал: aluminum

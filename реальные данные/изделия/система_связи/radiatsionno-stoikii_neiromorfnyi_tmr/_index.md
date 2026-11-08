@@ -18,7 +18,7 @@ id: izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
   - часть_radiatsionno-stoikii_neiromorfnyi_tmr_mounting
 материалы_частей:
   - часть: часть_radiatsionno-stoikii_neiromorfnyi_tmr_core
-    материал: generic_material
+    материал: si
     доля_массы: 0.45
   - часть: часть_radiatsionno-stoikii_neiromorfnyi_tmr_housing
     материал: aluminum

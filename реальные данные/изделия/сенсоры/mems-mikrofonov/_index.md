@@ -18,7 +18,7 @@ id: izdelie_mems-mikrofonov
   - часть_mems-mikrofonov_mounting
 материалы_частей:
   - часть: часть_mems-mikrofonov_core
-    материал: generic_material
+    материал: si
     доля_массы: 0.45
   - часть: часть_mems-mikrofonov_housing
     материал: aluminum

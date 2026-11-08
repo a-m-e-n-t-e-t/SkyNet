@@ -18,7 +18,7 @@ id: izdelie_flir_lwir_2
   - часть_flir_lwir_2_mounting
 материалы_частей:
   - часть: часть_flir_lwir_2_core
-    материал: generic_material
+    материал: al_6061-t6
     доля_массы: 0.45
   - часть: часть_flir_lwir_2_housing
     материал: aluminum

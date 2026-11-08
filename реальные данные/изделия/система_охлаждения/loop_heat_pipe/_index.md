@@ -17,7 +17,7 @@ id: izdelie_loop_heat_pipe
   - часть_loop_heat_pipe_mounting
 материалы_частей:
   - часть: часть_loop_heat_pipe_core
-    материал: generic_material
+    материал: stal_st3
     доля_массы: 0.45
   - часть: часть_loop_heat_pipe_housing
     материал: aluminum

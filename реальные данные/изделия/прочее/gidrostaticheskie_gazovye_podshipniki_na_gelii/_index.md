@@ -17,7 +17,7 @@ id: izdelie_gidrostaticheskie_gazovye_podshipniki_na_gelii
   - часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_mounting
 материалы_частей:
   - часть: часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_core
-    материал: generic_material
+    материал: stal_st3
     доля_массы: 0.45
   - часть: часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_housing
     материал: aluminum

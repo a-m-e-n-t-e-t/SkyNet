@@ -18,7 +18,7 @@ id: izdelie_stm32h743
   - часть_stm32h743_mounting
 материалы_частей:
   - часть: часть_stm32h743_core
-    материал: generic_material
+    материал: si
     доля_массы: 0.45
   - часть: часть_stm32h743_housing
     материал: aluminum

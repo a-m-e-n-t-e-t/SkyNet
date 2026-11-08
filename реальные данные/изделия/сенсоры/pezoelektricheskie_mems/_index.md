@@ -18,7 +18,7 @@ id: izdelie_pezoelektricheskie_mems
   - часть_pezoelektricheskie_mems_mounting
 материалы_частей:
   - часть: часть_pezoelektricheskie_mems_core
-    материал: generic_material
+    материал: aln
     доля_массы: 0.45
   - часть: часть_pezoelektricheskie_mems_housing
     материал: aluminum

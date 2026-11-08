@@ -18,7 +18,7 @@ id: izdelie_kaskadnyi_stirling-kriokuler
   - часть_kaskadnyi_stirling-kriokuler_mounting
 материалы_частей:
   - часть: часть_kaskadnyi_stirling-kriokuler_core
-    материал: generic_material
+    материал: al_6061-t6
     доля_массы: 0.45
   - часть: часть_kaskadnyi_stirling-kriokuler_housing
     материал: aluminum

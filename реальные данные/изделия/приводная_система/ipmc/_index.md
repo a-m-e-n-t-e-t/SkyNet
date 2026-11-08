@@ -18,7 +18,8 @@ id: izdelie_ipmc
   - часть_ipmc_mounting
 материалы_частей:
   - часть: часть_ipmc_core
-    материал: generic_material
+    материал: nafion
+    форма: электросенсорика_и_актуаторы
     доля_массы: 0.45
   - часть: часть_ipmc_housing
     материал: aluminum

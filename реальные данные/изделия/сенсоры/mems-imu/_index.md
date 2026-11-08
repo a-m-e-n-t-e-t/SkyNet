@@ -18,7 +18,7 @@ id: izdelie_mems-imu
   - часть_mems-imu_mounting
 материалы_частей:
   - часть: часть_mems-imu_core
-    материал: generic_material
+    материал: si
     доля_массы: 0.45
   - часть: часть_mems-imu_housing
     материал: aluminum

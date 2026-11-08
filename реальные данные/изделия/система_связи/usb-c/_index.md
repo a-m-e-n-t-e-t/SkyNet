@@ -18,7 +18,7 @@ id: izdelie_usb-c
   - часть_usb-c_mounting
 материалы_частей:
   - часть: часть_usb-c_core
-    материал: generic_material
+    материал: becu
     доля_массы: 0.45
   - часть: часть_usb-c_housing
     материал: aluminum

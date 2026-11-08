@@ -18,7 +18,7 @@ id: izdelie_pmut
   - часть_pmut_mounting
 материалы_частей:
   - часть: часть_pmut_core
-    материал: generic_material
+    материал: aln
     доля_массы: 0.45
   - часть: часть_pmut_housing
     материал: aluminum

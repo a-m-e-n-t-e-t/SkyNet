@@ -231,8 +231,8 @@ graph LR
     часть_t600_топливная_ячейка[fuel_cell]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_copper[Cu ≥99.9% (электролити…]
-    material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
+    material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
     material_si[Si (кремний); электрон…]
     izdelie_asrg -->|материал| material_copper
     izdelie_4h_sic_betavoltaik -->|материал| material_ti_6al_4v

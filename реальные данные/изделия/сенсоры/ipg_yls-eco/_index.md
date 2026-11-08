@@ -18,7 +18,7 @@ id: izdelie_ipg_yls-eco
   - часть_ipg_yls-eco_mounting
 материалы_частей:
   - часть: часть_ipg_yls-eco_core
-    материал: generic_material
+    материал: stal_st3
     доля_массы: 0.45
   - часть: часть_ipg_yls-eco_housing
     материал: aluminum

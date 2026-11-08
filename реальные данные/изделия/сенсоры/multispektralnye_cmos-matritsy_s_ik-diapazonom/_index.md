@@ -18,7 +18,7 @@ id: izdelie_multispektralnye_cmos-matritsy_s_ik-diapazonom
   - часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_mounting
 материалы_частей:
   - часть: часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_core
-    материал: generic_material
+    материал: al_6061-t6
     доля_массы: 0.45
   - часть: часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_housing
     материал: aluminum

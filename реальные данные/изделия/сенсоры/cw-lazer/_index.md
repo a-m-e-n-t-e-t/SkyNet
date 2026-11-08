@@ -18,7 +18,7 @@ id: izdelie_cw-lazer
   - часть_cw-lazer_mounting
 материалы_частей:
   - часть: часть_cw-lazer_core
-    материал: generic_material
+    материал: al_6061-t6
     доля_массы: 0.45
   - часть: часть_cw-lazer_housing
     материал: aluminum

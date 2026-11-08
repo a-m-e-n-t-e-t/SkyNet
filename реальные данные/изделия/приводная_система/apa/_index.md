@@ -18,7 +18,8 @@ id: izdelie_apa
   - часть_apa_mounting
 материалы_частей:
   - часть: часть_apa_core
-    материал: generic_material
+    материал: batio3
+    форма: тетрагональная_P4mm
     доля_массы: 0.45
   - часть: часть_apa_housing
     материал: aluminum

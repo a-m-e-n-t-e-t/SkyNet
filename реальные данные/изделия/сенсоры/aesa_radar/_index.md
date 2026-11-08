@@ -18,7 +18,7 @@ id: izdelie_aesa_radar
   - часть_aesa_radar_mounting
 материалы_частей:
   - часть: часть_aesa_radar_core
-    материал: generic_material
+    материал: al_6061-t6
     доля_массы: 0.45
   - часть: часть_aesa_radar_housing
     материал: al_6061-t6

@@ -17,7 +17,7 @@ id: izdelie_gibkii_pcb
   - часть_gibkii_pcb_mounting
 материалы_частей:
   - часть: часть_gibkii_pcb_core
-    материал: generic_material
+    материал: poliimid
     доля_массы: 0.45
   - часть: часть_gibkii_pcb_housing
     материал: aluminum

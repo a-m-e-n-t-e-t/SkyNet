@@ -18,7 +18,7 @@ id: izdelie_razryvnye_mufty_iso_16028
   - часть_razryvnye_mufty_iso_16028_mounting
 материалы_частей:
   - часть: часть_razryvnye_mufty_iso_16028_core
-    материал: generic_material
+    материал: stal_st3
     доля_массы: 0.45
   - часть: часть_razryvnye_mufty_iso_16028_housing
     материал: aluminum

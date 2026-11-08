@@ -18,7 +18,8 @@ id: izdelie_dea
   - часть_dea_mounting
 материалы_частей:
   - часть: часть_dea_core
-    материал: generic_material
+    материал: elastomernaya_matritsa
+    форма: плёнка_DEA_core
     доля_массы: 0.45
   - часть: часть_dea_housing
     материал: aluminum

@@ -18,7 +18,8 @@ id: izdelie_reshetchatyi_karkas
   - часть_reshetchatyi_karkas_mounting
 материалы_частей:
   - часть: часть_reshetchatyi_karkas_core
-    материал: generic_material
+    материал: al_6061-t6
+    форма: силовые_элементы_конструкций
     доля_массы: 0.45
   - часть: часть_reshetchatyi_karkas_housing
     материал: aluminum

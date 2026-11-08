@@ -18,7 +18,7 @@ id: izdelie_pezoelektricheskii_gromkogovoritel
   - часть_pezoelektricheskii_gromkogovoritel_mounting
 материалы_частей:
   - часть: часть_pezoelektricheskii_gromkogovoritel_core
-    материал: generic_material
+    материал: latun_c36000
     доля_массы: 0.45
   - часть: часть_pezoelektricheskii_gromkogovoritel_housing
     материал: aluminum

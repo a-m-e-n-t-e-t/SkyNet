@@ -18,7 +18,7 @@ id: izdelie_povorotnoe_uplotnenie
   - часть_povorotnoe_uplotnenie_mounting
 материалы_частей:
   - часть: часть_povorotnoe_uplotnenie_core
-    материал: generic_material
+    материал: ptfe-kompozit_du_vtulki
     доля_массы: 0.45
   - часть: часть_povorotnoe_uplotnenie_housing
     материал: aluminum

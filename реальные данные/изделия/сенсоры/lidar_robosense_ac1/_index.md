@@ -18,7 +18,7 @@ id: izdelie_lidar_robosense_ac1
   - часть_lidar_robosense_ac1_mounting
 материалы_частей:
   - часть: часть_lidar_robosense_ac1_core
-    материал: generic_material
+    материал: al_6061-t6
     доля_массы: 0.45
   - часть: часть_lidar_robosense_ac1_housing
     материал: aluminum

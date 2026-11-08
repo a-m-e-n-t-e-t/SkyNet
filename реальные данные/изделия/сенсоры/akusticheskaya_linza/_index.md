@@ -18,7 +18,7 @@ id: izdelie_akusticheskaya_linza
   - часть_akusticheskaya_linza_mounting
 материалы_частей:
   - часть: часть_akusticheskaya_linza_core
-    материал: generic_material
+    материал: silikon_80_shore_a_steklyannye_mikrosfery
     доля_массы: 0.45
   - часть: часть_akusticheskaya_linza_housing
     материал: aluminum
