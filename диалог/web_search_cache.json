@@ -1,676 +1,714 @@
 {
-  "entries": [
+ "entries": [
+  {
+   "id": "ws_0001",
+   "query": "Oxford PV perovskite silicon tandem solar module thickness frame dimensions datasheet",
+   "keywords": [
+    "Oxford",
+    "perovskite",
+    "tandem",
+    "solar",
+    "module",
+    "thickness",
+    "frame"
+   ],
+   "results_count": 10,
+   "key_facts": [
+    "Oxford PV 72-cell tandem modules 24.5% efficiency (Sep 2024, oxfordpv.com)",
+    "Oxford PV pilot line mini-modules 22cm x 22cm for M2 15.6cm cells (CHEOPS EC 2019)"
+   ],
+   "created_at": "2026-11-08T18:34:27.951432+00:00",
+   "last_used": "2026-11-08T18:34:27.951432+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2122
+   ]
+  },
+  {
+   "id": "ws_0002",
+   "query": "solar PV module aluminum frame profile height mm glass thickness laminate 35mm typical",
+   "keywords": [
+    "solar",
+    "PV",
+    "module",
+    "aluminum",
+    "frame",
+    "profile",
+    "thickness",
+    "35mm"
+   ],
+   "results_count": 10,
+   "key_facts": [
+    "Solar laminate main thickness = solar glass 3.2 mm (90% of 60-cell panels, aluminumsolarframe.com)",
+    "Standard aluminum frame profile depth 30-40 mm, 35 mm most common for residential (heavengreenenergy.com, Orin PV Jan 2026)",
+    "Increased frame height 35 mm for largest modules increases stiffness (Pander 2025)",
+    "Glass groove width 6.1-6.2 mm for typical 2 mm glass-glass module (Orin PV)"
+   ],
+   "created_at": "2026-11-08T18:34:27.951432+00:00",
+   "last_used": "2026-11-08T18:34:27.951432+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2122
+   ]
+  },
+  {
+   "id": "ws_0003",
+   "query": "ETFE film frontsheet encapsulation perovskite silicon tandem solar module fluoropolymer",
+   "keywords": [
+    "ETFE",
+    "film",
+    "frontsheet",
+    "perovskite",
+    "tandem",
+    "encapsulation",
+    "fluoropolymer"
+   ],
+   "created_at": "2026-11-08T18:49:23.477831+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2124
+   ],
+   "results_count": 5,
+   "key_facts": [
+    "AGC Fluon ETFE film: excellent light transmittance — protective film for solar cells (agc-chem, Fluon ETFE Film V0.1)",
+    "Thermally stable perovskite solar cells with fluoropolymer covering (ResearchGate 2024)",
+    "Laminated monolithic perovskite/silicon tandem — lamination approach (2022)",
+    "ETFE film frontsheet/encapsulation аннотирован в материалы/etfe.md::варианты_по_применению.film для perovskite_tandem"
+   ],
+   "last_used": "2026-11-08T18:49:23.477831+00:00"
+  },
+  {
+   "id": "ws_0004",
+   "query": "Maxwell BCAP3000 P270 ultracapacitor cell dimensions diameter 60.4 mm length 138 mm datasheet",
+   "keywords": [
+    "Maxwell",
+    "BCAP3000",
+    "P270",
+    "K2",
+    "ultracapacitor",
+    "dimensions",
+    "60.4",
+    "138",
+    "M12"
+   ],
+   "results_count": 10,
+   "key_facts": [
+    "BCAP3000 P270 K04/K05: Ø60.4 mm × 138 mm (2.390\" Dia × 5.433\" L) — datasheet Maxwell 3003279-EN.3 + Mouser/DigiKey/eBay listings сходятся",
+    "Масса ячейки 1.124 lbs = 0.51 кг (eBay листинг BCAP3000 P270 K04)",
+    "Резьбовые терминалы M12×1.75 threaded stud terminations (K2 Series; и laser-weldable posts вариант)",
+    "ESR_DC = 290 µΩ = 0.29 мОм (согласуется с родительским файлом)",
+    "K2 Series: тянутый алюминиевый cylindrical can, wound electrodes (активированный уголь), threaded terminals or weldable posts",
+    "Форм-фактор 'industry-standard 60mm cylindrical form factor' (Maxwell High Power and Energy Cell datasheet)"
+   ],
+   "created_at": "2026-11-08T19:24:37.290053+00:00",
+   "last_used": "2026-11-08T19:24:37.290053+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2125
+   ]
+  },
+  {
+   "query": "Tribaloy T-800 Co-Mo-Cr Laves phase alloy processing castability powder metallurgy wear resistance",
+   "keywords": [
+    "tribaloy",
+    "t-800",
+    "laves",
+    "powder",
+    "sintering"
+   ],
+   "results": [
     {
-      "id": "ws_0001",
-      "query": "Oxford PV perovskite silicon tandem solar module thickness frame dimensions datasheet",
-      "keywords": [
-        "Oxford",
-        "perovskite",
-        "tandem",
-        "solar",
-        "module",
-        "thickness",
-        "frame"
-      ],
-      "results_count": 10,
-      "key_facts": [
-        "Oxford PV 72-cell tandem modules 24.5% efficiency (Sep 2024, oxfordpv.com)",
-        "Oxford PV pilot line mini-modules 22cm x 22cm for M2 15.6cm cells (CHEOPS EC 2019)"
-      ],
-      "created_at": "2026-11-08T18:34:27.951432+00:00",
-      "last_used": "2026-11-08T18:34:27.951432+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2122
-      ]
+     "url": "https://www.stellite.com/us/en/alloys/tribaloy/tribaloy-t800-alloy.html",
+     "name": "Tribaloy T-800 Alloy - Technical Data",
+     "snippet": "T-800 was designed to resist high-temperature wear and abrasion and has exceptional oxidation and corrosion resistance due to its high chromium content. T-800 ... Read more"
     },
     {
-      "id": "ws_0002",
-      "query": "solar PV module aluminum frame profile height mm glass thickness laminate 35mm typical",
-      "keywords": [
-        "solar",
-        "PV",
-        "module",
-        "aluminum",
-        "frame",
-        "profile",
-        "thickness",
-        "35mm"
-      ],
-      "results_count": 10,
-      "key_facts": [
-        "Solar laminate main thickness = solar glass 3.2 mm (90% of 60-cell panels, aluminumsolarframe.com)",
-        "Standard aluminum frame profile depth 30-40 mm, 35 mm most common for residential (heavengreenenergy.com, Orin PV Jan 2026)",
-        "Increased frame height 35 mm for largest modules increases stiffness (Pander 2025)",
-        "Glass groove width 6.1-6.2 mm for typical 2 mm glass-glass module (Orin PV)"
-      ],
-      "created_at": "2026-11-08T18:34:27.951432+00:00",
-      "last_used": "2026-11-08T18:34:27.951432+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2122
-      ]
+     "url": "https://www.powderclad.com/products/specialty-powders/t400-t800-tribaloy-powders",
+     "name": "T-400 & T-800 Tribaloy® Powders",
+     "snippet": "Tribaloy® T-400 and T-800 powders are wear resistant metal powders composed of Co-Mo-Cr-Si. Designed for corrosion resistance and high-temperature ..."
     },
     {
-      "id": "ws_0003",
-      "query": "ETFE film frontsheet encapsulation perovskite silicon tandem solar module fluoropolymer",
-      "keywords": [
-        "ETFE",
-        "film",
-        "frontsheet",
-        "perovskite",
-        "tandem",
-        "encapsulation",
-        "fluoropolymer"
-      ],
-      "created_at": "2026-11-08T18:49:23.477831+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2124
-      ],
-      "results_count": 5,
-      "key_facts": [
-        "AGC Fluon ETFE film: excellent light transmittance — protective film for solar cells (agc-chem, Fluon ETFE Film V0.1)",
-        "Thermally stable perovskite solar cells with fluoropolymer covering (ResearchGate 2024)",
-        "Laminated monolithic perovskite/silicon tandem — lamination approach (2022)",
-        "ETFE film frontsheet/encapsulation аннотирован в материалы/etfe.md::варианты_по_применению.film для perovskite_tandem"
-      ],
-      "last_used": "2026-11-08T18:49:23.477831+00:00"
+     "url": "https://www.google.com/goto?url=CAEShAEBxCJF12qhQYuSCjgrkLsYCXcmIoS4iLZIXxYGazfw9V2a47283PdArIHCFeTNrygMH5PoJAAxzZoc8J6k6CXc41UhntflyyDDG5lXEmafG-5Zvs0rrEZOrNnKECj1URpv-QaGVf7Bxby4cdfxeaqzlZCaiA6CRJQljijNCuzah-36UpU",
+     "name": "Microstructure and mechanical properties of Tribaloy T-800",
+     "snippet": "by X Xu · 2025 · Cited by 6 — T-800 alloy exhibits superior wear resistance due to the high proportion of high hardness Laves phase in the alloy. Currently, we have applied the T-800 ... Read more"
     },
     {
-      "id": "ws_0004",
-      "query": "Maxwell BCAP3000 P270 ultracapacitor cell dimensions diameter 60.4 mm length 138 mm datasheet",
-      "keywords": [
-        "Maxwell",
-        "BCAP3000",
-        "P270",
-        "K2",
-        "ultracapacitor",
-        "dimensions",
-        "60.4",
-        "138",
-        "M12"
-      ],
-      "results_count": 10,
-      "key_facts": [
-        "BCAP3000 P270 K04/K05: Ø60.4 mm × 138 mm (2.390\" Dia × 5.433\" L) — datasheet Maxwell 3003279-EN.3 + Mouser/DigiKey/eBay listings сходятся",
-        "Масса ячейки 1.124 lbs = 0.51 кг (eBay листинг BCAP3000 P270 K04)",
-        "Резьбовые терминалы M12×1.75 threaded stud terminations (K2 Series; и laser-weldable posts вариант)",
-        "ESR_DC = 290 µΩ = 0.29 мОм (согласуется с родительским файлом)",
-        "K2 Series: тянутый алюминиевый cylindrical can, wound electrodes (активированный уголь), threaded terminals or weldable posts",
-        "Форм-фактор 'industry-standard 60mm cylindrical form factor' (Maxwell High Power and Energy Cell datasheet)"
-      ],
-      "created_at": "2026-11-08T19:24:37.290053+00:00",
-      "last_used": "2026-11-08T19:24:37.290053+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2125
-      ]
+     "url": "https://www.google.com/goto?url=CAEStAEBxCJF1-D82br7ImfW29oxa71u5FGayScBZhyFc8EA52lMNXMvGPDD5aa7hZRGCU5Av3khoqb0aIvNFpz5rvN0ujpuMzLQtAVGtiwloWFnClis5hn_ubpmYGWaGVaeWXbKPwgghMioBU2UZaoieJtDyXcSIg8lnCAw5x2cjPJGPDNHQPxlQevzLi5gnXSNVX_9OnRi3SrkX9BJb8zZFGkvm486rIlc2YkvI80MwoLDq8rDym8",
+     "name": "Tribaloy Alloys: Wear and Corrosion Resistance | PDF",
+     "snippet": "The Laves phase gives Tribaloy a hardness comparable to tool steel and tungsten carbide composites. Tribaloy resists both mechanical wear and corrosion over a ... Read more"
     },
     {
-      "query": "Tribaloy T-800 Co-Mo-Cr Laves phase alloy processing castability powder metallurgy wear resistance",
-      "keywords": [
-        "tribaloy",
-        "t-800",
-        "laves",
-        "powder",
-        "sintering"
-      ],
-      "results": [
-        {
-          "url": "https://www.stellite.com/us/en/alloys/tribaloy/tribaloy-t800-alloy.html",
-          "name": "Tribaloy T-800 Alloy - Technical Data",
-          "snippet": "T-800 was designed to resist high-temperature wear and abrasion and has exceptional oxidation and corrosion resistance due to its high chromium content. T-800 ... Read more"
-        },
-        {
-          "url": "https://www.powderclad.com/products/specialty-powders/t400-t800-tribaloy-powders",
-          "name": "T-400 & T-800 Tribaloy® Powders",
-          "snippet": "Tribaloy® T-400 and T-800 powders are wear resistant metal powders composed of Co-Mo-Cr-Si. Designed for corrosion resistance and high-temperature ..."
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAEShAEBxCJF12qhQYuSCjgrkLsYCXcmIoS4iLZIXxYGazfw9V2a47283PdArIHCFeTNrygMH5PoJAAxzZoc8J6k6CXc41UhntflyyDDG5lXEmafG-5Zvs0rrEZOrNnKECj1URpv-QaGVf7Bxby4cdfxeaqzlZCaiA6CRJQljijNCuzah-36UpU",
-          "name": "Microstructure and mechanical properties of Tribaloy T-800",
-          "snippet": "by X Xu · 2025 · Cited by 6 — T-800 alloy exhibits superior wear resistance due to the high proportion of high hardness Laves phase in the alloy. Currently, we have applied the T-800 ... Read more"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAEStAEBxCJF1-D82br7ImfW29oxa71u5FGayScBZhyFc8EA52lMNXMvGPDD5aa7hZRGCU5Av3khoqb0aIvNFpz5rvN0ujpuMzLQtAVGtiwloWFnClis5hn_ubpmYGWaGVaeWXbKPwgghMioBU2UZaoieJtDyXcSIg8lnCAw5x2cjPJGPDNHQPxlQevzLi5gnXSNVX_9OnRi3SrkX9BJb8zZFGkvm486rIlc2YkvI80MwoLDq8rDym8",
-          "name": "Tribaloy Alloys: Wear and Corrosion Resistance | PDF",
-          "snippet": "The Laves phase gives Tribaloy a hardness comparable to tool steel and tungsten carbide composites. Tribaloy resists both mechanical wear and corrosion over a ... Read more"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESbAHEIkXXvUmrp5JoK_npa583XXaG4ryop1tqzMKOvhiazMxG99VKfiBLhjrt06VUC4uTtTJxa_FGK1pP1yWOcGjVTFFesGzFkvtPrIE7-vYmXq0o_UpGU03xcuhbwbZmLwYP7TBZY37Idq2AFg",
-          "name": "Tribaloy T-800 Coating",
-          "snippet": "Laves-phase cobalt-molybdenum alloy ・ duty adds sustained 700°C+ heat ・ validated oxidation stability through 1,000°C. T-800 is the most crack-sensitive  ..."
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESvwEBxCJF1_Vdn80uWPFOUspsAY4u8Yd9KNoPb-_ddICffjqmcaQLnYhOie0vSWvHkc5MNJ9oVERNaVmD4n0lTJ7QSBNJ3-HHLDwTD3rkT-BEFITvLEqVE7F6x2YpbFwsJljFLFWICtBqa3Zm7_xXD_T4RxiC81tbuoCLNjbkfCya7JpCJ5AUTjXyi98BLdsFJEGZHo1Q_dmCtjlZn_0XqR7jo0ogKz2VXSfXVd9_N-ch5umswVGwVr116212P5UrLQ",
-          "name": "Microstructure and sliding wear behaviour of Tribaloy T-",
-          "snippet": "The Laves phase contributes to the high hardness and wear resistance of the T - 800 coatings, but does not significantly influence wear behavior under the tested ..."
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESlAEBxCJF10DLnpdQMUsZIjKdfgQjYCvuLAjr87-hcILBjxWuPUwwqsGb_ZRvsOuWkqGxUQoalc0i9qF1-WnA6hKgA0nPW_JVqX6T7OPgxHlM7t0NghVFu3JrMM06AkUpahlwx2hPl_kzRGz2N7m00PUo6r9rGUbG2vheULT1t09vsQN2GTHLxJoGe7vPugee7oLo1N5M",
-          "name": "Chemical composition of T-800 powder.",
-          "snippet": "A Tribaloy family of alloys (CoMoCrSi) are characterized by a substantial resistance to wear and corrosion within a wide range of temperatures. Read more"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESqAEBxCJF1z_r3kSFODd_c72k2NpnH-e940q_trz6xyw5G3MjbGtGoJ-gC5XDSzFvA6mPs-FtWeZWhg6ygV1w4cN4nH2KA4fUn6jVMHjGxSiZtQ4_8PpIMiwaanKW410jrv4lAmPgLY2-W29TjPt7lPF0ietjyt_Y3V4oimoNloEEMxyED6dtSf5xUXOma18nqFgo3x-T_KJnZDJpq93PjsdwnTpIVDPU1wA",
-          "name": "Materials with Tribaloy Alloy Additives",
-          "snippet": "by A Tavakoli · 2007 · Cited by 6 — Tribaloy alloy additives enhance the hardness of the pure bronzes and copper-15% bismuth, as demonstrated in Table"
-        }
-      ],
-      "created_at": "2026-11-08T19:41:56.222317+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2884
-      ]
+     "url": "https://www.google.com/goto?url=CAESbAHEIkXXvUmrp5JoK_npa583XXaG4ryop1tqzMKOvhiazMxG99VKfiBLhjrt06VUC4uTtTJxa_FGK1pP1yWOcGjVTFFesGzFkvtPrIE7-vYmXq0o_UpGU03xcuhbwbZmLwYP7TBZY37Idq2AFg",
+     "name": "Tribaloy T-800 Coating",
+     "snippet": "Laves-phase cobalt-molybdenum alloy ・ duty adds sustained 700°C+ heat ・ validated oxidation stability through 1,000°C. T-800 is the most crack-sensitive  ..."
     },
     {
-      "query": "Terminator T-800 endoskeleton hyperalloy metallurgy cast titanium alloy weight",
-      "keywords": [
-        "t-800",
-        "endoskeleton",
-        "hyperalloy",
-        "cast"
-      ],
-      "results": [
-        {
-          "url": "https://www.reddit.com/r/Terminator/comments/qy8g2y/what_metal_was_the_t800_endoskeleton_made_out_off",
-          "name": "What metal was the t-800 endoskeleton made out off?",
-          "snippet": "Just currious"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAEShAEBxCJF1zfNTxlIIG3TdvqYRJvqifeWOl9N9c0q-pm01hDXDLUMZl4mnxPajoC_Kg-g_mYqnHr-a90f8UYsO_Og_LeWhBxODTOSO1NcTeuWoe5A16xV0Fu7JsKHtZeJ1RhBmJ094eAb0RdYzVoGhUX7Lhrw62wjt-cyLx064MzZtSDtkbw",
-          "name": "What is the weight of a Terminator?",
-          "snippet": "The estimated weight of a Terminator endoskeleton is around 575 pounds , with some sources suggesting a range of 800 to 1,000 pounds"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESmAEBxCJF16ma85gOIMA4ZuC0O6XJgCWoD-pp80Lpc6R-0CQGGPfbmkRxYPQHelTuB_IzvfcZQ8pObQM6lLxkhCBKHx5bqtMgkBYCKCODkD4LW9rpw7VHDaWlPKdJWsz3hdNMrOHwFgHQKw9PkwVRWliqllO4V1emoImKULNFDFChVG3i_Pt37c59M0mHZLUuAgTci7QE0R4nIg",
-          "name": "What is the Terminator T-800 model made of?",
-          "snippet": "Jun 23, 2016 — What kind of metal is the Terminator T-800 model made of? Is it titanium or some other metal?"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESZQHEIkXXmk5esAQJDBBD9tRTmpH-i978eO8UBf3ZFdoR-igWT49-70wWRREjP8NPChprCHCVJx-56Y-WNWC1PQtlFBXHher6j5_hUzNlTPWXLZc5Y0SU68n4XkhQ1xSbqm_pj_ZN",
-          "name": "T-800 (Original timeline) | Terminator Wiki | Fandom",
-          "snippet": "The silvery metal endoskeleton of the T - 800 is a microprocessor controlled triple-armored hyper-alloy combat chassis and is constructed with frictionless ... Read more"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESbQHEIkXX2ji1UKDPHPrvFG_rpJcEREvIiw84lpKCok2878dDHO1eUyChnjATssf5FsLb-yPNoD1ANDciyHdUvIXRMB2QWYT5Ri6fOGo7javOmQF-YEryYJCqK5y9mn9oCFtZbm0G0yddBF3y0lI",
-          "name": "Terminator T-800 model kit",
-          "snippet": "Scale: 1:2 (half-size!) ; Height: 3' 1” (95cm) ; Weight: 13 lbs approx. (6 kg approx .) ; Display Base: 16 x 16 inches (20mm x 420mm) ; Material: High quality zinc ... Read more"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESaAHEIkXXoiF7KPO0wgyt_SJChku2pjxBXXBxb4pBZ_PrRp6lMhCflLmabTY0qG_ZbqFxrfbUyZRAKhO6GdV5UahPdFwNxjVP1rK_7229k2wafEjljQG55RzgCPYz6diHTo6PrDqX2Y6S",
-          "name": "Man Spent 4 Years Hand Making Full Scale Terminator T-800",
-          "snippet": "Jamie Staff from Jaz Creations in Australia, spent 4 years making his own Full Scale Hand Made Metal Terminator T - 800 Endoskeleton ."
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESbAHEIkXXO82Wq43wV6MONh56_DVZn7J0puIZMnGSbyfT-oBx9TKyR-KTJDyf_o7goO2I1JIgBDzC_TYDvTUGwRCNfux7i8BXpVxnGYCtl4FfQGTBRu3-WZjfm6P2YTW3CoAFy5R9wr19JTF4xQ",
-          "name": "Terminator: Here's How Much Each Model Weighs",
-          "snippet": "Feb 7, 2021 — the T-800 series Terminator weighs around 400 pounds , unit is 640 pounds, the model is made out of a hyperalloy endoskeleton,"
-        },
-        {
-          "url": "https://www.statueforum.com/showthread.php?p=6250577",
-          "name": "Prime 1: Terminator 2 - T-800 Endoskeleton 1/3 Statue",
-          "snippet": "Sep 23, 2025 — Single rifle it weighs 2.5kgs, double rifle 2.9kgs. it could weigh about maybe 4kgs, 4.5kgs? it felt somewhere between 10kgs-13kgs."
-        }
-      ],
-      "created_at": "2026-11-08T19:41:56.222317+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2884
-      ]
+     "url": "https://www.google.com/goto?url=CAESvwEBxCJF1_Vdn80uWPFOUspsAY4u8Yd9KNoPb-_ddICffjqmcaQLnYhOie0vSWvHkc5MNJ9oVERNaVmD4n0lTJ7QSBNJ3-HHLDwTD3rkT-BEFITvLEqVE7F6x2YpbFwsJljFLFWICtBqa3Zm7_xXD_T4RxiC81tbuoCLNjbkfCya7JpCJ5AUTjXyi98BLdsFJEGZHo1Q_dmCtjlZn_0XqR7jo0ogKz2VXSfXVd9_N-ch5umswVGwVr116212P5UrLQ",
+     "name": "Microstructure and sliding wear behaviour of Tribaloy T-",
+     "snippet": "The Laves phase contributes to the high hardness and wear resistance of the T - 800 coatings, but does not significantly influence wear behavior under the tested ..."
     },
     {
-      "query": "InGaAsSb SWIR photodiode 0.53 eV cutoff wavelength 2.3 um detector MOCVD extended infrared",
-      "keywords": [
-        "ingaassb",
-        "swir",
-        "photodiode",
-        "0.53 eV",
-        "cutoff",
-        "mocvd",
-        "night vision",
-        "оптический_сенсор"
-      ],
-      "results": [
-        {
-          "url": "https://www.mdpi.com/2072-666X/15/8/941",
-          "name": "Room-Temperature (RT) Extended Short-Wave Infrared (e",
-          "snippet": "by M Benker · 2024 · Cited by 3 — In this paper, we report on extended short-wave infrared (e- SWIR ) avalanche photodiodes (APDs) capable of operating at room temperature (RT). wavelength range ...",
-          "host_name": "www.mdpi.com",
-          "rank": 0,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.researchgate.net/publication/349171960_High_responsivity_InGaAsSb_p-n_photodetector_for_extended_SWIR_detection",
-          "name": "High responsivity InGaAsSb p–n photodetector for",
-          "snippet": "This work discusses development of high performance e- SWIR detectors with cutoff wavelengths in the 2.7 - 2.8 micron range. Two approaches for e- SWIR ... Read more",
-          "host_name": "www.researchgate.net",
-          "rank": 1,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESZgHEIkXXB3fV09rmEsNm7zWKqXxU9Vq3Ia9Vv8t-BRAMmBgPVugyPH-3vy79Qr9Aa_CtSlwaVtrh3_hlT9lCZ2pgsahiT5sA_UiXqeUBfnOQBXyprf0Lm1049VH3mYQuWNF7hMk2HA",
-          "name": "Optimization of InGaAs/GaAsSb on InP Type-II Superlattice",
-          "snippet": "by J Roubichou · 2025 · Cited by 4 — InGaAs photodiodes lattice-matched to InP substrates, limited by a cutoff wavelength of 1.7 μm. a cutoff wavelength of 2.3 μm",
-          "host_name": "www.google.com",
-          "rank": 2,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAEStQEBxCJF14lNWeryRMTAFBDBZrg5rxHA0QWXDlzf3XkP5ZN8u66n2c5CaNkw68eYXvJJ5nrs_JIFxV9yanWzPbTzs8PzMSf1fpin9xjkyy5D8-bU-0xBjHem6RDv6VFuonS0ni0vkupFQaKUxPL0Xv76vbYv9Yz3IMJYmiduJlRbKijq2Ust6247qIyvtLchaeL0eQ19IEml_9FgR1vms5s6lMd5q-KASOL_RQNt2a3osrmiatX6",
-          "name": "InGaAs/GaAsSb Type-II superlattice based photodiodes for",
-          "snippet": "The Extended InGaAs detectors can reach longer cutoffs up to a wavelength of 2.6 μm by increasing the Indium concentration within the layer, with a tradeoff",
-          "host_name": "www.google.com",
-          "rank": 3,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESgAEBxCJF1wbVn_2SiIYz2vz5LPh-wyeTnXZ9BtOlG4R2NZZvpP5ibE9d-8HSYYYUZdoXmopWhVSEqtRfttN1vUXKZZA7xrSoPU2gabGb20ozOQndsXFTRdss4Vwgmi3JpX-SwNhhZCzf6bZyqht28JtFAeHaeHuTuPbics3TI0CNAA",
-          "name": "Wavelength extended InGaAsBi near infrared photodetector",
-          "snippet": "by 冯铎 · 2023 · Cited by 1 — InGaAs photodetector is widely used in SWIR detection. Bi incorporation into InGaAs can reduce the bandgap， extending the detection wavelength .",
-          "host_name": "www.google.com",
-          "rank": 4,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://publica.fraunhofer.de/entities/publication/2e3112b9-11b1-4d16-9262-aaba7f8c1e38",
-          "name": "Investigation of InGaAsSb-based heterojunction photodiodes",
-          "snippet": "In this paper, uncooled InGaAsSb -based detectors for the wavelength range beyond 1.7 μm, the extended SWIR (eSWIR), are investigated for the later use in a ... Read more",
-          "host_name": "publica.fraunhofer.de",
-          "rank": 5,
-          "date": "",
-          "favicon": ""
-        }
-      ],
-      "created_at": "2026-11-08T20:01:06.387186+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2784
-      ]
+     "url": "https://www.google.com/goto?url=CAESlAEBxCJF10DLnpdQMUsZIjKdfgQjYCvuLAjr87-hcILBjxWuPUwwqsGb_ZRvsOuWkqGxUQoalc0i9qF1-WnA6hKgA0nPW_JVqX6T7OPgxHlM7t0NghVFu3JrMM06AkUpahlwx2hPl_kzRGz2N7m00PUo6r9rGUbG2vheULT1t09vsQN2GTHLxJoGe7vPugee7oLo1N5M",
+     "name": "Chemical composition of T-800 powder.",
+     "snippet": "A Tribaloy family of alloys (CoMoCrSi) are characterized by a substantial resistance to wear and corrosion within a wide range of temperatures. Read more"
     },
     {
-      "query": "Maxwell BCAP3000 K2 ultracapacitor construction etched aluminum foil current collector TEABF4 acetonitrile electrolyte cellulose separator",
-      "keywords": [
-        "Maxwell",
-        "BCAP3000",
-        "K2",
-        "ultracapacitor",
-        "aluminum foil",
-        "current collector",
-        "TEABF4",
-        "acetonitrile",
-        "cellulose",
-        "separator",
-        "EDLC"
-      ],
-      "results": [
-        {
-          "url": "https://maxwell.com/wp-content/uploads/2024/07/3003279-EN.3_DS_2.7V-3000F-Cell-BCAP3000-P270_20240704.pdf",
-          "name": "2.7v 3000f ultracapacitor cell bcap3000 p270 k04/k05",
-          "snippet": "The newly updated Maxwell Technologies' 2.7V 3000F ultracapacitor cell is designed to support the latest trends in renewable energy, industrial electrification, ... Read more 5 pages",
-          "host_name": "maxwell.com",
-          "rank": 0,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.aepint.nl/wp-content/uploads/2018/11/BCAP3000-P270-K04-K05.pdf",
-          "name": "BCAP3000-P270-K04-K05.pdf",
-          "snippet": "K2 ULTRACAPACITORS - 2.7V SERIES. Only BCAP3000 currently has DuraBlueTM technology. Maxwell ultracapacitors have less than 10 Wh capacity to meet the ... 4 pages",
-          "host_name": "www.aepint.nl",
-          "rank": 1,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAES3wEBxCJF13o9Gw9UuB7wDZ2YqGM1K4lGfH01Ta7WEHz9M7ygFq09DCqnnwSTOtUZMnSmn2nTL2ykK6qfivyOiA-vy_Wa8YjMOkBAjucYLhi9h6UG5OM4Qp0oOD2r6UwPHWpcJcBbivRrVwpFcwLFzl_WuhZDQ2GZvp7tW3RuIPnUZQbjG6i7Le8ilqgs1q8ajwtS2BRYNBbkKcpcQXzoT198XSk84rlb39IByLY6ZRyeK4d8vLMxiBfOUcTNvTiAzeJ_-8cP6f8Haq_OsM8T1IfFMaQHrLJocEQbHAyCUyQB",
-          "name": "MAXWELL Ultracapacitors - AFS ENEA",
-          "snippet": "The aluminum foil is used to get charge into and out of the carbon charge storage. ▫ The carbon is highly porous giving a massive. Read more",
-          "host_name": "www.google.com",
-          "rank": 2,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESjQEBxCJF14GUDcYJaXrCj3Mli578Ewh1DEDW01gPh8xqGKlYXHy1KczgyFx3Yi4Qnc1dDHnHAojUpVZf9e6rJSSag3TgrCTIFMSBI60MgGKAb68NRUIYnciUMB2UbmSq4wLFfReOTJnMIOtg-Mk21mbJHcNDGvGjWUMJOqL8_XGlOzXYeeRHRrAfKtpa1Jc",
-          "name": "25+ Maxwell Supercapacitors/Ultracapacitors for sale",
-          "snippet": "Maxwell Ultracapacitor / Supercapacitor Module - 16V500F – Audio, Solar, UPS · US $198.98. (3). $19.77 shipping239 sold ; Maxwell Ultracapacitor Module - 16V500F ... Read more",
-          "host_name": "www.google.com",
-          "rank": 3,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11926240",
-          "name": "Separator with high ionic conductivity enables electrochemical",
-          "snippet": "by Y Hu · 2025 · Cited by 16 — This work opens up a perspective of separator engineering for the development of high-performance line-filtering electrochemical capacitors and ... Read more",
-          "host_name": "pmc.ncbi.nlm.nih.gov",
-          "rank": 4,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESsgEBxCJF11TdVCKCOtPWpwILgmiPAgwDRxrU-lilI0Pq2YH74X2cKwRddleCWvI5JJEGeZ-AGKaeVFjPjseffffE2qDc0u4rYVEVVoKPkYIEhNQZavbtUkvU8dnXvU_pUd23M13MEoTFWq-1Gfd4obDPC_lLaYcXwx_kaLyoRn4yxz2rbSK8--VRsbSfIPav0QVu3mYonnU0U-fGcaV0M3IjxxYfZa4oal5kh4PrMHhktsi5",
-          "name": "Maxwell Technologies adds new ultracapacitor cell to",
-          "snippet": "Feb 16, 2016 — The 3-volt (3V), 3,000-farad ultracapacitor cell is now available in sample quantities. The new 3V has a 31% higher power than Maxwell's 2.7- ...",
-          "host_name": "www.google.com",
-          "rank": 5,
-          "date": "Feb 16, 2016",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESvgEBxCJF1455lVBwmL2e76d_q7dw9ks8pQw7sS87pFw2zFiTIU2zdVvIfaKmoEmdq1dObtfllzpSGelbsswDMjMdgX4SaSrF7DHbhe87QiIGiOmOIDEDFkkEArbriUPLzHxvFxHeH59joCNYdd35EolaOt3cVrDT_zWMGlNyKzP9dGsFI3MdmZJzhPFBvddfISFHRIRcMqzXn_kCMa2wsQUJ8hv4QG7nkB8dEMufwSKUYBos8fDIkRoEyVLMZQqL",
-          "name": "Maxwell Technologies, Switzerland, and had a nominal",
-          "snippet": "Cylindrical supercapacitor cells , utilizing 1 M tetraethylammonium tetrafluoroborate ( TEABF4 ) in acetonitrile as the electrolyte , were immersed in liquid ... Read more",
-          "host_name": "www.google.com",
-          "rank": 6,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESrAEBxCJF10ledO8gVY4WJjsN5EcubwU1xfychy0MYNjOrWbZYE_czBG57huefgW7EjuMLdKXDJr9nlvnMwKlSuxKpbmnmDKjWORMuh_4UKEMttw09GFFislJEQZ0FdZi-8VVdC6dTzjrHqxpLkXlnw9qKfjTXYpEL60z3zlsqKPLhTAt5w7fF5Fe-c2PlUyImMLzQZVR-k5_n6IdBg62KjROLS8QvrTgcB3Z9biG",
-          "name": "2.7V 650-3000F ULTRACAPACITOR CELLS",
-          "snippet": "Only BCAP3000 currently has DuraBlueTM technology. Maxwell ultracapacitors have less than 10 Wh capacity to meet the requirements of Special Provisions 361. 5 pages",
-          "host_name": "www.google.com",
-          "rank": 7,
-          "date": "",
-          "favicon": ""
-        }
-      ],
-      "created_at": "2026-11-08T20:13:30.223128+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2126
-      ]
-    },
-    {
-      "query": "supercapacitor cylindrical cell aluminum can drawn case housing Maxwell K2 BCAP3000 construction materials",
-      "keywords": [
-        "supercapacitor",
-        "cylindrical",
-        "aluminum can",
-        "drawn case",
-        "housing",
-        "Maxwell",
-        "K2",
-        "BCAP3000",
-        "60mm form factor"
-      ],
-      "results": [
-        {
-          "url": "https://maxwell.com/wp-content/uploads/2024/07/3003279-EN.3_DS_2.7V-3000F-Cell-BCAP3000-P270_20240704.pdf",
-          "name": "2.7v 3000f ultracapacitor cell bcap3000 p270 k04/k05",
-          "snippet": "2.7V 3000F ultracapacitor cell is designed to support the latest trends in renewable energy, industrial electrification, and transportation. 5 pages",
-          "host_name": "maxwell.com",
-          "rank": 0,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESjQEBxCJF101DFGjHOdjRfsxVTfUhlaTydolN4GWMy1ADlIr40pyACh7yFkVZXqRWAP5oeii7phZ4bgWS2jXqbx3kbFb_qGkKm1ZeeLbv_Av9b71LbrAkGm3mTSVHfzpQLV6FY3BIPmBj-B54ZoRQBKHz267Ao25393reqT4cY5bz0fSaA_aFoFyBnASBPS4",
-          "name": "25+ Maxwell Supercapacitors/Ultracapacitors for sale",
-          "snippet": "Maxwell Capacitor Construction: Supercapacitor/Ultracapacitor ・ $198.98 (3) $19.77. K2 Series UltraCapacitors ・ 3000Farads with Battery case. US $339.00 or ...",
-          "host_name": "www.google.com",
-          "rank": 1,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.andycooney.com/K04-Supercapacitor-2-7V-3000-Farads-K2-Series-Used-Tested-1313812",
-          "name": "Maxwell BCAP3000 P270 K04 Supercapacitor – 2.7V,",
-          "snippet": "a cylindrical package. It's from the K2 series and features M12 x 1. 75 threaded stud terminations, making it easy to bolt into your system.",
-          "host_name": "www.andycooney.com",
-          "rank": 2,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESsgEBxCJF19vaxrLLKcfYyNmnfCP-CE346KrXR_QWKXguIvhFvNHQMnBfvn97LwNLl9orBBDxP45t2nTp6XJXqD58d3KnjUpbeM1k6SNJr2gAuLui6cEb3VnZsOLcEIKdmMpDirdXWzYme9n6eHvRj2uJvJiU8qD-uCti_9UBLYIvAbCGT_IrpCf4nbZp1ma6u5rQu7EHkrT8cLCLD7F5MFORbj-D1AKkygkoGNIX5WayzveW",
-          "name": "Maxwell Technologies adds new ultracapacitor cell to",
-          "snippet": "Feb 16, 2016 — The new 3V has a 31% higher power than Maxwell's 2.7-volt, 3,000-farad cell in the industry-standard 60-mm cylindrical form factor. Customers ... Read more",
-          "host_name": "www.google.com",
-          "rank": 3,
-          "date": "Feb 16, 2016",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESaAHEIkXXPZHbzcU2EwZisaR3GoZbEmE-5q0LWaVXU5I3IWarwFN0V0_T9RYZ3UXVX2fH2nzP9z6L0pJxzTHphLXLKcItj2UkGnLLayyEtjLPlpXeJ5llJlE9tyrok88GE7p4JEmdTuTN",
-          "name": "Super Capacitor 'Battery' Bank Construction Video",
-          "snippet": "During this construction video I'll show you how to make a SuperCapacitor bank. Wiring diagram & schematic: Parts used: 6x Maxwell Boostcap, M8 ...",
-          "host_name": "www.google.com",
-          "rank": 4,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAEShwEBxCJF1xY78hlgFu6ZW70TpiosJb1uGDafy6Xjw24mM53whnFAIMzm43a2uNS8wZ5ln8cQeb57UIglel7IUTBJbHJFCtoih3AygDvy4qd6_MLD6CDPKClZxTKJvLuEOpJdVxYc2lT84NXghIZiyyTOsxtQLScSTAQiBsKFb2a1Vb6tTrj0huw",
-          "name": "BCAP3000-P270-K04-K05.pdf",
-          "snippet": "K2 ULTRACAPACITORS - 2.7V SERIES. K2 ULTRACAPACITORS. Maxwell ultracapacitors have less than 10 Wh capacity to meet the requirements of Special Provisions 361. ... 4 pages",
-          "host_name": "www.google.com",
-          "rank": 5,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESmwEBxCJF19hURbo8U3eG-7BEiOhB2cFpEJxm-x71-sTaBDEpdHa-sK0Hdd2Vc8B9aIRprMUg38lIlRKbJyQSonQhilW7iwsCp3CxjPRi95w2GaWjbH8QtPOqUyAumnzYK1C8eFmSQotr3W8zjVNCaXVQlwDncIUJeFyIxgkv63Zf-PSh1pfV43ZhRVEt02mfNzciVRpRKLH3NFqu7w",
-          "name": "3.0v 3000f ultracapacitor cell",
-          "snippet": "The BCAP3000 P300 K04/K05 energy storage cell is a high power and energy design in the Maxwell driven industry-standard 60mm cylindrical form factor. 5 pages",
-          "host_name": "www.google.com",
-          "rank": 6,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESfQHEIkXXLvSeWCu-ChmdhDRrciw8jo9HaTmD1zsS_yPU3o-NkwXTSYee0uDRNUrOxOaCW1Fwm28kPk8wIqRUshtK3BWOn5VZgcAi2fdBUAJcuFt6kuZhos6Z6p_TIb_ZvTZ5TBiBpi1Z1R342H3mAMtgZrnIcjU--lBkEVvB",
-          "name": "Cylindrical Cell Casing Material",
-          "snippet": "An all-aluminum tabless cylindrical cans kit for 33135 sodium ion cells. Includes a hollow aluminum can , positive/negative cap plates, and a sealing nail. Read more",
-          "host_name": "www.google.com",
-          "rank": 7,
-          "date": "",
-          "favicon": ""
-        }
-      ],
-      "created_at": "2026-11-08T20:17:54.805636+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2127
-      ]
-    },
-    {
-      "query": "aluminum-air fuel cell module construction Phinergy 50 aluminum plates air manifold housing dimensions stack design",
-      "keywords": [
-        "aluminum-air",
-        "fuel cell",
-        "module",
-        "Phinergy",
-        "50 plates",
-        "air manifold",
-        "housing",
-        "stack",
-        "electrolyte system",
-        "cover plate"
-      ],
-      "results": [
-        {
-          "url": "https://patents.google.com/patent/CN112542637B/en",
-          "name": "CN112542637B - Aluminum air battery module",
-          "snippet": "An aluminum - air battery module mainly comprises an upper cover plate module (1), a battery pack and an electrolyte system, wherein the upper end of an aluminum ... Read more",
-          "host_name": "patents.google.com",
-          "rank": 0,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://chargedevs.com/features/phinergy-ceo-explains-aluminum-air-batteries-for-1000-mile-range-extended-evs",
-          "name": "Phinergy CEO on aluminum-air batteries and 1000-mile",
-          "snippet": "Jul 16, 2014 — Any OEM choosing to work with Phinergy's aluminum - air technology will be able to choose its own battery - size options according to its own needs. Read more",
-          "host_name": "chargedevs.com",
-          "rank": 1,
-          "date": "Jul 16, 2014",
-          "favicon": ""
-        },
-        {
-          "url": "https://sustainableskies.org/phinergy-aluminum-air-batteries-from-india",
-          "name": "Phinergy Aluminum/Air Batteries from India - Sustainable Skies",
-          "snippet": "Jul 10, 2021 — “Each aluminum plate , says Tzidon, has enough energy capacity to power the car for roughly 20 miles (we'd guesstimate it at perhaps 7 kWh), and ... Read more",
-          "host_name": "sustainableskies.org",
-          "rank": 2,
-          "date": "Jul 10, 2021",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESkwEBxCJF14U3rqBiin1B1I1Gklu_l_A5ltqEwV2w_qVe3cBr1vSTGcecXDBMTheSqMVTVXUiuNZ7veiR5QVoakmzIP3BTR3OLX4bw-jbllzkCpMNI8gaDiwd4hmFSHjzTg8Oc3uxvWcgt1HHrxnUlP-dPDXBPhGhJ6CX1gqfJLuyZc8pQihT-rp2tJrs9GdM2W5bL9k&gsessionid=URkr_ivAXbr9V3m5uNGZT_ETxQ23SlGAUlV-FH0poz7wUR1-SmSDzw",
-          "name": "Membrane-Free, High-Power Aluminum-Air Battery",
-          "snippet": "A single-frame architecture with active electrolyte flow and forced oxygen delivery eliminates membranes, gaskets, and complex seals. Spent aluminum plates swap ... Read more",
-          "host_name": "www.google.com",
-          "rank": 3,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESZAHEIkXX47hwnZ6EcS6RdM4A_tHoUVUNAzNZWhZmy1b_3Fsb4COxmcrfop9O5eKFkWxSh_uLCFgVbT94LoRGOWkBz-x7QBnXRbt4Aqg-xhOtU08PqmQyfBvuPixmFinB4obSt2Q&gsessionid=URkr_ivAXbr9V3m5uNGZT_ETxQ23SlGAUlV-FH0poz7wUR1-SmSDzw",
-          "name": "System-Level Modeling and Integration of Al–Air Batteries",
-          "snippet": "by Y Shabeer · 2026 · Cited by 3 — This study develops a dynamic system-level modeling framework for integrating an aluminum – air (Al– air ) battery with a Li-ion traction battery within a MATLAB/ ... Read more",
-          "host_name": "www.google.com",
-          "rank": 4,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.cei.washington.edu/lesson-plans-resources/aluminum-air-battery",
-          "name": "Aluminum Air Battery - Clean Energy Institute",
-          "snippet": "Procedure: · Cut a 6” square of aluminum foil, plate or aluminum can. · Place the aluminum on a soft surface and poke holes all over it to allow air to penetrate. Read more",
-          "host_name": "www.cei.washington.edu",
-          "rank": 5,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESXQHEIkXXsSPf22GpbBy_GFLxhZ3La8dFd4Z1bsptmS7jFcDbIq3wqDthOWYbDycDFFBlJQxw48itTdBo-eWgXIpYLJF4z0cOVW1gORSNxLGcCtmoj1Rhy152cs4vkA&gsessionid=URkr_ivAXbr9V3m5uNGZT_ETxQ23SlGAUlV-FH0poz7wUR1-SmSDzw",
-          "name": "Technology",
-          "snippet": "Our Aluminum - Air technology releases the energy initially injected into aluminum for a variety of applications, using aluminum as a clean and safe energy ... Read more",
-          "host_name": "www.google.com",
-          "rank": 6,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESaAHEIkXXBd7reESLgdK5SgtERnjZ0iLJT_UVRAGGbYTiTUuwK8wFmYbQmwT8FscF7DfZLZSZZ1wN9Hau2SheTAVvypBvrzEUZTDByjn0cwZREOkdnQJAel2dWjnALwImedyKm14vUHr1&gsessionid=URkr_ivAXbr9V3m5uNGZT_ETxQ23SlGAUlV-FH0poz7wUR1-SmSDzw",
-          "name": "Revolutionary Aluminium Air Battery Will Blow Your Mind! Li-",
-          "snippet": "Revolutionary Aluminium Air Battery Will Blow Your Mind ! Li-ion Alternative By IOC and Phinergy. @motoroids 701 likes 42K views 3y ago.",
-          "host_name": "www.google.com",
-          "rank": 7,
-          "date": "",
-          "favicon": ""
-        }
-      ],
-      "created_at": "2026-11-08T20:26:20.478001+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2128
-      ]
-    },
-    {
-      "query": "aluminum air battery KOH electrolyte concentration 4M 6M PTFE bonded carbon air cathode gas diffusion electrode fabrication",
-      "keywords": [
-        "aluminum-air",
-        "KOH",
-        "electrolyte",
-        "4M",
-        "6M",
-        "aqueous",
-        "PTFE",
-        "carbon",
-        "air cathode",
-        "GDE",
-        "gas diffusion electrode"
-      ],
-      "results": [
-        {
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6189860",
-          "name": "An Inexpensive Paper-Based Aluminum-Air Battery - PMC - NIH",
-          "snippet": "by A Avoundjian · 2017 · Cited by 47 — an improved and inexpensive paper-based aluminum-air battery employing KOH as the electrolyte with sufficient energy to power small devices.",
-          "host_name": "pmc.ncbi.nlm.nih.gov",
-          "rank": 0,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.scibridge.org/uploads/2/4/4/6/24462278/scibridge_al_air_manual.pdf",
-          "name": "Aluminum/Air Battery Experiment",
-          "snippet": "In this lab, you will make aluminum (Al)/air batteries. The three major components of Al/air batteries are the anode (Al foil), electrolyte (potassium hydroxide ...",
-          "host_name": "www.scibridge.org",
-          "rank": 1,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.sciencedirect.com/topics/engineering/aluminum-air-battery",
-          "name": "Aluminum-Air Battery - an overview",
-          "snippet": "Aluminum air battery (Al-air battery) is a type of batteries with high purity Al as the negative electrode, oxygen as the positive electrode, potassium ...",
-          "host_name": "www.sciencedirect.com",
-          "rank": 2,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://pubs.acs.org/aapmcd/article/8/19/17133/5440224/High-Performance-Flexible-Aluminum-Air-Batteries",
-          "name": "High-Performance Flexible Aluminum–Air Batteries Enabled",
-          "snippet": "Aluminum–air (Al–air) batteries are promising high-energy electrochemical storage systems, but the use of liquid alkaline electrolytes ...",
-          "host_name": "pubs.acs.org",
-          "rank": 3,
-          "date": "Nov 5, 2026",
-          "favicon": ""
-        },
-        {
-          "url": "https://pubs.rsc.org/ra/article/14/25/17628/865865/Aluminum-air-batteries-current-advances-and",
-          "name": "Aluminum–air batteries: current advances and promises",
-          "snippet": "by B Rani · 2024 · Cited by 118 — A flexible Al–air battery was constructed using an ultrathin electrolyte, with carbon cloth as the air cathode and aluminum foil as the anode.",
-          "host_name": "pubs.rsc.org",
-          "rank": 4,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://huskiecommons.lib.niu.edu/cgi/viewcontent.cgi?article=6110&context=allgraduate-thesesdissertations",
-          "name": "Study of aqueous electrolytes and parameters affecting the",
-          "snippet": "Initially aluminum-air cell was developed as a primary metal-air battery with an aqueous electrolyte like sodium hydroxide, potassium hydroxide or sodium ...",
-          "host_name": "huskiecommons.lib.niu.edu",
-          "rank": 5,
-          "date": "by K Bhonge · 2017",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.youtube.com/watch?v=7THfDLxQcxA&vl=en",
-          "name": "How To Make an Aluminium Air Battery",
-          "snippet": "Join us in this exciting DIY project where we guide you on how to create an Aluminium Air Battery at home. This experiment ensures long-lasting ...",
-          "host_name": "www.youtube.com",
-          "rank": 6,
-          "date": "",
-          "favicon": ""
-        },
-        {
-          "url": "https://www.chegg.com/homework-help/questions-and-answers/aluminum-air-batteries-recent-years-engineers-working-aluminum-air-battery-alternative-ene-q9651455",
-          "name": "Solved Aluminum - Air Batteries In recent years engineers",
-          "snippet": "Aluminum - Air Batteries In recent years engineers have been working on an aluminum-air battery as an alternative energy source for electric vehicles. ...",
-          "host_name": "www.chegg.com",
-          "rank": 7,
-          "date": "Dec 4, 2015",
-          "favicon": ""
-        }
-      ],
-      "created_at": "2026-11-08T20:30:13.457262+00:00",
-      "usage_count": 2,
-      "used_in_issues": [
-        2129,
-        2130
-      ]
+     "url": "https://www.google.com/goto?url=CAESqAEBxCJF1z_r3kSFODd_c72k2NpnH-e940q_trz6xyw5G3MjbGtGoJ-gC5XDSzFvA6mPs-FtWeZWhg6ygV1w4cN4nH2KA4fUn6jVMHjGxSiZtQ4_8PpIMiwaanKW410jrv4lAmPgLY2-W29TjPt7lPF0ietjyt_Y3V4oimoNloEEMxyED6dtSf5xUXOma18nqFgo3x-T_KJnZDJpq93PjsdwnTpIVDPU1wA",
+     "name": "Materials with Tribaloy Alloy Additives",
+     "snippet": "by A Tavakoli · 2007 · Cited by 6 — Tribaloy alloy additives enhance the hardness of the pure bronzes and copper-15% bismuth, as demonstrated in Table"
     }
-  ]
+   ],
+   "created_at": "2026-11-08T19:41:56.222317+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2884
+   ]
+  },
+  {
+   "query": "Terminator T-800 endoskeleton hyperalloy metallurgy cast titanium alloy weight",
+   "keywords": [
+    "t-800",
+    "endoskeleton",
+    "hyperalloy",
+    "cast"
+   ],
+   "results": [
+    {
+     "url": "https://www.reddit.com/r/Terminator/comments/qy8g2y/what_metal_was_the_t800_endoskeleton_made_out_off",
+     "name": "What metal was the t-800 endoskeleton made out off?",
+     "snippet": "Just currious"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAEShAEBxCJF1zfNTxlIIG3TdvqYRJvqifeWOl9N9c0q-pm01hDXDLUMZl4mnxPajoC_Kg-g_mYqnHr-a90f8UYsO_Og_LeWhBxODTOSO1NcTeuWoe5A16xV0Fu7JsKHtZeJ1RhBmJ094eAb0RdYzVoGhUX7Lhrw62wjt-cyLx064MzZtSDtkbw",
+     "name": "What is the weight of a Terminator?",
+     "snippet": "The estimated weight of a Terminator endoskeleton is around 575 pounds , with some sources suggesting a range of 800 to 1,000 pounds"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESmAEBxCJF16ma85gOIMA4ZuC0O6XJgCWoD-pp80Lpc6R-0CQGGPfbmkRxYPQHelTuB_IzvfcZQ8pObQM6lLxkhCBKHx5bqtMgkBYCKCODkD4LW9rpw7VHDaWlPKdJWsz3hdNMrOHwFgHQKw9PkwVRWliqllO4V1emoImKULNFDFChVG3i_Pt37c59M0mHZLUuAgTci7QE0R4nIg",
+     "name": "What is the Terminator T-800 model made of?",
+     "snippet": "Jun 23, 2016 — What kind of metal is the Terminator T-800 model made of? Is it titanium or some other metal?"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESZQHEIkXXmk5esAQJDBBD9tRTmpH-i978eO8UBf3ZFdoR-igWT49-70wWRREjP8NPChprCHCVJx-56Y-WNWC1PQtlFBXHher6j5_hUzNlTPWXLZc5Y0SU68n4XkhQ1xSbqm_pj_ZN",
+     "name": "T-800 (Original timeline) | Terminator Wiki | Fandom",
+     "snippet": "The silvery metal endoskeleton of the T - 800 is a microprocessor controlled triple-armored hyper-alloy combat chassis and is constructed with frictionless ... Read more"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESbQHEIkXX2ji1UKDPHPrvFG_rpJcEREvIiw84lpKCok2878dDHO1eUyChnjATssf5FsLb-yPNoD1ANDciyHdUvIXRMB2QWYT5Ri6fOGo7javOmQF-YEryYJCqK5y9mn9oCFtZbm0G0yddBF3y0lI",
+     "name": "Terminator T-800 model kit",
+     "snippet": "Scale: 1:2 (half-size!) ; Height: 3' 1” (95cm) ; Weight: 13 lbs approx. (6 kg approx .) ; Display Base: 16 x 16 inches (20mm x 420mm) ; Material: High quality zinc ... Read more"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESaAHEIkXXoiF7KPO0wgyt_SJChku2pjxBXXBxb4pBZ_PrRp6lMhCflLmabTY0qG_ZbqFxrfbUyZRAKhO6GdV5UahPdFwNxjVP1rK_7229k2wafEjljQG55RzgCPYz6diHTo6PrDqX2Y6S",
+     "name": "Man Spent 4 Years Hand Making Full Scale Terminator T-800",
+     "snippet": "Jamie Staff from Jaz Creations in Australia, spent 4 years making his own Full Scale Hand Made Metal Terminator T - 800 Endoskeleton ."
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESbAHEIkXXO82Wq43wV6MONh56_DVZn7J0puIZMnGSbyfT-oBx9TKyR-KTJDyf_o7goO2I1JIgBDzC_TYDvTUGwRCNfux7i8BXpVxnGYCtl4FfQGTBRu3-WZjfm6P2YTW3CoAFy5R9wr19JTF4xQ",
+     "name": "Terminator: Here's How Much Each Model Weighs",
+     "snippet": "Feb 7, 2021 — the T-800 series Terminator weighs around 400 pounds , unit is 640 pounds, the model is made out of a hyperalloy endoskeleton,"
+    },
+    {
+     "url": "https://www.statueforum.com/showthread.php?p=6250577",
+     "name": "Prime 1: Terminator 2 - T-800 Endoskeleton 1/3 Statue",
+     "snippet": "Sep 23, 2025 — Single rifle it weighs 2.5kgs, double rifle 2.9kgs. it could weigh about maybe 4kgs, 4.5kgs? it felt somewhere between 10kgs-13kgs."
+    }
+   ],
+   "created_at": "2026-11-08T19:41:56.222317+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2884
+   ]
+  },
+  {
+   "query": "InGaAsSb SWIR photodiode 0.53 eV cutoff wavelength 2.3 um detector MOCVD extended infrared",
+   "keywords": [
+    "ingaassb",
+    "swir",
+    "photodiode",
+    "0.53 eV",
+    "cutoff",
+    "mocvd",
+    "night vision",
+    "оптический_сенсор"
+   ],
+   "results": [
+    {
+     "url": "https://www.mdpi.com/2072-666X/15/8/941",
+     "name": "Room-Temperature (RT) Extended Short-Wave Infrared (e",
+     "snippet": "by M Benker · 2024 · Cited by 3 — In this paper, we report on extended short-wave infrared (e- SWIR ) avalanche photodiodes (APDs) capable of operating at room temperature (RT). wavelength range ...",
+     "host_name": "www.mdpi.com",
+     "rank": 0,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.researchgate.net/publication/349171960_High_responsivity_InGaAsSb_p-n_photodetector_for_extended_SWIR_detection",
+     "name": "High responsivity InGaAsSb p–n photodetector for",
+     "snippet": "This work discusses development of high performance e- SWIR detectors with cutoff wavelengths in the 2.7 - 2.8 micron range. Two approaches for e- SWIR ... Read more",
+     "host_name": "www.researchgate.net",
+     "rank": 1,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESZgHEIkXXB3fV09rmEsNm7zWKqXxU9Vq3Ia9Vv8t-BRAMmBgPVugyPH-3vy79Qr9Aa_CtSlwaVtrh3_hlT9lCZ2pgsahiT5sA_UiXqeUBfnOQBXyprf0Lm1049VH3mYQuWNF7hMk2HA",
+     "name": "Optimization of InGaAs/GaAsSb on InP Type-II Superlattice",
+     "snippet": "by J Roubichou · 2025 · Cited by 4 — InGaAs photodiodes lattice-matched to InP substrates, limited by a cutoff wavelength of 1.7 μm. a cutoff wavelength of 2.3 μm",
+     "host_name": "www.google.com",
+     "rank": 2,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAEStQEBxCJF14lNWeryRMTAFBDBZrg5rxHA0QWXDlzf3XkP5ZN8u66n2c5CaNkw68eYXvJJ5nrs_JIFxV9yanWzPbTzs8PzMSf1fpin9xjkyy5D8-bU-0xBjHem6RDv6VFuonS0ni0vkupFQaKUxPL0Xv76vbYv9Yz3IMJYmiduJlRbKijq2Ust6247qIyvtLchaeL0eQ19IEml_9FgR1vms5s6lMd5q-KASOL_RQNt2a3osrmiatX6",
+     "name": "InGaAs/GaAsSb Type-II superlattice based photodiodes for",
+     "snippet": "The Extended InGaAs detectors can reach longer cutoffs up to a wavelength of 2.6 μm by increasing the Indium concentration within the layer, with a tradeoff",
+     "host_name": "www.google.com",
+     "rank": 3,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESgAEBxCJF1wbVn_2SiIYz2vz5LPh-wyeTnXZ9BtOlG4R2NZZvpP5ibE9d-8HSYYYUZdoXmopWhVSEqtRfttN1vUXKZZA7xrSoPU2gabGb20ozOQndsXFTRdss4Vwgmi3JpX-SwNhhZCzf6bZyqht28JtFAeHaeHuTuPbics3TI0CNAA",
+     "name": "Wavelength extended InGaAsBi near infrared photodetector",
+     "snippet": "by 冯铎 · 2023 · Cited by 1 — InGaAs photodetector is widely used in SWIR detection. Bi incorporation into InGaAs can reduce the bandgap， extending the detection wavelength .",
+     "host_name": "www.google.com",
+     "rank": 4,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://publica.fraunhofer.de/entities/publication/2e3112b9-11b1-4d16-9262-aaba7f8c1e38",
+     "name": "Investigation of InGaAsSb-based heterojunction photodiodes",
+     "snippet": "In this paper, uncooled InGaAsSb -based detectors for the wavelength range beyond 1.7 μm, the extended SWIR (eSWIR), are investigated for the later use in a ... Read more",
+     "host_name": "publica.fraunhofer.de",
+     "rank": 5,
+     "date": "",
+     "favicon": ""
+    }
+   ],
+   "created_at": "2026-11-08T20:01:06.387186+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2784
+   ]
+  },
+  {
+   "query": "Maxwell BCAP3000 K2 ultracapacitor construction etched aluminum foil current collector TEABF4 acetonitrile electrolyte cellulose separator",
+   "keywords": [
+    "Maxwell",
+    "BCAP3000",
+    "K2",
+    "ultracapacitor",
+    "aluminum foil",
+    "current collector",
+    "TEABF4",
+    "acetonitrile",
+    "cellulose",
+    "separator",
+    "EDLC"
+   ],
+   "results": [
+    {
+     "url": "https://maxwell.com/wp-content/uploads/2024/07/3003279-EN.3_DS_2.7V-3000F-Cell-BCAP3000-P270_20240704.pdf",
+     "name": "2.7v 3000f ultracapacitor cell bcap3000 p270 k04/k05",
+     "snippet": "The newly updated Maxwell Technologies' 2.7V 3000F ultracapacitor cell is designed to support the latest trends in renewable energy, industrial electrification, ... Read more 5 pages",
+     "host_name": "maxwell.com",
+     "rank": 0,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.aepint.nl/wp-content/uploads/2018/11/BCAP3000-P270-K04-K05.pdf",
+     "name": "BCAP3000-P270-K04-K05.pdf",
+     "snippet": "K2 ULTRACAPACITORS - 2.7V SERIES. Only BCAP3000 currently has DuraBlueTM technology. Maxwell ultracapacitors have less than 10 Wh capacity to meet the ... 4 pages",
+     "host_name": "www.aepint.nl",
+     "rank": 1,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAES3wEBxCJF13o9Gw9UuB7wDZ2YqGM1K4lGfH01Ta7WEHz9M7ygFq09DCqnnwSTOtUZMnSmn2nTL2ykK6qfivyOiA-vy_Wa8YjMOkBAjucYLhi9h6UG5OM4Qp0oOD2r6UwPHWpcJcBbivRrVwpFcwLFzl_WuhZDQ2GZvp7tW3RuIPnUZQbjG6i7Le8ilqgs1q8ajwtS2BRYNBbkKcpcQXzoT198XSk84rlb39IByLY6ZRyeK4d8vLMxiBfOUcTNvTiAzeJ_-8cP6f8Haq_OsM8T1IfFMaQHrLJocEQbHAyCUyQB",
+     "name": "MAXWELL Ultracapacitors - AFS ENEA",
+     "snippet": "The aluminum foil is used to get charge into and out of the carbon charge storage. ▫ The carbon is highly porous giving a massive. Read more",
+     "host_name": "www.google.com",
+     "rank": 2,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESjQEBxCJF14GUDcYJaXrCj3Mli578Ewh1DEDW01gPh8xqGKlYXHy1KczgyFx3Yi4Qnc1dDHnHAojUpVZf9e6rJSSag3TgrCTIFMSBI60MgGKAb68NRUIYnciUMB2UbmSq4wLFfReOTJnMIOtg-Mk21mbJHcNDGvGjWUMJOqL8_XGlOzXYeeRHRrAfKtpa1Jc",
+     "name": "25+ Maxwell Supercapacitors/Ultracapacitors for sale",
+     "snippet": "Maxwell Ultracapacitor / Supercapacitor Module - 16V500F – Audio, Solar, UPS · US $198.98. (3). $19.77 shipping239 sold ; Maxwell Ultracapacitor Module - 16V500F ... Read more",
+     "host_name": "www.google.com",
+     "rank": 3,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11926240",
+     "name": "Separator with high ionic conductivity enables electrochemical",
+     "snippet": "by Y Hu · 2025 · Cited by 16 — This work opens up a perspective of separator engineering for the development of high-performance line-filtering electrochemical capacitors and ... Read more",
+     "host_name": "pmc.ncbi.nlm.nih.gov",
+     "rank": 4,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESsgEBxCJF11TdVCKCOtPWpwILgmiPAgwDRxrU-lilI0Pq2YH74X2cKwRddleCWvI5JJEGeZ-AGKaeVFjPjseffffE2qDc0u4rYVEVVoKPkYIEhNQZavbtUkvU8dnXvU_pUd23M13MEoTFWq-1Gfd4obDPC_lLaYcXwx_kaLyoRn4yxz2rbSK8--VRsbSfIPav0QVu3mYonnU0U-fGcaV0M3IjxxYfZa4oal5kh4PrMHhktsi5",
+     "name": "Maxwell Technologies adds new ultracapacitor cell to",
+     "snippet": "Feb 16, 2016 — The 3-volt (3V), 3,000-farad ultracapacitor cell is now available in sample quantities. The new 3V has a 31% higher power than Maxwell's 2.7- ...",
+     "host_name": "www.google.com",
+     "rank": 5,
+     "date": "Feb 16, 2016",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESvgEBxCJF1455lVBwmL2e76d_q7dw9ks8pQw7sS87pFw2zFiTIU2zdVvIfaKmoEmdq1dObtfllzpSGelbsswDMjMdgX4SaSrF7DHbhe87QiIGiOmOIDEDFkkEArbriUPLzHxvFxHeH59joCNYdd35EolaOt3cVrDT_zWMGlNyKzP9dGsFI3MdmZJzhPFBvddfISFHRIRcMqzXn_kCMa2wsQUJ8hv4QG7nkB8dEMufwSKUYBos8fDIkRoEyVLMZQqL",
+     "name": "Maxwell Technologies, Switzerland, and had a nominal",
+     "snippet": "Cylindrical supercapacitor cells , utilizing 1 M tetraethylammonium tetrafluoroborate ( TEABF4 ) in acetonitrile as the electrolyte , were immersed in liquid ... Read more",
+     "host_name": "www.google.com",
+     "rank": 6,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESrAEBxCJF10ledO8gVY4WJjsN5EcubwU1xfychy0MYNjOrWbZYE_czBG57huefgW7EjuMLdKXDJr9nlvnMwKlSuxKpbmnmDKjWORMuh_4UKEMttw09GFFislJEQZ0FdZi-8VVdC6dTzjrHqxpLkXlnw9qKfjTXYpEL60z3zlsqKPLhTAt5w7fF5Fe-c2PlUyImMLzQZVR-k5_n6IdBg62KjROLS8QvrTgcB3Z9biG",
+     "name": "2.7V 650-3000F ULTRACAPACITOR CELLS",
+     "snippet": "Only BCAP3000 currently has DuraBlueTM technology. Maxwell ultracapacitors have less than 10 Wh capacity to meet the requirements of Special Provisions 361. 5 pages",
+     "host_name": "www.google.com",
+     "rank": 7,
+     "date": "",
+     "favicon": ""
+    }
+   ],
+   "created_at": "2026-11-08T20:13:30.223128+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2126
+   ]
+  },
+  {
+   "query": "supercapacitor cylindrical cell aluminum can drawn case housing Maxwell K2 BCAP3000 construction materials",
+   "keywords": [
+    "supercapacitor",
+    "cylindrical",
+    "aluminum can",
+    "drawn case",
+    "housing",
+    "Maxwell",
+    "K2",
+    "BCAP3000",
+    "60mm form factor"
+   ],
+   "results": [
+    {
+     "url": "https://maxwell.com/wp-content/uploads/2024/07/3003279-EN.3_DS_2.7V-3000F-Cell-BCAP3000-P270_20240704.pdf",
+     "name": "2.7v 3000f ultracapacitor cell bcap3000 p270 k04/k05",
+     "snippet": "2.7V 3000F ultracapacitor cell is designed to support the latest trends in renewable energy, industrial electrification, and transportation. 5 pages",
+     "host_name": "maxwell.com",
+     "rank": 0,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESjQEBxCJF101DFGjHOdjRfsxVTfUhlaTydolN4GWMy1ADlIr40pyACh7yFkVZXqRWAP5oeii7phZ4bgWS2jXqbx3kbFb_qGkKm1ZeeLbv_Av9b71LbrAkGm3mTSVHfzpQLV6FY3BIPmBj-B54ZoRQBKHz267Ao25393reqT4cY5bz0fSaA_aFoFyBnASBPS4",
+     "name": "25+ Maxwell Supercapacitors/Ultracapacitors for sale",
+     "snippet": "Maxwell Capacitor Construction: Supercapacitor/Ultracapacitor ・ $198.98 (3) $19.77. K2 Series UltraCapacitors ・ 3000Farads with Battery case. US $339.00 or ...",
+     "host_name": "www.google.com",
+     "rank": 1,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.andycooney.com/K04-Supercapacitor-2-7V-3000-Farads-K2-Series-Used-Tested-1313812",
+     "name": "Maxwell BCAP3000 P270 K04 Supercapacitor – 2.7V,",
+     "snippet": "a cylindrical package. It's from the K2 series and features M12 x 1. 75 threaded stud terminations, making it easy to bolt into your system.",
+     "host_name": "www.andycooney.com",
+     "rank": 2,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESsgEBxCJF19vaxrLLKcfYyNmnfCP-CE346KrXR_QWKXguIvhFvNHQMnBfvn97LwNLl9orBBDxP45t2nTp6XJXqD58d3KnjUpbeM1k6SNJr2gAuLui6cEb3VnZsOLcEIKdmMpDirdXWzYme9n6eHvRj2uJvJiU8qD-uCti_9UBLYIvAbCGT_IrpCf4nbZp1ma6u5rQu7EHkrT8cLCLD7F5MFORbj-D1AKkygkoGNIX5WayzveW",
+     "name": "Maxwell Technologies adds new ultracapacitor cell to",
+     "snippet": "Feb 16, 2016 — The new 3V has a 31% higher power than Maxwell's 2.7-volt, 3,000-farad cell in the industry-standard 60-mm cylindrical form factor. Customers ... Read more",
+     "host_name": "www.google.com",
+     "rank": 3,
+     "date": "Feb 16, 2016",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESaAHEIkXXPZHbzcU2EwZisaR3GoZbEmE-5q0LWaVXU5I3IWarwFN0V0_T9RYZ3UXVX2fH2nzP9z6L0pJxzTHphLXLKcItj2UkGnLLayyEtjLPlpXeJ5llJlE9tyrok88GE7p4JEmdTuTN",
+     "name": "Super Capacitor 'Battery' Bank Construction Video",
+     "snippet": "During this construction video I'll show you how to make a SuperCapacitor bank. Wiring diagram & schematic: Parts used: 6x Maxwell Boostcap, M8 ...",
+     "host_name": "www.google.com",
+     "rank": 4,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAEShwEBxCJF1xY78hlgFu6ZW70TpiosJb1uGDafy6Xjw24mM53whnFAIMzm43a2uNS8wZ5ln8cQeb57UIglel7IUTBJbHJFCtoih3AygDvy4qd6_MLD6CDPKClZxTKJvLuEOpJdVxYc2lT84NXghIZiyyTOsxtQLScSTAQiBsKFb2a1Vb6tTrj0huw",
+     "name": "BCAP3000-P270-K04-K05.pdf",
+     "snippet": "K2 ULTRACAPACITORS - 2.7V SERIES. K2 ULTRACAPACITORS. Maxwell ultracapacitors have less than 10 Wh capacity to meet the requirements of Special Provisions 361. ... 4 pages",
+     "host_name": "www.google.com",
+     "rank": 5,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESmwEBxCJF19hURbo8U3eG-7BEiOhB2cFpEJxm-x71-sTaBDEpdHa-sK0Hdd2Vc8B9aIRprMUg38lIlRKbJyQSonQhilW7iwsCp3CxjPRi95w2GaWjbH8QtPOqUyAumnzYK1C8eFmSQotr3W8zjVNCaXVQlwDncIUJeFyIxgkv63Zf-PSh1pfV43ZhRVEt02mfNzciVRpRKLH3NFqu7w",
+     "name": "3.0v 3000f ultracapacitor cell",
+     "snippet": "The BCAP3000 P300 K04/K05 energy storage cell is a high power and energy design in the Maxwell driven industry-standard 60mm cylindrical form factor. 5 pages",
+     "host_name": "www.google.com",
+     "rank": 6,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESfQHEIkXXLvSeWCu-ChmdhDRrciw8jo9HaTmD1zsS_yPU3o-NkwXTSYee0uDRNUrOxOaCW1Fwm28kPk8wIqRUshtK3BWOn5VZgcAi2fdBUAJcuFt6kuZhos6Z6p_TIb_ZvTZ5TBiBpi1Z1R342H3mAMtgZrnIcjU--lBkEVvB",
+     "name": "Cylindrical Cell Casing Material",
+     "snippet": "An all-aluminum tabless cylindrical cans kit for 33135 sodium ion cells. Includes a hollow aluminum can , positive/negative cap plates, and a sealing nail. Read more",
+     "host_name": "www.google.com",
+     "rank": 7,
+     "date": "",
+     "favicon": ""
+    }
+   ],
+   "created_at": "2026-11-08T20:17:54.805636+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2127
+   ]
+  },
+  {
+   "query": "aluminum-air fuel cell module construction Phinergy 50 aluminum plates air manifold housing dimensions stack design",
+   "keywords": [
+    "aluminum-air",
+    "fuel cell",
+    "module",
+    "Phinergy",
+    "50 plates",
+    "air manifold",
+    "housing",
+    "stack",
+    "electrolyte system",
+    "cover plate"
+   ],
+   "results": [
+    {
+     "url": "https://patents.google.com/patent/CN112542637B/en",
+     "name": "CN112542637B - Aluminum air battery module",
+     "snippet": "An aluminum - air battery module mainly comprises an upper cover plate module (1), a battery pack and an electrolyte system, wherein the upper end of an aluminum ... Read more",
+     "host_name": "patents.google.com",
+     "rank": 0,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://chargedevs.com/features/phinergy-ceo-explains-aluminum-air-batteries-for-1000-mile-range-extended-evs",
+     "name": "Phinergy CEO on aluminum-air batteries and 1000-mile",
+     "snippet": "Jul 16, 2014 — Any OEM choosing to work with Phinergy's aluminum - air technology will be able to choose its own battery - size options according to its own needs. Read more",
+     "host_name": "chargedevs.com",
+     "rank": 1,
+     "date": "Jul 16, 2014",
+     "favicon": ""
+    },
+    {
+     "url": "https://sustainableskies.org/phinergy-aluminum-air-batteries-from-india",
+     "name": "Phinergy Aluminum/Air Batteries from India - Sustainable Skies",
+     "snippet": "Jul 10, 2021 — “Each aluminum plate , says Tzidon, has enough energy capacity to power the car for roughly 20 miles (we'd guesstimate it at perhaps 7 kWh), and ... Read more",
+     "host_name": "sustainableskies.org",
+     "rank": 2,
+     "date": "Jul 10, 2021",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESkwEBxCJF14U3rqBiin1B1I1Gklu_l_A5ltqEwV2w_qVe3cBr1vSTGcecXDBMTheSqMVTVXUiuNZ7veiR5QVoakmzIP3BTR3OLX4bw-jbllzkCpMNI8gaDiwd4hmFSHjzTg8Oc3uxvWcgt1HHrxnUlP-dPDXBPhGhJ6CX1gqfJLuyZc8pQihT-rp2tJrs9GdM2W5bL9k&gsessionid=URkr_ivAXbr9V3m5uNGZT_ETxQ23SlGAUlV-FH0poz7wUR1-SmSDzw",
+     "name": "Membrane-Free, High-Power Aluminum-Air Battery",
+     "snippet": "A single-frame architecture with active electrolyte flow and forced oxygen delivery eliminates membranes, gaskets, and complex seals. Spent aluminum plates swap ... Read more",
+     "host_name": "www.google.com",
+     "rank": 3,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESZAHEIkXX47hwnZ6EcS6RdM4A_tHoUVUNAzNZWhZmy1b_3Fsb4COxmcrfop9O5eKFkWxSh_uLCFgVbT94LoRGOWkBz-x7QBnXRbt4Aqg-xhOtU08PqmQyfBvuPixmFinB4obSt2Q&gsessionid=URkr_ivAXbr9V3m5uNGZT_ETxQ23SlGAUlV-FH0poz7wUR1-SmSDzw",
+     "name": "System-Level Modeling and Integration of Al–Air Batteries",
+     "snippet": "by Y Shabeer · 2026 · Cited by 3 — This study develops a dynamic system-level modeling framework for integrating an aluminum – air (Al– air ) battery with a Li-ion traction battery within a MATLAB/ ... Read more",
+     "host_name": "www.google.com",
+     "rank": 4,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.cei.washington.edu/lesson-plans-resources/aluminum-air-battery",
+     "name": "Aluminum Air Battery - Clean Energy Institute",
+     "snippet": "Procedure: · Cut a 6” square of aluminum foil, plate or aluminum can. · Place the aluminum on a soft surface and poke holes all over it to allow air to penetrate. Read more",
+     "host_name": "www.cei.washington.edu",
+     "rank": 5,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESXQHEIkXXsSPf22GpbBy_GFLxhZ3La8dFd4Z1bsptmS7jFcDbIq3wqDthOWYbDycDFFBlJQxw48itTdBo-eWgXIpYLJF4z0cOVW1gORSNxLGcCtmoj1Rhy152cs4vkA&gsessionid=URkr_ivAXbr9V3m5uNGZT_ETxQ23SlGAUlV-FH0poz7wUR1-SmSDzw",
+     "name": "Technology",
+     "snippet": "Our Aluminum - Air technology releases the energy initially injected into aluminum for a variety of applications, using aluminum as a clean and safe energy ... Read more",
+     "host_name": "www.google.com",
+     "rank": 6,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESaAHEIkXXBd7reESLgdK5SgtERnjZ0iLJT_UVRAGGbYTiTUuwK8wFmYbQmwT8FscF7DfZLZSZZ1wN9Hau2SheTAVvypBvrzEUZTDByjn0cwZREOkdnQJAel2dWjnALwImedyKm14vUHr1&gsessionid=URkr_ivAXbr9V3m5uNGZT_ETxQ23SlGAUlV-FH0poz7wUR1-SmSDzw",
+     "name": "Revolutionary Aluminium Air Battery Will Blow Your Mind! Li-",
+     "snippet": "Revolutionary Aluminium Air Battery Will Blow Your Mind ! Li-ion Alternative By IOC and Phinergy. @motoroids 701 likes 42K views 3y ago.",
+     "host_name": "www.google.com",
+     "rank": 7,
+     "date": "",
+     "favicon": ""
+    }
+   ],
+   "created_at": "2026-11-08T20:26:20.478001+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2128
+   ]
+  },
+  {
+   "query": "aluminum air battery KOH electrolyte concentration 4M 6M PTFE bonded carbon air cathode gas diffusion electrode fabrication",
+   "keywords": [
+    "aluminum-air",
+    "KOH",
+    "electrolyte",
+    "4M",
+    "6M",
+    "aqueous",
+    "PTFE",
+    "carbon",
+    "air cathode",
+    "GDE",
+    "gas diffusion electrode"
+   ],
+   "results": [
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6189860",
+     "name": "An Inexpensive Paper-Based Aluminum-Air Battery - PMC - NIH",
+     "snippet": "by A Avoundjian · 2017 · Cited by 47 — an improved and inexpensive paper-based aluminum-air battery employing KOH as the electrolyte with sufficient energy to power small devices.",
+     "host_name": "pmc.ncbi.nlm.nih.gov",
+     "rank": 0,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.scibridge.org/uploads/2/4/4/6/24462278/scibridge_al_air_manual.pdf",
+     "name": "Aluminum/Air Battery Experiment",
+     "snippet": "In this lab, you will make aluminum (Al)/air batteries. The three major components of Al/air batteries are the anode (Al foil), electrolyte (potassium hydroxide ...",
+     "host_name": "www.scibridge.org",
+     "rank": 1,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.sciencedirect.com/topics/engineering/aluminum-air-battery",
+     "name": "Aluminum-Air Battery - an overview",
+     "snippet": "Aluminum air battery (Al-air battery) is a type of batteries with high purity Al as the negative electrode, oxygen as the positive electrode, potassium ...",
+     "host_name": "www.sciencedirect.com",
+     "rank": 2,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://pubs.acs.org/aapmcd/article/8/19/17133/5440224/High-Performance-Flexible-Aluminum-Air-Batteries",
+     "name": "High-Performance Flexible Aluminum–Air Batteries Enabled",
+     "snippet": "Aluminum–air (Al–air) batteries are promising high-energy electrochemical storage systems, but the use of liquid alkaline electrolytes ...",
+     "host_name": "pubs.acs.org",
+     "rank": 3,
+     "date": "Nov 5, 2026",
+     "favicon": ""
+    },
+    {
+     "url": "https://pubs.rsc.org/ra/article/14/25/17628/865865/Aluminum-air-batteries-current-advances-and",
+     "name": "Aluminum–air batteries: current advances and promises",
+     "snippet": "by B Rani · 2024 · Cited by 118 — A flexible Al–air battery was constructed using an ultrathin electrolyte, with carbon cloth as the air cathode and aluminum foil as the anode.",
+     "host_name": "pubs.rsc.org",
+     "rank": 4,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://huskiecommons.lib.niu.edu/cgi/viewcontent.cgi?article=6110&context=allgraduate-thesesdissertations",
+     "name": "Study of aqueous electrolytes and parameters affecting the",
+     "snippet": "Initially aluminum-air cell was developed as a primary metal-air battery with an aqueous electrolyte like sodium hydroxide, potassium hydroxide or sodium ...",
+     "host_name": "huskiecommons.lib.niu.edu",
+     "rank": 5,
+     "date": "by K Bhonge · 2017",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=7THfDLxQcxA&vl=en",
+     "name": "How To Make an Aluminium Air Battery",
+     "snippet": "Join us in this exciting DIY project where we guide you on how to create an Aluminium Air Battery at home. This experiment ensures long-lasting ...",
+     "host_name": "www.youtube.com",
+     "rank": 6,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.chegg.com/homework-help/questions-and-answers/aluminum-air-batteries-recent-years-engineers-working-aluminum-air-battery-alternative-ene-q9651455",
+     "name": "Solved Aluminum - Air Batteries In recent years engineers",
+     "snippet": "Aluminum - Air Batteries In recent years engineers have been working on an aluminum-air battery as an alternative energy source for electric vehicles. ...",
+     "host_name": "www.chegg.com",
+     "rank": 7,
+     "date": "Dec 4, 2015",
+     "favicon": ""
+    }
+   ],
+   "created_at": "2026-11-08T20:30:13.457262+00:00",
+   "usage_count": 2,
+   "used_in_issues": [
+    2129,
+    2130
+   ]
+  },
+  {
+   "query": "Toray T1100G carbon fiber prepreg filament winding autoclave cure temperature 350GPa tensile modulus",
+   "keywords": [
+    "cfrp_t1100g",
+    "filament_winding",
+    "spiralnaya_navivka",
+    "prepreg",
+    "autoclave",
+    "rev9_endoskeleton"
+   ],
+   "results": [
+    {
+     "url": "https://www.toray.com/news/article.html?contentId=xmtmcwxw",
+     "name": "Toray Develops TORAYCA MX Series Carbon Fiber",
+     "snippet": "Toray launched T1100G fiber in 2014 with the world's highest tensile strength (7GPa, tensile modulus 320GPa)"
+    },
+    {
+     "url": "https://www.toraycma.com/products/carbon-fiber",
+     "name": "Standard, Intermediate & High Modulus Carbon Fiber",
+     "snippet": "carbon fibers typically exhibit a fiber modulus of 33-34 Msi or slightly higher, for filament winding, weaving and prepregging"
+    },
+    {
+     "url": "https://www.toraytac.com/media/0d07df99-1e4b-4c8a-91f7-0fb10e9e1eea/Pb8maQ/TAC/Documents/Selector%20Guides/Toray_Space-Satellite-Launch_Advanced-Composite-Materials_Selector-Guide.pdf",
+     "name": "Toray Advanced Composite Materials Selector Guide",
+     "snippet": "Toray toughened epoxy prepreg systems suited for high strength, low weight structures; retain toughness at low temperature"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESrAEBxCJF14zka4ZVtPgn1dgKSj4H2jBLUwB__NBTaGaVQTnD3rUjZ8nYrtRulO1TNJeGBIV3y3AdR2xZLnzQso2OKAPoLAavSLaq_N5ZYWV4PQ",
+     "name": "The parameters of Toray T1100G carbon fiber and prepreg cure",
+     "snippet": "peak cure temperature of prepreg 2511 tends to decrease with time of exposure; T peak was 158C for the condition new"
+    }
+   ],
+   "created_at": "2026-11-08T20:43:11.231186+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2783
+   ]
+  }
+ ]
 }
