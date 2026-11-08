@@ -7612,6 +7612,13 @@
       "subsystem": ""
     },
     {
+      "id": "tekhnologia_tverdofaznyi_sintez",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/tverdofaznyi_sintez.md",
+      "subsystem": ""
+    },
+    {
       "id": "tekhnologia_ultrazvukovoe_poverhnostnoe_prokatyvanie",
       "type": "tekhnologia",
       "label": "обработка",
@@ -35212,7 +35219,7 @@
     ]
   },
   "stats": {
-    "nodes": 1111,
+    "nodes": 1112,
     "edges": 3915,
     "dangling": {
       "complies_with": 529,
@@ -35226,7 +35233,7 @@
       "izdelie": 133,
       "material": 214,
       "standart": 8,
-      "tekhnologia": 77
+      "tekhnologia": 78
     }
   }
 }
