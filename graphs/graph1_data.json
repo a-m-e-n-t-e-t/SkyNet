@@ -5869,6 +5869,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_copper_alloy",
+      "type": "material",
+      "label": "CuCr1Zr (EN CW106C, UNS C18400): Cu — основа (баланс); Cr 0.8 % (0.5–1.2); Zr 0.06–0.08 % (0.03–0.3) — дисперсионно-твердеющий высокопроводящий медный сплав; примеси по EN ≤0.05 (Sn+Fe+Ni суммарно)",
+      "path": "реальные данные/материалы/copper_alloy.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_cp-ti",
       "type": "material",
       "label": "CP-Ti",
@@ -10625,6 +10632,12 @@
     },
     {
       "src": "izdelie_sic_mosfet",
+      "dst": "material_copper_alloy",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_sic_mosfet",
       "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
@@ -10674,6 +10687,12 @@
     {
       "src": "izdelie_brainchip_akida_2",
       "dst": "material_silicon_wafer",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_brainchip_akida_2",
+      "dst": "material_copper_alloy",
       "type": "uses_material",
       "meta": {}
     },
@@ -10740,6 +10759,12 @@
     {
       "src": "izdelie_intel_loihi_2",
       "dst": "material_silicon_wafer",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_intel_loihi_2",
+      "dst": "material_copper_alloy",
       "type": "uses_material",
       "meta": {}
     },
@@ -10956,6 +10981,12 @@
     {
       "src": "izdelie_halve",
       "dst": "material_silicon_wafer",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_halve",
+      "dst": "material_copper_alloy",
       "type": "uses_material",
       "meta": {}
     },
@@ -24120,6 +24151,14 @@
       }
     },
     {
+      "src": "material_copper_alloy",
+      "dst": "izdelie_sic_mosfet",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_aluminum",
       "dst": "izdelie_sic_mosfet",
       "type": "used_in",
@@ -24185,6 +24224,14 @@
     },
     {
       "src": "material_silicon_wafer",
+      "dst": "izdelie_brainchip_akida_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper_alloy",
       "dst": "izdelie_brainchip_akida_2",
       "type": "used_in",
       "meta": {
@@ -24273,6 +24320,14 @@
     },
     {
       "src": "material_silicon_wafer",
+      "dst": "izdelie_intel_loihi_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper_alloy",
       "dst": "izdelie_intel_loihi_2",
       "type": "used_in",
       "meta": {
@@ -24561,6 +24616,14 @@
     },
     {
       "src": "material_silicon_wafer",
+      "dst": "izdelie_halve",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper_alloy",
       "dst": "izdelie_halve",
       "type": "used_in",
       "meta": {
@@ -34056,6 +34119,7 @@
       "standart_ASTM B247 (поковки Al 6061)",
       "standart_ASTM B247 (поковки)",
       "standart_ASTM B3 (мягкая/отожжённая проволока)",
+      "standart_ASTM B301 (прутки и профили хромистой меди)",
       "standart_ASTM B32 (мягкие припои, марка Sn63)",
       "standart_ASTM B344 (NiCr electrical resistance wire)",
       "standart_ASTM B348",
@@ -34187,6 +34251,7 @@
       "standart_EN 50598",
       "standart_EN 755-9 (EN AW-6063-T5)",
       "standart_EN AW-1050A (Al99.5, номер 3.0255)",
+      "standart_EN CW106C (EN 12163 / 12164 / 12165)",
       "standart_EPJ Appl. Phys. 80, 20901 (2017)",
       "standart_ETSI EN 301 489",
       "standart_Edmund Optics M12 Lens Holder",
@@ -34454,6 +34519,7 @@
       "standart_UNS A96061 / EN AW-6061 (AlSi1MgCu, 3.3211)",
       "standart_UNS C11000 (EN CW004A / JIS C110)",
       "standart_UNS C17200 (Alloy 25 / CuBe2, EN CW101C)",
+      "standart_UNS C18400",
       "standart_UNS N02200/N02201 (Ni ≥99.0/99.6%)",
       "standart_UNS N06625",
       "standart_UNS N07718",
@@ -34474,6 +34540,7 @@
       "standart_ГОСТ 10007-81 (фторопласт-4, технические условия)",
       "standart_ГОСТ 1050-88 (прокат калиброванный)",
       "standart_ГОСТ 11069-2019 (аналоги АД1/АД0)",
+      "standart_ГОСТ 18175-78 (БрХ1 — бронза хромистая, аналог CuCr1)",
       "standart_ГОСТ 19658-81 (кремний монокристаллический для изделий электронной техники)",
       "standart_ГОСТ 2590-2006 (прокат сортовой стальной горячекатаный круглый Ø5–270 мм)",
       "standart_ГОСТ 27006 (бетоны тяжёлые)",
@@ -34501,6 +34568,7 @@
       "group_BT-смола: Mitsubishi Gas Chemical (MGC) — разработана и запатентована в 1978 г., коммерциализирована в 1980-е (MGC: «MGC invented a revolutionary thermal-hardened bismaleimide triazine (BT) resin»); ABF: Ajinomoto (R&D на базе аминокислотной химии с 1970-х, первая адопция крупным производителем полупроводников в 1999 г., автор — Shigeo Nakamura, с 2025 г. CEO Ajinomoto Group)",
       "group_DuPont — изобретатель поливинилфторида (PVF, 1940-е), товарный знак Tedlar® и коммерческий выпуск плёнки с 1961 г.; ПЭТ-сердцевина boPET — DuPont/ICI/Hoechst (середина 1950-х — первая двуосно-ориентированная полимерная плёнка массового производства; бренды Mylar®/Melinex®, ныне Mylar Specialty Films — ребрендинг DuPont Teijin Films, 2024)",
       "group_E.A. Skrabek и D.S. Trimmer (Teledyne Energy Systems) — изобретатели TAGS-85 ((GeTe)0.85(AgSbTe2)0.15; CRC Handbook of Thermoelectrics, гл. 22), впервые применён в РИТЭГ SNAP-19 (Viking/Pioneer); программа SNAP (США) — первый космический РИТЭГ SNAP-3 (1961) на парах PbTe; Teledyne Energy Systems — изготовитель PbTe/TAGS-пар MMRTG (Curiosity/Perseverance) по контракту с Aerojet Rocketdyne",
+      "group_EN 12163/12164/12165 — стандартизация CW106C; UNS C18400 / ASTM B301 — американская стандартизация хромистой меди; термомеханическая обработка дисперсионно-твердеющих медных сплавов — промышленные KME/Aurubis (CCZr); применение в ITER divertor heat sink — программа EU Fusion (CuCrZr)",
       "group_F. Bauer, E. Fousson (ISL Saint-Louis) и Q.M. Zhang (Penn State, ONR) — открытие класса 2002–2006; Arkema-Piezotech (F. Domingues Dos Santos) — промышленная марка RT; Lei Zhu (Case Western), Xin Chen et al. — тетраполимеры FA",
       "group_George M. Grover и Ted Cotter (Los Alamos National Laboratory, 1963) — изобретение тепловых труб: первый патент и первые натриевые heat pipes (US3229759A «Evaporation-condensation heat transfer device»; J. Appl. Phys. 35, 1990 (1964)); параллельная линия жидкометаллического теплоносителя: EBR-I (INL, 20 декабря 1951 — первая выработка ядерного электричества, теплоноситель NaK) → EBR-II (ANL-Idaho, 1964 — первый натриевый реактор бассейнового типа, 62.5 МВтт)",
       "group_H. G. MacPherson и V. C. Hamister (National Carbon Company, Union Carbide, Кливленд, 1940–1942) — разработали термо- и газоэкстракционную очистку от бора, создав первый ядерный графит AGOT («the first true nuclear grade graphite»); первое применение — CP-1 Энрико Ферми (Met Lab, Чикаго, 2 декабря 1942: 385 т графита, 57 слоёв, включая 231 т AGOT от National Carbon, поставленной в ноябре 1942)",
@@ -34585,7 +34653,6 @@
       "material_ceramic_capacitors",
       "material_ceramic_mlcc",
       "material_composite_material",
-      "material_copper_alloy",
       "material_cybernetic_alloy",
       "material_electrical_steel",
       "material_epoxy",
@@ -34648,19 +34715,19 @@
     ]
   },
   "stats": {
-    "nodes": 1097,
-    "edges": 3855,
+    "nodes": 1098,
+    "edges": 3863,
     "dangling": {
-      "complies_with": 483,
+      "complies_with": 487,
       "has_part": 6,
-      "researched_by": 71,
-      "uses_material": 77
+      "researched_by": 72,
+      "uses_material": 76
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 200,
+      "material": 201,
       "standart": 8,
       "tekhnologia": 77
     }
