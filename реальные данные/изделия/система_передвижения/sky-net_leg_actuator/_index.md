@@ -25,6 +25,7 @@ id: izdelie_SkyNet-LegActuator
     доля_массы: 0.30
   - часть: часть_SkyNet-LegActuator_ankle
     материал: al_6061-t6
+    форма: корпуса_электроники
     доля_массы: 0.25
   - часть: часть_SkyNet-LegActuator_mounting
     материал: ss_aisi_304

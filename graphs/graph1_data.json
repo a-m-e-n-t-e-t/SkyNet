@@ -1816,6 +1816,34 @@
       "subsystem": "система_передвижения"
     },
     {
+      "id": "часть_SkyNet-LegActuator_ankle_двигатель",
+      "type": "chast",
+      "label": "электродвигатель",
+      "path": "реальные данные/изделия/система_передвижения/sky-net_leg_actuator/часть_SkyNet-LegActuator_ankle/часть_SkyNet-LegActuator_ankle_двигатель/_index.md",
+      "subsystem": "система_передвижения"
+    },
+    {
+      "id": "часть_SkyNet-LegActuator_ankle_дифференциал",
+      "type": "chast",
+      "label": "дифференциал",
+      "path": "реальные данные/изделия/система_передвижения/sky-net_leg_actuator/часть_SkyNet-LegActuator_ankle/часть_SkyNet-LegActuator_ankle_дифференциал/_index.md",
+      "subsystem": "система_передвижения"
+    },
+    {
+      "id": "часть_SkyNet-LegActuator_ankle_пружина",
+      "type": "chast",
+      "label": "пружина",
+      "path": "реальные данные/изделия/система_передвижения/sky-net_leg_actuator/часть_SkyNet-LegActuator_ankle/часть_SkyNet-LegActuator_ankle_пружина/_index.md",
+      "subsystem": "система_передвижения"
+    },
+    {
+      "id": "часть_SkyNet-LegActuator_ankle_энкодер",
+      "type": "chast",
+      "label": "датчик_положения",
+      "path": "реальные данные/изделия/система_передвижения/sky-net_leg_actuator/часть_SkyNet-LegActuator_ankle/часть_SkyNet-LegActuator_ankle_энкодер/_index.md",
+      "subsystem": "система_передвижения"
+    },
+    {
       "id": "часть_SkyNet-LegActuator_hip_редуктор",
       "type": "chast",
       "label": "редуктор",
@@ -11505,6 +11533,30 @@
     },
     {
       "src": "часть_SkyNet-LegActuator_ankle",
+      "dst": "часть_SkyNet-LegActuator_ankle_двигатель",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle",
+      "dst": "часть_SkyNet-LegActuator_ankle_дифференциал",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle",
+      "dst": "часть_SkyNet-LegActuator_ankle_энкодер",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle",
+      "dst": "часть_SkyNet-LegActuator_ankle_пружина",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle",
       "dst": "izdelie_SkyNet-LegActuator",
       "type": "child_of",
       "meta": {}
@@ -11512,6 +11564,24 @@
     {
       "src": "часть_SkyNet-LegActuator_ankle",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle",
+      "dst": "material_100cr6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle",
+      "dst": "material_spring_steel",
       "type": "uses_material",
       "meta": {}
     },
@@ -11578,6 +11648,54 @@
     {
       "src": "часть_SkyNet-LegActuator_hip",
       "dst": "material_spring_steel",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle_двигатель",
+      "dst": "часть_SkyNet-LegActuator_ankle",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle_двигатель",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle_дифференциал",
+      "dst": "часть_SkyNet-LegActuator_ankle",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle_дифференциал",
+      "dst": "material_100cr6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle_пружина",
+      "dst": "часть_SkyNet-LegActuator_ankle",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle_пружина",
+      "dst": "material_spring_steel",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle_энкодер",
+      "dst": "часть_SkyNet-LegActuator_ankle",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle_энкодер",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -23514,7 +23632,63 @@
       }
     },
     {
+      "src": "часть_SkyNet-LegActuator_ankle_двигатель",
+      "dst": "часть_SkyNet-LegActuator_ankle",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle_дифференциал",
+      "dst": "часть_SkyNet-LegActuator_ankle",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle_энкодер",
+      "dst": "часть_SkyNet-LegActuator_ankle",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_ankle_пружина",
+      "dst": "часть_SkyNet-LegActuator_ankle",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
       "src": "material_al_6061-t6",
+      "dst": "часть_SkyNet-LegActuator_ankle",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_SkyNet-LegActuator_ankle",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_100cr6",
+      "dst": "часть_SkyNet-LegActuator_ankle",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_spring_steel",
       "dst": "часть_SkyNet-LegActuator_ankle",
       "type": "used_in",
       "meta": {
@@ -23588,6 +23762,38 @@
     {
       "src": "material_spring_steel",
       "dst": "часть_SkyNet-LegActuator_hip",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_SkyNet-LegActuator_ankle_двигатель",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_100cr6",
+      "dst": "часть_SkyNet-LegActuator_ankle_дифференциал",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_spring_steel",
+      "dst": "часть_SkyNet-LegActuator_ankle_пружина",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_SkyNet-LegActuator_ankle_энкодер",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -31244,6 +31450,7 @@
       "standart_API 6A / NACE MR0175 (кислые среды)",
       "standart_ASHRAE 15",
       "standart_ASME BPVC Section III",
+      "standart_ASTM A228 (музыкальная проволока)",
       "standart_ASTM A228/A228M-18",
       "standart_ASTM A240 (AISI 304)",
       "standart_ASTM A240 (sheet/strip)",
@@ -31854,16 +32061,16 @@
     ]
   },
   "stats": {
-    "nodes": 1083,
-    "edges": 3470,
+    "nodes": 1087,
+    "edges": 3496,
     "dangling": {
-      "complies_with": 472,
+      "complies_with": 473,
       "has_part": 4,
       "researched_by": 68,
       "uses_material": 81
     },
     "by_type": {
-      "chast": 658,
+      "chast": 662,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
       "material": 197,
