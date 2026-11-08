@@ -20,12 +20,15 @@ id: izdelie_SkyNet-PowerBackpack
 материалы_частей:
   - часть: часть_SkyNet-PowerBackpack_cells
     материал: nmc_graphite
+    форма: nmc811_graphite_baseline
     доля_массы: 0.65
   - часть: часть_SkyNet-PowerBackpack_bms
     материал: al_6061-t6
+    форма: теплоотводящие_узлы
     доля_массы: 0.12
   - часть: часть_SkyNet-PowerBackpack_housing
     материал: al_6061-t6
+    форма: корпуса_электроники
     доля_массы: 0.15
   - часть: часть_SkyNet-PowerBackpack_mounting
     материал: ss_aisi_304
@@ -63,7 +66,7 @@ scaling_type: количественный
   время_разряда_ч: 4
   циклов_до_80_pct: 1000
 дата_создания: 2026-11-05
-дата_обновления: 2026-11-07
+дата_обновления: 2026-11-08
 источник: web_search
 источник_разбора: канон
 источник_url: https://bostondynamics.com/products/atlas
