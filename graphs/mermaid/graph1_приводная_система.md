@@ -88,7 +88,7 @@ graph LR
     часть_dea_mounting[крепёж]
     часть_povorotnoe_uplotnenie_mounting[крепёж]
     часть_povorotnoe_uplotnenie_housing[корпус]
-    часть_povorotnoe_uplotnenie_core[основной_элемент]
+    часть_povorotnoe_uplotnenie_core[уплотнение]
     часть_povorotnoe_uplotnenie_connectors[разъёмы]
     часть_elektroflyuidnye_volokna_mit_housing[корпус]
     часть_elektroflyuidnye_volokna_mit_connectors[разъёмы]

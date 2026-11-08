@@ -4436,7 +4436,7 @@
     {
       "id": "часть_povorotnoe_uplotnenie_core",
       "type": "chast",
-      "label": "основной_элемент",
+      "label": "уплотнение",
       "path": "реальные данные/изделия/приводная_система/povorotnoe_uplotnenie/часть_povorotnoe_uplotnenie_core/_index.md",
       "subsystem": "приводная_система"
     },
