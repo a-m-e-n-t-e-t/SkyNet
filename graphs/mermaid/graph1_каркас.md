@@ -15,6 +15,8 @@ graph LR
     часть_kompensatory_mounting[крепёж]
     часть_kompensatory_connectors[разъёмы]
     часть_kompensatory_housing[корпус]
+    часть_kompensatory_core_диафрагмы[гофрированная_диафрагма]
+    часть_kompensatory_core_фиттинги[концевое_кольцо]
     izdelie_SkyNet_MarcusWright[прочее]
     izdelie_SkyNet_HKTank[прочее]
     izdelie_SkyNet_TX[прочее]
@@ -56,6 +58,8 @@ graph LR
     часть_kompensatory_mounting -->|материал| material_ss_aisi_304
     часть_kompensatory_connectors -->|материал| material_stal_st3
     часть_kompensatory_housing -->|материал| material_al_6061_t6
+    часть_kompensatory_core_диафрагмы -->|материал| material_inconel_718
+    часть_kompensatory_core_фиттинги -->|материал| material_inconel_718
     izdelie_SkyNet_HKAerial -->|материал| material_inconel_718
     izdelie_SkyNet_T800 -->|материал| material_si
     izdelie_SkyNet_T800 -->|материал| material_poliimid
@@ -75,7 +79,7 @@ graph LR
 |---|---:|
 | `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 9 |
 | `Ti-6Al-4V (Grade 5, UNS R56400): Al 5.5–6.75 %, V 3.5–4.5 %, Fe ≤0.30 %, O ≤0.20 %, C ≤0.08 %, N ≤0.05 %, H ≤0.015 %, Y ≤0.005 %, Ti — остальное (ASTM-спецификация, Wikipedia/ASM)` | 7 |
-| `Ni+Co 50.0–55.0; Cr 17.0–21.0; Fe баланс; Nb+Ta 4.75–5.50; Mo 2.80–3.30; Ti 0.65–1.15; Al 0.35–0.80; Co ≤1.0; C ≤0.08; Mn ≤0.35; Si ≤0.35; Cu ≤0.15; B 0.001–0.006; P ≤0.015; S ≤0.015` | 3 |
+| `Ni+Co 50.0–55.0; Cr 17.0–21.0; Fe баланс; Nb+Ta 4.75–5.50; Mo 2.80–3.30; Ti 0.65–1.15; Al 0.35–0.80; Co ≤1.0; C ≤0.08; Mn ≤0.35; Si ≤0.35; Cu ≤0.15; B 0.001–0.006; P ≤0.015; S ≤0.015` | 5 |
 | `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 3 |
 | `нержавеющая сталь AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240)` | 1 |
 | `Si (кремний); электронный сорт ≥99.9999999% (9N) для подложек ИС, солнечный ≥99.9999% (6N), металлургический ~98–99% (Si-Fe, Si-Ca примеси)` | 1 |

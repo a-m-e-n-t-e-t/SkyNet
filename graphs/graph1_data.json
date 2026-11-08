@@ -3748,6 +3748,20 @@
       "subsystem": "каркас"
     },
     {
+      "id": "часть_kompensatory_core_диафрагмы",
+      "type": "chast",
+      "label": "гофрированная_диафрагма",
+      "path": "реальные данные/изделия/каркас/kompensatory/часть_kompensatory_core/часть_kompensatory_core_диафрагмы/_index.md",
+      "subsystem": "каркас"
+    },
+    {
+      "id": "часть_kompensatory_core_фиттинги",
+      "type": "chast",
+      "label": "концевое_кольцо",
+      "path": "реальные данные/изделия/каркас/kompensatory/часть_kompensatory_core/часть_kompensatory_core_фиттинги/_index.md",
+      "subsystem": "каркас"
+    },
+    {
       "id": "izdelie_optovolokonnaya_shina",
       "type": "izdelie",
       "label": "прочее",
@@ -16224,6 +16238,18 @@
     },
     {
       "src": "часть_kompensatory_core",
+      "dst": "часть_kompensatory_core_диафрагмы",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_kompensatory_core",
+      "dst": "часть_kompensatory_core_фиттинги",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_kompensatory_core",
       "dst": "izdelie_kompensatory",
       "type": "child_of",
       "meta": {}
@@ -16267,6 +16293,30 @@
     {
       "src": "часть_kompensatory_housing",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_kompensatory_core_диафрагмы",
+      "dst": "часть_kompensatory_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_kompensatory_core_диафрагмы",
+      "dst": "material_inconel_718",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_kompensatory_core_фиттинги",
+      "dst": "часть_kompensatory_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_kompensatory_core_фиттинги",
+      "dst": "material_inconel_718",
       "type": "uses_material",
       "meta": {}
     },
@@ -28147,6 +28197,22 @@
       }
     },
     {
+      "src": "часть_kompensatory_core_диафрагмы",
+      "dst": "часть_kompensatory_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_kompensatory_core_фиттинги",
+      "dst": "часть_kompensatory_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
       "src": "material_inconel_718",
       "dst": "часть_kompensatory_core",
       "type": "used_in",
@@ -28173,6 +28239,22 @@
     {
       "src": "material_al_6061-t6",
       "dst": "часть_kompensatory_housing",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_inconel_718",
+      "dst": "часть_kompensatory_core_диафрагмы",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_inconel_718",
+      "dst": "часть_kompensatory_core_фиттинги",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -32396,8 +32478,8 @@
     ]
   },
   "stats": {
-    "nodes": 1092,
-    "edges": 3539,
+    "nodes": 1094,
+    "edges": 3549,
     "dangling": {
       "complies_with": 475,
       "has_part": 6,
@@ -32405,7 +32487,7 @@
       "uses_material": 81
     },
     "by_type": {
-      "chast": 667,
+      "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
       "material": 197,
