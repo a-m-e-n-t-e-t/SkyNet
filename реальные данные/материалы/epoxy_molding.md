@@ -1,7 +1,7 @@
 ---
 применяется_в_изделиях_счёт: 4
 id: material_epoxy_molding
-псевдонимы: []
+псевдонимы: [material_plastic_qfp]
 канонический_id: material_epoxy_molding
 тип: материал
 класс: композит
