@@ -20,6 +20,7 @@ id: izdelie_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami
 материалы_частей:
   - часть: часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_screw
     материал: bearing_steel_52100
+    форма: направляющие_и_шпиндели
     доля_массы: 0.38
   - часть: часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_rollers
     материал: bearing_steel_52100
@@ -30,6 +31,31 @@ id: izdelie_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami
   - часть: часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_bearings
     материал: stainless_steel_440c
     доля_массы: 0.09
+технологии_частей:
+  - часть: часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_screw
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: 100cr6
+        роль: обрабатываемый
+  - часть: часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_rollers
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: 100cr6
+        роль: обрабатываемый
+  - часть: часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_nut
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: 100cr6
+        роль: обрабатываемый
+  - часть: часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_bearings
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: 100cr6
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -45,9 +71,9 @@ scaling_type: количественный
           max: 50
           nominal: 5
   габариты_mm:
-          l: 300
-          w: 80
-          h: 80
+          l: 420
+          w: 100
+          h: 470
   выработка_энергии_W:
           min: 0
           max: 0
@@ -60,6 +86,7 @@ scaling_type: количественный
 дополнительные: 
   M_ном_Нм: 100
   V_линейная_мм_с: 1000
+  обоснование_габаритов: 'огибающая привода: корпус-гильза housing 90×90×450 мм (вертикальная компоновка по DIN 69051) — внутри винт screw 400×20×20 мм с профилем резьбы качения, гайка 60×60×40 мм, ролики 45×15×15 мм (планетарная группа), подшипниковый узел 25×52×15 мм, уплотнения 30×30×5 мм; по каждой оси огибающая = max(дети) + 20 мм монтажного зазора на крепёжные лапы, торцевые крышки и кабельный ввод датчика положения; V=420×100×470=19 740 000 мм³ ≥ ΣV детей×1.15=4 580 594 мм³ (ΣV=3 983 125 мм³ — housing 3 645 000 + screw 160 000 + nut 144 000 + bearings 19 500 + rollers 10 125 + seals 4 500), запас ×4.31; оси: l 420≥400 (screw), w 100≥90 (housing), h 470≥450 (housing)'
   источник: GSK / Rollvis planetary roller screw
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-03
