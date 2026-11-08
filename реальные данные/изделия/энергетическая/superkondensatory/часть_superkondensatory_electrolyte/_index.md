@@ -33,11 +33,11 @@ scaling_type: количественный
     w: 40
     h: 3
   выработка_энергии_W: 0
-  выработка_тепла_W: 1
+  выработка_тепла_W: 2.0
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-08
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.ascent-petrochem.com/products/specialty-chemicals/conventional-electrolyte-for-edlc-cas-429-06-1.html
@@ -59,7 +59,7 @@ scaling_type: количественный
 | доля массы родителя | 0.15 | — | canon |
 | габариты (Д×Ш×В) | 40×40×3 | mm | 1M TEABF4 in acetonitrile EDLC electrolyte, 55–60 mS/cm: Ascent Petrochem (CAS 429-06-1) |
 | выработка энергии | 0 | W | canon |
-| выработка тепла | 1 | W | canon |
+| выработка тепла | 2.0 | W | омический нагрев при IMAX=130 A_RMS (ΔT=15°C): ионная проводимость электролита — доминирующий вклад в ESR 0.29 мОм (Maxwell BCAP3000 P270 datasheet) |
 | материал | acetonitrile_teabf4 | — | acetonitrile_teabf4.md |
 
 ## Принцип работы
