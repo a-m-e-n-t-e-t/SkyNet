@@ -25,12 +25,15 @@ id: izdelie_perovskite_tandem
     доля_массы: 0.38
   - часть: часть_perovskite_tandem_front_glass
     материал: low_iron_glass
+    форма: ар_покрытие_высокоэффективное
     доля_массы: 0.285
   - часть: часть_perovskite_tandem_backsheet
     материал: tedlar_pet
+    форма: tpt_классическая_двусторонняя
     доля_массы: 0.095
   - часть: часть_perovskite_tandem_frame
-    материал: aluminum_6063
+    материал: al_6063-t5
+    форма: T5_стенка_до_13мм
     доля_массы: 0.19
   - часть: часть_perovskite_tandem_encapsulant
     материал: eva
@@ -104,7 +107,7 @@ Perovskite tandem (солнечная ячейка)
 - `часть_perovskite_tandem_cells` — тандемный стек ячеек (перовскит + Si HJT), **генератор энергии 300 Вт**;
 - `часть_perovskite_tandem_front_glass` — фронтальное низкожелезистое стекло;
 - `часть_perovskite_tandem_backsheet` — тыльная подложка (Tedlar/PET);
-- `часть_perovskite_tandem_frame` — алюминиевая рама;
+- `часть_perovskite_tandem_frame` — алюминиевая рама (Al 6063-T5 экструдированный профиль);
 - `часть_perovskite_tandem_junction_box` — соединительная коробка;
 - `часть_perovskite_tandem_encapsulant` — инкапсулянт (EVA).
 
