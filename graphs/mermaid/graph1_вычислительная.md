@@ -103,8 +103,8 @@ graph LR
     часть_t800_cpu[neural_net_cpu]
     часть_t600_cpu[early_neural_cpu]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
-    material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
     material_copper[Cu ≥99.9% (электролити…]
+    material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_si[Si (кремний); электрон…]
     izdelie_intel_loihi_2 -->|материал| material_copper
