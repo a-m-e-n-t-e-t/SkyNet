@@ -6205,6 +6205,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_lead_free_solder",
+      "type": "material",
+      "label": "SAC305 (Sn-3.0Ag-0.5Cu, IPC J-STD-006 обозначение Sn96.5Ag3.0Cu0.5): Sn 96.5 ± 0.5 %, Ag 3.0 ± 0.2 %, Cu 0.5 ± 0.2 %, Pb ≤ 0.05 % (RoHS-лимит ≤ 0.1 %); примеси нормируются J-STD-006; свинец отсутствует — отличие от legacy Sn63Pb37 (файл material_splav_sn-pb): бессвинцовый припой не та субстанция, а самостоятельный сплав семейства Sn-Ag-Cu",
+      "path": "реальные данные/материалы/lead_free_solder.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_li7la3zr2o12",
       "type": "material",
       "label": "Li₇La₃Zr₂O₁₂",
@@ -10699,6 +10706,12 @@
     {
       "src": "izdelie_sic_mosfet",
       "dst": "material_epoxy_molding",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_sic_mosfet",
+      "dst": "material_lead_free_solder",
       "type": "uses_material",
       "meta": {}
     },
@@ -24347,6 +24360,14 @@
       }
     },
     {
+      "src": "material_lead_free_solder",
+      "dst": "izdelie_sic_mosfet",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_brainchip_akida_2_die",
       "dst": "izdelie_brainchip_akida_2",
       "type": "part_of",
@@ -34640,6 +34661,7 @@
       "standart_IPC J-STD-001",
       "standart_IPC J-STD-006",
       "standart_IPC J-STD-006 (требования к припоям для электроники, Sn63Pb37A)",
+      "standart_IPC J-STD-006B — бессвинцовые припои для электроники (обозначение Sn96.5Ag3.0Cu0.5, примеси)",
       "standart_IPC TM-650 2.4.24",
       "standart_IPC-2221",
       "standart_IPC-2223",
@@ -34654,6 +34676,7 @@
       "standart_IPC-6012",
       "standart_IPC-6012 (жёсткие платы)",
       "standart_IPC-6013",
+      "standart_IPC-9701 — квалификация паяных соединений BGA по термоциклам",
       "standart_IPC-A-600",
       "standart_IPC-A-610",
       "standart_IPG Installation Manual",
@@ -34739,6 +34762,7 @@
       "standart_JIS C 5101-11",
       "standart_JIS D5301",
       "standart_JIS G4805 (SUJ2)",
+      "standart_JIS Z 3282 / ISO 9453 — составы бессвинцовых припоев",
       "standart_Jülich Kuriakose 2024",
       "standart_MGC BT resin — торговое семейство смол и препрегов",
       "standart_MGC HFBT — безгалогенная BT для IC plastic packages",
@@ -34796,6 +34820,7 @@
       "standart_Resonac CEL-9240 ZHF10HT3W / HF10, CEL-8240 HF10, CEL-9200 HF10 / HF9 — марки leadframe EMC",
       "standart_RoHS 2011/65/EU",
       "standart_RoHS 2011/65/EU (exemption 6c)",
+      "standart_RoHS 2011/65/EU — ограничение Pb ≤ 0.1 мас. % в электронике",
       "standart_RoHS-совместимая замена ртути (2011/65/EU)",
       "standart_RoboSense AC1 Datasheet",
       "standart_Royal C4-250III Datasheet",
@@ -34912,6 +34937,7 @@
       "group_Murata Manufacturing, Samsung Electro-Mechanics, TDK, Yageo Group — лидеры MLCC-индустрии (Yageo SalesResources — X7R/X5R формуляции, εr-таблицы); EIA-198 — стандартизация классов температурных характеристик; академическая верификация BME-структуры — D.D. Liu et al. (диэлектрик 6.2 мкм / электрод 1.6 мкм / маржа 120 мкм / cover 130 мкм, цит. 47), ESCIES (ESA Space Engineering) — C0G BME 7.0 мкм vs PME 11.6 мкм; passive-components.eu — конструкция стеков (500+ слоёв в 0201, верхний предел >1000, торцевой стек Cu/Ni/Sn)",
       "group_Murata_TDK",
       "group_N.F. Uvarov и соавт. (MDPI Crystals 12(4):515, 2022) — термические свойства и ионная проводимость тетра-n-алкиламмонийных солей (TBAClO4/TBABF4, пластичные кубические фазы); коммерческое производство — Ascent Petrochem (конвенциональный электролит EDLC CAS 429-06-1), ChemXpress, io-li-tec (Ultra Pure >99 %)",
+      "group_NIST (T. Siewert et al. 2002 — Properties of Lead-Free Solders, сводка свойств Sn-Ag-Cu); Kester / MacDermid Alpha / Indium Corporation (промышленные TDS SAC300/305/350/387/400/405); T.T. Nguyen et al. 2011 (механика реальных паяных соединений SAC105/305/405: E, Пуассон, CTE); Z. Paska et al. 2024 (сравнение растяжения и ползучести SAC305 vs SACX0807); J. Cao et al. 2024 (наноиндентирование SAC305 — модуль Юнга); M. Abueed et al. 2020 (ползучесть и усталость SAC305); IPC/JEDEC — стандартизация",
       "group_Oak Ridge National Laboratory — Bulk Shielding Reactor (построен в 1950-е для систематических исследований бетонной радиационной защиты в рамках программы Aircraft Nuclear Propulsion; снесён в 2022); стандартизация заполнителей — ASTM C638",
       "group_Pierre Bonhôte и соавт. (EPFL, Швейцария) — синтез гидрофобных EMIM-имидных комнатнотемпературных расплавов, Inorg. Chem. 1996, 35(5), 1168–1178",
       "group_Resonac (Showa Denko) — серия CEL для полупроводниковых корпусов leadframe-класса (DIP, SOP, TSOP, QFP, TQFP, LQFP); Sumitomo Bakelite — SUMIKON EME (канонический EMC той же субстанции, EME-G700LA); JLCPCB/PCB-индустрия — корпусные стандарты PQFP vs CQFP; академическая верификация encapsulant-требований — Othman A.H. et al. 2026 (Int. J. Adv. Manuf. Technol., цит. 9)",
@@ -35001,7 +35027,6 @@
       "material_ir_mosi2-tasi2_tab2_ii",
       "material_iron_powder",
       "material_koh_aqueous",
-      "material_lead_free_solder",
       "material_lini_mn_co_o2",
       "material_lipf6_ec_dmc",
       "material_lithium_hydrogen_cell",
@@ -35044,19 +35069,19 @@
     ]
   },
   "stats": {
-    "nodes": 1104,
-    "edges": 3901,
+    "nodes": 1105,
+    "edges": 3903,
     "dangling": {
-      "complies_with": 508,
+      "complies_with": 512,
       "has_part": 6,
-      "researched_by": 78,
-      "uses_material": 70
+      "researched_by": 79,
+      "uses_material": 69
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 207,
+      "material": 208,
       "standart": 8,
       "tekhnologia": 77
     }
