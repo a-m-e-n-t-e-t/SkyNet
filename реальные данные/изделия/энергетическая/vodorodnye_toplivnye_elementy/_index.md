@@ -23,6 +23,7 @@ id: izdelie_vodorodnye_toplivnye_elementy
 материалы_частей:
   - часть: часть_vodorodnye_toplivnye_elementy_membrane
     материал: nafion_117
+    форма: PEM_мембрана_топливных_элементов
     доля_массы: 0.095
   - часть: часть_vodorodnye_toplivnye_elementy_catalyst_anode
     материал: pt_carbon
@@ -39,6 +40,43 @@ id: izdelie_vodorodnye_toplivnye_elementy
   - часть: часть_vodorodnye_toplivnye_elementy_end_plate
     материал: aluminum
     доля_массы: 0.285
+технологии_частей:
+  - часть: часть_vodorodnye_toplivnye_elementy_membrane
+    технология: plazmennaya_aktivatsiya
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: nafion
+        роль: обрабатываемый
+  - часть: часть_vodorodnye_toplivnye_elementy_catalyst_anode
+    технология: dc_magnetron_sputtering
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: pt
+        роль: обрабатываемый
+  - часть: часть_vodorodnye_toplivnye_elementy_catalyst_cathode
+    технология: dc_magnetron_sputtering
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: pt
+        роль: обрабатываемый
+  - часть: часть_vodorodnye_toplivnye_elementy_gdl_anode
+    технология: gidrofobnoe_pokrytie
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: carbon_ptfe
+        роль: обрабатываемый
+  - часть: часть_vodorodnye_toplivnye_elementy_bipolar_plate
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: grafit_kompozit_bpp
+        роль: обрабатываемый
+  - часть: часть_vodorodnye_toplivnye_elementy_end_plate
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: aluminum
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -55,7 +93,7 @@ scaling_type: количественный
           nominal: 25
   габариты_mm:
           l: 300
-          w: 200
+          w: 250
           h: 200
   выработка_энергии_W:
           min: 100
@@ -69,9 +107,11 @@ scaling_type: количественный
 дополнительные: 
   T_рабочая_C: 80
   КПД_процентов: 50
+  обоснование_габаритов: 'огибающая стека PEM ТЭ: активная площадь ячейки 250×250 мм (membrane 250×250×0.183 мм Nafion 117, bipolar_plate 250×250×2 мм, gasket 250×250×0.5 мм, end_plate 250×250×10 мм) — по оси w огибающая = max(дети) = 250 мм (verify #2140); l 300 мм — запас на торцевые коллекторы реагентов и крепёж стека; h 200 мм — стек из ~40 ячеек (шаг ячейки ~5 мм: BPP 2 мм + GDL 2×0.3 мм + мембрана 0.183 мм + уплотнения) + торцевые пластины; V=300×250×200=15 000 000 мм³ ≥ ΣV детей×1.15=947 859 мм³ (ΣV=824 225 мм³: membrane 11 437.5 + catalyst_anode 25 000 + catalyst_cathode 37.5 + gdl_anode 2 800 + gdl_cathode 3 700 + bipolar_plate 125 000 + gasket 31 250 + end_plate 625 000), запас ×15.8'
+  обоснование_технологий: 'MEA-цепочка производства PEM ТЭ (web_search, verify #2140): plasma treatment/etching Nafion-мембраны — established стратегия улучшения межфазной адгезии и подавления поляризационных потерь (Ultra-low Mass Sputtered Catalyst, 2017; ANU Fuel Cell Research); магнетронное напыление Pt — ultra-low loading 0.1 мг/см² электроды (Villamayor et al. 2024; Cavarroc et al. 2009 — magnetron co-sputtering C+Pt, cited 154); гидрофобизация PTFE углеродной бумаги GDL (DOE Parts of a Fuel Cell; fuelcellstore GDL); фрезерование каналов ПЧ на графитовых биполярных пластинах — «graphite bipolar plates with machined grooves» (PEMFC schematics, academia.edu Next Generation Bipolar Plates); ЧПУ-фрезерование алюминиевых торцевых пластин с портами коллекторов'
   источник: Ballard PEM fuel cell
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-09
 источник: user_input
 источник_разбора: пользовательский ввод
 ---
