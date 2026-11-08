@@ -9562,7 +9562,19 @@
     },
     {
       "src": "izdelie_4h-sic_betavoltaik",
-      "dst": "material_silicon_carbide",
+      "dst": "material_ni-63",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_4h-sic_betavoltaik",
+      "dst": "material_monokristallicheskogo_sic",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_4h-sic_betavoltaik",
+      "dst": "material_epoksid_epon_828_teta",
       "type": "uses_material",
       "meta": {}
     },
@@ -23993,7 +24005,23 @@
       }
     },
     {
-      "src": "material_silicon_carbide",
+      "src": "material_ni-63",
+      "dst": "izdelie_4h-sic_betavoltaik",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_monokristallicheskogo_sic",
+      "dst": "izdelie_4h-sic_betavoltaik",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_epoksid_epon_828_teta",
       "dst": "izdelie_4h-sic_betavoltaik",
       "type": "used_in",
       "meta": {
@@ -35718,7 +35746,7 @@
   },
   "stats": {
     "nodes": 1120,
-    "edges": 3978,
+    "edges": 3982,
     "dangling": {
       "complies_with": 538,
       "has_part": 6,
