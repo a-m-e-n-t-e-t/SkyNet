@@ -35,9 +35,11 @@ scaling_type: количественный
   выработка_энергии_W: 0
   выработка_тепла_W: 1
 наследуемые: {}
-дополнительные: {}
+дополнительные:
+  обоснование_тепловыделения: "номинал 1 W — активная электроника коммутационного блока (оптические трансиверы): типовой оптический трансивер рассеивает <=1 W (LINK-PP 10GBASE-T SFP power/heat guide — optical transceivers typically consume less than 1 W; SFP+ Fiber Optic Transceiver Thermal and EMI Considerations, 2013 — SFP+ still dissipating 1 watt or less)"
+  источник_url_тепла: https://www.link-pp.com/resources/technical-specs/10gbase-t-sfp-power-heat-management-guide
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-08
 источник: web_search
 источник_разбора: веб-верификация
 источник_url: https://en.wikipedia.org/wiki/Fiber-optic_communication
@@ -62,7 +64,7 @@ scaling_type: количественный
 | доля массы родителя | 0.5 | — | canon |
 | габариты (Д×Ш×В) | 130×85×28 | mm | оптоволоконная шина (коммутационный блок 130×85×28, оценка) |
 | выработка энергии | 0 | W | canon |
-| выработка тепла | 1 | W | canon |
+| выработка тепла | 1 | W | оптический трансивер <=1 W — LINK-PP SFP heat guide; SFP+ Thermal 2013 |
 | материал | al_6061-t6 | — | оптоволоконная шина (коммутационный блок 130×85×28, оценка) | canon |
 
 ## Принцип работы
@@ -80,5 +82,7 @@ scaling_type: количественный
 ## Источники
 
 - оптоволоконная шина (коммутационный блок 130×85×28, оценка) — https://en.wikipedia.org/wiki/Fiber-optic_communication (обращение 2026-11-05)
+- Тепловыделение оптических трансиверов: LINK-PP — 10GBASE-T SFP Power & Heat Management Guide — https://www.link-pp.com/resources/technical-specs/10gbase-t-sfp-power-heat-management-guide (обращение 2026-11-08)
+- SFP+ Fiber Optic Transceiver Thermal and EMI Considerations, 2013 — SFP+ модули рассеивают <=1 W
 - Канон: декомпозиция `izdelie_optovolokonnaya_shina` (web search 2026-11-03)
 - Материалы: реальные данные/материалы/
