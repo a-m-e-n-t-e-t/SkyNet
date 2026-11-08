@@ -230,24 +230,32 @@ graph LR
     часть_t800_топливная_ячейка_1[hydrogen_fuel_cell]
     часть_t600_топливная_ячейка[fuel_cell]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
+    material_aluminum[Al ≥ 99.5 % (основа); …]
     material_copper[Cu ≥99.9% (электролити…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
-    material_si[Si (кремний); электрон…]
+    izdelie_marx_generator -->|материал| material_aluminum
     izdelie_asrg -->|материал| material_copper
     izdelie_4h_sic_betavoltaik -->|материал| material_ti_6al_4v
     izdelie_mptm -->|материал| material_copper
+    izdelie_mmrtg -->|материал| material_aluminum
     izdelie_termomoduli_pelte -->|материал| material_copper
     izdelie_coilgun -->|материал| material_copper
     izdelie_svobodnoporshnevoi_stirling -->|материал| material_copper
+    izdelie_superkondensatory -->|материал| material_aluminum
     izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist -->|материал| material_copper
     izdelie_reversivnye_pelte -->|материал| material_copper
+    izdelie_vodorodnye_toplivnye_elementy -->|материал| material_aluminum
     izdelie_induktivnyi_nakopitel -->|материал| material_copper
+    izdelie_induktivnyi_nakopitel -->|материал| material_aluminum
     izdelie_tverdotelnye_akkumulyatory -->|материал| material_copper
+    izdelie_tverdotelnye_akkumulyatory -->|материал| material_aluminum
     izdelie_termoelektricheskii_postoyannyi_magnit -->|материал| material_copper
+    izdelie_termoelektricheskii_postoyannyi_magnit -->|материал| material_aluminum
     izdelie_nasa_asc_e_srsc -->|материал| material_copper
     izdelie_nasa_asc_e_srsc -->|материал| material_al_6061_t6
     izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza -->|материал| material_copper
+    izdelie_emi_generator -->|материал| material_aluminum
     часть_tpv_lenty_cooling -->|материал| material_copper
     часть_tpv_lenty_reflector -->|материал| material_al_6061_t6
     часть_alyuminievo_vozdushnye_toplivnye_elementy_housing -->|материал| material_al_6061_t6
@@ -265,7 +273,6 @@ graph LR
     часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_housing -->|материал| material_al_6061_t6
     часть_termomoduli_pelte_electrodes -->|материал| material_copper
     часть_termomoduli_pelte_wires -->|материал| material_copper
-    часть_perovskite_tandem_cells -->|материал| material_si
     часть_coilgun_switch -->|материал| material_al_6061_t6
     часть_coilgun_projectile -->|материал| material_stal_st3
     часть_coilgun_housing -->|материал| material_stal_st3
@@ -322,6 +329,7 @@ _Показаны 5 наиболее часто используемых мат�
 | `Ti-6Al-4V (Grade 5, UNS R56400): Al 5.5–6.75 %, V 3.5–4.5 %, Fe ≤0.30 %, O ≤0.20 %, C ≤0.08 %, N ≤0.05 %, H ≤0.015 %, Y ≤0.005 %, Ti — остальное (ASTM-спецификация, Wikipedia/ASM)` | 15 |
 | `нержавеющая сталь AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240)` | 11 |
 | `Ni+Co 50.0–55.0; Cr 17.0–21.0; Fe баланс; Nb+Ta 4.75–5.50; Mo 2.80–3.30; Ti 0.65–1.15; Al 0.35–0.80; Co ≤1.0; C ≤0.08; Mn ≤0.35; Si ≤0.35; Cu ≤0.15; B 0.001–0.006; P ≤0.015; S ≤0.015` | 9 |
+| `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 8 |
 | `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 8 |
 | `Bi₂Te₃ (теллурид висмута; промышленные марки легированы: p-тип — Bi₀.₅Sb₁.₅Te₃ (Sb), n-тип — Bi₂Te₂.₇Se₀.₃ (Se); M = 800.8 г/моль)` | 7 |
 | `SiC — стехиометрический карбид кремния (50 ат.% Si / 50 ат.% C); монокристалл 4H-SiC, n-легирование азотом (подложки) или высокочистый без легирования` | 6 |
@@ -331,4 +339,3 @@ _Показаны 5 наиболее часто используемых мат�
 | `углеродная сажа (токопроводящий наполнитель) + PTFE 20% (связующее), опционально катализатор MnO₂; токосъёмник — никелевая сетка` | 4 |
 | `Ni баланс; Cr 20.0–23.0; Mo 8.0–10.0; Nb+Ta 3.15–4.15; Fe ≤5.0; Co ≤1.0; C ≤0.10; Mn ≤0.50; Si ≤0.50; Al ≤0.40; Ti ≤0.40; P ≤0.015; S ≤0.015` | 4 |
 | `Ni–YSZ кермет: Ni + 8YSZ ((ZrO₂)₀.₉₂(Y₂O₃)₀.₀₈); исходный анодный порошок NiO:YSZ 50:50–65:35 масс.% (Ni 28–55 об.% после восстановления); рабочее состояние — металлический Ni + керамический каркас кубического YSZ + пористость 25–40%` | 4 |
-| `LSM-20: (La0.8Sr0.2)MnO3-δ — манганит лантана, легированный 20 мол.% Sr (перовскит ABO3); катодный композит LSM/YSZ — 50 wt% (La0.80Sr0.20)0.95MnO3-X + 50 wt% (Y2O3)0.08(ZrO2)0.92 (8YSZ)` | 4 |

@@ -103,48 +103,29 @@ graph LR
     часть_t800_cpu[neural_net_cpu]
     часть_t600_cpu[early_neural_cpu]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
+    material_aluminum[Al ≥ 99.5 % (основа); …]
     material_copper[Cu ≥99.9% (электролити…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
-    material_si[Si (кремний); электрон…]
     izdelie_ibm_northpole -->|материал| material_copper
     izdelie_kondensatory_keramicheskie -->|материал| material_copper
+    izdelie_sic_mosfet -->|материал| material_aluminum
     izdelie_brainchip_akida_2 -->|материал| material_copper
     izdelie_intel_loihi_2 -->|материал| material_copper
     izdelie_halve -->|материал| material_copper
-    часть_sot_mram_sense_amplifiers -->|материал| material_si
-    часть_sot_mram_io_interface -->|материал| material_si
-    часть_sot_mram_row_decoders -->|материал| material_si
-    часть_sot_mram_periphery -->|материал| material_si
-    часть_ibm_northpole_die -->|материал| material_si
-    часть_ibm_northpole_hbm -->|материал| material_si
+    izdelie_nvidia_jetson_orin_nano -->|материал| material_aluminum
     часть_ibm_northpole_thermal_spreader -->|материал| material_copper
     часть_kondensatory_keramicheskie_outer_electrodes -->|материал| material_copper
     часть_kondensatory_keramicheskie_termination -->|материал| material_copper
     часть_sic_mosfet_lead_frame -->|материал| material_copper
-    часть_brainchip_akida_2_die -->|материал| material_si
     часть_brainchip_akida_2_thermal_spreader -->|материал| material_copper
-    часть_intel_loihi_2_die -->|материал| material_si
     часть_intel_loihi_2_thermal_spreader -->|материал| material_copper
-    часть_memristornye_matritsy_controller -->|материал| material_si
-    часть_memristornye_matritsy_word_drivers -->|материал| material_si
-    часть_memristornye_matritsy_bit_sense -->|материал| material_si
-    часть_memristornye_matritsy_adc -->|материал| material_si
-    часть_gr801_noel_v_risc_v_sram -->|материал| material_si
-    часть_gr801_noel_v_risc_v_flash -->|материал| material_si
-    часть_gr801_noel_v_risc_v_die -->|материал| material_si
     часть_litii_tionilhloridnye_batarei_terminal -->|материал| material_stal_st3
-    часть_halve_die -->|материал| material_si
     часть_halve_thermal_spreader -->|материал| material_copper
-    часть_pcm_io_interface -->|материал| material_si
-    часть_pcm_controller -->|материал| material_si
-    часть_pcm_periphery -->|материал| material_si
     часть_nvidia_jetson_orin_nano_enclosure -->|материал| material_al_6061_t6
     часть_marcus_человеческий_мозг -->|материал| material_ti_6al_4v
     часть_t_x_cpu -->|материал| material_al_6061_t6
     часть_t850_cpu -->|материал| material_al_6061_t6
-    часть_t800_cpu -->|материал| material_si
-    часть_t600_cpu -->|материал| material_si
 ```
 
 _Показаны 5 наиболее часто используемых материалов (полный список — в graph1_data.json)._
@@ -160,9 +141,9 @@ _Показаны 5 наиболее часто используемых мат�
 | `(C₂F₄)ₙ — политетрафторэтилен (PTFE, Teflon), полностью фторированный парафиновый полимер (~76 масс.% фтора); virgin-сорт без наполнителей, CAS 9002-84-0` | 3 |
 | `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 3 |
 | `Ni ≥99.0% (электролитический никель; для паст BME-электродов — мелкодисперсный Ni-порошок, напр. сферический 0.3–0.8 мкм)` | 2 |
+| `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 2 |
 | `SiO2 ≥99.99% (синтетический пьезокварц, гидротермальный автоклавный синтез; природный — α-кварц)` | 2 |
 | `Al ≥99.99% (heavy bonding wire, класс Al-H11/Al-CR)` | 2 |
 | `Ароматический полиимид PMDA-ODA (тип Kapton): повторяющееся звено C22H10N2O5 (M ≈ 382.2 г/моль) из пиромеллитового диангидрида (PMDA) и 4,4′-оксианилина (ODA); чередующиеся имидные циклы C(=O)–N–C(=O) и фениленовые/дифениловый эфирный сегменты` | 2 |
 | `TiN — нитрид титана, стехиометрия TiN_x (x = 0.6–1.0; рабочая ~1.0); тонкие плёнки PVD/CVD, объёмный спечённый` | 1 |
 | `Стек MTJ: Co20Fe60B20 (свободный/опорный ферромагнитные слои) / MgO (туннельный барьер, эпитаксиальный (001)); опорный слой синтезированный антиферромагнетик [Co/Pt]n` | 1 |
-| `Органическая пакетная подложка: жёсткое ядро из BT-смолы (бисмалеимид-триазин, Mitsubishi Gas Chemical) + build-up слои Ajinomoto Build-up Film (ABF — эпоксидная система с кремнезёмным наполнителем, SAP-совместимая) + медная фольга проводящих слоёв; лазерные микровии, паяльная маска` | 1 |

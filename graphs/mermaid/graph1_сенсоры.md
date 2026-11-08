@@ -177,6 +177,7 @@ graph LR
     часть_t800_оптический_сенсор_1[optical_camera]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_aln[AlN]
+    material_aluminum[Al ≥ 99.5 % (основа); …]
     material_becu[Cu основа; Be 1.90–2.1…]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
     material_magnitnaya_rezina_ferritovyi_poroshok[Fe₃O₄ (магнетит) 1–20 …]
@@ -190,38 +191,70 @@ graph LR
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
     izdelie_mems_imu -->|материал| material_si
+    izdelie_mems_imu -->|материал| material_aluminum
     izdelie_event_cameras -->|материал| material_al_6061_t6
+    izdelie_event_cameras -->|материал| material_aluminum
     izdelie_mwir_nbn_640 -->|материал| material_al_6061_t6
+    izdelie_mwir_nbn_640 -->|материал| material_aluminum
     izdelie_sensora_volnovogo_fronta -->|материал| material_al_6061_t6
+    izdelie_sensora_volnovogo_fronta -->|материал| material_aluminum
     izdelie_quantum_cascade_laser -->|материал| material_al_6061_t6
+    izdelie_quantum_cascade_laser -->|материал| material_aluminum
     izdelie_mwir_2 -->|материал| material_al_6061_t6
+    izdelie_mwir_2 -->|материал| material_aluminum
     izdelie_multispektralnye_cmos_matritsy_s_ik_diapazonom -->|материал| material_al_6061_t6
+    izdelie_multispektralnye_cmos_matritsy_s_ik_diapazonom -->|материал| material_aluminum
     izdelie_metalinza -->|материал| material_metapoverhnost
+    izdelie_metalinza -->|материал| material_aluminum
     izdelie_poristyi_gazovyi_podshipnik_iz_sic -->|материал| material_monokristallicheskogo_sic
+    izdelie_poristyi_gazovyi_podshipnik_iz_sic -->|материал| material_aluminum
     izdelie_akusticheskaya_linza -->|материал| material_silikon_80_shore_a_steklyannye_mikrosfery
+    izdelie_akusticheskaya_linza -->|материал| material_aluminum
     izdelie_dvs -->|материал| material_al_6061_t6
+    izdelie_dvs -->|материал| material_aluminum
     izdelie_lwir_boson_1024 -->|материал| material_al_6061_t6
+    izdelie_lwir_boson_1024 -->|материал| material_aluminum
     izdelie_tverdotelnyi_mmwave_radar -->|материал| material_al_6061_t6
+    izdelie_tverdotelnyi_mmwave_radar -->|материал| material_aluminum
     izdelie_iridium_sbd -->|материал| material_al_6061_t6
+    izdelie_iridium_sbd -->|материал| material_aluminum
     izdelie_flir -->|материал| material_si
+    izdelie_flir -->|материал| material_aluminum
     izdelie_lidar -->|материал| material_al_6061_t6
+    izdelie_lidar -->|материал| material_aluminum
     izdelie_pezo_sensor -->|материал| material_aln
+    izdelie_pezo_sensor -->|материал| material_aluminum
     izdelie_ads_b_priemnik -->|материал| material_al_6061_t6
+    izdelie_ads_b_priemnik -->|материал| material_aluminum
     izdelie_lidar_robosense_ac1 -->|материал| material_al_6061_t6
+    izdelie_lidar_robosense_ac1 -->|материал| material_aluminum
     izdelie_pezoelektricheskie_mems -->|материал| material_aln
+    izdelie_pezoelektricheskie_mems -->|материал| material_aluminum
     izdelie_ultrakorotkoimpulsnye_lazery -->|материал| material_al_6061_t6
+    izdelie_ultrakorotkoimpulsnye_lazery -->|материал| material_aluminum
     izdelie_eo_ir_kamera -->|материал| material_al_6061_t6
+    izdelie_eo_ir_kamera -->|материал| material_aluminum
     izdelie_cw_lazer -->|материал| material_al_6061_t6
+    izdelie_cw_lazer -->|материал| material_aluminum
     izdelie_kaskadnyi_stirling_kriokuler -->|материал| material_al_6061_t6
+    izdelie_kaskadnyi_stirling_kriokuler -->|материал| material_aluminum
     izdelie_pmut -->|материал| material_aln
+    izdelie_pmut -->|материал| material_aluminum
     izdelie_ferritovye_klinya_na_kabelyah_sensorov -->|материал| material_magnitnaya_rezina_ferritovyi_poroshok
+    izdelie_ferritovye_klinya_na_kabelyah_sensorov -->|материал| material_aluminum
     izdelie_flir_lwir_2 -->|материал| material_al_6061_t6
+    izdelie_flir_lwir_2 -->|материал| material_aluminum
     izdelie_pezo_mems -->|материал| material_aln
+    izdelie_pezo_mems -->|материал| material_aluminum
     izdelie_aesa_radar -->|материал| material_al_6061_t6
     izdelie_starlink_mini -->|материал| material_al_6061_t6
+    izdelie_starlink_mini -->|материал| material_aluminum
     izdelie_ipg_yls_eco -->|материал| material_stal_st3
+    izdelie_ipg_yls_eco -->|материал| material_aluminum
     izdelie_flir_boson_640 -->|материал| material_al_6061_t6
+    izdelie_flir_boson_640 -->|материал| material_aluminum
     izdelie_mems_mikrofonov -->|материал| material_si
+    izdelie_mems_mikrofonov -->|материал| material_aluminum
     часть_mems_imu_connectors -->|материал| material_poliimid
     часть_mems_imu_core -->|материал| material_si
     часть_mems_imu_housing -->|материал| material_al_6061_t6
@@ -365,6 +398,7 @@ graph LR
 | Материал | Используется в частях |
 |---|---:|
 | `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 99 |
+| `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 32 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 17 |
 | `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 9 |
 | `Si (кремний); электронный сорт ≥99.9999999% (9N) для подложек ИС, солнечный ≥99.9999% (6N), металлургический ~98–99% (Si-Fe, Si-Ca примеси)` | 8 |

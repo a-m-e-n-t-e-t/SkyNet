@@ -47,6 +47,7 @@ graph LR
     часть_t850_связь[skyet_link]
     часть_t800_антенна[skyet_link_antenna]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
+    material_aluminum[Al ≥ 99.5 % (основа); …]
     material_becu[Cu основа; Be 1.90–2.1…]
     material_latun_c36000[Cu 60–63% (основа), Zn…]
     material_peek[PEEK — полиэфирэфиркет…]
@@ -55,13 +56,21 @@ graph LR
     material_ss_aisi_304[нержавеющая сталь AISI…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     izdelie_optovolokonnaya_shina -->|материал| material_al_6061_t6
+    izdelie_optovolokonnaya_shina -->|материал| material_aluminum
     izdelie_stm32 -->|материал| material_si
+    izdelie_stm32 -->|материал| material_aluminum
     izdelie_obd_ii -->|материал| material_peek
+    izdelie_obd_ii -->|материал| material_aluminum
     izdelie_flat_face_couplings_iso_16028 -->|материал| material_stal_st3
+    izdelie_flat_face_couplings_iso_16028 -->|материал| material_aluminum
     izdelie_radiatsionno_stoikii_neiromorfnyi_tmr -->|материал| material_si
+    izdelie_radiatsionno_stoikii_neiromorfnyi_tmr -->|материал| material_aluminum
     izdelie_stm32h743 -->|материал| material_si
+    izdelie_stm32h743 -->|материал| material_aluminum
     izdelie_usb_c -->|материал| material_becu
+    izdelie_usb_c -->|материал| material_aluminum
     izdelie_razryvnye_mufty_iso_16028 -->|материал| material_stal_st3
+    izdelie_razryvnye_mufty_iso_16028 -->|материал| material_aluminum
     часть_optovolokonnaya_shina_core -->|материал| material_al_6061_t6
     часть_optovolokonnaya_shina_mounting -->|материал| material_al_6061_t6
     часть_optovolokonnaya_shina_housing -->|материал| material_al_6061_t6
@@ -102,6 +111,7 @@ graph LR
 | Материал | Используется в частях |
 |---|---:|
 | `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 16 |
+| `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 8 |
 | `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 7 |
 | `Si (кремний); электронный сорт ≥99.9999999% (9N) для подложек ИС, солнечный ≥99.9999% (6N), металлургический ~98–99% (Si-Fe, Si-Ca примеси)` | 6 |
 | `Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)` | 4 |

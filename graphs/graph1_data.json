@@ -5694,6 +5694,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_aluminum",
+      "type": "material",
+      "label": "Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)",
+      "path": "реальные данные/материалы/aluminum.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_am-241",
       "type": "material",
       "label": "Am-241",
@@ -7693,6 +7700,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_mems-imu",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_event_cameras",
       "dst": "часть_event_cameras_core",
       "type": "has_part",
@@ -7719,6 +7732,12 @@
     {
       "src": "izdelie_event_cameras",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_event_cameras",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -7753,6 +7772,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_mwir_nbn_640",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_sensora_volnovogo_fronta",
       "dst": "часть_sensora_volnovogo_fronta_core",
       "type": "has_part",
@@ -7779,6 +7804,12 @@
     {
       "src": "izdelie_sensora_volnovogo_fronta",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_sensora_volnovogo_fronta",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -7813,6 +7844,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_quantum_cascade_laser",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_mwir_2",
       "dst": "часть_mwir_2_core",
       "type": "has_part",
@@ -7839,6 +7876,12 @@
     {
       "src": "izdelie_mwir_2",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_mwir_2",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -7873,6 +7916,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_multispektralnye_cmos-matritsy_s_ik-diapazonom",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_metalinza",
       "dst": "часть_metalinza_core",
       "type": "has_part",
@@ -7899,6 +7948,12 @@
     {
       "src": "izdelie_metalinza",
       "dst": "material_metapoverhnost",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_metalinza",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -7933,6 +7988,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_poristyi_gazovyi_podshipnik_iz_sic",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_akusticheskaya_linza",
       "dst": "часть_akusticheskaya_linza_core",
       "type": "has_part",
@@ -7959,6 +8020,12 @@
     {
       "src": "izdelie_akusticheskaya_linza",
       "dst": "material_silikon_80_shore_a_steklyannye_mikrosfery",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_akusticheskaya_linza",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -7993,6 +8060,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_dvs",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_lwir_boson_1024",
       "dst": "часть_lwir_boson_1024_core",
       "type": "has_part",
@@ -8019,6 +8092,12 @@
     {
       "src": "izdelie_lwir_boson_1024",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_lwir_boson_1024",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -8053,6 +8132,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_tverdotelnyi_mmwave_radar",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_iridium_sbd",
       "dst": "часть_iridium_sbd_core",
       "type": "has_part",
@@ -8079,6 +8164,12 @@
     {
       "src": "izdelie_iridium_sbd",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_iridium_sbd",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -8113,6 +8204,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_flir",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_lidar",
       "dst": "часть_lidar_core",
       "type": "has_part",
@@ -8139,6 +8236,12 @@
     {
       "src": "izdelie_lidar",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_lidar",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -8173,6 +8276,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_pezo-sensor",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_ads-b_priemnik",
       "dst": "часть_ads-b_priemnik_core",
       "type": "has_part",
@@ -8199,6 +8308,12 @@
     {
       "src": "izdelie_ads-b_priemnik",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_ads-b_priemnik",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -8233,6 +8348,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_lidar_robosense_ac1",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_pezoelektricheskie_mems",
       "dst": "часть_pezoelektricheskie_mems_core",
       "type": "has_part",
@@ -8259,6 +8380,12 @@
     {
       "src": "izdelie_pezoelektricheskie_mems",
       "dst": "material_aln",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_pezoelektricheskie_mems",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -8293,6 +8420,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_ultrakorotkoimpulsnye_lazery",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_eo_ir_kamera",
       "dst": "часть_eo_ir_kamera_core",
       "type": "has_part",
@@ -8319,6 +8452,12 @@
     {
       "src": "izdelie_eo_ir_kamera",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_eo_ir_kamera",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -8353,6 +8492,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_cw-lazer",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_kaskadnyi_stirling-kriokuler",
       "dst": "часть_kaskadnyi_stirling-kriokuler_core",
       "type": "has_part",
@@ -8379,6 +8524,12 @@
     {
       "src": "izdelie_kaskadnyi_stirling-kriokuler",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_kaskadnyi_stirling-kriokuler",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -8413,6 +8564,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_pmut",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_ferritovye_klinya_na_kabelyah_sensorov",
       "dst": "часть_ferritovye_klinya_na_kabelyah_sensorov_core",
       "type": "has_part",
@@ -8439,6 +8596,12 @@
     {
       "src": "izdelie_ferritovye_klinya_na_kabelyah_sensorov",
       "dst": "material_magnitnaya_rezina_ferritovyi_poroshok",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_ferritovye_klinya_na_kabelyah_sensorov",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -8473,6 +8636,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_flir_lwir_2",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_pezo-mems",
       "dst": "часть_pezo-mems_core",
       "type": "has_part",
@@ -8499,6 +8668,12 @@
     {
       "src": "izdelie_pezo-mems",
       "dst": "material_aln",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_pezo-mems",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -8563,6 +8738,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_starlink_mini",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_ipg_yls-eco",
       "dst": "часть_ipg_yls-eco_core",
       "type": "has_part",
@@ -8589,6 +8770,12 @@
     {
       "src": "izdelie_ipg_yls-eco",
       "dst": "material_stal_st3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_ipg_yls-eco",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -8623,6 +8810,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_flir_boson_640",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_mems-mikrofonov",
       "dst": "часть_mems-mikrofonov_core",
       "type": "has_part",
@@ -8649,6 +8842,12 @@
     {
       "src": "izdelie_mems-mikrofonov",
       "dst": "material_si",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_mems-mikrofonov",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -10399,6 +10598,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_sic_mosfet",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_brainchip_akida_2",
       "dst": "часть_brainchip_akida_2_die",
       "type": "has_part",
@@ -10780,6 +10985,12 @@
       "src": "izdelie_nvidia_jetson_orin_nano",
       "dst": "часть_nvidia_jetson_orin_nano_enclosure",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_nvidia_jetson_orin_nano",
+      "dst": "material_aluminum",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -12343,6 +12554,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_loop_heat_pipe",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_mikrokanalnye_ohlazhdayuschie_plastiny",
       "dst": "часть_mikrokanalnye_ohlazhdayuschie_plastiny_core",
       "type": "has_part",
@@ -12373,6 +12590,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_mikrokanalnye_ohlazhdayuschie_plastiny",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_kapillyarnaya_teplovaya_trubka",
       "dst": "часть_kapillyarnaya_teplovaya_trubka_core",
       "type": "has_part",
@@ -12399,6 +12622,12 @@
     {
       "src": "izdelie_kapillyarnaya_teplovaya_trubka",
       "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_kapillyarnaya_teplovaya_trubka",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -12931,6 +13160,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_marx_generator",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_asrg",
       "dst": "часть_asrg_isotope",
       "type": "has_part",
@@ -13143,6 +13378,12 @@
     {
       "src": "izdelie_mmrtg",
       "dst": "material_pbte_teg",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_mmrtg",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -13519,6 +13760,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_superkondensatory",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist",
       "dst": "часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_magnets",
       "type": "has_part",
@@ -13669,6 +13916,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_vodorodnye_toplivnye_elementy",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_induktivnyi_nakopitel",
       "dst": "часть_induktivnyi_nakopitel_coil",
       "type": "has_part",
@@ -13701,6 +13954,12 @@
     {
       "src": "izdelie_induktivnyi_nakopitel",
       "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_induktivnyi_nakopitel",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -13755,6 +14014,12 @@
     {
       "src": "izdelie_tverdotelnye_akkumulyatory",
       "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_tverdotelnye_akkumulyatory",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -13827,6 +14092,12 @@
     {
       "src": "izdelie_termoelektricheskii_postoyannyi_magnit",
       "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_termoelektricheskii_postoyannyi_magnit",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -14038,6 +14309,12 @@
       "src": "izdelie_emi-generator",
       "dst": "часть_emi-generator_housing",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_emi-generator",
+      "dst": "material_aluminum",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16315,6 +16592,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_reshetchatyi_karkas",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_kompensatory",
       "dst": "часть_kompensatory_core",
       "type": "has_part",
@@ -16567,6 +16850,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_optovolokonnaya_shina",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_stm32",
       "dst": "часть_stm32_core",
       "type": "has_part",
@@ -16593,6 +16882,12 @@
     {
       "src": "izdelie_stm32",
       "dst": "material_si",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_stm32",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -16627,6 +16922,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_obd-ii",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_flat-face_couplings_iso_16028",
       "dst": "часть_flat-face_couplings_iso_16028_core",
       "type": "has_part",
@@ -16653,6 +16954,12 @@
     {
       "src": "izdelie_flat-face_couplings_iso_16028",
       "dst": "material_stal_st3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_flat-face_couplings_iso_16028",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -16687,6 +16994,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_radiatsionno-stoikii_neiromorfnyi_tmr",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_stm32h743",
       "dst": "часть_stm32h743_core",
       "type": "has_part",
@@ -16713,6 +17026,12 @@
     {
       "src": "izdelie_stm32h743",
       "dst": "material_si",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_stm32h743",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -16747,6 +17066,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_usb-c",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_razryvnye_mufty_iso_16028",
       "dst": "часть_razryvnye_mufty_iso_16028_core",
       "type": "has_part",
@@ -16773,6 +17098,12 @@
     {
       "src": "izdelie_razryvnye_mufty_iso_16028",
       "dst": "material_stal_st3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_razryvnye_mufty_iso_16028",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -17191,6 +17522,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_elektroflyuidnye_volokna_mit",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov",
       "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
       "type": "has_part",
@@ -17221,6 +17558,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_ipmc",
       "dst": "часть_ipmc_core",
       "type": "has_part",
@@ -17247,6 +17590,12 @@
     {
       "src": "izdelie_ipmc",
       "dst": "material_nafion",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_ipmc",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -17317,6 +17666,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_belleville_shaiby",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_fleksury_8_diskov_po_0_15_mm",
       "dst": "часть_fleksury_8_diskov_po_0_15_mm_core",
       "type": "has_part",
@@ -17347,6 +17702,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_fleksury_8_diskov_po_0_15_mm",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_pezoelektricheskii_gromkogovoritel",
       "dst": "часть_pezoelektricheskii_gromkogovoritel_core",
       "type": "has_part",
@@ -17373,6 +17734,12 @@
     {
       "src": "izdelie_pezoelektricheskii_gromkogovoritel",
       "dst": "material_latun_c36000",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_pezoelektricheskii_gromkogovoritel",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -17455,6 +17822,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_dea",
       "dst": "часть_dea_core",
       "type": "has_part",
@@ -17481,6 +17854,12 @@
     {
       "src": "izdelie_dea",
       "dst": "material_elastomernaya_matritsa",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_dea",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -17515,6 +17894,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_bldc_enkoder",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_apa",
       "dst": "часть_apa_core",
       "type": "has_part",
@@ -17541,6 +17926,12 @@
     {
       "src": "izdelie_apa",
       "dst": "material_batio3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_apa",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -17575,6 +17966,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_povorotnoe_uplotnenie",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_tcp",
       "dst": "часть_tcp_core",
       "type": "has_part",
@@ -17605,6 +18002,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_tcp",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_3d-pechatnye_dea",
       "dst": "часть_3d-pechatnye_dea_core",
       "type": "has_part",
@@ -17631,6 +18034,12 @@
     {
       "src": "izdelie_3d-pechatnye_dea",
       "dst": "material_silikon_40_50_shore_a",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_3d-pechatnye_dea",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -17671,6 +18080,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_bldc",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_tsa",
       "dst": "часть_tsa_core",
       "type": "has_part",
@@ -17697,6 +18112,12 @@
     {
       "src": "izdelie_tsa",
       "dst": "material_spectra",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_tsa",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -18763,6 +19184,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_gidrostaticheskie_gazovye_podshipniki_na_gelii",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_slm_eos_m290",
       "dst": "часть_slm_eos_m290_core",
       "type": "has_part",
@@ -18789,6 +19216,12 @@
     {
       "src": "izdelie_slm_eos_m290",
       "dst": "material_stal_st3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_slm_eos_m290",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -18823,6 +19256,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_polyimide_fpc",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_dielektricheskie_elastomernye_datchiki",
       "dst": "часть_dielektricheskie_elastomernye_datchiki_core",
       "type": "has_part",
@@ -18849,6 +19288,12 @@
     {
       "src": "izdelie_dielektricheskie_elastomernye_datchiki",
       "dst": "material_p_vdf-trfe-cfe",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_dielektricheskie_elastomernye_datchiki",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -18883,6 +19328,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_elastomernyh_dempferah",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_gibkii_pcb",
       "dst": "часть_gibkii_pcb_core",
       "type": "has_part",
@@ -18909,6 +19360,12 @@
     {
       "src": "izdelie_gibkii_pcb",
       "dst": "material_poliimid",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_gibkii_pcb",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -18943,6 +19400,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_provodnikovaya_nanoreshetka",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_copv",
       "dst": "часть_copv_core",
       "type": "has_part",
@@ -18969,6 +19432,12 @@
     {
       "src": "izdelie_copv",
       "dst": "material_cfrp_t1100g",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_copv",
+      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -20753,6 +21222,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_mems-imu",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_event_cameras_core",
       "dst": "izdelie_event_cameras",
       "type": "part_of",
@@ -20786,6 +21263,14 @@
     },
     {
       "src": "material_al_6061-t6",
+      "dst": "izdelie_event_cameras",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_event_cameras",
       "type": "used_in",
       "meta": {
@@ -20833,6 +21318,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_mwir_nbn_640",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_sensora_volnovogo_fronta_core",
       "dst": "izdelie_sensora_volnovogo_fronta",
       "type": "part_of",
@@ -20866,6 +21359,14 @@
     },
     {
       "src": "material_al_6061-t6",
+      "dst": "izdelie_sensora_volnovogo_fronta",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_sensora_volnovogo_fronta",
       "type": "used_in",
       "meta": {
@@ -20913,6 +21414,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_quantum_cascade_laser",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_mwir_2_core",
       "dst": "izdelie_mwir_2",
       "type": "part_of",
@@ -20946,6 +21455,14 @@
     },
     {
       "src": "material_al_6061-t6",
+      "dst": "izdelie_mwir_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_mwir_2",
       "type": "used_in",
       "meta": {
@@ -20993,6 +21510,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_multispektralnye_cmos-matritsy_s_ik-diapazonom",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_metalinza_core",
       "dst": "izdelie_metalinza",
       "type": "part_of",
@@ -21026,6 +21551,14 @@
     },
     {
       "src": "material_metapoverhnost",
+      "dst": "izdelie_metalinza",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_metalinza",
       "type": "used_in",
       "meta": {
@@ -21073,6 +21606,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_poristyi_gazovyi_podshipnik_iz_sic",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_akusticheskaya_linza_core",
       "dst": "izdelie_akusticheskaya_linza",
       "type": "part_of",
@@ -21106,6 +21647,14 @@
     },
     {
       "src": "material_silikon_80_shore_a_steklyannye_mikrosfery",
+      "dst": "izdelie_akusticheskaya_linza",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_akusticheskaya_linza",
       "type": "used_in",
       "meta": {
@@ -21153,6 +21702,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_dvs",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_lwir_boson_1024_core",
       "dst": "izdelie_lwir_boson_1024",
       "type": "part_of",
@@ -21186,6 +21743,14 @@
     },
     {
       "src": "material_al_6061-t6",
+      "dst": "izdelie_lwir_boson_1024",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_lwir_boson_1024",
       "type": "used_in",
       "meta": {
@@ -21233,6 +21798,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_tverdotelnyi_mmwave_radar",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_iridium_sbd_core",
       "dst": "izdelie_iridium_sbd",
       "type": "part_of",
@@ -21266,6 +21839,14 @@
     },
     {
       "src": "material_al_6061-t6",
+      "dst": "izdelie_iridium_sbd",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_iridium_sbd",
       "type": "used_in",
       "meta": {
@@ -21313,6 +21894,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_flir",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_lidar_core",
       "dst": "izdelie_lidar",
       "type": "part_of",
@@ -21346,6 +21935,14 @@
     },
     {
       "src": "material_al_6061-t6",
+      "dst": "izdelie_lidar",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_lidar",
       "type": "used_in",
       "meta": {
@@ -21393,6 +21990,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_pezo-sensor",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_ads-b_priemnik_core",
       "dst": "izdelie_ads-b_priemnik",
       "type": "part_of",
@@ -21426,6 +22031,14 @@
     },
     {
       "src": "material_al_6061-t6",
+      "dst": "izdelie_ads-b_priemnik",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_ads-b_priemnik",
       "type": "used_in",
       "meta": {
@@ -21473,6 +22086,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_lidar_robosense_ac1",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_pezoelektricheskie_mems_core",
       "dst": "izdelie_pezoelektricheskie_mems",
       "type": "part_of",
@@ -21506,6 +22127,14 @@
     },
     {
       "src": "material_aln",
+      "dst": "izdelie_pezoelektricheskie_mems",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_pezoelektricheskie_mems",
       "type": "used_in",
       "meta": {
@@ -21553,6 +22182,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_ultrakorotkoimpulsnye_lazery",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_eo_ir_kamera_core",
       "dst": "izdelie_eo_ir_kamera",
       "type": "part_of",
@@ -21586,6 +22223,14 @@
     },
     {
       "src": "material_al_6061-t6",
+      "dst": "izdelie_eo_ir_kamera",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_eo_ir_kamera",
       "type": "used_in",
       "meta": {
@@ -21633,6 +22278,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_cw-lazer",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_kaskadnyi_stirling-kriokuler_core",
       "dst": "izdelie_kaskadnyi_stirling-kriokuler",
       "type": "part_of",
@@ -21666,6 +22319,14 @@
     },
     {
       "src": "material_al_6061-t6",
+      "dst": "izdelie_kaskadnyi_stirling-kriokuler",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_kaskadnyi_stirling-kriokuler",
       "type": "used_in",
       "meta": {
@@ -21713,6 +22374,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_pmut",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_ferritovye_klinya_na_kabelyah_sensorov_core",
       "dst": "izdelie_ferritovye_klinya_na_kabelyah_sensorov",
       "type": "part_of",
@@ -21746,6 +22415,14 @@
     },
     {
       "src": "material_magnitnaya_rezina_ferritovyi_poroshok",
+      "dst": "izdelie_ferritovye_klinya_na_kabelyah_sensorov",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_ferritovye_klinya_na_kabelyah_sensorov",
       "type": "used_in",
       "meta": {
@@ -21793,6 +22470,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_flir_lwir_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_pezo-mems_core",
       "dst": "izdelie_pezo-mems",
       "type": "part_of",
@@ -21826,6 +22511,14 @@
     },
     {
       "src": "material_aln",
+      "dst": "izdelie_pezo-mems",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_pezo-mems",
       "type": "used_in",
       "meta": {
@@ -21913,6 +22606,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_starlink_mini",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_ipg_yls-eco_core",
       "dst": "izdelie_ipg_yls-eco",
       "type": "part_of",
@@ -21946,6 +22647,14 @@
     },
     {
       "src": "material_stal_st3",
+      "dst": "izdelie_ipg_yls-eco",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_ipg_yls-eco",
       "type": "used_in",
       "meta": {
@@ -21993,6 +22702,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_flir_boson_640",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_mems-mikrofonov_core",
       "dst": "izdelie_mems-mikrofonov",
       "type": "part_of",
@@ -22026,6 +22743,14 @@
     },
     {
       "src": "material_si",
+      "dst": "izdelie_mems-mikrofonov",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_mems-mikrofonov",
       "type": "used_in",
       "meta": {
@@ -23305,6 +24030,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_sic_mosfet",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_brainchip_akida_2_die",
       "dst": "izdelie_brainchip_akida_2",
       "type": "part_of",
@@ -23814,6 +24547,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_aluminum",
+      "dst": "izdelie_nvidia_jetson_orin_nano",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -25073,6 +25814,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_loop_heat_pipe",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_mikrokanalnye_ohlazhdayuschie_plastiny_core",
       "dst": "izdelie_mikrokanalnye_ohlazhdayuschie_plastiny",
       "type": "part_of",
@@ -25113,6 +25862,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_mikrokanalnye_ohlazhdayuschie_plastiny",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_kapillyarnaya_teplovaya_trubka_core",
       "dst": "izdelie_kapillyarnaya_teplovaya_trubka",
       "type": "part_of",
@@ -25146,6 +25903,14 @@
     },
     {
       "src": "material_copper",
+      "dst": "izdelie_kapillyarnaya_teplovaya_trubka",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_kapillyarnaya_teplovaya_trubka",
       "type": "used_in",
       "meta": {
@@ -25649,6 +26414,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_marx_generator",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_asrg_isotope",
       "dst": "izdelie_asrg",
       "type": "part_of",
@@ -25930,6 +26703,14 @@
     },
     {
       "src": "material_pbte_teg",
+      "dst": "izdelie_mmrtg",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_mmrtg",
       "type": "used_in",
       "meta": {
@@ -26433,6 +27214,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_superkondensatory",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_magnets",
       "dst": "izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist",
       "type": "part_of",
@@ -26633,6 +27422,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_vodorodnye_toplivnye_elementy",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_induktivnyi_nakopitel_coil",
       "dst": "izdelie_induktivnyi_nakopitel",
       "type": "part_of",
@@ -26674,6 +27471,14 @@
     },
     {
       "src": "material_copper",
+      "dst": "izdelie_induktivnyi_nakopitel",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_induktivnyi_nakopitel",
       "type": "used_in",
       "meta": {
@@ -26746,6 +27551,14 @@
     },
     {
       "src": "material_copper",
+      "dst": "izdelie_tverdotelnye_akkumulyatory",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_tverdotelnye_akkumulyatory",
       "type": "used_in",
       "meta": {
@@ -26842,6 +27655,14 @@
     },
     {
       "src": "material_copper",
+      "dst": "izdelie_termoelektricheskii_postoyannyi_magnit",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_termoelektricheskii_postoyannyi_magnit",
       "type": "used_in",
       "meta": {
@@ -27126,6 +27947,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_aluminum",
+      "dst": "izdelie_emi-generator",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -28753,6 +29582,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_reshetchatyi_karkas",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_kompensatory_core",
       "dst": "izdelie_kompensatory",
       "type": "part_of",
@@ -28985,6 +29822,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_optovolokonnaya_shina",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_stm32_core",
       "dst": "izdelie_stm32",
       "type": "part_of",
@@ -29018,6 +29863,14 @@
     },
     {
       "src": "material_si",
+      "dst": "izdelie_stm32",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_stm32",
       "type": "used_in",
       "meta": {
@@ -29065,6 +29918,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_obd-ii",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_flat-face_couplings_iso_16028_core",
       "dst": "izdelie_flat-face_couplings_iso_16028",
       "type": "part_of",
@@ -29098,6 +29959,14 @@
     },
     {
       "src": "material_stal_st3",
+      "dst": "izdelie_flat-face_couplings_iso_16028",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_flat-face_couplings_iso_16028",
       "type": "used_in",
       "meta": {
@@ -29145,6 +30014,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_radiatsionno-stoikii_neiromorfnyi_tmr",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_stm32h743_core",
       "dst": "izdelie_stm32h743",
       "type": "part_of",
@@ -29178,6 +30055,14 @@
     },
     {
       "src": "material_si",
+      "dst": "izdelie_stm32h743",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_stm32h743",
       "type": "used_in",
       "meta": {
@@ -29225,6 +30110,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_usb-c",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_razryvnye_mufty_iso_16028_core",
       "dst": "izdelie_razryvnye_mufty_iso_16028",
       "type": "part_of",
@@ -29258,6 +30151,14 @@
     },
     {
       "src": "material_stal_st3",
+      "dst": "izdelie_razryvnye_mufty_iso_16028",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_razryvnye_mufty_iso_16028",
       "type": "used_in",
       "meta": {
@@ -29561,6 +30462,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_elektroflyuidnye_volokna_mit",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
       "dst": "izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov",
       "type": "part_of",
@@ -29601,6 +30510,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_ipmc_core",
       "dst": "izdelie_ipmc",
       "type": "part_of",
@@ -29634,6 +30551,14 @@
     },
     {
       "src": "material_nafion",
+      "dst": "izdelie_ipmc",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_ipmc",
       "type": "used_in",
       "meta": {
@@ -29729,6 +30654,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_belleville_shaiby",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_fleksury_8_diskov_po_0_15_mm_core",
       "dst": "izdelie_fleksury_8_diskov_po_0_15_mm",
       "type": "part_of",
@@ -29769,6 +30702,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_fleksury_8_diskov_po_0_15_mm",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_pezoelektricheskii_gromkogovoritel_core",
       "dst": "izdelie_pezoelektricheskii_gromkogovoritel",
       "type": "part_of",
@@ -29802,6 +30743,14 @@
     },
     {
       "src": "material_latun_c36000",
+      "dst": "izdelie_pezoelektricheskii_gromkogovoritel",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_pezoelektricheskii_gromkogovoritel",
       "type": "used_in",
       "meta": {
@@ -29913,6 +30862,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_dea_core",
       "dst": "izdelie_dea",
       "type": "part_of",
@@ -29946,6 +30903,14 @@
     },
     {
       "src": "material_elastomernaya_matritsa",
+      "dst": "izdelie_dea",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_dea",
       "type": "used_in",
       "meta": {
@@ -29993,6 +30958,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_bldc_enkoder",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_apa_core",
       "dst": "izdelie_apa",
       "type": "part_of",
@@ -30026,6 +30999,14 @@
     },
     {
       "src": "material_batio3",
+      "dst": "izdelie_apa",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_apa",
       "type": "used_in",
       "meta": {
@@ -30073,6 +31054,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_povorotnoe_uplotnenie",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_tcp_core",
       "dst": "izdelie_tcp",
       "type": "part_of",
@@ -30113,6 +31102,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_tcp",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_3d-pechatnye_dea_core",
       "dst": "izdelie_3d-pechatnye_dea",
       "type": "part_of",
@@ -30146,6 +31143,14 @@
     },
     {
       "src": "material_silikon_40_50_shore_a",
+      "dst": "izdelie_3d-pechatnye_dea",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_3d-pechatnye_dea",
       "type": "used_in",
       "meta": {
@@ -30201,6 +31206,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_bldc",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_tsa_core",
       "dst": "izdelie_tsa",
       "type": "part_of",
@@ -30234,6 +31247,14 @@
     },
     {
       "src": "material_spectra",
+      "dst": "izdelie_tsa",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_tsa",
       "type": "used_in",
       "meta": {
@@ -31025,6 +32046,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_gidrostaticheskie_gazovye_podshipniki_na_gelii",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_slm_eos_m290_core",
       "dst": "izdelie_slm_eos_m290",
       "type": "part_of",
@@ -31058,6 +32087,14 @@
     },
     {
       "src": "material_stal_st3",
+      "dst": "izdelie_slm_eos_m290",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_slm_eos_m290",
       "type": "used_in",
       "meta": {
@@ -31105,6 +32142,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_polyimide_fpc",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_dielektricheskie_elastomernye_datchiki_core",
       "dst": "izdelie_dielektricheskie_elastomernye_datchiki",
       "type": "part_of",
@@ -31138,6 +32183,14 @@
     },
     {
       "src": "material_p_vdf-trfe-cfe",
+      "dst": "izdelie_dielektricheskie_elastomernye_datchiki",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_dielektricheskie_elastomernye_datchiki",
       "type": "used_in",
       "meta": {
@@ -31185,6 +32238,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_elastomernyh_dempferah",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_gibkii_pcb_core",
       "dst": "izdelie_gibkii_pcb",
       "type": "part_of",
@@ -31218,6 +32279,14 @@
     },
     {
       "src": "material_poliimid",
+      "dst": "izdelie_gibkii_pcb",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_gibkii_pcb",
       "type": "used_in",
       "meta": {
@@ -31265,6 +32334,14 @@
       }
     },
     {
+      "src": "material_aluminum",
+      "dst": "izdelie_provodnikovaya_nanoreshetka",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_copv_core",
       "dst": "izdelie_copv",
       "type": "part_of",
@@ -31298,6 +32375,14 @@
     },
     {
       "src": "material_cfrp_t1100g",
+      "dst": "izdelie_copv",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_aluminum",
       "dst": "izdelie_copv",
       "type": "used_in",
       "meta": {
@@ -32825,6 +33910,7 @@
       "standart_ASTM B446 (прутки/поковки)",
       "standart_ASTM B483",
       "standart_ASTM B488 (Au-покрытие)",
+      "standart_ASTM B491 (фольга и лента)",
       "standart_ASTM B521",
       "standart_ASTM B545",
       "standart_ASTM B561 (рафинированная платина, поставка)",
@@ -32946,6 +34032,7 @@
       "standart_EN 50342-1 (стартерные свинцово-кислотные АКБ)",
       "standart_EN 50598",
       "standart_EN 755-9 (EN AW-6063-T5)",
+      "standart_EN AW-1050A (Al99.5, номер 3.0255)",
       "standart_EPJ Appl. Phys. 80, 20901 (2017)",
       "standart_ETSI EN 301 489",
       "standart_Edmund Optics M12 Lens Holder",
@@ -33081,6 +34168,7 @@
       "standart_ISO 5834-2",
       "standart_ISO 6149-1 (fluid ports)",
       "standart_ISO 630",
+      "standart_ISO 6361-1/-2 (полуфабрикаты алюминиевые)",
       "standart_ISO 6474 (имплантационная керамика Al₂O₃)",
       "standart_ISO 6507-1 (определение твёрдости по Виккерсу — методика Yu et al. 2024)",
       "standart_ISO 683-17 (шарико- и роликоподшипниковые стали; марки 100Cr6, 100CrMnSi6-4, 100CrMo7, 100CrMo7-3)",
@@ -33205,6 +34293,7 @@
       "standart_UN 38.3",
       "standart_UN 38.3 (транспорт литий-ионных батарей)",
       "standart_UN 38.3 (транспорт)",
+      "standart_UNS A91050",
       "standart_UNS A96061 / EN AW-6061 (AlSi1MgCu, 3.3211)",
       "standart_UNS C11000 (EN CW004A / JIS C110)",
       "standart_UNS C17200 (Alloy 25 / CuBe2, EN CW101C)",
@@ -33227,6 +34316,7 @@
       "standart_electronic grade H₂O <20 ppmw (proionic)",
       "standart_ГОСТ 10007-81 (фторопласт-4, технические условия)",
       "standart_ГОСТ 1050-88 (прокат калиброванный)",
+      "standart_ГОСТ 11069-2019 (аналоги АД1/АД0)",
       "standart_ГОСТ 19658-81 (кремний монокристаллический для изделий электронной техники)",
       "standart_ГОСТ 2590-2006 (прокат сортовой стальной горячекатаный круглый Ø5–270 мм)",
       "standart_ГОСТ 27006 (бетоны тяжёлые)",
@@ -33249,6 +34339,7 @@
     ],
     "researched_by": [
       "group_Acheson (1891 — открытие карбида кремния); J.A. Lely (1955 — метод сублимационного роста монокристаллов); Cree/Wolfspeed (осн. 1987 — первые коммерческие SiC-пластины, 1992); ключевые производители подложек: Wolfspeed, Coherent, SiCrystal (ROHM)",
+      "group_Aluminum Association — стандартизация серии 1xxx (1050/1350, UNS A91050); электролитическое производство — процесс Холла–Эру (Charles Martin Hall и Paul Héroult, независимо, 1886); первое надёжное выделение металла — Hans Christian Ørsted (1825), систематизация — Friedrich Wöhler (1827); первый промышленный (химический) процесс — Henri Sainte-Claire Deville (1854)",
       "group_Anselme Payen (Франция, 1838) — выделил целлюлозу из растительной ткани, определил формулу и ввёл название «cellulose»; Charles Frederick Cross, Edward John Bevan и Clayton Beadle (Великобритания, 1892, British Patent 8700 «Improvements in Dissolving Cellulose and Allied Compounds») — вязкозный процесс регенерированной целлюлозы, основа современных регенерированных целлюлозных бумаг-сепараторов",
       "group_BT-смола: Mitsubishi Gas Chemical (MGC) — разработана и запатентована в 1978 г., коммерциализирована в 1980-е (MGC: «MGC invented a revolutionary thermal-hardened bismaleimide triazine (BT) resin»); ABF: Ajinomoto (R&D на базе аминокислотной химии с 1970-х, первая адопция крупным производителем полупроводников в 1999 г., автор — Shigeo Nakamura, с 2025 г. CEO Ajinomoto Group)",
       "group_DuPont — изобретатель поливинилфторида (PVF, 1940-е), товарный знак Tedlar® и коммерческий выпуск плёнки с 1961 г.; ПЭТ-сердцевина boPET — DuPont/ICI/Hoechst (середина 1950-х — первая двуосно-ориентированная полимерная плёнка массового производства; бренды Mylar®/Melinex®, ныне Mylar Specialty Films — ребрендинг DuPont Teijin Films, 2024)",
@@ -33320,7 +34411,6 @@
     "uses_material": [
       "material_aerogel",
       "material_alumina",
-      "material_aluminum",
       "material_aluminum_1100",
       "material_aluminum_6063",
       "material_aluminum_electrolytic",
@@ -33401,19 +34491,19 @@
     ]
   },
   "stats": {
-    "nodes": 1094,
-    "edges": 3681,
+    "nodes": 1095,
+    "edges": 3835,
     "dangling": {
-      "complies_with": 475,
+      "complies_with": 480,
       "has_part": 6,
-      "researched_by": 68,
-      "uses_material": 80
+      "researched_by": 69,
+      "uses_material": 79
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 197,
+      "material": 198,
       "standart": 8,
       "tekhnologia": 77
     }

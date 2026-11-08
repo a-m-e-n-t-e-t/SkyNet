@@ -112,17 +112,32 @@ graph LR
     часть_t600_рука_левая[servo_arm]
     часть_t600_нога_левая[servo_leg]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
+    material_aluminum[Al ≥ 99.5 % (основа); …]
     material_copper[Cu ≥99.9% (электролити…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
-    material_si[Si (кремний); электрон…]
+    izdelie_elektroflyuidnye_volokna_mit -->|материал| material_aluminum
     izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov -->|материал| material_copper
+    izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov -->|материал| material_aluminum
+    izdelie_ipmc -->|материал| material_aluminum
     izdelie_zubchataya_mufta -->|материал| material_stal_st3
     izdelie_zubchataya_mufta -->|материал| material_al_6061_t6
     izdelie_belleville_shaiby -->|материал| material_stal_st3
+    izdelie_belleville_shaiby -->|материал| material_aluminum
+    izdelie_fleksury_8_diskov_po_0_15_mm -->|материал| material_aluminum
+    izdelie_pezoelektricheskii_gromkogovoritel -->|материал| material_aluminum
     izdelie_hasel -->|материал| material_al_6061_t6
+    izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena -->|материал| material_aluminum
+    izdelie_dea -->|материал| material_aluminum
     izdelie_bldc_enkoder -->|материал| material_al_6061_t6
+    izdelie_bldc_enkoder -->|материал| material_aluminum
+    izdelie_apa -->|материал| material_aluminum
+    izdelie_povorotnoe_uplotnenie -->|материал| material_aluminum
+    izdelie_tcp -->|материал| material_aluminum
+    izdelie_3d_pechatnye_dea -->|материал| material_aluminum
     izdelie_bldc -->|материал| material_al_6061_t6
+    izdelie_bldc -->|материал| material_aluminum
+    izdelie_tsa -->|материал| material_aluminum
     часть_elektroflyuidnye_volokna_mit_housing -->|материал| material_al_6061_t6
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core -->|материал| material_copper
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors -->|материал| material_al_6061_t6
@@ -149,7 +164,6 @@ graph LR
     часть_bldc_enkoder_core -->|материал| material_al_6061_t6
     часть_bldc_enkoder_core_stator -->|материал| material_copper
     часть_bldc_enkoder_mounting -->|материал| material_stal_st3
-    часть_bldc_enkoder_core_encoder -->|материал| material_si
     часть_bldc_enkoder_housing -->|материал| material_al_6061_t6
     часть_apa_mounting -->|материал| material_al_6061_t6
     часть_apa_housing -->|материал| material_al_6061_t6
@@ -187,6 +201,7 @@ _Показаны 5 наиболее часто используемых мат�
 | Материал | Используется в частях |
 |---|---:|
 | `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 36 |
+| `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 15 |
 | `Ti-6Al-4V (Grade 5, UNS R56400): Al 5.5–6.75 %, V 3.5–4.5 %, Fe ≤0.30 %, O ≤0.20 %, C ≤0.08 %, N ≤0.05 %, H ≤0.015 %, Y ≤0.005 %, Ti — остальное (ASTM-спецификация, Wikipedia/ASM)` | 14 |
 | `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 7 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 7 |
@@ -200,4 +215,3 @@ _Показаны 5 наиболее часто используемых мат�
 | `Ионная жидкость [EMIM][TFSI]` | 2 |
 | `Терполимер P(VDF-TrFE-CFE): звенья винилиденфторида CH2=CF2 (VDF), трифторэтилена CHF=CF2 (TrFE) и хлорфтормонофторэтилена (CFE); типовой состав 64.8/27.4/7.8 мол.% (J. Materiomics 2023); промышленная марка Piezotech RT-FS (Arkema)` | 2 |
 | `PEEK — полиэфирэфиркетон (PAEK): повторяющееся звено (C19H12O3)n, M = 288.3 г/моль; синтез из 4,4′-дифторбензофенона и динатриевой соли гидрохинона в дифенилсульфоне при ~300 °C` | 2 |
-| `Гибкий слоистый композит: ткань из E-стекла (алюмоборосиликатное волокно, σрасч ≥1100 МПа по волокну), покрытая с одной/двух сторон вулканизованной силиконовой резиной (полидиметилсилоксан, PDMS, метил/метилфенил-каучук с оксидными наполнителями). Поверхностная плотность ткани 350–1800 г/м², покрытия 80–2000 г/м², суммарная 350–3000 г/м²` | 2 |

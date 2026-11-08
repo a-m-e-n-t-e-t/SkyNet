@@ -49,21 +49,27 @@ graph LR
     часть_t800_ткань_кожа[living_tissue]
     часть_t600_резиновая_кожа[rubber_skin]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
+    material_aluminum[Al ≥ 99.5 % (основа); …]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
     material_si[Si (кремний); электрон…]
-    material_latun_c36000[Cu 60–63% (основа), Zn…]
     izdelie_gidrostaticheskie_gazovye_podshipniki_na_gelii -->|материал| material_stal_st3
+    izdelie_gidrostaticheskie_gazovye_podshipniki_na_gelii -->|материал| material_aluminum
     izdelie_slm_eos_m290 -->|материал| material_stal_st3
+    izdelie_slm_eos_m290 -->|материал| material_aluminum
+    izdelie_polyimide_fpc -->|материал| material_aluminum
+    izdelie_dielektricheskie_elastomernye_datchiki -->|материал| material_aluminum
+    izdelie_elastomernyh_dempferah -->|материал| material_aluminum
+    izdelie_gibkii_pcb -->|материал| material_aluminum
+    izdelie_provodnikovaya_nanoreshetka -->|материал| material_aluminum
+    izdelie_copv -->|материал| material_aluminum
     часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_housing -->|материал| material_al_6061_t6
     часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_core -->|материал| material_stal_st3
-    часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_mounting -->|материал| material_latun_c36000
     часть_slm_eos_m290_housing -->|материал| material_stal_st3
     часть_slm_eos_m290_core -->|материал| material_stal_st3
     часть_slm_eos_m290_connectors -->|материал| material_al_6061_t6
     часть_polyimide_fpc_housing -->|материал| material_al_6061_t6
     часть_dielektricheskie_elastomernye_datchiki_housing -->|материал| material_al_6061_t6
-    часть_dielektricheskie_elastomernye_datchiki_connectors -->|материал| material_latun_c36000
     часть_elastomernyh_dempferah_housing -->|материал| material_al_6061_t6
     часть_elastomernyh_dempferah_mounting -->|материал| material_stal_st3
     часть_gibkii_pcb_housing -->|материал| material_al_6061_t6
@@ -82,6 +88,7 @@ _Показаны 5 наиболее часто используемых мат�
 | Материал | Используется в частях |
 |---|---:|
 | `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 9 |
+| `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 8 |
 | `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 7 |
 | `Ароматический полиимид PMDA-ODA (тип Kapton): повторяющееся звено C22H10N2O5 (M ≈ 382.2 г/моль) из пиромеллитового диангидрида (PMDA) и 4,4′-оксианилина (ODA); чередующиеся имидные циклы C(=O)–N–C(=O) и фениленовые/дифениловый эфирный сегменты` | 7 |
 | `Полидиметилсилоксан (PDMS, VMQ): основа –[Si(CH₃)₂–O]ₙ– с винильными сшивочными группами (~0.05–0.5 мол. %), наполнитель — пирогенный кремнезём SiO₂ 10–30 мас.% (типа HDK®), вулканизация пероксидная (HCR-марки) или платиновая присоединительная (RTV-2/LSR)` | 3 |
@@ -95,4 +102,3 @@ _Показаны 5 наиболее часто используемых мат�
 | `Полиамид 6/6 (PA66, нейлон 6/6): продукт поликонденсации гексаметилендиамина (6 C) и адипиновой кислоты (6 C), повторяющееся звено –[NH–(CH₂)₆–NH–OC–(CH₂)₄–CO]ₙ–; промышленные марки: Zytel 101 (DuPont), Ultramid A3K (BASF), Durethan A (Lanxess)` | 1 |
 | `нержавеющая сталь AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240)` | 1 |
 | `полиметилметакрилат [–CH2–C(CH3)(COOCH3)–]n (атактический) + бензотриазольный УФ-абсорбер (класс 2-(2H-бензотриазол-2-ил)-фенолов, ~0.2–1 масс.%) в объёме листа` | 1 |
-| `двухкомпонентный ненаполненный эпоксидный адгезив EPO-TEK 301-2: эпоксидная смола Part A (SG 1.02) + отвердитель Part B (SG 0.89), пропорция 100:35 по массе; без наполнителей — оптически прозрачный` | 1 |
