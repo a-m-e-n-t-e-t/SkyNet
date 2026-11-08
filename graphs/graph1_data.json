@@ -6702,6 +6702,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_silicon_carbide",
+      "type": "material",
+      "label": "SiC — стехиометрический карбид кремния (50 ат.% Si / 50 ат.% C); рабочие формы: эпитаксиальная структура 4H-SiC (n⁻-дрифт-слой с азотным легированием 7×10¹⁵ см⁻³ на n⁺-подложке) для die MOSFET; эпитаксиальный p-n-переход 4H-SiC для бета-вольтаических конвертеров; спечённый поликристаллический SSiC (ω-модификация с добавками C/B) для теплоисточников TPV",
+      "path": "реальные данные/материалы/silicon_carbide.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_silicon_wafer",
       "type": "material",
       "label": "Si (монокристалл кремния, электронный сорт ≥99.9999999 % (9N) — полисиликон после очистки Siemens-процессом); легирование: p-типа — бор (B), типовой диапазон удельного сопротивления 1–100 Ω·cm; n-типа — фосфор (P), мышьяк (As), сурьма (Sb); междоузлочный кислород ~10¹⁸ см⁻³ (из тигля SiO₂ при CZ-росте; у FZ — следы)",
@@ -10666,6 +10673,12 @@
     },
     {
       "src": "izdelie_sic_mosfet",
+      "dst": "material_silicon_carbide",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_sic_mosfet",
       "dst": "material_copper_alloy",
       "type": "uses_material",
       "meta": {}
@@ -13468,6 +13481,12 @@
     },
     {
       "src": "izdelie_4h-sic_betavoltaik",
+      "dst": "material_silicon_carbide",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_4h-sic_betavoltaik",
       "dst": "material_ti-6al-4v",
       "type": "uses_material",
       "meta": {}
@@ -13499,6 +13518,12 @@
     {
       "src": "izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik",
       "dst": "material_sct",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik",
+      "dst": "material_silicon_carbide",
       "type": "uses_material",
       "meta": {}
     },
@@ -14025,6 +14050,12 @@
       "meta": {}
     },
     {
+      "src": "izdelie_ni-63_betavoltaik_4h-sic",
+      "dst": "material_silicon_carbide",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_reversivnye_pelte",
       "dst": "часть_reversivnye_pelte_peltier_couples",
       "type": "has_part",
@@ -14256,6 +14287,12 @@
       "src": "izdelie_betavoltaiki",
       "dst": "часть_betavoltaiki_terminal",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_betavoltaiki",
+      "dst": "material_silicon_carbide",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -14633,6 +14670,12 @@
     {
       "src": "izdelie_tpv",
       "dst": "material_tungsten",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_tpv",
+      "dst": "material_silicon_carbide",
       "type": "uses_material",
       "meta": {}
     },
@@ -24259,6 +24302,14 @@
       }
     },
     {
+      "src": "material_silicon_carbide",
+      "dst": "izdelie_sic_mosfet",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_copper_alloy",
       "dst": "izdelie_sic_mosfet",
       "type": "used_in",
@@ -26963,6 +27014,14 @@
       }
     },
     {
+      "src": "material_silicon_carbide",
+      "dst": "izdelie_4h-sic_betavoltaik",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_ti-6al-4v",
       "dst": "izdelie_4h-sic_betavoltaik",
       "type": "used_in",
@@ -27004,6 +27063,14 @@
     },
     {
       "src": "material_sct",
+      "dst": "izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_silicon_carbide",
       "dst": "izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik",
       "type": "used_in",
       "meta": {
@@ -27707,6 +27774,14 @@
       }
     },
     {
+      "src": "material_silicon_carbide",
+      "dst": "izdelie_ni-63_betavoltaik_4h-sic",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_reversivnye_pelte_peltier_couples",
       "dst": "izdelie_reversivnye_pelte",
       "type": "part_of",
@@ -28016,6 +28091,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_silicon_carbide",
+      "dst": "izdelie_betavoltaiki",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -28516,6 +28599,14 @@
     },
     {
       "src": "material_tungsten",
+      "dst": "izdelie_tpv",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_silicon_carbide",
       "dst": "izdelie_tpv",
       "type": "used_in",
       "meta": {
@@ -34284,6 +34375,7 @@
       "standart_AMS 7725E Class 1 Type 2 (W-Ni-Fe бруски/заготовки)",
       "standart_ANSI/ASME B1.1 (1/4-20 UNC)",
       "standart_API 6A / NACE MR0175 (кислые среды)",
+      "standart_AQG 324 (автомобильная квалификация силовых модулей, включая SiC)",
       "standart_ASHRAE 15",
       "standart_ASME BPVC Section III",
       "standart_ASTM A228 (музыкальная проволока)",
@@ -34612,6 +34704,7 @@
       "standart_JEDEC J-STD-020",
       "standart_JEDEC J-STD-020 (классификация MSL/reflow)",
       "standart_JEDEC J-STD-020D",
+      "standart_JEDEC JEP180 (guideline for SiC power device qualification)",
       "standart_JEDEC JESD22",
       "standart_JEDEC JESD22-A104",
       "standart_JEDEC JESD22-A104 (термоциклирование пакета)",
@@ -34690,6 +34783,7 @@
       "standart_SEMI M1",
       "standart_SEMI M1 (полированные монокремниевые пластины 100–300 мм, ориентации/легирование/дефекты)",
       "standart_SEMI M1 (полированные монокристаллические кремниевые пластины)",
+      "standart_SEMI M106 (SiC substrate specification)",
       "standart_SEMI M59 (пластины 300 мм)",
       "standart_SEMI M6 (боковые поверхности/фаски) — семейство стандартов пластин",
       "standart_SEMI M8 (поликремний, сорта по содержанию доноров/акцепторов)",
@@ -34800,6 +34894,7 @@
       "group_Scudamore Sellon (1881) — первый патент решёток из свинцово-сурьмянистого сплава (Sb упрочняет свинец); в тот же год Camille Alphonse Faure запатентовал решётчатую пластину с пастой PbO — вместе сделавшие АКБ пригодной для массового производства",
       "group_Sumitomo Bakelite Co., Ltd. — лидер рынка формовочных смол (SUMIKON EME, multi-aromatic resin system EME-G700LA Type L-A); Renesas Electronics — MSD-документация EME-G700LA (сырьё: аморфный плавленый кварц); академическая верификация — F. Wu (2018, EMC для высокотемпературных применений), S. Chao et al. (2021, влияние кварцевого наполнителя, цит. 32), W.-C. Chuang et al. (2023, EMC в fan-out WLP, цит. 43), Y. Lv et al. (2026, высокотеплопроводный EMC 2.0 Вт/(м·К))",
       "group_Toray Industries (Torayca™ T300 — первое серийное высокопрочное PAN-волокно, выпущено в 1971 г.; >93 % C, Na+K следы)",
+      "group_Wolfspeed, Infineon, ROHM/SiCrystal, STMicroelectronics — серийные SiC-MOSFET die (планы 650 В–3.3 кВ); Godignon P. et al. 2024 (Surfaces and Interfaces, цит. 29 — дрифт-параметры по классам напряжения); Wang P. et al. 2025 (дрифт 9 мкм / 7×10¹⁵); Shokri A. et al. 2025 (цит. 6 — 4H-SiC бета-вольтаика 5.5%); Zhao Q. et al. 2025 (цит. 15 — 4H-SiC Ni-63 элемент 2.8%); Liu, Lu (Semantic Scholar — 4H-SiC ⁶³Ni p-n батарея); AIP Advances 14, 115024 (2024 — p-n бета-вольтаик 10.6%); Chen F. et al. 2022 (all-ceramic thermal emitter)",
       "group_Wu, Ashburn, Torng, Hor, Meng, Gao, Huang, Chu (Университет Хьюстона / UAH, 1987, Tc 93 K); родоначальники купратных ВТСП Bednorz & Müller (IBM Zürich, 1986, Нобелевская премия 1987)",
       "group_Yutaka Tsukada (IBM Japan, 1992) — капиллярный underfill для надёжного монтажа flip-chip на органическую подложку (процесс SBB); C.P. Wong и S.H. Shi (Georgia Institute of Technology) — первый патент на no-flow underfill, US 6,180,696 (2001); Sumitomo Bakelite (SUMIKON EME) — пионер класса эпоксидных формовочных компаундов (EMC) для корпусирования ИС",
       "group_advanced_research",
@@ -34904,7 +34999,6 @@
       "material_rha_steel_class_b",
       "material_rolled_homogeneous_armor",
       "material_rt_1523_sincgars",
-      "material_silicon_carbide",
       "material_silicon_neural_net",
       "material_socl2",
       "material_stainless_steel_304",
@@ -34926,19 +35020,19 @@
     ]
   },
   "stats": {
-    "nodes": 1102,
-    "edges": 3887,
+    "nodes": 1103,
+    "edges": 3899,
     "dangling": {
-      "complies_with": 502,
+      "complies_with": 505,
       "has_part": 6,
-      "researched_by": 76,
-      "uses_material": 72
+      "researched_by": 77,
+      "uses_material": 71
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 205,
+      "material": 206,
       "standart": 8,
       "tekhnologia": 77
     }
