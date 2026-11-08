@@ -1844,6 +1844,34 @@
       "subsystem": "система_передвижения"
     },
     {
+      "id": "часть_SkyNet-LegActuator_knee_тормоз",
+      "type": "chast",
+      "label": "тормоз",
+      "path": "реальные данные/изделия/система_передвижения/sky-net_leg_actuator/часть_SkyNet-LegActuator_knee/часть_SkyNet-LegActuator_knee_тормоз/_index.md",
+      "subsystem": "система_передвижения"
+    },
+    {
+      "id": "часть_SkyNet-LegActuator_knee_энкодер",
+      "type": "chast",
+      "label": "датчик_положения",
+      "path": "реальные данные/изделия/система_передвижения/sky-net_leg_actuator/часть_SkyNet-LegActuator_knee/часть_SkyNet-LegActuator_knee_энкодер/_index.md",
+      "subsystem": "система_передвижения"
+    },
+    {
+      "id": "часть_SkyNet-LegActuator_knee_двигатель",
+      "type": "chast",
+      "label": "электродвигатель",
+      "path": "реальные данные/изделия/система_передвижения/sky-net_leg_actuator/часть_SkyNet-LegActuator_knee/часть_SkyNet-LegActuator_knee_двигатель/_index.md",
+      "subsystem": "система_передвижения"
+    },
+    {
+      "id": "часть_SkyNet-LegActuator_knee_редуктор",
+      "type": "chast",
+      "label": "редуктор",
+      "path": "реальные данные/изделия/система_передвижения/sky-net_leg_actuator/часть_SkyNet-LegActuator_knee/часть_SkyNet-LegActuator_knee_редуктор/_index.md",
+      "subsystem": "система_передвижения"
+    },
+    {
       "id": "часть_SkyNet-LegActuator_hip_редуктор",
       "type": "chast",
       "label": "редуктор",
@@ -11587,6 +11615,30 @@
     },
     {
       "src": "часть_SkyNet-LegActuator_knee",
+      "dst": "часть_SkyNet-LegActuator_knee_двигатель",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee",
+      "dst": "часть_SkyNet-LegActuator_knee_редуктор",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee",
+      "dst": "часть_SkyNet-LegActuator_knee_энкодер",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee",
+      "dst": "часть_SkyNet-LegActuator_knee_тормоз",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee",
       "dst": "izdelie_SkyNet-LegActuator",
       "type": "child_of",
       "meta": {}
@@ -11594,6 +11646,30 @@
     {
       "src": "часть_SkyNet-LegActuator_knee",
       "dst": "material_ti-6al-4v",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee",
+      "dst": "material_100cr6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee",
+      "dst": "material_spring_steel",
       "type": "uses_material",
       "meta": {}
     },
@@ -11696,6 +11772,54 @@
     {
       "src": "часть_SkyNet-LegActuator_ankle_энкодер",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee_тормоз",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee_тормоз",
+      "dst": "material_spring_steel",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee_энкодер",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee_энкодер",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee_двигатель",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee_двигатель",
+      "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee_редуктор",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee_редуктор",
+      "dst": "material_100cr6",
       "type": "uses_material",
       "meta": {}
     },
@@ -23696,7 +23820,71 @@
       }
     },
     {
+      "src": "часть_SkyNet-LegActuator_knee_двигатель",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee_редуктор",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee_энкодер",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_SkyNet-LegActuator_knee_тормоз",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
       "src": "material_ti-6al-4v",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_100cr6",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_SkyNet-LegActuator_knee",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_spring_steel",
       "dst": "часть_SkyNet-LegActuator_knee",
       "type": "used_in",
       "meta": {
@@ -23794,6 +23982,38 @@
     {
       "src": "material_al_6061-t6",
       "dst": "часть_SkyNet-LegActuator_ankle_энкодер",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_spring_steel",
+      "dst": "часть_SkyNet-LegActuator_knee_тормоз",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "часть_SkyNet-LegActuator_knee_энкодер",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
+      "dst": "часть_SkyNet-LegActuator_knee_двигатель",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_100cr6",
+      "dst": "часть_SkyNet-LegActuator_knee_редуктор",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -32061,8 +32281,8 @@
     ]
   },
   "stats": {
-    "nodes": 1087,
-    "edges": 3496,
+    "nodes": 1091,
+    "edges": 3524,
     "dangling": {
       "complies_with": 473,
       "has_part": 4,
@@ -32070,7 +32290,7 @@
       "uses_material": 81
     },
     "by_type": {
-      "chast": 662,
+      "chast": 666,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
       "material": 197,
