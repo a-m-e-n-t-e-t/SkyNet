@@ -6933,6 +6933,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_tio2_memristor",
+      "type": "material",
+      "label": "TiO₂ (диоксид титана, рутил как равновесная фаза); мемристорная форма — бислой TiO₂ (стехиометрический, высокоомный) / TiO₂₋ₓ (дефицит по кислороду, проводящий); вакансии кислорода V_O — мобильные двухзарядные доноры; проводящая предельная фаза — Magnéli TinO₂n−1 (Ti₄O₇ … Ti₁₀O₁₉)",
+      "path": "реальные данные/материалы/tio2_memristor.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_trimodalnyi",
       "type": "material",
       "label": "Тримодальный",
@@ -10776,6 +10783,12 @@
       "src": "izdelie_memristornye_matritsy",
       "dst": "часть_memristornye_matritsy_controller",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_memristornye_matritsy",
+      "dst": "material_tio2_memristor",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -24323,6 +24336,14 @@
       }
     },
     {
+      "src": "material_tio2_memristor",
+      "dst": "izdelie_memristornye_matritsy",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_silicon_wafer",
       "dst": "izdelie_memristornye_matritsy",
       "type": "used_in",
@@ -34483,6 +34504,7 @@
       "group_F. Bauer, E. Fousson (ISL Saint-Louis) и Q.M. Zhang (Penn State, ONR) — открытие класса 2002–2006; Arkema-Piezotech (F. Domingues Dos Santos) — промышленная марка RT; Lei Zhu (Case Western), Xin Chen et al. — тетраполимеры FA",
       "group_George M. Grover и Ted Cotter (Los Alamos National Laboratory, 1963) — изобретение тепловых труб: первый патент и первые натриевые heat pipes (US3229759A «Evaporation-condensation heat transfer device»; J. Appl. Phys. 35, 1990 (1964)); параллельная линия жидкометаллического теплоносителя: EBR-I (INL, 20 декабря 1951 — первая выработка ядерного электричества, теплоноситель NaK) → EBR-II (ANL-Idaho, 1964 — первый натриевый реактор бассейнового типа, 62.5 МВтт)",
       "group_H. G. MacPherson и V. C. Hamister (National Carbon Company, Union Carbide, Кливленд, 1940–1942) — разработали термо- и газоэкстракционную очистку от бора, создав первый ядерный графит AGOT («the first true nuclear grade graphite»); первое применение — CP-1 Энрико Ферми (Met Lab, Чикаго, 2 декабря 1942: 385 т графита, 57 слоёв, включая 231 т AGOT от National Carbon, поставленной в ноябре 1942)",
+      "group_HP Labs — оригинальный мемристор TiO₂ (Dmitri B. Strukov, Gregory S. Snider, Duncan R. Stewart, R. Stanley Williams, Nature 453, 2008, «The missing memristor found»); теория четвёртого пассивного элемента — Leon Chua (1971); фазы Magnéli — Arne Magnéli (1949–1953); упругие константы рутила — J. B. Wachtman Jr. et al. (NBS, 1962, метод резонанса)",
       "group_INCO Alloys International (разработка, 1962) → Special Metals Corporation (владелец марки INCONEL®)",
       "group_INCO Alloys International (разработка, нач. 1960-х) → Special Metals Corporation (владелец марки INCONEL®)",
       "group_J. Han и соавт. (Kyungpook National University, Тэгу, Корея) — UV-curable ionogel для всётвердотельного суперконденсатора, Chem. Eng. J. 416, 129089 (2021)",
@@ -34616,7 +34638,6 @@
       "material_steel_track_links_t158",
       "material_synthetic_rubber",
       "material_ti-6al-4v_legirovannyi_3_5_mas_tantala_ii",
-      "material_tio2_memristor",
       "material_titanium_alloy",
       "material_tungsten_alloy",
       "material_tungsten_electrodes",
@@ -34627,19 +34648,19 @@
     ]
   },
   "stats": {
-    "nodes": 1096,
-    "edges": 3853,
+    "nodes": 1097,
+    "edges": 3855,
     "dangling": {
       "complies_with": 483,
       "has_part": 6,
-      "researched_by": 70,
-      "uses_material": 78
+      "researched_by": 71,
+      "uses_material": 77
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 199,
+      "material": 200,
       "standart": 8,
       "tekhnologia": 77
     }
