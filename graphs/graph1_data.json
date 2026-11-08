@@ -5785,6 +5785,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_bt_resin",
+      "type": "material",
+      "label": "BT (bismaleimide-triazine) — сополимерная сшитая сеть бисмалеимида (тип. 4,4'-бисмалеимидодифенилметан, BMI-M) и цианатного эфира (тип. 2,2-бис(4-цианатофенил)пропан, BE); триазиновые кольца образуются при тримеризации –O–C≡N групп цианата с присоединением бималеимидных двойных связей; товарные композиции MGC модифицируются эпоксидными смолами (BT-epoxy), кварцевым наполнителем (SiO₂) и E-стеклотканью в ламинатах; безгалогенные марки HFBT — без бром/хлор замедлителей горения",
+      "path": "реальные данные/материалы/bt_resin.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_c-14",
       "type": "material",
       "label": "C-14",
@@ -10542,6 +10549,12 @@
     },
     {
       "src": "izdelie_ibm_northpole",
+      "dst": "material_bt_resin",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_ibm_northpole",
       "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
@@ -10692,6 +10705,12 @@
     },
     {
       "src": "izdelie_brainchip_akida_2",
+      "dst": "material_bt_resin",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_brainchip_akida_2",
       "dst": "material_copper_alloy",
       "type": "uses_material",
       "meta": {}
@@ -10759,6 +10778,12 @@
     {
       "src": "izdelie_intel_loihi_2",
       "dst": "material_silicon_wafer",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_intel_loihi_2",
+      "dst": "material_bt_resin",
       "type": "uses_material",
       "meta": {}
     },
@@ -10981,6 +11006,12 @@
     {
       "src": "izdelie_halve",
       "dst": "material_silicon_wafer",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_halve",
+      "dst": "material_bt_resin",
       "type": "uses_material",
       "meta": {}
     },
@@ -24031,6 +24062,14 @@
       }
     },
     {
+      "src": "material_bt_resin",
+      "dst": "izdelie_ibm_northpole",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_copper",
       "dst": "izdelie_ibm_northpole",
       "type": "used_in",
@@ -24231,6 +24270,14 @@
       }
     },
     {
+      "src": "material_bt_resin",
+      "dst": "izdelie_brainchip_akida_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_copper_alloy",
       "dst": "izdelie_brainchip_akida_2",
       "type": "used_in",
@@ -24320,6 +24367,14 @@
     },
     {
       "src": "material_silicon_wafer",
+      "dst": "izdelie_intel_loihi_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_bt_resin",
       "dst": "izdelie_intel_loihi_2",
       "type": "used_in",
       "meta": {
@@ -24616,6 +24671,14 @@
     },
     {
       "src": "material_silicon_wafer",
+      "dst": "izdelie_halve",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_bt_resin",
       "dst": "izdelie_halve",
       "type": "used_in",
       "meta": {
@@ -34332,6 +34395,7 @@
       "standart_IPC-2223",
       "standart_IPC-4101",
       "standart_IPC-4101 (ламинаты)",
+      "standart_IPC-4101 — спецификация базовых ламинатов (категория высоких Tg)",
       "standart_IPC-4101/101",
       "standart_IPC-4101/126",
       "standart_IPC-4101/98",
@@ -34421,6 +34485,8 @@
       "standart_JIS D5301",
       "standart_JIS G4805 (SUJ2)",
       "standart_Jülich Kuriakose 2024",
+      "standart_MGC BT resin — торговое семейство смол и препрегов",
+      "standart_MGC HFBT — безгалогенная BT для IC plastic packages",
       "standart_MIL-DTL-11821",
       "standart_MIL-DTL-12560K",
       "standart_MIL-DTL-17",
@@ -34524,6 +34590,7 @@
       "standart_UNS N06625",
       "standart_UNS N07718",
       "standart_UNS R56400 (Grade 5); UNS R56401 (ELI, Grade 23)",
+      "standart_US4456712A — базовый патент bismaleimide triazine compositions",
       "standart_USB Type-C Spec Rev 2.2 (USB-IF)",
       "standart_Unitree H1 Datasheet",
       "standart_VITA 65",
@@ -34578,6 +34645,7 @@
       "group_J. Han и соавт. (Kyungpook National University, Тэгу, Корея) — UV-curable ionogel для всётвердотельного суперконденсатора, Chem. Eng. J. 416, 129089 (2021)",
       "group_Masato Sagawa (Sumitomo Special Metals) и John Croat (General Motors) — независимое открытие Nd₂Fe₁₄B в 1984 г.; производители: Shin-Etsu, Hitachi, TDK, Neo (старое GM Magnequench)",
       "group_Michael Naguib, Yury Gogotsi, Michel W. Barsoum — Drexel University (открытие MXene в 2011 г.: травление Ti₃AlC₂ в HF)",
+      "group_Mitsubishi Gas Chemical (MGC) — изобретатель и монопольный держатель технологии BT (первое предложение смолы 1976, No.1 мировая доля BT-ламинатов; первый в Японии поставщик смоляных ламинатов для PCB); патентная семья bismaleimide-triazine compositions — US4456712A (3M/MGC-лицензирование); академическая верификация свойств — X. Liu et al., European Polymer Journal 2023 (цит. 51)",
       "group_Murata_TDK",
       "group_N.F. Uvarov и соавт. (MDPI Crystals 12(4):515, 2022) — термические свойства и ионная проводимость тетра-n-алкиламмонийных солей (TBAClO4/TBABF4, пластичные кубические фазы); коммерческое производство — Ascent Petrochem (конвенциональный электролит EDLC CAS 429-06-1), ChemXpress, io-li-tec (Ultra Pure >99 %)",
       "group_Oak Ridge National Laboratory — Bulk Shielding Reactor (построен в 1950-е для систематических исследований бетонной радиационной защиты в рамках программы Aircraft Nuclear Propulsion; снесён в 2022); стандартизация заполнителей — ASTM C638",
@@ -34645,7 +34713,6 @@
       "material_barium_titanate",
       "material_bearing_steel_52100",
       "material_biological_tissue",
-      "material_bt_resin",
       "material_carbon_black",
       "material_carbon_fiber_endoskeleton",
       "material_carbon_paper",
@@ -34715,19 +34782,19 @@
     ]
   },
   "stats": {
-    "nodes": 1098,
-    "edges": 3863,
+    "nodes": 1099,
+    "edges": 3871,
     "dangling": {
-      "complies_with": 487,
+      "complies_with": 491,
       "has_part": 6,
-      "researched_by": 72,
-      "uses_material": 76
+      "researched_by": 73,
+      "uses_material": 75
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 201,
+      "material": 202,
       "standart": 8,
       "tekhnologia": 77
     }
