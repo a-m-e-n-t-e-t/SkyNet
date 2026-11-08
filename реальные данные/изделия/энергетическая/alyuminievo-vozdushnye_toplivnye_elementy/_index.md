@@ -53,6 +53,23 @@ id: izdelie_alyuminievo-vozdushnye_toplivnye_elementy
     материалы_для_процесса:
       - материал: carbon_ptfe
         роль: обрабатываемый
+наследуемые_материалы:
+  - материал: aluminum_1100
+    суммарная_доля_массы: 0.38
+    источники_частей:
+      - часть_alyuminievo-vozdushnye_toplivnye_elementy_anode
+  - материал: karbon
+    суммарная_доля_массы: 0.18
+    источники_частей:
+      - часть_alyuminievo-vozdushnye_toplivnye_elementy_cathode
+  - материал: ptfe
+    суммарная_доля_массы: 0.19
+    источники_частей:
+      - часть_alyuminievo-vozdushnye_toplivnye_elementy_electrolyte
+  - материал: carbon_ptfe
+    суммарная_доля_массы: 0.002
+    источники_частей:
+      - часть_alyuminievo-vozdushnye_toplivnye_elementy_air_electrode
 scaling_type: количественный
 соединители: []
 версия: реальная
