@@ -36,7 +36,26 @@ id: izdelie_superkondensatory
     доля_массы: 0.1425
   - часть: часть_superkondensatory_case
     материал: aluminum
+    форма: корпуса_электроники
     доля_массы: 0.1425
+наследуемые_материалы:
+  - материал: karbon
+    суммарная_доля_массы: 0.2
+    источники_частей:
+      - часть_superkondensatory_electrode_pos
+  - материал: cellulose
+    суммарная_доля_массы: 0.0475
+    источники_частей:
+      - часть_superkondensatory_separator
+  - материал: tebabf4_acn
+    суммарная_доля_массы: 0.1425
+    источники_частей:
+      - часть_superkondensatory_electrolyte
+  - материал: aluminum
+    суммарная_доля_массы: 0.285
+    источники_частей:
+      - часть_superkondensatory_current_collector
+      - часть_superkondensatory_case
 технологии_частей:
   - часть: часть_superkondensatory_electrode_pos
     технология: spiralnaya_navivka
