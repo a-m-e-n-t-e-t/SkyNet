@@ -5743,6 +5743,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_barium_titanate",
+      "type": "material",
+      "label": "BaTiO3 (титанат бария, перовскит ABO3: Ba-сайт A, Ti-сайт B, O2- кислородная подрешётка); электронный класс purity ≥99.5–99.9 % (Ba/Ti 0.995–1.005, примеси Sr/Ca/Fe/Na < 0.1 %); для полупроводящих PTCR-форм — донорное легирование La3+/Sb3+ на Ba-сайте (~0.1–0.3 ат. %); канонический файл: material_batio3",
+      "path": "реальные данные/материалы/barium_titanate.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_batio3",
       "type": "material",
       "label": "BaTiO3 ≥98.5% (титанат бария, перовскит ABO3); для X5R/X7R-диэлектриков MLCC легируется Dy2O3, Ho2O3, Y2O3, Mg, Si, Mn (core-shell BME с Ni-электродами)",
@@ -10657,6 +10664,12 @@
       "src": "izdelie_kondensatory_keramicheskie",
       "dst": "часть_kondensatory_keramicheskie_plating",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_kondensatory_keramicheskie",
+      "dst": "material_barium_titanate",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -24308,6 +24321,14 @@
       }
     },
     {
+      "src": "material_barium_titanate",
+      "dst": "izdelie_kondensatory_keramicheskie",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_nickel",
       "dst": "izdelie_kondensatory_keramicheskie",
       "type": "used_in",
@@ -34484,6 +34505,7 @@
       "standart_AEC-Q100 — квалификация ePCM-компонентов automotive",
       "standart_AEC-Q101",
       "standart_AEC-Q200",
+      "standart_AEC-Q200 (пассивные компоненты — BaTiO3-MLCC automotive)",
       "standart_AEC-Q200 — квалификация пассивных компонентов для automotive",
       "standart_AMS 2408",
       "standart_AMS 4025/4026/4027 (лист, плита, пруток T6/T651)",
@@ -34661,6 +34683,7 @@
       "standart_ECSS-Q-ST-60-15",
       "standart_EIA RS-198",
       "standart_EIA RS-198 (X7R)",
+      "standart_EIA RS-198 (класс I/II керамических диэлектриков)",
       "standart_EIA RS-198 (класс II, X5R/X7R/Y5V)",
       "standart_EIA-198 — классы температурных характеристик керамических диэлектриков",
       "standart_EJMA (монтаж компенсаторов)",
@@ -35017,6 +35040,7 @@
       "group_Aluminum Association — стандартизация серии 1xxx (1050/1350, UNS A91050); электролитическое производство — процесс Холла–Эру (Charles Martin Hall и Paul Héroult, независимо, 1886); первое надёжное выделение металла — Hans Christian Ørsted (1825), систематизация — Friedrich Wöhler (1827); первый промышленный (химический) процесс — Henri Sainte-Claire Deville (1854)",
       "group_Anselme Payen (Франция, 1838) — выделил целлюлозу из растительной ткани, определил формулу и ввёл название «cellulose»; Charles Frederick Cross, Edward John Bevan и Clayton Beadle (Великобритания, 1892, British Patent 8700 «Improvements in Dissolving Cellulose and Allied Compounds») — вязкозный процесс регенерированной целлюлозы, основа современных регенерированных целлюлозных бумаг-сепараторов",
       "group_BT-смола: Mitsubishi Gas Chemical (MGC) — разработана и запатентована в 1978 г., коммерциализирована в 1980-е (MGC: «MGC invented a revolutionary thermal-hardened bismaleimide triazine (BT) resin»); ABF: Ajinomoto (R&D на базе аминокислотной химии с 1970-х, первая адопция крупным производителем полупроводников в 1999 г., автор — Shigeo Nakamura, с 2025 г. CEO Ajinomoto Group)",
+      "group_Boulos et al. 2005 Materials Research Bulletin (гидротермальный синтез наноразмерного BaTiO3, 159 цитирований); Urek & Boštjančič 1998 Journal of the European Ceramic Society (гидротермальный синтез мелких порошков, 78 цитирований); Buscaglia (CNR-ITEC, обзор BaTiO3-based ceramics, 103 цитирований); Sahoo et al. (твердофазный синтез BaCO3+TiO2: кальцинация 800–1100 °C, спекание >1300 °C); Rani et al. 2022 (влияние температуры спекания 1350 °C на гексагональную фазу); Xing et al. 2016 Materials & Design (теплофизика монолитного BaTiO3 — канон)",
       "group_Celgard, LLC (Asahi Kasei) — микропористые полиолефиновые сепараторы Celgard 2400/2500 (монослой PP 25 мкм, melt integrity 165 °C); Hollingsworth & Vose — nonwoven-сепараторы первичных литиевых элементов (Li-SOCl2, 30–35 г/м², «little to no metals»); C.T. Love 2011 (J. Power Sources, термомеханический анализ коммерческих сепараторов Celgard 2400/2500 — porosity/pore dimension, цит. 244); патент US6368742B2 (PP microporous membrane for battery separator — пористость 40–65 %, оптимум 47–57 %); NETZSCH Analyzing & Testing (термофизика iPP: cp 1.8 Дж/(г·К), CTE); INEOS Olefins & Polymers (Typical Engineering Properties of Polypropylene — ρ 905, k, механика); LabCore 2026 (разбор Celgard 2325 vs 2400: монослой PP без shutdown, Tm 165 °C)",
       "group_Denka (ацетиленовая сажа DENKA BLACK с 1940-х, марки Powder/Granule/Press 50–100 %/Li-100/Li-250 — стандарт сухих батарей); Orion Engineered Carbons, Cabot (печные марки, THERMAX); Imerys/Timcal (Super P — батарейный стандарт); AkzoNobel/Resil (Ketjenblack EC-600JD); IARC Monograph 93 (2010 — типы CB, насыпные плотности); Khodabakhshi & Forg (2020, Carbon Black Reborn — структура/химия CB для renewable applications); патент US4279880A (проводящая ацетиленовая сажа — сопротивление при 6.3 бар)",
       "group_DuPont — изобретатель поливинилфторида (PVF, 1940-е), товарный знак Tedlar® и коммерческий выпуск плёнки с 1961 г.; ПЭТ-сердцевина boPET — DuPont/ICI/Hoechst (середина 1950-х — первая двуосно-ориентированная полимерная плёнка массового производства; бренды Mylar®/Melinex®, ныне Mylar Specialty Films — ребрендинг DuPont Teijin Films, 2024)",
@@ -35104,7 +35128,6 @@
       "material_aluminum_6063",
       "material_aluminum_electrolytic",
       "material_am241_oxide",
-      "material_barium_titanate",
       "material_bearing_steel_52100",
       "material_biological_tissue",
       "material_carbon_fiber_endoskeleton",
@@ -35166,19 +35189,19 @@
     ]
   },
   "stats": {
-    "nodes": 1109,
-    "edges": 3911,
+    "nodes": 1110,
+    "edges": 3913,
     "dangling": {
-      "complies_with": 525,
+      "complies_with": 527,
       "has_part": 6,
-      "researched_by": 83,
-      "uses_material": 65
+      "researched_by": 84,
+      "uses_material": 64
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 212,
+      "material": 213,
       "standart": 8,
       "tekhnologia": 77
     }
