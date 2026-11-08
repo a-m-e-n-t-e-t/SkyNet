@@ -27,12 +27,15 @@ id: izdelie_vodorodnye_toplivnye_elementy
     доля_массы: 0.095
   - часть: часть_vodorodnye_toplivnye_elementy_catalyst_anode
     материал: pt_carbon
+    форма: катализаторы_и_катализаторные_покрытия
     доля_массы: 0.01
   - часть: часть_vodorodnye_toplivnye_elementy_catalyst_cathode
     материал: pt_carbon
+    форма: катализаторы_и_катализаторные_покрытия
     доля_массы: 0.01
   - часть: часть_vodorodnye_toplivnye_elementy_gdl_anode
     материал: carbon_paper
+    форма: газодиффузионные_слои_топливных_элементов
     доля_массы: 0.095
   - часть: часть_vodorodnye_toplivnye_elementy_bipolar_plate
     материал: stainless_steel_316
