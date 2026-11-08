@@ -5792,6 +5792,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_bearing_steel_52100",
+      "type": "material",
+      "label": "Fe (основа), C 0.98–1.10 масс.%, Cr 1.30–1.60 масс.%, Mn 0.25–0.45 масс.%, Si 0.15–0.35 масс.%, P/S ≤ 0.025 % (ASTM A295 — high-carbon bearing quality steel)",
+      "path": "реальные данные/материалы/bearing_steel_52100.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_becu",
       "type": "material",
       "label": "Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)",
@@ -6944,6 +6951,13 @@
       "type": "material",
       "label": "AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240; канонический файл material_ss_aisi_304); в роли корпуса Li-SOCl2 элемента — лист/полоса отожжённая 2B, толщина стенки ~0.2–0.5 мм (глубокая вытяжка D-корпуса Ø~34 мм)",
       "path": "реальные данные/материалы/stainless_steel_304.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_stainless_steel_440c",
+      "type": "material",
+      "label": "Fe (основа), C 0.95–1.20 масс.%, Cr 16–18 масс.%, Mo ≤ 0.75 масс.%, Mn ≤ 1.0 масс.%, Si ≤ 1.0 масс.%, P/S ≤ 0.04/0.03 % (ASTM A276, UNS S44004)",
+      "path": "реальные данные/материалы/stainless_steel_440c.md",
       "subsystem": ""
     },
     {
@@ -8539,6 +8553,18 @@
       "meta": {}
     },
     {
+      "src": "izdelie_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami",
+      "dst": "material_bearing_steel_52100",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami",
+      "dst": "material_stainless_steel_440c",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_svintsovo-kislotnye_akb",
       "dst": "часть_svintsovo-kislotnye_akb_anode",
       "type": "has_part",
@@ -9003,6 +9029,12 @@
     {
       "src": "izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza",
       "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza",
+      "dst": "material_stainless_steel_440c",
       "type": "uses_material",
       "meta": {}
     },
@@ -22617,6 +22649,22 @@
       }
     },
     {
+      "src": "material_bearing_steel_52100",
+      "dst": "izdelie_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_stainless_steel_440c",
+      "dst": "izdelie_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_svintsovo-kislotnye_akb_anode",
       "dst": "izdelie_svintsovo-kislotnye_akb",
       "type": "part_of",
@@ -23234,6 +23282,14 @@
     },
     {
       "src": "material_copper",
+      "dst": "izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_stainless_steel_440c",
       "dst": "izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza",
       "type": "used_in",
       "meta": {
@@ -34996,7 +35052,9 @@
       "standart_ASTM A228/A228M-18",
       "standart_ASTM A240 (AISI 304)",
       "standart_ASTM A240 (sheet/strip)",
+      "standart_ASTM A276 (stainless steel bars/shapes, UNS S44004)",
       "standart_ASTM A276 (пруток и профили нержавеющие)",
+      "standart_ASTM A295 (high-carbon bearing quality steel)",
       "standart_ASTM A295/A295M (AISI 52100, UNS G52986)",
       "standart_ASTM A312/A312M (трубы бесшовные и сварные аустенитные)",
       "standart_ASTM A36",
@@ -35110,6 +35168,7 @@
       "standart_ASTM F136",
       "standart_ASTM F136 (Ti-6Al-4V)",
       "standart_ASTM F136 / ISO 5832-3 (имплантабельный Ti-6Al-4V ELI)",
+      "standart_ASTM F1383 (corrosion-resistant steel balls)",
       "standart_ASTM F2029-22 (практика измерения водородного кроссовера PEM-мембран)",
       "standart_ASTM F3 (Ni для электронных применений)",
       "standart_ASTM F316 (поровые характеристики мембранных фильтров — bubble point / пористость)",
@@ -35313,6 +35372,7 @@
       "standart_ISO 6361-1/-2 (полуфабрикаты алюминиевые)",
       "standart_ISO 6474 (имплантационная керамика Al₂O₃)",
       "standart_ISO 6507-1 (определение твёрдости по Виккерсу — методика Yu et al. 2024)",
+      "standart_ISO 683-17 (ball and roller bearing steels)",
       "standart_ISO 683-17 (шарико- и роликоподшипниковые стали; марки 100Cr6, 100CrMnSi6-4, 100CrMo7, 100CrMo7-3)",
       "standart_ISO 6872",
       "standart_ISO 75 (HDT/B — теплостойкость под нагрузкой)",
@@ -35488,6 +35548,7 @@
       "standart_ГОСТ 27006 (бетоны тяжёлые)",
       "standart_ГОСТ 380-2005 (стали углеродистые обыкновенного качества, марки Ст0–Ст6)",
       "standart_ГОСТ 535-2005 (прокат сортовой из стали обыкновенного качества)",
+      "standart_ГОСТ 5632 (09Х18МШ / мартенситные коррозионностойкие)",
       "standart_ГОСТ 5744-75 (порошки карбида бора)",
       "standart_ГОСТ 801-78 (ШХ15)",
       "standart_ГОСТ 859-2014 (марки меди, М1)",
@@ -35506,6 +35567,8 @@
       "часть_svintsovo-kislotnye_akb_electrolyte"
     ],
     "researched_by": [
+      "group_ASTM A01 Committee (Steel, Stainless, Iron); Carpenter Technology (CarTech 52100 datasheet)",
+      "group_ASTM A01/A27 Committees; AZoM Materials (440C grade datasheet)",
       "group_ASTM A06 Committee on Steel, Stainless Steel and Related Alloys; MIT 6.685 Electric Machines (James Kirtley Jr.)",
       "group_Acheson (1891 — открытие карбида кремния); J.A. Lely (1955 — метод сублимационного роста монокристаллов); Cree/Wolfspeed (осн. 1987 — первые коммерческие SiC-пластины, 1992); ключевые производители подложек: Wolfspeed, Coherent, SiCrystal (ROHM)",
       "group_Aluminum Association — стандартизация серии 1xxx (1050/1350, UNS A91050); электролитическое производство — процесс Холла–Эру (Charles Martin Hall и Paul Héroult, независимо, 1886); первое надёжное выделение металла — Hans Christian Ørsted (1825), систематизация — Friedrich Wöhler (1827); первый промышленный (химический) процесс — Henri Sainte-Claire Deville (1854)",
@@ -35600,7 +35663,6 @@
       "material_aluminum_6063",
       "material_aluminum_electrolytic",
       "material_am241_oxide",
-      "material_bearing_steel_52100",
       "material_biological_tissue",
       "material_carbon_fiber_endoskeleton",
       "material_carbon_paper",
@@ -35639,7 +35701,6 @@
       "material_rt_1523_sincgars",
       "material_silicon_neural_net",
       "material_stainless_steel_316",
-      "material_stainless_steel_440c",
       "material_stainless_steel_mesh",
       "material_steel_1045",
       "material_steel_track",
@@ -35656,19 +35717,19 @@
     ]
   },
   "stats": {
-    "nodes": 1118,
-    "edges": 3972,
+    "nodes": 1120,
+    "edges": 3978,
     "dangling": {
-      "complies_with": 533,
+      "complies_with": 538,
       "has_part": 6,
-      "researched_by": 86,
-      "uses_material": 59
+      "researched_by": 88,
+      "uses_material": 57
     },
     "by_type": {
       "chast": 674,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 215,
+      "material": 217,
       "standart": 8,
       "tekhnologia": 78
     }
