@@ -5813,6 +5813,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_ceramic_mlcc",
+      "type": "material",
+      "label": "BaTiO3-основной MLCC-диэлектрик: класс II (X7R/X5R) — легированный BaTiO3 (Dy/Ho/Y-редкоземельная добавка + Mg, Si, Mn-acceptor/donor) core-shell BME-диэлектрик с Ni-внутренними электродами; класс I (C0G/NP0) — паралласситовая CaZrO3/Nd2Ti2O7-система с нулевым ТКЕ (±30 ppm/°C); внутренние электроды: Ni (BME, доминирующая технология) или Ag/Pd (PME, аэрокосмическая ниша); внешние торцевые электроды: Cu 15–40 мкм + Ni-барьер 1–3 мкм + Sn 3–10 мкм",
+      "path": "реальные данные/материалы/ceramic_mlcc.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_cfrp_t1100g",
       "type": "material",
       "label": "углеродное волокно Toray TORAYCA T1100G (PAN-based, intermediate modulus) ~60 об.% + эпоксидная матрица (система 3960, отверждение 177 °C) ~40 об.%",
@@ -10749,6 +10756,12 @@
     },
     {
       "src": "izdelie_brainchip_akida_2",
+      "dst": "material_ceramic_mlcc",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_brainchip_akida_2",
       "dst": "material_fr4",
       "type": "uses_material",
       "meta": {}
@@ -10828,6 +10841,12 @@
     {
       "src": "izdelie_intel_loihi_2",
       "dst": "material_epoxy_molding",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_intel_loihi_2",
+      "dst": "material_ceramic_mlcc",
       "type": "uses_material",
       "meta": {}
     },
@@ -11068,6 +11087,12 @@
     {
       "src": "izdelie_halve",
       "dst": "material_epoxy_molding",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_halve",
+      "dst": "material_ceramic_mlcc",
       "type": "uses_material",
       "meta": {}
     },
@@ -24354,6 +24379,14 @@
       }
     },
     {
+      "src": "material_ceramic_mlcc",
+      "dst": "izdelie_brainchip_akida_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_fr4",
       "dst": "izdelie_brainchip_akida_2",
       "type": "used_in",
@@ -24459,6 +24492,14 @@
     },
     {
       "src": "material_epoxy_molding",
+      "dst": "izdelie_intel_loihi_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ceramic_mlcc",
       "dst": "izdelie_intel_loihi_2",
       "type": "used_in",
       "meta": {
@@ -24779,6 +24820,14 @@
     },
     {
       "src": "material_epoxy_molding",
+      "dst": "izdelie_halve",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ceramic_mlcc",
       "dst": "izdelie_halve",
       "type": "used_in",
       "meta": {
@@ -34216,6 +34265,7 @@
       "standart_10 CFR 50",
       "standart_AEC-Q101",
       "standart_AEC-Q200",
+      "standart_AEC-Q200 — квалификация пассивных компонентов для automotive",
       "standart_AMS 2408",
       "standart_AMS 4025/4026/4027 (лист, плита, пруток T6/T651)",
       "standart_AMS 4027",
@@ -34355,6 +34405,7 @@
       "standart_AlN substrate grade (PCAN1000 / CeramTec ALN)",
       "standart_Arbe Phoenix Integration Guide",
       "standart_BASF CIP grades (EW/HQ/HS/SM)",
+      "standart_BME/PME — технологии внутренних электродов (Ni vs Ag/Pd)",
       "standart_Bosch Sensortec PCB Guide",
       "standart_CAS 12039-79-1 (реестровый идентификатор соединения TaSi₂)",
       "standart_CAS 174899-82-2",
@@ -34385,6 +34436,7 @@
       "standart_EIA RS-198",
       "standart_EIA RS-198 (X7R)",
       "standart_EIA RS-198 (класс II, X5R/X7R/Y5V)",
+      "standart_EIA-198 — классы температурных характеристик керамических диэлектриков",
       "standart_EJMA (монтаж компенсаторов)",
       "standart_EN 10025-2 / S235JR (европейский аналог Ст3сп/пс)",
       "standart_EN 10088-2 / 1.4301 (X5CrNi18-10, σв 520–720 МПа, Rp0.2 ≥210 МПа, δ ≥45 %)",
@@ -34738,6 +34790,7 @@
       "group_Masato Sagawa (Sumitomo Special Metals) и John Croat (General Motors) — независимое открытие Nd₂Fe₁₄B в 1984 г.; производители: Shin-Etsu, Hitachi, TDK, Neo (старое GM Magnequench)",
       "group_Michael Naguib, Yury Gogotsi, Michel W. Barsoum — Drexel University (открытие MXene в 2011 г.: травление Ti₃AlC₂ в HF)",
       "group_Mitsubishi Gas Chemical (MGC) — изобретатель и монопольный держатель технологии BT (первое предложение смолы 1976, No.1 мировая доля BT-ламинатов; первый в Японии поставщик смоляных ламинатов для PCB); патентная семья bismaleimide-triazine compositions — US4456712A (3M/MGC-лицензирование); академическая верификация свойств — X. Liu et al., European Polymer Journal 2023 (цит. 51)",
+      "group_Murata Manufacturing, Samsung Electro-Mechanics, TDK, Yageo Group — лидеры MLCC-индустрии (Yageo SalesResources — X7R/X5R формуляции, εr-таблицы); EIA-198 — стандартизация классов температурных характеристик; академическая верификация BME-структуры — D.D. Liu et al. (диэлектрик 6.2 мкм / электрод 1.6 мкм / маржа 120 мкм / cover 130 мкм, цит. 47), ESCIES (ESA Space Engineering) — C0G BME 7.0 мкм vs PME 11.6 мкм; passive-components.eu — конструкция стеков (500+ слоёв в 0201, верхний предел >1000, торцевой стек Cu/Ni/Sn)",
       "group_Murata_TDK",
       "group_N.F. Uvarov и соавт. (MDPI Crystals 12(4):515, 2022) — термические свойства и ионная проводимость тетра-n-алкиламмонийных солей (TBAClO4/TBABF4, пластичные кубические фазы); коммерческое производство — Ascent Petrochem (конвенциональный электролит EDLC CAS 429-06-1), ChemXpress, io-li-tec (Ultra Pure >99 %)",
       "group_Oak Ridge National Laboratory — Bulk Shielding Reactor (построен в 1950-е для систематических исследований бетонной радиационной защиты в рамках программы Aircraft Nuclear Propulsion; снесён в 2022); стандартизация заполнителей — ASTM C638",
@@ -34812,7 +34865,6 @@
       "material_carbon_paper",
       "material_cast_iron",
       "material_ceramic_capacitors",
-      "material_ceramic_mlcc",
       "material_composite_material",
       "material_cybernetic_alloy",
       "material_electrical_steel",
@@ -34874,19 +34926,19 @@
     ]
   },
   "stats": {
-    "nodes": 1101,
-    "edges": 3881,
+    "nodes": 1102,
+    "edges": 3887,
     "dangling": {
-      "complies_with": 499,
+      "complies_with": 502,
       "has_part": 6,
-      "researched_by": 75,
-      "uses_material": 73
+      "researched_by": 76,
+      "uses_material": 72
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 204,
+      "material": 205,
       "standart": 8,
       "tekhnologia": 77
     }
