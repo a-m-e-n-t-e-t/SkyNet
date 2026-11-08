@@ -5988,6 +5988,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_electrical_steel",
+      "type": "material",
+      "label": "Fe (основа), Si 1.8–3.0 масс.% (M-19, fully processed non-oriented), Al ~0.1 масс.%, Mn ~0.2 масс.%, C < 0.01 масс.% (ASTM A677); кремний повышает удельное сопротивление (ρ ≈ 45–50 мкОм·см) и подавляет вихревые токи",
+      "path": "реальные данные/материалы/electrical_steel.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_elektrohromnyi_polimer_ecp",
       "type": "material",
       "label": "Электрохромный полимер ECP",
@@ -8107,13 +8114,25 @@
     },
     {
       "src": "izdelie_induktivnyi_nakopitel",
-      "dst": "material_copper",
+      "dst": "material_ybco",
       "type": "uses_material",
       "meta": {}
     },
     {
       "src": "izdelie_induktivnyi_nakopitel",
-      "dst": "material_aluminum",
+      "dst": "material_electrical_steel",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_induktivnyi_nakopitel",
+      "dst": "material_stal_st3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_induktivnyi_nakopitel",
+      "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
     },
@@ -9567,6 +9586,12 @@
       "src": "часть_induktivnyi_nakopitel_core",
       "dst": "izdelie_induktivnyi_nakopitel",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_induktivnyi_nakopitel_core",
+      "dst": "material_electrical_steel",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -21994,7 +22019,7 @@
       }
     },
     {
-      "src": "material_copper",
+      "src": "material_ybco",
       "dst": "izdelie_induktivnyi_nakopitel",
       "type": "used_in",
       "meta": {
@@ -22002,7 +22027,23 @@
       }
     },
     {
-      "src": "material_aluminum",
+      "src": "material_electrical_steel",
+      "dst": "izdelie_induktivnyi_nakopitel",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_stal_st3",
+      "dst": "izdelie_induktivnyi_nakopitel",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_copper",
       "dst": "izdelie_induktivnyi_nakopitel",
       "type": "used_in",
       "meta": {
@@ -23924,6 +23965,14 @@
     {
       "src": "material_copper",
       "dst": "часть_induktivnyi_nakopitel_cooling",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_electrical_steel",
+      "dst": "часть_induktivnyi_nakopitel_core",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -34881,6 +34930,7 @@
       "standart_ASTM A295/A295M (AISI 52100, UNS G52986)",
       "standart_ASTM A312/A312M (трубы бесшовные и сварные аустенитные)",
       "standart_ASTM A36",
+      "standart_ASTM A677 (M-19, non-oriented fully processed electrical steel)",
       "standart_ASTM B1 (твёрдотянутая медная проволока)",
       "standart_ASTM B152",
       "standart_ASTM B152 (лист, полоса, плита и катаный пруток C11000)",
@@ -35386,6 +35436,7 @@
       "часть_svintsovo-kislotnye_akb_electrolyte"
     ],
     "researched_by": [
+      "group_ASTM A06 Committee on Steel, Stainless Steel and Related Alloys; MIT 6.685 Electric Machines (James Kirtley Jr.)",
       "group_Acheson (1891 — открытие карбида кремния); J.A. Lely (1955 — метод сублимационного роста монокристаллов); Cree/Wolfspeed (осн. 1987 — первые коммерческие SiC-пластины, 1992); ключевые производители подложек: Wolfspeed, Coherent, SiCrystal (ROHM)",
       "group_Aluminum Association — стандартизация серии 1xxx (1050/1350, UNS A91050); электролитическое производство — процесс Холла–Эру (Charles Martin Hall и Paul Héroult, независимо, 1886); первое надёжное выделение металла — Hans Christian Ørsted (1825), систематизация — Friedrich Wöhler (1827); первый промышленный (химический) процесс — Henri Sainte-Claire Deville (1854)",
       "group_Anselme Payen (Франция, 1838) — выделил целлюлозу из растительной ткани, определил формулу и ввёл название «cellulose»; Charles Frederick Cross, Edward John Bevan и Clayton Beadle (Великобритания, 1892, British Patent 8700 «Improvements in Dissolving Cellulose and Allied Compounds») — вязкозный процесс регенерированной целлюлозы, основа современных регенерированных целлюлозных бумаг-сепараторов",
@@ -35487,7 +35538,6 @@
       "material_ceramic_capacitors",
       "material_composite_material",
       "material_cybernetic_alloy",
-      "material_electrical_steel",
       "material_epoxy",
       "material_gaSb",
       "material_gold_coating",
@@ -35538,19 +35588,19 @@
     ]
   },
   "stats": {
-    "nodes": 1117,
-    "edges": 3956,
+    "nodes": 1118,
+    "edges": 3962,
     "dangling": {
-      "complies_with": 532,
+      "complies_with": 533,
       "has_part": 6,
-      "researched_by": 85,
-      "uses_material": 62
+      "researched_by": 86,
+      "uses_material": 61
     },
     "by_type": {
       "chast": 674,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 214,
+      "material": 215,
       "standart": 8,
       "tekhnologia": 78
     }
