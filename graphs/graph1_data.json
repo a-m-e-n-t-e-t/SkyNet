@@ -3636,24 +3636,10 @@
       "subsystem": "энергетическая"
     },
     {
-      "id": "часть_svintsovo-kislotnye_akb_electrolyte",
-      "type": "chast",
-      "label": "H2SO4_электролит",
-      "path": "реальные данные/изделия/энергетическая/svintsovo-kislotnye_akb/часть_svintsovo-kislotnye_akb_electrolyte/_index.md",
-      "subsystem": "энергетическая"
-    },
-    {
       "id": "часть_svintsovo-kislotnye_akb_grid_pos",
       "type": "chast",
       "label": "решётка_PbSb",
       "path": "реальные данные/изделия/энергетическая/svintsovo-kislotnye_akb/часть_svintsovo-kislotnye_akb_grid_pos/_index.md",
-      "subsystem": "энергетическая"
-    },
-    {
-      "id": "часть_svintsovo-kislotnye_akb_case",
-      "type": "chast",
-      "label": "корпус_PP",
-      "path": "реальные данные/изделия/энергетическая/svintsovo-kislotnye_akb/часть_svintsovo-kislotnye_akb_case/_index.md",
       "subsystem": "энергетическая"
     },
     {
@@ -13937,12 +13923,6 @@
     },
     {
       "src": "izdelie_svintsovo-kislotnye_akb",
-      "dst": "часть_svintsovo-kislotnye_akb_electrolyte",
-      "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_svintsovo-kislotnye_akb",
       "dst": "часть_svintsovo-kislotnye_akb_separator",
       "type": "has_part",
       "meta": {}
@@ -13950,12 +13930,6 @@
     {
       "src": "izdelie_svintsovo-kislotnye_akb",
       "dst": "часть_svintsovo-kislotnye_akb_grid_pos",
-      "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_svintsovo-kislotnye_akb",
-      "dst": "часть_svintsovo-kislotnye_akb_case",
       "type": "has_part",
       "meta": {}
     },
@@ -16030,12 +16004,6 @@
       "meta": {}
     },
     {
-      "src": "часть_svintsovo-kislotnye_akb_electrolyte",
-      "dst": "izdelie_svintsovo-kislotnye_akb",
-      "type": "child_of",
-      "meta": {}
-    },
-    {
       "src": "часть_svintsovo-kislotnye_akb_grid_pos",
       "dst": "izdelie_svintsovo-kislotnye_akb",
       "type": "child_of",
@@ -16044,18 +16012,6 @@
     {
       "src": "часть_svintsovo-kislotnye_akb_grid_pos",
       "dst": "material_pb_sb_alloy",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_svintsovo-kislotnye_akb_case",
-      "dst": "izdelie_svintsovo-kislotnye_akb",
-      "type": "child_of",
-      "meta": {}
-    },
-    {
-      "src": "часть_svintsovo-kislotnye_akb_case",
-      "dst": "material_uhmwpe_dyneema",
       "type": "uses_material",
       "meta": {}
     },
@@ -26516,14 +26472,6 @@
       }
     },
     {
-      "src": "часть_svintsovo-kislotnye_akb_electrolyte",
-      "dst": "izdelie_svintsovo-kislotnye_akb",
-      "type": "part_of",
-      "meta": {
-        "forward": "has_part"
-      }
-    },
-    {
       "src": "часть_svintsovo-kislotnye_akb_separator",
       "dst": "izdelie_svintsovo-kislotnye_akb",
       "type": "part_of",
@@ -26533,14 +26481,6 @@
     },
     {
       "src": "часть_svintsovo-kislotnye_akb_grid_pos",
-      "dst": "izdelie_svintsovo-kislotnye_akb",
-      "type": "part_of",
-      "meta": {
-        "forward": "has_part"
-      }
-    },
-    {
-      "src": "часть_svintsovo-kislotnye_akb_case",
       "dst": "izdelie_svintsovo-kislotnye_akb",
       "type": "part_of",
       "meta": {
@@ -27926,14 +27866,6 @@
     {
       "src": "material_pb_sb_alloy",
       "dst": "часть_svintsovo-kislotnye_akb_grid_pos",
-      "type": "used_in",
-      "meta": {
-        "forward": "uses_material"
-      }
-    },
-    {
-      "src": "material_uhmwpe_dyneema",
-      "dst": "часть_svintsovo-kislotnye_akb_case",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -31847,7 +31779,6 @@
       "standart_IEC 60095",
       "standart_IEC 60095 (SLI lead-acid batteries)",
       "standart_IEC 60095 (SLI lead-acid)",
-      "standart_IEC 60095-2",
       "standart_IEC 60112 (трекингостойкость, CTI 600)",
       "standart_IEC 60122 (кварцевые резонаторы)",
       "standart_IEC 60228",
@@ -32104,7 +32035,6 @@
       "standart_X20 Mounting Guide",
       "standart_Zeno Power Tech",
       "standart_battery grade >99.5 % (Rocolab)",
-      "standart_battery-component.com Container Spec",
       "standart_electronic grade H₂O <20 ppmw (proionic)",
       "standart_ГОСТ 10007-81 (фторопласт-4, технические условия)",
       "standart_ГОСТ 1050-88 (прокат калиброванный)",
@@ -32124,7 +32054,9 @@
       "часть_ni-63_betavoltaik_4h-sic_case",
       "часть_ni-63_betavoltaik_4h-sic_isotope",
       "часть_ni-63_betavoltaik_4h-sic_substrate",
-      "часть_nvidia_jetson_orin_nano_soc"
+      "часть_nvidia_jetson_orin_nano_soc",
+      "часть_svintsovo-kislotnye_akb_case",
+      "часть_svintsovo-kislotnye_akb_electrolyte"
     ],
     "researched_by": [
       "group_Acheson (1891 — открытие карбида кремния); J.A. Lely (1955 — метод сублимационного роста монокристаллов); Cree/Wolfspeed (осн. 1987 — первые коммерческие SiC-пластины, 1992); ключевые производители подложек: Wolfspeed, Coherent, SiCrystal (ROHM)",
@@ -32281,16 +32213,16 @@
     ]
   },
   "stats": {
-    "nodes": 1091,
-    "edges": 3524,
+    "nodes": 1089,
+    "edges": 3516,
     "dangling": {
-      "complies_with": 473,
-      "has_part": 4,
+      "complies_with": 471,
+      "has_part": 6,
       "researched_by": 68,
       "uses_material": 81
     },
     "by_type": {
-      "chast": 666,
+      "chast": 664,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
       "material": 197,
