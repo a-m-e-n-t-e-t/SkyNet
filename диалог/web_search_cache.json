@@ -1,224 +1,298 @@
 {
-  "entries": [
+ "entries": [
+  {
+   "id": "ws_0001",
+   "query": "Oxford PV perovskite silicon tandem solar module thickness frame dimensions datasheet",
+   "keywords": [
+    "Oxford",
+    "perovskite",
+    "tandem",
+    "solar",
+    "module",
+    "thickness",
+    "frame"
+   ],
+   "results_count": 10,
+   "key_facts": [
+    "Oxford PV 72-cell tandem modules 24.5% efficiency (Sep 2024, oxfordpv.com)",
+    "Oxford PV pilot line mini-modules 22cm x 22cm for M2 15.6cm cells (CHEOPS EC 2019)"
+   ],
+   "created_at": "2026-11-08T18:34:27.951432+00:00",
+   "last_used": "2026-11-08T18:34:27.951432+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2122
+   ]
+  },
+  {
+   "id": "ws_0002",
+   "query": "solar PV module aluminum frame profile height mm glass thickness laminate 35mm typical",
+   "keywords": [
+    "solar",
+    "PV",
+    "module",
+    "aluminum",
+    "frame",
+    "profile",
+    "thickness",
+    "35mm"
+   ],
+   "results_count": 10,
+   "key_facts": [
+    "Solar laminate main thickness = solar glass 3.2 mm (90% of 60-cell panels, aluminumsolarframe.com)",
+    "Standard aluminum frame profile depth 30-40 mm, 35 mm most common for residential (heavengreenenergy.com, Orin PV Jan 2026)",
+    "Increased frame height 35 mm for largest modules increases stiffness (Pander 2025)",
+    "Glass groove width 6.1-6.2 mm for typical 2 mm glass-glass module (Orin PV)"
+   ],
+   "created_at": "2026-11-08T18:34:27.951432+00:00",
+   "last_used": "2026-11-08T18:34:27.951432+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2122
+   ]
+  },
+  {
+   "id": "ws_0003",
+   "query": "ETFE film frontsheet encapsulation perovskite silicon tandem solar module fluoropolymer",
+   "keywords": [
+    "ETFE",
+    "film",
+    "frontsheet",
+    "perovskite",
+    "tandem",
+    "encapsulation",
+    "fluoropolymer"
+   ],
+   "created_at": "2026-11-08T18:49:23.477831+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2124
+   ],
+   "results_count": 5,
+   "key_facts": [
+    "AGC Fluon ETFE film: excellent light transmittance — protective film for solar cells (agc-chem, Fluon ETFE Film V0.1)",
+    "Thermally stable perovskite solar cells with fluoropolymer covering (ResearchGate 2024)",
+    "Laminated monolithic perovskite/silicon tandem — lamination approach (2022)",
+    "ETFE film frontsheet/encapsulation аннотирован в материалы/etfe.md::варианты_по_применению.film для perovskite_tandem"
+   ],
+   "last_used": "2026-11-08T18:49:23.477831+00:00"
+  },
+  {
+   "id": "ws_0004",
+   "query": "Maxwell BCAP3000 P270 ultracapacitor cell dimensions diameter 60.4 mm length 138 mm datasheet",
+   "keywords": [
+    "Maxwell",
+    "BCAP3000",
+    "P270",
+    "K2",
+    "ultracapacitor",
+    "dimensions",
+    "60.4",
+    "138",
+    "M12"
+   ],
+   "results_count": 10,
+   "key_facts": [
+    "BCAP3000 P270 K04/K05: Ø60.4 mm × 138 mm (2.390\" Dia × 5.433\" L) — datasheet Maxwell 3003279-EN.3 + Mouser/DigiKey/eBay listings сходятся",
+    "Масса ячейки 1.124 lbs = 0.51 кг (eBay листинг BCAP3000 P270 K04)",
+    "Резьбовые терминалы M12×1.75 threaded stud terminations (K2 Series; и laser-weldable posts вариант)",
+    "ESR_DC = 290 µΩ = 0.29 мОм (согласуется с родительским файлом)",
+    "K2 Series: тянутый алюминиевый cylindrical can, wound electrodes (активированный уголь), threaded terminals or weldable posts",
+    "Форм-фактор 'industry-standard 60mm cylindrical form factor' (Maxwell High Power and Energy Cell datasheet)"
+   ],
+   "created_at": "2026-11-08T19:24:37.290053+00:00",
+   "last_used": "2026-11-08T19:24:37.290053+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2125
+   ]
+  },
+  {
+   "query": "Tribaloy T-800 Co-Mo-Cr Laves phase alloy processing castability powder metallurgy wear resistance",
+   "keywords": [
+    "tribaloy",
+    "t-800",
+    "laves",
+    "powder",
+    "sintering"
+   ],
+   "results": [
     {
-      "id": "ws_0001",
-      "query": "Oxford PV perovskite silicon tandem solar module thickness frame dimensions datasheet",
-      "keywords": [
-        "Oxford",
-        "perovskite",
-        "tandem",
-        "solar",
-        "module",
-        "thickness",
-        "frame"
-      ],
-      "results_count": 10,
-      "key_facts": [
-        "Oxford PV 72-cell tandem modules 24.5% efficiency (Sep 2024, oxfordpv.com)",
-        "Oxford PV pilot line mini-modules 22cm x 22cm for M2 15.6cm cells (CHEOPS EC 2019)"
-      ],
-      "created_at": "2026-11-08T18:34:27.951432+00:00",
-      "last_used": "2026-11-08T18:34:27.951432+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2122
-      ]
+     "url": "https://www.stellite.com/us/en/alloys/tribaloy/tribaloy-t800-alloy.html",
+     "name": "Tribaloy T-800 Alloy - Technical Data",
+     "snippet": "T-800 was designed to resist high-temperature wear and abrasion and has exceptional oxidation and corrosion resistance due to its high chromium content. T-800 ... Read more"
     },
     {
-      "id": "ws_0002",
-      "query": "solar PV module aluminum frame profile height mm glass thickness laminate 35mm typical",
-      "keywords": [
-        "solar",
-        "PV",
-        "module",
-        "aluminum",
-        "frame",
-        "profile",
-        "thickness",
-        "35mm"
-      ],
-      "results_count": 10,
-      "key_facts": [
-        "Solar laminate main thickness = solar glass 3.2 mm (90% of 60-cell panels, aluminumsolarframe.com)",
-        "Standard aluminum frame profile depth 30-40 mm, 35 mm most common for residential (heavengreenenergy.com, Orin PV Jan 2026)",
-        "Increased frame height 35 mm for largest modules increases stiffness (Pander 2025)",
-        "Glass groove width 6.1-6.2 mm for typical 2 mm glass-glass module (Orin PV)"
-      ],
-      "created_at": "2026-11-08T18:34:27.951432+00:00",
-      "last_used": "2026-11-08T18:34:27.951432+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2122
-      ]
+     "url": "https://www.powderclad.com/products/specialty-powders/t400-t800-tribaloy-powders",
+     "name": "T-400 & T-800 Tribaloy® Powders",
+     "snippet": "Tribaloy® T-400 and T-800 powders are wear resistant metal powders composed of Co-Mo-Cr-Si. Designed for corrosion resistance and high-temperature ..."
     },
     {
-      "id": "ws_0003",
-      "query": "ETFE film frontsheet encapsulation perovskite silicon tandem solar module fluoropolymer",
-      "keywords": [
-        "ETFE",
-        "film",
-        "frontsheet",
-        "perovskite",
-        "tandem",
-        "encapsulation",
-        "fluoropolymer"
-      ],
-      "created_at": "2026-11-08T18:49:23.477831+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2124
-      ],
-      "results_count": 5,
-      "key_facts": [
-        "AGC Fluon ETFE film: excellent light transmittance — protective film for solar cells (agc-chem, Fluon ETFE Film V0.1)",
-        "Thermally stable perovskite solar cells with fluoropolymer covering (ResearchGate 2024)",
-        "Laminated monolithic perovskite/silicon tandem — lamination approach (2022)",
-        "ETFE film frontsheet/encapsulation аннотирован в материалы/etfe.md::варианты_по_применению.film для perovskite_tandem"
-      ],
-      "last_used": "2026-11-08T18:49:23.477831+00:00"
+     "url": "https://www.google.com/goto?url=CAEShAEBxCJF12qhQYuSCjgrkLsYCXcmIoS4iLZIXxYGazfw9V2a47283PdArIHCFeTNrygMH5PoJAAxzZoc8J6k6CXc41UhntflyyDDG5lXEmafG-5Zvs0rrEZOrNnKECj1URpv-QaGVf7Bxby4cdfxeaqzlZCaiA6CRJQljijNCuzah-36UpU",
+     "name": "Microstructure and mechanical properties of Tribaloy T-800",
+     "snippet": "by X Xu · 2025 · Cited by 6 — T-800 alloy exhibits superior wear resistance due to the high proportion of high hardness Laves phase in the alloy. Currently, we have applied the T-800 ... Read more"
     },
     {
-      "id": "ws_0004",
-      "query": "Maxwell BCAP3000 P270 ultracapacitor cell dimensions diameter 60.4 mm length 138 mm datasheet",
-      "keywords": [
-        "Maxwell",
-        "BCAP3000",
-        "P270",
-        "K2",
-        "ultracapacitor",
-        "dimensions",
-        "60.4",
-        "138",
-        "M12"
-      ],
-      "results_count": 10,
-      "key_facts": [
-        "BCAP3000 P270 K04/K05: Ø60.4 mm × 138 mm (2.390\" Dia × 5.433\" L) — datasheet Maxwell 3003279-EN.3 + Mouser/DigiKey/eBay listings сходятся",
-        "Масса ячейки 1.124 lbs = 0.51 кг (eBay листинг BCAP3000 P270 K04)",
-        "Резьбовые терминалы M12×1.75 threaded stud terminations (K2 Series; и laser-weldable posts вариант)",
-        "ESR_DC = 290 µΩ = 0.29 мОм (согласуется с родительским файлом)",
-        "K2 Series: тянутый алюминиевый cylindrical can, wound electrodes (активированный уголь), threaded terminals or weldable posts",
-        "Форм-фактор 'industry-standard 60mm cylindrical form factor' (Maxwell High Power and Energy Cell datasheet)"
-      ],
-      "created_at": "2026-11-08T19:24:37.290053+00:00",
-      "last_used": "2026-11-08T19:24:37.290053+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2125
-      ]
+     "url": "https://www.google.com/goto?url=CAEStAEBxCJF1-D82br7ImfW29oxa71u5FGayScBZhyFc8EA52lMNXMvGPDD5aa7hZRGCU5Av3khoqb0aIvNFpz5rvN0ujpuMzLQtAVGtiwloWFnClis5hn_ubpmYGWaGVaeWXbKPwgghMioBU2UZaoieJtDyXcSIg8lnCAw5x2cjPJGPDNHQPxlQevzLi5gnXSNVX_9OnRi3SrkX9BJb8zZFGkvm486rIlc2YkvI80MwoLDq8rDym8",
+     "name": "Tribaloy Alloys: Wear and Corrosion Resistance | PDF",
+     "snippet": "The Laves phase gives Tribaloy a hardness comparable to tool steel and tungsten carbide composites. Tribaloy resists both mechanical wear and corrosion over a ... Read more"
     },
     {
-      "query": "Tribaloy T-800 Co-Mo-Cr Laves phase alloy processing castability powder metallurgy wear resistance",
-      "keywords": [
-        "tribaloy",
-        "t-800",
-        "laves",
-        "powder",
-        "sintering"
-      ],
-      "results": [
-        {
-          "url": "https://www.stellite.com/us/en/alloys/tribaloy/tribaloy-t800-alloy.html",
-          "name": "Tribaloy T-800 Alloy - Technical Data",
-          "snippet": "T-800 was designed to resist high-temperature wear and abrasion and has exceptional oxidation and corrosion resistance due to its high chromium content. T-800 ... Read more"
-        },
-        {
-          "url": "https://www.powderclad.com/products/specialty-powders/t400-t800-tribaloy-powders",
-          "name": "T-400 & T-800 Tribaloy® Powders",
-          "snippet": "Tribaloy® T-400 and T-800 powders are wear resistant metal powders composed of Co-Mo-Cr-Si. Designed for corrosion resistance and high-temperature ..."
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAEShAEBxCJF12qhQYuSCjgrkLsYCXcmIoS4iLZIXxYGazfw9V2a47283PdArIHCFeTNrygMH5PoJAAxzZoc8J6k6CXc41UhntflyyDDG5lXEmafG-5Zvs0rrEZOrNnKECj1URpv-QaGVf7Bxby4cdfxeaqzlZCaiA6CRJQljijNCuzah-36UpU",
-          "name": "Microstructure and mechanical properties of Tribaloy T-800",
-          "snippet": "by X Xu · 2025 · Cited by 6 — T-800 alloy exhibits superior wear resistance due to the high proportion of high hardness Laves phase in the alloy. Currently, we have applied the T-800 ... Read more"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAEStAEBxCJF1-D82br7ImfW29oxa71u5FGayScBZhyFc8EA52lMNXMvGPDD5aa7hZRGCU5Av3khoqb0aIvNFpz5rvN0ujpuMzLQtAVGtiwloWFnClis5hn_ubpmYGWaGVaeWXbKPwgghMioBU2UZaoieJtDyXcSIg8lnCAw5x2cjPJGPDNHQPxlQevzLi5gnXSNVX_9OnRi3SrkX9BJb8zZFGkvm486rIlc2YkvI80MwoLDq8rDym8",
-          "name": "Tribaloy Alloys: Wear and Corrosion Resistance | PDF",
-          "snippet": "The Laves phase gives Tribaloy a hardness comparable to tool steel and tungsten carbide composites. Tribaloy resists both mechanical wear and corrosion over a ... Read more"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESbAHEIkXXvUmrp5JoK_npa583XXaG4ryop1tqzMKOvhiazMxG99VKfiBLhjrt06VUC4uTtTJxa_FGK1pP1yWOcGjVTFFesGzFkvtPrIE7-vYmXq0o_UpGU03xcuhbwbZmLwYP7TBZY37Idq2AFg",
-          "name": "Tribaloy T-800 Coating",
-          "snippet": "Laves-phase cobalt-molybdenum alloy ・ duty adds sustained 700°C+ heat ・ validated oxidation stability through 1,000°C. T-800 is the most crack-sensitive  ..."
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESvwEBxCJF1_Vdn80uWPFOUspsAY4u8Yd9KNoPb-_ddICffjqmcaQLnYhOie0vSWvHkc5MNJ9oVERNaVmD4n0lTJ7QSBNJ3-HHLDwTD3rkT-BEFITvLEqVE7F6x2YpbFwsJljFLFWICtBqa3Zm7_xXD_T4RxiC81tbuoCLNjbkfCya7JpCJ5AUTjXyi98BLdsFJEGZHo1Q_dmCtjlZn_0XqR7jo0ogKz2VXSfXVd9_N-ch5umswVGwVr116212P5UrLQ",
-          "name": "Microstructure and sliding wear behaviour of Tribaloy T-",
-          "snippet": "The Laves phase contributes to the high hardness and wear resistance of the T - 800 coatings, but does not significantly influence wear behavior under the tested ..."
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESlAEBxCJF10DLnpdQMUsZIjKdfgQjYCvuLAjr87-hcILBjxWuPUwwqsGb_ZRvsOuWkqGxUQoalc0i9qF1-WnA6hKgA0nPW_JVqX6T7OPgxHlM7t0NghVFu3JrMM06AkUpahlwx2hPl_kzRGz2N7m00PUo6r9rGUbG2vheULT1t09vsQN2GTHLxJoGe7vPugee7oLo1N5M",
-          "name": "Chemical composition of T-800 powder.",
-          "snippet": "A Tribaloy family of alloys (CoMoCrSi) are characterized by a substantial resistance to wear and corrosion within a wide range of temperatures. Read more"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESqAEBxCJF1z_r3kSFODd_c72k2NpnH-e940q_trz6xyw5G3MjbGtGoJ-gC5XDSzFvA6mPs-FtWeZWhg6ygV1w4cN4nH2KA4fUn6jVMHjGxSiZtQ4_8PpIMiwaanKW410jrv4lAmPgLY2-W29TjPt7lPF0ietjyt_Y3V4oimoNloEEMxyED6dtSf5xUXOma18nqFgo3x-T_KJnZDJpq93PjsdwnTpIVDPU1wA",
-          "name": "Materials with Tribaloy Alloy Additives",
-          "snippet": "by A Tavakoli · 2007 · Cited by 6 — Tribaloy alloy additives enhance the hardness of the pure bronzes and copper-15% bismuth, as demonstrated in Table"
-        }
-      ],
-      "created_at": "2026-11-08T19:41:56.222317+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2884
-      ]
+     "url": "https://www.google.com/goto?url=CAESbAHEIkXXvUmrp5JoK_npa583XXaG4ryop1tqzMKOvhiazMxG99VKfiBLhjrt06VUC4uTtTJxa_FGK1pP1yWOcGjVTFFesGzFkvtPrIE7-vYmXq0o_UpGU03xcuhbwbZmLwYP7TBZY37Idq2AFg",
+     "name": "Tribaloy T-800 Coating",
+     "snippet": "Laves-phase cobalt-molybdenum alloy ・ duty adds sustained 700°C+ heat ・ validated oxidation stability through 1,000°C. T-800 is the most crack-sensitive  ..."
     },
     {
-      "query": "Terminator T-800 endoskeleton hyperalloy metallurgy cast titanium alloy weight",
-      "keywords": [
-        "t-800",
-        "endoskeleton",
-        "hyperalloy",
-        "cast"
-      ],
-      "results": [
-        {
-          "url": "https://www.reddit.com/r/Terminator/comments/qy8g2y/what_metal_was_the_t800_endoskeleton_made_out_off",
-          "name": "What metal was the t-800 endoskeleton made out off?",
-          "snippet": "Just currious"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAEShAEBxCJF1zfNTxlIIG3TdvqYRJvqifeWOl9N9c0q-pm01hDXDLUMZl4mnxPajoC_Kg-g_mYqnHr-a90f8UYsO_Og_LeWhBxODTOSO1NcTeuWoe5A16xV0Fu7JsKHtZeJ1RhBmJ094eAb0RdYzVoGhUX7Lhrw62wjt-cyLx064MzZtSDtkbw",
-          "name": "What is the weight of a Terminator?",
-          "snippet": "The estimated weight of a Terminator endoskeleton is around 575 pounds , with some sources suggesting a range of 800 to 1,000 pounds"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESmAEBxCJF16ma85gOIMA4ZuC0O6XJgCWoD-pp80Lpc6R-0CQGGPfbmkRxYPQHelTuB_IzvfcZQ8pObQM6lLxkhCBKHx5bqtMgkBYCKCODkD4LW9rpw7VHDaWlPKdJWsz3hdNMrOHwFgHQKw9PkwVRWliqllO4V1emoImKULNFDFChVG3i_Pt37c59M0mHZLUuAgTci7QE0R4nIg",
-          "name": "What is the Terminator T-800 model made of?",
-          "snippet": "Jun 23, 2016 — What kind of metal is the Terminator T-800 model made of? Is it titanium or some other metal?"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESZQHEIkXXmk5esAQJDBBD9tRTmpH-i978eO8UBf3ZFdoR-igWT49-70wWRREjP8NPChprCHCVJx-56Y-WNWC1PQtlFBXHher6j5_hUzNlTPWXLZc5Y0SU68n4XkhQ1xSbqm_pj_ZN",
-          "name": "T-800 (Original timeline) | Terminator Wiki | Fandom",
-          "snippet": "The silvery metal endoskeleton of the T - 800 is a microprocessor controlled triple-armored hyper-alloy combat chassis and is constructed with frictionless ... Read more"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESbQHEIkXX2ji1UKDPHPrvFG_rpJcEREvIiw84lpKCok2878dDHO1eUyChnjATssf5FsLb-yPNoD1ANDciyHdUvIXRMB2QWYT5Ri6fOGo7javOmQF-YEryYJCqK5y9mn9oCFtZbm0G0yddBF3y0lI",
-          "name": "Terminator T-800 model kit",
-          "snippet": "Scale: 1:2 (half-size!) ; Height: 3' 1” (95cm) ; Weight: 13 lbs approx. (6 kg approx .) ; Display Base: 16 x 16 inches (20mm x 420mm) ; Material: High quality zinc ... Read more"
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESaAHEIkXXoiF7KPO0wgyt_SJChku2pjxBXXBxb4pBZ_PrRp6lMhCflLmabTY0qG_ZbqFxrfbUyZRAKhO6GdV5UahPdFwNxjVP1rK_7229k2wafEjljQG55RzgCPYz6diHTo6PrDqX2Y6S",
-          "name": "Man Spent 4 Years Hand Making Full Scale Terminator T-800",
-          "snippet": "Jamie Staff from Jaz Creations in Australia, spent 4 years making his own Full Scale Hand Made Metal Terminator T - 800 Endoskeleton ."
-        },
-        {
-          "url": "https://www.google.com/goto?url=CAESbAHEIkXXO82Wq43wV6MONh56_DVZn7J0puIZMnGSbyfT-oBx9TKyR-KTJDyf_o7goO2I1JIgBDzC_TYDvTUGwRCNfux7i8BXpVxnGYCtl4FfQGTBRu3-WZjfm6P2YTW3CoAFy5R9wr19JTF4xQ",
-          "name": "Terminator: Here's How Much Each Model Weighs",
-          "snippet": "Feb 7, 2021 — the T-800 series Terminator weighs around 400 pounds , unit is 640 pounds, the model is made out of a hyperalloy endoskeleton,"
-        },
-        {
-          "url": "https://www.statueforum.com/showthread.php?p=6250577",
-          "name": "Prime 1: Terminator 2 - T-800 Endoskeleton 1/3 Statue",
-          "snippet": "Sep 23, 2025 — Single rifle it weighs 2.5kgs, double rifle 2.9kgs. it could weigh about maybe 4kgs, 4.5kgs? it felt somewhere between 10kgs-13kgs."
-        }
-      ],
-      "created_at": "2026-11-08T19:41:56.222317+00:00",
-      "usage_count": 1,
-      "used_in_issues": [
-        2884
-      ]
+     "url": "https://www.google.com/goto?url=CAESvwEBxCJF1_Vdn80uWPFOUspsAY4u8Yd9KNoPb-_ddICffjqmcaQLnYhOie0vSWvHkc5MNJ9oVERNaVmD4n0lTJ7QSBNJ3-HHLDwTD3rkT-BEFITvLEqVE7F6x2YpbFwsJljFLFWICtBqa3Zm7_xXD_T4RxiC81tbuoCLNjbkfCya7JpCJ5AUTjXyi98BLdsFJEGZHo1Q_dmCtjlZn_0XqR7jo0ogKz2VXSfXVd9_N-ch5umswVGwVr116212P5UrLQ",
+     "name": "Microstructure and sliding wear behaviour of Tribaloy T-",
+     "snippet": "The Laves phase contributes to the high hardness and wear resistance of the T - 800 coatings, but does not significantly influence wear behavior under the tested ..."
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESlAEBxCJF10DLnpdQMUsZIjKdfgQjYCvuLAjr87-hcILBjxWuPUwwqsGb_ZRvsOuWkqGxUQoalc0i9qF1-WnA6hKgA0nPW_JVqX6T7OPgxHlM7t0NghVFu3JrMM06AkUpahlwx2hPl_kzRGz2N7m00PUo6r9rGUbG2vheULT1t09vsQN2GTHLxJoGe7vPugee7oLo1N5M",
+     "name": "Chemical composition of T-800 powder.",
+     "snippet": "A Tribaloy family of alloys (CoMoCrSi) are characterized by a substantial resistance to wear and corrosion within a wide range of temperatures. Read more"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESqAEBxCJF1z_r3kSFODd_c72k2NpnH-e940q_trz6xyw5G3MjbGtGoJ-gC5XDSzFvA6mPs-FtWeZWhg6ygV1w4cN4nH2KA4fUn6jVMHjGxSiZtQ4_8PpIMiwaanKW410jrv4lAmPgLY2-W29TjPt7lPF0ietjyt_Y3V4oimoNloEEMxyED6dtSf5xUXOma18nqFgo3x-T_KJnZDJpq93PjsdwnTpIVDPU1wA",
+     "name": "Materials with Tribaloy Alloy Additives",
+     "snippet": "by A Tavakoli · 2007 · Cited by 6 — Tribaloy alloy additives enhance the hardness of the pure bronzes and copper-15% bismuth, as demonstrated in Table"
     }
-  ]
+   ],
+   "created_at": "2026-11-08T19:41:56.222317+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2884
+   ]
+  },
+  {
+   "query": "Terminator T-800 endoskeleton hyperalloy metallurgy cast titanium alloy weight",
+   "keywords": [
+    "t-800",
+    "endoskeleton",
+    "hyperalloy",
+    "cast"
+   ],
+   "results": [
+    {
+     "url": "https://www.reddit.com/r/Terminator/comments/qy8g2y/what_metal_was_the_t800_endoskeleton_made_out_off",
+     "name": "What metal was the t-800 endoskeleton made out off?",
+     "snippet": "Just currious"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAEShAEBxCJF1zfNTxlIIG3TdvqYRJvqifeWOl9N9c0q-pm01hDXDLUMZl4mnxPajoC_Kg-g_mYqnHr-a90f8UYsO_Og_LeWhBxODTOSO1NcTeuWoe5A16xV0Fu7JsKHtZeJ1RhBmJ094eAb0RdYzVoGhUX7Lhrw62wjt-cyLx064MzZtSDtkbw",
+     "name": "What is the weight of a Terminator?",
+     "snippet": "The estimated weight of a Terminator endoskeleton is around 575 pounds , with some sources suggesting a range of 800 to 1,000 pounds"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESmAEBxCJF16ma85gOIMA4ZuC0O6XJgCWoD-pp80Lpc6R-0CQGGPfbmkRxYPQHelTuB_IzvfcZQ8pObQM6lLxkhCBKHx5bqtMgkBYCKCODkD4LW9rpw7VHDaWlPKdJWsz3hdNMrOHwFgHQKw9PkwVRWliqllO4V1emoImKULNFDFChVG3i_Pt37c59M0mHZLUuAgTci7QE0R4nIg",
+     "name": "What is the Terminator T-800 model made of?",
+     "snippet": "Jun 23, 2016 — What kind of metal is the Terminator T-800 model made of? Is it titanium or some other metal?"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESZQHEIkXXmk5esAQJDBBD9tRTmpH-i978eO8UBf3ZFdoR-igWT49-70wWRREjP8NPChprCHCVJx-56Y-WNWC1PQtlFBXHher6j5_hUzNlTPWXLZc5Y0SU68n4XkhQ1xSbqm_pj_ZN",
+     "name": "T-800 (Original timeline) | Terminator Wiki | Fandom",
+     "snippet": "The silvery metal endoskeleton of the T - 800 is a microprocessor controlled triple-armored hyper-alloy combat chassis and is constructed with frictionless ... Read more"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESbQHEIkXX2ji1UKDPHPrvFG_rpJcEREvIiw84lpKCok2878dDHO1eUyChnjATssf5FsLb-yPNoD1ANDciyHdUvIXRMB2QWYT5Ri6fOGo7javOmQF-YEryYJCqK5y9mn9oCFtZbm0G0yddBF3y0lI",
+     "name": "Terminator T-800 model kit",
+     "snippet": "Scale: 1:2 (half-size!) ; Height: 3' 1” (95cm) ; Weight: 13 lbs approx. (6 kg approx .) ; Display Base: 16 x 16 inches (20mm x 420mm) ; Material: High quality zinc ... Read more"
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESaAHEIkXXoiF7KPO0wgyt_SJChku2pjxBXXBxb4pBZ_PrRp6lMhCflLmabTY0qG_ZbqFxrfbUyZRAKhO6GdV5UahPdFwNxjVP1rK_7229k2wafEjljQG55RzgCPYz6diHTo6PrDqX2Y6S",
+     "name": "Man Spent 4 Years Hand Making Full Scale Terminator T-800",
+     "snippet": "Jamie Staff from Jaz Creations in Australia, spent 4 years making his own Full Scale Hand Made Metal Terminator T - 800 Endoskeleton ."
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESbAHEIkXXO82Wq43wV6MONh56_DVZn7J0puIZMnGSbyfT-oBx9TKyR-KTJDyf_o7goO2I1JIgBDzC_TYDvTUGwRCNfux7i8BXpVxnGYCtl4FfQGTBRu3-WZjfm6P2YTW3CoAFy5R9wr19JTF4xQ",
+     "name": "Terminator: Here's How Much Each Model Weighs",
+     "snippet": "Feb 7, 2021 — the T-800 series Terminator weighs around 400 pounds , unit is 640 pounds, the model is made out of a hyperalloy endoskeleton,"
+    },
+    {
+     "url": "https://www.statueforum.com/showthread.php?p=6250577",
+     "name": "Prime 1: Terminator 2 - T-800 Endoskeleton 1/3 Statue",
+     "snippet": "Sep 23, 2025 — Single rifle it weighs 2.5kgs, double rifle 2.9kgs. it could weigh about maybe 4kgs, 4.5kgs? it felt somewhere between 10kgs-13kgs."
+    }
+   ],
+   "created_at": "2026-11-08T19:41:56.222317+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2884
+   ]
+  },
+  {
+   "query": "InGaAsSb SWIR photodiode 0.53 eV cutoff wavelength 2.3 um detector MOCVD extended infrared",
+   "keywords": [
+    "ingaassb",
+    "swir",
+    "photodiode",
+    "0.53 eV",
+    "cutoff",
+    "mocvd",
+    "night vision",
+    "оптический_сенсор"
+   ],
+   "results": [
+    {
+     "url": "https://www.mdpi.com/2072-666X/15/8/941",
+     "name": "Room-Temperature (RT) Extended Short-Wave Infrared (e",
+     "snippet": "by M Benker · 2024 · Cited by 3 — In this paper, we report on extended short-wave infrared (e- SWIR ) avalanche photodiodes (APDs) capable of operating at room temperature (RT). wavelength range ...",
+     "host_name": "www.mdpi.com",
+     "rank": 0,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.researchgate.net/publication/349171960_High_responsivity_InGaAsSb_p-n_photodetector_for_extended_SWIR_detection",
+     "name": "High responsivity InGaAsSb p–n photodetector for",
+     "snippet": "This work discusses development of high performance e- SWIR detectors with cutoff wavelengths in the 2.7 - 2.8 micron range. Two approaches for e- SWIR ... Read more",
+     "host_name": "www.researchgate.net",
+     "rank": 1,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESZgHEIkXXB3fV09rmEsNm7zWKqXxU9Vq3Ia9Vv8t-BRAMmBgPVugyPH-3vy79Qr9Aa_CtSlwaVtrh3_hlT9lCZ2pgsahiT5sA_UiXqeUBfnOQBXyprf0Lm1049VH3mYQuWNF7hMk2HA",
+     "name": "Optimization of InGaAs/GaAsSb on InP Type-II Superlattice",
+     "snippet": "by J Roubichou · 2025 · Cited by 4 — InGaAs photodiodes lattice-matched to InP substrates, limited by a cutoff wavelength of 1.7 μm. a cutoff wavelength of 2.3 μm",
+     "host_name": "www.google.com",
+     "rank": 2,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAEStQEBxCJF14lNWeryRMTAFBDBZrg5rxHA0QWXDlzf3XkP5ZN8u66n2c5CaNkw68eYXvJJ5nrs_JIFxV9yanWzPbTzs8PzMSf1fpin9xjkyy5D8-bU-0xBjHem6RDv6VFuonS0ni0vkupFQaKUxPL0Xv76vbYv9Yz3IMJYmiduJlRbKijq2Ust6247qIyvtLchaeL0eQ19IEml_9FgR1vms5s6lMd5q-KASOL_RQNt2a3osrmiatX6",
+     "name": "InGaAs/GaAsSb Type-II superlattice based photodiodes for",
+     "snippet": "The Extended InGaAs detectors can reach longer cutoffs up to a wavelength of 2.6 μm by increasing the Indium concentration within the layer, with a tradeoff",
+     "host_name": "www.google.com",
+     "rank": 3,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESgAEBxCJF1wbVn_2SiIYz2vz5LPh-wyeTnXZ9BtOlG4R2NZZvpP5ibE9d-8HSYYYUZdoXmopWhVSEqtRfttN1vUXKZZA7xrSoPU2gabGb20ozOQndsXFTRdss4Vwgmi3JpX-SwNhhZCzf6bZyqht28JtFAeHaeHuTuPbics3TI0CNAA",
+     "name": "Wavelength extended InGaAsBi near infrared photodetector",
+     "snippet": "by 冯铎 · 2023 · Cited by 1 — InGaAs photodetector is widely used in SWIR detection. Bi incorporation into InGaAs can reduce the bandgap， extending the detection wavelength .",
+     "host_name": "www.google.com",
+     "rank": 4,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://publica.fraunhofer.de/entities/publication/2e3112b9-11b1-4d16-9262-aaba7f8c1e38",
+     "name": "Investigation of InGaAsSb-based heterojunction photodiodes",
+     "snippet": "In this paper, uncooled InGaAsSb -based detectors for the wavelength range beyond 1.7 μm, the extended SWIR (eSWIR), are investigated for the later use in a ... Read more",
+     "host_name": "publica.fraunhofer.de",
+     "rank": 5,
+     "date": "",
+     "favicon": ""
+    }
+   ],
+   "created_at": "2026-11-08T20:01:06.387186+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    2784
+   ]
+  }
+ ]
 }

@@ -5449,6 +5449,41 @@
       "subsystem": "энергетическая"
     },
     {
+      "id": "часть_t800_оптический_сенсор_1_бронеплита",
+      "type": "chast",
+      "label": "armor_backplate",
+      "path": "работа и и/изделия/каркас/t800/часть_t800_оптический_сенсор_1/часть_t800_оптический_сенсор_1_бронеплита/_index.md",
+      "subsystem": "сенсоры"
+    },
+    {
+      "id": "часть_t800_оптический_сенсор_1_линзовый_блок",
+      "type": "chast",
+      "label": "optical_objective",
+      "path": "работа и и/изделия/каркас/t800/часть_t800_оптический_сенсор_1/часть_t800_оптический_сенсор_1_линзовый_блок/_index.md",
+      "subsystem": "сенсоры"
+    },
+    {
+      "id": "часть_t800_оптический_сенсор_1_фотоприемник_ик",
+      "type": "chast",
+      "label": "swir_photodiode",
+      "path": "работа и и/изделия/каркас/t800/часть_t800_оптический_сенсор_1/часть_t800_оптический_сенсор_1_фотоприемник_ик/_index.md",
+      "subsystem": "сенсоры"
+    },
+    {
+      "id": "часть_t800_оптический_сенсор_1_матрица",
+      "type": "chast",
+      "label": "image_sensor_matrix",
+      "path": "работа и и/изделия/каркас/t800/часть_t800_оптический_сенсор_1/часть_t800_оптический_сенсор_1_матрица/_index.md",
+      "subsystem": "сенсоры"
+    },
+    {
+      "id": "часть_t800_оптический_сенсор_1_платформа",
+      "type": "chast",
+      "label": "electronics_platform",
+      "path": "работа и и/изделия/каркас/t800/часть_t800_оптический_сенсор_1/часть_t800_оптический_сенсор_1_платформа/_index.md",
+      "subsystem": "сенсоры"
+    },
+    {
       "id": "часть_rev9_полисплав_оболочка",
       "type": "chast",
       "label": "mimetic_polyalloy_sheath",
@@ -21272,13 +21307,67 @@
     },
     {
       "src": "часть_t800_оптический_сенсор_1",
+      "dst": "часть_t800_оптический_сенсор_1_линзовый_блок",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1",
+      "dst": "часть_t800_оптический_сенсор_1_матрица",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1",
+      "dst": "часть_t800_оптический_сенсор_1_фотоприемник_ик",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1",
+      "dst": "часть_t800_оптический_сенсор_1_платформа",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1",
+      "dst": "часть_t800_оптический_сенсор_1_бронеплита",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1",
       "dst": "izdelie_SkyNet-T800",
       "type": "child_of",
       "meta": {}
     },
     {
       "src": "часть_t800_оптический_сенсор_1",
+      "dst": "material_quartz",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1",
       "dst": "material_si",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1",
+      "dst": "material_ingaassb",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1",
+      "dst": "material_poliimid",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1",
+      "dst": "material_tungsten",
       "type": "uses_material",
       "meta": {}
     },
@@ -21303,6 +21392,66 @@
     {
       "src": "часть_t800_топливная_ячейка_1",
       "dst": "material_pt",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_бронеплита",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_бронеплита",
+      "dst": "material_tungsten",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_линзовый_блок",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_линзовый_блок",
+      "dst": "material_quartz",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_фотоприемник_ик",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_фотоприемник_ик",
+      "dst": "material_ingaassb",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_матрица",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_матрица",
+      "dst": "material_si",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_платформа",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_платформа",
+      "dst": "material_poliimid",
       "type": "uses_material",
       "meta": {}
     },
@@ -34375,7 +34524,79 @@
       }
     },
     {
+      "src": "часть_t800_оптический_сенсор_1_линзовый_блок",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_матрица",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_фотоприемник_ик",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_платформа",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_t800_оптический_сенсор_1_бронеплита",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_quartz",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_si",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ingaassb",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_poliimid",
+      "dst": "часть_t800_оптический_сенсор_1",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_tungsten",
       "dst": "часть_t800_оптический_сенсор_1",
       "type": "used_in",
       "meta": {
@@ -34393,6 +34614,46 @@
     {
       "src": "material_pt",
       "dst": "часть_t800_топливная_ячейка_1",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_tungsten",
+      "dst": "часть_t800_оптический_сенсор_1_бронеплита",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_quartz",
+      "dst": "часть_t800_оптический_сенсор_1_линзовый_блок",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ingaassb",
+      "dst": "часть_t800_оптический_сенсор_1_фотоприемник_ик",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_si",
+      "dst": "часть_t800_оптический_сенсор_1_матрица",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_poliimid",
+      "dst": "часть_t800_оптический_сенсор_1_платформа",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -34644,6 +34905,7 @@
       "standart_ASTM B633",
       "standart_ASTM B637",
       "standart_ASTM B760",
+      "standart_ASTM B760 (вольфрамовая плита)",
       "standart_ASTM B777 Grade 1 (ρ 16.85–17.30 г/см³, UTS ≥758 МПа, YS ≥517 МПа, δ ≥5 %, HRC ≤32)",
       "standart_ASTM C1161",
       "standart_ASTM C1161 (изгиб технической керамики)",
@@ -34864,11 +35126,13 @@
       "standart_IPC-6012",
       "standart_IPC-6012 (жёсткие платы)",
       "standart_IPC-6013",
+      "standart_IPC-6013 (гибкие печатные платы)",
       "standart_IPC-9701 — квалификация паяных соединений BGA по термоциклам",
       "standart_IPC-A-600",
       "standart_IPC-A-610",
       "standart_IPG Installation Manual",
       "standart_IPG Mechanical Interface",
+      "standart_ISO 10110 (оптика)",
       "standart_ISO 10618",
       "standart_ISO 10993",
       "standart_ISO 10993 (биосовместимость медицинских марок)",
@@ -35260,16 +35524,16 @@
     ]
   },
   "stats": {
-    "nodes": 1112,
-    "edges": 3921,
+    "nodes": 1117,
+    "edges": 3954,
     "dangling": {
-      "complies_with": 529,
+      "complies_with": 532,
       "has_part": 6,
       "researched_by": 85,
       "uses_material": 62
     },
     "by_type": {
-      "chast": 669,
+      "chast": 674,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
       "material": 214,
