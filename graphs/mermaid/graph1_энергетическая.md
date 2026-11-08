@@ -232,8 +232,8 @@ graph LR
     часть_asrg_v28_ии_piston[компонент_РИТЭГ_Стирлинг]
     часть_asrg_v28_ии_isotope[компонент_РИТЭГ_Стирлинг]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
-    material_copper[Cu ≥99.9% (электролити…]
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
+    material_copper[Cu ≥99.9% (электролити…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_si[Si (кремний); электрон…]
     izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza -->|материал| material_copper

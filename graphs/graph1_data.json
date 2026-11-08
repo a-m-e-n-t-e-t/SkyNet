@@ -4294,6 +4294,20 @@
       "subsystem": "приводная_система"
     },
     {
+      "id": "часть_apa_core_piezostack",
+      "type": "chast",
+      "label": "пьезоэлемент",
+      "path": "реальные данные/изделия/приводная_система/apa/часть_apa_core/часть_apa_core_piezostack/_index.md",
+      "subsystem": "приводная_система"
+    },
+    {
+      "id": "часть_apa_core_shell",
+      "type": "chast",
+      "label": "упругий_элемент",
+      "path": "реальные данные/изделия/приводная_система/apa/часть_apa_core/часть_apa_core_shell/_index.md",
+      "subsystem": "приводная_система"
+    },
+    {
       "id": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting",
       "type": "chast",
       "label": "крепёж",
@@ -17247,8 +17261,26 @@
     },
     {
       "src": "часть_apa_core",
+      "dst": "часть_apa_core_piezostack",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_apa_core",
+      "dst": "часть_apa_core_shell",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_apa_core",
       "dst": "izdelie_apa",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_apa_core",
+      "dst": "material_batio3",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -17266,6 +17298,30 @@
     {
       "src": "часть_apa_mounting",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_apa_core_piezostack",
+      "dst": "часть_apa_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_apa_core_piezostack",
+      "dst": "material_batio3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_apa_core_shell",
+      "dst": "часть_apa_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_apa_core_shell",
+      "dst": "material_ti-6al-4v",
       "type": "uses_material",
       "meta": {}
     },
@@ -28704,6 +28760,30 @@
       }
     },
     {
+      "src": "часть_apa_core_piezostack",
+      "dst": "часть_apa_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_apa_core_shell",
+      "dst": "часть_apa_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_batio3",
+      "dst": "часть_apa_core",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_ti-6al-4v",
       "dst": "часть_apa_core",
       "type": "used_in",
@@ -28714,6 +28794,22 @@
     {
       "src": "material_al_6061-t6",
       "dst": "часть_apa_mounting",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_batio3",
+      "dst": "часть_apa_core_piezostack",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ti-6al-4v",
+      "dst": "часть_apa_core_shell",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -31524,8 +31620,8 @@
     ]
   },
   "stats": {
-    "nodes": 1077,
-    "edges": 3428,
+    "nodes": 1079,
+    "edges": 3440,
     "dangling": {
       "complies_with": 472,
       "has_part": 4,
@@ -31533,7 +31629,7 @@
       "uses_material": 81
     },
     "by_type": {
-      "chast": 652,
+      "chast": 654,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
       "material": 197,

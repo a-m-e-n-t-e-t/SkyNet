@@ -68,6 +68,8 @@ graph LR
     часть_apa_housing[корпус]
     часть_apa_core[основной_элемент]
     часть_apa_mounting[крепёж]
+    часть_apa_core_piezostack[пьезоэлемент]
+    часть_apa_core_shell[упругий_элемент]
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting[крепёж]
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing[корпус]
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka[изоляция]
@@ -110,8 +112,8 @@ graph LR
     часть_t600_рука_левая[servo_arm]
     часть_t600_нога_левая[servo_leg]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
-    material_copper[Cu ≥99.9% (электролити…]
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
+    material_copper[Cu ≥99.9% (электролити…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_si[Si (кремний); электрон…]
     izdelie_zubchataya_mufta -->|материал| material_stal_st3
@@ -142,6 +144,7 @@ graph LR
     часть_apa_housing -->|материал| material_al_6061_t6
     часть_apa_core -->|материал| material_ti_6al_4v
     часть_apa_mounting -->|материал| material_al_6061_t6
+    часть_apa_core_shell -->|материал| material_ti_6al_4v
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing -->|материал| material_al_6061_t6
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran -->|материал| material_copper
     часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors -->|материал| material_al_6061_t6
@@ -179,7 +182,7 @@ _Показаны 5 наиболее часто используемых мат�
 | Материал | Используется в частях |
 |---|---:|
 | `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 33 |
-| `Ti-6Al-4V (Grade 5, UNS R56400): Al 5.5–6.75 %, V 3.5–4.5 %, Fe ≤0.30 %, O ≤0.20 %, C ≤0.08 %, N ≤0.05 %, H ≤0.015 %, Y ≤0.005 %, Ti — остальное (ASTM-спецификация, Wikipedia/ASM)` | 13 |
+| `Ti-6Al-4V (Grade 5, UNS R56400): Al 5.5–6.75 %, V 3.5–4.5 %, Fe ≤0.30 %, O ≤0.20 %, C ≤0.08 %, N ≤0.05 %, H ≤0.015 %, Y ≤0.005 %, Ti — остальное (ASTM-спецификация, Wikipedia/ASM)` | 14 |
 | `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 6 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 6 |
 | `Cu ≥99.9% (электролитическая медь C11000/ETP)` | 5 |
@@ -190,6 +193,6 @@ _Показаны 5 наиболее часто используемых мат�
 | `Полидиметилсилоксан (PDMS, VMQ): основа –[Si(CH₃)₂–O]ₙ– с винильными сшивочными группами (~0.05–0.5 мол. %), наполнитель — пирогенный кремнезём SiO₂ 10–30 мас.% (типа HDK®), вулканизация пероксидная (HCR-марки) или платиновая присоединительная (RTV-2/LSR)` | 2 |
 | `перфторсульфоновая кислота (PFSA): PTFE-подобная основа с боковыми цепями –O–CF₂–CF(CF₃)–O–CF₂–CF₂–SO₃H, EW ≈1100 г/моль (Nafion 117, Chemours)` | 2 |
 | `Pt (платина ≥99.9%, CAS 7440-06-4); для термопар и фильеров — родственные сплавы Pt-Rh (тип S: Pt-10%Rh/Pt, тип R: Pt-13%Rh/Pt; фильеры стекловолокна Pt-Rh 10–25%)` | 2 |
+| `BaTiO3 ≥98.5% (титанат бария, перовскит ABO3); для X5R/X7R-диэлектриков MLCC легируется Dy2O3, Ho2O3, Y2O3, Mg, Si, Mn (core-shell BME с Ni-электродами)` | 2 |
 | `Трёхслойная ламинация TPT (Tedlar/PET/Tedlar): плёнки Tedlar® PVF (поливинилфторид) ~25 мкм с обеих сторон + двуосно-ориентированная ПЭТ-сердцевина (полиэтилентерефталат) 150–280 мкм + праймерные/адгезионные слои` | 2 |
 | `ультравысокомолекулярный полиэтилен (UHMWPE), -(CH2-CH2)n-, молекулярная масса >1.5 млн г/моль; гель-прядёное волокно Honeywell (марки S-900, S-1000, HT)` | 1 |
-| `интерметаллид Nd₂Fe₁₄B (тетрагональная фаза); типовой спечённый магнит ≈ Fe 64–68 мас.%, Nd 29–32 мас.%, B ~1 мас.%, добавки Dy/Tb/Pr в термостабильных грейдах` | 1 |
