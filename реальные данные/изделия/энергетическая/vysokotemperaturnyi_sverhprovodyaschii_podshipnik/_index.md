@@ -60,6 +60,20 @@ id: izdelie_vysokotemperaturnyi_sverhprovodyaschii_podshipnik
     материалы_для_процесса:
       - материал: ti-6al-4v
         роль: обрабатываемый
+наследуемые_материалы:
+  - материал: ybco
+    суммарная_доля_массы: 0.285
+    источники_частей:
+      - часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_hts_element
+  - материал: ndfeb
+    суммарная_доля_массы: 0.38
+    источники_частей:
+      - часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_magnet
+  - материал: ss_aisi_304
+    суммарная_доля_массы: 0.475
+    источники_частей:
+      - часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_cryostat
+      - часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_shaft
 scaling_type: количественный
 соединители: []
 версия: реальная
