@@ -1237,9 +1237,99 @@
     }
    ],
    "created_at": "2026-11-09T05:32:59+08:00",
+   "usage_count": 2,
+   "used_in_issues": [
+    1922,
+    1923
+   ]
+  },
+  {
+   "query": "STM32H743 LQFP100 14x14 mm package dimensions power dissipation mW maximum clock frequency",
+   "keywords": [
+    "stm32h743",
+    "lqfp100",
+    "14x14mm",
+    "cortex_m7",
+    "480mhz"
+   ],
+   "results": [
+    {
+     "url": "https://www.st.com/resource/en/datasheet/stm32h743vi.pdf",
+     "name": "Datasheet - STM32H742xI/G STM32H743xI/G - 32-bit Arm",
+     "snippet": "frequency up to 480 MHz, MPU, 3.6 V power supply. power supply choice. low- power applications. The maximum CPU frequency of 480 MHz can be obtained on devices ... 357 pages",
+     "host_name": "www.st.com",
+     "rank": 0,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAEShAEBxCJF17p1oZtHtJenlqBONYmt0JQHle3Sz0WPDlIy1FwSM8KMkIJkGGE3NHlvcBqmozsVg0C5oBIv4cBVxCGzWRCOL9gg7CtWleNNW2y6rcyTLIpSV99PiRH2ttETEPHIx9hEU_-M6-bcDX_O6Me1ERPdXfczrGcK6jQ_mI4vl-99VdA",
+     "name": "STM32H743xI",
+     "snippet": "frequency up to 400 MHz, MPU, 856 DMIPS/ LQFP100 ( 14x14 mm ) power supply choice. offered in 8 packages ranging from 100 pins to 240 pins/balls. 226 pages",
+     "host_name": "www.google.com",
+     "rank": 1,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESkwEBxCJF18Grvl1emp7uing8DuXhWrf6Xq43yWVcVpuz6AGig3d1hPtrv0t7_wJ8H8tHvvhBt2SkNLIaNluf6ZOVYL_neXOts92r9Q7FtbFX6j6mnWluRk4TdSFn99fkJ0FqkHRfCTw5KMVmj1W8RXsaJYN_Q8ArJctLmfZ_Fan5E7D5A1Ky7RnJsBq24ghfQDdDSrQ",
+     "name": "32-bit ARM® Cortex®-M7 400MHz MCU, up to 2MB Flash,",
+     "snippet": "Oct 19, 2016 — LQFP100 - 100-pin, 14 x 14 mm low-profile quad flat package outline . ... maximum input clock frequency up to 20 MHz (10 MHz for Manchester coding). Read more 110 pages",
+     "host_name": "www.google.com",
+     "rank": 2,
+     "date": "Oct 19, 2016",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESsAEBxCJF16Phh95mL4c4cmTTW0mWl3zkSwQYTFwoIv4UKrAUzOcFPUZEKRJlcXmXCvSRuax4-SgH7RKoxIfcoJ1P3NmYF_T3fxCaTf_lSU4eZCA0LhLoAb6acx8J8zmgIOKFur_Me-udtwgg8GVcvB7C6q_kLcrZ6eIRlcCQwHhguxCvfeHC0gWoRlafCfR7sag-Q-0EeepagPJ9C5lfrv1OssqZJPHC6a07LEfY1Wx3xg",
+     "name": "LQFP100 package information (1L) | DS14927",
+     "snippet": "This LQFP is a 100-pin, 14 x 14 mm , low-profile quad flat package . 144 MHz, 593 CoreMark®, All dimensions are in millimeters .",
+     "host_name": "www.google.com",
+     "rank": 3,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESkAEBxCJF13EzBsQh5lyso3EaTJ6Te1LhAwK_E3TEFuHgSpkr79l7KR9pWRHe6vRrOYdz8kGt0Z7sbtSFnFbm4_8c6cwr3zYBMnr1fBMWtlQpAk4xuHFfsRPz_IsTCZXiqTWYFjdyLGCmSydP0NOCcGRrGVR9RZS9Mr7zxse26mdjblqAvCfVjsQLBgp0H_AgPrI",
+     "name": "STM32H743VIT6 STMicroelectronics | Microcontrollers",
+     "snippet": "Operating Temperature. -40°C ~ 85°C (TA) ; Mounting Type. Surface Mount ; Supplier Device Package . 100- LQFP ( 14x14 ) ; Package / Case. 100- LQFP ; Base Product Number. Read more",
+     "host_name": "www.google.com",
+     "rank": 4,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESoAEBxCJF10tQvsz5PUsvYZVXw6ovFyRRkjR40hg1wYldAXIScLfB5DG3HNBm0JfFnmtQqlnPHhn6Esnx0JvY227iIR31VJFwU4FPYGP-C3lkIg5mDiedB32HBHw4G2gSpc7lNapOV3cqAzxeSmnvKUzGkcbRXXDGU-Emn45uEj08BFLdoB9Pg86DeVGxd4d3wkLkSXDEEh6CcfJqtbxJ7whw",
+     "name": "STM32H743: Detailed Datasheet, Pinout, and Alternatives",
+     "snippet": "Jan 23, 2026 — The STM32H743 utilizes the 32-bit ARM Cortex-M7 core. Running at 480 MHz, it delivers exceptional processing power required for real-time ... Read more",
+     "host_name": "www.google.com",
+     "rank": 5,
+     "date": "Jan 23, 2026",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAES5AEBxCJF17Im-8mAxEiKMsGq0GRAEbnPpcRs_f_m_6eAZ2mMu8O-nUXS8KB6Q46WaRDQMy3GaQRkElQ2RR2pzMsD2Kc6q2oolT-nYQg9QrQninkcPcHTFHTRDJYs7af1JxHOD6NRDhWJWmToXpCVRBoKbKxxag838gQHphlZSIY82PDSPOD9Vh-9-pl9kqURQWYpS-90su0NXZUGntUDyI4SOBujYrA4W8DQu4d2RuM0ETiOxHLQTmJpPOY-Ck6DTpNw6ECRDPJILdRZS8Wp1cZJrc7NpIRSrU36DGImZZ_ASysGNro",
+     "name": "STM32H743xI Data Brief: Features & Specifications Overview",
+     "snippet": "The STM32H743xI features a RISC core operating at 400 MHz. Advanced power management features allow for efficient operation … 166 MHz &\"'! LQFP100 ( 14x14 mm ) ...",
+     "host_name": "www.google.com",
+     "rank": 6,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAEScgHEIkXXaeC5n4nBCGPCKg2kckIUPqMcNFluuDjDweeIQvmSeJSKWWif0meC46EEMxSYVDBRvrW9IpHr56QIpILThVYdLHzS_Bp2EAFQY9RDXL53d3QtFhOU49t6szTdlghXVm2O379bhOpEyyz87j-cRA",
+     "name": "STM 32 H 743 Zi | PDF | Dynamic Random Access Memory",
+     "snippet": "( 14 x 14 mm) maximum input clock frequency up to 20 MHz (10 MHz for Manchester coding) Maximum power dissipation –40 85 the",
+     "host_name": "www.google.com",
+     "rank": 7,
+     "date": "",
+     "favicon": ""
+    }
+   ],
+   "created_at": "2026-11-09T05:40:03+08:00",
    "usage_count": 1,
    "used_in_issues": [
-    1922
+    1923
    ]
   }
  ]
