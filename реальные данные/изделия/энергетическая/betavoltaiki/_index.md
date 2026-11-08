@@ -23,12 +23,15 @@ id: izdelie_betavoltaiki
     доля_массы: 0.285
   - часть: часть_betavoltaiki_semiconductor
     материал: silicon_carbide
+    форма: бета_вольтаический_переход
     доля_массы: 0.475
   - часть: часть_betavoltaiki_encapsulant
     материал: epoxy
+    форма: заливочная_композиция_без_наполнителя
     доля_массы: 0.095
   - часть: часть_betavoltaiki_case
     материал: titanium_alloy
+    форма: морские_и_химические_среды
     доля_массы: 0.285
 технологии_частей:
   - часть: часть_betavoltaiki_isotope
