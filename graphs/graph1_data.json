@@ -8966,6 +8966,12 @@
     },
     {
       "src": "izdelie_superkondensatory",
+      "dst": "material_karbon",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_superkondensatory",
       "dst": "material_cellulose",
       "type": "uses_material",
       "meta": {}
@@ -23025,6 +23031,14 @@
       }
     },
     {
+      "src": "material_karbon",
+      "dst": "izdelie_superkondensatory",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_cellulose",
       "dst": "izdelie_superkondensatory",
       "type": "used_in",
@@ -35247,7 +35261,7 @@
   },
   "stats": {
     "nodes": 1112,
-    "edges": 3919,
+    "edges": 3921,
     "dangling": {
       "complies_with": 529,
       "has_part": 6,
