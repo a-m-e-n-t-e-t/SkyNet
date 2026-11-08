@@ -33,7 +33,7 @@ scaling_type: количественный
     w: 10
     h: 0.2
   выработка_энергии_W: 0
-  выработка_тепла_W: 1
+  выработка_тепла_W: 0.162
 наследуемые: {}
 дополнительные:
   изотоп: 'H-3 (тритий)'
@@ -43,11 +43,12 @@ scaling_type: количественный
   удельная_активность: '9650 Ci/g (3.57×10¹⁴ Bq/g)'
   форма_хранения: 'твердый металл-тритид (ScT₂), не сжатый газ'
   активность_источника_оценка: '≈4.8 kCi при canon-массе 0.5 г (расчёт: 0.5 г × 9650 Ci/g)'
+  тепловыделение: '0.162 Вт = 0.5 г трития × 0.3240 Вт/г (калориметрия Pillinger 1961, Phys. Rev. 121, 232: 0.3240±0.0009 Вт/г); кросс-чек: 4.8 кКи × 5.7 кэВ (средняя энергия β) = 0.162 Вт — полное β-тепло источника, всё генерируется в тритиевом слое'
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-04
+дата_обновления: 2026-11-08
 источник: web_search
-источник_url: https://en.wikipedia.org/wiki/Tritium + https://citylabs.net/technology-overview + https://ieeexplore.ieee.org/iel8/23/4689328/10904919.pdf
-источник_дата: 2026-11-04
+источник_url: https://en.wikipedia.org/wiki/Tritium + https://citylabs.net/technology-overview + https://ieeexplore.ieee.org/iel8/23/4689328/10904919.pdf + https://link.aps.org/doi/10.1103/PhysRev.121.232
+источник_дата: 2026-11-08
 источник_разбора: канон
 ---
 
@@ -71,7 +72,7 @@ scaling_type: количественный
 | доля массы родителя | 0.2 | — | canon |
 | габариты (Д×Ш×В) | 10×10×0.2 | mm | оценка: слой тритида внутри корпуса 10×10×1 mm |
 | выработка энергии | 0 | W | canon |
-| выработка тепла | 1 | W | canon |
+| выработка тепла | 0.162 | W | калориметрия трития: 0.5 г × 0.3240 Вт/г (Pillinger 1961, Phys. Rev. 121, 232) |
 | материал | sct (ScT₂) | — | web_search (City Labs: metal tritides) |
 | изотоп | H-3 (тритий) | — | web_search (Wikipedia) |
 | период полураспада | 12.32 | лет | web_search (NIST: 4500±8 дней) |
@@ -96,5 +97,7 @@ scaling_type: количественный
 - https://citylabs.net/technology-overview — твёрдое хранение трития в металл-тритидах (metal tritides)
 - https://ieeexplore.ieee.org/iel8/23/4689328/10904919.pdf — Maier 2025, «Experimental Insights for Tritium Betavoltaic Batteries»
 - https://www.nist.gov/ (Lucas & Unterweger, J. Res. NIST 105:541, 2000 — T½ = 4500±8 дней)
+- https://link.aps.org/doi/10.1103/PhysRev.121.232 — Pillinger, W. L. et al., «Calorimetric Determination of the Heat Output of Tritium», Phys. Rev. 121, 232 (1961): 0.3240±0.0009 Вт/г (обращение 2026-11-08)
+- https://www.osti.gov/biblio/4120857 — OSTI-запись той же работы Pillinger (тепло трития 0.3240 Вт/г)
 - Декомпозиция: `izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik` (web search 2026-11-03)
 - Материалы: реальные данные/материалы/
