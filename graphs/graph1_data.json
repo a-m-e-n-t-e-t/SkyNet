@@ -8257,6 +8257,12 @@
     },
     {
       "src": "izdelie_tpv",
+      "dst": "material_ingaassb",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_tpv",
       "dst": "material_silicon_carbide",
       "type": "uses_material",
       "meta": {}
@@ -22188,6 +22194,14 @@
       }
     },
     {
+      "src": "material_ingaassb",
+      "dst": "izdelie_tpv",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_silicon_carbide",
       "dst": "izdelie_tpv",
       "type": "used_in",
@@ -35525,7 +35539,7 @@
   },
   "stats": {
     "nodes": 1117,
-    "edges": 3954,
+    "edges": 3956,
     "dangling": {
       "complies_with": 532,
       "has_part": 6,
