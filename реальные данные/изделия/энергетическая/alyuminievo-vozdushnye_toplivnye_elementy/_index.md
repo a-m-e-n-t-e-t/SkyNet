@@ -24,12 +24,15 @@ id: izdelie_alyuminievo-vozdushnye_toplivnye_elementy
     доля_массы: 0.38
   - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_cathode
     материал: carbon_ptfe
+    форма: воздушные_катоды_металл-воздушных_батарей
     доля_массы: 0.18
   - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_electrolyte
     материал: koh_aqueous
+    форма: электролиты_металл-воздушных_батарей
     доля_массы: 0.19
   - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_air_electrode
     материал: carbon_ptfe
+    форма: воздушные_катоды_металл-воздушных_батарей
     доля_массы: 0.002
 технологии_частей:
   - часть: часть_alyuminievo-vozdushnye_toplivnye_elementy_anode
