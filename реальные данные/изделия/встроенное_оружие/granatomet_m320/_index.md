@@ -28,6 +28,47 @@ id: izdelie_granatomet_m320
     материал: becu
     форма: разъёмы_и_контакты
     доля_массы: 0.0025
+технологии_частей:
+  - часть: часть_granatomet_m320_core
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    # v9.56: приёмник (ствольная коробка) M320 — фрезерование на ЧПУ из Al 6061-T6;
+    # компактная однозарядная схема HK (перелом ствола, поворотное запирание)
+    # предполагает механически обработанный алюминиевый приёмник, как у серийных
+    # подствольных/автономных гранатомётов (Wikipedia M320 GLM; CAT-UXO M320).
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
+  - часть: часть_granatomet_m320_housing
+    технология: anodirovanie
+    доля_использования: 1.0
+    # v9.56: алюминиевый корпус (trigger housing assembly) M320 — чёрное твёрдое
+    # анодирование Al 6061-T6 по MIL-A-8625 Type III — стандарт защитной отделки
+    # алюминиевых корпусов стрелкового/подствольного оружия (износо- и
+    # коррозионная стойкость); после фрезерования ЧПУ корпус анодируется.
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
+  - часть: часть_granatomet_m320_connectors
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    # v9.56: корпусные/базовые элементы разъёмов из BeCu C17200 — фрезерование
+    # на ЧПУ (BeCu легко обрабатывается резанием; контактные гнёзда низкой/средней
+    # серийности точат и фрезеруют из прутка ASTM B196) — AmTech BeCu stamping &
+    # machining; Ditron BeCu C172 stampings.
+    материалы_для_процесса:
+      - материал: becu
+        роль: обрабатываемый
+  - часть: часть_granatomet_m320_connectors
+    технология: galvanika
+    доля_использования: 1.0
+    # v9.56: контактное покрытие BeCu-контактов — гальваническое Sn/Au поверх Ni;
+    # стандарт разъёмного производства: continuous electroplating stamped and
+    # formed contacts (passive-components.eu; Samtec Connector Plating FAQs:
+    # gold plating is common on Beryllium Copper contact systems).
+    материалы_для_процесса:
+      - материал: becu
+        роль: покрываемый_контакт
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -58,7 +99,7 @@ scaling_type: количественный
 дополнительные:
   цена_usd: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-07
+дата_обновления: 2026-11-08
 источник: web_search
 источник_url: https://en.wikipedia.org/wiki/M320_Grenade_Launcher_Module
 источник_дата: 2026-11-07
@@ -88,7 +129,9 @@ M320 Grenade Launcher Module (GLM) — однозарядный 40×46mm SR на
 
 ## Используемые технологии
 
-(Ссылки на реальные_данные/технологии/ добавляются после связывания)
+- `frezervanie_chpu` — фрезерование на ЧПУ: приёмник из Al 6061-T6, корпусные элементы разъёмов из BeCu C17200 (связь через `технологии_частей`)
+- `anodirovanie` — чёрное твёрдое анодирование алюминиевого корпуса (MIL-A-8625 Type III) (связь через `технологии_частей`)
+- `galvanika` — гальваническое покрытие BeCu-контактов (Sn/Au поверх Ni) (связь через `технологии_частей`)
 
 ## Используемые материалы
 
@@ -101,6 +144,12 @@ M320 Grenade Launcher Module (GLM) — однозарядный 40×46mm SR на
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+- Wikipedia: [M320 Grenade Launcher Module](https://en.wikipedia.org/wiki/M320_Grenade_Launcher_Module) — конструкция, масса/габариты, 40×46mm SR
+- CAT-UXO: [M320 grenade launcher](https://cat-uxo.com/explosive-hazards/salw/m320-grenade-launcher) — состав: гранатомёт с нарезным стволом, прицел день/ночь, ЛДН
+- Samtec Blog: [Connector Plating FAQs](https://blog.samtec.com/connector-plating-faqs) — gold plating is common on Beryllium Copper contact systems
+- passive-components.eu: [Connector Materials and Processes](https://passive-components.eu/connector-materials-and-processes) — continuous electroplating of stamped and formed contacts (tin/silver/gold)
+- AmTech: [Choosing Beryllium Copper for Metal Stamping: Springs & Connectors](https://www.amtech-amt.com/post/choosing-beryllium-copper-for-metal-stamping-springs-connectors) — BeCu contacts: stamping/machining, prototype through production
+- Ditron: [Beryllium Copper Stamping Techniques for Components](https://ditroninc.com/beryllium-copper-stamping-electrical-connectors) — BeCu C172 формуемость и стойкость к релаксации напряжений
 
 ---
 
