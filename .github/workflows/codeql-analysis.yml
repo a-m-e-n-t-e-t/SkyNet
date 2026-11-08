@@ -63,7 +63,7 @@ jobs:
           fetch-depth: 1  # CodeQL строит базу из текущего дерева, история не нужна
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@v4
         with:
           languages: ${{ matrix.language }}
           # Use default security queries + security-extended
@@ -76,7 +76,7 @@ jobs:
           # включают все нужные Python security queries.
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@v4
         id: analyze
         continue-on-error: true
         # v9.31 fix: continue-on-error — GitHub Free private repos don't have
