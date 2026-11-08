@@ -18,10 +18,12 @@ id: izdelie_kompensatory
   - часть_kompensatory_mounting
 материалы_частей:
   - часть: часть_kompensatory_core
-    материал: generic_material
+    материал: inconel_718
+    форма: криогенная_техника
     доля_массы: 0.45
   - часть: часть_kompensatory_housing
-    материал: aluminum
+    материал: al_6061-t6
+    форма: корпуса_электроники
     доля_массы: 0.27
 технологии_частей:
   - часть: часть_kompensatory_core
@@ -107,7 +109,10 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-(Ссылки на реальные_данные/материалы/ добавляются после связывания)
+- `inconel_718` → [`inconel_718.md`](../../../материалы/inconel_718.md) — форма: `криогенная_техника` (часть_kompensatory_core, доля 0.45)
+- `al_6061-t6` → [`al_6061-t6.md`](../../../материалы/al_6061-t6.md) — форма: `корпуса_электроники` (часть_kompensatory_housing, доля 0.27)
+
+Обоснование вариантов материала: core — `криогенная_техника` (стандартное деформируемое состояние 718: закалка 1066 °C 1–2 ч + двойное старение 718/621 °C, рабочий диапазон −253…+704 °C): edge-welded сильфон собирается из тонколистовых штампованных диафрагм, свариваемых в отожжённом состоянии; Inconel 718 — штатный материал edge-welded сильфонов наряду с Inconel 625, Hastelloy C-276 и AM-350 (Metal Bellows Bellows 101), сильфоны expansion joints применяются в автоматике/контрольно-измерительных приборах, вакуумной технике, машиностроении и энергетике (Hy Nickel Alloy). housing — `корпуса_электроники`: фрезерованный корпус прибора из 6061-T6 (отраслевой стандарт корпусных деталей, анодирование).
 
 ## Принцип работы
 
@@ -134,6 +139,8 @@ scaling_type: количественный
 - Flexaseal: What are Edge Welded metal bellows? — микросварка внутренних кромок штампованных диафрагм в двухгофровые пары: https://www.flexaseal.com/what-are-edge-welded-metal-bellows (обращение 2026-11-08)
 - Coupling Tips: The Technology behind Edge Welded Metal Bellows — сварка штампованных диафрагм в длинную гибкую сборку, ключ к характеристикам — параллельность гофр: http://www.couplingtips.com/bellows-couplings/the-technology-behind-edge-welded-metal-bellows (обращение 2026-11-08)
 - ResearchGate: Electron Beam Welding of Inconel 718 (EBW IN718 — глубокое проплавление и высокое качество шва, aerospace): https://www.researchgate.net/publication/342401170_Electron_Beam_Welding_of_Inconel_718 (обращение 2026-11-08)
+- Hy Nickel Alloy: Summary of commonly used metal materials for bellows expansion joints — материалы сильфонных компенсаторов, области применения (автоматика и КИП, вакуумная техника, машиностроение, энергетика): https://hynickelalloy.com/blog/summary-of-commonly-used-metal-materials-for-bellows-expansion-jointshy-technic (обращение 2026-11-08)
+- Материал-вариант криогенной техники 718 (закалка 1066 °C + двойное старение, −253…+704 °C): High Temp Metals Inconel 718 data — https://www.hightempmetals.com/techdata/hitempInconel718data.php (см. реальные данные/материалы/inconel_718.md)
 - Контактное сопротивление разъёмов и ohmic-нагрев (7.3 мОм @ 7.5 А → 0.41 Вт/контакт) — https://lectromec.com/blog/connector-contact-resistance (обращение 2026-11-07)
 - Пассивность сильфонных компенсаторов — https://www.bellows-systems.com/metal-expansion-joints (обращение 2026-11-07)
 
