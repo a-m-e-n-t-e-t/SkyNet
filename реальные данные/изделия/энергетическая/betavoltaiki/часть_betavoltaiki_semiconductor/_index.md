@@ -14,6 +14,7 @@ id: часть_betavoltaiki_semiconductor
 материалы_частей:
   - часть: часть_betavoltaiki_semiconductor
     материал: monokristallicheskogo_sic
+    форма: силовая_электроника
     доля_массы: 1.0
 
 scaling_type: количественный

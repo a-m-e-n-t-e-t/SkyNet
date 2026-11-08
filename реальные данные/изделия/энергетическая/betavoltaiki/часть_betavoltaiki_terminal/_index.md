@@ -15,6 +15,7 @@ id: часть_betavoltaiki_terminal
 материалы_частей:
   - часть: часть_betavoltaiki_terminal
     материал: becu
+    форма: разъёмы_и_контакты
     доля_массы: 1.0
 
 scaling_type: количественный

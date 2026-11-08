@@ -15,6 +15,7 @@ id: часть_betavoltaiki_encapsulant
 материалы_частей:
   - часть: часть_betavoltaiki_encapsulant
     материал: epoksid_epon_828_teta
+    форма: заливочная_композиция_без_наполнителя
     доля_массы: 1.0
 
 scaling_type: количественный
