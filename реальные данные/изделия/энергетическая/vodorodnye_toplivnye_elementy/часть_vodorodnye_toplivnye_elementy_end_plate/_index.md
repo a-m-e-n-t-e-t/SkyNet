@@ -14,6 +14,7 @@ id: часть_vodorodnye_toplivnye_elementy_end_plate
 материалы_частей:
   - часть: часть_vodorodnye_toplivnye_elementy_end_plate
     материал: ti-6al-4v
+    форма: морские_и_химические_среды
     доля_массы: 1.0
 
 scaling_type: количественный

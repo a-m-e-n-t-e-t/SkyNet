@@ -14,6 +14,7 @@ id: часть_vodorodnye_toplivnye_elementy_catalyst_cathode
 материалы_частей:
   - часть: часть_vodorodnye_toplivnye_elementy_catalyst_cathode
     материал: pt
+    форма: катализаторы_и_катализаторные_покрытия
     доля_массы: 1.0
 
 scaling_type: количественный

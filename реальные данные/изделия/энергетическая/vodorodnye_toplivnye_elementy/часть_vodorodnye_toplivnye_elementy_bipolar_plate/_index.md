@@ -14,6 +14,7 @@ id: часть_vodorodnye_toplivnye_elementy_bipolar_plate
 материалы_частей:
   - часть: часть_vodorodnye_toplivnye_elementy_bipolar_plate
     материал: grafit_kompozit_bpp
+    форма: пластина_PEM_стека
     доля_массы: 1.0
 
 scaling_type: количественный

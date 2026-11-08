@@ -39,9 +39,11 @@ id: izdelie_vodorodnye_toplivnye_elementy
     доля_массы: 0.095
   - часть: часть_vodorodnye_toplivnye_elementy_bipolar_plate
     материал: stainless_steel_316
+    форма: пластина_PEM_стека
     доля_массы: 0.38
   - часть: часть_vodorodnye_toplivnye_elementy_end_plate
     материал: aluminum
+    форма: поликристаллический_прокат
     доля_массы: 0.285
 технологии_частей:
   - часть: часть_vodorodnye_toplivnye_elementy_membrane
@@ -80,6 +82,33 @@ id: izdelie_vodorodnye_toplivnye_elementy
     материалы_для_процесса:
       - материал: aluminum
         роль: обрабатываемый
+наследуемые_материалы:
+  - материал: nafion
+    форма: PEM_мембрана_топливных_элементов
+    суммарная_доля_массы: 0.095
+    источники_частей:
+      - часть_vodorodnye_toplivnye_elementy_membrane
+  - материал: pt
+    форма: катализаторы_и_катализаторные_покрытия
+    суммарная_доля_массы: 0.02
+    источники_частей:
+      - часть_vodorodnye_toplivnye_elementy_catalyst_anode
+      - часть_vodorodnye_toplivnye_elementy_catalyst_cathode
+  - материал: carbon_ptfe
+    форма: безкаталитический_углеродный_GDL
+    суммарная_доля_массы: 0.095
+    источники_частей:
+      - часть_vodorodnye_toplivnye_elementy_gdl_anode
+  - материал: grafit_kompozit_bpp
+    форма: пластина_PEM_стека
+    суммарная_доля_массы: 0.38
+    источники_частей:
+      - часть_vodorodnye_toplivnye_elementy_bipolar_plate
+  - материал: ti-6al-4v
+    форма: морские_и_химические_среды
+    суммарная_доля_массы: 0.285
+    источники_частей:
+      - часть_vodorodnye_toplivnye_elementy_end_plate
 scaling_type: количественный
 соединители: []
 версия: реальная

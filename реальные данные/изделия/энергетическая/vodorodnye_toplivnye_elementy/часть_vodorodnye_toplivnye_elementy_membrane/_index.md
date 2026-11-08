@@ -14,6 +14,7 @@ id: часть_vodorodnye_toplivnye_elementy_membrane
 материалы_частей:
   - часть: часть_vodorodnye_toplivnye_elementy_membrane
     материал: nafion
+    форма: PEM_мембрана_топливных_элементов
     доля_массы: 1.0
 
 scaling_type: количественный

@@ -14,6 +14,7 @@ id: часть_vodorodnye_toplivnye_elementy_gdl_anode
 материалы_частей:
   - часть: часть_vodorodnye_toplivnye_elementy_gdl_anode
     материал: carbon_ptfe
+    форма: безкаталитический_углеродный_GDL
     доля_массы: 1.0
 
 scaling_type: количественный
