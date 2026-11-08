@@ -6667,6 +6667,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_silicon_wafer",
+      "type": "material",
+      "label": "Si (монокристалл кремния, электронный сорт ≥99.9999999 % (9N) — полисиликон после очистки Siemens-процессом); легирование: p-типа — бор (B), типовой диапазон удельного сопротивления 1–100 Ω·cm; n-типа — фосфор (P), мышьяк (As), сурьма (Sb); междоузлочный кислород ~10¹⁸ см⁻³ (из тигля SiO₂ при CZ-росте; у FZ — следы)",
+      "path": "реальные данные/материалы/silicon_wafer.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_silicone-textile_composite",
       "type": "material",
       "label": "Гибкий слоистый композит: ткань из E-стекла (алюмоборосиликатное волокно, σрасч ≥1100 МПа по волокну), покрытая с одной/двух сторон вулканизованной силиконовой резиной (полидиметилсилоксан, PDMS, метил/метилфенил-каучук с оксидными наполнителями). Поверхностная плотность ткани 350–1800 г/м², покрытия 80–2000 г/м², суммарная 350–3000 г/м²",
@@ -10467,6 +10474,12 @@
     },
     {
       "src": "izdelie_sot-mram",
+      "dst": "material_silicon_wafer",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_sot-mram",
       "dst": "group_imec",
       "type": "researched_by",
       "meta": {}
@@ -10505,6 +10518,12 @@
       "src": "izdelie_ibm_northpole",
       "dst": "часть_ibm_northpole_capacitors",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_ibm_northpole",
+      "dst": "material_silicon_wafer",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -10647,6 +10666,12 @@
     },
     {
       "src": "izdelie_brainchip_akida_2",
+      "dst": "material_silicon_wafer",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_brainchip_akida_2",
       "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
@@ -10707,6 +10732,12 @@
     },
     {
       "src": "izdelie_intel_loihi_2",
+      "dst": "material_silicon_wafer",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_intel_loihi_2",
       "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
@@ -10745,6 +10776,12 @@
       "src": "izdelie_memristornye_matritsy",
       "dst": "часть_memristornye_matritsy_controller",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_memristornye_matritsy",
+      "dst": "material_silicon_wafer",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -10805,6 +10842,12 @@
       "src": "izdelie_gr801_noel-v_risc-v",
       "dst": "часть_gr801_noel-v_risc-v_pcb",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_gr801_noel-v_risc-v",
+      "dst": "material_silicon_wafer",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -10899,6 +10942,12 @@
     },
     {
       "src": "izdelie_halve",
+      "dst": "material_silicon_wafer",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_halve",
       "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
@@ -10937,6 +10986,12 @@
       "src": "izdelie_pcm",
       "dst": "часть_pcm_controller",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_pcm",
+      "dst": "material_silicon_wafer",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -10985,6 +11040,12 @@
       "src": "izdelie_nvidia_jetson_orin_nano",
       "dst": "часть_nvidia_jetson_orin_nano_enclosure",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_nvidia_jetson_orin_nano",
+      "dst": "material_silicon_wafer",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -23854,6 +23915,14 @@
       }
     },
     {
+      "src": "material_silicon_wafer",
+      "dst": "izdelie_sot-mram",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "group_imec",
       "dst": "izdelie_sot-mram",
       "type": "researches",
@@ -23907,6 +23976,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_silicon_wafer",
+      "dst": "izdelie_ibm_northpole",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -24094,6 +24171,14 @@
       }
     },
     {
+      "src": "material_silicon_wafer",
+      "dst": "izdelie_brainchip_akida_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_copper",
       "dst": "izdelie_brainchip_akida_2",
       "type": "used_in",
@@ -24174,6 +24259,14 @@
       }
     },
     {
+      "src": "material_silicon_wafer",
+      "dst": "izdelie_intel_loihi_2",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_copper",
       "dst": "izdelie_intel_loihi_2",
       "type": "used_in",
@@ -24227,6 +24320,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_silicon_wafer",
+      "dst": "izdelie_memristornye_matritsy",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -24307,6 +24408,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_silicon_wafer",
+      "dst": "izdelie_gr801_noel-v_risc-v",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -24430,6 +24539,14 @@
       }
     },
     {
+      "src": "material_silicon_wafer",
+      "dst": "izdelie_halve",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_copper",
       "dst": "izdelie_halve",
       "type": "used_in",
@@ -24483,6 +24600,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_silicon_wafer",
+      "dst": "izdelie_pcm",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -24547,6 +24672,14 @@
       "type": "part_of",
       "meta": {
         "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_silicon_wafer",
+      "dst": "izdelie_nvidia_jetson_orin_nano",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -34263,6 +34396,9 @@
       "standart_SEMI / корпоративные спеки подложек 96/99.5%",
       "standart_SEMI M1",
       "standart_SEMI M1 (полированные монокремниевые пластины 100–300 мм, ориентации/легирование/дефекты)",
+      "standart_SEMI M1 (полированные монокристаллические кремниевые пластины)",
+      "standart_SEMI M59 (пластины 300 мм)",
+      "standart_SEMI M6 (боковые поверхности/фаски) — семейство стандартов пластин",
       "standart_SEMI M8 (поликремний, сорта по содержанию доноров/акцепторов)",
       "standart_STANAG 4294",
       "standart_Schaeffler TPI 291",
@@ -34356,6 +34492,7 @@
       "group_N.F. Uvarov и соавт. (MDPI Crystals 12(4):515, 2022) — термические свойства и ионная проводимость тетра-n-алкиламмонийных солей (TBAClO4/TBABF4, пластичные кубические фазы); коммерческое производство — Ascent Petrochem (конвенциональный электролит EDLC CAS 429-06-1), ChemXpress, io-li-tec (Ultra Pure >99 %)",
       "group_Oak Ridge National Laboratory — Bulk Shielding Reactor (построен в 1950-е для систематических исследований бетонной радиационной защиты в рамках программы Aircraft Nuclear Propulsion; снесён в 2022); стандартизация заполнителей — ASTM C638",
       "group_Pierre Bonhôte и соавт. (EPFL, Швейцария) — синтез гидрофобных EMIM-имидных комнатнотемпературных расплавов, Inorg. Chem. 1996, 35(5), 1168–1178",
+      "group_SEMI International Standards — спецификации пластин SEMI M1 (полированные монокристаллические) и SEMI M59 (пластины 300 мм); метод Чохральского — Jan Czochralski (1916, рост металлических монокристаллов), адаптация к кремнию — Gordon Teal и Henry Theuerer (Bell Labs, 1952), первый германиевый/кремниевый транзистор на монокристалле — Gordon Teal (Texas Instruments, 1954); промышленный 300 мм — консорциум I300I/Intel/Samsung/TSMC (1995–2001)",
       "group_Scudamore Sellon (1881) — первый патент решёток из свинцово-сурьмянистого сплава (Sb упрочняет свинец); в тот же год Camille Alphonse Faure запатентовал решётчатую пластину с пастой PbO — вместе сделавшие АКБ пригодной для массового производства",
       "group_Toray Industries (Torayca™ T300 — первое серийное высокопрочное PAN-волокно, выпущено в 1971 г.; >93 % C, Na+K следы)",
       "group_Wu, Ashburn, Torng, Hor, Meng, Gao, Huang, Chu (Университет Хьюстона / UAH, 1987, Tc 93 K); родоначальники купратных ВТСП Bednorz & Müller (IBM Zürich, 1986, Нобелевская премия 1987)",
@@ -34469,7 +34606,6 @@
       "material_rt_1523_sincgars",
       "material_silicon_carbide",
       "material_silicon_neural_net",
-      "material_silicon_wafer",
       "material_socl2",
       "material_stainless_steel_304",
       "material_stainless_steel_316",
@@ -34491,19 +34627,19 @@
     ]
   },
   "stats": {
-    "nodes": 1095,
-    "edges": 3835,
+    "nodes": 1096,
+    "edges": 3853,
     "dangling": {
-      "complies_with": 480,
+      "complies_with": 483,
       "has_part": 6,
-      "researched_by": 69,
-      "uses_material": 79
+      "researched_by": 70,
+      "uses_material": 78
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 198,
+      "material": 199,
       "standart": 8,
       "tekhnologia": 77
     }
