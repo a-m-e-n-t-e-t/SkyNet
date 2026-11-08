@@ -14,6 +14,7 @@ id: часть_hasel_mounting
 материалы_частей:
   - часть: часть_hasel_mounting
     материал: peek
+    форма: инжекционные_детали_450g
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -37,7 +38,7 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-08
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.artimusrobotics.com/post/what-do-i-need-to-power-a-hasel-actuator-from-artimus-robotics

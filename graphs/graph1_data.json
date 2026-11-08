@@ -17051,6 +17051,30 @@
       "meta": {}
     },
     {
+      "src": "izdelie_hasel",
+      "dst": "material_halve_p_vdf-trfe-cfe",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_hasel",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_hasel",
+      "dst": "material_poliimid",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_hasel",
+      "dst": "material_peek",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena",
       "dst": "часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core",
       "type": "has_part",
@@ -28939,6 +28963,38 @@
       }
     },
     {
+      "src": "material_halve_p_vdf-trfe-cfe",
+      "dst": "izdelie_hasel",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "izdelie_hasel",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_poliimid",
+      "dst": "izdelie_hasel",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_peek",
+      "dst": "izdelie_hasel",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core",
       "dst": "izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena",
       "type": "part_of",
@@ -32341,7 +32397,7 @@
   },
   "stats": {
     "nodes": 1092,
-    "edges": 3531,
+    "edges": 3539,
     "dangling": {
       "complies_with": 475,
       "has_part": 6,
