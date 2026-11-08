@@ -2560,5 +2560,60 @@
       2141,
       2142
     ]
+  },
+  {
+    "query": "City Labs NanoTritium P100 battery dimensions millimeters DIP package weight specifications",
+    "keywords": [
+      "NanoTritium",
+      "P100",
+      "P200",
+      "betavoltaic",
+      "DIP package",
+      "City Labs"
+    ],
+    "results": [
+      {
+        "title": "Products: Wattage Tritium Batteries & Betavoltaic Batteries",
+        "url": "https://citylabs.net/products",
+        "snippet": "City Labs' NanoTritium™ batteries deliver continuous, maintenance-free power; P100: 0.8V/1.6V/2.4V, 50–350 nA"
+      },
+      {
+        "title": "NanoTritium™ Betavoltaic P200 Series Package",
+        "url": "https://citylabs.net/products",
+        "snippet": "P200 series: 28-Pin CERDIP package — 100-Microwatt NanoTritium Battery, 28-Pin CERDIP NanoTritium Battery Blueprint"
+      }
+    ],
+    "created_at": "2026-11-08T23:42:05.623063+00:00",
+    "usage_count": 2,
+    "used_in_issues": [
+      2143
+    ]
+  },
+  {
+    "query": "CERDIP 28 pin package dimensions mm length width height 600 mil JEDEC standard",
+    "keywords": [
+      "CERDIP-28",
+      "600 mil",
+      "JEDEC MS-011",
+      "package dimensions",
+      "DIP-28"
+    ],
+    "results": [
+      {
+        "title": "Packaging - Outlines and Dimensions (Microchip 00049w)",
+        "url": "https://ww1.microchip.com/downloads/en/PackagingSpec/00049w.pdf",
+        "snippet": "24-Lead Ceramic Dual In-line (JG) 600 mil (CERDIP); 28-Lead Ceramic Dual In-line (JJ) 600 mil (CERDIP) — lead width 1.65"
+      },
+      {
+        "title": "Package Search: DIP28",
+        "url": "https://www.google.com/goto?url=CAESZgHEIkXXFtaUOzfugaCeqWdO_yw_wR2oLB",
+        "snippet": "DIP28 dual in-line package; 28 leads (600 mil); 13.97 mm x 36.83 mm x 5.08 mm body"
+      }
+    ],
+    "created_at": "2026-11-08T23:42:05.623063+00:00",
+    "usage_count": 2,
+    "used_in_issues": [
+      2143
+    ]
   }
 ]
