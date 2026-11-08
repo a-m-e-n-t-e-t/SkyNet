@@ -6086,6 +6086,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_gst_chalcogenide",
+      "type": "material",
+      "label": "Ge2Sb2Te5 (GST-225, соединение 225 стехиометрии GeTe:Sb2Te3 1:1) — рабочий объём PCM-ячейки; легирование N/C для повышения сопротивления аморфной фазы и снижения RESET-тока; Ge-rich GST (сдвиг к GeTe) для ePCM/радиационно-стойких применений; электродная обвязка ячейки: W/TiN-подогреватель (bottom electrode contact) + верхний электрод (TiN/W); канонический файл: material_gst",
+      "path": "реальные данные/материалы/gst_chalcogenide.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_half-heusler",
       "type": "material",
       "label": "Half-Heusler",
@@ -11143,6 +11150,12 @@
       "src": "izdelie_pcm",
       "dst": "часть_pcm_controller",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_pcm",
+      "dst": "material_gst_chalcogenide",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -24934,6 +24947,14 @@
       }
     },
     {
+      "src": "material_gst_chalcogenide",
+      "dst": "izdelie_pcm",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_silicon_wafer",
       "dst": "izdelie_pcm",
       "type": "used_in",
@@ -34354,6 +34375,7 @@
     "complies_with": [
       "standart_1/4-20 UNC tripod",
       "standart_10 CFR 50",
+      "standart_AEC-Q100 — квалификация ePCM-компонентов automotive",
       "standart_AEC-Q101",
       "standart_AEC-Q200",
       "standart_AEC-Q200 — квалификация пассивных компонентов для automotive",
@@ -34706,6 +34728,7 @@
       "standart_JEDEC J-STD-020D",
       "standart_JEDEC JEP180 (guideline for SiC power device qualification)",
       "standart_JEDEC JESD22",
+      "standart_JEDEC JESD22 — методы надёжностных испытаний памяти (endurance/retention/TID-квалификация PCM)",
       "standart_JEDEC JESD22-A104",
       "standart_JEDEC JESD22-A104 (термоциклирование пакета)",
       "standart_JEDEC JESD22-A104 (термоциклирование)",
@@ -34734,6 +34757,7 @@
       "standart_MIL-STD-810",
       "standart_MIL-STD-810G",
       "standart_MIL-STD-810H",
+      "standart_MIL-STD-883 / ESCC — радиационные испытания космических NVM (TID/SEE)",
       "standart_MIL-STD-883 M2011.9",
       "standart_MIL-STD-883 Method 1010 (термоциклирование)",
       "standart_MIL-STD-883 TM1019",
@@ -34880,6 +34904,7 @@
       "group_HP Labs — оригинальный мемристор TiO₂ (Dmitri B. Strukov, Gregory S. Snider, Duncan R. Stewart, R. Stanley Williams, Nature 453, 2008, «The missing memristor found»); теория четвёртого пассивного элемента — Leon Chua (1971); фазы Magnéli — Arne Magnéli (1949–1953); упругие константы рутила — J. B. Wachtman Jr. et al. (NBS, 1962, метод резонанса)",
       "group_INCO Alloys International (разработка, 1962) → Special Metals Corporation (владелец марки INCONEL®)",
       "group_INCO Alloys International (разработка, нач. 1960-х) → Special Metals Corporation (владелец марки INCONEL®)",
+      "group_Intel + Micron (совместная разработка 3D XPoint/Optane 2015–2022; teardown TechInsights — подтверждение GST-основы); STMicroelectronics (ePCM в automotive MCU); IBM Research (PCM-нейроморфные синапсы); академические группы: R.E. Simpson (Exeter — iPCM, 90 пДж переключение), K. Konstantinou / C.R. Elliott (происхождение радиационной стойкости аморфного GST, 2018), D. Zhou (протонная имплантация GST-PCM, 2013), A.L. Serra (heavy-ion 4kb PCM, 2020), K. Aryana (граничные тепловые сопротивления GST/W-подогревателя, 2021), K. Jiang (микроструктура и фазовые переходы GST, Sci. Technol. Adv. Mater. 2023), O. Abou El Kheir (декомпозиция GST-сплавов, high-throughput, 2021)",
       "group_J. Han и соавт. (Kyungpook National University, Тэгу, Корея) — UV-curable ionogel для всётвердотельного суперконденсатора, Chem. Eng. J. 416, 129089 (2021)",
       "group_Masato Sagawa (Sumitomo Special Metals) и John Croat (General Motors) — независимое открытие Nd₂Fe₁₄B в 1984 г.; производители: Shin-Etsu, Hitachi, TDK, Neo (старое GM Magnequench)",
       "group_Michael Naguib, Yury Gogotsi, Michel W. Barsoum — Drexel University (открытие MXene в 2011 г.: травление Ti₃AlC₂ в HF)",
@@ -34968,7 +34993,6 @@
       "material_gaSb",
       "material_gold_coating",
       "material_gps_ins_an_vsn_8",
-      "material_gst_chalcogenide",
       "material_h2so4_aqueous",
       "material_hyperalloy_t800",
       "material_hyperalloy_t850",
@@ -35020,19 +35044,19 @@
     ]
   },
   "stats": {
-    "nodes": 1103,
-    "edges": 3899,
+    "nodes": 1104,
+    "edges": 3901,
     "dangling": {
-      "complies_with": 505,
+      "complies_with": 508,
       "has_part": 6,
-      "researched_by": 77,
-      "uses_material": 71
+      "researched_by": 78,
+      "uses_material": 70
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 206,
+      "material": 207,
       "standart": 8,
       "tekhnologia": 77
     }
