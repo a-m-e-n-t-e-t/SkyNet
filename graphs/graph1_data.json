@@ -6898,6 +6898,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_stainless_steel_304",
+      "type": "material",
+      "label": "AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240; канонический файл material_ss_aisi_304); в роли корпуса Li-SOCl2 элемента — лист/полоса отожжённая 2B, толщина стенки ~0.2–0.5 мм (глубокая вытяжка D-корпуса Ø~34 мм)",
+      "path": "реальные данные/материалы/stainless_steel_304.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_stal_st3",
       "type": "material",
       "label": "Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.",
@@ -11113,6 +11120,12 @@
     {
       "src": "izdelie_litii-tionilhloridnye_batarei",
       "dst": "material_pp_membrane",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_litii-tionilhloridnye_batarei",
+      "dst": "material_stainless_steel_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -24921,6 +24934,14 @@
       }
     },
     {
+      "src": "material_stainless_steel_304",
+      "dst": "izdelie_litii-tionilhloridnye_batarei",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_halve_die",
       "dst": "izdelie_halve",
       "type": "part_of",
@@ -34688,6 +34709,7 @@
       "standart_EIA-198 — классы температурных характеристик керамических диэлектриков",
       "standart_EJMA (монтаж компенсаторов)",
       "standart_EN 10025-2 / S235JR (европейский аналог Ст3сп/пс)",
+      "standart_EN 10088-2 / 1.4301 (X5CrNi18-10 европейский аналог — канон)",
       "standart_EN 10088-2 / 1.4301 (X5CrNi18-10, σв 520–720 МПа, Rp0.2 ≥210 МПа, δ ≥45 %)",
       "standart_EN 10088-2 / 1.4404 (X2CrNiMo17-12-2)",
       "standart_EN 1090-2",
@@ -34720,6 +34742,7 @@
       "standart_IEC 60068-2 (климатические испытания изделий с магнитами)",
       "standart_IEC 60086",
       "standart_IEC 60086-2 (первичные литиевые элементы — конструктивные требования к сепаратору)",
+      "standart_IEC 60086-2 (первичные литиевые элементы — требования к корпусу и герметичности)",
       "standart_IEC 60086-2 (первичные литиевые элементы)",
       "standart_IEC 60095",
       "standart_IEC 60095 (SLI lead-acid batteries)",
@@ -35063,6 +35086,7 @@
       "group_NIST (T. Siewert et al. 2002 — Properties of Lead-Free Solders, сводка свойств Sn-Ag-Cu); Kester / MacDermid Alpha / Indium Corporation (промышленные TDS SAC300/305/350/387/400/405); T.T. Nguyen et al. 2011 (механика реальных паяных соединений SAC105/305/405: E, Пуассон, CTE); Z. Paska et al. 2024 (сравнение растяжения и ползучести SAC305 vs SACX0807); J. Cao et al. 2024 (наноиндентирование SAC305 — модуль Юнга); M. Abueed et al. 2020 (ползучесть и усталость SAC305); IPC/JEDEC — стандартизация",
       "group_Oak Ridge National Laboratory — Bulk Shielding Reactor (построен в 1950-е для систематических исследований бетонной радиационной защиты в рамках программы Aircraft Nuclear Propulsion; снесён в 2022); стандартизация заполнителей — ASTM C638",
       "group_Pierre Bonhôte и соавт. (EPFL, Швейцария) — синтез гидрофобных EMIM-имидных комнатнотемпературных расплавов, Inorg. Chem. 1996, 35(5), 1168–1178",
+      "group_R.J. Horning 1984 (NASA NTRS 19840025605 — совместимость SOCl2-электролитов со stainless steel резервуаров батарей, коррозия стекла); Cleveland-Cliffs (Product Data 304/304LSS May 2021 — полный datasheet субстанции, канон); MSR (datasheet Li-SOCl2 MSR175 — stainless steel container + hermetic glass-to-metal sealing, superior atmospheric corrosion resistance); Uniross (Complete Guide Li-SOCl2 2026 — герметичность стекло-металл, отсутствие утечек)",
       "group_Resonac (Showa Denko) — серия CEL для полупроводниковых корпусов leadframe-класса (DIP, SOP, TSOP, QFP, TQFP, LQFP); Sumitomo Bakelite — SUMIKON EME (канонический EMC той же субстанции, EME-G700LA); JLCPCB/PCB-индустрия — корпусные стандарты PQFP vs CQFP; академическая верификация encapsulant-требований — Othman A.H. et al. 2026 (Int. J. Adv. Manuf. Technol., цит. 9)",
       "group_SEMI International Standards — спецификации пластин SEMI M1 (полированные монокристаллические) и SEMI M59 (пластины 300 мм); метод Чохральского — Jan Czochralski (1916, рост металлических монокристаллов), адаптация к кремнию — Gordon Teal и Henry Theuerer (Bell Labs, 1952), первый германиевый/кремниевый транзистор на монокристалле — Gordon Teal (Texas Instruments, 1954); промышленный 300 мм — консорциум I300I/Intel/Samsung/TSMC (1995–2001)",
       "group_Scudamore Sellon (1881) — первый патент решёток из свинцово-сурьмянистого сплава (Sb упрочняет свинец); в тот же год Camille Alphonse Faure запатентовал решётчатую пластину с пастой PbO — вместе сделавшие АКБ пригодной для массового производства",
@@ -35170,7 +35194,6 @@
       "material_rolled_homogeneous_armor",
       "material_rt_1523_sincgars",
       "material_silicon_neural_net",
-      "material_stainless_steel_304",
       "material_stainless_steel_316",
       "material_stainless_steel_440c",
       "material_stainless_steel_mesh",
@@ -35189,19 +35212,19 @@
     ]
   },
   "stats": {
-    "nodes": 1110,
-    "edges": 3913,
+    "nodes": 1111,
+    "edges": 3915,
     "dangling": {
-      "complies_with": 527,
+      "complies_with": 529,
       "has_part": 6,
-      "researched_by": 84,
-      "uses_material": 64
+      "researched_by": 85,
+      "uses_material": 63
     },
     "by_type": {
       "chast": 669,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 213,
+      "material": 214,
       "standart": 8,
       "tekhnologia": 77
     }
