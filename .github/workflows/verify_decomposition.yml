@@ -867,8 +867,6 @@ jobs:
           echo "| **Total** | **${{ steps.violations.outputs.total_violations }}** | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Violation source:** ${{ steps.violations.outputs.partial == '1' && 'TRUNCATED log fallback (auto-close DISABLED)' || 'complete --json-out' }}" >> $GITHUB_STEP_SUMMARY
-          echo "**Anti-parallel:** concurrency group \`verify-decomposition-\${{ github.ref }}\` serializes runs." >> $GITHUB_STEP_SUMMARY
-          echo "**Anti-duplicate:** dedup checks ALL issues (open+closed) via stable \`dedup_key\`." >> $GITHUB_STEP_SUMMARY
           echo "**Anti-parallel:** concurrency group `verify-decomposition-${{ github.ref }}` serializes runs." >> $GITHUB_STEP_SUMMARY
           echo "**Anti-duplicate:** dedup checks ALL issues (open+closed) via stable `dedup_key`." >> $GITHUB_STEP_SUMMARY
           echo "**Hybrid model (v9.57):** one issue per file_id; supplement comments add new violations to existing open issues." >> $GITHUB_STEP_SUMMARY
