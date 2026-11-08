@@ -9379,6 +9379,18 @@
       "meta": {}
     },
     {
+      "src": "izdelie_tpv-lenty",
+      "dst": "material_ingaassb",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_tpv-lenty",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "izdelie_mmrtg",
       "dst": "часть_mmrtg_isotope",
       "type": "has_part",
@@ -23725,6 +23737,22 @@
       }
     },
     {
+      "src": "material_ingaassb",
+      "dst": "izdelie_tpv-lenty",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "izdelie_tpv-lenty",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "часть_mmrtg_isotope",
       "dst": "izdelie_mmrtg",
       "type": "part_of",
@@ -35581,8 +35609,6 @@
       "material_composite_material",
       "material_cybernetic_alloy",
       "material_epoxy",
-      "material_gaSb",
-      "material_gold_coating",
       "material_gps_ins_an_vsn_8",
       "material_h2so4_aqueous",
       "material_hyperalloy_t800",
@@ -35631,12 +35657,12 @@
   },
   "stats": {
     "nodes": 1118,
-    "edges": 3968,
+    "edges": 3972,
     "dangling": {
       "complies_with": 533,
       "has_part": 6,
       "researched_by": 86,
-      "uses_material": 61
+      "uses_material": 59
     },
     "by_type": {
       "chast": 674,

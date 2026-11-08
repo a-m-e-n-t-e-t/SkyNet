@@ -1989,6 +1989,104 @@
    "used_in_issues": [
     1934
    ]
+  },
+  {
+   "query": "InGaAsSb GaSb thermophotovoltaic cell MOCVD LPE power density W/cm2 efficiency LaPotin 2022",
+   "keywords": [
+    "ingaassb",
+    "gaSb",
+    "tpv_cell",
+    "mocvd_ingaassb_053ev",
+    "izdelie_tpv-lenty"
+   ],
+   "results": [
+    {
+     "url": "https://www.epj-pv.org/articles/epjpv/full_html/2023/01/pv230018/pv230018.html",
+     "name": "Power dense thermophotovoltaic cells",
+     "snippet": "by AP Kirk · 2023 — As shown in Table 1, LaPotin et al. reported Pout = 2.39 W cm −2 for the 1.4/1.2 eV TPV cell [3], whereas Pinc = 29.1 W cm −2 and Pref = 23.28 W cm −2 . While ... Read more",
+     "host_name": "www.epj-pv.org",
+     "rank": 0,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESlAEBxCJF1-ZZkJly5etRfk9dmkyYzrxVz8uF7pEPNYC-lEEoK9GrrIUhqT04Q87d7JsKrVpb5k31KprKkZL-TTN0Ucil1sftB77L20pn-1oFfJlaKaFmPTQSkg_8xZjz7lFgMwn31iV4NoOwNiUNyEVtV_181E4ZZbJkMaHM55rrVbkEM_k4OMhkKlLulNkoqzNj8MTM",
+     "name": "(PDF) Power dense thermophotovoltaic cells",
+     "snippet": "efficiency up to 7.5% ~ 8.1% and power density in the range of 3.55 ~ 6.95 W / cm2 can be expected for the illumination of unshaped blackbody spectrum.",
+     "host_name": "www.google.com",
+     "rank": 1,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://par.nsf.gov/servlets/purl/10508892",
+     "name": "High efficiency air-bridge thermophotovoltaic cells",
+     "snippet": "by B Roy-Layinde · 2024 · Cited by 71 — The highest power densities demonstrated in this work are 1.2 W / cm2 and 0.91 W / cm2 with the. 0.74 eV and 0.9 eV cells , respectively. The measured power density ... Read more",
+     "host_name": "par.nsf.gov",
+     "rank": 2,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://arxiv.org/pdf/2108.07320",
+     "name": "Sustaining Efficiency at Elevated Power Densities in",
+     "snippet": "by B Roy-Layinde · 2021 — This model shows that an InGaAs ABC with material quality that leads to the longest reported carrier lifetimes can attain efficiencies exceeding 40% at 0.5 W / ... Read more",
+     "host_name": "arxiv.org",
+     "rank": 3,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://ntrs.nasa.gov/citations/19960007899",
+     "name": "InGaAsSb/GaSb thermophotovoltaic cells",
+     "snippet": "by MG Mauk · 1995 — At 1 micron wavelengths, internal quantum efficiencies of 55% have been observed. The open-circuit voltage at currents of 0.3 A/sq cm is 0.220 ... Read more",
+     "host_name": "ntrs.nasa.gov",
+     "rank": 4,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESdQHEIkXXt4sl2zb2Exq2DM2dtBY5s4pM0kOJJ14_srIGKapcOXldJA2LmAcVLzuF0ZU0ch6Ct1ZeQzWb07H9Q4yT5gQlZQ7vAmNLEKBq33CARhQwzpytByJ-qs4xnROKLdXWOtSje2mfGeOAfCHvc9Sme9QSAg",
+     "name": "High Performance InGaAsSb TPV Cells - UNT Digital Library",
+     "snippet": "Lattice-matched 0.52 eV InGaAsSb/GaSb thermophotovoltaic (TPV) cells are grown using a multi-wafer metal-organic-chemical-vapor-deposition (MOCVD) system.",
+     "host_name": "www.google.com",
+     "rank": 5,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESYwHEIkXXRHYJmRmti9RuKaefyyKtIgc_PguAkjVTgJR9mnZVfNdGIrfuUUllvELRlNsVVxzcczD2HYdhnNLpMCeOW5hjQ0vF4ECpsZgidC4fUpNyOIyRe2Naz30bMSQbQp3lYQ",
+     "name": "LOW-BANDGAP PV AND THERMOPHOTOVOLTAIC CELLS",
+     "snippet": "by V Andreev · Cited by 17 — The performance of GaSb cells was improved by optimization of diffused emitter, which allowed increasing efficiencies up to 11% under AM0 spectrum and 19%. Read more 4 pages",
+     "host_name": "www.google.com",
+     "rank": 6,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESbgHEIkXXGd8eM9jbnagovYuHzQxSsYZyngcSwV-KJ6I99K-slbgj5yziNsVGcMGMBo2-X580qBp4a74OX2LH4X9qiIlYabRxzcrQowED9eI-nZ1EbzbF0Er_BdgOS7Rryyw7Nf5TrdJNZAmlemyy",
+     "name": "Thermophotovoltaic efficiency of 40% - PMC - NIH",
+     "snippet": "by A LaPotin · 2022 · Cited by 446 — A 1.2/1.0 eV device reached a maximum efficiency of (39.3 ± 1)% operating at a power density of 1.8 W cm –2 and an emitter temperature of 2,127 ° ... Read more",
+     "host_name": "www.google.com",
+     "rank": 7,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESgwEBxCJF1wy_bUXgpU9D6DIIknQojF4UeDZ5FRkKQ9gROu0CXD7MzusB6yRdjkF_SOLTQNl0sCepxNhrLCvTmT0hEVkwKgqn4unFvEvPlDEaPhvHnOFO-5enF5-oydw-gqt7eMyHRbIq85LsMiiFB5nEh-JzbGntEknM00JSXpiwqSeOUw",
+     "name": "Experimental performance comparison of 0.72 eV-GaSb",
+     "snippet": "by Y Liu · 2024 · Cited by 29 — The maximum efficiencies achieved for GaSb and InGaAs cells were 23.10% and 28.91%, respectively, under tungsten radiation spectrum at a temperature of 1200 °C. Read more",
+     "host_name": "www.google.com",
+     "rank": 8,
+     "date": "",
+     "favicon": ""
+    }
+   ],
+   "created_at": "2026-11-08T22:39:37Z",
+   "usage_count": 1,
+   "used_in_issues": [
+    1937
+   ]
   }
  ]
 }

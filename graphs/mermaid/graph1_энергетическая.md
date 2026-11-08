@@ -251,6 +251,7 @@ graph LR
     izdelie_mptm -->|материал| material_copper
     izdelie_reversivnye_pelte -->|материал| material_copper
     izdelie_vodorodnye_toplivnye_elementy -->|материал| material_aluminum
+    izdelie_tpv_lenty -->|материал| material_al_6061_t6
     izdelie_mmrtg -->|материал| material_aluminum
     izdelie_termoelektricheskii_postoyannyi_magnit -->|материал| material_copper
     izdelie_termoelektricheskii_postoyannyi_magnit -->|материал| material_aluminum
@@ -324,7 +325,7 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 27 |
+| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 28 |
 | `Cu ≥99.9% (электролитическая медь C11000/ETP)` | 26 |
 | `Ti-6Al-4V (Grade 5, UNS R56400): Al 5.5–6.75 %, V 3.5–4.5 %, Fe ≤0.30 %, O ≤0.20 %, C ≤0.08 %, N ≤0.05 %, H ≤0.015 %, Y ≤0.005 %, Ti — остальное (ASTM-спецификация, Wikipedia/ASM)` | 15 |
 | `нержавеющая сталь AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240)` | 12 |
