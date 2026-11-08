@@ -21,6 +21,7 @@ id: izdelie_perovskite_tandem
 материалы_частей:
   - часть: часть_perovskite_tandem_cells
     материал: monocrystalline_si
+    форма: monocrystalline_wafer
     доля_массы: 0.38
   - часть: часть_perovskite_tandem_front_glass
     материал: low_iron_glass
@@ -34,6 +35,13 @@ id: izdelie_perovskite_tandem
   - часть: часть_perovskite_tandem_encapsulant
     материал: eva
     доля_массы: 0.095
+технологии_частей:
+  - часть: часть_perovskite_tandem_front_glass
+    технология: dc_magnetron_sputtering
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: low_iron_glass
+        роль: подложка
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -51,7 +59,7 @@ scaling_type: количественный
   габариты_mm:
           l: 1500
           w: 1000
-          h: 5
+          h: 53
   выработка_энергии_W:
           min: 100
           max: 500
