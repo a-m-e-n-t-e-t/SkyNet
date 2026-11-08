@@ -48,11 +48,20 @@ id: часть_mikroreaktor_deleniya_heat_exchanger
     # v9.57: добавлено химическое травление микроканалов в 316L-листах перед
     # диффузионной сваркой (из старого описания: 'химическое травление
     # микроканалов + диффузионная сварка в вакууме').
-    # ВНИМАНИЕ: файл технологии НЕ существует в каталоге — это F27c violation.
-    # Cron-агент создаст файл через web_search: FeCl3/HCl+HNO3-травитель,
-    # фотолитография для паттерна, скорость травления 0.01-0.05 мм/мин.
-    # материалы_для_процесса не заполнены — F27f violation, будут заполнены
-    # после создания файла (расходник: FeCl3, реагент: HCl/HNO3 — нет в каталоге).
+    # Файл технологии НЕ существует в каталоге — F27c violation (#923).
+    # Технология: photochemical machining PCHE-пластин — FeCl3-травитель,
+    # фотолитография паттерна, травленые листы стопкой на диффузионную сварку
+    # (Precision Micro 'Understanding PCHE: the role of chemical etching';
+    # Wei 2025 JMEP 'Study on Etching Technology and Diffusion Bonding';
+    # TMN-etch 2026: 316L применима, feasibility зависит от толщины/глубины каналов).
+    # v9.57: материалы_для_процесса заполнены (F27f fix, #924): обрабатываемый —
+    # 316L-лист с микроканальными каналами.
+    # Расходник FeCl3 и реагенты HCl/HNO3 отсутствуют в каталоге материалы/ —
+    # при их добавлении расширить список (роль: расходник/реагент).
+    материалы_для_процесса:
+      - материал: material_ss_316l
+        роль: обрабатываемый
+        доля_массы: 1.0
 
 scaling_type: количественный
 соединители: []
@@ -83,7 +92,7 @@ scaling_type: количественный
   # Описание сохранено в body (см. раздел "Применяемые технологии").
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-07
+дата_обновления: 2026-11-08
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.alfalaval.us/products/heat-transfer/plate-heat-exchangers/printed-circuit-heat-exchangers/printed-circuit-heat-exchangers
@@ -131,5 +140,9 @@ scaling_type: количественный
 - Alfa Laval — Printed Circuit Heat Exchangers (PCHE): давление до 1250 бар, температура −196…+800 °C (316/316L SST), стандартные материалы 304L/316L, диффузионная сварка стоп травленых листов — https://www.alfalaval.us/products/heat-transfer/plate-heat-exchangers/printed-circuit-heat-exchangers/printed-circuit-heat-exchangers
 - Thermal Processing / PVA TePla — Diffusion bonded PCHE for severe environments: диффузионная сварка в вакууме, до сотен бар и >800 °C, до 85 % меньше и легче традиционных ТО — https://thermalprocessing.com/diffusion-bonded-printed-circuit-heat-exchangers-for-severe-environments
 - J. Nestell et al. (ORNL, 2015) — ASME Code Considerations for Compact Heat Exchangers: PCHE как IHX/SHX для ядерных применений — https://info.ornl.gov/sites/publications/files/Pub57987.pdf
+- Precision Micro — Understanding Printed Circuit Heat Exchangers: the role of chemical etching (PCHE flow plates — photochemical machining, FeCl3) — https://www.precisionmicro.com/understanding-printed-circuit-heat-exchangers-the-role-of-chemical-etching
+- Wei Y. et al., 2025 — Study on Etching Technology and Diffusion Bonding of PCHE laminates (JMEP) — https://ui.adsabs.harvard.edu/abs/2025JMEP..tmp..481W/abstract
+- TMN Etch, 2026 — Can heat exchanger plates be made by chemical etching? (316L: толщина/глубина каналов/joining) — https://tmnetch.com/can-heat-exchanger-plates-be-made-by-chemical-etching
+- Материалы процесса (#924): обрабатываемый — 316L-лист (травление микроканалов FeCl3-травителем перед диффузионной сваркой); расходник FeCl3 и реагенты HCl/HNO3 пока не в каталоге материалы/
 - Канон: декомпозиция `izdelie_mikroreaktor_deleniya` (web search 2026-11-03)
 - Материалы: реальные данные/материалы/
