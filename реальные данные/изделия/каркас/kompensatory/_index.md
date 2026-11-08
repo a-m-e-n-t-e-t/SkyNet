@@ -23,6 +23,25 @@ id: izdelie_kompensatory
   - часть: часть_kompensatory_housing
     материал: aluminum
     доля_массы: 0.27
+технологии_частей:
+  - часть: часть_kompensatory_core
+    технология: ebw
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: inconel_718
+        роль: обрабатываемый
+  - часть: часть_kompensatory_housing
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
+  - часть: часть_kompensatory_housing
+    технология: anodirovanie
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -53,7 +72,7 @@ scaling_type: количественный
 дополнительные:
   цена_usd: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-07
+дата_обновления: 2026-11-08
 источник: user_input
 источник_разбора: пользовательский ввод
 источник_url: https://lectromec.com/blog/connector-contact-resistance
@@ -78,11 +97,13 @@ scaling_type: количественный
 
 ## Состав
 
-Изделие верхнего уровня. Дочерние части не указаны (требуется декомпозиция).
+Изделие верхнего уровня (уровень 1, подсистема «каркас»). Дочерние части (4): `часть_kompensatory_core` (сильфон Inconel 718), `часть_kompensatory_housing` (корпус 6061-T6), `часть_kompensatory_connectors` (разъёмы), `часть_kompensatory_mounting` (фланцевый крепёж).
 
 ## Используемые технологии
 
-(Ссылки на реальные_данные/технологии/ добавляются после связывания)
+- `ebw` → [`ebw.md`](../../../технологии/ebw.md) — `часть_kompensatory_core`: электронно-лучевая сварка в вакууме гофр сильфона (edge-welded технология: штампованные диафрагмы из тонкого листа свариваются по внутренним кромкам в пары → сильфонные гофры; EBW Inconel 718 — глубокое проплавление и качественный шов)
+- `frezervanie_chpu` → [`frezervanie_chpu.md`](../../../технологии/frezervanie_chpu.md) — `часть_kompensatory_housing`: фрезерование на ЧПУ торцевых фланцев и корпуса из 6061-T6
+- `anodirovanie` → [`anodirovanie.md`](../../../технологии/anodirovanie.md) — `часть_kompensatory_housing`: анодирование корпуса — коррозионная стойкость и износостойкие посадочные поверхности
 
 ## Используемые материалы
 
@@ -109,6 +130,10 @@ scaling_type: количественный
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+- Metal Bellows: Bellows 101 — How are Edge-Welded Metal Bellows Manufactured? (штамповка диафрагм из тонкого листа, сварка пар в гофры precision laser/micro-TIG; материалы edge-welded сильфонов — Inconel 625/718, Hastelloy C-276, AM-350): http://www.metalbellows.com/bellows-101 (обращение 2026-11-08)
+- Flexaseal: What are Edge Welded metal bellows? — микросварка внутренних кромок штампованных диафрагм в двухгофровые пары: https://www.flexaseal.com/what-are-edge-welded-metal-bellows (обращение 2026-11-08)
+- Coupling Tips: The Technology behind Edge Welded Metal Bellows — сварка штампованных диафрагм в длинную гибкую сборку, ключ к характеристикам — параллельность гофр: http://www.couplingtips.com/bellows-couplings/the-technology-behind-edge-welded-metal-bellows (обращение 2026-11-08)
+- ResearchGate: Electron Beam Welding of Inconel 718 (EBW IN718 — глубокое проплавление и высокое качество шва, aerospace): https://www.researchgate.net/publication/342401170_Electron_Beam_Welding_of_Inconel_718 (обращение 2026-11-08)
 - Контактное сопротивление разъёмов и ohmic-нагрев (7.3 мОм @ 7.5 А → 0.41 Вт/контакт) — https://lectromec.com/blog/connector-contact-resistance (обращение 2026-11-07)
 - Пассивность сильфонных компенсаторов — https://www.bellows-systems.com/metal-expansion-joints (обращение 2026-11-07)
 
