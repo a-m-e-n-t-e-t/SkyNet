@@ -8900,7 +8900,25 @@
     },
     {
       "src": "izdelie_svobodnoporshnevoi_stirling",
-      "dst": "material_copper",
+      "dst": "material_ss_316l",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_svobodnoporshnevoi_stirling",
+      "dst": "material_ss_aisi_304",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_svobodnoporshnevoi_stirling",
+      "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_svobodnoporshnevoi_stirling",
+      "dst": "material_ndfeb",
       "type": "uses_material",
       "meta": {}
     },
@@ -23067,7 +23085,31 @@
       }
     },
     {
-      "src": "material_copper",
+      "src": "material_ss_316l",
+      "dst": "izdelie_svobodnoporshnevoi_stirling",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ss_aisi_304",
+      "dst": "izdelie_svobodnoporshnevoi_stirling",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_al_6061-t6",
+      "dst": "izdelie_svobodnoporshnevoi_stirling",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_ndfeb",
       "dst": "izdelie_svobodnoporshnevoi_stirling",
       "type": "used_in",
       "meta": {
@@ -35589,7 +35631,7 @@
   },
   "stats": {
     "nodes": 1118,
-    "edges": 3962,
+    "edges": 3968,
     "dangling": {
       "complies_with": 533,
       "has_part": 6,

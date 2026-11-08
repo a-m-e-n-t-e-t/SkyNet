@@ -1789,6 +1789,106 @@
    "used_in_issues": [
     1932
    ]
+  },
+  {
+   "query": "free-piston Stirling engine Sunpower RE-1000 1 kW dimensions height diameter mass specifications",
+   "keywords": [
+    "free-piston Stirling",
+    "FPSE",
+    "RE-1000",
+    "Sunpower",
+    "1 kW",
+    "dimensions",
+    "mass"
+   ],
+   "results": [
+    {
+     "url": "https://www.sciencedirect.com/science/article/pii/S2352484722008228",
+     "name": "Full-time domain analysis on operating characteristics of",
+     "snippet": "by L Kong · 2022 · Cited by 18 — Stirling engines can be classified into three types according to the distribution of cylinders and pistons , namely alpha type, beta type and gamma type (Hachem ... Read more",
+     "host_name": "www.sciencedirect.com",
+     "rank": 0,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://ntrs.nasa.gov/api/citations/19860002201/downloads/19860002201.pdf",
+     "name": "RE-1000 Free-Piston Stirling Engine Update",
+     "snippet": "by JG Schreiber · 1985 · Cited by 8 — A 1 kW (1.33 hp) single cylinder free . This report gives a description of the range of data gathered. RE - 1000 hydraulic output system. a resonant spr1ng mass ... 20 pages",
+     "host_name": "ntrs.nasa.gov",
+     "rank": 1,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.sunpowerinc.com",
+     "name": "Sunpower Inc. | Free-Piston Stirling Engines and Cryocoolers",
+     "snippet": "Sunpower Free - Piston Stirling engines and cryocoolers offer higher performance and efficiency, smaller size , and more flexibility than traditional counterparts.",
+     "host_name": "www.sunpowerinc.com",
+     "rank": 2,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESjwEBxCJF1y3bBRQ7pc6GqnXp-HJYyNsSlLeisc6UnHUopOv9kjy2T-sHhs297cyIVeU7vtOHB-sBm8XEyhDDSxcWNSfH4BCUt-gzou_BCyo5KyJwbtYo1BwtPB5W2biHofi4Ubq4-h02XA36OJez1sAq3GDcmL7KrhDIxt6nv5l3Hm9noeNlCsPvbBSqGYU0cg",
+     "name": "Design and Analysis of Free Piston Stirling Engines for",
+     "snippet": "by PD Doan · 2024 · Cited by 3 — The RE - 1000 engine , built by SunPower and tested by NASA, was selected due to NASA releasing an experiment report containing detailed dimensions , operating ...",
+     "host_name": "www.google.com",
+     "rank": 3,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESYAHEIkXX5xnX5cHSW_LsBIH0g0hosBTYvNkqFdLejWLII49GJiACzarcnMjrG7MMpaGrDcTAeejFpszltyGRV4HHIafXwlhJTo_SjoHsjNUvIjax3d1MDMX-DdTQGoZvmw",
+     "name": "600-watt free-piston Stirling engine generator. Final report",
+     "snippet": "Jan 1, 1981 — Using standard scaling procedures, this machine will produce 780 watts, 60 Hz, at 700/sup 0/C. RE - 1000 free - piston stirling engine Conference … ...",
+     "host_name": "www.google.com",
+     "rank": 4,
+     "date": "Jan 1, 1981",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESswEBxCJF16BlX0w5Frv7FqnLFM4CSFwxKxyMAkvTQBNjM6oz9xBfQ85cCK2syB6YBO_nHWDMJfBwZ-TabKmQF9EJQgtoIHySvib6Rcgb3OrmWlHfv1y2x-bBgUuVsjnm_-LWyslxyjyVwijtRFZc9nKl6JsCJnfl0k9ubX9WC0GkJkUb0WARv3FaMMlVPEgd18jR7FYcfdLVMCDWY1bCYrxQpNeZIOn6fAKw787eelKB10kYHA",
+     "name": "Free Piston Stirling Engine Based 1kW Generator",
+     "snippet": "Sunpower , in partnership with Aerojet Rocketdyne and Precision Combustion Inc. (PCI), proposes a high-frequency, high efficiency 1 kW free - piston Stirling ...",
+     "host_name": "www.google.com",
+     "rank": 5,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESwQEBxCJF138cwyUF1iDVJFwRma3qBkBcIhR7uIh8tOZCeqegNKb450x3KJx6FQeJ_Mp1GiDTI093t31iTxjTZPis7wfhioVWuqJPLnEeEnNvIcS7kes7NBmnGqL9RoqZvLR8gqn5ebVpqhioFrtb2vrZlqW14FUhTgseTzzqUOGx09uJkuBQVjl5fq_CNIbbO__sGG72Kstk7eQ79YA88uCFPLwnd7KpQO2Yqc6irI8RoyH9G3flg8MxPQR1lrkbHZDn",
+     "name": "Design and Analysis of a Free-Piston Stirling Engine for",
+     "snippet": "The engine's dimensions are scaled starting with the diameter of the displacer and power pistons , as well as the clearance volume of the expansion and ... Read more",
+     "host_name": "www.google.com",
+     "rank": 6,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESrAEBxCJF15NgHZXLF8xQj7ybC-39Uz3gu3pyImj1p-gEX4D3Tvs7xaYVhfyZ9zarvrPJ5J9jfAEVRYfYgkeU3q5fEqSvWvxCf46MyCkQZUaes762mvgCsE4zBZgLRSiVDowrWTMEfCCPOb61xRXzavarPuMFoOeDVnblSJVe3QT49oClMpgcgfvm7RKrD8ZSAPTcyEslPyCEcEpHiHt-VM2eOcrr-Ga8UUnPRncO",
+     "name": "Performance Characterization of Sunpower Free-Piston",
+     "snippet": "• Workspace diameter independent of displacer spring diameter . The main components of the Sunpower free - piston Stirling engine are shown in Fig. 1 . The ... Read more",
+     "host_name": "www.google.com",
+     "rank": 7,
+     "date": "",
+     "favicon": ""
+    },
+    {
+     "url": "https://www.google.com/goto?url=CAESdgHEIkXXBX2eg7vWx2NQCYd-18RZ0Qa1aVuPwdPntcG1pRq8Xxfv3QjS8gZQxS-39FTWHjqkLSjJ49i19Qhzt8DPqJ_TLV8Z0MzYLsMj7xOljxKuXbjPKduyEY7YE1f-pPKaDex3nv4Sg6cFCRCTXhBwSIupNBk",
+     "name": "Beta Type Stirling Engines - updated 12/30/2011",
+     "snippet": "Dec 30, 2011 — Since 1974 Sunpower has developed Free Piston Stirling Engine /Generators ranging in power levels from 35We to 7.5 kW e. Consider for example the ... Read more",
+     "host_name": "www.google.com",
+     "rank": 8,
+     "date": "Dec 30, 2011",
+     "favicon": ""
+    }
+   ],
+   "created_at": "2026-11-08T22:24:29.535576+00:00",
+   "usage_count": 1,
+   "used_in_issues": [
+    1933
+   ]
   }
  ]
 }
