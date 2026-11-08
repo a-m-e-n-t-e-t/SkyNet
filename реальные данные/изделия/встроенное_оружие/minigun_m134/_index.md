@@ -24,6 +24,19 @@ id: izdelie_minigun_m134
     материал: ti-6al-4v
     форма: планер_и_космические_изделия
     доля_массы: 0.27
+технологии_частей:
+  - часть: часть_minigun_m134_core
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: stal_st3
+        роль: обрабатываемый
+  - часть: часть_minigun_m134_housing
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: ti-6al-4v
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -54,7 +67,7 @@ scaling_type: количественный
 дополнительные:
   цена_usd: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-07
+дата_обновления: 2026-11-08
 источник: web_search
 источник_разбора: веб-верификация
 источник_url: https://en.wikipedia.org/wiki/M134_Minigun
@@ -83,7 +96,7 @@ Minigun M134
 
 ## Используемые технологии
 
-(Ссылки на реальные_данные/технологии/ добавляются после связывания)
+- [`frezervanie_chpu`](../../технологии/frezervanie_chpu.md) — ЧПУ-фрезерование: обработка деталей core (Ст3, крепёж и элементы блока) и корпуса housing (Ti-6Al-4V, 5-осевое фрезерование — стандарт авиационного производства титановых корпусов/кронштейнов, Carr Machine: «structural brackets, housings, fittings… in Ti-6Al-4V with 5-axis milling»; режимы для Ti: carbide-инструмент, низкие скорости резания ~150–200 SFM, высоконапорная СОЖ — ptsmake)
 
 ## Используемые материалы
 
@@ -96,6 +109,10 @@ Minigun M134
 ## Источники
 
 - CSV: `начальные данные_final.csv` (пользовательский ввод)
+- [Wikipedia: M134 Minigun — 7.62×51mm NATO, 6 стволов, 2000–6000 выстр/мин](https://en.wikipedia.org/wiki/M134_Minigun)
+- [Seaforces.org: M134 Mk.44 GAU-17A — вес 39/19 кг, длина 31.56 in, ствол 558.8 мм](https://www.seaforces.org/wpnsys/SURFACE/M134-minigun.htm)
+- [Carr Machine & Tool: Ti-6Al-4V CNC Machining — 5-axis milling housings/brackets/fittings](https://carrmachine.com/materials/ti-6al-4v-machining) (обращение 2026-11-08)
+- [PTSMake: How to Effectively Machine Titanium Grade 5 (Ti-6Al-4V) — carbide tool, 150–200 SFM, high-pressure coolant](https://www.ptsmake.com/how-to-effectively-machine-titanium-grade-5-ti-6al-4v) (обращение 2026-11-08)
 
 ---
 
