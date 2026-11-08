@@ -4196,6 +4196,20 @@
       "subsystem": "приводная_система"
     },
     {
+      "id": "часть_ipmc_core_electrodes",
+      "type": "chast",
+      "label": "электроды",
+      "path": "реальные данные/изделия/приводная_система/ipmc/часть_ipmc_core/часть_ipmc_core_electrodes/_index.md",
+      "subsystem": "приводная_система"
+    },
+    {
+      "id": "часть_ipmc_core_membrane",
+      "type": "chast",
+      "label": "PEM_мембрана",
+      "path": "реальные данные/изделия/приводная_система/ipmc/часть_ipmc_core/часть_ipmc_core_membrane/_index.md",
+      "subsystem": "приводная_система"
+    },
+    {
       "id": "часть_3d-pechatnye_dea_housing",
       "type": "chast",
       "label": "корпус",
@@ -17035,13 +17049,31 @@
     },
     {
       "src": "часть_ipmc_core",
+      "dst": "часть_ipmc_core_membrane",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_ipmc_core",
+      "dst": "часть_ipmc_core_electrodes",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "часть_ipmc_core",
       "dst": "izdelie_ipmc",
       "type": "child_of",
       "meta": {}
     },
     {
       "src": "часть_ipmc_core",
-      "dst": "material_ionogel",
+      "dst": "material_nafion",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_ipmc_core",
+      "dst": "material_pt",
       "type": "uses_material",
       "meta": {}
     },
@@ -17066,6 +17098,30 @@
     {
       "src": "часть_ipmc_connectors",
       "dst": "material_poliimid",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_ipmc_core_electrodes",
+      "dst": "часть_ipmc_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_ipmc_core_electrodes",
+      "dst": "material_pt",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_ipmc_core_membrane",
+      "dst": "часть_ipmc_core",
+      "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_ipmc_core_membrane",
+      "dst": "material_nafion",
       "type": "uses_material",
       "meta": {}
     },
@@ -28504,7 +28560,31 @@
       }
     },
     {
-      "src": "material_ionogel",
+      "src": "часть_ipmc_core_membrane",
+      "dst": "часть_ipmc_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "часть_ipmc_core_electrodes",
+      "dst": "часть_ipmc_core",
+      "type": "part_of",
+      "meta": {
+        "forward": "has_part"
+      }
+    },
+    {
+      "src": "material_nafion",
+      "dst": "часть_ipmc_core",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_pt",
       "dst": "часть_ipmc_core",
       "type": "used_in",
       "meta": {
@@ -28522,6 +28602,22 @@
     {
       "src": "material_poliimid",
       "dst": "часть_ipmc_connectors",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_pt",
+      "dst": "часть_ipmc_core_electrodes",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_nafion",
+      "dst": "часть_ipmc_core_membrane",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -31428,8 +31524,8 @@
     ]
   },
   "stats": {
-    "nodes": 1075,
-    "edges": 3416,
+    "nodes": 1077,
+    "edges": 3428,
     "dangling": {
       "complies_with": 472,
       "has_part": 4,
@@ -31437,7 +31533,7 @@
       "uses_material": 81
     },
     "by_type": {
-      "chast": 650,
+      "chast": 652,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
       "material": 197,
