@@ -24,12 +24,15 @@ id: izdelie_superkondensatory
     доля_массы: 0.2
   - часть: часть_superkondensatory_separator
     материал: cellulose
+    форма: сепаратор_суперконденсаторов
     доля_массы: 0.0475
   - часть: часть_superkondensatory_electrolyte
     материал: tebabf4_acn
+    форма: электролитная_соль_EDLC
     доля_массы: 0.1425
   - часть: часть_superkondensatory_current_collector
     материал: aluminum
+    форма: гибкая_фольга_и_упаковка
     доля_массы: 0.1425
   - часть: часть_superkondensatory_case
     материал: aluminum
