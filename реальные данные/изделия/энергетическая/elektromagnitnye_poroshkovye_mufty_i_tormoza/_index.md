@@ -28,12 +28,15 @@ id: izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza
     доля_массы: 0.285
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator
     материал: steel_1045
+    форма: валы_и_магнитопроводы_муфт
     доля_массы: 0.285
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_powder
     материал: iron_powder
+    форма: ферромагнитный_порошок_рабочего_зазора
     доля_массы: 0.057
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_bearings
     материал: stainless_steel_440c
+    форма: коррозионностойкие_подшипниковые_кольца
     доля_массы: 0.054
 технологии_частей:
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil
