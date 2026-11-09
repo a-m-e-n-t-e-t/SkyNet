@@ -20,9 +20,11 @@ id: izdelie_kondensatory_keramicheskie
 материалы_частей:
   - часть: часть_kondensatory_keramicheskie_ceramic_layers
     материал: barium_titanate
+    форма: диэлектрик_керам_конденсаторов
     доля_массы: 0.475
   - часть: часть_kondensatory_keramicheskie_inner_electrodes
     материал: nickel
+    форма: внутренние_электроды_MLCC_BME
     доля_массы: 0.19
   - часть: часть_kondensatory_keramicheskie_outer_electrodes
     материал: copper
@@ -33,6 +35,39 @@ id: izdelie_kondensatory_keramicheskie
   - часть: часть_kondensatory_keramicheskie_plating
     материал: tin
     доля_массы: 0.09
+
+технологии_частей:
+  - часть: часть_kondensatory_keramicheskie_ceramic_layers
+    технология: vakuumnoe_spekanie
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: barium_titanate
+        роль: обрабатываемый
+  - часть: часть_kondensatory_keramicheskie_inner_electrodes
+    технология: pogruzhenie_v_mo-shliker
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: nickel
+        роль: обрабатываемый
+  - часть: часть_kondensatory_keramicheskie_outer_electrodes
+    технология: pogruzhenie_v_mo-shliker
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: copper
+        роль: обрабатываемый
+  - часть: часть_kondensatory_keramicheskie_termination
+    технология: galvanika
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: copper
+        роль: обрабатываемый
+  - часть: часть_kondensatory_keramicheskie_plating
+    технология: galvanika
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: tin
+        роль: обрабатываемый
+
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -67,7 +102,7 @@ scaling_type: количественный
   габариты_метод: предельные размеры корпуса по datasheet (2.0±0.3 × 1.25±0.2 × 1.25±0.2 → максимум 2.3×1.45×1.45)
   обоснование_габаритов: огибающая при максимальном материале по Murata GCJ21BR71H105MA01K (0805, 2012M — длина 2.0±0.3, ширина 1.25±0.2, толщина 1.25±0.2 мм, внешний терминал 0.2–0.7 мм); проверка F15g — Σ V детей 2.944 мм³ ≤ 4.833/1.15 = 4.202 (запас 30 %), оси 2.3≥1.5 / 1.45≥1.25 / 1.45≥1.25
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
+дата_обновления: 2026-11-09
 источник: web_search
 источник_разбора: веб-верификация
 источник_url: https://www.tme.eu/rs/en/details/gcg21br71h105ma01k/mlcc-smd-capacitors/murata
