@@ -8303,7 +8303,7 @@
     },
     {
       "src": "izdelie_loop_heat_pipe",
-      "dst": "material_aluminum",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
