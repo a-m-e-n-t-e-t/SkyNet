@@ -90,11 +90,11 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные:
   цена_usd: null
-  источник_url: https://www.maxongroup.com/maxon/view/product/488607
-  источник_url_2: https://us.aspina-group.com/en/learning-zone/columns/what-is/034
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-10
 источник: web_search
+источник_url: https://www.maxongroup.com/maxon/view/product/488607
+источник_url_2: https://us.aspina-group.com/en/learning-zone/columns/what-is/034
 источник_разбора: веб-верификация
 источник_дата: 2026-11-10
 ---
