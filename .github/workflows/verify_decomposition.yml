@@ -398,8 +398,23 @@ jobs:
                   bodyParts.push(`- для КАЖДОГО материала в материалы_частей → указать форма (через альтернативные_формы/сравнение_структур)`);
                   bodyParts.push(`- форма выбирается из реальных вариантов (datasheet/catalog)`);
                 } else if (metric === 'F34') {
-                  bodyParts.push(`- выбрать стратегию: атомарная (неделимый) или составная (создать sub-parts)`);
-                  bodyParts.push(`- глубина не ограничена (м.б. уровни 5, 6, 7, ...)`);
+                  bodyParts.push(`- **Шаг 1: проверить подтип в реестре** — \`scripts/_decomp_registry.yaml\``);
+                  bodyParts.push(`  - Если подтип есть с \`is_atomic: true\` → атомарная часть (перейти к шагу 2)`);
+                  bodyParts.push(`  - Если подтип есть с \`is_atomic: false\` → сборка, нужна декомпозиция (шаг 3)`);
+                  bodyParts.push(`  - Если подтипа нет в реестре → web_search для определения, атомарная ли это часть`);
+                  bodyParts.push(`- **Шаг 2 (если атомарная):**`);
+                  bodyParts.push(`  - сменить \`уровень_иерархии: промежуточный → неделимый\``);
+                  bodyParts.push(`  - заполнить \`материалы_частей\` BOM из реестра (\`materials\` блок)`);
+                  bodyParts.push(`  - если \`is_purchased: true\` → тип: компонент, иначе тип: часть`);
+                  bodyParts.push(`  - заполнить \`источник_url\` (web_search для подтверждения свойств)`);
+                  bodyParts.push(`- **Шаг 3 (если сборка, нужна декомпозиция):**`);
+                  bodyParts.push(`  - использовать \`recursive_decompose.py --izdelie <parent_id> --issue ${'$'}{{ github.event.issue.number || 'N' }}\``);
+                  bodyParts.push(`  - скрипт создаст sub-parts на основе \`children\` из реестра`);
+                  bodyParts.push(`  - глубина не ограничена (м.б. уровни 5, 6, 7, ...)`);
+                  bodyParts.push(`  - **Альтернатива (если подтипа нет в реестре):**`);
+                  bodyParts.push(`    - добавить подтип в \`_decomp_registry.yaml\` с описанием children`);
+                  bodyParts.push(`    - затем запустить recursive_decompose.py`);
+                  bodyParts.push(`- **Автоматизация (опционально):** запустить \`bash scripts/decompose_via_issue.sh ${'$'}{{ github.event.issue.number || 'N' }}\` — скрипт сам определит action и передаст в cron_run.sh`);
                 } else if (metric === 'F-ai-lineage') {
                   bodyParts.push(`- поля: предок, предок_путь, улучшения[], real_check{}`);
                   bodyParts.push(`- тип улучшения: замена_материала/замена_технологии/...`);
@@ -864,6 +879,9 @@ jobs:
           echo "| F27f | ${{ steps.violations.outputs.F27f_count }} | технологии_частей entries missing материалы_для_процесса (обязательность) |" >> $GITHUB_STEP_SUMMARY
           echo "| F27g | ${{ steps.violations.outputs.F27g_count }} | Broken material refs in технологии_частей.материалы_для_процесса |" >> $GITHUB_STEP_SUMMARY
           echo "| F28 | ${{ steps.violations.outputs.F28_count }} | Materials without alternative forms/variants (for AI product variants) |" >> $GITHUB_STEP_SUMMARY
+          echo "| F29 | ${{ steps.violations.outputs.F29_count }} | BOM-materials: (A) form; (B) inherited; (C) canonical-only (v9.60) |" >> $GITHUB_STEP_SUMMARY
+          echo "| F34 | ${{ steps.violations.outputs.F34_count }} | Decomposition depth: сборка без дочерних_частей |" >> $GITHUB_STEP_SUMMARY
+          echo "| F35 | ${{ steps.violations.outputs.F35_count }} | Components consistency: тип/материал/компонент (v9.60, non-blocking) |" >> $GITHUB_STEP_SUMMARY
           echo "| **Total** | **${{ steps.violations.outputs.total_violations }}** | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Violation source:** ${{ steps.violations.outputs.partial == '1' && 'TRUNCATED log fallback (auto-close DISABLED)' || 'complete --json-out' }}" >> $GITHUB_STEP_SUMMARY

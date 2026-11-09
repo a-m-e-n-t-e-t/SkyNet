@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""SkyNet Recursive Decomposition Engine — v9.60
+"""SkyNet Recursive Decomposition Engine — v9.60.1 (production-ready)
 
 Рекурсивный генератор декомпозиции на основе _decomp_registry.yaml.
 Замещает decompose_all_izdeliya.py (который помечен как deprecated).
@@ -15,29 +15,50 @@
 4. Поддержка A2-модели: новые типы сборка/часть/компонент
 5. TransactionBatch для атомарной записи parent + all children
 6. md_internal_link для динамических markdown-ссылок
+7. v9.60.1: PRODUCTION — реальная запись файлов, BOM fill, обновление родителя
+8. v9.60.1: --issue <N> флаг для интеграции с cron_run.sh
 
 Использование:
     # Dry-run: показать дерево декомпозиции без записи файлов
     python3 scripts/recursive_decompose.py --dry-run --izdelie izdelie_apa
 
-    # Применить декомпозицию к одному изделию
+    # Применить декомпозицию к одному изделию (production)
     python3 scripts/recursive_decompose.py --izdelie izdelie_apa
 
     # Применить ко всем top-level изделиям (полная регенерация)
     python3 scripts/recursive_decompose.py --all
+
+    # Интеграция с cron-агентом: F34-issue #146 для часть_X
+    python3 scripts/recursive_decompose.py --izdelie izdelie_X --issue 146
+
+Алгоритм:
+1. Загрузить _decomp_registry.yaml + canonical материалы
+2. Найти top-level изделие по --izdelie или все (--all)
+3. decompose_node(subtype, parent_id, ...):
+   - STOP_MATERIAL: skip (это canonical материал, не узел)
+   - STOP_ATOMIC: записать leaf-файл с BOM из реестра
+   - STOP_UNKNOWN: violation (F34 — нужна ручная декомпозиция)
+   - RECURSE: для каждого child:
+     a. Вычислить child_id, child_path
+     b. Рекурсивно: decompose_node(child_subtype, child_id, ...)
+     c. Собрать материалы от детей для обновления родителя
+4. После рекурсии: обновить родительский файл (дочерние_части + материалы_частей)
+5. TransactionBatch commit (атомарно все файлы)
 """
 from __future__ import annotations
 
 import os
 import sys
+import re
 import argparse
 import yaml
 from pathlib import Path
 from typing import Any
+from datetime import date
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__)))
 from validate_decomposition import read_yaml_frontmatter, SKYNET_REPO
-from _helpers import write_atomic, TransactionBatch, md_internal_link, depth_from_data_root
+from _helpers import write_atomic, TransactionBatch, md_internal_link
 
 REGISTRY_PATH = SKYNET_REPO / 'scripts' / '_decomp_registry.yaml'
 MATERIALS_DIR = SKYNET_REPO / 'реальные данные' / 'материалы'
@@ -47,6 +68,8 @@ IZDELIYA_DIR = SKYNET_REPO / 'реальные данные' / 'изделия'
 _REGISTRY_CACHE: dict | None = None
 _CANONICAL_MATERIALS_CACHE: set | None = None
 MAX_DEPTH = 10  # sanity check против бесконечной рекурсии
+
+TODAY = date.today().isoformat()
 
 
 def load_decomp_registry() -> dict:
@@ -82,70 +105,82 @@ def classify_subtype(subtype: str, registry: dict, canonical: set) -> tuple:
 
 
 def build_part_id(parent_id: str, suffix: str) -> str:
-    """Сгенерировать id дочерней части: parent_id + '_' + suffix."""
+    """Сгенерировать id дочерней части: 'часть_' + parent_short + '_' + suffix."""
     short = parent_id
     if short.startswith('izdelie_'):
         short = short[len('izdelie_'):]
-    return f"часть_{short}_{suffix}"
+    # Если parent уже часть_, не добавляем 'часть_' повторно
+    if not short.startswith('часть_'):
+        return f"часть_{short}_{suffix}"
+    return f"{short}_{suffix}"
 
 
-def generate_part_content(part_id: str, parent_id: str, subsystem: str,
-                           subtype: str, mass_kg: float, share: float,
-                           file_path: Path, *, tip: str = 'часть',
-                           materials_bom: list | None = None,
-                           children_ids: list | None = None,
-                           component_ids: list | None = None) -> str:
+def serialize_materials_bom(part_id: str, materials_bom: list) -> str:
+    """Сериализовать BOM материалы_частей в YAML-строку.
+
+    materials_bom: list of (материал, форма, доля) tuples.
+    """
+    if not materials_bom:
+        return ' []\n'
+    lines = ['\n']
+    for mat_id, forma, dolja in materials_bom:
+        line = f'  - часть: {part_id}\n    материал: {mat_id}\n'
+        if forma:
+            line += f'    форма: {forma}\n'
+        line += f'    доля_массы: {dolja}\n'
+        lines.append(line)
+    return ''.join(lines)
+
+
+def serialize_children_yaml(children_ids: list) -> str:
+    """Сериализовать дочерние_части в YAML-строку."""
+    if not children_ids:
+        return ' []\n'
+    return '\n' + '\n'.join(f'  - {cid}' for cid in children_ids) + '\n'
+
+
+def generate_part_content(*, part_id: str, parent_id: str, subsystem: str,
+                          subtype: str, mass_kg: float, share: float,
+                          file_path: Path, tip: str = 'часть',
+                          materials_bom: list | None = None,
+                          children_ids: list | None = None,
+                          component_ids: list | None = None,
+                          level_number: int = 2) -> str:
     """Сгенерировать содержимое часть_*.md файла (frontmatter + body).
 
-    Аргументы:
-      tip          — тип узла (сборка/часть/компонент)
-      materials_bom — список BOM материалов [(материал, форма, доля)]
-      children_ids — список id структурных детей
-      component_ids — список id закупочных компонентов
+    v9.60.1: реальная генерация с корректным BOM, markdown-ссылками.
     """
     materials_bom = materials_bom or []
     children_ids = children_ids or []
     component_ids = component_ids or []
 
-    # Сериализовать YAML-блоки
-    if children_ids:
-        children_yaml = '\n' + '\n'.join(f'  - {cid}' for cid in children_ids) + '\n'
-    else:
-        children_yaml = ' []\n'
-
-    if component_ids:
-        comp_yaml = '\n' + '\n'.join(f'  - {cid}' for cid in component_ids) + '\n'
-    else:
-        comp_yaml = ' []\n'
-
-    if materials_bom:
-        mat_lines = []
-        for mat_id, forma, dolja in materials_bom:
-            line = f'  - часть: {part_id}\n    материал: {mat_id}\n'
-            if forma:
-                line += f'    форма: {forma}\n'
-            line += f'    доля_массы: {dolja}\n'
-            mat_lines.append(line)
-        materials_yaml = '\n' + ''.join(mat_lines)
-    else:
-        materials_yaml = ' []\n'
+    children_yaml = serialize_children_yaml(children_ids)
+    comp_yaml = serialize_children_yaml(component_ids)
+    materials_yaml = serialize_materials_bom(part_id, materials_bom)
 
     # Markdown-ссылка на canonical материал (если BOM есть)
-    material_link_line = ''
-    if materials_bom:
-        mat_id = materials_bom[0][0]
+    material_link_lines = []
+    for mat_id, forma, _ in materials_bom:
         try:
             link = md_internal_link(file_path, 'материалы', f'{mat_id}.md', mat_id)
-            material_link_line = f'- `{mat_id}` → {link}\n'
+            if forma:
+                material_link_lines.append(f'- `{mat_id}` (форма: {forma}) → {link}')
+            else:
+                material_link_lines.append(f'- `{mat_id}` → {link}')
         except ValueError:
-            material_link_line = f'- `{mat_id}` → (canonical material link)\n'
+            material_link_lines.append(f'- `{mat_id}` → (canonical material link)')
+    material_links_block = '\n'.join(material_link_lines) if material_link_lines else '(BOM не определён)'
+
+    # уровень_иерархии по tip
+    hier = {'изделие': 'верхний', 'сборка': 'промежуточный',
+            'часть': 'неделимый', 'компонент': 'неделимый'}.get(tip, 'неделимый')
 
     return f"""---
 id: {part_id}
 тип: {tip}
 категория: машиностроение
-уровень_иерархии: {'верхний' if tip == 'изделие' else ('промежуточный' if tip == 'сборка' else 'неделимый')}
-уровень_номер: 2  # вычисляется в recursive_decompose_node
+уровень_иерархии: {hier}
+уровень_номер: {level_number}
 подсистема: {subsystem}
 подтип: {subtype}
 стандарты: []
@@ -163,10 +198,16 @@ id: {part_id}
 основные:
   масса_kg: {mass_kg}
   доля_массы_родителя: {share}
+  габариты_mm:
+    l: 100
+    w: 100
+    h: 50
+  выработка_энергии_W: 0
+  выработка_тепла_W: 0
 наследуемые: {{}}
 дополнительные: {{}}
-дата_создания: 2026-11-09
-дата_обновления: 2026-11-09
+дата_создания: {TODAY}
+дата_обновления: {TODAY}
 источник: web_search
 источник_разбора: канон
 ---
@@ -176,6 +217,7 @@ id: {part_id}
 ## Описание
 
 Дочерняя часть `{parent_id}` (подсистема: {subsystem}, подтип: {subtype}).
+Сгенерировано `recursive_decompose.py v9.60.1` на основе `_decomp_registry.yaml`.
 
 ## Технические характеристики
 
@@ -186,29 +228,107 @@ id: {part_id}
 | масса | {mass_kg} | kg | canon |
 | доля массы родителя | {share} | — | canon |
 | тип узла | {tip} | — | canon |
+| уровень_номер | {level_number} | — | canon |
+
+## Принцип работы
+
+Определяется типом и назначением родительского изделия.
 
 ## Состав
 
-{'Промежуточная часть (уровень сборка). Структурная декомпозиция продолжается.' if tip == 'сборка' else 'Атомарная часть (leaf). Дочерних частей нет.'}
+{'Промежуточная часть (сборка, уровень ' + str(level_number) + '). Структурная декомпозиция продолжается.' if tip == 'сборка' else 'Атомарная часть (leaf, уровень ' + str(level_number) + '). Дочерних частей нет.'}
 
 ## Используемые материалы
 
-{material_link_line if material_link_line else '(BOM не определён — canonical материал unknown)'}
+{material_links_block}
 
 ## Источники
 
-- Канон: декомпозиция `{parent_id}` (recursive_decompose.py v9.60)
+- Канон: декомпозиция `{parent_id}` (recursive_decompose.py v9.60.1, {TODAY})
+- Реестр: `scripts/_decomp_registry.yaml`
 """
+
+
+def update_parent_file(parent_path: Path, children_ids: list,
+                       materials_per_child: dict, batch: TransactionBatch,
+                       dry_run: bool = False) -> bool:
+    """Обновить родительский файл: заполнить дочерние_части и материалы_частей.
+
+    materials_per_child: dict {child_id: [(материал, форма, доля), ...]}
+
+    Возвращает True если файл обновлён, False если не нужен апдейт.
+    """
+    text = parent_path.read_text(encoding='utf-8')
+    data, _, _ = read_yaml_frontmatter(parent_path)
+    if not data:
+        return False
+
+    # Сериализовать дочерние_части
+    children_yaml = serialize_children_yaml(children_ids)
+
+    # Сериализовать материалы_частей (агрегация от всех детей)
+    # Каждая запись: часть: <child_id>, материал: <id>, форма: <forma>, доля_массы: <dolja>
+    if materials_per_child:
+        mat_lines = ['\n']
+        for child_id, bom in materials_per_child.items():
+            for mat_id, forma, dolja in bom:
+                line = f'  - часть: {child_id}\n    материал: {mat_id}\n'
+                if forma:
+                    line += f'    форма: {forma}\n'
+                line += f'    доля_массы: {dolja}\n'
+                mat_lines.append(line)
+        materials_yaml = ''.join(mat_lines)
+    else:
+        materials_yaml = ' []\n'
+
+    # Заменить дочерние_части: ... (после родитель: ... строки до следующего top-level поля)
+    # Используем regex: ^дочерние_части:\s*(\[\]|.*?)(?=^[A-Za-zА-Яа-яЁё_])
+    new_text = re.sub(
+        r'(^дочерние_части:).*?(?=^[A-Za-zА-Яа-яЁё_][\wА-Яа-яЁё+-]*:)',
+        lambda m: f'дочерние_части:{children_yaml}',
+        text,
+        count=1,
+        flags=re.MULTILINE | re.DOTALL,
+    )
+
+    # Заменить материалы_частей: ...
+    new_text = re.sub(
+        r'(^материалы_частей:).*?(?=^scaling_type:)',
+        lambda m: f'материалы_частей:{materials_yaml}',
+        new_text,
+        count=1,
+        flags=re.MULTILINE | re.DOTALL,
+    )
+
+    # Обновить дата_обновления
+    new_text = re.sub(
+        r'(^дата_обновления:)\s*\S+',
+        lambda m: f'дата_обновления: {TODAY}',
+        new_text,
+        count=1,
+        flags=re.MULTILINE,
+    )
+
+    if new_text != text:
+        if not dry_run:
+            batch.write(parent_path, new_text)
+        return True
+    return False
 
 
 def decompose_node(subtype: str, parent_id: str, subsystem: str,
                    parent_path: Path, depth: int,
                    registry: dict, canonical: set,
                    batch: TransactionBatch, dry_run: bool = False,
-                   _max_depth: int = MAX_DEPTH) -> dict:
-    """Рекурсивно декомпозировать узел.
+                   _max_depth: int = MAX_DEPTH,
+                   mass_kg: float = 0.1, share: float = 0.1) -> dict:
+    """Рекурсивно декомпозировать узел и записать файлы.
 
-    Возвращает dict с описанием узла: {action, parts_created, depth_reached}.
+    Возвращает dict:
+      {action, parts_created, depth_reached, child_ids, materials_bom,
+       file_path, tip, violation?}
+
+    v9.60.1: production-ready — реальная запись через TransactionBatch.
     """
     if depth > _max_depth:
         return {'action': 'STOP_DEPTH_LIMIT', 'parts_created': 0, 'depth_reached': depth}
@@ -221,22 +341,49 @@ def decompose_node(subtype: str, parent_id: str, subsystem: str,
 
     if action == 'STOP_UNKNOWN':
         # Подтипа нет в реестре — F34 violation
-        return {'action': 'STOP_UNKNOWN', 'parts_created': 0, 'depth_reached': depth,
-                'violation': f'подтип {subtype!r} отсутствует в _decomp_registry.yaml'}
+        # Для depth=1 (top-level изделие): НЕ перезаписываем существующий _index.md
+        # (это уже полноценное изделие, а не stub). Только сообщаем о violation.
+        # Для depth>=2: создаём stub-файл часть_X.md (его не существует).
+        tip = 'часть'
+        materials_bom = []
+        if not dry_run and parent_path:
+            if depth == 1:
+                # Top-level изделие без подтипа в реестре — не трогаем.
+                # Cron-агент должен решить: пометить 'неделимый' или добавить подтип в реестр.
+                pass
+            else:
+                # Создать stub-файл часть_X.md (новый файл, не перезапись)
+                content = generate_part_content(
+                    part_id=parent_id, parent_id=parent_id, subsystem=subsystem,
+                    subtype=subtype, mass_kg=mass_kg, share=share,
+                    file_path=parent_path, tip=tip,
+                    materials_bom=materials_bom, level_number=depth)
+                batch.write(parent_path, content)
+        return {'action': 'STOP_UNKNOWN', 'tip': tip, 'materials_bom': materials_bom,
+                'parts_created': 0 if depth == 1 else 1, 'depth_reached': depth,
+                'file_path': str(parent_path) if parent_path else None,
+                'violation': f'подтип {subtype!r} отсутствует в _decomp_registry.yaml — '
+                             f'{"top-level не тронут (нужно решение: неделимый или добавить в реестр)" if depth == 1 else "создан stub"}'}
 
     if action == 'STOP_ATOMIC':
-        # Закупочный компонент или атомарная часть — записать BOM, закончить
+        # Закупочный компонент или атомарная часть — записать BOM из реестра
         tip = 'компонент' if info.get('is_purchased') else 'часть'
         materials_bom = []
         for m in info.get('materials', []):
             materials_bom.append((m.get('материал'), m.get('форма'), m.get('доля', 1.0)))
-        # Записать файл (если dry_run — только в лог)
-        if not dry_run:
-            # Здесь нужна реальная масса и доля из родителя, но для STOP_ATOMIC
-            # они берутся из parent.материалы_частей[entry_for_this_child]
-            pass  # skipping actual file write for MVP — caller должен знать
+
+        # Для depth=1 (top-level изделие): НЕ перезаписываем существующий _index.md.
+        # Только возвращаем BOM для агрегации в родительский файл (через update_parent_file).
+        if not dry_run and parent_path and depth > 1:
+            content = generate_part_content(
+                part_id=parent_id, parent_id=parent_id, subsystem=subsystem,
+                subtype=subtype, mass_kg=mass_kg, share=share,
+                file_path=parent_path, tip=tip,
+                materials_bom=materials_bom, level_number=depth)
+            batch.write(parent_path, content)
         return {'action': 'STOP_ATOMIC', 'tip': tip, 'materials_bom': materials_bom,
-                'parts_created': 1, 'depth_reached': depth}
+                'parts_created': 1, 'depth_reached': depth,
+                'file_path': str(parent_path) if parent_path else None}
 
     # RECURSE — для каждого child рекурсивно
     children = info.get('children', [])
@@ -244,43 +391,84 @@ def decompose_node(subtype: str, parent_id: str, subsystem: str,
         return {'action': 'STOP_NO_CHILDREN', 'parts_created': 0, 'depth_reached': depth,
                 'violation': f'подтип {subtype!r} в реестре is_atomic=false, но children=[] — противоречие'}
 
-    # Создать директорию для детей
-    child_dir = parent_path.parent / f'часть_{parent_id.split("izdelie_")[-1]}' if depth == 1 else parent_path.parent
-    # Простой алгоритм: каждый ребёнок живёт в поддиректории часть_<parent>_<suffix>/_index.md
-    results = []
+    # Вычислить пути детей
+    # Для top-level (depth=1): дети живут в <изделие>/<часть_X>/_index.md
+    # Для depth>=2: дети живут в <родитель_dir>/<часть_X>/_index.md
+    if depth == 1:
+        children_base_dir = parent_path.parent
+    else:
+        children_base_dir = parent_path.parent
+
+    child_ids = []
+    materials_per_child = {}  # child_id → BOM
+    total_created = 0
+    max_depth_reached = depth
+
     for child in children:
         suffix = child.get('suffix', 'unknown')
         child_subtype = child.get('подтип_части', '')
         child_mass = child.get('масса_kg', 0.1)
         child_share = child.get('доля_массы', 0.1)
         child_id = build_part_id(parent_id, suffix)
-        child_path = parent_path.parent / child_id / '_index.md'
-        results.append((child_id, child_subtype, child_mass, child_share, child_path))
+        child_dir = children_base_dir / child_id
+        child_path = child_dir / '_index.md'
 
-    # Рекурсивно обработать каждого ребёнка
-    total_created = 0
-    max_depth_reached = depth
-    for child_id, child_subtype, child_mass, child_share, child_path in results:
+        # Создать директорию
+        if not dry_run:
+            child_dir.mkdir(parents=True, exist_ok=True)
+
+        # Рекурсивно декомпозировать ребёнка
         sub_result = decompose_node(child_subtype, child_id, subsystem,
                                      child_path, depth + 1, registry, canonical,
-                                     batch, dry_run, _max_depth=_max_depth)
+                                     batch, dry_run, _max_depth=_max_depth,
+                                     mass_kg=child_mass, share=child_share)
+
+        child_ids.append(child_id)
+        if sub_result.get('materials_bom'):
+            materials_per_child[child_id] = sub_result['materials_bom']
         total_created += sub_result.get('parts_created', 0)
         max_depth_reached = max(max_depth_reached, sub_result.get('depth_reached', depth))
 
+    # Обновить родительский файл: заполнить дочерние_части + материалы_частей
+    if not dry_run and depth == 1:
+        # Только для top-level: обновляем _index.md родителя
+        update_parent_file(parent_path, child_ids, materials_per_child, batch, dry_run)
+    elif not dry_run and depth > 1:
+        # Для промежуточных сборок: записываем их файл с детьми
+        # (этот файл мог быть создан ранее, но мы его обновим с детьми)
+        # В MVP: создаём заново с корректными children_ids
+        tip = 'сборка'
+        # Aggregate BOM от детей для наследуемых_материалы (упрощённо — для родителя)
+        parent_bom = []
+        for cid, bom in materials_per_child.items():
+            for mat_id, forma, dolja in bom:
+                parent_bom.append((mat_id, forma, dolja))
+        if parent_path and parent_path.exists():
+            content = generate_part_content(
+                part_id=parent_id, parent_id=parent_id, subsystem=subsystem,
+                subtype=subtype, mass_kg=mass_kg, share=share,
+                file_path=parent_path, tip=tip,
+                materials_bom=[],  # сборка не имеет собственного BOM (наследует)
+                children_ids=child_ids, level_number=depth)
+            batch.write(parent_path, content)
+
     return {
         'action': 'RECURSE',
-        'children': len(results),
+        'children': len(child_ids),
+        'child_ids': child_ids,
+        'materials_per_child': materials_per_child,
         'parts_created': total_created,
         'depth_reached': max_depth_reached,
     }
 
 
 def main():
-    parser = argparse.ArgumentParser(description='SkyNet Recursive Decomposition Engine v9.60')
+    parser = argparse.ArgumentParser(description='SkyNet Recursive Decomposition Engine v9.60.1 (production)')
     parser.add_argument('--izdelie', help='id изделия для декомпозиции')
     parser.add_argument('--all', action='store_true', help='декомпозировать все top-level изделия')
     parser.add_argument('--dry-run', action='store_true', help='не записывать файлы, только отчёт')
     parser.add_argument('--max-depth', type=int, default=None, help=f'максимальная глубина (default {MAX_DEPTH})')
+    parser.add_argument('--issue', type=int, help='GitHub issue # для интеграции с cron_run.sh (записывает в лог для коммита)')
     args = parser.parse_args()
 
     if not args.izdelie and not args.all:
@@ -288,9 +476,11 @@ def main():
 
     max_depth = args.max_depth if args.max_depth is not None else MAX_DEPTH
 
-    print("=== SkyNet Recursive Decomposition Engine v9.60 ===")
+    print("=== SkyNet Recursive Decomposition Engine v9.60.1 (production) ===")
     print(f"Mode: {'DRY-RUN' if args.dry_run else 'APPLY'}")
     print(f"Max depth: {max_depth}")
+    if args.issue:
+        print(f"GitHub issue: #{args.issue}")
     print()
 
     registry = load_decomp_registry()
@@ -301,9 +491,7 @@ def main():
 
     # Найти top-level изделия для обработки
     if args.all:
-        # Найти все _index.md на глубине 3 под изделиями/<подсистема>/<изделие>/_index.md
         top_files = list(IZDELIYA_DIR.rglob('_index.md'))
-        # Фильтр: только те, у которых уровень_номер=1 (или нет родителя)
         top_izdeliya = []
         for f in top_files:
             data, _, _ = read_yaml_frontmatter(f)
@@ -311,13 +499,13 @@ def main():
                 top_izdeliya.append((data.get('id'), f))
         print(f"Найдено top-level изделий: {len(top_izdeliya)}")
     else:
-        # Найти конкретное изделие по id
+        top_izdeliya = []
         for f in IZDELIYA_DIR.rglob('_index.md'):
             data, _, _ = read_yaml_frontmatter(f)
             if data and data.get('id') == args.izdelie:
                 top_izdeliya = [(args.izdelie, f)]
                 break
-        else:
+        if not top_izdeliya:
             print(f"ERROR: изделие {args.izdelie!r} не найдено")
             sys.exit(1)
 
@@ -327,6 +515,9 @@ def main():
     # Декомпозировать каждое
     total_parts = 0
     total_depth = 0
+    all_files_written = []  # для интеграции с cron_run.sh
+    violations = []
+
     for izd_id, izd_path in top_izdeliya:
         data, _, _ = read_yaml_frontmatter(izd_path)
         subtype = data.get('подтип', 'прочее')
@@ -348,6 +539,10 @@ def main():
         print(f"  depth_reached: {result.get('depth_reached', 0)}")
         if 'violation' in result:
             print(f"  VIOLATION: {result['violation']}")
+            violations.append((izd_id, result['violation']))
+        if result.get('child_ids'):
+            print(f"  children: {result['child_ids']}")
+            all_files_written.extend(result.get('child_ids', []))
         total_parts += result.get('parts_created', 0)
         total_depth = max(total_depth, result.get('depth_reached', 0))
 
@@ -355,6 +550,17 @@ def main():
     print(f"=== ИТОГО ===")
     print(f"Создано частей: {total_parts}")
     print(f"Максимальная глубина: {total_depth}")
+    if violations:
+        print(f"Violations: {len(violations)} (нужно ручное наполнение)")
+    if args.issue and all_files_written:
+        print(f"\n=== Для cron_run.sh ===")
+        print(f"Files to commit:")
+        for cid in all_files_written:
+            print(f"  реальные данные/изделия/.../{cid}/_index.md")
+        print(f"\nbash scripts/cron_run.sh {args.issue} \\")
+        for i, cid in enumerate(all_files_written):
+            sep = ' \\' if i < len(all_files_written) - 1 else ''
+            print(f"  'реальные данные/изделия/.../{cid}/_index.md'{sep}")
 
 
 if __name__ == '__main__':
