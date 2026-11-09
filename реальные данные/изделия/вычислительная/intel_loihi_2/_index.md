@@ -47,6 +47,28 @@ id: izdelie_intel_loihi_2
     материал: fr4
     форма: несущая_плата_PCB
     доля_массы: 0.16
+наследуемые_материалы:
+  - материал: copper
+    суммарная_доля_массы: 0.18
+    источники_частей: [часть_intel_loihi_2_thermal_spreader]
+  - материал: fr4
+    суммарная_доля_массы: 0.16
+    источники_частей: [часть_intel_loihi_2_pcb]
+  - материал: ptfe
+    суммарная_доля_массы: 0.14
+    источники_частей: [часть_intel_loihi_2_substrate]
+  - материал: si
+    суммарная_доля_массы: 0.1
+    источники_частей: [часть_intel_loihi_2_die]
+  - материал: splav_sn-pb
+    суммарная_доля_массы: 0.1
+    источники_частей: [часть_intel_loihi_2_pins_balls]
+  - материал: epoksid_epon_828_teta
+    суммарная_доля_массы: 0.1
+    источники_частей: [часть_intel_loihi_2_encapsulant]
+  - материал: batio3
+    суммарная_доля_массы: 0.1
+    источники_частей: [часть_intel_loihi_2_capacitors]
 
 технологии_частей:
   - часть: часть_intel_loihi_2_die
@@ -118,7 +140,7 @@ scaling_type: количественный
   процесс: Intel 4 (7nm EUV)
   источник: open-neuromorphic.org/hardware/loihi-2-intel
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-09
+дата_обновления: 2026-11-10
 источник: web_search
 источник_разбора: веб-верификация
 источник_url: https://www.intel.com/content/www/us/en/research/neuromorphic-computing-loihi-2-technology
