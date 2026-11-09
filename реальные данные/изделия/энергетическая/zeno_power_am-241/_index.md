@@ -22,12 +22,15 @@ id: izdelie_zeno_power_am-241
     доля_массы: 0.38
   - часть: часть_zeno_power_am-241_thermocouples
     материал: bi2te3
+    форма: ртг_низкотемпературная_ступень
     доля_массы: 0.27
   - часть: часть_zeno_power_am-241_shielding
     материал: tungsten_alloy
+    форма: heavy_alloy_W_Ni_Fe_Cu
     доля_массы: 0.475
   - часть: часть_zeno_power_am-241_housing
     материал: stainless_steel_316
+    форма: поликристаллический_прокат
     доля_массы: 0.285
 технологии_частей:
   - часть: часть_zeno_power_am-241_isotope
