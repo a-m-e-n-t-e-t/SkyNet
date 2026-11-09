@@ -4049,5 +4049,104 @@
   "used_in_issues": [
    2371
   ]
+ },
+ {
+  "query": "NASA ASC-E advanced stirling convertor heater head inconel 625 manufacturing brazed additive manufacturing Sunpower",
+  "keywords": [
+   "ASC-E",
+   "heater head",
+   "Inconel 625",
+   "850 C",
+   "Sunpower",
+   "brazing"
+  ],
+  "results": [
+   {
+    "url": "https://ntrs.nasa.gov/api/citations/20100040685/downloads/20100040685.pdf",
+    "name": "Advanced Stirling Convertor Testing at NASA Glenn",
+    "snippet": "by SD Wilson · 2010 · Cited by 6 — The ASC was designed and fabricated by Sunpower , Inc., under contract to NASA GRC. The ASC – E convertors utilize Inconel 718 heater heads … from 650 to 850 °C. 12 pages",
+    "host_name": "ntrs.nasa.gov",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://pdfs.semanticscholar.org/845c/59b8b7467c8df6392df79b16f60ad900cc31.pdf",
+    "name": "Advanced Stirling Convertor (ASC)",
+    "snippet": "by WA Wong · 2008 · Cited by 33 — The Advanced Stirling Convertor ( ASC ) is being developed by Sunpower , Inc. heater head ASC -0s (650°C); includes convertor , component, and ... 26 pages",
+    "host_name": "pdfs.semanticscholar.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.477.1290&rep=rep1&type=pdf",
+    "name": "Advanced Stirling Technology Development at NASA",
+    "snippet": "by RK Shaltens · Cited by 54 — The ASC consists of the free- piston Stirling engine integrated with a linear alternator to produce electricity. use of high temperature heater head materials ...",
+    "host_name": "citeseerx.ist.psu.edu",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESjAEBxCJF14tz476NFXpt8BwT34c_c9awn5jVcG0xs5OvO5zeFBoT4krz1Ro4adok9jNJYBwjEpvorV1o4uS2p50F05ffqhf0VwUIyFEEOuolwuzBkadyXVrqAx-n2caRC34bSjOrISzNbqDzLFM1012H2z9tqubwjsDHKpI0gjlDXjN9TQOXcP6YxvUzbQ",
+    "name": "Advanced Stirling Convertor Development for NASA",
+    "snippet": "by WA Wong · 2015 · Cited by 5 — the ASC –E2 required the development of a new heater head assembly design and manufacturing process making use of high-temperature nickel ... 22 pages",
+    "host_name": "www.google.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAEShgEBxCJF1_ULySZ9t9vb87tDDUWucA-IZLxHWYg__Zr2rd2PC3iP1oeExOq9XyDlX8j93o3IeAAQe5jTdOOP9btl2IxzNUJPcty04Jc7AlgowMyaz7IMtNOLfnBMO9ozSwQxs0bA5Ix3RSvSxfoudpH0c_EZxNKSKCOKvNsIVNJqn48SpRzDOQ",
+    "name": "Pathfinding the Flight Advanced Stirling Convertor Design",
+    "snippet": "by WA Wong · 2012 · Cited by 20 — The Advanced Stirling Convertor ( ASC ) was initially developed by Sunpower , Inc. New integrated 247-LC heater head design for increased creep life margin and ...",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESmgEBxCJF10GpRUFC1MaMEiosJrXzdfioMERVPRm0w2uTEJ7FJY3NG_3eiuMpF81fakus_uTE0vSlgEdYMjs144zio-Qh-mAjjGKAEWfUARubEl_T0soA2PTTO3NgX6Qk4W8QOfmVL6_fO8Cc_sVHpN2-pjhoeC6IOIrMgeFf6KnhptCx6VroeoxBlLlaQ53TIisWkHRVV-Vdev1Y",
+    "name": "Advanced Stirling Convertor (ASC) Technology Maturation",
+    "snippet": "The new heater head capable of maximum temperature operation of 850°C utilized 247LC nickel-based superalloy and required all-new production and processing. Read more",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESpgEBxCJF1-Kafjb-qpKtYG6R2s-pjwGlMxpjIw2CeAZgJh-jtuT3xKpPx8cV_lw39BJzTi9xE8inMhBCOE23fc6uj_440XZ22CP_pU0I7GDF2CA6No5mnY77VO9deufy4V6Jf53H0vcVzl5N_U-PjP0ooCcwcJe77_OAGxbzfZ_yvSMZQdTakhB8a-eHsZGgDC79aBhzVuHR81sv5yHAIT5Cso7oxbf3",
+    "name": "Advanced 80 We Stirling Convertor Development Progress",
+    "snippet": "May 23, 2026 — The ASC will use a high temperature heater head to allow for operation at 850 °C. The ASC is projected to have an efficiency approaching 40%",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "May 23, 2026",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESlAEBxCJF11SUBqHeT5hJ5VB_jHR_gb0GL9JyEovwWPmOcFbIQEuBQbmNfwdRaxGZnWmuND6wZ1enKBvwAPcOijRlAPRCpzcd1SKxxLSnOa1JzrQuv1cnNRos954esLiOdlapgapBZEOyXhkgKpqnu29hMvUWGXjzB06X5g3odJFY3VL330jGBKIl4deaRBjYc6huD8B4",
+    "name": "SRSC Sunpower Robust Stirling Convertor Overview NETS",
+    "snippet": "The SRSC project is aimed at developing a highly efficient, robust power conversion technology for use in generators for future deep space robotic exploration",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESZwHEIkXXST0Jpv4bpQodFDssz6L9vs8thev6UrNkENYwDLG6ZE83qt-QS2to1Ymr2YqjhB5aQPRZcL1Z3MP0ekNHrEC2JL9BMlxSLMh-ratIBiywKbmGwkBbJMUUNQJnlh-AnJRiaQs",
+    "name": "Status of the Advanced Stirling Conversion System Project",
+    "snippet": "by RK Shaltens · 1990 · Cited by 16 — Each. \"system\" design features a solar receiver/liquid metal heat transport system, and a free-piston Stirling converter with a means to provide nominally 25 kW ... Read more",
+    "host_name": "www.google.com",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+   }
+  ],
+  "created_at": "2026-11-09T04:13:55Z",
+  "usage_count": 1,
+  "used_in_issues": [
+   2373
+  ]
  }
 ]

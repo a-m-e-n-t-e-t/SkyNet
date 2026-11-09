@@ -20,9 +20,11 @@ id: izdelie_nasa_asc-e_srsc
 материалы_частей:
   - часть: часть_nasa_asc-e_srsc_heater_head
     материал: inconel_625
+    форма: авиакосмические_двигатели
     доля_массы: 0.19
   - часть: часть_nasa_asc-e_srsc_regenerator
     материал: stainless_steel_mesh
+    форма: сетка_регенератора_стирлинга
     доля_массы: 0.095
   - часть: часть_nasa_asc-e_srsc_displacer_piston
     материал: inconel_718
@@ -36,6 +38,45 @@ id: izdelie_nasa_asc-e_srsc
   - часть: часть_nasa_asc-e_srsc_cooler
     материал: al_6061-t6
     доля_массы: 0.067
+
+технологии_частей:
+  - часть: часть_nasa_asc-e_srsc_heater_head
+    технология: ebw
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: inconel_625
+        роль: обрабатываемый
+  - часть: часть_nasa_asc-e_srsc_regenerator
+    технология: vakuumnoe_spekanie
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: stainless_steel_mesh
+        роль: обрабатываемый
+  - часть: часть_nasa_asc-e_srsc_displacer_piston
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: inconel_718
+        роль: обрабатываемый
+  - часть: часть_nasa_asc-e_srsc_power_piston
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: inconel_718
+        роль: обрабатываемый
+  - часть: часть_nasa_asc-e_srsc_alternator
+    технология: izolirovannye_emalyu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: copper
+        роль: обрабатываемый
+  - часть: часть_nasa_asc-e_srsc_cooler
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
+
 scaling_type: количественный
 соединители: []
 версия: реальная
