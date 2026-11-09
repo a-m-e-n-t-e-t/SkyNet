@@ -15,7 +15,16 @@ id: часть_kondensatory_keramicheskie_ceramic_layers
 материалы_частей:
   - часть: часть_kondensatory_keramicheskie_ceramic_layers
     материал: batio3
+    форма: X7R_MLCC_класс_II_EIA
     доля_массы: 1.0
+
+технологии_частей:
+  - часть: часть_kondensatory_keramicheskie_ceramic_layers
+    технология: vakuumnoe_spekanie
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: batio3
+        роль: обрабатываемый
 
 scaling_type: количественный
 соединители: []
@@ -42,7 +51,7 @@ scaling_type: количественный
   V_max_V: 50
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
+дата_обновления: 2026-11-09
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.tme.eu/rs/en/details/gcg21br71h105ma01k/mlcc-smd-capacitors/murata

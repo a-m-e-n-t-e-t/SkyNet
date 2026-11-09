@@ -16,7 +16,16 @@ id: часть_kondensatory_keramicheskie_plating
 материалы_частей:
   - часть: часть_kondensatory_keramicheskie_plating
     материал: tin_metal
+    форма: matte_sn_покрытие_MLCC
     доля_массы: 1.0
+
+технологии_частей:
+  - часть: часть_kondensatory_keramicheskie_plating
+    технология: galvanika
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: tin_metal
+        роль: обрабатываемый
 
 scaling_type: количественный
 соединители: []
@@ -39,7 +48,7 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
+дата_обновления: 2026-11-09
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.doeeet.com/content/eee-components/passive-components/mlcc-manufacturing-process

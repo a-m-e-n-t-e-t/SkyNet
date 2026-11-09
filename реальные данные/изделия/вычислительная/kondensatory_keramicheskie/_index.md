@@ -28,12 +28,15 @@ id: izdelie_kondensatory_keramicheskie
     доля_массы: 0.19
   - часть: часть_kondensatory_keramicheskie_outer_electrodes
     материал: copper
+    форма: внешние_электроды_и_терминация_MLCC
     доля_массы: 0.08
   - часть: часть_kondensatory_keramicheskie_termination
     материал: copper
+    форма: внешние_электроды_и_терминация_MLCC
     доля_массы: 0.09
   - часть: часть_kondensatory_keramicheskie_plating
-    материал: tin
+    материал: tin_metal
+    форма: matte_sn_покрытие_MLCC
     доля_массы: 0.09
 
 технологии_частей:
@@ -65,8 +68,32 @@ id: izdelie_kondensatory_keramicheskie
     технология: galvanika
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: tin
+      - материал: tin_metal
         роль: обрабатываемый
+
+наследуемые_материалы:
+  - материал: batio3
+    форма: X7R_MLCC_класс_II_EIA
+    суммарная_доля_массы: 0.475
+    источники_частей:
+      - часть_kondensatory_keramicheskie_ceramic_layers
+  - материал: nickel
+    форма: внутренние_электроды_MLCC_BME
+    суммарная_доля_массы: 0.19
+    источники_частей:
+      - часть_kondensatory_keramicheskie_inner_electrodes
+  - материал: copper
+    форма: внешние_электроды_и_терминация_MLCC
+    суммарная_доля_массы: 0.17
+    источники_частей:
+      - часть_kondensatory_keramicheskie_outer_electrodes
+      - часть_kondensatory_keramicheskie_termination
+  - материал: tin_metal
+    форма: matte_sn_покрытие_MLCC
+    суммарная_доля_массы: 0.09
+    источники_частей:
+      - часть_kondensatory_keramicheskie_plating
+
 
 scaling_type: количественный
 соединители: []

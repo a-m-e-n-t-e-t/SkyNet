@@ -15,7 +15,16 @@ id: часть_kondensatory_keramicheskie_inner_electrodes
 материалы_частей:
   - часть: часть_kondensatory_keramicheskie_inner_electrodes
     материал: nickel
+    форма: внутренние_электроды_MLCC_BME
     доля_массы: 1.0
+
+технологии_частей:
+  - часть: часть_kondensatory_keramicheskie_inner_electrodes
+    технология: pogruzhenie_v_mo-shliker
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: nickel
+        роль: обрабатываемый
 
 scaling_type: количественный
 соединители: []
@@ -38,7 +47,7 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
+дата_обновления: 2026-11-09
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.jsap.or.jp/jsapi/Pdf/Number08/04_InvitedReviewPaper.pdf

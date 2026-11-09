@@ -15,7 +15,16 @@ id: часть_kondensatory_keramicheskie_termination
 материалы_частей:
   - часть: часть_kondensatory_keramicheskie_termination
     материал: copper
+    форма: внешние_электроды_и_терминация_MLCC
     доля_массы: 1.0
+
+технологии_частей:
+  - часть: часть_kondensatory_keramicheskie_termination
+    технология: galvanika
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: copper
+        роль: обрабатываемый
 
 scaling_type: количественный
 соединители: []
@@ -38,7 +47,7 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
+дата_обновления: 2026-11-09
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.tdk-electronics.tdk.com/en/374108/tech-library/articles/products-technologies/products-technologies/tdk-expands-mlcc-lineup-with-new-state-of-the-art-low-resistance-soft-termination-types/3181946

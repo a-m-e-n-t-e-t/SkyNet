@@ -15,7 +15,16 @@ id: часть_kondensatory_keramicheskie_outer_electrodes
 материалы_частей:
   - часть: часть_kondensatory_keramicheskie_outer_electrodes
     материал: copper
+    форма: внешние_электроды_и_терминация_MLCC
     доля_массы: 1.0
+
+технологии_частей:
+  - часть: часть_kondensatory_keramicheskie_outer_electrodes
+    технология: pogruzhenie_v_mo-shliker
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: copper
+        роль: обрабатываемый
 
 scaling_type: количественный
 соединители: []
@@ -38,7 +47,7 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
+дата_обновления: 2026-11-09
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.doeeet.com/content/eee-components/passive-components/mlcc-manufacturing-process
