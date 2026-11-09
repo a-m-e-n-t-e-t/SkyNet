@@ -29,13 +29,16 @@ id: izdelie_tverdotelnye_akkumulyatory
     форма: nmc811_высоконикелевый
     доля_массы: 0.34
   - часть: часть_tverdotelnye_akkumulyatory_electrolyte
-    материал: lipf6_ec_dmc
+    материал: li7la3zr2o12
+    форма: твёрдый_электролит_ASSB
     доля_массы: 0.19
   - часть: часть_tverdotelnye_akkumulyatory_separator
-    материал: pe_pp
+    материал: poliimid
+    форма: сепараторная_мембрана_ссб
     доля_массы: 0.038
   - часть: часть_tverdotelnye_akkumulyatory_current_collector_cu
     материал: copper
+    форма: фольга_токосъёмника_анода
     доля_массы: 0.0792
   - часть: часть_tverdotelnye_akkumulyatory_current_collector_al
     материал: aluminum
@@ -61,13 +64,13 @@ id: izdelie_tverdotelnye_akkumulyatory
     технология: vio
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: lipf6_ec_dmc
+      - материал: li7la3zr2o12
         роль: обрабатываемый
   - часть: часть_tverdotelnye_akkumulyatory_separator
     технология: plazmennaya_aktivatsiya
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: pe_pp
+      - материал: poliimid
         роль: обрабатываемый
   - часть: часть_tverdotelnye_akkumulyatory_current_collector_cu
     технология: galvanika
@@ -122,7 +125,7 @@ scaling_type: количественный
   источник_url: https://www.quantumscape.com/blog/a-first-look-at-the-qse-5-b-sample
   обоснование_габаритов: 'формат pouch-ячейки 5 Ач: footprint 100×50 мм, толщина 10 мм (V=50 см³ × 844 Вт·ч/л = 42 Вт·ч теоретический потолок объёма; фактическая энергия QSE-5 21.6 Вт·ч при 25.6 см³ активной зоны — запас на корпус/разгрузку слоёв); дети (электродные слои 100×50×~1 мм, фольга корпуса 100×50×0.294 мм) вложены по обеим проверкам F15g: Σ V(детей)=12 434 мм³ × 1.15 = 14 300 ≤ 50 000 мм³; оси 100≥100, 50≥50, 10≥1'
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
+дата_обновления: 2026-11-09
 источник: user_input
 источник_разбора: пользовательский ввод
 ---
