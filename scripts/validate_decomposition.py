@@ -3932,6 +3932,338 @@ def check_F35(izdeliya: dict[str, dict]) -> dict:
 
 
 # ============================================================================
+# F36: BODY MARKDOWN STRUCTURE (v9.61 NEW)
+# ============================================================================
+# Проверяет структуру markdown body, а не frontmatter.
+# Валидатор F12a-F35 работают с YAML frontmatter; F36 проверяет body.
+#
+# Под-проверки:
+#   F36a: обязательные секции (##) для каждого типа файла
+#   F36b: malformed таблицы (неровное число столбцов)
+#   F36c: body↔frontmatter согласованность
+#         (## Используемые материалы ↔ frontmatter.материалы_частей,
+#          ## Состав ↔ frontmatter.дочерние_части)
+#
+# NON-BLOCKING в v9.61 Фазе 1 — все violations идут в очередь verify-task.
+
+# Канонические секции для каждого типа (H2 заголовки)
+_CANONICAL_SECTIONS_BY_TYPE = {
+    'изделие': ['## Описание', '## Технические характеристики', '## Состав',
+                '## Используемые материалы', '## Принцип работы', '## Источники'],
+    'сборка': ['## Описание', '## Технические характеристики', '## Принцип работы',
+               '## Состав', '## Используемые материалы', '## Источники'],
+    'часть': ['## Описание', '## Технические характеристики', '## Принцип работы',
+              '## Состав', '## Используемые материалы', '## Источники'],
+    'материал': ['## Описание', '## Источники'],  # минимально; опц: Физические свойства, Механические свойства, Химический состав
+    'технология': ['## Описание', '## Источники'],
+    'стандарт': ['## Описание', '## Источники'],
+}
+
+# Известные синонимы секций (заменять на канонические)
+_SECTION_SYNONYMS = {
+    '## Общее описание': '## Описание',
+    '## Источники (F28)': '## Источники',
+    '## Источники (F27)': '## Источники',
+    '## Механические свойства (включая усталостную прочность и крип)': '## Механические свойства',
+    '## Химический состав и структура': '## Химический состав',
+    '## Технологии применения': '## Технологии получения',
+    '## Альтернативы': '## Альтернативные технологии',
+}
+
+
+def _read_body(path: Path) -> str:
+    """Прочитать markdown body (без frontmatter)."""
+    text = path.read_text(encoding='utf-8')
+    if text.startswith('---'):
+        end = text.find('\n---', 3)
+        if end != -1:
+            return text[end + 4:]
+    return text
+
+
+def _extract_h2_sections(body: str) -> list:
+    """Извлечь список H2 заголовков из body в порядке появления."""
+    import re
+    return re.findall(r'^##\s+(.+?)\s*$', body, re.MULTILINE)
+
+
+def _normalize_section(name: str) -> str:
+    """Нормализовать имя секции через синонимы."""
+    full = f'## {name}'
+    if full in _SECTION_SYNONYMS:
+        return _SECTION_SYNONYMS[full]
+    return full
+
+
+def _check_malformed_tables(body: str) -> list:
+    """Найти malformed таблицы (неровное число столбцов).
+
+    Возвращает список описаний нарушений.
+    """
+    import re
+    violations = []
+    # Найти все таблицы (начинаются с |...|\n|---|...)
+    lines = body.split('\n')
+    in_table = False
+    table_start = 0
+    header_cols = 0
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if stripped.startswith('|') and stripped.endswith('|'):
+            cols = stripped.count('|') - 1  # количество столбцов
+            if not in_table:
+                # начало таблицы — это header
+                in_table = True
+                table_start = i
+                header_cols = cols
+            elif cols != header_cols and header_cols > 0:
+                # строка с другим числом столбцов — malformed
+                violations.append(
+                    f"malformed таблица: строка {i+1} имеет {cols} столбцов "
+                    f"(ожидалось {header_cols}) — проверьте лишний '| canon |' суффикс")
+                # не выходим из таблицы (может быть ещё больше нарушений)
+        else:
+            if in_table:
+                in_table = False
+                header_cols = 0
+    return violations
+
+
+def _check_body_fm_consistency(body: str, data: dict) -> list:
+    """Проверить согласованность body↔frontmatter.
+
+    Проверки:
+    - "## Состав" должен упоминать дочерние_части (если они есть)
+    - "## Используемые материалы" должен содержать ссылки (если материалы_частей есть)
+    """
+    import re
+    violations = []
+
+    # Найти секцию "## Состав"
+    m = re.search(r'^##\s+Состав\s*$(.*?)(?=^##\s|\Z)', body, re.MULTILINE | re.DOTALL)
+    if m:
+        section = m.group(1)
+        # Если в frontmatter есть дочерние_части, body должен их упоминать
+        children = data.get('дочерние_части', [])
+        if isinstance(children, list) and children:
+            # body говорит "Дочерних частей нет" / "не указаны"?
+            if re.search(r'(?:дочерних\s+частей\s+нет|не\s+указаны|нет\s+дочерних)', section, re.IGNORECASE):
+                violations.append(
+                    f"## Состав body говорит 'дочерних частей нет/не указаны', "
+                    f"но frontmatter содержит {len(children)} дочерних_частей — "
+                    f"обновите текст body")
+
+    # Найти секцию "## Используемые материалы"
+    m = re.search(r'^##\s+Используемые\s+материалы\s*$(.*?)(?=^##\s|\Z)', body, re.MULTILINE | re.DOTALL)
+    if m:
+        section = m.group(1)
+        materials = data.get('материалы_частей', [])
+        if isinstance(materials, list) and materials:
+            # body содержит placeholder?
+            if re.search(r'(?:добавляются\s+после\s+связывания|ссылки\s+на\s+реальные_данные|'
+                         r'_обратные\s+ссылки\s+ещё\s+не\s+проставлены_)', section, re.IGNORECASE):
+                violations.append(
+                    f"## Используемые материалы body содержит placeholder "
+                    f"('добавляются после связывания'), но frontmatter материалы_частей "
+                    f"заполнен ({len(materials)} записей) — отрендерите ссылки в body")
+
+    return violations
+
+
+def check_F36(entries: list | None = None) -> dict:
+    """F36: Body markdown structure (v9.61).
+
+    NON-BLOCKING. Проверяет:
+    - F36a: обязательные секции (##) для каждого типа файла
+    - F36b: malformed таблицы (неровное число столбцов)
+    - F36c: body↔frontmatter согласованность
+    """
+    import re as _re
+    violations = []
+    total = 0
+    valid = 0
+
+    if entries is None:
+        # Загрузить все записи самосто­ятельно
+        all_entries = _load_all_catalog_entries()
+    else:
+        all_entries = entries
+
+    for path, cat, data in all_entries:
+        if not isinstance(data, dict):
+            continue
+        tip = str(data.get('тип', '')).strip()
+        izd_id = str(data.get('id', '')).strip() or path.name
+
+        # Только для типов с известными каноническими секциями
+        canonical = _CANONICAL_SECTIONS_BY_TYPE.get(tip)
+        if not canonical:
+            continue
+
+        # Прочитать body
+        try:
+            body = _read_body(path)
+        except Exception:
+            continue
+
+        total += 1
+
+        # F36a: обязательные секции
+        sections_raw = _extract_h2_sections(body)
+        sections_normalized = [_normalize_section(s) for s in sections_raw]
+        missing = [sec for sec in canonical if sec not in sections_normalized]
+        if not missing:
+            valid += 1
+        else:
+            violations.append(
+                f"[F36a] {izd_id}: отсутствуют обязательные секции: "
+                f"{', '.join(missing)}")
+
+        # F36b: malformed таблицы
+        table_violations = _check_malformed_tables(body)
+        for tv in table_violations:
+            violations.append(f"[F36b] {izd_id}: {tv}")
+
+        # F36c: body↔frontmatter согласованность
+        consistency_violations = _check_body_fm_consistency(body, data)
+        for cv in consistency_violations:
+            violations.append(f"[F36c] {izd_id}: {cv}")
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F36',
+        'description': 'Body markdown structure: секции + таблицы + body↔fm согласованность (v9.61)',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': True,  # NON-BLOCKING
+        'blocking': False,
+        'violations': violations,
+    }
+
+
+# ============================================================================
+# F37: IS_PURCHASED FLAG (v9.61 NEW)
+# ============================================================================
+# Проверяет, что все файлы в изделия/компоненты/ имеют is_purchased: true.
+# В v9.61 спецификация требует это поле для закупочных sub-assemblies.
+
+def check_F37(izdeliya: dict[str, dict]) -> dict:
+    """F37: is_purchased: true обязательно для изделия/компоненты/*.
+
+    NON-BLOCKING в v9.61. После миграции может стать BLOCKING.
+    """
+    violations = []
+    total = 0
+    valid = 0
+
+    for izd_id, data in izdeliya.items():
+        if not isinstance(data, dict):
+            continue
+        # Проверяем только файлы в изделия/компоненты/ (по пути)
+        path = data.get('_path', '')
+        if '/компоненты/' not in path and '\\компоненты\\' not in path:
+            continue
+        total += 1
+        is_purchased = data.get('is_purchased')
+        if is_purchased is True:
+            valid += 1
+        else:
+            violations.append(
+                f"{izd_id}: файл в изделия/компоненты/ но is_purchased не true "
+                f"(текущее: {is_purchased!r}) — должен быть true для закупочных sub-assemblies")
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F37',
+        'description': 'is_purchased: true для изделий/компоненты/ (v9.61, non-blocking)',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': True,  # NON-BLOCKING
+        'blocking': False,
+        'violations': violations,
+    }
+
+
+# ============================================================================
+# F38: КЛАСС ENUM-ВАЛИДАЦИЯ (v9.61 NEW)
+# ============================================================================
+# Проверяет, что поле `класс` в материалах и компонентах соответствует
+# каноническому enum из §12.3.
+#
+# §12.3 enum: металл|полимер|керамика|композит|полупроводник|сплав|радиоизотоп|прочее
+# Расширенный enum (v9.61): + жидкость, газ, эластомер (для корректной классификации)
+
+_VALID_CLASS_ENUM = {
+    'металл', 'полимер', 'керамика', 'композит', 'полупроводник', 'сплав',
+    'радиоизотоп', 'прочее',
+    # Расширенный enum (v9.61):
+    'жидкость', 'газ', 'эластомер', 'углерод', 'метаматериал',
+    'неорганическая_соль', 'неорганическая_жидкость',
+    'органический_жидкий_электролит', 'органическая_соль',
+    'жидкий_металл', 'гидрид_металла', 'кермет', 'керамика_металл',
+    'композит_электрод', 'магнитотвёрдый', 'магнитотвёрдый_сплав',
+    'функциональная_керамика', 'функциональный_стек', 'халькогенид',
+    'радиоактивный_металл',
+}
+
+# Маппинг известных неправильных значений → канонических
+_CLASS_NORMALIZATION = {
+    'металл': 'металл',  # OK
+    'полимер': 'полимер',  # OK
+    # ... остальные — должны быть в _VALID_CLASS_ENUM
+}
+
+
+def check_F38(entries: list | None = None) -> dict:
+    """F38: класс enum-валидация (v9.61).
+
+    Проверяет, что поле `класс` в материалах принимает значение из
+    расширенного enum. NON-BLOCKING.
+    """
+    violations = []
+    total = 0
+    valid = 0
+
+    if entries is None:
+        all_entries = _load_all_catalog_entries()
+    else:
+        all_entries = entries
+
+    for path, cat, data in all_entries:
+        if not isinstance(data, dict):
+            continue
+        # Только для материалов (класс определён в §12.3)
+        if cat != 'материалы':
+            continue
+        klass = str(data.get('класс', '')).strip()
+        if not klass:
+            continue  # отсутствие класса — это другая метрика (F70g)
+        mat_id = str(data.get('id', '')).strip() or path.name
+        total += 1
+        if klass in _VALID_CLASS_ENUM:
+            valid += 1
+        else:
+            violations.append(
+                f"{mat_id}: класс={klass!r} не входит в расширенный enum "
+                f"(металл|полимер|керамика|композит|полупроводник|сплав|радиоизотоп|прочее|"
+                f"жидкость|газ|эластомер|углерод|метаматериал|...)")
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F38',
+        'description': 'класс enum-валидация для материалов (v9.61, non-blocking)',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': True,  # NON-BLOCKING
+        'blocking': False,
+        'violations': violations,
+    }
+
+
+# ============================================================================
 # MAIN
 # ============================================================================
 
@@ -4544,6 +4876,39 @@ def run_all_checks() -> dict:
         print(f"  violations: {len(r['violations'])} (первые 5):")
         for v in r['violations'][:5]:
             print(f"    - {v[:120]}")
+
+    # F36 — body markdown structure (v9.61 NEW; NON-BLOCKING)
+    print()
+    print("=== F36: Body markdown structure (v9.61, NON-BLOCKING) ===")
+    r = check_F36()
+    results['F36'] = r
+    print(f"  pass={r['pass']} (NON-BLOCKING), ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 5):")
+        for v in r['violations'][:5]:
+            print(f"    - {v[:140]}")
+
+    # F37 — is_purchased flag (v9.61 NEW; NON-BLOCKING)
+    print()
+    print("=== F37: is_purchased: true для изделия/компоненты/ (v9.61, NON-BLOCKING) ===")
+    r = check_F37(izdeliya)
+    results['F37'] = r
+    print(f"  pass={r['pass']} (NON-BLOCKING), ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 5):")
+        for v in r['violations'][:5]:
+            print(f"    - {v[:140]}")
+
+    # F38 — класс enum-валидация (v9.61 NEW; NON-BLOCKING)
+    print()
+    print("=== F38: класс enum-валидация для материалов (v9.61, NON-BLOCKING) ===")
+    r = check_F38()
+    results['F38'] = r
+    print(f"  pass={r['pass']} (NON-BLOCKING), ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 5):")
+        for v in r['violations'][:5]:
+            print(f"    - {v[:140]}")
 
     # F-scal — масштабируемость (v9.32 / P087; SOFT-метрика: pass=True всегда,
     # violations идут в --json-out → workflow создаёт verify-task issues)

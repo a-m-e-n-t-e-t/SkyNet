@@ -2471,6 +2471,12 @@
       "meta": {}
     },
     {
+      "src": "script:validate_decomposition.py",
+      "dst": "section:§13.17 Метрика v9.26 F70g (schema-driven validation)",
+      "type": "implements",
+      "meta": {}
+    },
+    {
       "src": "script:validate_field_contracts.py",
       "dst": "section:§13.17 Метрика v9.26 F70g (schema-driven validation)",
       "type": "implements",
@@ -2533,7 +2539,7 @@
   ],
   "stats": {
     "nodes": 196,
-    "edges": 225,
+    "edges": 226,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,

@@ -106,6 +106,13 @@ graph LR
     F34 --> script_recursive_decompose_py
     script_validate_decomposition_py[validate_decomposition.py]
     F34 --> script_validate_decomposition_py
+    F70g([F70g])
+    script__helpers_py[_helpers.py]
+    F70g --> script__helpers_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F70g --> script_pre-commit-hook_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F70g --> script_validate_decomposition_py
     F29([F29])
     script__metrics_py[_metrics.py]
     F29 --> script__metrics_py
@@ -155,21 +162,20 @@ graph LR
     F23 --> script_validate_decomposition_py
     script_web_verify_py[web_verify.py]
     F23 --> script_web_verify_py
-    F70g([F70g])
-    script__helpers_py[_helpers.py]
-    F70g --> script__helpers_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F70g --> script_pre-commit-hook_py
-    F70h([F70h])
-    script__helpers_py[_helpers.py]
-    F70h --> script__helpers_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F70h --> script_pre-commit-hook_py
-    F81([F81])
-    script__helpers_py[_helpers.py]
-    F81 --> script__helpers_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F81 --> script_pre-commit-hook_py
+    F37([F37])
+    script_generate_graphs_py[generate_graphs.py]
+    F37 --> script_generate_graphs_py
+    script_pipeline_py[pipeline.py]
+    F37 --> script_pipeline_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F37 --> script_validate_decomposition_py
+    F38([F38])
+    script_generate_graphs_py[generate_graphs.py]
+    F38 --> script_generate_graphs_py
+    script_pipeline_py[pipeline.py]
+    F38 --> script_pipeline_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F38 --> script_validate_decomposition_py
 ```
 
 _Показаны топ-20 метрик по числу скриптов-валидаторов (из 73 метрик)._
@@ -201,9 +207,9 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F33` | _metrics.py, validate_decomposition.py | — |
 | `F34` | _metrics.py, pre-commit-hook.py, recursive_decompose.py, validate_decomposition.py | — |
 | `F35` | recursive_decompose.py, validate_decomposition.py | — |
-| `F36` | generate_graphs.py | — |
-| `F37` | generate_graphs.py, pipeline.py | — |
-| `F38` | generate_graphs.py, pipeline.py | — |
+| `F36` | generate_graphs.py, validate_decomposition.py | — |
+| `F37` | generate_graphs.py, pipeline.py, validate_decomposition.py | — |
+| `F38` | generate_graphs.py, pipeline.py, validate_decomposition.py | — |
 | `F39` | pipeline.py | — |
 | `F4` | pre-commit-hook.py | — |
 | `F40` | pipeline.py | — |
@@ -228,7 +234,7 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F70d` | _helpers.py | — |
 | `F70e` | _helpers.py | — |
 | `F70f` | _helpers.py | — |
-| `F70g` | _helpers.py, pre-commit-hook.py | — |
+| `F70g` | _helpers.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F70h` | _helpers.py, pre-commit-hook.py | — |
 | `F70i` | _helpers.py | — |
 | `F70j` | _helpers.py | — |

@@ -4769,6 +4769,54 @@
       "meta": {}
     },
     {
+      "src": "F36",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F36",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F37",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F37",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F38",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F38",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "F70g",
+      "dst": "script:validate_decomposition.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:validate_decomposition.py",
+      "dst": "F70g",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "P087",
       "dst": "script:validate_decomposition.py",
       "type": "validated_by",
@@ -5149,7 +5197,7 @@
   ],
   "stats": {
     "nodes": 331,
-    "edges": 526,
+    "edges": 534,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,

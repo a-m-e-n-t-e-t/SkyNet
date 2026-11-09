@@ -322,7 +322,7 @@ jobs:
               
               // v9.58: определить сложность issue для priority-picking
               const COMPLEX_METRICS = new Set(['F27b', 'F27c', 'F-ai-lineage', 'F-fant-children']);
-              const MEDIUM_METRICS = new Set(['F27', 'F27d', 'F27e', 'F27f', 'F27g', 'F28', 'F15g', 'F15b', 'F15d', 'F15h', 'F22', 'F29', 'F-scal', 'F34']);
+              const MEDIUM_METRICS = new Set(['F27', 'F27d', 'F27e', 'F27f', 'F27g', 'F28', 'F15g', 'F15b', 'F15d', 'F15h', 'F22', 'F29', 'F-scal', 'F34', 'F36', 'F37', 'F38']);
               function determineComplexity(violsArr) {
                 const n = violsArr.length;
                 const hasComplex = violsArr.some(v => COMPLEX_METRICS.has(v.metric));
@@ -415,6 +415,31 @@ jobs:
                   bodyParts.push(`    - добавить подтип в \`_decomp_registry.yaml\` с описанием children`);
                   bodyParts.push(`    - затем запустить recursive_decompose.py`);
                   bodyParts.push(`- **Автоматизация (опционально):** запустить \`bash scripts/decompose_via_issue.sh ${'$'}{{ github.event.issue.number || 'N' }}\` — скрипт сам определит action и передаст в cron_run.sh`);
+                } else if (metric === 'F36') {
+                  bodyParts.push(`- **F36a (отсутствуют секции):** добавить недостающие H2 заголовки в body`);
+                  bodyParts.push(`  - Изделие: Описание, Технические характеристики, Состав, Используемые материалы, Принцип работы, Источники`);
+                  bodyParts.push(`  - Часть: Описание, Технические характеристики, Принцип работы, Состав, Используемые материалы, Источники`);
+                  bodyParts.push(`  - Материал/Технология/Стандарт: Описание, Источники`);
+                  bodyParts.push(`  - Синонимы: "Общее описание" → "Описание"; "Источники (F28)" → "Источники"`);
+                  bodyParts.push(`- **F36b (malformed таблицы):** проверить строки таблицы — лишний \`| canon |\` суффикс в строке "материал"`);
+                  bodyParts.push(`  - Удалить последний \`| canon |\` из строк \`| материал | <id> | — | <desc> | canon |\``);
+                  bodyParts.push(`  - Число столбцов должно совпадать с header (\`| Параметр | Значение | Единица | Источник |\`)`);
+                  bodyParts.push(`- **F36c (body↔frontmatter несоответствие):**`);
+                  bodyParts.push(`  - "## Состав" body говорит 'дочерних частей нет', но frontmatter содержит children → обновить текст body списком частей`);
+                  bodyParts.push(`  - "## Используемые материалы" body содержит placeholder 'добавляются после связывания', но frontmatter материалы_частей заполнен → отрендерить markdown-ссылки через md_internal_link()`);
+                } else if (metric === 'F37') {
+                  bodyParts.push(`- Добавить поле \`is_purchased: true\` в frontmatter (после строки \`тип: изделие\`)`);
+                  bodyParts.push(`- Это обязательно для всех файлов в \`реальные данные/изделия/компоненты/<cat>/\``);
+                  bodyParts.push(`- Пример: \`\`\`yaml`);
+                  bodyParts.push(`  тип: изделие`);
+                  bodyParts.push(`  is_purchased: true`);
+                  bodyParts.push(`  \`\`\``);
+                } else if (metric === 'F38') {
+                  bodyParts.push(`- Поле \`класс:\` в frontmatter должно принимать значение из enum`);
+                  bodyParts.push(`  - Базовый: металл|полимер|керамика|композит|полупроводник|сплав|радиоизотоп|прочее`);
+                  bodyParts.push(`  - Расширенный: +жидкость|газ|эластомер|углерод|метаматериал|неорганическая_соль|...`);
+                  bodyParts.push(`  - Если текущее значение невалидно → заменить на ближайшее из enum`);
+                  bodyParts.push(`  - Например: 'эластомерный' → 'эластомер'; 'радиоактивный_металл' → 'радиоизотоп'`);
                 } else if (metric === 'F-ai-lineage') {
                   bodyParts.push(`- поля: предок, предок_путь, улучшения[], real_check{}`);
                   bodyParts.push(`- тип улучшения: замена_материала/замена_технологии/...`);
@@ -882,6 +907,9 @@ jobs:
           echo "| F29 | ${{ steps.violations.outputs.F29_count }} | BOM-materials: (A) form; (B) inherited; (C) canonical-only (v9.60) |" >> $GITHUB_STEP_SUMMARY
           echo "| F34 | ${{ steps.violations.outputs.F34_count }} | Decomposition depth: сборка без дочерних_частей |" >> $GITHUB_STEP_SUMMARY
           echo "| F35 | ${{ steps.violations.outputs.F35_count }} | Components consistency: тип/материал/компонент (v9.60, non-blocking) |" >> $GITHUB_STEP_SUMMARY
+          echo "| F36 | ${{ steps.violations.outputs.F36_count }} | Body markdown structure: секции + таблицы + body↔fm (v9.61) |" >> $GITHUB_STEP_SUMMARY
+          echo "| F37 | ${{ steps.violations.outputs.F37_count }} | is_purchased: true для изделия/компоненты/ (v9.61) |" >> $GITHUB_STEP_SUMMARY
+          echo "| F38 | ${{ steps.violations.outputs.F38_count }} | класс enum-валидация для материалов (v9.61) |" >> $GITHUB_STEP_SUMMARY
           echo "| **Total** | **${{ steps.violations.outputs.total_violations }}** | — |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "**Violation source:** ${{ steps.violations.outputs.partial == '1' && 'TRUNCATED log fallback (auto-close DISABLED)' || 'complete --json-out' }}" >> $GITHUB_STEP_SUMMARY
