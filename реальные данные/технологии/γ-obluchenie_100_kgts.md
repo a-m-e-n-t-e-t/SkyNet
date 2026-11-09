@@ -1,32 +1,4 @@
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 id: tekhnologia_γ-obluchenie_100_kgts
 канонический_id: 'tekhnologia_γ-obluchenie_100_kgts'
 тип: технология

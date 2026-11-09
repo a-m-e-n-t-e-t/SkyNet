@@ -1,32 +1,4 @@
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 id: material_batio3
 псевдонимы: [material_ceramic_mlcc, material_barium_titanate]
 тип: материал

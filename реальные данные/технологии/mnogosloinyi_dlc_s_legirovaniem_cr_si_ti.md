@@ -1,32 +1,4 @@
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 id: tekhnologia_mnogosloinyi_dlc_s_legirovaniem_cr_si_ti
 тип: технология
 категория: обработка

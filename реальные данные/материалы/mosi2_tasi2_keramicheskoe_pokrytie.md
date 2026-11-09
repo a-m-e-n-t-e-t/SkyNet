@@ -1,32 +1,4 @@
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 id: material_mosi2_tasi2_keramicheskoe_pokrytie
 канонический_id: 'material_mosi2_tasi2_keramicheskoe_pokrytie'
 тип: материал

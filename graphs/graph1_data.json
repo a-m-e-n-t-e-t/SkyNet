@@ -7647,6 +7647,13 @@
       "subsystem": ""
     },
     {
+      "id": "tekhnologia_himicheskoe_travlenie_mikrokanalov",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/himicheskoe_travlenie_mikrokanalov.md",
+      "subsystem": ""
+    },
+    {
       "id": "tekhnologia_hip-cvd",
       "type": "tekhnologia",
       "label": "обработка",
@@ -18330,7 +18337,7 @@
     ]
   },
   "stats": {
-    "nodes": 1158,
+    "nodes": 1159,
     "edges": 1585,
     "dangling": {
       "complies_with": 540,
@@ -18344,7 +18351,7 @@
       "izdelie": 203,
       "material": 195,
       "standart": 8,
-      "tekhnologia": 78
+      "tekhnologia": 79
     }
   }
 }

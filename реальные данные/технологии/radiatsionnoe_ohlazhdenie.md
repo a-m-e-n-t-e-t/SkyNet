@@ -1,32 +1,4 @@
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 id: tekhnologia_radiatsionnoe_ohlazhdenie
 тип: технология
 категория: обработка

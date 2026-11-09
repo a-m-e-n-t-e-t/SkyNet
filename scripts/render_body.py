@@ -81,7 +81,12 @@ def read_yaml_frontmatter(path: Path) -> tuple:
     end = text.find('\n---', 3)
     if end == -1:
         return {}, '', text
-    yaml_text = text[3:end]
+    # v9.62 fix (issue #923 cycle): strip ведущих/конечных переводов строк.
+    # Раньше yaml_text сохранял ведущие '\n' накопленных blank-line артефактов,
+    # и writer '---\n{yaml_text}\n---\n' добавлял +1 пустую строку за каждый
+    # запуск (рендер не был идемпотентным — файлы росли бесконечно).
+    # strip('\n') делает сборку каноничной и самоочищает накопленный мусор.
+    yaml_text = text[3:end].strip('\n')
     body = text[end + 4:]
     try:
         data = yaml.safe_load(yaml_text)

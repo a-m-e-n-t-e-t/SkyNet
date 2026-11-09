@@ -1,32 +1,4 @@
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 id: material_ti-6al-4v_legirovannyi_3_5_mas_tantala_ii
 тип: материал
 класс: металл
