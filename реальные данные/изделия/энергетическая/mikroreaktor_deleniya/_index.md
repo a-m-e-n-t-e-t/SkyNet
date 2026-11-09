@@ -22,9 +22,11 @@ id: izdelie_mikroreaktor_deleniya
 материалы_частей:
   - часть: часть_mikroreaktor_deleniya_fuel
     материал: uo2_pellets
+    форма: топливные_пебблы_triso
     доля_массы: 0.095
   - часть: часть_mikroreaktor_deleniya_moderator
     материал: graphite
+    форма: монолитный_замедлитель_микрореактора
     доля_массы: 0.38
   - часть: часть_mikroreaktor_deleniya_heat_exchanger
     материал: inconel_625
@@ -38,6 +40,43 @@ id: izdelie_mikroreaktor_deleniya
   - часть: часть_mikroreaktor_deleniya_coolant
     материал: sodium
     доля_массы: 0.0475
+технологии_частей:
+  - часть: часть_mikroreaktor_deleniya_fuel
+    технология: vakuumnoe_spekanie
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: uo2_pellets
+        роль: обрабатываемый
+  - часть: часть_mikroreaktor_deleniya_moderator
+    технология: otzhig
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: graphite
+        роль: обрабатываемый
+  - часть: часть_mikroreaktor_deleniya_heat_exchanger
+    технология: diffuzionnaya_svarka
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: inconel_625
+        роль: обрабатываемый
+  - часть: часть_mikroreaktor_deleniya_shielding
+    технология: betonirovanie_baritovyh_moduley
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: concrete_barite
+        роль: обрабатываемый
+  - часть: часть_mikroreaktor_deleniya_vessel
+    технология: ebw
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: stainless_steel_316
+        роль: обрабатываемый
+  - часть: часть_mikroreaktor_deleniya_coolant
+    технология: izgotovlenie_natrievyh_heat_trub
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: sodium
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
