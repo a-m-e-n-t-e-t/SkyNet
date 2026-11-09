@@ -36,6 +36,50 @@ def is_internal_link(target: str) -> bool:
     return True
 
 
+def _strip_code_fences(body: str) -> str:
+    """Replace fenced code blocks (``` ... ``` or ~~~ ... ~~~) with blank lines.
+
+    Markdown spec: links inside code-fences are not real links (rendered as
+    literal text), so audit must skip them. Without this, doc files that
+    contain example links (SkyNet_PROMPT_v9.31.md, требования_к_ии/_examples.md)
+    produce false-positive broken-link reports.
+    """
+    import re
+    # Match fenced code blocks: starting ``` (or ~~~) on own line, ending with
+    # matching fence. Replaces the whole block (preserving newlines) with
+    # empty lines of the same length, to keep line numbers stable.
+    pattern = re.compile(
+        r'(?ms)^[ \t]*(?P<fence>```|~~~)(?P<info>[^\n]*)\n.*?^[ \t]*(?P=fence)[ \t]*$'
+    )
+    def _blank(m: re.Match) -> str:
+        text = m.group(0)
+        # Preserve newlines so line numbers in audit output stay accurate
+        return '\n'.join(['' if line.strip() else '' for line in text.split('\n')])
+    return pattern.sub(_blank, body)
+
+
+def _strip_inline_code(body: str) -> str:
+    """Replace inline code spans (`...`) with a placeholder.
+
+    Markdown spec: `[text](path)` inside backticks is rendered literally,
+    not as a link. Audit must not report such occurrences.
+
+    Replaces the entire `` `...` `` span (including backticks) with the inner
+    text wrapped so the link regex won't match it: we replace `[`,`]`,`(`,`)`
+    inside the span with their fullwidth Unicode equivalents. This preserves
+    readability of the doc while breaking the LINK_RE pattern.
+    """
+    import re
+    # Match `...` not spanning newlines, with no backtick inside
+    def _neutralise(m: re.Match) -> str:
+        inner = m.group(1)
+        # Replace markdown-link syntax chars inside the code span with
+        # fullwidth Unicode equivalents — they will no longer match LINK_RE.
+        # Using fullwidth forms keeps the doc readable when inspected.
+        return inner.replace('[', '［').replace(']', '］').replace('(', '（').replace(')', '）')
+    return re.sub(r'`([^`\n]+)`', _neutralise, body)
+
+
 def audit() -> int:
     broken = []
     checked = 0
@@ -55,6 +99,10 @@ def audit() -> int:
             end = text.find("\n---", 3)
             if end != -1:
                 body = text[end + 4:]
+        # v9.59: skip markdown links inside code-fences and inline-code
+        # (these are syntax examples in doc files, not real links)
+        body = _strip_code_fences(body)
+        body = _strip_inline_code(body)
         for m in LINK_RE.finditer(body):
             target = m.group("target")
             if not is_internal_link(target):

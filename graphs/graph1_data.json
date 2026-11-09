@@ -5736,6 +5736,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_aluminum_6063",
+      "type": "material",
+      "label": "AA 6063 (EN AW-6063, UNS A96063): Al 97.5–99.35 %, Mg 0.45–0.90 %, Si 0.20–0.60 %, Fe ≤0.35 %, Cr/Cu/Mn/Ti/Zn ≤0.10 % каждый; состояние T5 (закалка с пресса + искусственное старение 185–200 °C, 1–8 ч) — канонический файл material_al_6063-t5",
+      "path": "реальные данные/материалы/aluminum_6063.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_am-241",
       "type": "material",
       "label": "Am-241",
@@ -6979,6 +6986,13 @@
       "type": "material",
       "label": "Fe (основа), C 0.95–1.20 масс.%, Cr 16–18 масс.%, Mo ≤ 0.75 масс.%, Mn ≤ 1.0 масс.%, Si ≤ 1.0 масс.%, P/S ≤ 0.04/0.03 % (ASTM A276, UNS S44004)",
       "path": "реальные данные/материалы/stainless_steel_440c.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_stainless_steel_mesh",
+      "type": "material",
+      "label": "Нержавеющая сталь 316L (AISI 316L / UNS S31603 / EN 1.4404 X2CrNiMo17-12-2): Fe — остальное; Cr 16.0–18.0 %, Ni 10.0–14.0 %, Mo 2.0–3.0 %, C ≤0.03 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 % — основа проволоки/волокна для сетки/войлока регенератора (Cleveland-Cliffs ASTM A240, RAFIHIHET Wire Mesh)",
+      "path": "реальные данные/материалы/stainless_steel_mesh.md",
       "subsystem": ""
     },
     {
@@ -8719,6 +8733,12 @@
     },
     {
       "src": "izdelie_asrg",
+      "dst": "material_stainless_steel_mesh",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_asrg",
       "dst": "material_inconel_718",
       "type": "uses_material",
       "meta": {}
@@ -9344,6 +9364,12 @@
     {
       "src": "izdelie_nasa_asc-e_srsc",
       "dst": "material_inconel_625",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_nasa_asc-e_srsc",
+      "dst": "material_stainless_steel_mesh",
       "type": "uses_material",
       "meta": {}
     },
@@ -10752,6 +10778,12 @@
       "meta": {}
     },
     {
+      "src": "часть_perovskite_tandem_frame",
+      "dst": "material_aluminum_6063",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_mmrtg_hot_side",
       "dst": "izdelie_mmrtg",
       "type": "child_of",
@@ -11277,6 +11309,12 @@
       "src": "часть_nasa_asc-e_srsc_regenerator",
       "dst": "izdelie_nasa_asc-e_srsc",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_nasa_asc-e_srsc_regenerator",
+      "dst": "material_stainless_steel_mesh",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -20449,6 +20487,12 @@
     },
     {
       "src": "izdelie_asrg_v28_ии",
+      "dst": "material_stainless_steel_mesh",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_asrg_v28_ии",
       "dst": "material_smco",
       "type": "uses_material",
       "meta": {}
@@ -20541,6 +20585,12 @@
       "src": "часть_asrg_v28_ии_regenerator",
       "dst": "izdelie_asrg_v28_ии",
       "type": "child_of",
+      "meta": {}
+    },
+    {
+      "src": "часть_asrg_v28_ии_regenerator",
+      "dst": "material_stainless_steel_mesh",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -22826,6 +22876,14 @@
       }
     },
     {
+      "src": "material_stainless_steel_mesh",
+      "dst": "izdelie_asrg",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_inconel_718",
       "dst": "izdelie_asrg",
       "type": "used_in",
@@ -23659,6 +23717,14 @@
     },
     {
       "src": "material_inconel_625",
+      "dst": "izdelie_nasa_asc-e_srsc",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_stainless_steel_mesh",
       "dst": "izdelie_nasa_asc-e_srsc",
       "type": "used_in",
       "meta": {
@@ -25010,6 +25076,14 @@
       }
     },
     {
+      "src": "material_aluminum_6063",
+      "dst": "часть_perovskite_tandem_frame",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_inconel_625",
       "dst": "часть_mmrtg_hot_side",
       "type": "used_in",
@@ -25348,6 +25422,14 @@
     {
       "src": "material_copper",
       "dst": "часть_nasa_asc-e_srsc_alternator",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
+      "src": "material_stainless_steel_mesh",
+      "dst": "часть_nasa_asc-e_srsc_regenerator",
       "type": "used_in",
       "meta": {
         "forward": "uses_material"
@@ -33914,6 +33996,14 @@
       }
     },
     {
+      "src": "material_stainless_steel_mesh",
+      "dst": "izdelie_asrg_v28_ии",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
+      }
+    },
+    {
       "src": "material_smco",
       "dst": "izdelie_asrg_v28_ии",
       "type": "used_in",
@@ -33991,6 +34081,14 @@
       "type": "researches",
       "meta": {
         "forward": "researched_by"
+      }
+    },
+    {
+      "src": "material_stainless_steel_mesh",
+      "dst": "часть_asrg_v28_ии_regenerator",
+      "type": "used_in",
+      "meta": {
+        "forward": "uses_material"
       }
     },
     {
@@ -35213,6 +35311,7 @@
       "standart_ASTM A228/A228M-18",
       "standart_ASTM A240 (AISI 304)",
       "standart_ASTM A240 (sheet/strip)",
+      "standart_ASTM A240 (нержавеющие листы/полосы для холодной вытяжки проволоки)",
       "standart_ASTM A276 (stainless steel bars/shapes, UNS S44004)",
       "standart_ASTM A276 (пруток и профили нержавеющие)",
       "standart_ASTM A295 (high-carbon bearing quality steel)",
@@ -35323,6 +35422,7 @@
       "standart_ASTM E1461 (теплопроводность лазерной вспышкой)",
       "standart_ASTM E2653",
       "standart_ASTM E2653 (sodium technology)",
+      "standart_ASTM E2814 (стандартные плетёные сетки для тестирования сит)",
       "standart_ASTM E793 (энтальпия плавления/кристаллизации, DSC)",
       "standart_ASTM E8",
       "standart_ASTM E831/E228 (ТКЛР дилатометрией)",
@@ -35384,6 +35484,7 @@
       "standart_EN 50342-1",
       "standart_EN 50342-1 (стартерные свинцово-кислотные АКБ)",
       "standart_EN 50598",
+      "standart_EN 755-9 (EN AW-6063)",
       "standart_EN 755-9 (EN AW-6063-T5)",
       "standart_EN AW-1050A (Al99.5, номер 3.0255)",
       "standart_EN CW106C (EN 12163 / 12164 / 12165)",
@@ -35434,6 +35535,7 @@
       "standart_IEC 60904",
       "standart_IEC 61076-2-101",
       "standart_IEC 61215",
+      "standart_IEC 61215 (PV-модули: квалификационные испытания рамы)",
       "standart_IEC 61730",
       "standart_IEC 61960",
       "standart_IEC 62133-2",
@@ -35525,6 +35627,7 @@
       "standart_ISO 4762 (M5)",
       "standart_ISO 4762 (M6)",
       "standart_ISO 4762 (M8)",
+      "standart_ISO 4783 (тканые металлические проволочные сетки)",
       "standart_ISO 527 (растяжение пластиков)",
       "standart_ISO 5834-1",
       "standart_ISO 5834-2",
@@ -35821,7 +35924,6 @@
       "material_aerogel",
       "material_alumina",
       "material_aluminum_1100",
-      "material_aluminum_6063",
       "material_aluminum_electrolytic",
       "material_am241_oxide",
       "material_biological_tissue",
@@ -35856,7 +35958,6 @@
       "material_rt_1523_sincgars",
       "material_silicon_neural_net",
       "material_stainless_steel_316",
-      "material_stainless_steel_mesh",
       "material_steel_1045",
       "material_steel_track",
       "material_steel_track_links_t158",
@@ -35872,19 +35973,19 @@
     ]
   },
   "stats": {
-    "nodes": 1123,
-    "edges": 3998,
+    "nodes": 1125,
+    "edges": 4010,
     "dangling": {
-      "complies_with": 538,
+      "complies_with": 543,
       "has_part": 6,
       "researched_by": 88,
-      "uses_material": 51
+      "uses_material": 49
     },
     "by_type": {
       "chast": 674,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 220,
+      "material": 222,
       "standart": 8,
       "tekhnologia": 78
     }
