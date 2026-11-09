@@ -5241,6 +5241,60 @@
      "snippet": "Spring steel stamping: 301 full-hard (yield 965 MPa) or 17-7PH (1380 MPa)."
     }
    ]
+  },
+  {
+   "id": "ws_0076",
+   "query": "twisted string actuator UHMWPE cord construction twisting Svivka Spectra Dyneema",
+   "keywords": [
+    "twisted string actuator",
+    "UHMWPE",
+    "Spectra",
+    "Dyneema",
+    "svivka"
+   ],
+   "results": [
+    {
+     "title": "Malvezzi et al. — Twisted string actuators: Comprehensive review (Measurement, 2025)",
+     "url": "https://www.sciencedirect.com/science/article/pii/S0263224125021839",
+     "snippet": "TSAs transform rotary motion of an electric motor into linear motion by twisting a group of strings; strings wind at a helical angle."
+    },
+    {
+     "title": "Xu et al. — A Lightweight TSA with CVT (Actuators 13(12):477, 2024)",
+     "url": "https://www.mdpi.com/2076-0825/13/12/477",
+     "snippet": "TSA с CVT: струнный пакет UHMWPE, мотор + редуктор."
+    },
+    {
+     "title": "US20150343647A1 — Twisted string actuator systems",
+     "url": "https://patents.google.com/patent/US20150343647A1/en",
+     "snippet": "twisted string comprised of a pair of cords fixed between rotor and load."
+    },
+    {
+     "title": "Twisted-Winching String Actuator (arXiv:2410.12097)",
+     "url": "https://arxiv.org/html/2410.12097v1",
+     "snippet": "rotating shaft with tangential force; winching strings."
+    },
+    {
+     "title": "Dyneema UHMWPE factsheet (pelicanrope.com)",
+     "url": "https://pelicanrope.com/content/PDFs/Dyneema-Comprehensive-factsheet-UHMWPE.pdf",
+     "snippet": "axial tensile strength 3.6 GPa, axial tensile modulus 116 GPa, free breaking length 378 km."
+    },
+    {
+     "title": "Rocket-Fibers UHMWPE Braid",
+     "url": "https://www.rocket-fibers.com/products/uhmwpe-braid",
+     "snippet": "Ø0.80 mm braided UHMWPE, break strength 140–150 lbf."
+    }
+   ],
+   "results_count": 6,
+   "key_facts": [
+    "TSA: 2–4 UHMWPE-шнура свиваются мотором, сокращение до 20–30 %",
+    "UHMWPE-корды Ø0.8–1.5 мм, прочность волокна 3.6 ГПа, модуль 116 ГПа",
+    "Ø0.8 мм плетёный шнур: 140–150 lbf (0.62–0.67 кН)"
+   ],
+   "used_in_issues": [
+    960,
+    989
+   ],
+   "timestamp": "2026-11-10T06:35:00+08:00"
   }
  ]
 }

@@ -48,6 +48,13 @@ id: tekhnologia_termosvarka_plenok
 
 Импульсная термосварка (heat sealing) полимерных плёнок — определяющий процесс изготовления pouch-оболочек мягких актуаторов HASEL (hydraulically amplified self-healing electrostatic): две плёнки диэлектрика свариваются по контуру в мягкий pouch, внутрь впрыскивается жидкий диэлектрик (Keplinger et al., Science 359, 2018). В toolkit Mitchell et al. 2019 донат- и Peano-HASEL актуаторы прототипировались на CNC-запайщике плёнок с BOPP-плёнкой толщиной 18 мкм; Gravish Lab (UCSD) — термо-прессование по маске и CNC-термосварка; Tynan et al. 2025 — сварка pouches любой геометрии нагретым соплом 3D-принтера. Для полиэтилена температура сварки ~140 °C; параметры импульсной сварки (время t, температура T, давление прижима p) — предмет оптимизации (Patyk et al., Sci. Rep. 2026).
 
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | технология | — | canon |
+
+
 ## Источники
 
 - Mitchell et al., An Easy-to-Implement Toolkit to Create Versatile and High-Performance HASEL Actuators (CNC heat sealing machine, BOPP 18 µm): https://pmc.ncbi.nlm.nih.gov/articles/PMC6662077 (проверено 2026-11-10)
