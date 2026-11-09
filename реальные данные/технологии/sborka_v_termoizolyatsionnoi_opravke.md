@@ -16,6 +16,7 @@
 
 
 
+
 id: tekhnologia_sborka_v_termoizolyatsionnoi_opravke
 тип: технология
 категория: обработка
