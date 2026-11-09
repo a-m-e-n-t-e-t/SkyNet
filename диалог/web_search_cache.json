@@ -5344,6 +5344,50 @@
     1036
    ],
    "timestamp": "2026-11-10T06:52:00+08:00"
+  },
+  {
+   "id": "ws_0078",
+   "query": "DIN 2093 disc spring manufacturing Ck75 51CrV4 stamped; Deutsch DT06-4S PA66 housing",
+   "keywords": [
+    "DIN 2093",
+    "disc springs",
+    "Ck75",
+    "51CrV4",
+    "DT06-4S",
+    "PA66"
+   ],
+   "results": [
+    {
+     "title": "Belleville Springs FAQ",
+     "url": "https://www.bellevillesprings.com/faqs",
+     "snippet": "Disc Springs to DIN 2093 (DIN EN 16983) are manufactured from Ck75 (1.1248) or 51CrV4 (1.8159) carbon spring steels depending upon thickness."
+    },
+    {
+     "title": "DIN 2093 Disc Spring Overview",
+     "url": "https://ru.scribd.com/document/589297713/120-122-EN",
+     "snippet": "Material: Group 1 CK67/51CrV4; Group 2: 51CrV4; Group 3: 51CrV4."
+    },
+    {
+     "title": "Schnorr Disc Springs (fastenerdata)",
+     "url": "https://www.fastenerdata.co.uk/fasteners/washers/conical-disc/schnorr-disc-springs.html",
+     "snippet": "Manufactured to DIN 2093 and beyond; market benchmark."
+    },
+    {
+     "title": "TE Connectivity DT06-4S product page",
+     "url": "https://www.te.com/en/product-DT06-4S.html",
+     "snippet": "DEUTSCH DT Series 4-way plug housing (PA66)."
+    }
+   ],
+   "results_count": 4,
+   "key_facts": [
+    "Дисковые пружины DIN 2093: штамповка из полосы Ck75 (Group 1) / 51CrV4 (Groups 2-3) + закалка/отпуск",
+    "Разъём Deutsch DT06-4S: корпус PA66 (нейлон 6/6), литьё под давлением",
+    "Стяжной узел: болт 12.9 + направляющие шайбы 100Cr6 — точение"
+   ],
+   "used_in_issues": [
+    963
+   ],
+   "timestamp": "2026-11-10T06:58:00+08:00"
   }
  ]
 }

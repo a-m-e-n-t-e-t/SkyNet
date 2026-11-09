@@ -22,8 +22,49 @@ id: izdelie_belleville_shaiby
     форма: строительные_конструкции_и_крепёж
     доля_массы: 0.45
   - часть: часть_belleville_shaiby_housing
-    материал: aluminum
+    материал: al_6061-t6
+    форма: силовые_элементы_конструкций
     доля_массы: 0.27
+# F29 [B-BOM]: агрегация материалов частей (core 0.45×1.0, housing 0.27×1.0)
+# F27e: технологии обработки — штамповка дисковых пружин DIN 2093 (Ck75/51CrV4,
+# bellevillesprings.com), ЧПУ-фрезерование корпуса, литьё под давлением PA66-корпуса
+# разъёма Deutsch DT06-4S, ЧПУ-точение стяжного узла (100Cr6)
+наследуемые_материалы:
+  - материал: stal_st3
+    форма: строительные_конструкции_и_крепёж
+    суммарная_доля_массы: 0.45
+    источники_частей:
+      - часть_belleville_shaiby_core
+  - материал: al_6061-t6
+    форма: силовые_элементы_конструкций
+    суммарная_доля_массы: 0.27
+    источники_частей:
+      - часть_belleville_shaiby_housing
+технологии_частей:
+  - часть: часть_belleville_shaiby_core
+    технология: shtampovka_listovaya
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: stal_st3
+        роль: обрабатываемый
+  - часть: часть_belleville_shaiby_housing
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
+  - часть: часть_belleville_shaiby_connectors
+    технология: lite_pod_davleniem
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: neilon_6_66
+        роль: обрабатываемый
+  - часть: часть_belleville_shaiby_mounting
+    технология: tokarnaya_obrabotka_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: 100cr6
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -54,12 +95,10 @@ scaling_type: количественный
 дополнительные:
   цена_usd: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-10
 источник: user_input
 источник_разбора: пользовательский ввод
 ---
-# Изделие: Belleville шайбы
-
 ## Описание
 
 Belleville шайбы
@@ -70,10 +109,19 @@ Belleville шайбы
 
 | Параметр | Значение | Единица | Источник |
 |---|---|---|---|
-| подсистема | приводная_система | — | classify_subsystem |
-| категория | прочее | — | — |
+| подсистема | приводная_система | — | canon |
+| подтип | прочее | — | canon |
+| масса | 0.05–50 (номинал 1) | kg | canon |
+| габариты (Д×Ш×В) | 100×50×50 | mm | canon |
+| выработка энергии | 0 | W | canon |
+| выработка тепла | 0.1–50 | W | canon |
+| тип узла | изделие | — | canon |
+| уровень_номер | 1 | — | canon |
 
-(Параметры требуют уточнения через веб-поиск и вычислений; см. fc_изделие_масса, fc_изделие_стандарты в _field_contracts.yaml)
+
+## Принцип работы
+
+Требует описания на основе инженерного анализа.
 
 ## Состав
 
@@ -81,15 +129,17 @@ Belleville шайбы
 
 ## Используемые технологии
 
-(Ссылки на реальные_данные/технологии/ добавляются после связывания)
+- `shtampovka_listovaya` (доля: 1.0)
+- `frezervanie_chpu` (доля: 1.0)
+- `lite_pod_davleniem` (доля: 1.0)
+- `tokarnaya_obrabotka_chpu` (доля: 1.0)
+
 
 ## Используемые материалы
 
-(Ссылки на реальные_данные/материалы/ добавляются после связывания)
+- `stal_st3` (форма: строительные_конструкции_и_крепёж) → [`stal_st3`](../../../материалы/stal_st3.md)
+- `al_6061-t6` (форма: силовые_элементы_конструкций) → [`al_6061-t6`](../../../материалы/al_6061-t6.md)
 
-## Принцип работы
-
-Требует описания на основе инженерного анализа.
 
 ## Источники
 
@@ -97,18 +147,17 @@ Belleville шайбы
 
 ---
 
-
 ## Декомпозиция
 
 ```mermaid
 graph TD
-    belleville_shaiby["izdelie_belleville_shaiby"]
-    belleville_shaiby_core["часть_belleville_shaiby_core"]
-    belleville_shaiby --> belleville_shaiby_core
-    belleville_shaiby_housing["часть_belleville_shaiby_housing"]
-    belleville_shaiby --> belleville_shaiby_housing
-    belleville_shaiby_connect["часть_belleville_shaiby_connectors"]
-    belleville_shaiby --> belleville_shaiby_connect
-    belleville_shaiby_mountin["часть_belleville_shaiby_mounting"]
-    belleville_shaiby --> belleville_shaiby_mountin
+    izdelie_belleville_shaiby["izdelie_belleville_shaiby"]
+    ______belleville_shaiby_core["часть_belleville_shaiby_core"]
+    izdelie_belleville_shaiby --> ______belleville_shaiby_core
+    ______belleville_shaiby_housing["часть_belleville_shaiby_housing"]
+    izdelie_belleville_shaiby --> ______belleville_shaiby_housing
+    ______belleville_shaiby_connectors["часть_belleville_shaiby_connectors"]
+    izdelie_belleville_shaiby --> ______belleville_shaiby_connectors
+    ______belleville_shaiby_mounting["часть_belleville_shaiby_mounting"]
+    izdelie_belleville_shaiby --> ______belleville_shaiby_mounting
 ```
