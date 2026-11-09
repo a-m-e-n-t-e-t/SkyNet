@@ -22,9 +22,11 @@ id: izdelie_tverdotelnye_akkumulyatory
 материалы_частей:
   - часть: часть_tverdotelnye_akkumulyatory_anode
     материал: graphite
+    форма: анодный_ли_ионный_mcmb
     доля_массы: 0.18
   - часть: часть_tverdotelnye_akkumulyatory_cathode
     материал: lini_mn_co_o2
+    форма: nmc811_высоконикелевый
     доля_массы: 0.34
   - часть: часть_tverdotelnye_akkumulyatory_electrolyte
     материал: lipf6_ec_dmc
@@ -41,6 +43,50 @@ id: izdelie_tverdotelnye_akkumulyatory
   - часть: часть_tverdotelnye_akkumulyatory_case
     материал: aluminum
     доля_массы: 0.19
+
+технологии_частей:
+  - часть: часть_tverdotelnye_akkumulyatory_anode
+    технология: pogruzhenie_v_mo-shliker
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: graphite
+        роль: обрабатываемый
+  - часть: часть_tverdotelnye_akkumulyatory_cathode
+    технология: pogruzhenie_v_mo-shliker
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: lini_mn_co_o2
+        роль: обрабатываемый
+  - часть: часть_tverdotelnye_akkumulyatory_electrolyte
+    технология: vio
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: lipf6_ec_dmc
+        роль: обрабатываемый
+  - часть: часть_tverdotelnye_akkumulyatory_separator
+    технология: plazmennaya_aktivatsiya
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: pe_pp
+        роль: обрабатываемый
+  - часть: часть_tverdotelnye_akkumulyatory_current_collector_cu
+    технология: galvanika
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: copper
+        роль: обрабатываемый
+  - часть: часть_tverdotelnye_akkumulyatory_current_collector_al
+    технология: otzhig
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: aluminum
+        роль: обрабатываемый
+  - часть: часть_tverdotelnye_akkumulyatory_case
+    технология: ebw
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: aluminum
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
