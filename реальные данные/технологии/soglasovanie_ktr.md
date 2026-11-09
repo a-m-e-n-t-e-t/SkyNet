@@ -24,6 +24,7 @@
 
 
 
+
 id: tekhnologia_soglasovanie_ktr
 тип: технология
 категория: обработка

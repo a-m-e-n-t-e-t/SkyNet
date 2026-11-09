@@ -24,6 +24,7 @@
 
 
 
+
 id: material_si
 псевдонимы: [material_silicon_wafer]  # wafer-форма Si (SEMI-габариты, CZ/FZ/epi/SOI) — F31 [B-sem] алиас-связь, субстанция канонизирует material_si
 тип: материал

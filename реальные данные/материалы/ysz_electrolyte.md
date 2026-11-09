@@ -24,6 +24,7 @@
 
 
 
+
 id: material_ysz_electrolyte
 тип: материал
 класс: керамика

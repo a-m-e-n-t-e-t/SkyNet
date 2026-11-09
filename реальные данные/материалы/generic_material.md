@@ -24,6 +24,7 @@
 
 
 
+
 id: material_generic_material
 тип: материал
 класс: неопределённый
