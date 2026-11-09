@@ -5184,6 +5184,35 @@
      "snippet": "YSZ thick film deposited on YSZ-NiO anode and co-sintered for gas-tight electrolyte."
     }
    ]
+  },
+  {
+   "id": "ws_0074",
+   "query": "copper wire drawing Cu-ETP C11000 ASTM B1 B2 B3 rod breakdown 35 m/s intermediate annealing",
+   "keywords": [
+    "wire drawing",
+    "Cu-ETP",
+    "C11000",
+    "ASTM B1",
+    "rod breakdown",
+    "annealing"
+   ],
+   "results": [
+    {
+     "title": "thyssenkrupp Copper & Alloys Guide (2023)",
+     "url": "https://www.thyssenkrupp-materials-na.com/_binary/UCPthyssenkruppBAMXNA/16ec005b-afc1-49fe-bdc9-1cfa4db56c78/copper-and-alloys-guide_8-15-2023-update.pdf",
+     "snippet": "ASTM B1/B2/B3, C11000 ETP round; reduction per pass as large as possible."
+    },
+    {
+     "title": "Rod Breakdown Machine Specs (Niehoff M81)",
+     "url": "https://www.scribd.com/document/634097885/06-M81-e",
+     "snippet": "up to 35 m/s, 11-16 drawing steps."
+    },
+    {
+     "title": "Banganayi — annealer curves Cu-ETP wire drawing",
+     "url": "https://ujcontent.uj.ac.za/view/pdfCoverPage?instCode=27UOJ_INST",
+     "snippet": "annealing critical during Cu-ETP wire drawing; voltage vs machine speed."
+    }
+   ]
   }
  ]
 }
