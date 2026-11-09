@@ -3257,7 +3257,66 @@
   "created_at": "2026-11-09T02:45:00+00:00",
   "usage_count": 1,
   "used_in_issues": [
-   2364
+   2364,
+   2365
+  ]
+ },
+ {
+  "query": "lead-acid battery electrolyte sulfuric acid specific gravity 1.265 1.28 fully charged freezing point concentration flooded VRLA AGM",
+  "keywords": [
+   "H2SO4 aqueous",
+   "specific gravity 1.265",
+   "flooded SLI",
+   "VRLA AGM",
+   "27-39 wt%",
+   "electrolyte"
+  ],
+  "results": [
+   {
+    "url": "https://www.bogartengineering.com/support/application_notes/specific_gravity_lead_acid_battery_electrolyte.html",
+    "title": "How to Measure Lead-Acid Battery Electrolyte Specific Gravity",
+    "snippet": "This comprehensive guide explains why measuring electrolyte specific gravity is crucial for flooded lead - acid battery maintenance, detailing step-by-step ..."
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery",
+    "title": "Lead–acid battery",
+    "snippet": "The design of some types of lead – acid battery (e.g., \" flooded \", but not VRLA ( AGM or gel)) allows the electrolyte level to be inspected and topped up with pure ... Read more"
+   },
+   {
+    "url": "https://www.better-tech.net/newsinfo-the-role-of-acid-electrolyte-in-lead-acid-battery-performance.html",
+    "title": "The Role of Acid Electrolyte in Lead-Acid Battery",
+    "snippet": "Jun 9, 2026 — For a standard, fully charged battery at room temperature , this reading should typically be around 1.265 . As the battery discharges, this ... Read more"
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESfgHEIkXXyu8h1nKopHuo-_5eseyWALjzAldV2MLojYxOwenKuBU0myX7ga2ZV4fMLib0U-VfjIyW8fe7LAYaI1o-YxCDoAsQ5Aaw88Zety5iZwEr9yzYOHmkII5rX7jY-gokeMpNx--I4Gea1lH4pIdg7HLxkwlrMWWPwV6_nQ",
+    "title": "Battery Acid Composition & Safety Guide",
+    "snippet": "Nov 4, 2025 — Flooded Batteries: Use 1.24– 1.28 SG for automotive or industrial use, requiring periodic water top-ups. Valve-Regulated Lead - Acid ( VRLA )/ AGM ... Read more"
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESZgHEIkXXRzyI1TeKZfeZAzGE02auD8NgzzLJDVrHoKgQ736Rarf3hBarTloXcr5uwWf1uYcH6G44mRbBA_USy_8Kio1P1xVRTnjtw2Rc_qxU1hD8lnC04DKf5QUuO4_Z-xcuOCBB-Q",
+    "title": "Battery Acid: Sulphuric Acid, SG, Dilution and Safety",
+    "snippet": "Jul 16, 2026 — In every lead - acid battery , concentrated sulphuric acid is diluted with demineralised water to typically 27–39% by weight — a specific gravity ... Read more"
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESnwEBxCJF14sF2M5FKFXvFLebu8ZEyBsZUurqc_pNEElUqRxBehKQlacWq8t01jvpY5fEKNjLh4zoQS3Mik8z5lyF6_4YYS1wvauqXDdddhy5utlpb3jWjyI1eOlGmdVJ6NXvNs4rHt-N8voxc9w46rWYYfwaP0yGcWxRpBpXGZddaXUnfq0OQYx7HBq6gTD__-NixQSh_flCEQf9iZvkpvk",
+    "title": "What is the correct mixture of sulfuric acid and water",
+    "snippet": "What is the correct mixture of sulfuric acid and water in a lead acid battery?"
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESlgEBxCJF19d-Y4weyBLeElDhrKkY0qoHs9ImaNepRf6nAbmDUNz5uUTJmwxv2_i2_nd5C97XijN3azIMXRaB6WoeFK3iQznsOZqZRnBpqY1PnRZI3lIg5W4Pd6oChMEXF0Qimj12TfGJo9U1p2eK3beRZbci3B53hRB4WUq5GHkipleH6-IGIjYkmP2LDVSQ2mCeCvj7UmI",
+    "title": "What is the electrolyte in a Vrla battery? - Blog",
+    "snippet": "Jan 9, 2026 — In a typical Vrla battery , the specific gravity of the electrolyte when the battery is fully charged is around 1.26 - 1.30 at 25°C (77°F). This ... Read more"
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESgQEBxCJF18XAtPocn3REUQeNh8Lj3-1ckQfjLpVcrSvlfQPhBbzIx4it4KXMRxo91kYzhODEB-QO1xVqrRP89zAraug00H92N59KbCLiJBKcmpmqJJvMbXHrAL_AywxLlvi0qCDCQqFiEgcBCgNrAkajIt5pFPncJdLOHgY0i3hIVZ8",
+    "title": "Battery Acid : Composition, Performance & Cross-Industry",
+    "snippet": "Aug 1, 2025 — Battery acid refers primarily to diluted sulfuric acid ( H2SO4 ), typically at concentrations between 30–38% by weight , used as the electrolyte ..."
+   }
+  ],
+  "created_at": "2026-11-09T02:50:00+00:00",
+  "usage_count": 1,
+  "used_in_issues": [
+   2365
   ]
  }
 ]

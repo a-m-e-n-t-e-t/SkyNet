@@ -30,12 +30,15 @@ id: izdelie_svintsovo-kislotnye_akb
     доля_массы: 0.19
   - часть: часть_svintsovo-kislotnye_akb_electrolyte
     материал: h2so4_aqueous
+    форма: vrla_agm_иммобилизованный
     доля_массы: 0.285
   - часть: часть_svintsovo-kislotnye_akb_separator
-    материал: pe_separator
+    материал: agm_steklovolokno
+    форма: hybrid_agm
     доля_массы: 0.019
   - часть: часть_svintsovo-kislotnye_akb_grid_pos
     материал: pb_sb_alloy
+    форма: стартерные_SLI_решётки
     доля_массы: 0.095
   - часть: часть_svintsovo-kislotnye_akb_case
     материал: polypropylene
@@ -60,10 +63,10 @@ id: izdelie_svintsovo-kislotnye_akb
       - материал: h2so4_aqueous
         роль: обрабатываемый
   - часть: часть_svintsovo-kislotnye_akb_separator
-    технология: gidrofobnoe_pokrytie
+    технология: pogruzhenie_v_mo-shliker
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: pe_separator
+      - материал: agm_steklovolokno
         роль: обрабатываемый
   - часть: часть_svintsovo-kislotnye_akb_grid_pos
     технология: otzhig
