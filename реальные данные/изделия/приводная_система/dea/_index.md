@@ -53,11 +53,12 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные:
   цена_usd: null
-  источник_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7770812
-  источник_url_2: https://www.dora.lib4ri.ch/empa/dload/empa%3A11595/PDF/Jordi-2010-Large_planar_dielectric_elastomer_actuators-(published_version).pdf
+  # Вторичный источник (полный текст Empa): dora.lib4ri.ch/empa — Jordi 2010
+  # "Large planar dielectric elastomer actuators" (полный PDF)
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-07
 источник: web_search
+источник_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7770812
 источник_разбора: веб-верификация
 источник_дата: 2026-11-07
 ---
