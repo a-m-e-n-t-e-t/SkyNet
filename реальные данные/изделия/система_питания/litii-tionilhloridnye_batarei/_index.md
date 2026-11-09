@@ -39,6 +39,22 @@ id: izdelie_litii-tionilhloridnye_batarei
     материал: stainless_steel_304
     форма: корпус_lisocl2_bobbin
     доля_массы: 0.19
+наследуемые_материалы:
+  - материал: socl2_lialcl4_electrolit
+    суммарная_доля_массы: 0.38
+    источники_частей: [часть_litii-tionilhloridnye_batarei_electrolyte]
+  - материал: lithium
+    суммарная_доля_массы: 0.19
+    источники_частей: [часть_litii-tionilhloridnye_batarei_anode]
+  - материал: ss_aisi_304
+    суммарная_доля_массы: 0.19
+    источники_частей: [часть_litii-tionilhloridnye_batarei_case]
+  - материал: carbon_ptfe
+    суммарная_доля_массы: 0.18
+    источники_частей: [часть_litii-tionilhloridnye_batarei_cathode]
+  - материал: agm_steklovolokno
+    суммарная_доля_массы: 0.019
+    источники_частей: [часть_litii-tionilhloridnye_batarei_separator]
 
 технологии_частей:
   - часть: часть_litii-tionilhloridnye_batarei_anode

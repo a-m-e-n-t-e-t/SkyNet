@@ -14,6 +14,7 @@
 
 
 
+
 id: tekhnologia_elektroosazhdenie_iridiya
 тип: технология
 категория: обработка

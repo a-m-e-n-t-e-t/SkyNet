@@ -14,6 +14,7 @@
 
 
 
+
 id: tekhnologia_thermal-inertial_slam
 тип: технология
 категория: обработка
