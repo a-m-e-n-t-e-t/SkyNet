@@ -15,7 +15,7 @@ id: часть_kondensatory_keramicheskie_plating
 дочерние_части: []
 материалы_частей:
   - часть: часть_kondensatory_keramicheskie_plating
-    материал: tin_metal
+    материал: tin
     форма: matte_sn_покрытие_MLCC
     доля_массы: 1.0
 

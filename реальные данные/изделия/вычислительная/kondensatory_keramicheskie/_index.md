@@ -19,8 +19,8 @@ id: izdelie_kondensatory_keramicheskie
   - часть_kondensatory_keramicheskie_plating
 материалы_частей:
   - часть: часть_kondensatory_keramicheskie_ceramic_layers
-    материал: barium_titanate
-    форма: диэлектрик_керам_конденсаторов
+    материал: batio3
+    форма: X7R_MLCC_класс_II_EIA
     доля_массы: 0.475
   - часть: часть_kondensatory_keramicheskie_inner_electrodes
     материал: nickel
@@ -35,7 +35,7 @@ id: izdelie_kondensatory_keramicheskie
     форма: внешние_электроды_и_терминация_MLCC
     доля_массы: 0.09
   - часть: часть_kondensatory_keramicheskie_plating
-    материал: tin_metal
+    материал: tin
     форма: matte_sn_покрытие_MLCC
     доля_массы: 0.09
 
@@ -94,6 +94,23 @@ id: izdelie_kondensatory_keramicheskie
     источники_частей:
       - часть_kondensatory_keramicheskie_plating
 
+масштабируемость:
+  режим: квантуемая
+  параметры: [масса_kg, ёмкость_мкФ, выработка_тепла_W]
+  пределы:
+    min: {масса_kg: 0.0001, ёмкость_мкФ: 0.1, выработка_тепла_W: 0.001}
+    max: {масса_kg: 0.005, ёмкость_мкФ: 47, выработка_тепла_W: 0.05}
+  закон_масштабирования:
+    масса: '∝ числа слоёв и площади обкладок (EIA-кейсы 0201–2220); запасённая энергия E = ½CV² = 1.25 мДж при 1 мкФ / 50 В'
+    тепло: 'P = ESR·I²_RMS (X7R, 50 В): 0.01 Вт номинал при типовых пульсациях для кейса 0805'
+    энергия: 'ёмкость квантуется кейсом EIA (0201/0402/0603/0805/1206) и рядом номиналов X7R 100 пФ – 47 мкФ'
+  ограничивающие_части:
+    - часть: часть_kondensatory_keramicheskie_ceramic_layers
+      предел: 'BaTiO3 X7R слои 47.5% массы: толщина диэлектрика ~1–5 мкм/слой задаёт рабочее напряжение (DC-bias деградация ёмкости)'
+    - часть: часть_kondensatory_keramicheskie_inner_electrodes
+      предел: 'Ni BME электроды 19% массы: ко-спекание 1100–1300 °C; вклад в ESR при росте числа слоёв'
+    - часть: часть_kondensatory_keramicheskie_plating
+      предел: 'matte Sn 9% массы: теплостойкость пайки (reflow ≤260 °C), risk dewetting при повторных циклах'
 
 scaling_type: количественный
 соединители: []

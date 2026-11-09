@@ -10,6 +10,7 @@
 
 
 
+
 id: tekhnologia_elektromagnitnaya_katapulta__ii
 тип: технология
 категория: обработка

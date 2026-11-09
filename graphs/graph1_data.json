@@ -9450,6 +9450,12 @@
     },
     {
       "src": "izdelie_kondensatory_keramicheskie",
+      "dst": "material_batio3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_kondensatory_keramicheskie",
       "dst": "material_nickel",
       "type": "uses_material",
       "meta": {}
@@ -9457,6 +9463,12 @@
     {
       "src": "izdelie_kondensatory_keramicheskie",
       "dst": "material_copper",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_kondensatory_keramicheskie",
+      "dst": "material_tin",
       "type": "uses_material",
       "meta": {}
     },
@@ -9877,6 +9889,12 @@
     {
       "src": "часть_kondensatory_keramicheskie_ceramic_layers",
       "dst": "material_batio3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_kondensatory_keramicheskie_plating",
+      "dst": "material_tin",
       "type": "uses_material",
       "meta": {}
     },
@@ -18247,7 +18265,6 @@
       "material_agm_steklovolokno",
       "material_al_bondwire",
       "material_aluminum_electrolytic",
-      "material_barium_titanate",
       "material_bearing_steel_52100",
       "material_biological_tissue",
       "material_bt_abf_substrate",
@@ -18306,7 +18323,6 @@
       "material_synthetic_rubber",
       "material_tedlar_pet",
       "material_ti-6al-4v_legirovannyi_3_5_mas_tantala_ii",
-      "material_tin_metal",
       "material_tungsten_electrodes",
       "material_uo2_pellets",
       "material_ybco_bulk",
@@ -18315,12 +18331,12 @@
   },
   "stats": {
     "nodes": 1158,
-    "edges": 1582,
+    "edges": 1585,
     "dangling": {
       "complies_with": 540,
       "has_part": 4,
       "researched_by": 88,
-      "uses_material": 68
+      "uses_material": 66
     },
     "by_type": {
       "chast": 664,
