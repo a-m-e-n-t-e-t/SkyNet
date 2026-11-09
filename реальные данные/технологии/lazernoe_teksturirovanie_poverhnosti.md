@@ -2,6 +2,8 @@
 
 
 
+
+
 id: tekhnologia_lazernoe_teksturirovanie_poverhnosti
 тип: технология
 категория: обработка

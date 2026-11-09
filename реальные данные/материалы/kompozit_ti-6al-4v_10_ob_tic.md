@@ -2,6 +2,8 @@
 
 
 
+
+
 id: material_kompozit_ti-6al-4v_10_ob_tic
 канонический_id: 'material_kompozit_ti-6al-4v_10_ob_tic'
 тип: материал

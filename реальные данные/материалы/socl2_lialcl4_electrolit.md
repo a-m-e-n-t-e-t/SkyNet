@@ -2,6 +2,8 @@
 
 
 
+
+
 id: material_socl2_lialcl4_electrolit
 тип: материал
 класс: неорганическая_жидкость

@@ -2,6 +2,8 @@
 
 
 
+
+
 id: material_sct
 псевдонимы: [скандий-тритид, ScT2, ScT₂, scandium tritide]
 тип: материал

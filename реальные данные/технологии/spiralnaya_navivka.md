@@ -2,6 +2,8 @@
 
 
 
+
+
 id: tekhnologia_spiralnaya_navivka
 тип: технология
 категория: обработка

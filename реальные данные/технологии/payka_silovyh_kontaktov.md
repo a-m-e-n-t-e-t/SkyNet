@@ -2,6 +2,8 @@
 
 
 
+
+
 id: tekhnologia_payka_silovyh_kontaktov
 тип: технология
 категория: сборка

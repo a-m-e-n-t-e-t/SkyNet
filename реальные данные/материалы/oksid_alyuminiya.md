@@ -2,6 +2,8 @@
 
 
 
+
+
 id: material_oksid_alyuminiya
 тип: материал
 класс: керамика
