@@ -19,6 +19,7 @@
 
 
 
+
 id: tekhnologia_algoritm_spgd
 тип: технология
 категория: обработка

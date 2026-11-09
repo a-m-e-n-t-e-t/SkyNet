@@ -19,6 +19,7 @@
 
 
 
+
 id: material_mgso4_7h2o
 канонический_id: 'material_mgso4_7h2o'
 тип: материал

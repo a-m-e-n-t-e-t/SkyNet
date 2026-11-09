@@ -19,6 +19,7 @@
 
 
 
+
 id: material_sic_b4c_nanostrukturirovannyi_gibrid
 канонический_id: 'material_sic_b4c_nanostrukturirovannyi_gibrid'
 тип: материал

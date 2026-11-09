@@ -29,12 +29,15 @@ id: izdelie_sic_mosfet
     доля_массы: 0.475
   - часть: часть_sic_mosfet_wire_bonds
     материал: aluminum
+    форма: электротехнические_проводники
     доля_массы: 0.0095
   - часть: часть_sic_mosfet_encapsulant
     материал: epoxy_molding
+    форма: encapsulant_с_mc_силоых_ключей
     доля_массы: 0.19
   - часть: часть_sic_mosfet_solder
     материал: lead_free_solder
+    форма: силовой_модуль_sic_die_substrate_attach
     доля_массы: 0.045
 
 технологии_частей:

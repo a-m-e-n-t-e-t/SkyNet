@@ -19,6 +19,7 @@
 
 
 
+
 id: tekhnologia_diffuzionnaya_svarka
 тип: технология
 категория: обработка
