@@ -4637,6 +4637,33 @@
         "TMN Etch 2026: 316L — established use в etched+diffusion-bonded теплообменниках, конверт 0.02–1.5 мм, допуски ±0.025 мм, каналы 0.5–2.0 мм экспериментальные (tmnetch.com)",
         "Procedia Engineering: скорость спрей-травления зависит от ширины канала, времени, давления распыла и температуры травителя (sciencedirect S1876610217310585)"
       ]
+    },
+    {
+      "id": "ws_0063",
+      "query": "Al2O3 Ta2O5 doped LLZO cubic phase stabilization doping per formula unit sintering",
+      "keywords": [
+        "LLZO",
+        "doping",
+        "Al",
+        "Ta",
+        "cubic",
+        "sintering"
+      ],
+      "results_count": 10,
+      "key_facts": [
+        "Shin 2015 PMC4678301: Al3+ на Li 24d -> 2 Li-вакансии, Ta5+ на Zr4+; ко-доп Al+Ta x=y=0.2: Al 24d->96h (>75%), 6.14e-4 S/cm vs 2.54e-4 Al-only, куб. фаза за 2 ч",
+        "Gaukas 2024 ACS: Al x=0.20-0.40/f.u.; Gao 2025: LLZTO Li6.4La3Zr1.4Ta0.6O12, Al-LLZO 2.0e-4 / Ta-LLZO 5.3e-4 S/cm",
+        "El-Shinawi 2016: куб. фаза при кальцин. 1000-1100 C, побочные LiAlO2/Li2ZrO3; Zhang 2021 Auburn: ко-доп соосаждение, спекание 1100 C/4 ч чистая кубическая"
+      ],
+      "created_at": "2026-11-09T17:24:20.140501+00:00",
+      "last_used": "2026-11-09T17:24:20.140501+00:00",
+      "usage_count": 1,
+      "results": [
+        "см. key_facts"
+      ],
+      "used_in_issues": [
+        922
+      ]
     }
   ]
 }

@@ -7738,6 +7738,13 @@
       "subsystem": ""
     },
     {
+      "id": "tekhnologia_legirovanie_al_ta",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/legirovanie_al_ta.md",
+      "subsystem": ""
+    },
+    {
       "id": "tekhnologia_lfw",
       "type": "tekhnologia",
       "label": "обработка",
@@ -18337,7 +18344,7 @@
     ]
   },
   "stats": {
-    "nodes": 1159,
+    "nodes": 1160,
     "edges": 1585,
     "dangling": {
       "complies_with": 540,
@@ -18351,7 +18358,7 @@
       "izdelie": 203,
       "material": 195,
       "standart": 8,
-      "tekhnologia": 79
+      "tekhnologia": 80
     }
   }
 }
