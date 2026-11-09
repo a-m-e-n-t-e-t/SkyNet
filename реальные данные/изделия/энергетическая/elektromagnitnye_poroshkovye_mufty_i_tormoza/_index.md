@@ -69,6 +69,29 @@ id: izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza
     материалы_для_процесса:
       - материал: stainless_steel_440c
         роль: обрабатываемый
+
+наследуемые_материалы:
+  - материал: copper
+    форма: обмотки_электрических_машин
+    суммарная_доля_массы: 0.18
+    источники_частей:
+      - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil
+  - материал: steel_1045
+    форма: валы_и_магнитопроводы_муфт
+    суммарная_доля_массы: 0.57
+    источники_частей:
+      - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor
+      - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator
+  - материал: iron_powder
+    форма: ферромагнитный_порошок_рабочего_зазора
+    суммарная_доля_массы: 0.057
+    источники_частей:
+      - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_powder
+  - материал: stainless_steel_440c
+    форма: коррозионностойкие_подшипниковые_кольца
+    суммарная_доля_массы: 0.054
+    источники_частей:
+      - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_bearings
 scaling_type: количественный
 соединители: []
 версия: реальная
