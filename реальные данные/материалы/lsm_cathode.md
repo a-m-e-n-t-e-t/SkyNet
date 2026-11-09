@@ -25,6 +25,7 @@
 
 
 
+
 id: material_lsm_cathode
 тип: материал
 класс: керамика

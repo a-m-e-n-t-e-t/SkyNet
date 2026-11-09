@@ -25,6 +25,7 @@
 
 
 
+
 id: material_elastomernaya_matritsa
 тип: материал
 класс: полимер

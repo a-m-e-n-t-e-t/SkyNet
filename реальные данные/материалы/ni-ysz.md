@@ -25,6 +25,7 @@
 
 
 
+
 id: material_ni-ysz
 псевдонимы: [material_ni_ysz_cermet]
 тип: материал

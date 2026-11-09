@@ -28,12 +28,15 @@ id: izdelie_halve
     доля_массы: 0.14
   - часть: часть_halve_pins_balls
     материал: copper_alloy
+    форма: штырьки_и_шарики_разъёмов
     доля_массы: 0.1
   - часть: часть_halve_thermal_spreader
     материал: copper
+    форма: теплосъём_и_экранирование
     доля_массы: 0.18
   - часть: часть_halve_encapsulant
     материал: epoxy_molding
+    форма: encapsulant_нейроморфов_bga
     доля_массы: 0.1
   - часть: часть_halve_capacitors
     материал: ceramic_mlcc

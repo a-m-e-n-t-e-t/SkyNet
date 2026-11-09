@@ -25,6 +25,7 @@
 
 
 
+
 id: tekhnologia_ald_al2o3
 канонический_id: 'tekhnologia_ald_al2o3'
 тип: технология
