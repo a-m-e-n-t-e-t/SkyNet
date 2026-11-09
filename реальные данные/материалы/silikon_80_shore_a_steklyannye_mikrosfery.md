@@ -4,6 +4,7 @@
 
 
 
+
 id: material_silikon_80_shore_a_steklyannye_mikrosfery
 псевдонимы: [силиконовая_синтаксическая_пена, silicone_glass_microballoon_syntactic_foam, силикон_со_стеклянными_микросферами]
 канонический_id: 'material_silikon_80_shore_a_steklyannye_mikrosfery'

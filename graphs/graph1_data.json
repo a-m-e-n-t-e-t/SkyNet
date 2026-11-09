@@ -6800,13 +6800,6 @@
       "subsystem": ""
     },
     {
-      "id": "material_ni_ysz_cermet",
-      "type": "material",
-      "label": "Ni (40 vol%) + YSZ (60 vol%) cermet — анод SOFC",
-      "path": "реальные данные/материалы/ni_ysz_cermet.md",
-      "subsystem": ""
-    },
-    {
       "id": "material_nichrome",
       "type": "material",
       "label": "Нихром 80/20 (Nikrothal 80, NiCr8020): Ni — основа (бал.), Cr 19.0–21.0 %, Si 1.0–1.7 %, Mn ≤1.0 %, Fe ≤2.0 %, C ≤0.10 %",
@@ -18223,7 +18216,7 @@
     ]
   },
   "stats": {
-    "nodes": 1157,
+    "nodes": 1156,
     "edges": 1568,
     "dangling": {
       "complies_with": 538,
@@ -18235,7 +18228,7 @@
       "chast": 662,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 203,
-      "material": 196,
+      "material": 195,
       "standart": 8,
       "tekhnologia": 78
     }
