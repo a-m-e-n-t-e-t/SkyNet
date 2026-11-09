@@ -3762,5 +3762,95 @@
   "used_in_issues": [
    2369
   ]
+ },
+ {
+  "query": "MMRTG GPHS PuO2 fuel pellet pressed sintered iridium capsule manufacturing process",
+  "keywords": [
+   "GPHS",
+   "PuO2",
+   "fuel pellet",
+   "hot pressing",
+   "iridium capsule",
+   "MMRTG"
+  ],
+  "results": [
+   {
+    "url": "https://www.osti.gov/servlets/purl/7177303",
+    "name": "MASTER",
+    "snippet": "by DT Rankin · 1979 · Cited by 1 — The GPHS fuel pellets are fabricated by hot pressing a blended mixture of. Pu02 granules prepared from calcined plutonium oxalate. Results of a test program ... Read more",
+    "host_name": "www.osti.gov",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAEShAEBxCJF11zJk1_clzQifpnpJaBW5JuG7123q4g4HOLzXGUDblY0zGmMQ6rQSx6ryJHSUuZkcCpGUyH9K0dOA5TlovU8koz1AYLncGDd-DQxrQKzP6by7SbgVbajMn6sP-qLxf0vvIBSe7H0wS18OF5j9WGB51vdutMLaFP8QAyV23dEZGA",
+    "name": "LASL Fabrication Flowsheet for GPHS Fuel Pellets",
+    "snippet": "The flowsheet, discussed below, PuO2 GPHS fuel pellets is the result of the experience aained at LASL, both in the develop- characterization of specific fuel ...",
+    "host_name": "www.google.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAEShgEBxCJF1-1QbtDUHKSSMVNMxLxCSAOArP89LZFEbiZkL6zoy84WGVC09ovHyvdp9qEeJm_4-7Ce79eQ_gb53mjH7XO5XrOqsFNdRB8Mg17NtuNBRf56R_MVtrVyasbZqcTtOmFWJW_j7lAQH_Z8B9wYCVxJAUPd0v6Q7tCFuygMH_uFVstxWA",
+    "name": "thermal analysis of conceptual designs for gphs/fpse power",
+    "snippet": "by TJ Mccomas · 1991 · Cited by 2 — Each module contains four iridium clad fuel pellets , two graphite impact shells, two thermal insulation sleeves, and an outer aeroshell. 155 pages",
+    "host_name": "www.google.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESsQEBxCJF11i3KvnRVz6LU6JKxOFlGprU13WX01aqNcN0gxMX7kep4fS86uPZ797uT14LZuhX7waNcH3RvSbvHk4_uGQt63_JjWxbeBHNo67_Kj9muOF8TSvHdS14y6r8x3ZsY_FbS7hMtz_PIacuguO8bA23SbmRUlhrS_dlM_Me-c17y7iNW29huOf8Ci217LtrzY85Z3A3mo2SKpYme2L0aLOJ-v48GCzalI0Wh4vGsVM",
+    "name": "Radioisotope Power Systems (RPS) Overview",
+    "snippet": "Fuel Assembly and Preparation • 2 GIS assembled into each General Purpose Heat Source ( GPHS ) module. PuO2 Iridium -Clad Fuel Pellet … 8 GPHS modules cleaned and ...",
+    "host_name": "www.google.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESmQEBxCJF1_nAHA-V3nKjbuckEu_1h16NlhLHliPgsnWUW3LWHJsvvxmwFF6KCWNqSQz5Ptm-JYQsUtfTz73VAEE3YbS1PbcqkOEPH9uUnAbD3k1OntSJoiNsOPhL0Mhv5tq0mBnYwVUs3C2xKFEaGa_oaXHlz1YX2NZh8eV_QMeM2eQwL98cZSQVYJ8VcqRgvEsWCL_bZCpV89I",
+    "name": "American Society of Mechanical Engineers - Submission",
+    "snippet": "The GPHS operates by harnessing the heat released by the radioactive decay of its plutonium dioxide (PuO₂) fuel pellets . Each GPHS module consists of four of ... Read more",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESuQEBxCJF1y7XZ-b45VSSBIpsqXpAwbgNcGb4t0smrOii8fsYEfor-qyLcgQcBMf2rXEITSVJ4o6gLh1pVvNd_cn41hgBQanRvj8xg_BDoxUMDSCKuKaJuUmwlry0CI5dTAJQPGUKpbGdBZmy2fCT6f6QBQE6o6czLfYWRYYNk0E3QUOtrWnPbiI8rEwJ2jv_d5MwRkbb6nRYk8yNXSurxvCKRGP9XVCafu3ogT6SmWOyhgSOOmwQFmmIMg",
+    "name": "1-Space Radioisotope Power Systems (last updated in",
+    "snippet": "by E Proust · 2020 — While the fuel is contained within its iridium capsule , GPHS : Iridium Alloy Fuel Clad 45. While the fuel is contained within its iridium ...",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESdgHEIkXXhjfG8CuLWe1bgEyFJ3R0HEoElYTXikSBLhiHlFv-5GwYv1BqsRRzk-HGzVm-SvbHpbpN73yGtPS2E8yVRJa2hCqPf23t44kOkPInfmdpveVrnqp06lcOm0525dWApEwit7ug2wJJv8YLSug9OMv00S4",
+    "name": "Ceramic fuel pellets for isotopic heat sources",
+    "snippet": "Oct 17, 2026 — The GPHS fuel pellets are fabricated by hot pressing a blended mixture of /sup 238/PuO/sub 2/ granules prepared from calcined plutonium oxalate. Read more",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "Oct 17, 2026",
+    "favicon": ""
+   },
+   {
+    "url": "https://thesis.unipd.it/retrieve/acb53369-aeca-4813-a81a-326724f22c08/Toso_Sophie.pdf",
+    "name": "Radioisotope Thermoelectric Generators and the role of",
+    "snippet": "by S Toso — They are fabricated by pressing NpO2 powder into pellets and sintering at high temperatures . fuel pellets involves a hot pressing method ・ a standardized fuel ... 143 pages",
+    "host_name": "thesis.unipd.it",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+   }
+  ],
+  "created_at": "2026-11-09T03:42:09.955538+00:00",
+  "usage_count": 1,
+  "used_in_issues": [
+   2370
+  ]
  }
 ]
