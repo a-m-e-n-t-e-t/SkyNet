@@ -21,6 +21,7 @@
 
 
 
+
 id: material_dioksid_plutoniya-238
 тип: материал
 класс: керамика

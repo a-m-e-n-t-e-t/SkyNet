@@ -21,6 +21,7 @@
 
 
 
+
 id: tekhnologia_event-driven_arhitektura
 тип: технология
 категория: обработка

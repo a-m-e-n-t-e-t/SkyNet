@@ -21,6 +21,7 @@
 
 
 
+
 id: tekhnologia_si-fotonika
 тип: технология
 категория: обработка

@@ -21,6 +21,7 @@
 
 
 
+
 id: tekhnologia_vnedrenie_bi2te3_chipov_ii
 тип: технология
 категория: обработка
