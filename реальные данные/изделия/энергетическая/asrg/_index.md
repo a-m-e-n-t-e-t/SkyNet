@@ -20,7 +20,7 @@ id: izdelie_asrg
   - часть_asrg_housing
 материалы_частей:
   - часть: часть_asrg_isotope
-    материал: pu238_oxide
+    материал: dioksid_plutoniya-238
     форма: гпхс_пеллет_nasa
     доля_массы: 0.2375
   - часть: часть_asrg_heater_head
