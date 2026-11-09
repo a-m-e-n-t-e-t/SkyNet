@@ -6921,7 +6921,7 @@
     {
       "id": "material_pe_pp",
       "type": "material",
-      "label": "PE/PP многослойный сепаратор (Celgard)",
+      "label": "(—C₂H₄—)ₙ PE / (—CH₂—CH(CH₃)—)ₙ PP — микропористые полиолефиновые сепараторные мембраны (монослой PP: Celgard 2400/2500; трёхслой PP/PE/PP: Celgard 2325)",
       "path": "реальные данные/материалы/pe_pp.md",
       "subsystem": ""
     },
@@ -7847,6 +7847,13 @@
       "type": "tekhnologia",
       "label": "обработка",
       "path": "реальные данные/технологии/plazmennaya_aktivatsiya.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_pletenie_opletki",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/pletenie_opletki.md",
       "subsystem": ""
     },
     {
@@ -10460,7 +10467,7 @@
     },
     {
       "src": "izdelie_belleville_shaiby",
-      "dst": "material_aluminum",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -10491,12 +10498,6 @@
     {
       "src": "izdelie_bldc_enkoder",
       "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_bldc_enkoder",
-      "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
     },
@@ -18481,8 +18482,8 @@
     ]
   },
   "stats": {
-    "nodes": 1172,
-    "edges": 1595,
+    "nodes": 1173,
+    "edges": 1594,
     "dangling": {
       "complies_with": 540,
       "has_part": 4,
@@ -18495,7 +18496,7 @@
       "izdelie": 203,
       "material": 195,
       "standart": 8,
-      "tekhnologia": 92
+      "tekhnologia": 93
     }
   }
 }
