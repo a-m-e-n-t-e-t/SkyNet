@@ -4455,5 +4455,106 @@
    2376,
    2377
   ]
+ },
+ {
+  "query": "Intel Loihi 2 neuromorphic chip packaging BGA substrate BT resin encapsulant copper thermal spreader lid Nahuku 128 cores",
+  "keywords": [
+   "Intel Loihi 2",
+   "neuromorphic chip",
+   "BGA packaging",
+   "BT resin substrate",
+   "encapsulant",
+   "copper thermal spreader",
+   "Nahuku",
+   "128 cores"
+  ],
+  "results": [
+   {
+    "url": "https://www.intel.com/content/www/us/en/research/neuromorphic-computing-loihi-2-technology-brief.html",
+    "name": "Next-Level Neuromorphic Computing: Intel Lab's Loihi 2 Chip",
+    "snippet": "Intel Lab's new Loihi 2 chip outperforms its predecessor by up to 10x and comes with an open-source, community-driven neuromorphic computing framework",
+    "host_name": "www.intel.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://open-neuromorphic.org/neuromorphic-computing/hardware/loihi-2-intel",
+    "name": "A Look at Loihi 2 - Intel - Neuromorphic Chip",
+    "snippet": "Loihi 2 is Intel's latest neuromorphic research chip , implementing spiking neural networks with programmable dynamics, modular connectivity, and optimizations",
+    "host_name": "open-neuromorphic.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESrQEBxCJF1xItkuALU2Y-v2E-ZAbYLHvsTGigGOjmJdsN4Uw7CDGEVcIm7iRkcXE2HQpYayNXknaKDk1vesPjh49UOqZhhqBGoHd_PPysk9l1aDpkNNIzRw3hX7wyqJseyjecmvbXfytXDvR46tuu7BhyqfFkYIF7YznXgwYp6-rEHJZmelGhMASh8Lt3Pollt7lVMbAKqEWwexyC5XIVzMXVRp1EFvQ8Tb3fxapasA",
+    "name": "neuromorphic-computing-loihi-2-brief.pdf",
+    "snippet": "Loihi 2 chip consists of microprocessor cores and up to 128 fully asynchronous neuron cores connected by a network-on- chip (NoC). neuromorphic workloads, 7 pages",
+    "host_name": "www.google.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESoQEBxCJF17dBHhZ5JJSAX43Twk1UE1suJC2iMS6oU1igj4zVufyegQEpwDracPtAz43tguvEn7099Tf7f3jjiTGlMmv2t1pmBjbK6g7iGHJl6Xe0n6uJv5T7wYDrlJbqpSsAuD99B-HdB5-aj2h1FkgNGwPqmSVFNgKnBPeZBUVW516HeowQt3zxvV2btIbww_nZgzpyO3ADCYqPWx9z2C89uQ",
+    "name": "Update on my neuromorphic chip architectures for anyone",
+    "snippet": "N2 — Loihi 2 feature parity. Same 128 - core topology but with a programmable 14-opcode microcode learning engine, three-factor eligibility ... Read more",
+    "host_name": "www.google.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESuwEBxCJF19uwFbYazVwaVOXWIeOWpawaYDJQOoFNKIl-KAYuUw-Ze4CaJOsTG9LENjZtoQnMXMgqdfb-VqOyKpw_PuCJKw96zF1jl3AvJiTNWOybrwM6HAYu6j4I7Qu51V5Gd2ibbbP3TELS7nTmSekKVw39gO35OjN-FWnTG3HBArCh3X-UVBsF1ZecRpJDL2nGtdgLJpUyEay8xpP2x7vudy495kSAoMXCE7Wz7VHf1MkSpgbsT62jUQS_",
+    "name": "Low-power, low-latency computing with Loihi 2",
+    "snippet": "Nov 22, 2023 — Introduction to the Intel Neuromorphic Research Chip , Loihi . Fully redesigned with up to 8192 neurons Microprocessor cores",
+    "host_name": "www.google.com",
+    "rank": 4,
+    "date": "Nov 22, 2023",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESswEBxCJF18hK0QReGrUvmSTQQ6rF1ax0s2cygrAKceTvrN73c66n4BzIn-92SN-bQhllU0nvBv2TNR-ii1dNlD325SZZOcvfvHulrufPAP-I_0Ljp6cj5FH8NGa8rMhxYUoDj3pPuZ64T8kxygYlcQM6wOyEEiUOzIXz0PrVReek_vZOASWEzQTJaVY-qzMnIoT3U8aW0jkzVjlTJZ7OA4TyZPBaUClqKJOUNW-37cIC4OUdOw",
+    "name": "Intel Advances Neuromorphic with Loihi 2, New Lava Software",
+    "snippet": "Sep 30, 2021 — Loihi 2 is Intel's second-generation neuromorphic research chip . It supports new classes of neuro-inspired algorithms and applications, while ...",
+    "host_name": "www.google.com",
+    "rank": 5,
+    "date": "Sep 30, 2021",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESggEBxCJF19lftifq9DNDosPe35cjoyMDAyoyZ1XugWfx_e6bJoGQplFo7k5jB6GbK2y8p1m0NvqnqJUDXF7AHfnC9W_pOdXpx5RkLw6wDK8TA4gArQGjDT8SRiVu59PJQmruIPTL1kl-HmSIRASCY02sxbarWHS6naJH_-S0BlWpfxfr",
+    "name": "Intel Loihi 2 Neuromorphic Chip",
+    "snippet": "Jan 22, 2026 — Loihi 2 integrates a mesh of up to 128 fully asynchronous neuromorphic cores , each capable of hosting thousands of programmable spiking ... Read more",
+    "host_name": "www.google.com",
+    "rank": 6,
+    "date": "Jan 22, 2026",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAEStwEBxCJF18OhhNs319dBqLiEo7RoFl_ZWhRq35mkqRmqnrEThAvKgZYNjZC5NCb4WozrRbfbw4jigMEaUNEimZzGClojdkWfY7Gn8Ndr93nH-VzTh7gMdTMEXt8vQMnGTyYpEsFfTZOZiZPpLQkfioT7oC38T9UCti8gGWWRU_5lDksJGtAZyAcgSVpOXK4OlqAZ8fdgJvUaKqJYMEAyeybQt1wex7t_0Fl0-xDDPRZn2MGILd9dEXM",
+    "name": "What do Intel's Loihi chips offer with 'self-learning'",
+    "snippet": "What do Intel's Loihi chips offer with \"self-learning\", \"neuromorphic cores\" and \"async spiking computation\"?",
+    "host_name": "www.google.com",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESaAHEIkXX7hQEDuHJoK9E6N9septVzmzjGeEMu7tR70mWLetgMR_CUXO3bt0h061c2oxvc4Qmp8C1ds0Z7QOE5wMcYq45Yhlr9c8Xr7I7ae9jNWQ2vMcg4SDZ5SLQI1mjtLpx_bUoAFj5",
+    "name": "Architecture All Access: Neuromorphic Computing Part 2",
+    "snippet": "In Neuromorphic Computing Part 2 , we dive deeper into mapping neuromorphic concepts into chips built from silicon.",
+    "host_name": "www.google.com",
+    "rank": 8,
+    "date": "",
+    "favicon": ""
+   }
+  ],
+  "created_at": "2026-11-09T05:20:00Z",
+  "usage_count": 1,
+  "used_in_issues": [
+   2379
+  ]
  }
 ]
