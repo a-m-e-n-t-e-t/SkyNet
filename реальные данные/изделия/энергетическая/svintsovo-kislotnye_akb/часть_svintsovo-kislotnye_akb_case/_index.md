@@ -14,7 +14,7 @@ id: часть_svintsovo-kislotnye_akb_case
 дочерние_части: []
 материалы_частей:
   - часть: часть_svintsovo-kislotnye_akb_case
-    материал: uhmwpe_dyneema
+    материал: polypropylene
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -64,7 +64,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 350×175×21 | mm | Тонкостенная оболочка батареи DIN 350×175×190: развёртка 322 000 мм² (боковины 350×190 ×2, торцы 175×190 ×2, дно+крышка 350×175 ×2) × PP стенка 4 мм (battery-component.com, диапазон 4–8 мм); PPCP контейнеры DIN/BS — Kruger Industries; канон тонкостенной оболочки — tverdotelnye_akkumulyatory case 100×50×0.294 |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 0 | W | пассивный контейнер-диэлектрик (web_search 2026-11-07) |
-| материал | uhmwpe_dyneema | — | uhmwpe_dyneema.md |
+| материал | polypropylene | — | polypropylene.md |
 
 ## Принцип работы
 
@@ -80,7 +80,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `uhmwpe_dyneema` → [`uhmwpe_dyneema.md`](../../../материалы/uhmwpe_dyneema.md)
+- `polypropylene` → [`polypropylene.md`](../../../материалы/polypropylene.md)
 
 ## Источники
 

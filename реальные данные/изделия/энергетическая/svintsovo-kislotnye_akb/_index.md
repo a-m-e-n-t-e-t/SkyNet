@@ -42,7 +42,9 @@ id: izdelie_svintsovo-kislotnye_akb
     доля_массы: 0.095
   - часть: часть_svintsovo-kislotnye_akb_case
     материал: polypropylene
+    форма: литьевой_моноблок_ppcp
     доля_массы: 0.095
+  - часть: часть_svintsovo-kislotnye_akb_terminal
 технологии_частей:
   - часть: часть_svintsovo-kislotnye_akb_anode
     технология: pogruzhenie_v_mo-shliker
@@ -80,6 +82,39 @@ id: izdelie_svintsovo-kislotnye_akb
     материалы_для_процесса:
       - материал: polypropylene
         роль: обрабатываемый
+
+наследуемые_материалы:
+  - материал: pbo2
+    форма: положительная_пластина_свинцовой_акб
+    суммарная_доля_массы: 0.19
+    источники_частей:
+      - часть_svintsovo-kislotnye_akb_anode
+  - материал: spongy_lead
+    форма: sli_стартерные_акб
+    суммарная_доля_массы: 0.19
+    источники_частей:
+      - часть_svintsovo-kislotnye_akb_cathode
+  - материал: h2so4_aqueous
+    форма: vrla_agm_иммобилизованный
+    суммарная_доля_массы: 0.285
+    источники_частей:
+      - часть_svintsovo-kislotnye_akb_electrolyte
+  - материал: agm_steklovolokno
+    форма: hybrid_agm
+    суммарная_доля_массы: 0.019
+    источники_частей:
+      - часть_svintsovo-kislotnye_akb_separator
+  - материал: pb_sb_alloy
+    форма: стартерные_SLI_решётки
+    суммарная_доля_массы: 0.095
+    источники_частей:
+      - часть_svintsovo-kislotnye_akb_grid_pos
+  - материал: polypropylene
+    форма: литьевой_моноблок_ppcp
+    суммарная_доля_массы: 0.095
+    источники_частей:
+      - часть_svintsovo-kislotnye_akb_case
+
 scaling_type: количественный
 соединители: []
 версия: реальная
