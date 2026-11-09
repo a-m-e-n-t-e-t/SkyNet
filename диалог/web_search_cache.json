@@ -4692,6 +4692,64 @@
       "used_in_issues": [
         925
       ]
+    },
+    {
+      "id": "ws_vyrubka_listovyh_elastomerov",
+      "query": "die cutting polyurethane rubber sheet hydraulic press thickness tolerance; waterjet cutting rubber sheet kerf tolerance",
+      "keywords": [
+        "die cutting",
+        "steel rule die",
+        "polyurethane sheet",
+        "RMA Table 35",
+        "tolerance",
+        "waterjet"
+      ],
+      "results_count": 6,
+      "key_facts": [
+        "RMA Table 35 (MO-1, 2005) die-cut sheet: толщина ≤6.3 мм — <25 мм ±0.63 мм (BL1), 25–160 мм ±0.80 мм, >160 мм ×0.0063; 6.3–12.5 мм: ±0.81/±1.0 мм",
+        "Dishing/вогнутость кромки растёт с толщиной — RMA отдельные строки по толщинам; BL1 не для мягких марок (<63 kPa compression deflection)",
+        "Solid PU (Colvin-Friedman): ±0.13–0.25 мм тонкие листы, коммерческие ±0.25–0.64 мм, толстые ±0.76–1.27 мм",
+        "Водоструйная резка эластомеров: отверстия от Ø0.25 мм (Elasto Proxy), типовой допуск ±0.1 мм (1 Cut Fab); микро-водоструй 0.013–0.127 мм до 12.7 мм (Fathom)",
+        "Steel rule die: лезвия 23.8–32 мм в фанерной подложке; clicker-прессы (малые серии) и гидравлические прессы (крупные); процесс холодный (комнатная температура)"
+      ],
+      "created_at": "2026-11-10",
+      "last_used": "2026-11-10",
+      "usage_count": 1,
+      "results": [
+        {
+          "url": "https://www.atlanticgasket.com/tolerances-for-die-cut-and-molded-parts.html",
+          "title": "RMA Rubber Tolerances — Atlantic Gasket",
+          "snippet": "RMA Table 35: допуски die-cut sheet по толщинам; dishing; BL1-BL3 классы; molded A1–A4"
+        },
+        {
+          "url": "https://colvin-friedman.com/standard-die-cutting-tolerances-guide",
+          "title": "Standard Die Cutting Tolerances Guide",
+          "snippet": "Полиуретан: ±0.005–0.010″ тонкие, ±0.010–0.025″, ±0.030–0.050″ толстые"
+        },
+        {
+          "url": "https://therubbercompany.com/the-rubber-company-manufacturing-processes-die-cut-gaskets",
+          "title": "The Rubber Company: Die Cutting",
+          "snippet": "Вырубка PU-листов, пресс-оснастка, раскладка прокладок"
+        },
+        {
+          "url": "https://www.elastoproxy.com/rubber-water-jet-cutting",
+          "title": "Rubber Water Jet Cutting — Elasto Proxy",
+          "snippet": "Отверстия от 0.01″, допуски зависят от материала"
+        },
+        {
+          "url": "https://1cutfab.com/blogs/news/what-is-kerf-in-laser-and-waterjet-cutting-how-it-affects-your-design",
+          "title": "Kerf in Laser and Waterjet Cutting",
+          "snippet": "Типовой допуск водоструя ±0.1 мм, kerf compensation"
+        },
+        {
+          "url": "https://fathommfg.com/micro-water-jet-cutting",
+          "title": "Micro Water Jet Cutting — Fathom",
+          "snippet": "До 12.7 мм, допуск 0.0005–0.005″"
+        }
+      ],
+      "used_in_issues": [
+        2813
+      ]
     }
   ]
 }
