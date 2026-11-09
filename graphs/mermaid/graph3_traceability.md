@@ -97,6 +97,15 @@ graph LR
     F28 --> script_pre-commit-hook_py
     script_validate_decomposition_py[validate_decomposition.py]
     F28 --> script_validate_decomposition_py
+    F34([F34])
+    script__metrics_py[_metrics.py]
+    F34 --> script__metrics_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F34 --> script_pre-commit-hook_py
+    script_recursive_decompose_py[recursive_decompose.py]
+    F34 --> script_recursive_decompose_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F34 --> script_validate_decomposition_py
     F29([F29])
     script__metrics_py[_metrics.py]
     F29 --> script__metrics_py
@@ -111,13 +120,6 @@ graph LR
     F3 --> script_classify_subsystem_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F3 --> script_pre-commit-hook_py
-    F34([F34])
-    script__metrics_py[_metrics.py]
-    F34 --> script__metrics_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F34 --> script_pre-commit-hook_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F34 --> script_validate_decomposition_py
     P087([P087])
     script__metrics_py[_metrics.py]
     P087 --> script__metrics_py
@@ -125,13 +127,13 @@ graph LR
     P087 --> script_pre-commit-hook_py
     script_validate_decomposition_py[validate_decomposition.py]
     P087 --> script_validate_decomposition_py
-    F86([F86])
-    script__helpers_py[_helpers.py]
-    F86 --> script__helpers_py
-    script_check_model_completeness_py[check_model_completeness.py]
-    F86 --> script_check_model_completeness_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F86 --> script_pre-commit-hook_py
+    F35([F35])
+    script_decompose_all_izdeliya_py[decompose_all_izdeliya.py]
+    F35 --> script_decompose_all_izdeliya_py
+    script_recursive_decompose_py[recursive_decompose.py]
+    F35 --> script_recursive_decompose_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F35 --> script_validate_decomposition_py
     F14([F14])
     script_generate_decomposition_py[generate_decomposition.py]
     F14 --> script_generate_decomposition_py
@@ -172,7 +174,7 @@ graph LR
     F70h --> script_pre-commit-hook_py
 ```
 
-_Показаны топ-20 метрик по числу скриптов-валидаторов (из 77 метрик)._
+_Показаны топ-20 метрик по числу скриптов-валидаторов (из 73 метрик)._
 
 | Метрика | Скрипты-валидаторы | Контракты |
 |---|---|---|
@@ -199,9 +201,9 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F31` | _metrics.py, migrate_aliases.py, migrate_dedup_materials.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F32` | _metrics.py, migrate_aliases.py, migrate_dedup_materials.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F33` | _metrics.py, validate_decomposition.py | — |
-| `F34` | _metrics.py, pre-commit-hook.py, validate_decomposition.py | — |
-| `F35` | validate_decomposition.py | — |
-| `F36` | generate_graphs.py, pre-commit-hook.py | — |
+| `F34` | _metrics.py, pre-commit-hook.py, recursive_decompose.py, validate_decomposition.py | — |
+| `F35` | decompose_all_izdeliya.py, recursive_decompose.py, validate_decomposition.py | — |
+| `F36` | generate_graphs.py | — |
 | `F37` | generate_graphs.py, pipeline.py | — |
 | `F38` | generate_graphs.py, pipeline.py | — |
 | `F39` | pipeline.py | — |
@@ -209,7 +211,6 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F40` | pipeline.py | — |
 | `F46` | pipeline.py | — |
 | `F47` | pipeline.py | — |
-| `F5` | pre-commit-hook.py | — |
 | `F51` | _stubs.py | — |
 | `F52` | _stubs.py | — |
 | `F53` | _stubs.py | — |
@@ -239,14 +240,11 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F74` | _helpers.py | — |
 | `F75` | _helpers.py, classify_subsystem.py | fc_изделие_подсистема, fc_модель_тип |
 | `F79` | _helpers.py | — |
-| `F8` | pre-commit-hook.py | — |
 | `F80` | _helpers.py | — |
 | `F81` | _helpers.py, pre-commit-hook.py | — |
 | `F82` | pre-commit-hook.py | — |
 | `F83` | _helpers.py, pre-commit-hook.py | — |
-| `F84` | pre-commit-hook.py | — |
-| `F85` | pre-commit-hook.py | — |
-| `F86` | _helpers.py, check_model_completeness.py, pre-commit-hook.py | — |
+| `F86` | _helpers.py, check_model_completeness.py | — |
 | `F87` | _helpers.py, pre-commit-hook.py | — |
 | `F88` | _helpers.py, pre-commit-hook.py | — |
 | `F89` | _helpers.py | — |

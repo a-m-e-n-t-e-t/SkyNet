@@ -147,6 +147,12 @@
       "path": "scripts/real_decomposition.py"
     },
     {
+      "id": "script:recursive_decompose.py",
+      "type": "script",
+      "label": "recursive_decompose.py",
+      "path": "scripts/recursive_decompose.py"
+    },
+    {
       "id": "script:validate_decomposition.py",
       "type": "script",
       "label": "validate_decomposition.py",
@@ -1277,6 +1283,18 @@
       "meta": {}
     },
     {
+      "src": "script:recursive_decompose.py",
+      "dst": "script:validate_decomposition.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
+      "src": "script:recursive_decompose.py",
+      "dst": "script:_helpers.py",
+      "type": "imports",
+      "meta": {}
+    },
+    {
       "src": "script:validate_decomposition.py",
       "dst": "script:_metrics.py",
       "type": "imports",
@@ -2280,6 +2298,12 @@
     },
     {
       "src": "catalog:scripts/_CATALOG.md",
+      "dst": "script:recursive_decompose.py",
+      "type": "references",
+      "meta": {}
+    },
+    {
+      "src": "catalog:scripts/_CATALOG.md",
       "dst": "script:validate_decomposition.py",
       "type": "references",
       "meta": {}
@@ -2532,13 +2556,13 @@
     }
   ],
   "stats": {
-    "nodes": 196,
-    "edges": 225,
+    "nodes": 197,
+    "edges": 228,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,
       "readme": 1,
-      "script": 27,
+      "script": 28,
       "spec": 1,
       "spec_section": 149
     }

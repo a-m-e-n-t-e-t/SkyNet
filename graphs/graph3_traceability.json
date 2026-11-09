@@ -1845,6 +1845,12 @@
       "path": "scripts/real_decomposition.py"
     },
     {
+      "id": "script:recursive_decompose.py",
+      "type": "script",
+      "label": "recursive_decompose.py",
+      "path": "scripts/recursive_decompose.py"
+    },
+    {
       "id": "script:validate_decomposition.py",
       "type": "script",
       "label": "validate_decomposition.py",
@@ -3839,6 +3845,18 @@
       "meta": {}
     },
     {
+      "src": "F35",
+      "dst": "script:decompose_all_izdeliya.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:decompose_all_izdeliya.py",
+      "dst": "F35",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "F22",
       "dst": "script:fix_801.py",
       "type": "validated_by",
@@ -4481,6 +4499,30 @@
       "meta": {}
     },
     {
+      "src": "F34",
+      "dst": "script:recursive_decompose.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:recursive_decompose.py",
+      "dst": "F34",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
+      "src": "script:recursive_decompose.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
+      "src": "script:recursive_decompose.py",
+      "dst": "pattern:_index.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
       "src": "F13",
       "dst": "script:validate_decomposition.py",
       "type": "validated_by",
@@ -4991,38 +5033,8 @@
       "meta": {}
     },
     {
-      "src": "F5",
-      "dst": "script:pre-commit-hook.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "F8",
-      "dst": "script:pre-commit-hook.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "F36",
-      "dst": "script:pre-commit-hook.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "F84",
-      "dst": "script:pre-commit-hook.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "F85",
-      "dst": "script:pre-commit-hook.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "F86",
-      "dst": "script:pre-commit-hook.py",
+      "src": "F35",
+      "dst": "script:recursive_decompose.py",
       "type": "validated_by",
       "meta": {}
     },
@@ -5154,13 +5166,13 @@
     }
   ],
   "stats": {
-    "nodes": 331,
-    "edges": 527,
+    "nodes": 332,
+    "edges": 528,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,
       "metric": 217,
-      "script": 27,
+      "script": 28,
       "spec_section": 58,
       "stub": 13
     }

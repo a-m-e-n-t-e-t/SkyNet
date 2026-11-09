@@ -26,6 +26,7 @@ graph TB
     script_pipeline_py(("pipeline.py"))
     script_pre-commit-hook_py(("pre-commit-hook.py"))
     script_real_decomposition_py(("real_decomposition.py"))
+    script_recursive_decompose_py(("recursive_decompose.py"))
     script_validate_decomposition_py(("validate_decomposition.py"))
     script_validate_field_contracts_py(("validate_field_contracts.py"))
     script_web_verify_py(("web_verify.py"))
@@ -214,6 +215,8 @@ graph TB
     script_pre-commit-hook_py -.->|imports| script__metrics_py
     script_real_decomposition_py -.->|imports| script_validate_decomposition_py
     script_real_decomposition_py -.->|imports| script__helpers_py
+    script_recursive_decompose_py -.->|imports| script_validate_decomposition_py
+    script_recursive_decompose_py -.->|imports| script__helpers_py
     script_validate_decomposition_py -.->|imports| script__metrics_py
     script_validate_field_contracts_py -.->|imports| script__helpers_py
     script_web_verify_py -.->|imports| script_validate_decomposition_py
@@ -246,16 +249,14 @@ graph TB
     section_§11_0_ТИПЫ_МОДЕЛЕЙ_SKYNET_(v9_22_НОВОЕ_—_7_типов) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§11_1_13_подсистем_+_1_fallback_(классификация) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§11_2_Иерархия_изделий_(подсистема_=_классификация,_НЕ_урове -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
-    section_§11_3_7_антипаттернов_(уроки_из_прошлых_реализаций) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
-    section_§11_4_Полный_реестр_подтипов_(146_подтипов) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 196, рёбер: 225 (показано топ-50)._
+_Узлов: 197, рёбер: 228 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|
 | spec_section | 149 |
-| script | 27 |
+| script | 28 |
 | concept_doc | 17 |
 | catalog | 1 |
 | readme | 1 |

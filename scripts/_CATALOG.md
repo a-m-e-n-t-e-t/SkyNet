@@ -19,19 +19,21 @@
 | Скрипт | Назначение | Метрики | Контракты (fc_*) |
 |---|---|---|---|
 | `__init__.py` | Пакет Python для `scripts/` (импорт как модуль) | — | — |
-| `_helpers.py` | Общие хелперы: кэш YAML-frontmatter, проверка schema-consistency (F70), pattern-matching для метрик; v9.37: `write_atomic`, `TransactionBatch`; v9.37.1: `yaml_serialize_block` (единый сериализатор вместо 3 копий) | F70, F71, F72, F73, F74, F75, F79, F80, F86, F87 | — |
+| `_helpers.py` | Общие хелперы: кэш YAML-frontmatter, проверка schema-consistency (F70), pattern-matching для метрик; v9.37: `write_atomic`, `TransactionBatch`; v9.37.1: `yaml_serialize_block` (единый сериализатор вместо 3 копий); v9.59: `md_internal_link` (динамический расчёт глубины для markdown-ссылок) | F70, F71, F72, F73, F74, F75, F79, F80, F86, F87 | — |
 | `_stubs.py` | Реестр нереализованных функций (см. раздел Stubs) | — | — |
+| `_decomp_registry.yaml` | **v9.60: рекурсивный реестр декомпозиции** — источник правды для `recursive_decompose.py` и F35. Заменяет плоский DECOMP_TEMPLATES; поддерживает произвольную глубину, типы сборка/часть/компонент, BOM материалов | F35 | — |
 | `capture_dialog.py` | Захват диалога в `диалог/*.md` для аудита решений | E1, E2, E3, E4 | — |
 | `check_model_completeness.py` | Проверка ≥1 изделия на каждую expected_subsystem модели | F86 | — |
 | `classify_subsystem.py` | Классификация 13 подсистем + тип_модели | F3, F75 | fc_изделие_подсистема, fc_модель_тип |
-| `decompose_all_izdeliya.py` | Декомпозиция всех изделий на части (batch); v9.35: поддержка поля количество=N; v9.37: TransactionBatch (parent+children атомарно); v9.37.1: serialize_value из _helpers | B07, B09 | — |
+| `decompose_all_izdeliya.py` | **v9.60 DEPRECATED**: декомпозиция только 1 уровня; заменён на `recursive_decompose.py`. Оставлен для идемпотентной регенерации существующих файлов. v9.35: количество=N; v9.37: TransactionBatch; v9.37.1: serialize_value | B07, B09 | — |
 | `generate_decomposition.py` | Генерация stub-файлов декомпозиции; v9.35: CANON_DECOMP использует count=2 для paired parts; v9.37.1: serialize_value из _helpers | B07 | — |
 | `generate_graphs.py` | Генератор graph1/2/3 + Mermaid-рендеры + fill-backrefs | F36, F37, F38 | — |
 | `generate_wrapper_izdeliya.py` | Генерация wrapper-файлов изделия (cover page); v9.37: `write_atomic` | B05 | — |
 | `pipeline.py` | Оркестратор фаз 0-8 batch-обработки | F37, F38, F39, F40, F46, F47 | — |
-| `pre-commit-hook.py` | Pre-commit: path-type-status + F3-F36, F70, F81-F88, регенерация графов; v9.35: F26 warning | F3, F4, F5, F8-F36, F70, F81, F82, F83, F84, F85, F86, F87, F88 | — |
-| `real_decomposition.py` | Декомпозиция реальных изделий (live data); v9.35: per-parent уникальные dims для крепёж и основной_элемент; v9.36: исправлен баг `description` → `описание`; v9.37: `write_atomic` | B07, B09 | — |
-| `validate_decomposition.py` | Главный валидатор: F12a-F26, F70 (schema consistency), F18 (jsonschema); v9.35: добавлена F26 + поле количество в schema; v9.36: F12a O(n²)→O(n), F22/F19/F23 cache reuse | F12a, F13, F14, F15a, F15b, F15d, F15g, F16, F17, F18, F19, F20, F21, F22, F23, F24, F25, F26, F70 | — |
+| `pre-commit-hook.py` | Pre-commit: path-type-status + F3-F36, F70, F81-F88, регенерация графов; v9.35: F26 warning; v9.60: PATH_TYPE_MAP принимает 4 типа (изделие\|сборка\|часть\|компонент) | F3, F4, F5, F8-F36, F70, F81, F82, F83, F84, F85, F86, F87, F88 | — |
+| `real_decomposition.py` | Декомпозиция реальных изделий (live data); v9.35: per-parent уникальные dims для крепёж и основной_элемент; v9.36: исправлен баг `description` → `описание`; v9.37: `write_atomic`; v9.59: `md_internal_link` (фикс 134 битых ссылок) | B07, B09 | — |
+| `recursive_decompose.py` | **v9.60: canonical рекурсивный генератор декомпозиции**. Читает `_decomp_registry.yaml`, поддерживает произвольную глубину (1..10), типы сборка/часть/компонент (модель A2+D4-β), `TransactionBatch`, `md_internal_link`. Заменяет `decompose_all_izdeliya.py` | B07, B09, F35 | — |
+| `validate_decomposition.py` | Главный валидатор: F12a-F26, F70 (schema consistency), F18 (jsonschema); v9.35: добавлена F26 + поле количество в schema; v9.36: F12a O(n²)→O(n), F22/F19/F23 cache reuse; v9.59: F27b cross-ref warnings; v9.60: F35 (non-blocking), F16 расширение для типов сборка/часть/компонент, F29 чек C (canonical-only), F33 принимает 4 типа в каталоге 'изделия', JSON schema enum расширен | F12a, F13, F14, F15a, F15b, F15d, F15g, F16, F17, F18, F19, F20, F21, F22, F23, F24, F25, F26, F27b, F29, F33, F35, F70 | — |
 | `validate_field_contracts.py` | Бидирекциональная проверка fc_* (спецификация ↔ данные) | F56, F58, F59, F60, F70 | fc_материал_кристалл_структура, fc_материал_оптимальная_структура, fc_изделие_стандарты, fc_материал_предел_текучести, fc_модель_applied_patterns, fc_реализация_покрытие_функций, fc_изделие_масса |
 | `web_verify.py` | **v9.38 CLI-раннер веб-верификации** (замена one-shot v9.31, заархивирован в `_archive_oneoff/web_verify_one_shot_v9.31.py`): `check` — критерии F22/F23/F25* для cron-шага 5 (exit 0 = issue устарел), `apply` — транзакционное применение web_search-данных (шаг 6), анти-фабрикация-гарды (отказ generic-материалов, шаблонных габаритов, не-URL), `--dry-run` | F22, F23, F25 | — |
 
