@@ -4750,6 +4750,58 @@
       "used_in_issues": [
         2813
       ]
+    },
+    {
+      "id": "ws_ebw_ti6al4v_rama",
+      "query": "electron beam welding Ti-6Al-4V titanium structures aerospace vacuum advantages; EBW deep penetration minimal distortion narrow HAZ",
+      "keywords": [
+        "EBW",
+        "electron beam welding",
+        "Ti-6Al-4V",
+        "titanium frame",
+        "narrow HAZ",
+        "deep penetration"
+      ],
+      "results_count": 5,
+      "key_facts": [
+        "EBW — основной метод сварки титановых сплавов типа Ti-6Al-4V (M2i2; Pasang et al.: LBW/EBW/GTAW сопоставимы на Ti5553–Ti64)",
+        "Энергетическая плотность пучка ~10⁷ W·см⁻², процесс в вакууме 0.001–1 Па — защита расплава от кислорода/азота воздуха (Nanocon 2017)",
+        "Глубина провара до 2″ (~50 мм) одним проходом, узкая ЗТВ, минимальное коробление — критично для силовых рам (EB Industries; Joining Technologies, Nadcap)",
+        "Аэронавтическая сварка: EBW даёт малую ЗТВ и малые деформации (Mendez 2001, Univ. Alberta)"
+      ],
+      "created_at": "2026-11-10",
+      "last_used": "2026-11-10",
+      "usage_count": 1,
+      "results": [
+        {
+          "url": "https://www.m2i2.co.uk/publications-library/electron-beam-welding",
+          "title": "Post-Weld Heat Treatment Effects on Ti-6Al-4V EBW — M2i2",
+          "snippet": "EBW — популярный метод соединения титановых сплавов типа Ti-6Al-4V"
+        },
+        {
+          "url": "https://joiningtech.com/electron-beam-welding-applications",
+          "title": "Electron Beam Welding — Joining Technologies",
+          "snippet": "Глубокий провар, минимальные деформации, узкая ЗТВ, Nadcap"
+        },
+        {
+          "url": "https://ebindustries.com/welding-for-the-new-space-economy-ebw-laser-sealing-for-mission-critical-components",
+          "title": "EB Industries — EBW for mission-critical components",
+          "snippet": "Провар до 2″ (~50 мм), узкая ЗТВ, минимальное коробление"
+        },
+        {
+          "url": "https://sites.ualberta.ca/~pmendez/Publications/Papers/2001aeroweld.pdf",
+          "title": "Mendez 2001 — Welding processes for aeronautics",
+          "snippet": "EBW: малая ЗТВ и малые деформации в аэрокосмической сварке"
+        },
+        {
+          "url": "https://www.m.nanocon.eu/metal/2017/download/1438-influence-of-the-process-parameters-of-electron-beam-to-the-weldability-of-aluminium-and-titanium-alloys.pdf",
+          "title": "Nanocon 2017 — EBW weldability of Ti alloys",
+          "snippet": "Плотность энергии ~10⁷ W·см⁻², вакуум, точное управление"
+        }
+      ],
+      "used_in_issues": [
+        2812
+      ]
     }
   ]
 }
