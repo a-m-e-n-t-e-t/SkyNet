@@ -21,7 +21,7 @@ id: часть_SkyNet-PowerBackpack_bms
     форма: теплоотводящие_узлы
     доля_массы: 0.700
   - часть: часть_SkyNet-PowerBackpack_bms_плата
-    материал: fr4
+    материал: epoxy
     форма: несущая_плата_PCB
     доля_массы: 0.222
   - часть: часть_SkyNet-PowerBackpack_bms_шины

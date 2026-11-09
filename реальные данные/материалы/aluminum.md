@@ -9,6 +9,7 @@
 
 
 
+
 id: material_aluminum
 тип: материал
 класс: металл

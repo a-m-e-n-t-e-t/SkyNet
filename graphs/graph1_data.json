@@ -12240,6 +12240,12 @@
     },
     {
       "src": "часть_SkyNet-PowerBackpack_bms",
+      "dst": "material_epoxy",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms",
       "dst": "material_copper",
       "type": "uses_material",
       "meta": {}
@@ -12259,6 +12265,12 @@
     {
       "src": "часть_SkyNet-PowerBackpack_bms_теплоотвод",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_SkyNet-PowerBackpack_bms_плата",
+      "dst": "material_epoxy",
       "type": "uses_material",
       "meta": {}
     },
@@ -18303,7 +18315,7 @@
   },
   "stats": {
     "nodes": 1158,
-    "edges": 1580,
+    "edges": 1582,
     "dangling": {
       "complies_with": 540,
       "has_part": 4,

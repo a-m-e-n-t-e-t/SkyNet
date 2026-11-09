@@ -9,6 +9,7 @@
 
 
 
+
 id: material_monokristallicheskogo_sic
 псевдонимы: [material_silicon_carbide]  # рабочая субстанция приборных применений (die MOSFET, бета-вольтаик diode/substrate, TPV heat source) — F31 [B-sem] алиас-связь, субстанция канонизирует material_monokristallicheskogo_sic
 тип: материал
