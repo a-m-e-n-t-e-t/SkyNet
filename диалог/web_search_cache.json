@@ -5388,6 +5388,38 @@
     963
    ],
    "timestamp": "2026-11-10T06:58:00+08:00"
+  },
+  {
+   "id": "ws_0079",
+   "query": "BLDC motor housing 6061-T6 CNC turn-milling machining",
+   "keywords": [
+    "BLDC",
+    "housing",
+    "6061-T6",
+    "CNC",
+    "turn-milling"
+   ],
+   "results": [
+    {
+     "title": "XINQIDA — CNC-machined 6061-T6 BLDC motor housing",
+     "url": "https://www.xinqidamachining.com/product/cnc-machined-red-anodized-aluminum-6061-brushless-motor-housing-rotor-bell-for-rc-hobby-uav-lightweight-applications/",
+     "snippet": "Crafted from solid 6061-T6 using turn-milling; concentricity bearing seat/shaft."
+    },
+    {
+     "title": "DavanTech — 6061-T6 CNC machining tolerances",
+     "url": "https://www.davantech.com/cnc-machining-of-aluminum-6061-t6-properties-comparisons-and-applications",
+     "snippet": "6061-T6 machinability, tolerances ±0.01 mm, anodizing."
+    }
+   ],
+   "results_count": 2,
+   "key_facts": [
+    "Корпуса BLDC-двигателей — ЧПУ токарно-фрезерная обработка 6061-T6, соосность посадок подшипников",
+    "Разъёмные корпуса — ЧПУ-точение, крепёж — ЧПУ-фрезерование"
+   ],
+   "used_in_issues": [
+    967
+   ],
+   "timestamp": "2026-11-10T07:05:00+08:00"
   }
  ]
 }
