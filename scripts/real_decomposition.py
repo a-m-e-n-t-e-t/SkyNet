@@ -27,7 +27,7 @@ from typing import Any
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__)))
 from validate_decomposition import read_yaml_frontmatter, SKYNET_REPO
-from _helpers import write_atomic  # v9.37: atomic writes (T1)
+from _helpers import write_atomic, md_internal_link  # v9.37: atomic writes (T1); v9.59: md_internal_link
 
 TODAY = "2026-11-03"
 IZDELIYA_DIR = SKYNET_REPO / "реальные данные" / "изделия"
@@ -600,13 +600,19 @@ PART_DATA: dict[str, dict] = {
 # ============================================================================
 
 def generate_real_part_content(part_id: str, parent_id: str, subsystem: str,
-                                subtype: str, mass_kg: float, share: float) -> str:
+                                subtype: str, mass_kg: float, share: float,
+                                file_path=None) -> str:
     """Сгенерировать содержимое .md файла для дочерней части с РЕАЛЬНЫМИ данными.
 
     v9.35: для placeholder подтипов ('крепёж', 'основной_элемент' fallback)
     габариты детерминированно выводятся из parent_id — это гарантирует
     уникальность сигнатуры (l, w, h, mass, material) для каждого родителя,
     устраняя F25 false-positives на 100×50×20mm placeholder крепежа.
+
+    v9.59: file_path используется для динамической генерации markdown-ссылок
+    на материалы/ и технологии/ через md_internal_link (фикс 134 битых ссылок).
+    Если file_path не передан — fallback на захардкоженный '../../материалы/'
+    (обратная совместимость; для новых вызовов обязательно).
     """
 
     # Найти данные по подтипу
@@ -671,6 +677,13 @@ def generate_real_part_content(part_id: str, parent_id: str, subsystem: str,
     else:
         add_yaml = " {}"
     
+    # v9.59: динамическая markdown-ссылка на материал с корректным числом '../'
+    # Если file_path не передан (legacy-вызов) — fallback на старый '../../материалы/'
+    if file_path is not None:
+        material_link = md_internal_link(file_path, 'материалы', f'{material}.md', material)
+    else:
+        material_link = f"[`{material}.md`](../../материалы/{material}.md)"
+
     content = f"""---
 id: {part_id}
 тип: изделие
@@ -741,7 +754,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `{material}` → [`{material}.md`](../../материалы/{material}.md)
+- `{material}` → {material_link}
 
 ## Источники
 
@@ -783,7 +796,7 @@ def update_all_parts():
             not_found_subtypes.add(subtype)
         
         # Сгенерировать реальное содержимое
-        content = generate_real_part_content(part_id, parent_id, subsystem, subtype, mass_kg, share)
+        content = generate_real_part_content(part_id, parent_id, subsystem, subtype, mass_kg, share, file_path=f)
         write_atomic(f, content)  # v9.37: atomic write
         updated += 1
     

@@ -1105,6 +1105,142 @@ def write_atomic(path, content: str) -> None:
     os.replace(tmp, p)
 
 
+# ---------------------------------------------------------------------------
+# v9.59: динамическая генерация внутренних markdown-ссылок
+# ---------------------------------------------------------------------------
+# Корневая причина 134 битых ссылок (commit b5b7f25 — скорая помощь): генераторы
+# часть_* файлов (real_decomposition.py:744, make_f13_parts.py:92, patch_887.py:281)
+# захардкодили '../../материалы/...' без учёта реальной глубины файла. Глубина
+# зависит от количества директорий от файла до «реальные данные/»:
+#   depth 3 (изделие/_index.md)        → ../../../материалы/X.md
+#   depth 4 (часть_X/_index.md)        → ../../../../материалы/X.md
+#   depth 5 (часть_X/часть_Y/_index.md)→ ../../../../../материалы/X.md
+# Эти функции вычисляют глубину по пути файла и собирают корректную ссылку.
+
+# Префиксы корневых директорий, под которыми лежат материалы/ и технологии/
+_DATA_ROOTS = ("реальные данные/", "работа и и/")
+
+
+def _data_root_prefix(rel_posix: str) -> str | None:
+    """Вернуть префикс data-root («реальные данные/» или «работа и и/»),
+    если файл лежит под ним; иначе None (файл вне дерева данных —
+    для таких хелпер неприменим)."""
+    for prefix in _DATA_ROOTS:
+        if rel_posix.startswith(prefix):
+            return prefix
+        # Абсолютный путь: ищем data-root внутри (например, /home/z/.../SkyNet/реальные данные/...)
+        idx = rel_posix.find("/" + prefix)
+        if idx != -1:
+            return prefix
+    return None
+
+
+def _normalize_rel(file_path) -> str:
+    """Привести путь к относительному POSIX-виду от data-root.
+    Если file_path под data-root — возвращает путь, начинающийся с префикса
+    («реальные данные/...» или «работа и и/...»). Иначе возвращает исходный
+    POSIX-путь (как есть, для диагностики в ValueError)."""
+    from pathlib import Path
+    rel = Path(file_path).as_posix()
+    for prefix in _DATA_ROOTS:
+        if rel.startswith(prefix):
+            return rel
+        # Абсолютный путь: обрезаем до префикса
+        idx = rel.find("/" + prefix)
+        if idx != -1:
+            return rel[idx + 1:]
+    return rel
+
+
+def depth_from_data_root(file_path) -> int | None:
+    """Сколько директорий отделяют файл от его data-root.
+
+    «реальные данные/изделия/<кат>/<изделие>/_index.md» → 3
+    «реальные данные/изделия/<кат>/<изделие>/часть_X/_index.md» → 4
+    «реальные данные/изделия/<кат>/<изделие>/часть_X/часть_Y/_index.md» → 5
+
+    Принимает как относительные пути от корня SkyNet, так и абсолютные.
+
+    Возвращает None, если файл не под data-root (вне реальных данных/
+    или работа и и/)."""
+    rel = _normalize_rel(file_path)
+    prefix = _data_root_prefix(rel)
+    if prefix is None:
+        return None
+    tail = rel[len(prefix):]
+    parts = tail.split("/")
+    # parts[:-1] — директории от первого под data-root до директории файла
+    # _index.md лежит в своей директории (parts[:-1]), до data-root — len(parts[:-1])
+    return len(parts) - 1
+
+
+def md_internal_link(file_path, target_kind: str, target_file: str, label: str | None = None) -> str:
+    """Сгенерировать корректную markdown-ссылку на материалы/ или технологии/.
+
+    Параметры:
+      file_path   — путь к .md файлу, из которого ставится ссылка (Path или str).
+      target_kind — 'материалы' | 'технологии'.
+      target_file — имя файла цели (например, 'copper.md' или 'frezervanie_chpu.md').
+      label       — текст ссылки; если None, используется target_file без расширения.
+
+    Возвращает строку вида '[`copper`](../../../../материалы/copper.md)' с
+    корректным числом '../' для глубины file_path.
+
+    Если file_path вне data-root, бросает ValueError (хелпер не должен
+    молча генерировать неверный путь — это снова породит битые ссылки).
+
+    Пример:
+      >>> md_internal_link(Path('реальные данные/изделия/а/б/часть_X/_index.md'),
+      ...                  'материалы', 'copper.md', 'copper')
+      '[`copper`](../../../../материалы/copper.md)'
+    """
+    from pathlib import Path
+    if target_kind not in ("материалы", "технологии"):
+        raise ValueError(f"target_kind must be 'материалы' or 'технологии', got {target_kind!r}")
+    rel = _normalize_rel(file_path)
+    prefix = _data_root_prefix(rel)
+    if prefix is None:
+        raise ValueError(
+            f"md_internal_link: файл {file_path!r} не лежит под data-root "
+            f"({' | '.join(_DATA_ROOTS)}). Хелпер применим только к файлам внутри "
+            f"«реальные данные/» или «работа и и/»."
+        )
+    depth = depth_from_data_root(rel)
+    if depth is None or depth < 1:
+        raise ValueError(
+            f"md_internal_link: некорректная глубина {depth!r} для файла {file_path!r}"
+        )
+    dots = "../" * depth
+    text = label if label is not None else Path(target_file).stem
+    return f"[`{text}`]({dots}{target_kind}/{target_file})"
+
+
+def md_internal_link_block(file_path, items: list[tuple[str, str, str | None]]) -> str:
+    """Сгенерировать markdown-блок «## Используемые материалы» из списка
+    (material_id, material_file, forma) — каждая запись отдельной строкой.
+
+    Используется в генераторах часть_* файлов для замены захардкоженных
+    шаблонных блоков вида:
+
+        - `copper` → [`copper.md`](../../../../материалы/copper.md)
+
+    Параметры:
+      file_path — путь к .md файлу, из которого ставятся ссылки.
+      items     — список кортежей (material_id, material_file, forma).
+                  forma может быть None — тогда суффикс « (форма: ...)» опускается.
+
+    Возвращает строку с переносами строк, без завершающего \\n.
+    """
+    lines = []
+    for material_id, material_file, forma in items:
+        link = md_internal_link(file_path, "материалы", material_file, material_id)
+        if forma:
+            lines.append(f"- `{material_id}` (форма: {forma}) → {link}")
+        else:
+            lines.append(f"- `{material_id}` → {link}")
+    return "\n".join(lines)
+
+
 class TransactionBatch:
     """Контекстный менеджер для транзакционной записи нескольких файлов.
 
