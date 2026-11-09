@@ -20,6 +20,7 @@
 
 
 
+
 id: tekhnologia_generativnyi_dizain
 тип: технология
 категория: обработка

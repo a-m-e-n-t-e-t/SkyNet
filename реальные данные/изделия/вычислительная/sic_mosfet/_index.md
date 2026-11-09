@@ -39,6 +39,22 @@ id: izdelie_sic_mosfet
     материал: lead_free_solder
     форма: силовой_модуль_sic_die_substrate_attach
     доля_массы: 0.045
+наследуемые_материалы:
+  - материал: copper
+    суммарная_доля_массы: 0.475
+    источники_частей: [часть_sic_mosfet_lead_frame]
+  - материал: monokristallicheskogo_sic
+    суммарная_доля_массы: 0.19
+    источники_частей: [часть_sic_mosfet_die]
+  - материал: epotek_301-2
+    суммарная_доля_массы: 0.19
+    источники_частей: [часть_sic_mosfet_encapsulant]
+  - материал: splav_sn-pb
+    суммарная_доля_массы: 0.045
+    источники_частей: [часть_sic_mosfet_solder]
+  - материал: al_bondwire
+    суммарная_доля_массы: 0.0095
+    источники_частей: [часть_sic_mosfet_wire_bonds]
 
 технологии_частей:
   - часть: часть_sic_mosfet_die

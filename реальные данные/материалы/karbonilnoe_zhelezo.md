@@ -20,6 +20,7 @@
 
 
 
+
 id: material_karbonilnoe_zhelezo
 тип: материал
 класс: металл

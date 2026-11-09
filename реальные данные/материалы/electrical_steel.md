@@ -20,6 +20,7 @@
 
 
 
+
 id: material_electrical_steel
 псевдонимы: ['M-19', 'ASTM A677', 'кремнистая электротехническая сталь', 'non-oriented electrical steel', 'NOES']
 тип: материал
