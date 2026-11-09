@@ -5043,6 +5043,66 @@
       "used_in_issues": [
         931
       ]
+    },
+    {
+      "id": "ws_0071",
+      "query": "liquid cooling cold plate aluminum enclosure housing CNC machined 6061-T6 manufacturing process",
+      "keywords": [
+        "cold plate",
+        "aluminum",
+        "housing",
+        "CNC",
+        "6061",
+        "machining"
+      ],
+      "results": [
+        {
+          "title": "How Liquid Cold Plates Are Made: The Complete Process",
+          "url": "https://www.google.com/goto?url=CAESaAHEIkXXTelHd1-E4RuhRe4DyifWHXfiEec2yNinZ6bdnrO3BF02uxvkNoXs456PCMn8esNNYgNJl2pugg4l4YWv-2ApyVA8CEyIjdj98zgs9UYnKajgB1HVPcIIVC1272bCmQGOELTh&gsessionid=iHumsNBspty8wm44aHSclRaDlrxp3iAAwF-bB3yRq3UsTtFdHQwm2w",
+          "snippet": "This video breaks down the complete manufacturing process of a high-performance cold plate , from the initial design to the final product. or ..."
+        },
+        {
+          "title": "CNC Machining for Liquid Cooling Components",
+          "url": "https://www.ptsmake.com/cnc-machining-for-liquid-cooling-components",
+          "snippet": "May 21, 2026 — CNC machining is the dominant process for making liquid cooling components like cold plates, manifolds, and fluid connectors because it ..."
+        },
+        {
+          "title": "Liquid Cooling Cold Plate CNC Machining: Design Guide",
+          "url": "https://fabvector.com/blog/liquid-cooling-cold-plate-cnc-machining",
+          "snippet": "Jun 30, 2026 — Manufacturing route Machine datum faces first, then internal channels, port features and cover interface surfaces. Use secondary operations for ..."
+        },
+        {
+          "title": "How Cold Plates Are Manufactured: A Complete Process",
+          "url": "https://www.apaltek.com/cold-plate-manufacturing-process",
+          "snippet": "Cold plate manufacturing is the process of turning copper or aluminum into a heat exchanger capable of transferring heat to a circulating coolant."
+        },
+        {
+          "title": "Cold Plate CNC Machining for Liquid Cooling",
+          "url": "https://www.rivcut.com/blog/cold-plate-machining",
+          "snippet": "Aluminum 6061-T6 is the default choice for 80% of cold plates . It is light, cheap and machines fast. Its thermal conductivity is good enough for most ... Read more"
+        },
+        {
+          "title": "Liquid Cold Plate Design Process for High-Power Electronics",
+          "url": "https://tonecooling.com/about-us/liquid-cold-plate-design-process",
+          "snippet": "Oct 12, 2026 — CNC machining, vacuum brazing, diffusion bonding, friction-stir welding and other processes tailored for leak-free, high-performance cold plates ... Read more"
+        },
+        {
+          "title": "Custom CNC Machining Aluminum Alloy Liquid Cooling Plate",
+          "url": "https://www.lvma-cnc.com/custom-cnc-machining-aluminum-alloy-liquid-cooling-plate-product",
+          "snippet": "A CNC Machining Aluminum Alloy Liquid Cooling Plate is a high-performance thermal management solution made by CNC-milling intricate internal fluid channels ... Read more"
+        },
+        {
+          "title": "Cold Plate Manufacturing Methods Compared: How Data",
+          "url": "https://mesinc.net/cold-plate-manufacturing-methods-compared-how-data-center-liquid-cooling-plates-are-actually-made",
+          "snippet": "A direct-to-chip cold plate is made by combining one fin-forming method with one closure method . Fins come from skiving, CNC machining, extrusion or brazed ... Read more"
+        }
+      ],
+      "created_at": "2026-11-09T20:12:54.669259+00:00",
+      "last_used": "2026-11-09T20:12:54.669259+00:00",
+      "usage_count": 1,
+      "used_in_issues": [
+        926
+      ]
     }
   ]
 }

@@ -45,7 +45,7 @@ graph LR
     izdelie_reversivnye_pelte -->|материал| material_copper
     izdelie_reversivnye_pelte -->|материал| material_splav_sn_pb
     izdelie_mikrokanalnye_ohlazhdayuschie_plastiny -->|материал| material_copper
-    izdelie_mikrokanalnye_ohlazhdayuschie_plastiny -->|материал| material_aluminum
+    izdelie_mikrokanalnye_ohlazhdayuschie_plastiny -->|материал| material_al_6061_t6
     izdelie_loop_heat_pipe -->|материал| material_stal_st3
     izdelie_loop_heat_pipe -->|материал| material_aluminum
     izdelie_kapillyarnaya_teplovaya_trubka -->|материал| material_copper
@@ -76,12 +76,12 @@ graph LR
 | Материал | Используется в частях |
 |---|---:|
 | `Cu ≥99.9% (электролитическая медь C11000/ETP)` | 9 |
-| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 6 |
+| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 7 |
 | `Bi₂Te₃ (теллурид висмута; промышленные марки легированы: p-тип — Bi₀.₅Sb₁.₅Te₃ (Sb), n-тип — Bi₂Te₂.₇Se₀.₃ (Se); M = 800.8 г/моль)` | 3 |
 | `Оксид алюминия Al₂O₃ (глинозём): 52.9 масс.% Al / 47.1 масс.% O; технические марки 96–99.9% Al₂O₃ (остальное SiO₂, MgO, CaO — спекающие добавки); высокочистый корунд ≥99.99%` | 3 |
 | `Sn 63 ± 0.5 %, Pb — остальное (~37 %); примеси не более: Sb 0.20 %, Bi 0.10 %, Cu 0.08 %, Ag 0.10 %, Fe 0.02 %, As 0.03 %, Zn 0.003 %, Cd 0.002 %, Ni 0.01 %, Al 0.001 %, Au 0.05 %, In 0.10 % (TDS 63Sn/37Pb CRM); российский аналог ПОС-61 по ГОСТ 21930-76: Sn 59–61 %, Pb — остальное` | 3 |
-| `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 3 |
 | `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 2 |
+| `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 2 |
 | `Ti-6Al-4V (Grade 5, UNS R56400): Al 5.5–6.75 %, V 3.5–4.5 %, Fe ≤0.30 %, O ≤0.20 %, C ≤0.08 %, N ≤0.05 %, H ≤0.015 %, Y ≤0.005 %, Ti — остальное (ASTM-спецификация, Wikipedia/ASM)` | 2 |
 | `Al₂O₃ (96%) — керамические пластины модуля Пельтье` | 1 |
 | `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 1 |

@@ -8267,7 +8267,7 @@
     },
     {
       "src": "izdelie_mikrokanalnye_ohlazhdayuschie_plastiny",
-      "dst": "material_aluminum",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
