@@ -1,4 +1,6 @@
 ---
+
+
 id: izdelie_svintsovo-kislotnye_akb
 тип: изделие
 категория: энергетика
@@ -48,7 +50,7 @@ id: izdelie_svintsovo-kislotnye_akb
     материал: latun_c36000
     форма: пруток_автоматный_ASTM_B16
     доля_массы: 0.0013
-tехнологии_частей:
+технологии_частей:
   - часть: часть_svintsovo-kislotnye_akb_anode
     технология: pogruzhenie_v_mo-shliker
     доля_использования: 1.0
@@ -178,8 +180,6 @@ scaling_type: количественный
 источник: user_input
 источник_разбора: пользовательский ввод
 ---
-# Изделие: свинцово-кислотные АКБ
-
 ## Описание
 
 свинцово-кислотные АКБ
@@ -190,10 +190,75 @@ scaling_type: количественный
 
 | Параметр | Значение | Единица | Источник |
 |---|---|---|---|
-| подсистема | энергетическая | — | classify_subsystem |
-| категория | прочее | — | — |
+| подсистема | система_питания | — | canon |
+| подтип | свинцово-кислотная_батарея | — | canon |
+| масса | 5–50 (номинал 15) | kg | canon |
+| габариты (Д×Ш×В) | 350×175×190 | mm | canon |
+| выработка энергии | 50–1000 | W | canon |
+| выработка тепла | 1–50 | W | canon |
+| тип узла | изделие | — | canon |
+| уровень_номер | 1 | — | canon |
 
-(Параметры требуют уточнения через веб-поиск и вычислений; см. fc_изделие_масса, fc_изделие_стандарты в _field_contracts.yaml)
+
+## Принцип работы
+
+Требует описания на основе инженерного анализа.
+
+## Состав
+
+Изделие верхнего уровня, 7 дочерних частей: анод (PbO₂-пластина), катод (губчатый Pb), электролит (H₂SO₄, VRLA AGM), сепаратор (AGM, hybrid), решётка положительная (Pb-Sb), корпус (PP-моноблок), клемма (латунь C36000).
+
+## Используемые технологии
+
+- `pogruzhenie_v_mo-shliker` (доля: 1.0)
+- `pogruzhenie_v_mo-shliker` (доля: 1.0)
+- `vio` (доля: 1.0)
+- `pogruzhenie_v_mo-shliker` (доля: 1.0)
+- `otzhig` (доля: 1.0)
+- `sborka_v_termoizolyatsionnoi_opravke` (доля: 1.0)
+
+
+## Используемые материалы
+
+- `pbo2` (форма: положительная_пластина_свинцовой_акб) → [`pbo2`](../../../материалы/pbo2.md)
+- `spongy_lead` (форма: sli_стартерные_акб) → [`spongy_lead`](../../../материалы/spongy_lead.md)
+- `h2so4_aqueous` (форма: vrla_agm_иммобилизованный) → [`h2so4_aqueous`](../../../материалы/h2so4_aqueous.md)
+- `sio2_amorphous` (форма: hybrid_agm) → [`sio2_amorphous`](../../../материалы/sio2_amorphous.md)
+- `pb_sb_alloy` (форма: стартерные_SLI_решётки) → [`pb_sb_alloy`](../../../материалы/pb_sb_alloy.md)
+- `polypropylene` (форма: литьевой_моноблок_ppcp) → [`polypropylene`](../../../материалы/polypropylene.md)
+- `latun_c36000` (форма: пруток_автоматный_ASTM_B16) → [`latun_c36000`](../../../материалы/latun_c36000.md)
+
+
+## Источники
+
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
+
+---
+
+- Wikipedia — Lead–acid battery (E°cell = 2.05 В; КПД заряда/разряда 50–95 %; реакции пластин Pb/PbO2): https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery (обращение 2026-11-07)
+- Battery University BU-802a — How does Rising Internal Resistance Affect Performance (I²R — принятая производителями оценка тепловыделения при разряде): https://batteryuniversity.com/article/bu-802a-how-does-rising-internal-resistance-affect-performance (обращение 2026-11-07)
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    izdelie_svintsovo_kislotnye_akb["izdelie_svintsovo-kislotnye_akb"]
+    ______svintsovo_kislotnye_akb_anode["часть_svintsovo-kislotnye_akb_anode"]
+    izdelie_svintsovo_kislotnye_akb --> ______svintsovo_kislotnye_akb_anode
+    ______svintsovo_kislotnye_akb_cathode["часть_svintsovo-kislotnye_akb_cathode"]
+    izdelie_svintsovo_kislotnye_akb --> ______svintsovo_kislotnye_akb_cathode
+    ______svintsovo_kislotnye_akb_electrolyte["часть_svintsovo-kislotnye_akb_electrolyte"]
+    izdelie_svintsovo_kislotnye_akb --> ______svintsovo_kislotnye_akb_electrolyte
+    ______svintsovo_kislotnye_akb_separator["часть_svintsovo-kislotnye_akb_separator"]
+    izdelie_svintsovo_kislotnye_akb --> ______svintsovo_kislotnye_akb_separator
+    ______svintsovo_kislotnye_akb_grid_pos["часть_svintsovo-kislotnye_akb_grid_pos"]
+    izdelie_svintsovo_kislotnye_akb --> ______svintsovo_kislotnye_akb_grid_pos
+    ______svintsovo_kislotnye_akb_case["часть_svintsovo-kislotnye_akb_case"]
+    izdelie_svintsovo_kislotnye_akb --> ______svintsovo_kislotnye_akb_case
+    ______svintsovo_kislotnye_akb_terminal["часть_svintsovo-kislotnye_akb_terminal"]
+    izdelie_svintsovo_kislotnye_akb --> ______svintsovo_kislotnye_akb_terminal
+```
+
 
 ## Энергетический баланс (F15d)
 
@@ -214,50 +279,3 @@ scaling_type: количественный
 | корпус (PP) | 0 | пассивный контейнер, ток не проводит |
 
 Σ детей = 8.8 Вт ≤ номинала родителя 10 Вт — F15b выполнено (запас 1.2 Вт — собственный нагрев межэлементных соединений). При максимальной отдаче 1000 Вт (I = 83.3 А) I²R ≈ 35 Вт ≤ max 50 Вт родителя — согласовано.
-
-## Состав
-
-Изделие верхнего уровня. Дочерние части не указаны (требуется декомпозиция).
-
-## Используемые технологии
-
-(Ссылки на реальные_данные/технологии/ добавляются после связывания)
-
-## Используемые материалы
-
-(Ссылки на реальные_данные/материалы/ добавляются после связывания)
-
-## Принцип работы
-
-Требует описания на основе инженерного анализа.
-
-## Источники
-
-- CSV: `начальные данные_final.csv` (пользовательский ввод)
-
----
-
-- Wikipedia — Lead–acid battery (E°cell = 2.05 В; КПД заряда/разряда 50–95 %; реакции пластин Pb/PbO2): https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery (обращение 2026-11-07)
-- Battery University BU-802a — How does Rising Internal Resistance Affect Performance (I²R — принятая производителями оценка тепловыделения при разряде): https://batteryuniversity.com/article/bu-802a-how-does-rising-internal-resistance-affect-performance (обращение 2026-11-07)
-
-## Декомпозиция
-
-```mermaid
-graph TD
-    svintsovo-kislotnye_["izdelie_svintsovo-kislotnye_akb"]
-    svintsovo-kislotnye_akb_a["часть_svintsovo-kislotnye_akb_anode"]
-    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_a
-    svintsovo-kislotnye_akb_c["часть_svintsovo-kislotnye_akb_cathode"]
-    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_c
-    svintsovo-kislotnye_akb_e["часть_svintsovo-kislotnye_akb_electrolyte"]
-    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_e
-    svintsovo-kislotnye_akb_s["часть_svintsovo-kislotnye_akb_separator"]
-    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_s
-    svintsovo-kislotnye_akb_g["часть_svintsovo-kislotnye_akb_grid_pos"]
-    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_g
-    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_g
-    svintsovo-kislotnye_akb_c["часть_svintsovo-kislotnye_akb_case"]
-    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_c
-    svintsovo-kislotnye_akb_t["часть_svintsovo-kislotnye_akb_terminal"]
-    svintsovo-kislotnye_ --> svintsovo-kislotnye_akb_t
-```

@@ -5,6 +5,8 @@
 
 
 
+
+
 id: material_amo2
 канонический_id: 'material_amo2'
 тип: материал

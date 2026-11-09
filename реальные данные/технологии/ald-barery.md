@@ -5,6 +5,8 @@
 
 
 
+
+
 id: tekhnologia_ald-barery
 тип: технология
 категория: обработка

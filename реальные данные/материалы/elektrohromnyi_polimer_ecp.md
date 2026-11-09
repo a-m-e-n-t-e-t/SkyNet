@@ -5,6 +5,8 @@
 
 
 
+
+
 id: material_elektrohromnyi_polimer_ecp
 тип: материал
 класс: металл

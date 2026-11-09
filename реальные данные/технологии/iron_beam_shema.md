@@ -5,6 +5,8 @@
 
 
 
+
+
 id: tekhnologia_iron_beam_shema
 тип: технология
 категория: обработка

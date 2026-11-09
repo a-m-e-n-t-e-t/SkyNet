@@ -2789,6 +2789,20 @@
       "subsystem": "система_питания"
     },
     {
+      "id": "часть_svintsovo-kislotnye_akb_electrolyte",
+      "type": "chast",
+      "label": "H2SO4_электролит",
+      "path": "реальные данные/изделия/система_питания/svintsovo-kislotnye_akb/часть_svintsovo-kislotnye_akb_electrolyte/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
+      "id": "часть_svintsovo-kislotnye_akb_case",
+      "type": "chast",
+      "label": "корпус_PP",
+      "path": "реальные данные/изделия/система_питания/svintsovo-kislotnye_akb/часть_svintsovo-kislotnye_akb_case/_index.md",
+      "subsystem": "система_питания"
+    },
+    {
       "id": "часть_svintsovo-kislotnye_akb_grid_pos",
       "type": "chast",
       "label": "решётка_PbSb",
@@ -11776,6 +11790,12 @@
     },
     {
       "src": "izdelie_svintsovo-kislotnye_akb",
+      "dst": "часть_svintsovo-kislotnye_akb_electrolyte",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_svintsovo-kislotnye_akb",
       "dst": "часть_svintsovo-kislotnye_akb_separator",
       "type": "has_part",
       "meta": {}
@@ -11783,6 +11803,12 @@
     {
       "src": "izdelie_svintsovo-kislotnye_akb",
       "dst": "часть_svintsovo-kislotnye_akb_grid_pos",
+      "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_svintsovo-kislotnye_akb",
+      "dst": "часть_svintsovo-kislotnye_akb_case",
       "type": "has_part",
       "meta": {}
     },
@@ -11812,6 +11838,12 @@
     },
     {
       "src": "izdelie_svintsovo-kislotnye_akb",
+      "dst": "material_sio2_amorphous",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_svintsovo-kislotnye_akb",
       "dst": "material_pb_sb_alloy",
       "type": "uses_material",
       "meta": {}
@@ -11819,6 +11851,12 @@
     {
       "src": "izdelie_svintsovo-kislotnye_akb",
       "dst": "material_polypropylene",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_svintsovo-kislotnye_akb",
+      "dst": "material_latun_c36000",
       "type": "uses_material",
       "meta": {}
     },
@@ -12039,6 +12077,18 @@
       "meta": {}
     },
     {
+      "src": "часть_svintsovo-kislotnye_akb_electrolyte",
+      "dst": "material_h2so4_aqueous",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_svintsovo-kislotnye_akb_case",
+      "dst": "material_polypropylene",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_svintsovo-kislotnye_akb_grid_pos",
       "dst": "material_pb_sb_alloy",
       "type": "uses_material",
@@ -12047,6 +12097,12 @@
     {
       "src": "часть_svintsovo-kislotnye_akb_cathode",
       "dst": "material_spongy_lead",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_svintsovo-kislotnye_akb_separator",
+      "dst": "material_sio2_amorphous",
       "type": "uses_material",
       "meta": {}
     },
@@ -17740,6 +17796,7 @@
       "standart_IEC 60095",
       "standart_IEC 60095 (SLI lead-acid batteries)",
       "standart_IEC 60095 (SLI lead-acid)",
+      "standart_IEC 60095-2",
       "standart_IEC 60112 (трекингостойкость, CTI 600)",
       "standart_IEC 60122 (кварцевые резонаторы)",
       "standart_IEC 60228",
@@ -18025,6 +18082,7 @@
       "standart_X20 Mounting Guide",
       "standart_Zeno Power Tech",
       "standart_battery grade >99.5 % (Rocolab)",
+      "standart_battery-component.com Container Spec",
       "standart_electronic grade H₂O <20 ppmw (proionic)",
       "standart_ГОСТ 10007-81 (фторопласт-4, технические условия)",
       "standart_ГОСТ 1050-88 (прокат калиброванный)",
@@ -18050,9 +18108,7 @@
       "часть_ni-63_betavoltaik_4h-sic_case",
       "часть_ni-63_betavoltaik_4h-sic_isotope",
       "часть_ni-63_betavoltaik_4h-sic_substrate",
-      "часть_nvidia_jetson_orin_nano_soc",
-      "часть_svintsovo-kislotnye_akb_case",
-      "часть_svintsovo-kislotnye_akb_electrolyte"
+      "часть_nvidia_jetson_orin_nano_soc"
     ],
     "researched_by": [
       "group_ASTM A01 Committee (Steel, Stainless, Iron); Carpenter Technology (CarTech 52100 datasheet)",
@@ -18216,16 +18272,16 @@
     ]
   },
   "stats": {
-    "nodes": 1156,
-    "edges": 1568,
+    "nodes": 1158,
+    "edges": 1575,
     "dangling": {
-      "complies_with": 538,
-      "has_part": 6,
+      "complies_with": 540,
+      "has_part": 4,
       "researched_by": 88,
       "uses_material": 68
     },
     "by_type": {
-      "chast": 662,
+      "chast": 664,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 203,
       "material": 195,
