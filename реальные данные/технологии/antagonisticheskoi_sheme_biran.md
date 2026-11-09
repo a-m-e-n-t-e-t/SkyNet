@@ -17,6 +17,7 @@
 
 
 
+
 id: tekhnologia_antagonisticheskoi_sheme_biran
 тип: технология
 категория: обработка

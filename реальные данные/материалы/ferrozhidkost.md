@@ -17,6 +17,7 @@
 
 
 
+
 id: material_ferrozhidkost
 тип: материал
 класс: металл

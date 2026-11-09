@@ -17,6 +17,7 @@
 
 
 
+
 id: tekhnologia_vakuumnaya_infiltratsiya_mos2
 канонический_id: 'tekhnologia_vakuumnaya_infiltratsiya_mos2'
 тип: технология

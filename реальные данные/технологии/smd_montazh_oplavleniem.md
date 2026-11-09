@@ -17,6 +17,7 @@
 
 
 
+
 id: tekhnologia_smd_montazh_oplavleniem
 тип: технология
 категория: сборка
