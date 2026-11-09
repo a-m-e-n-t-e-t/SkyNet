@@ -28,12 +28,15 @@ id: izdelie_nasa_asc-e_srsc
     доля_массы: 0.095
   - часть: часть_nasa_asc-e_srsc_displacer_piston
     материал: inconel_718
+    форма: газотурбинные_двигатели
     доля_массы: 0.18
   - часть: часть_nasa_asc-e_srsc_power_piston
     материал: inconel_718
+    форма: газотурбинные_двигатели
     доля_массы: 0.18
   - часть: часть_nasa_asc-e_srsc_alternator
     материал: copper
+    форма: обмотки_электрических_машин
     доля_массы: 0.18
   - часть: часть_nasa_asc-e_srsc_cooler
     материал: al_6061-t6
