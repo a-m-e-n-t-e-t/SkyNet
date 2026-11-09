@@ -21,8 +21,12 @@ id: izdelie_svintsovo-kislotnye_akb
   - часть_svintsovo-kislotnye_akb_terminal
 материалы_частей:
   - часть: часть_svintsovo-kislotnye_akb_anode
+    материал: pbo2
+    форма: положительная_пластина_свинцовой_акб
+    доля_массы: 0.19
   - часть: часть_svintsovo-kislotnye_akb_cathode
     материал: spongy_lead
+    форма: sli_стартерные_акб
     доля_массы: 0.19
   - часть: часть_svintsovo-kislotnye_akb_electrolyte
     материал: h2so4_aqueous
@@ -36,6 +40,43 @@ id: izdelie_svintsovo-kislotnye_akb
   - часть: часть_svintsovo-kislotnye_akb_case
     материал: polypropylene
     доля_массы: 0.095
+технологии_частей:
+  - часть: часть_svintsovo-kislotnye_akb_anode
+    технология: pogruzhenie_v_mo-shliker
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: pbo2
+        роль: обрабатываемый
+  - часть: часть_svintsovo-kislotnye_akb_cathode
+    технология: pogruzhenie_v_mo-shliker
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: spongy_lead
+        роль: обрабатываемый
+  - часть: часть_svintsovo-kislotnye_akb_electrolyte
+    технология: vio
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: h2so4_aqueous
+        роль: обрабатываемый
+  - часть: часть_svintsovo-kislotnye_akb_separator
+    технология: gidrofobnoe_pokrytie
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: pe_separator
+        роль: обрабатываемый
+  - часть: часть_svintsovo-kislotnye_akb_grid_pos
+    технология: otzhig
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: pb_sb_alloy
+        роль: обрабатываемый
+  - часть: часть_svintsovo-kislotnye_akb_case
+    технология: sborka_v_termoizolyatsionnoi_opravke
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: polypropylene
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная

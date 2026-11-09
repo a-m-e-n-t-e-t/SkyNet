@@ -3198,5 +3198,66 @@
    2359,
    2360
   ]
+ },
+ {
+  "query": "lead-acid battery SLI construction spongy lead negative plate PbO2 positive plate polyethylene separator polypropylene case manufacturing process",
+  "keywords": [
+   "lead-acid",
+   "SLI",
+   "spongy lead",
+   "PbO2",
+   "positive plate",
+   "PE separator",
+   "polypropylene case",
+   "pasting",
+   "formation"
+  ],
+  "results": [
+   {
+    "url": "https://www.facebook.com/groups/1756569294755892/posts/2335998386812977",
+    "title": "Lead-acid cell construction and components",
+    "snippet": "The positive plate in a lead - acid battery is made of lead dioxide, while the negative plate is made. The plates are separated by separators to ..."
+   },
+   {
+    "url": "https://www.facebook.com/automobilebasicideas/posts/the-negative-plate-of-lead-acid-battery-hasleadacidbattery-negativeplate-battery/852928510817614",
+    "title": "The negative plate of lead acid battery has?",
+    "snippet": "The positive plate is made of lead peroxide (PbO₂). The negative plate is made of sponge lead (Pb). 2. Separators Thin, porous plastic ..."
+   },
+   {
+    "url": "https://patents.google.com/patent/US4713304A/en",
+    "title": "US4713304A - Method of preparing lead-acid battery",
+    "snippet": "A method for preparing lead - acid battery positive and negative plates for use in lead - acid batteries, comprising (a) providing battery grids, (b) applying ..."
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESdAHEIkXXYw7ssckfvBXQGjkScd-4lt9bu2wEKoAD0UlCTZ8Z0p88TmTQTGB9kJ0TA2UNvYUtz48KyTjJBvSR2r_EHA7qeIzg9uqKrGeV6H7u8Vjt59sT0ZYns4cdQ9VO4CJza063fEpyybI0x-wCRCNEOa41",
+    "title": "Lead–acid battery",
+    "snippet": "In the fully charged state, the negative plate consists of lead and the positive plate is lead dioxide. The electrolyte solution has a higher concentration of ... Read more"
+   },
+   {
+    "url": "https://mac-eng.com/understanding-lead-acid-batteries-operation-and-maintenance",
+    "title": "Lead-Acid Batteries Construction, Operation, Maintenance",
+    "snippet": "Positive Plates : Made of lead dioxide (PbO₂) supported on a lead alloy grid. Negative Plates : Composed of spongy lead (Pb) on a similar grid structure. Read more"
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESlgEBxCJF14bdVYGZ9hssylM_OQMR0fqjp27NWBdOjIjiAHXz2oFQvA1GTJr-i9aycT4C3CyDXTFe7szu_s1jpRoToexryVjCdIq6GL2hTrxS4FBu94yVRxYBpO4XNpxrVth4gwQlHsLxAFMjBMseVf2muAWnRqZKTFaxpF7DKlUo8f-kHssbeUCI94oSL-E_AHJszMKGOs0",
+    "title": "Lead Acid Battery Construction",
+    "snippet": "When the formation charging process is complete the positive plate paste becomes lead dioxide ( PbO2 ) and the negative plate paste porous lead (Pb). Read more 5 pages"
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESegHEIkXXEoJ8ucWoQ7VJP9lxk7xHRcv1Z2Cp8_3CrwFb8Z_qady9Z6cpU3KCO4B-eCH6--S2Pu2b8RbJnW9FbKdKKLJodtJzaTWSevs3SNLewuou4vnXmtxZj9XnFPeCaBYf4ZLd-Zxm_RkiyP6RqDVFJSxD9UX4HV-f",
+    "title": "An Overview of Lead-Acid Batteries",
+    "snippet": "Oct 23, 2025 — The main materials needed to build a lead - acid battery include: Lead peroxide ( PbO2 ): the dark brown, hard, and brittle substance that forms ..."
+   },
+   {
+    "url": "https://www.google.com/goto?url=CAESaAHEIkXXcxKuJp1YikcDRqyemPx-3B4PTDJq8rbeNDlu-Ad6Qn0k6hLZ7COfkIWszPAbx96IqcselRNl0890NwrWOZDJWJ6pVY8Byy9uAhq2dZhy6Tz3y8pb6EPTWw5aVxwKODjuuePA",
+    "title": "How Wonderful Idea of Making Lead Acid Battery Plates",
+    "snippet": "The PbO2 plate and sponge lead plate are dipped in a dilute sulphuric acid . A battery cell consists of two lead plates , a positive plate ..."
+   }
+  ],
+  "created_at": "2026-11-09T02:45:00+00:00",
+  "usage_count": 1,
+  "used_in_issues": [
+   2364
+  ]
  }
 ]
