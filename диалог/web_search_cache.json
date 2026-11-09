@@ -4853,6 +4853,79 @@
       "used_in_issues": [
         2811
       ]
+    },
+    {
+      "id": "ws_tokarnaya_obrabotka_chpu_al6061",
+      "query": "6061 aluminum CNC turning cutting speed carbide feed rate ISO 2768; circular connector shell manufacturing screw machining CNC turning MIL-DTL-38999",
+      "keywords": [
+        "6061 turning",
+        "cutting speed",
+        "carbide",
+        "PCD",
+        "ISO 2768-f",
+        "connector shell",
+        "screw machining"
+      ],
+      "results_count": 9,
+      "key_facts": [
+        "Скорости точения Al 6061: твердосплавный 180–365 м/мин (600–1200 SFPM, Practical Machinist; ~590 SFM чистовая, r/Machinists); PCD 600–2500 м/мин (Machining Doctor)",
+        "Точение 6061-T6: ISO 2768-f ±0.05 мм, Ra 0.8 мкм (кейс sunnyhowe); ≥70 бар СОЖ удерживает ±0.05 мм на 200 мм (lsrpf)",
+        "Корпуса круглых разъёмов — тела вращения: screw machining в собственном производстве Amphenol (каталог 38999)",
+        "Подрядчики: Ring Precision — CNC turning контактов/корпусов aerospace; Chandler Industries — CNC milling and turning оболочек/корпусов/бэкшеллов; SwissTurn — Swiss screw machining пинов/терминалов/корпусов"
+      ],
+      "created_at": "2026-11-10",
+      "last_used": "2026-11-10",
+      "usage_count": 1,
+      "results": [
+        {
+          "url": "https://www.machiningdoctor.com/mds/?matId=3850",
+          "title": "Aluminium 6061 Machining Data Sheet (Machining Doctor)",
+          "snippet": "Скорости точения carbide/DLC/PCD: PCD 600–2500 м/мин (2000–8000 SFM)"
+        },
+        {
+          "url": "https://www.practicalmachinist.com/forum/threads/can-somebody-school-me-on-cutting-speed-and-feedrates-for-6061-t6-aluminum.242936",
+          "title": "Cutting speed and feedrates for 6061-T6 (Practical Machinist)",
+          "snippet": "600–1200 SFPM, chip load 0.004–0.006\"/зуб"
+        },
+        {
+          "url": "https://www.reddit.com/r/Machinists/comments/1i31rsc/aluminium_turning_advice_feeds_and_speeds",
+          "title": "Aluminium turning advice feeds and speeds (r/Machinists)",
+          "snippet": "~590 SFM достаточно; полированная пластина, радиус при вершине 0.008\""
+        },
+        {
+          "url": "https://www.sunnyhowe.com/robotics-case/476.html",
+          "title": "CNC Turned 6061-T6 Aluminum Parts | ISO2768-F",
+          "snippet": "±0.05 мм, Ra 0.8 мкм"
+        },
+        {
+          "url": "https://jlccnc.com/help/article/iso-2768-tolerance-standards-for-cnc-machining",
+          "title": "ISO 2768 Tolerance Standards for CNC Machining",
+          "snippet": "Классы f/m/c/v, линейные допуски"
+        },
+        {
+          "url": "https://www.amphenol-aerospace.com/resources/literature/view/38999-catalog.pdf",
+          "title": "MIL-DTL-38999 Connectors (Amphenol)",
+          "snippet": "Собственные технологии: CNC machining, die-casting, molding, screw machining"
+        },
+        {
+          "url": "https://www.ringprecision.com/applications/aerospace",
+          "title": "Aerospace Connectors (Ring Precision)",
+          "snippet": "CNC turning для контактов, корпусов аэрокосмических разъёмов"
+        },
+        {
+          "url": "https://www.chandlerindustries.com/industries/electronic-connectors",
+          "title": "Electronic Connectors (Chandler Industries)",
+          "snippet": "CNC milling and turning для микро connector shells, housings, backshells"
+        },
+        {
+          "url": "https://swissturn.com/industries-served/electrical-connections",
+          "title": "Electrical Connector Manufacturing (SwissTurn)",
+          "snippet": "Swiss screw machining пинов, терминалов, корпусов"
+        }
+      ],
+      "used_in_issues": [
+        2046
+      ]
     }
   ]
 }
