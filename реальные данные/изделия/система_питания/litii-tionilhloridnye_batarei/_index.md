@@ -21,9 +21,11 @@ id: izdelie_litii-tionilhloridnye_batarei
 материалы_частей:
   - часть: часть_litii-tionilhloridnye_batarei_anode
     материал: lithium_metal
+    форма: bobbin_anode_lisocl2
     доля_массы: 0.19
   - часть: часть_litii-tionilhloridnye_batarei_cathode
     материал: carbon_black
+    форма: li_socl2_cathode_conductive_net
     доля_массы: 0.18
   - часть: часть_litii-tionilhloridnye_batarei_electrolyte
     материал: socl2
@@ -34,6 +36,38 @@ id: izdelie_litii-tionilhloridnye_batarei
   - часть: часть_litii-tionilhloridnye_batarei_case
     материал: stainless_steel_304
     доля_массы: 0.19
+
+технологии_частей:
+  - часть: часть_litii-tionilhloridnye_batarei_anode
+    технология: spiralnaya_navivka
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: lithium
+        роль: обрабатываемый
+  - часть: часть_litii-tionilhloridnye_batarei_cathode
+    технология: pogruzhenie_v_mo-shliker
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: carbon_black
+        роль: обрабатываемый
+  - часть: часть_litii-tionilhloridnye_batarei_electrolyte
+    технология: pogruzhenie_v_mo-shliker
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: socl2_lialcl4_electrolit
+        роль: обрабатываемый
+  - часть: часть_litii-tionilhloridnye_batarei_separator
+    технология: plazmennaya_aktivatsiya
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: polypropylene
+        роль: обрабатываемый
+  - часть: часть_litii-tionilhloridnye_batarei_case
+    технология: ebw
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: ss_aisi_304
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -70,7 +104,7 @@ scaling_type: количественный
   габариты_метод: расчёт упаковки 3 элементов D + держатель (см. обоснование_габаритов)
   обоснование_габаритов: огибающая батареи из 3 элементов D в держателе — длина 3×34.2 + межэлементные зазоры и никелевые шины ≈ 110 мм; ширина 34.2 + рёбра держателя ≈ 40 мм; высота 61.5 + изолятор основания и выводы ≈ 66 мм; размеры элемента подтверждены datasheets (Tadiran TL-5903 Ø34.0×61.5 99 г; EVE ER34615 Ø33.1×61.5 100 г); проверка F15g — Σ V детей 208983 мм³ ≤ 290400/1.15 = 252522 (запас 21 %), оси 110≥34, 40≥34, 66≥62
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
+дата_обновления: 2026-11-10
 источник: web_search
 источник_разбора: веб-верификация
 источник_url: https://www.evlithium.com/li-socl2-battery/eve-er34615-19000mah-li-thionyl-chloride-d-cell.html

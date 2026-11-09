@@ -12,6 +12,7 @@
 
 
 
+
 id: tekhnologia_hamming_ecc
 тип: технология
 категория: обработка

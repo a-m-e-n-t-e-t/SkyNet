@@ -12,6 +12,7 @@
 
 
 
+
 id: material_tritium_gas
 тип: материал
 класс: газ
