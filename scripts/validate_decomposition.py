@@ -2427,10 +2427,18 @@ def check_F27b(izdeliya: dict[str, dict]) -> dict:
     совместим с дефолтной веткой normalizeViolationKey (dedup
     F27b:material_<stem>) и титульником '[F27b] Verify: material_<stem>'
     (verify_decomposition.yml).
+
+    v9.60 Фаза 1.4: расширение — WARNING (non-blocking) если material_id
+    ссылается на узел `изделия/` (это явная путаница материала и части).
+    В Фазе 2.4 станет BLOCKING через F35b.
     """
     violations = []
     seen = {}  # stem → izdelie_id (для текста violation)
+    cross_ref_warnings = []  # v9.60: материал ссылается на узел изделия/
     mat_dir = SKYNET_REPO / "реальные данные" / "материалы"
+
+    # Собрать множество id узлов изделий (для cross-ref проверки)
+    izdeliya_ids = set(izdeliya.keys())
 
     # Идём по ссылкам прямо из frontmatter, чтобы сохранить изделие-источник
     for izd_id, data in izdeliya.items():
@@ -2446,6 +2454,17 @@ def check_F27b(izdeliya: dict[str, dict]) -> dict:
             stem = mat[9:] if mat.startswith('material_') else mat
             if not stem:
                 continue
+
+            # v9.60 Фаза 1.4: cross-ref проверка
+            # Если mat_id совпадает с id узла изделий — это путаница
+            if mat in izdeliya_ids:
+                cross_ref_warnings.append(
+                    f"{izd_id}: материалы_частей содержит '{mat}' — "
+                    f"это id узла изделий/, а не canonical материал. "
+                    f"Перенесите в 'компоненты_частей' (после миграции A2) "
+                    f"или замените на canonical материал."
+                )
+
             if stem in seen:
                 continue  # уже видели эту ссылку — dedup по файлу
             seen[stem] = izd_id  # первый источник (для текста violation)
@@ -2470,6 +2489,7 @@ def check_F27b(izdeliya: dict[str, dict]) -> dict:
         'ratio': round(ratio, 4),
         'pass': ratio >= 1.0,
         'violations': violations,
+        'cross_ref_warnings': cross_ref_warnings,  # v9.60: non-blocking warnings
     }
 
 
@@ -3728,6 +3748,111 @@ def check_F34(izdeliya: dict[str, dict]) -> dict:
 
 
 # ============================================================================
+# F35: COMPONENTS CONSISTENCY (v9.60 — вариант A2 + D4-β)
+# ============================================================================
+# Новая метрика для разделения сущностей:
+#   - изделие / сборка / часть / компонент (через поле 'тип')
+#   - canonical материалы (id существует в материалы/)
+#   - закупочные компоненты (имеют BOM в материалы_частей, не имеют sub-parts)
+#
+# Подметрики:
+#   F35a: 'тип: компонент' ⇔ дочерние_части=[] ∧ материалы_частей непусто
+#   F35b: каждый 'материал' в материалы_частей — canonical (файл в материалы/)
+#   F35c: 'тип: часть' ⇔ дочерние_части=[] ∧ материалы_частей непусто
+#   F35d: 'тип: сборка' ⇔ дочерние_части непусто
+#   F35e: 'тип: изделие' ⇔ родитель=null ∧ уровень_номер=1
+#
+# Состояние v9.60 Фаза 1.3: NON-BLOCKING (warning), чтобы не сломать existing pass-rate
+# перед миграцией файлов. В Фазе 2.3 станет BLOCKING.
+
+def _load_canonical_materials_set() -> set:
+    """Кэш canonical материалов из реальные данные/материалы/*.md."""
+    global _CANONICAL_MATERIALS_CACHE
+    if _CANONICAL_MATERIALS_CACHE is None:
+        materials_dir = SKYNET_REPO / "реальные данные" / "материалы"
+        _CANONICAL_MATERIALS_CACHE = {f.stem for f in materials_dir.glob("*.md")}
+    return _CANONICAL_MATERIALS_CACHE
+
+
+_CANONICAL_MATERIALS_CACHE: set | None = None
+
+
+def check_F35(izdeliya: dict[str, dict]) -> dict:
+    """F35: Components Consistency — разделение тип/материал/компонент (v9.60).
+
+    NON-BLOCKING в Фазе 1.3. После миграции на A2-модель станет BLOCKING.
+
+    Проверки:
+    - F35a: узлы с тип='компонент' (илиleaf без canonical material) должны:
+        * иметь пустые дочерние_части
+        * иметь непустые материалы_частей
+        * каждый 'материал' в материалы_частей должен быть canonical (файл в материалы/)
+    - F35b: каждый 'материал' в материалы_частей любого узла должен быть canonical
+      (если не canonical → это закупочный компонент, должен быть отдельным узлом)
+    - F35c: leaf узлы (без детей) с тип='часть' или 'неделимый' должны иметь материалы_частей
+    """
+    canonical = _load_canonical_materials_set()
+    violations = []
+    total = 0
+    valid = 0
+    purchased_components_found = []
+
+    for izd_id, data in izdeliya.items():
+        tip = data.get('тип', 'изделие')  # текущее значение (после миграции будет сборка/часть/компонент)
+        children = data.get('дочерние_части', [])
+        if not isinstance(children, list):
+            children = []
+        materials_parts = data.get('материалы_частей', [])
+        if not isinstance(materials_parts, list):
+            materials_parts = []
+
+        # F35b: каждый 'материал' в материалы_частей — canonical?
+        for entry in materials_parts:
+            if not isinstance(entry, dict):
+                continue
+            mat = entry.get('материал')
+            if not mat:
+                continue
+            total += 1
+            if mat in canonical:
+                valid += 1
+            else:
+                # НЕ canonical → это закупочный компонент, замаскированный под материал
+                violations.append(
+                    f"{izd_id}: материалы_частей содержит non-canonical '{mat}' — "
+                    f"это закупочный компонент? Создайте узел 'тип: компонент' и "
+                    f"заполните его BOM с canonical материалом."
+                )
+                purchased_components_found.append((izd_id, mat))
+
+        # F35a (future, для тип='компонент' после миграции):
+        # Пока что смотрим на leaf узлы без детей — это кандидаты в компоненты/части
+        if not children:
+            if not materials_parts:
+                # leaf без материалов — WARN (нужно заполнить BOM)
+                if tip in ('изделие', 'часть', 'компонент', 'неделимый'):
+                    violations.append(
+                        f"{izd_id}: leaf узел (тип={tip}) без материалы_частей — "
+                        f"нужно заполнить BOM (canonical материал) ИЛИ пометить как 'компонент' "
+                        f"и создать отдельный узел с BOM."
+                    )
+                    total += 1
+
+    ratio = valid / max(1, total)
+    return {
+        'metric': 'F35',
+        'description': 'Components consistency — разделение тип/материал/компонент (v9.60, non-blocking)',
+        'total': total,
+        'valid': valid,
+        'ratio': round(ratio, 4),
+        'pass': True,  # NON-BLOCKING в Фазе 1.3
+        'blocking': False,  # станет True в Фазе 2.3
+        'violations': violations,
+        'purchased_components': purchased_components_found,
+    }
+
+
+# ============================================================================
 # MAIN
 # ============================================================================
 
@@ -4326,6 +4451,20 @@ def run_all_checks() -> dict:
         print(f"  violations: {len(r['violations'])} (первые 3):")
         for v in r['violations'][:3]:
             print(f"    - {v[:100]}")
+
+    # F35 — Components Consistency (v9.60 Фаза 1.3; NON-BLOCKING, warning)
+    # Разделение тип/материал/компонент. После миграции на A2-модель станет BLOCKING.
+    print()
+    print("=== F35: Components consistency (v9.60, NON-BLOCKING) ===")
+    r = check_F35(izdeliya)
+    results['F35'] = r
+    print(f"  pass={r['pass']} (NON-BLOCKING), ratio={r['ratio']} ({r['valid']}/{r['total']})")
+    if r['violations']:
+        print(f"  violations: {len(r['violations'])} (первые 5):")
+        for v in r['violations'][:5]:
+            print(f"    - {v[:120]}")
+    if r.get('purchased_components'):
+        print(f"  purchased_components: {len(r['purchased_components'])} (нужно создать файлы canonical материалов)")
 
     # F-scal — масштабируемость (v9.32 / P087; SOFT-метрика: pass=True всегда,
     # violations идут в --json-out → workflow создаёт verify-task issues)
