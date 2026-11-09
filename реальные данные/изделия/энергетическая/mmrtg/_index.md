@@ -30,12 +30,15 @@ id: izdelie_mmrtg
     доля_массы: 0.27
   - часть: часть_mmrtg_cold_side
     материал: aluminum
+    форма: теплоотводящие_узлы
     доля_массы: 0.1425
   - часть: часть_mmrtg_housing
     материал: titanium_alloy
+    форма: forged_bar_ams_4928
     доля_массы: 0.285
   - часть: часть_mmrtg_thermal_insulation
     материал: aerogel
+    форма: pyrogel_xte_промышленный_высокотемпературный
     доля_массы: 0.09
 
 технологии_частей:
