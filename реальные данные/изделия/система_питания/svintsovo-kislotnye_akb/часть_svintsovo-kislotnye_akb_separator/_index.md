@@ -13,7 +13,8 @@ id: часть_svintsovo-kislotnye_akb_separator
 дочерние_части: []
 материалы_частей:
   - часть: часть_svintsovo-kislotnye_akb_separator
-    материал: agm_steklovolokno
+    материал: sio2_amorphous
+    форма: hybrid_agm
     доля_массы: 1.0
 
 scaling_type: количественный

@@ -16,6 +16,7 @@ id: часть_svintsovo-kislotnye_akb_grid_pos
 материалы_частей:
   - часть: часть_svintsovo-kislotnye_akb_grid_pos
     материал: pb_sb_alloy
+    форма: стартерные_SLI_решётки
     доля_массы: 1.0
 
 scaling_type: количественный

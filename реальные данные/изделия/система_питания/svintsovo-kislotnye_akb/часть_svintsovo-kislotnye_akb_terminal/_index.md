@@ -14,6 +14,7 @@ id: часть_svintsovo-kislotnye_akb_terminal
 материалы_частей:
   - часть: часть_svintsovo-kislotnye_akb_terminal
     материал: latun_c36000
+    форма: пруток_автоматный_ASTM_B16
     доля_массы: 1.0
 
 scaling_type: количественный
@@ -37,7 +38,7 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-07
+дата_обновления: 2026-11-09
 источник: web_search
 источник_разбора: веб-верификация
 источник_url: https://en.wikipedia.org/wiki/Automotive_battery
@@ -63,7 +64,7 @@ scaling_type: количественный
 | габариты (Д×Ш×В) | 20×20×15 | mm | Терминал SAE post (конус 17,9/19,5 мм, стандарт автомобильных АКБ) |
 | выработка энергии | 0 | W | canon |
 | выработка тепла | 0.5 | W | контактные + омические потери вывода (web_search 2026-11-07) |
-| материал | latun_c36000 | — | Терминал SAE post (конус 17,9/19,5 мм, стандарт автомобильных АКБ) | canon |
+| материал | latun_c36000 | — | Терминал SAE post (конус 17,9/19,5 мм, стандарт автомобильных АКБ) |
 
 ## Принцип работы
 
@@ -88,3 +89,5 @@ scaling_type: количественный
 - Материалы: реальные данные/материалы/
 
 - Battery University BU-802a — How does Rising Internal Resistance Affect Performance (I²R — принятая производителями оценка тепловыделения при разряде): https://batteryuniversity.com/article/bu-802a-how-does-rising-internal-resistance-affect-performance (обращение 2026-11-07)
+- Car Battery Terminals Explained: Types, Materials (top-post SAE/DIN: свинцовый сплав или heavy-duty латунь; лужёная латунь — стойкость к коррозии и проводимость): https://www.rotatingelectrics.co.uk/blogs/news/car-battery-terminals-explained-types-materials-sizes-and-how-to-prevent-corrosion (обращение 2026-11-09)
+- Free-Cutting Brass C36000 — Chemistry, Properties (≈61% Cu, 3% Pb, баланс Zn; автоматная обработка резанием — пруток ASTM B16): https://www.innovationfasteners.com/materials/brass-c36000 (обращение 2026-11-09)

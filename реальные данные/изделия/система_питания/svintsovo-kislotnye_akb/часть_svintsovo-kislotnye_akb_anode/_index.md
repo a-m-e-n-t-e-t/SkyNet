@@ -14,6 +14,7 @@ id: часть_svintsovo-kislotnye_akb_anode
 материалы_частей:
   - часть: часть_svintsovo-kislotnye_akb_anode
     материал: pbo2
+    форма: положительная_пластина_свинцовой_акб
     доля_массы: 1.0
 
 scaling_type: количественный

@@ -15,6 +15,7 @@ id: часть_svintsovo-kislotnye_akb_case
 материалы_частей:
   - часть: часть_svintsovo-kislotnye_akb_case
     материал: polypropylene
+    форма: литьевой_моноблок_ppcp
     доля_массы: 1.0
 
 scaling_type: количественный

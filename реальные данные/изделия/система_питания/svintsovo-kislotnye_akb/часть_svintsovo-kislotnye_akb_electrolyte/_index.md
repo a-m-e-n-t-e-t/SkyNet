@@ -15,6 +15,7 @@ id: часть_svintsovo-kislotnye_akb_electrolyte
 материалы_частей:
   - часть: часть_svintsovo-kislotnye_akb_electrolyte
     материал: h2so4_aqueous
+    форма: vrla_agm_иммобилизованный
     доля_массы: 1.0
 
 scaling_type: количественный
