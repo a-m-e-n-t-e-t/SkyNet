@@ -37,7 +37,7 @@ id: izdelie_mmrtg
     форма: forged_bar_ams_4928
     доля_массы: 0.285
   - часть: часть_mmrtg_thermal_insulation
-    материал: aerogel
+    материал: sio2_amorphous
     форма: pyrogel_xte_промышленный_высокотемпературный
     доля_массы: 0.09
 

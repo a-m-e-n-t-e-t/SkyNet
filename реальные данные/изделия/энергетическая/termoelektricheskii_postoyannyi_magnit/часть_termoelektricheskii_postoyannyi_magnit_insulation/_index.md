@@ -13,7 +13,7 @@ id: часть_termoelektricheskii_postoyannyi_magnit_insulation
 дочерние_части: []
 материалы_частей:
   - часть: часть_termoelektricheskii_postoyannyi_magnit_insulation
-    материал: silica_aerogel_blanket
+    материал: sio2_amorphous
     доля_массы: 1.0
 
 scaling_type: количественный
