@@ -18,6 +18,7 @@
 
 
 
+
 id: tekhnologia_cvd_tab2_mosi2-tasi2
 канонический_id: 'tekhnologia_cvd_tab2_mosi2-tasi2'
 тип: технология

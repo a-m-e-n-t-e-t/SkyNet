@@ -18,6 +18,7 @@
 
 
 
+
 id: tekhnologia_kogerentnoe_slozhenie_puchkov
 тип: технология
 категория: обработка

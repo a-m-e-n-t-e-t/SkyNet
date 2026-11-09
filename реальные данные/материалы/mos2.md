@@ -18,6 +18,7 @@
 
 
 
+
 id: material_mos2
 канонический_id: 'material_mos2'
 тип: материал

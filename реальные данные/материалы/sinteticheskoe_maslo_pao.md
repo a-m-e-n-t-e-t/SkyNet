@@ -18,6 +18,7 @@
 
 
 
+
 id: material_sinteticheskoe_maslo_pao
 тип: материал
 класс: полимер

@@ -18,6 +18,7 @@
 
 
 
+
 id: tekhnologia_aktivnaya_matritsa
 тип: технология
 категория: обработка
