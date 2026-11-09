@@ -15,6 +15,7 @@
 
 
 
+
 id: tekhnologia_mikropolyarizatsiya
 тип: технология
 категория: обработка

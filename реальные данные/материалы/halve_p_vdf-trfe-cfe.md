@@ -15,6 +15,7 @@
 
 
 
+
 id: material_halve_p_vdf-trfe-cfe
 тип: материал
 класс: полимер
