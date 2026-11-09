@@ -14,6 +14,7 @@ id: часть_superkondensatory_case
 материалы_частей:
   - часть: часть_superkondensatory_case
     материал: al_6061-t6
+    форма: корпуса_электроники
     доля_массы: 1.0
 
 scaling_type: количественный

@@ -14,6 +14,7 @@ id: часть_superkondensatory_electrolyte
 материалы_частей:
   - часть: часть_superkondensatory_electrolyte
     материал: acetonitrile_teabf4
+    форма: электролит_суперконденсаторов
     доля_массы: 1.0
 
 scaling_type: количественный

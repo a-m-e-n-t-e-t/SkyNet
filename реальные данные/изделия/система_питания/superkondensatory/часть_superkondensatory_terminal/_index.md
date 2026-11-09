@@ -14,6 +14,7 @@ id: часть_superkondensatory_terminal
 материалы_частей:
   - часть: часть_superkondensatory_terminal
     материал: al_6061-t6
+    форма: крепёж_и_монтажные_плиты
     доля_массы: 1.0
 
 scaling_type: количественный

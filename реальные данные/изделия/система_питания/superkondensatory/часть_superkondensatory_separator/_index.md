@@ -14,6 +14,7 @@ id: часть_superkondensatory_separator
 материалы_частей:
   - часть: часть_superkondensatory_separator
     материал: cellulose
+    форма: сепаратор_суперконденсаторов
     доля_массы: 1.0
 
 scaling_type: количественный

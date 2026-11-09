@@ -8,6 +8,7 @@
 
 
 
+
 id: material_ss_aisi_304
 псевдонимы: [material_stainless_steel_304]
 тип: материал

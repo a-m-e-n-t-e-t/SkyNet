@@ -8,6 +8,7 @@
 
 
 
+
 id: material_paraffin
 тип: материал
 класс: полимер

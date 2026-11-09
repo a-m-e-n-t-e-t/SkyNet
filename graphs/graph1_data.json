@@ -11766,19 +11766,31 @@
     },
     {
       "src": "izdelie_superkondensatory",
+      "dst": "material_activated_carbon",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_superkondensatory",
       "dst": "material_cellulose",
       "type": "uses_material",
       "meta": {}
     },
     {
       "src": "izdelie_superkondensatory",
-      "dst": "material_tebabf4_acn",
+      "dst": "material_acetonitrile_teabf4",
       "type": "uses_material",
       "meta": {}
     },
     {
       "src": "izdelie_superkondensatory",
       "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_superkondensatory",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -12078,7 +12090,13 @@
     },
     {
       "src": "часть_superkondensatory_current_collector",
-      "dst": "material_al_6061-t6",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_superkondensatory_electrode_pos",
+      "dst": "material_activated_carbon",
       "type": "uses_material",
       "meta": {}
     },
@@ -18285,7 +18303,7 @@
   },
   "stats": {
     "nodes": 1158,
-    "edges": 1577,
+    "edges": 1580,
     "dangling": {
       "complies_with": 540,
       "has_part": 4,

@@ -14,7 +14,8 @@ id: часть_superkondensatory_electrode_pos
 дочерние_части: []
 материалы_частей:
   - часть: часть_superkondensatory_electrode_pos
-    материал: karbon
+    материал: activated_carbon
+    форма: электрод_EDLC
     доля_массы: 1.0
 
 scaling_type: количественный
