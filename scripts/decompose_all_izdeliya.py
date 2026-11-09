@@ -266,7 +266,7 @@ DECOMP_TEMPLATES: dict[str, dict] = {
             ('catalyst_anode', 'pt_carbon', 0.5),
             ('catalyst_cathode', 'pt_carbon', 0.5),
             ('gdl_anode', 'carbon_paper', 0.95),
-            ('bipolar_plate', 'stainless_steel_316', 0.95),
+            ('bipolar_plate', 'ss_316l', 0.95),
             ('end_plate', 'aluminum', 0.95),
         ]
     },
@@ -420,7 +420,7 @@ DECOMP_TEMPLATES: dict[str, dict] = {
             ('isotope', 'am241_oxide', 0.95),
             ('thermocouples', 'pbte_teg', 0.9),
             ('shielding', 'tungsten_alloy', 0.95),
-            ('housing', 'stainless_steel_316', 0.95),
+            ('housing', 'ss_316l', 0.95),
         ]
     },
     'фотоэлектрический_модуль': {
@@ -455,7 +455,7 @@ DECOMP_TEMPLATES: dict[str, dict] = {
             ('moderator', 'graphite', 0.95),
             ('heat_exchanger', 'inconel_625', 0.5),
             ('shielding', 'concrete_barite', 0.95),
-            ('vessel', 'stainless_steel_316', 0.95),
+            ('vessel', 'ss_316l', 0.95),
             ('coolant', 'sodium', 0.95),
         ]
     },
@@ -635,7 +635,7 @@ DECOMP_TEMPLATES: dict[str, dict] = {
         'materials': [
             ('hts_element', 'ybco_bulk', 0.95),
             ('magnet', 'ndfeb', 0.95),
-            ('cryostat', 'stainless_steel_316', 0.95),
+            ('cryostat', 'ss_316l', 0.95),
             ('shaft', 'titanium_alloy', 0.95),
         ]
     },
@@ -694,7 +694,7 @@ DECOMP_TEMPLATES: dict[str, dict] = {
         'materials': [
             ('engine', 'cast_iron', 0.7),
             ('generator', 'copper_wire', 0.5),
-            ('heat_exchanger', 'stainless_steel_316', 0.7),
+            ('heat_exchanger', 'ss_316l', 0.7),
         ]
     },
     'ЭМИ_генератор': {
