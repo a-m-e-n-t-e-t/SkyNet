@@ -20,9 +20,11 @@ id: izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza
 материалы_частей:
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil
     материал: copper
+    форма: обмотки_электрических_машин
     доля_массы: 0.18
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor
     материал: steel_1045
+    форма: валы_и_магнитопроводы_муфт
     доля_массы: 0.285
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator
     материал: steel_1045
@@ -33,6 +35,37 @@ id: izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_bearings
     материал: stainless_steel_440c
     доля_массы: 0.054
+технологии_частей:
+  - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil
+    технология: spiralnaya_navivka
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: copper
+        роль: обрабатываемый
+  - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: steel_1045
+        роль: обрабатываемый
+  - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: steel_1045
+        роль: обрабатываемый
+  - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_powder
+    технология: karbonilnyi_sintez_poroshka_zheleza
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: iron_powder
+        роль: обрабатываемый
+  - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_bearings
+    технология: honing_plateau_finish
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: stainless_steel_440c
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
