@@ -7934,6 +7934,13 @@
       "subsystem": ""
     },
     {
+      "id": "tekhnologia_tape_casting",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/tape_casting.md",
+      "subsystem": ""
+    },
+    {
       "id": "tekhnologia_thermal-inertial_slam",
       "type": "tekhnologia",
       "label": "обработка",
@@ -18344,7 +18351,7 @@
     ]
   },
   "stats": {
-    "nodes": 1160,
+    "nodes": 1161,
     "edges": 1585,
     "dangling": {
       "complies_with": 540,
@@ -18358,7 +18365,7 @@
       "izdelie": 203,
       "material": 195,
       "standart": 8,
-      "tekhnologia": 80
+      "tekhnologia": 81
     }
   }
 }

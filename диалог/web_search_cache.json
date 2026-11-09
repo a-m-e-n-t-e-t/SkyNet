@@ -4664,6 +4664,34 @@
       "used_in_issues": [
         922
       ]
+    },
+    {
+      "id": "ws_0064",
+      "query": "tape casting ceramic slurry doctor blade drying 8YSZ SOFC electrolyte parameters",
+      "keywords": [
+        "tape casting",
+        "doctor blade",
+        "slurry",
+        "8YSZ",
+        "SOFC",
+        "drying"
+      ],
+      "results_count": 6,
+      "key_facts": [
+        "Wikipedia: частицы порошка <=5 мкм, ленты до 5 мкм (впервые 1996), <50 мкм — slot-die/lip/microgravure, односторонняя сушка, метод с 1947 (MLCC), многослойный патент 1960",
+        "ScienceDirect topics: шликер 75/16.7/6.5/1.8 wt.% (TiH2/МЭК/EMA/ДБФ), PVB 6-9 wt.%, вязкость 100-130 пуаз, толщина 100-300 мкм, сушка 24ч КТ -> 100-250 C, debinding 500 C/1 ч (2 C/мин), SOFC: плотный электролит + пористый анод co-casting",
+        "Mascera 2023: ленты от единиц мкм до 1000 мкм, этапы шликер->литьё->сушка->debinding->спекание",
+        "Scribd YSZ paper: 3/8/10% YSZ ленты спекание 1400-1450 C, 8YSZ 1450 C/4 ч макс. ионная проводимость"
+      ],
+      "created_at": "2026-11-09T17:34:36.426296+00:00",
+      "last_used": "2026-11-09T17:34:36.426296+00:00",
+      "usage_count": 1,
+      "results": [
+        "см. key_facts"
+      ],
+      "used_in_issues": [
+        925
+      ]
     }
   ]
 }
