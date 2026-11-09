@@ -41,10 +41,12 @@ id: izdelie_tverdotelnye_akkumulyatory
     форма: фольга_токосъёмника_анода
     доля_массы: 0.0792
   - часть: часть_tverdotelnye_akkumulyatory_current_collector_al
-    материал: aluminum
+    материал: al_bondwire
+    форма: катодные_токосъёмники_ЛиБ
     доля_массы: 0.0792
   - часть: часть_tverdotelnye_akkumulyatory_case
-    материал: aluminum
+    материал: al_6061-t6
+    форма: корпуса_электроники
     доля_массы: 0.19
 
 технологии_частей:
@@ -82,14 +84,52 @@ id: izdelie_tverdotelnye_akkumulyatory
     технология: otzhig
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: aluminum
+      - материал: al_bondwire
         роль: обрабатываемый
   - часть: часть_tverdotelnye_akkumulyatory_case
     технология: ebw
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: aluminum
+      - материал: al_6061-t6
         роль: обрабатываемый
+
+наследуемые_материалы:
+  - материал: graphite
+    форма: анодный_ли_ионный_mcmb
+    суммарная_доля_массы: 0.18
+    источники_частей:
+      - часть_tverdotelnye_akkumulyatory_anode
+  - материал: lini_mn_co_o2
+    форма: nmc811_высоконикелевый
+    суммарная_доля_массы: 0.34
+    источники_частей:
+      - часть_tverdotelnye_akkumulyatory_cathode
+  - материал: li7la3zr2o12
+    форма: твёрдый_электролит_ASSB
+    суммарная_доля_массы: 0.19
+    источники_частей:
+      - часть_tverdotelnye_akkumulyatory_electrolyte
+  - материал: poliimid
+    форма: сепараторная_мембрана_ссб
+    суммарная_доля_массы: 0.038
+    источники_частей:
+      - часть_tverdotelnye_akkumulyatory_separator
+  - материал: copper
+    форма: фольга_токосъёмника_анода
+    суммарная_доля_массы: 0.0792
+    источники_частей:
+      - часть_tverdotelnye_akkumulyatory_current_collector_cu
+  - материал: al_bondwire
+    форма: катодные_токосъёмники_ЛиБ
+    суммарная_доля_массы: 0.0792
+    источники_частей:
+      - часть_tverdotelnye_akkumulyatory_current_collector_al
+  - материал: al_6061-t6
+    форма: корпуса_электроники
+    суммарная_доля_массы: 0.19
+    источники_частей:
+      - часть_tverdotelnye_akkumulyatory_case
+
 scaling_type: количественный
 соединители: []
 версия: реальная
