@@ -22,6 +22,7 @@
 
 
 
+
 id: material_stainless_steel_440c
 псевдонимы: ['AISI 440C', 'UNS S44004', 'X105CrMo17', '440C нержавеющая']
 тип: материал

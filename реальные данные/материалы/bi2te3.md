@@ -22,6 +22,7 @@
 
 
 
+
 id: material_bi2te3
 канонический_id: 'material_bi2te3'
 тип: материал

@@ -22,6 +22,7 @@
 
 
 
+
 id: tekhnologia_pack_aluminizing
 тип: технология
 категория: обработка

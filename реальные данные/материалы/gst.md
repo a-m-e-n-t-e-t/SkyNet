@@ -22,6 +22,7 @@
 
 
 
+
 id: material_gst
 псевдонимы: [material_gst_chalcogenide]
 тип: материал

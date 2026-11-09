@@ -22,6 +22,7 @@
 
 
 
+
 id: material_co2
 канонический_id: 'material_co2'
 тип: материал
