@@ -42,6 +42,7 @@ id: izdelie_mikroreaktor_deleniya
     доля_массы: 0.19
   - часть: часть_mikroreaktor_deleniya_coolant
     материал: sodium
+    форма: натриевые_heat_pipes_микрореактора
     доля_массы: 0.0475
 технологии_частей:
   - часть: часть_mikroreaktor_deleniya_fuel
@@ -80,6 +81,38 @@ id: izdelie_mikroreaktor_deleniya
     материалы_для_процесса:
       - материал: sodium
         роль: обрабатываемый
+
+наследуемые_материалы:
+  - материал: uo2_pellets
+    форма: топливные_пебблы_triso
+    суммарная_доля_массы: 0.095
+    источники_частей:
+      - часть_mikroreaktor_deleniya_fuel
+  - материал: graphite
+    форма: монолитный_замедлитель_микрореактора
+    суммарная_доля_массы: 0.38
+    источники_частей:
+      - часть_mikroreaktor_deleniya_moderator
+  - материал: inconel_625
+    форма: химическая_промышленность
+    суммарная_доля_массы: 0.15
+    источники_частей:
+      - часть_mikroreaktor_deleniya_heat_exchanger
+  - материал: concrete_barite
+    форма: боковая_защита_микрореактора
+    суммарная_доля_массы: 0.38
+    источники_частей:
+      - часть_mikroreaktor_deleniya_shielding
+  - материал: stainless_steel_316
+    форма: поликристаллический_прокат
+    суммарная_доля_массы: 0.19
+    источники_частей:
+      - часть_mikroreaktor_deleniya_vessel
+  - материал: sodium
+    форма: натриевые_heat_pipes_микрореактора
+    суммарная_доля_массы: 0.0475
+    источники_частей:
+      - часть_mikroreaktor_deleniya_coolant
 scaling_type: количественный
 соединители: []
 версия: реальная
