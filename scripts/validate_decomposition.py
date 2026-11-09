@@ -1406,6 +1406,58 @@ def check_F16(izdeliya: dict[str, dict]) -> dict:
                 violations.append(f"{izd_id}: уровень_иерархии='промежуточный' но дочерние_части=[] — должен быть 'неделимый' или иметь детей")
                 total += 1
 
+    # v9.60 Фаза 2.7: правила для новых типов (сборка/часть/компонент)
+    # — 'сборка' ОБЯЗАНА иметь непустые дочерние_части
+    # — 'часть' и 'компонент' НЕ должны иметь дочерние_части (must be leaf)
+    # — 'компонент' ОБЯЗАН иметь непустые материалы_частей (BOM)
+    # Проверяем только если тип ∈ {сборка, часть, компонент} (пропускаем legacy 'изделие')
+    for izd_id, data in izdeliya.items():
+        tip = data.get('тип', '')
+        if tip not in ('сборка', 'часть', 'компонент'):
+            continue  # legacy 'изделие' — пропускаем (старые правила выше)
+        children = data.get('дочерние_части', [])
+        children_list = children if isinstance(children, list) else []
+        materials_parts = data.get('материалы_частей', [])
+        materials_list = materials_parts if isinstance(materials_parts, list) else []
+
+        if tip == 'сборка':
+            if not children_list:
+                violations.append(
+                    f"{izd_id}: тип='сборка' но дочерние_части=[] — "
+                    f"сборка обязана иметь детей (или смените тип на 'часть'/'компонент')")
+                total += 1
+            else:
+                valid += 1
+                total += 1
+        elif tip == 'часть':
+            if children_list:
+                violations.append(
+                    f"{izd_id}: тип='часть' но имеет {len(children_list)} дочерних_частей — "
+                    f"часть должна быть leaf; смените тип на 'сборка' если нужна декомпозиция")
+                total += 1
+            elif not materials_list:
+                violations.append(
+                    f"{izd_id}: тип='часть' но материалы_частей=[] — "
+                    f"часть обязана иметь BOM (canonical материал)")
+                total += 1
+            else:
+                valid += 1
+                total += 1
+        elif tip == 'компонент':
+            if children_list:
+                violations.append(
+                    f"{izd_id}: тип='компонент' но имеет {len(children_list)} дочерних_частей — "
+                    f"компонент должен быть leaf (закупочный sub-assembly)")
+                total += 1
+            elif not materials_list:
+                violations.append(
+                    f"{izd_id}: тип='компонент' но материалы_частей=[] — "
+                    f"компонент обязан иметь BOM (canonical материал закупочного узла)")
+                total += 1
+            else:
+                valid += 1
+                total += 1
+
     # верхний (уровень 1) не имеет родителя
     for izd_id, data in izdeliya.items():
         level = data.get('уровень_номер')
@@ -3237,13 +3289,43 @@ def check_F29(izdeliya: dict[str, dict]) -> dict:
         else:
             violations.append(f"[B-BOM] {fid}: " + "; ".join(msgs))
 
+    # === Чек C (v9.60 Фаза 2.8): canonical-only материалы_частей ===
+    # Каждый 'материал' в материалы_частей должен быть canonical — файл
+    # должен существовать в реальные данные/материалы/. Если материала нет,
+    # это либо (a) закупочный компонент (тип: компонент), либо (b) просто
+    # битая ссылка (которую уже ловит F27b). Чек C делает это BLOCKING.
+    canonical_set = _load_canonical_materials_set()
+    total_c = 0
+    valid_c = 0
+    for fid, data in izdeliya.items():
+        mats = data.get('материалы_частей', [])
+        if not isinstance(mats, list):
+            continue
+        for m in mats:
+            if not isinstance(m, dict):
+                continue
+            mat = str(m.get('материал', '')).strip()
+            if not mat:
+                continue
+            total_c += 1
+            if mat in canonical_set:
+                valid_c += 1
+            else:
+                part_ref = m.get('часть', '?')
+                violations.append(
+                    f"[C-canonical] {fid}: материалы_частей[{part_ref} → {mat}] "
+                    f"— non-canonical материал. Если это закупочный sub-assembly, "
+                    f"перенесите в отдельный узел с тип: компонент и заполните его BOM. "
+                    f"Иначе создайте canonical файл материалы/{mat}.md."
+                )
+
     # Combined ratio
-    total = total_a + total_b
-    valid = valid_a + valid_b
+    total = total_a + total_b + total_c
+    valid = valid_a + valid_b + valid_c
     ratio = valid / max(1, total)
     return {
         'metric': 'F29',
-        'description': 'BOM-материалы: (A) форма указана в материалы_частей; (B) наследуемые_материалы родителя (агрегация по форме)',
+        'description': 'BOM-материалы: (A) форма указана; (B) наследуемые_материалы родителя; (C) canonical-only материалы (v9.60)',
         'total': total,
         'valid': valid,
         'ratio': round(ratio, 4),
