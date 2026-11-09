@@ -137,8 +137,6 @@ scaling_type: количественный
 источник_url: https://discovery.larc.nasa.gov/PDF_FILES/ASRGInformationSummaryJuly2010.pdf
 источник_дата: 2026-11-07
 ---
-# Изделие: ASRG
-
 ## Описание
 
 ASRG (Advanced Stirling Radioisotope Generator) — радиоизотопный генератор на
@@ -154,23 +152,91 @@ ASC с линейными альтернаторами в ~130 W постоян�
 
 ## Технические характеристики
 
-Данные NASA Discovery 2010 (ASRG Information Summary, Table 2-1 CBE) и NASA factsheet:
-
 | Параметр | Значение | Единица | Источник |
 |---|---|---|---|
-| Электрическая мощность (BOM) | ~128 (спец. 135) | We | Discovery 2010, Table 2-1 |
-| Выходное напряжение | 22–34 | VDC | Discovery 2010, Table 2-1 |
-| Тепловая мощность (BOM) | 488–512 | Wt | Discovery 2010, Table 2-1 |
-| Число модулей GPHS | 2 | шт | Discovery 2010, Table 2-1 |
-| Число конверторов ASC | 2 (102 Гц) | шт (Гц) | Discovery 2010, Table 2-1 |
-| Системный КПД | ≈26 | % | Wikipedia ASRG; 130 We / 500 Wt |
-| Габариты (Д×Ш×В) | 762×394×457 | мм | Discovery 2010, Table 2-1 (76.2×39.4×45.7 см) |
-| Масса | ~32 (спец. 30.6) | кг | Discovery 2010, Table 2-1 |
-| Запас PuO₂ | 1.2 | кг | Wikipedia ASRG |
-| Срок службы | ≥14 (+3 хранения) | лет | Discovery 2010, Table 2-1 |
-| Деградация мощности | ~1.4 | We/год | Discovery 2010, Table 2-1 |
-| Радиационная стойкость | 126 | krad | Discovery 2010, Table 2-1 |
-| подсистема | энергетическая | — | classify_subsystem |
+| подсистема | энергетическая | — | canon |
+| подтип | радиоизотопный_генератор_Стирлинг | — | canon |
+| масса | 20–30 (номинал 24) | kg | canon |
+| габариты (Д×Ш×В) | 762×394×457 | mm | canon |
+| выработка энергии | 100–150 | W | canon |
+| выработка тепла | 500–600 | W | canon |
+| тип узла | изделие | — | canon |
+| уровень_номер | 1 | — | canon |
+
+
+## Принцип работы
+
+Тепло распада Pu-238 из двух модулей GPHS подводится через головку нагревателя
+к горячей полости каждой свободнопоршневой машины Стирлинга. Расширение рабочего
+gаза (гелия) движет поршень с якорем линейного альтернатора; регенератор
+попеременно запасает и возвращает тепло между горячей и холодной полостями,
+охладитель поддерживает холодную зону и сбрасывает сбросное тепло на радиатор.
+Возвратно-поступательное движение наводит ЭДС в катушках статора (102 Гц);
+электронный контроллер (N+1 резервированный) выпрямляет и стабилизирует выход
+в 22–34 VDC. Деградация ~1.4 We/год определяется распадом Pu-238 и износом
+уплотнений.
+
+## Состав
+
+- `часть_asrg_isotope` — тепловой источник: 2 модуля GPHS (Pu-238, 500 Wt)
+- `часть_asrg_heater_head` — головка нагревателя конверторов (Inconel 625)
+- `часть_asrg_regenerator` — регенератор цикла Стирлинга (стальная сетка)
+- `часть_asrg_cooler` — охладитель/радиатор отвода сбросного тепла
+- `часть_asrg_piston` — рабочие поршни свободнопоршневых машин
+- `часть_asrg_alternator` — 2 линейных альтернатора (генерация 130 We)
+- `часть_asrg_housing` — корпус с теплоизоляцией и крепежом
+
+## Используемые технологии
+
+- `vakuumnoe_spekanie` (доля: 1.0)
+- `ebw` (доля: 1.0)
+- `vakuumnoe_spekanie` (доля: 1.0)
+- `frezervanie_chpu` (доля: 1.0)
+- `izolirovannye_emalyu` (доля: 1.0)
+
+
+## Используемые материалы
+
+- `dioksid_plutoniya-238` (форма: гпхс_пеллет_nasa) → [`dioksid_plutoniya-238`](../../../материалы/dioksid_plutoniya-238.md)
+- `inconel_625` (форма: авиакосмические_двигатели) → [`inconel_625`](../../../материалы/inconel_625.md)
+- `ss_316l` (форма: сетка_регенератора_стирлинга) → [`ss_316l`](../../../материалы/ss_316l.md)
+- `inconel_718` (форма: газотурбинные_двигатели) → [`inconel_718`](../../../материалы/inconel_718.md)
+- `copper` (форма: обмотки_электрических_машин) → [`copper`](../../../материалы/copper.md)
+
+
+## Источники
+
+- NASA Discovery 2010 «ASRG Information Summary», Table 2-1 CBE (128–135 We BOM,
+  22–34 VDC, 488–512 Wt, 2 GPHS, 76.2×39.4×45.7 см, ~32 кг, 14+3 лет, 102 Гц,
+  126 krad, деградация ~1.4 We/год) — https://discovery.larc.nasa.gov/PDF_FILES/ASRGInformationSummaryJuly2010.pdf (обращение 2026-11-07)
+- NASA factsheet «Advanced Stirling Radioisotope Generator» (nf-2013-07-586-hq):
+  ~130 W DC, два конвертора ASC — http://large.stanford.edu/courses/2018/ph241/long1/docs/nf-2013-07-586-hq.pdf (обращение 2026-11-07)
+- Wikipedia «Advanced Stirling radioisotope generator» (130 W, ≈26 %, 32 кг,
+  1.2 кг PuO₂, ≥14 лет) — https://en.wikipedia.org/wiki/Advanced_Stirling_radioisotope_generator (обращение 2026-11-07)
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
+---
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    izdelie_asrg["izdelie_asrg"]
+    ______asrg_isotope["часть_asrg_isotope"]
+    izdelie_asrg --> ______asrg_isotope
+    ______asrg_heater_head["часть_asrg_heater_head"]
+    izdelie_asrg --> ______asrg_heater_head
+    ______asrg_regenerator["часть_asrg_regenerator"]
+    izdelie_asrg --> ______asrg_regenerator
+    ______asrg_cooler["часть_asrg_cooler"]
+    izdelie_asrg --> ______asrg_cooler
+    ______asrg_piston["часть_asrg_piston"]
+    izdelie_asrg --> ______asrg_piston
+    ______asrg_alternator["часть_asrg_alternator"]
+    izdelie_asrg --> ______asrg_alternator
+    ______asrg_housing["часть_asrg_housing"]
+    izdelie_asrg --> ______asrg_housing
+```
+
 
 ## Энергетический баланс (F15d/F15b)
 
@@ -185,70 +251,3 @@ F15d: parent 130 W ≤ Σ детей 130 W ✓ (alternator 130 + остальн�
 F15b: parent 500 Wt ≥ Σ детей 505 Wt (500 изотоп + 5 паразитных) ✓
 (в пределах допуска 5 % — тепловые потери узлов перекрываются запасом
 родителя).
-
-## Состав
-
-- `часть_asrg_isotope` — тепловой источник: 2 модуля GPHS (Pu-238, 500 Wt)
-- `часть_asrg_heater_head` — головка нагревателя конверторов (Inconel 625)
-- `часть_asrg_regenerator` — регенератор цикла Стирлинга (стальная сетка)
-- `часть_asrg_cooler` — охладитель/радиатор отвода сбросного тепла
-- `часть_asrg_piston` — рабочие поршни свободнопоршневых машин
-- `часть_asrg_alternator` — 2 линейных альтернатора (генерация 130 We)
-- `часть_asrg_housing` — корпус с теплоизоляцией и крепежом
-
-## Используемые технологии
-
-(Ссылки на реальные_данные/технологии/ добавляются после связывания)
-
-## Используемые материалы
-
-- `pu238_oxide` — топливо GPHS
-- `inconel_625` / `inconel_718` — головка нагревателя / поршни
-- `ss_316l` — регенератор (форма: сетка_регенератора_стирлинга — войлок из нержавеющих волокон)
-- `copper` — катушки альтернатора (магниты — SmCo, см. часть_alternator)
-
-## Принцип работы
-
-Тепло распада Pu-238 из двух модулей GPHS подводится через головку нагревателя
-к горячей полости каждой свободнопоршневой машины Стирлинга. Расширение рабочего
-gаза (гелия) движет поршень с якорем линейного альтернатора; регенератор
-попеременно запасает и возвращает тепло между горячей и холодной полостями,
-охладитель поддерживает холодную зону и сбрасывает сбросное тепло на радиатор.
-Возвратно-поступательное движение наводит ЭДС в катушках статора (102 Гц);
-электронный контроллер (N+1 резервированный) выпрямляет и стабилизирует выход
-в 22–34 VDC. Деградация ~1.4 We/год определяется распадом Pu-238 и износом
-уплотнений.
-
-## Источники
-
-- NASA Discovery 2010 «ASRG Information Summary», Table 2-1 CBE (128–135 We BOM,
-  22–34 VDC, 488–512 Wt, 2 GPHS, 76.2×39.4×45.7 см, ~32 кг, 14+3 лет, 102 Гц,
-  126 krad, деградация ~1.4 We/год) — https://discovery.larc.nasa.gov/PDF_FILES/ASRGInformationSummaryJuly2010.pdf (обращение 2026-11-07)
-- NASA factsheet «Advanced Stirling Radioisotope Generator» (nf-2013-07-586-hq):
-  ~130 W DC, два конвертора ASC — http://large.stanford.edu/courses/2018/ph241/long1/docs/nf-2013-07-586-hq.pdf (обращение 2026-11-07)
-- Wikipedia «Advanced Stirling radioisotope generator» (130 W, ≈26 %, 32 кг,
-  1.2 кг PuO₂, ≥14 лет) — https://en.wikipedia.org/wiki/Advanced_Stirling_radioisotope_generator (обращение 2026-11-07)
-- CSV: `начальные данные_final.csv` (пользовательский ввод)
----
-
-
-## Декомпозиция
-
-```mermaid
-graph TD
-    asrg["izdelie_asrg"]
-    asrg_isotope["часть_asrg_isotope"]
-    asrg --> asrg_isotope
-    asrg_heater_head["часть_asrg_heater_head"]
-    asrg --> asrg_heater_head
-    asrg_regenerator["часть_asrg_regenerator"]
-    asrg --> asrg_regenerator
-    asrg_cooler["часть_asrg_cooler"]
-    asrg --> asrg_cooler
-    asrg_piston["часть_asrg_piston"]
-    asrg --> asrg_piston
-    asrg_alternator["часть_asrg_alternator"]
-    asrg --> asrg_alternator
-    asrg_housing["часть_asrg_housing"]
-    asrg --> asrg_housing
-```

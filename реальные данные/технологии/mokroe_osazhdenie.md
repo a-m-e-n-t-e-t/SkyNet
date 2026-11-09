@@ -63,13 +63,13 @@ id: tekhnologia_mokroe_osazhdenie
 | Параметр | Значение | Единица | Источник |
 |---|---|---|---|
 | тип узла | технология | — | canon |
-| толщина слоя (sol-gel dip/spin) | < 1 | мкм/слой | Niazmand 2022; обзор LT-SOFC |
-| толщина слоя (шликерное dip-coating) | десятки — 200+ | мкм/слой | encyclopedia.pub (обзор LT-SOFC) |
-| число циклов до газоплотности | 5–10+ | циклов | encyclopedia.pub (обзор LT-SOFC) |
-| кальцинация прекурсоров | 400–700 | °C | практика sol-gel ZrO₂ |
-| спекание 8YSZ | 1350–1450 | °C | J. Adv. Ceram. 2018; canon части electrolyte |
-| прекурсоры sol-gel | ZrOCl₂·8H₂O + Y(NO₃)₃·6H₂O | — | Niazmand 2022 (sol-gel 8YSZ) |
-| компоненты шликера | этанол/толуол + диспергатор (рыбий жир/фосфатный эфир) + связующее PVA/PVB | — | encyclopedia.pub (обзор LT-SOFC) |
+
+
+## Источники
+
+- Niazmand M. et al. «Effect of dip coating parameters on microstructure and thickness of 8YSZ electrolyte coated on NiO–YSZ by sol-gel process for SOFCs applications» // Ceramics International (2022) — https://www.sciencedirect.com/science/article/abs/pii/S0272884222005508
+- «Thin-Film Fabrication for Low-Temperature Solid Oxide Fuel Cells» — Encyclopedia (2023) — https://encyclopedia.pub/entry/48166 (шликерное dip-coating: толщина слоя, 5–10+ циклов, состав шликера)
+- Tanhaei M., Mozammel H. «Yttria-stabilized zirconia thin film electrolyte deposited by EB-PVD» (2017) — https://www.semanticscholar.org/paper/e65740b916c209d0e274f0c22103dc45ecabf5de
 
 ## Типичные применения
 
@@ -88,9 +88,3 @@ id: tekhnologia_mokroe_osazhdenie
 - EB-PVD (электронно-лучевое осаждение из паровой фазы — плотный YSZ-электролит на NiO-YSZ, Tanhaei 2017)
 - плазменное напыление (atmospheric plasma spray — плотный электролит YSZ с ограниченным термическим входом, Du 2025)
 - электрофоретическое осаждение (EPD) — сложные геометрии, высокая скорость
-
-## Источники
-
-- Niazmand M. et al. «Effect of dip coating parameters on microstructure and thickness of 8YSZ electrolyte coated on NiO–YSZ by sol-gel process for SOFCs applications» // Ceramics International (2022) — https://www.sciencedirect.com/science/article/abs/pii/S0272884222005508
-- «Thin-Film Fabrication for Low-Temperature Solid Oxide Fuel Cells» — Encyclopedia (2023) — https://encyclopedia.pub/entry/48166 (шликерное dip-coating: толщина слоя, 5–10+ циклов, состав шликера)
-- Tanhaei M., Mozammel H. «Yttria-stabilized zirconia thin film electrolyte deposited by EB-PVD» (2017) — https://www.semanticscholar.org/paper/e65740b916c209d0e274f0c22103dc45ecabf5de

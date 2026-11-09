@@ -62,12 +62,14 @@ id: tekhnologia_shtampovka_listovaya
 | Параметр | Значение | Единица | Источник |
 |---|---|---|---|
 | тип узла | технология | — | canon |
-| пружинение AISI 304 | 2–5 | ° | protospacemfg; thefabricator |
-| пружинение углеродистой стали | 0.5–1.5 | ° | tzrmetal |
-| пружинение алюминия (мягкий) | 1.5–2 | ° | thefabricator |
-| зазор вырубки (нержавейка) | 5–10 | % толщины | практика штамповки |
-| пружинные сорта нержавейки | 301 full-hard σy 965 / 17-7PH σy 1380 (после старения) | МПа | bquq |
-| минимальный радиус гибки 304 | ~1×t | — | практика штамповки |
+
+
+## Источники
+
+- Proto Space Mfg «Understanding Sheet Metal Springback» (2025) — AISI 304: 3–5° — https://protospacemfg.com/blog/post/understanding-sheet-metal-springback
+- The Fabricator «The hows and whys of springback» (2014) — 304: 2–3°, алюминий 1.5–2°, холоднокатаная сталь 0.75–1.0° — https://www.thefabricator.com/thefabricator/article/bending/bending-basics-the-hows-and-whys-of-springback-and-springforward
+- TZR Metal «Springback in Sheet Metal» (2026) — углеродистая сталь 0.5–1.5° — https://tzrmetal.com/springback
+- BQUQ «Stainless Steel Stamping: 304, 316 and Spring Steel Design» (2026) — пружинные сорта 301 full-hard / 17-7PH — https://www.bquq.com/blog/stainless-steel-stamping-304-316-and-spring-steel-design-tips.html
 
 ## Типичные применения
 
@@ -86,10 +88,3 @@ id: tekhnologia_shtampovka_listovaya
 - лазерная резка + гибка на press brake (`lbw` для резки, мелкие партии)
 - вырубка листовых эластомеров (`vyrubka_listovyh_elastomerov` — неметаллические прокладки)
 - литьё под давлением (сложные объёмные корпуса)
-
-## Источники
-
-- Proto Space Mfg «Understanding Sheet Metal Springback» (2025) — AISI 304: 3–5° — https://protospacemfg.com/blog/post/understanding-sheet-metal-springback
-- The Fabricator «The hows and whys of springback» (2014) — 304: 2–3°, алюминий 1.5–2°, холоднокатаная сталь 0.75–1.0° — https://www.thefabricator.com/thefabricator/article/bending/bending-basics-the-hows-and-whys-of-springback-and-springforward
-- TZR Metal «Springback in Sheet Metal» (2026) — углеродистая сталь 0.5–1.5° — https://tzrmetal.com/springback
-- BQUQ «Stainless Steel Stamping: 304, 316 and Spring Steel Design» (2026) — пружинные сорта 301 full-hard / 17-7PH — https://www.bquq.com/blog/stainless-steel-stamping-304-316-and-spring-steel-design-tips.html

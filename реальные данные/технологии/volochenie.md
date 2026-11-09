@@ -63,12 +63,15 @@ id: tekhnologia_volochenie
 | Параметр | Значение | Единица | Источник |
 |---|---|---|---|
 | тип узла | технология | — | canon |
-| заготовка | катанка Cu-ETP (C11000) Ø8 | мм | International Wire; thyssenkrupp guide |
-| переходы волочения | 11–16 (тонкое), 15–25 (грубое) | проходов | RBD machine specs |
-| скорость волочения | до 30–35 | м/с | RBD machine specs (35 м/с) |
-| суммарное обжатие | >90 (между отжигами) | % | thyssenkrupp guide |
-| состояния поставки (Cu) | ASTM B1 (Hard, σв 379 МПа) / B2 / B3 (Soft, σв 205–260 МПа, δ ~45 %) | — | ASTM B1/B2/B3; thyssenkrupp guide |
-| межпроходный отжиг | на линии (contact annealer, напряжение ↔ скорость линии) | — | Banganayi (Cu-ETP annealer curves) |
+
+
+## Источники
+
+- thyssenkrupp Materials «Copper & Alloys Guide» (2023) — ASTM B1/B2/B3, C11000 ETP, высокообжатная схема волочения — https://www.thyssenkrupp-materials-na.com/_binary/UCPthyssenkruppBAMXNA/16ec005b-afc1-49fe-bdc9-1cfa4db56c78/copper-and-alloys-guide_8-15-2023-update.pdf
+- International Wire Group «Inside the Wire Drawing Process» (2025) — Ø8 мм катанка C11000, rod breakdown → fine drawing — https://www.linkedin.com/posts/international-wire-group_inside-the-wire-drawing-process-activity-7384664440094371842-nYq2
+- Rod Breakdown Machine Specifications (Niehoff M81) — до 35 м/с, 11–16 переходов — https://www.scribd.com/document/634097885/06-M81-e
+- Banganayi C. «Annealer curves for Cu-ETP wire drawing» — Results in Materials / UJ Content — https://ujcontent.uj.ac.za/view/pdfCoverPage?instCode=27UOJ_INST
+- González Rojas H.A. et al. «Ultra-Fast Annealing Treatment by Electropulsing for Cu wires» // Metals 9(12):1253 (2019) — https://www.mdpi.com/2075-4701/9/12/1253
 
 ## Типичные применения
 
@@ -87,11 +90,3 @@ id: tekhnologia_volochenie
 - прокатка на станах-калибровочных (плоская/калиброванная лента)
 - пучковое скручивание (stranding — многожильные конструкции поверх волочения)
 - гальваническое покрытие (лужение/олово-серебро — `galvanika` после волочения)
-
-## Источники
-
-- thyssenkrupp Materials «Copper & Alloys Guide» (2023) — ASTM B1/B2/B3, C11000 ETP, высокообжатная схема волочения — https://www.thyssenkrupp-materials-na.com/_binary/UCPthyssenkruppBAMXNA/16ec005b-afc1-49fe-bdc9-1cfa4db56c78/copper-and-alloys-guide_8-15-2023-update.pdf
-- International Wire Group «Inside the Wire Drawing Process» (2025) — Ø8 мм катанка C11000, rod breakdown → fine drawing — https://www.linkedin.com/posts/international-wire-group_inside-the-wire-drawing-process-activity-7384664440094371842-nYq2
-- Rod Breakdown Machine Specifications (Niehoff M81) — до 35 м/с, 11–16 переходов — https://www.scribd.com/document/634097885/06-M81-e
-- Banganayi C. «Annealer curves for Cu-ETP wire drawing» — Results in Materials / UJ Content — https://ujcontent.uj.ac.za/view/pdfCoverPage?instCode=27UOJ_INST
-- González Rojas H.A. et al. «Ultra-Fast Annealing Treatment by Electropulsing for Cu wires» // Metals 9(12):1253 (2019) — https://www.mdpi.com/2075-4701/9/12/1253
