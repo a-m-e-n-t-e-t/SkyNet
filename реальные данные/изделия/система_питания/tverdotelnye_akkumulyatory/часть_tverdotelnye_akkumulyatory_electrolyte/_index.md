@@ -14,6 +14,7 @@ id: часть_tverdotelnye_akkumulyatory_electrolyte
 материалы_частей:
   - часть: часть_tverdotelnye_akkumulyatory_electrolyte
     материал: li7la3zr2o12
+    форма: твёрдый_электролит_ASSB
     доля_массы: 1.0
 технологии_частей:
   - часть: часть_tverdotelnye_akkumulyatory_electrolyte

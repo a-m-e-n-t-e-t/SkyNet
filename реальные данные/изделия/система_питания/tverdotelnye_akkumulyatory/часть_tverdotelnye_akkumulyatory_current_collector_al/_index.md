@@ -13,7 +13,8 @@ id: часть_tverdotelnye_akkumulyatory_current_collector_al
 дочерние_части: []
 материалы_частей:
   - часть: часть_tverdotelnye_akkumulyatory_current_collector_al
-    материал: al_bondwire
+    материал: aluminum
+    форма: гибкая_фольга_и_упаковка
     доля_массы: 1.0
 
 scaling_type: количественный

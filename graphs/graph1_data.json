@@ -11640,6 +11640,12 @@
     },
     {
       "src": "izdelie_tverdotelnye_akkumulyatory",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_tverdotelnye_akkumulyatory",
       "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
@@ -11970,7 +11976,7 @@
     },
     {
       "src": "часть_tverdotelnye_akkumulyatory_cathode",
-      "dst": "material_nmc_graphite",
+      "dst": "material_lini_mn_co_o2",
       "type": "uses_material",
       "meta": {}
     },
@@ -11993,8 +11999,14 @@
       "meta": {}
     },
     {
+      "src": "часть_tverdotelnye_akkumulyatory_current_collector_al",
+      "dst": "material_aluminum",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_tverdotelnye_akkumulyatory_anode",
-      "dst": "material_nmc_graphite",
+      "dst": "material_graphite",
       "type": "uses_material",
       "meta": {}
     },
@@ -18273,7 +18285,7 @@
   },
   "stats": {
     "nodes": 1158,
-    "edges": 1575,
+    "edges": 1577,
     "dangling": {
       "complies_with": 540,
       "has_part": 4,

@@ -13,7 +13,8 @@ id: часть_tverdotelnye_akkumulyatory_anode
 дочерние_части: []
 материалы_частей:
   - часть: часть_tverdotelnye_akkumulyatory_anode
-    материал: nmc_graphite
+    материал: graphite
+    форма: анодный_ли_ионный_mcmb
     доля_массы: 1.0
 
 scaling_type: количественный

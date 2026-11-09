@@ -7,6 +7,7 @@
 
 
 
+
 id: material_poliimid
 тип: материал
 класс: полимер

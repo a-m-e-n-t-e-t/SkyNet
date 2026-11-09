@@ -14,6 +14,7 @@ id: часть_tverdotelnye_akkumulyatory_separator
 материалы_частей:
   - часть: часть_tverdotelnye_akkumulyatory_separator
     материал: poliimid
+    форма: сепараторная_мембрана_ссб
     доля_массы: 1.0
 
 scaling_type: количественный

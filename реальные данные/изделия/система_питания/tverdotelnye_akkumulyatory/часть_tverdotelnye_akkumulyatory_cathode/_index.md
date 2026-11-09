@@ -13,7 +13,8 @@ id: часть_tverdotelnye_akkumulyatory_cathode
 дочерние_части: []
 материалы_частей:
   - часть: часть_tverdotelnye_akkumulyatory_cathode
-    материал: nmc_graphite
+    материал: lini_mn_co_o2
+    форма: nmc811_высоконикелевый
     доля_массы: 1.0
 
 scaling_type: количественный

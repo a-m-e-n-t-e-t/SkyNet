@@ -7,6 +7,7 @@
 
 
 
+
 id: material_smco
 псевдонимы: [самарий-кобальтовый магнит, SmCo5, Sm2Co17, samarium-cobalt magnet]
 тип: материал

@@ -7,6 +7,7 @@
 
 
 
+
 id: material_ti-6al-4v_poroshok
 тип: материал
 класс: металл

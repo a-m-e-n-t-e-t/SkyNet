@@ -7,6 +7,7 @@
 
 
 
+
 id: tekhnologia_frezervanie_chpu
 тип: технология
 категория: обработка

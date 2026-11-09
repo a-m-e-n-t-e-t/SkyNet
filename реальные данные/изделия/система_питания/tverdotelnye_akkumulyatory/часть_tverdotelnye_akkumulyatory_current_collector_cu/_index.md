@@ -14,6 +14,7 @@ id: часть_tverdotelnye_akkumulyatory_current_collector_cu
 материалы_частей:
   - часть: часть_tverdotelnye_akkumulyatory_current_collector_cu
     материал: copper
+    форма: фольга_токосъёмника_анода
     доля_массы: 1.0
 
 scaling_type: количественный
