@@ -5295,6 +5295,55 @@
     989
    ],
    "timestamp": "2026-11-10T06:35:00+08:00"
+  },
+  {
+   "id": "ws_0077",
+   "query": "ceramic capacitor BaTiO3 N4700 dielectric; CDE WL pulse metallized polypropylene; trigatron tungsten electrodes",
+   "keywords": [
+    "BaTiO3",
+    "N4700",
+    "metallized polypropylene",
+    "trigatron",
+    "tungsten"
+   ],
+   "results": [
+    {
+     "title": "CDE T-Series/NWL datasheet (amstechnologies PDF)",
+     "url": "https://shop.amstechnologies.com/media/25/f9/41/1720718916/T-Series-Film-Capacitors-NWL-Cornell-Dubilier-CDE-Datasheet.pdf",
+     "snippet": "Most capacitors for external defibrillator/pulse applications use metallized polypropylene film."
+    },
+    {
+     "title": "CDE High-Energy Pulse-Discharge film capacitors (passive-components.eu)",
+     "url": "https://passive-components.eu/cde-expands-its-high-energy-storage-pulse-discharge-film-capacitors",
+     "snippet": "CDE pulse technology: film dielectric with self-healing metallized or discrete foil electrodes."
+    },
+    {
+     "title": "Aladdin Sci — From Barium Titanate Dielectrics to MLCC",
+     "url": "https://www.aladdinsci.com/us_en/faqs/from-barium-titanate-dielectrics-to-multilayer-ceramic-capacitors-en.html",
+     "snippet": "BaTiO3 — perovskite oxide, base material of high-permittivity ceramic capacitor dielectrics."
+    },
+    {
+     "title": "Wikipedia — Trigatron",
+     "url": "https://en.wikipedia.org/wiki/Trigatron",
+     "snippet": "Main electrodes typically brass, copper, tungsten, or copper-tungsten composite for longer life."
+    },
+    {
+     "title": "SG-Series Spark-Gap Switches spec",
+     "url": "https://www.sciencemadness.org/whisper/files.php?pid=400803&aid=38948",
+     "snippet": "Sintered tungsten-alloy electrodes ensure long switch life."
+    }
+   ],
+   "results_count": 5,
+   "key_facts": [
+    "CDE WL/T pulse caps: metalлизированная полипропиленовая плёнка (self-healing)",
+    "Керамические конденсаторы: диэлектрик BaTiO3 (класс I N4700 — HV-керамика)",
+    "Тригатронные разрядники: основные электроды из W или Cu-W композита"
+   ],
+   "used_in_issues": [
+    959,
+    1036
+   ],
+   "timestamp": "2026-11-10T06:52:00+08:00"
   }
  ]
 }

@@ -19,10 +19,12 @@ id: izdelie_marx_generator
   - часть_marx_generator_insulator
 материалы_частей:
   - часть: часть_marx_generator_capacitors
-    материал: ceramic_capacitors
+    материал: batio3
+    форма: HV_керамика_N4700_класс_I
     доля_массы: 0.475
   - часть: часть_marx_generator_spark_gaps
-    материал: tungsten_electrodes
+    материал: tungsten
+    форма: электроды_искровых_промежутков
     доля_массы: 0.1
   - часть: часть_marx_generator_housing
     материал: aluminum
@@ -44,7 +46,7 @@ scaling_type: количественный
   габариты_mm:
           l: 1000
           w: 800
-          h: 1500
+          h: 1650
   выработка_энергии_W:
           min: 0
           max: 0
@@ -59,12 +61,10 @@ scaling_type: количественный
   I_импульс_kA: 100
   источник: Marx generator heritage
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-10
 источник: user_input
 источник_разбора: пользовательский ввод
 ---
-# Изделие: Marx generator
-
 ## Описание
 
 Marx generator
@@ -75,26 +75,30 @@ Marx generator
 
 | Параметр | Значение | Единица | Источник |
 |---|---|---|---|
-| подсистема | энергетическая | — | classify_subsystem |
-| категория | прочее | — | — |
+| подсистема | энергетическая | — | canon |
+| подтип | импульсный_генератор_Маркса | — | canon |
+| масса | 50–5000 (номинал 500) | kg | canon |
+| габариты (Д×Ш×В) | 1000×800×1650 | mm | canon |
+| выработка энергии | 0 | W | canon |
+| выработка тепла | 10–1000 | W | canon |
+| тип узла | изделие | — | canon |
+| уровень_номер | 1 | — | canon |
 
-(Параметры требуют уточнения через веб-поиск и вычислений; см. fc_изделие_масса, fc_изделие_стандарты в _field_contracts.yaml)
+
+## Принцип работы
+
+Требует описания на основе инженерного анализа.
 
 ## Состав
 
 Изделие верхнего уровня. Дочерние части не указаны (требуется декомпозиция).
 
-## Используемые технологии
-
-(Ссылки на реальные_данные/технологии/ добавляются после связывания)
-
 ## Используемые материалы
 
-(Ссылки на реальные_данные/материалы/ добавляются после связывания)
+- `batio3` (форма: HV_керамика_N4700_класс_I) → [`batio3`](../../../материалы/batio3.md)
+- `tungsten` (форма: электроды_искровых_промежутков) → [`tungsten`](../../../материалы/tungsten.md)
+- `aluminum` → [`aluminum`](../../../материалы/aluminum.md)
 
-## Принцип работы
-
-Требует описания на основе инженерного анализа.
 
 ## Источники
 
@@ -102,22 +106,21 @@ Marx generator
 
 ---
 
-
 ## Декомпозиция
 
 ```mermaid
 graph TD
-    marx_generator["izdelie_marx_generator"]
-    marx_generator_capacitors["часть_marx_generator_capacitors"]
-    marx_generator --> marx_generator_capacitors
-    marx_generator_spark_gaps["часть_marx_generator_spark_gaps"]
-    marx_generator --> marx_generator_spark_gaps
-    marx_generator_resistors["часть_marx_generator_resistors"]
-    marx_generator --> marx_generator_resistors
-    marx_generator_housing["часть_marx_generator_housing"]
-    marx_generator --> marx_generator_housing
-    marx_generator_output_ter["часть_marx_generator_output_terminal"]
-    marx_generator --> marx_generator_output_ter
-    marx_generator_insulator["часть_marx_generator_insulator"]
-    marx_generator --> marx_generator_insulator
+    izdelie_marx_generator["izdelie_marx_generator"]
+    ______marx_generator_capacitors["часть_marx_generator_capacitors"]
+    izdelie_marx_generator --> ______marx_generator_capacitors
+    ______marx_generator_spark_gaps["часть_marx_generator_spark_gaps"]
+    izdelie_marx_generator --> ______marx_generator_spark_gaps
+    ______marx_generator_resistors["часть_marx_generator_resistors"]
+    izdelie_marx_generator --> ______marx_generator_resistors
+    ______marx_generator_housing["часть_marx_generator_housing"]
+    izdelie_marx_generator --> ______marx_generator_housing
+    ______marx_generator_output_terminal["часть_marx_generator_output_terminal"]
+    izdelie_marx_generator --> ______marx_generator_output_terminal
+    ______marx_generator_insulator["часть_marx_generator_insulator"]
+    izdelie_marx_generator --> ______marx_generator_insulator
 ```

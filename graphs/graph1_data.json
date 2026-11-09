@@ -7444,6 +7444,13 @@
       "subsystem": ""
     },
     {
+      "id": "tekhnologia_3d_pechat_silikona",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/3d_pechat_silikona.md",
+      "subsystem": ""
+    },
+    {
       "id": "tekhnologia_aktivnaya_matritsa",
       "type": "tekhnologia",
       "label": "обработка",
@@ -7752,6 +7759,13 @@
       "subsystem": ""
     },
     {
+      "id": "tekhnologia_lite_pod_davleniem",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/lite_pod_davleniem.md",
+      "subsystem": ""
+    },
+    {
       "id": "tekhnologia_mikropolyarizatsiya",
       "type": "tekhnologia",
       "label": "обработка",
@@ -7773,6 +7787,13 @@
       "subsystem": ""
     },
     {
+      "id": "tekhnologia_mokroe_osazhdenie",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/mokroe_osazhdenie.md",
+      "subsystem": ""
+    },
+    {
       "id": "tekhnologia_mppt",
       "type": "tekhnologia",
       "label": "обработка",
@@ -7784,6 +7805,13 @@
       "type": "tekhnologia",
       "label": "обработка",
       "path": "реальные данные/технологии/nanesennoe_pvd-metodom.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_obzhim_kontaktov",
+      "type": "tekhnologia",
+      "label": "сборка",
+      "path": "реальные данные/технологии/obzhim_kontaktov.md",
       "subsystem": ""
     },
     {
@@ -7878,6 +7906,13 @@
       "subsystem": ""
     },
     {
+      "id": "tekhnologia_shtampovka_listovaya",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/shtampovka_listovaya.md",
+      "subsystem": ""
+    },
+    {
       "id": "tekhnologia_si-fotonika",
       "type": "tekhnologia",
       "label": "обработка",
@@ -7927,6 +7962,13 @@
       "subsystem": ""
     },
     {
+      "id": "tekhnologia_svivka_shnurov",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/svivka_shnurov.md",
+      "subsystem": ""
+    },
+    {
       "id": "tekhnologia_ta-10w_sps",
       "type": "tekhnologia",
       "label": "обработка",
@@ -7938,6 +7980,13 @@
       "type": "tekhnologia",
       "label": "обработка",
       "path": "реальные данные/технологии/tape_casting.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_termosvarka_plenok",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/termosvarka_plenok.md",
       "subsystem": ""
     },
     {
@@ -8004,10 +8053,24 @@
       "subsystem": ""
     },
     {
+      "id": "tekhnologia_volochenie",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/volochenie.md",
+      "subsystem": ""
+    },
+    {
       "id": "tekhnologia_vyrubka_listovyh_elastomerov",
       "type": "tekhnologia",
       "label": "обработка",
       "path": "реальные данные/технологии/vyrubka_listovyh_elastomerov.md",
+      "subsystem": ""
+    },
+    {
+      "id": "tekhnologia_zubofrezerovanie",
+      "type": "tekhnologia",
+      "label": "обработка",
+      "path": "реальные данные/технологии/zubofrezerovanie.md",
       "subsystem": ""
     },
     {
@@ -10721,7 +10784,7 @@
     },
     {
       "src": "izdelie_3d-pechatnye_dea",
-      "dst": "material_aluminum",
+      "dst": "material_neilon_6_66",
       "type": "uses_material",
       "meta": {}
     },
@@ -11009,7 +11072,13 @@
     },
     {
       "src": "izdelie_tsa",
-      "dst": "material_aluminum",
+      "dst": "material_uhmwpe",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_tsa",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -11674,6 +11743,12 @@
       "meta": {}
     },
     {
+      "src": "часть_tsa_core",
+      "dst": "material_uhmwpe",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
       "src": "часть_tsa_connectors",
       "dst": "material_al_6061-t6",
       "type": "uses_material",
@@ -12065,6 +12140,12 @@
     },
     {
       "src": "izdelie_mmrtg",
+      "dst": "material_sio2_amorphous",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_mmrtg",
       "dst": "group_nasa_glenn",
       "type": "researched_by",
       "meta": {}
@@ -12151,6 +12232,18 @@
       "src": "izdelie_marx_generator",
       "dst": "часть_marx_generator_insulator",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_marx_generator",
+      "dst": "material_batio3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_marx_generator",
+      "dst": "material_tungsten",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -12767,6 +12860,12 @@
     },
     {
       "src": "izdelie_asrg",
+      "dst": "material_dioksid_plutoniya-238",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_asrg",
       "dst": "material_inconel_625",
       "type": "uses_material",
       "meta": {}
@@ -12960,6 +13059,12 @@
     {
       "src": "часть_mmrtg_connector",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_mmrtg_thermal_insulation",
+      "dst": "material_sio2_amorphous",
       "type": "uses_material",
       "meta": {}
     },
@@ -13260,6 +13365,12 @@
     {
       "src": "часть_termoelektricheskii_postoyannyi_magnit_teg_modules",
       "dst": "material_bi2te3",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_termoelektricheskii_postoyannyi_magnit_insulation",
+      "dst": "material_sio2_amorphous",
       "type": "uses_material",
       "meta": {}
     },
@@ -14215,6 +14326,12 @@
       "src": "izdelie_emi-generator",
       "dst": "часть_emi-generator_housing",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_emi-generator",
+      "dst": "material_polypropylene",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -18302,7 +18419,6 @@
       "group_производство изотопа — Oak Ridge National Laboratory / US DOE Isotope Program (захват нейтрона на обогащённом ⁶²Ni); бетавольтаика — Betavolt (Китай, BV100, 2024); метрология — NIST"
     ],
     "uses_material": [
-      "material_aerogel",
       "material_agm_steklovolokno",
       "material_al_bondwire",
       "material_aluminum_electrolytic",
@@ -18311,7 +18427,6 @@
       "material_bt_abf_substrate",
       "material_carbon_fiber_endoskeleton",
       "material_carbon_ptfe",
-      "material_ceramic_capacitors",
       "material_ceramic_mlcc",
       "material_cfrp_t1100g",
       "material_composite_material",
@@ -18345,18 +18460,15 @@
       "material_pp_membrane",
       "material_pt_carbon",
       "material_ptfe-kompozit_du_vtulki",
-      "material_pu238_oxide",
       "material_raytheon_an_vlg8_flir",
       "material_rha_steel_class_a",
       "material_rha_steel_class_b",
       "material_rolled_homogeneous_armor",
       "material_rt_1523_sincgars",
-      "material_silica_aerogel_blanket",
       "material_silicon_carbide",
       "material_silicon_neural_net",
       "material_silicon_wafer",
       "material_silicone-textile_composite",
-      "material_spectra",
       "material_stainless_steel_304",
       "material_stainless_steel_316",
       "material_steel_track",
@@ -18364,19 +18476,18 @@
       "material_synthetic_rubber",
       "material_tedlar_pet",
       "material_ti-6al-4v_legirovannyi_3_5_mas_tantala_ii",
-      "material_tungsten_electrodes",
       "material_uo2_pellets",
       "material_ybco_bulk"
     ]
   },
   "stats": {
-    "nodes": 1163,
-    "edges": 1586,
+    "nodes": 1172,
+    "edges": 1595,
     "dangling": {
       "complies_with": 540,
       "has_part": 4,
       "researched_by": 88,
-      "uses_material": 65
+      "uses_material": 59
     },
     "by_type": {
       "chast": 664,
@@ -18384,7 +18495,7 @@
       "izdelie": 203,
       "material": 195,
       "standart": 8,
-      "tekhnologia": 83
+      "tekhnologia": 92
     }
   }
 }

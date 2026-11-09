@@ -19,7 +19,8 @@ id: izdelie_emi-generator
   - часть_emi-generator_housing
 материалы_частей:
   - часть: часть_emi-generator_capacitor_bank
-    материал: ceramic_capacitors
+    материал: polypropylene
+    форма: металлизированная_плёнка_импульсных_конденсаторов
     доля_массы: 0.38
   - часть: часть_emi-generator_antenna
     материал: aluminum
@@ -62,14 +63,12 @@ scaling_type: количественный
   источник: HPM weapon systems
   обоснование_габаритов: 'Промышленный напольный шкаф 19'' 800 мм (ширина) × 1200 мм (глубина) × 27U ≈ 1200 мм (высота; 1U=44.45 мм по EIA-310/IEC 60297): вмещает рупорную антенну ETS-Lindgren 3162-01 1062.7×647.7×746.8 мм (по глубине 1200 мм), корпус Ti-6Al-4V 600×500×1200 мм (полная высота шкафа), банк конденсаторов CDE WL 279×337×572 мм, коммутатор 350×160×160 мм, источник 70×70×300 мм и волновод WR-284; V(шкафа)=1.152 м³ ≥ Σ V(детей)×1.15=1.079 м³'
   источник_url: https://www.upcom.com.tr/products/server-rack-cabinet-19/
-  источник_дата: 2026-11-08
+  источник_дата: 2026-11-10
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
+дата_обновления: 2026-11-10
 источник: user_input
 источник_разбора: пользовательский ввод
 ---
-# Изделие: ЭМИ-генератор
-
 ## Описание
 
 ЭМИ-генератор (EMP — электромагнитный импульс) — оружие поражения электроники
@@ -80,27 +79,31 @@ scaling_type: количественный
 
 | Параметр | Значение | Единица | Источник |
 |---|---|---|---|
-| подсистема | энергетическая | — | classify_subsystem |
-| категория | энергетика | — | classify_subsystem |
-| габариты_mm (l×w×h) | 1200×800×1200 | мм | шкаф 19'' 800W×1200D×27U (EIA-310), upcom.com.tr |
+| подсистема | встроенное_оружие | — | canon |
+| подтип | ЭМИ_генератор | — | canon |
+| масса | 50–1000 (номинал 200) | kg | canon |
+| габариты (Д×Ш×В) | 1200×800×1200 | mm | canon |
+| выработка энергии | 0 | W | canon |
+| выработка тепла | 100–2000 | W | canon |
+| тип узла | изделие | — | canon |
+| уровень_номер | 1 | — | canon |
 
-(Параметры требуют уточнения через веб-поиск и вычислений; см. fc_изделие_масса, fc_изделие_стандарты в _field_contracts.yaml)
+
+## Принцип работы
+
+Требует описания на основе инженерного анализа.
 
 ## Состав
 
 Изделие верхнего уровня, 6 дочерних частей: capacitor_bank, antenna, switch, source, waveguide, housing — размещены в напольном шкафу 19'' 800×1200×1200 мм; V(шкафа)=1.152 м³ ≥ Σ V(детей)×1.15=1.079 м³ (упаковочный коэффициент 1.15 с зазорами на крепёж и кабельные каналы).
 
-## Используемые технологии
-
-(Ссылки на реальные_данные/технологии/ добавляются после связывания)
-
 ## Используемые материалы
 
-(Ссылки на реальные_данные/материалы/ добавляются после связывания)
+- `polypropylene` (форма: металлизированная_плёнка_импульсных_конденсаторов) → [`polypropylene`](../../../материалы/polypropylene.md)
+- `aluminum` → [`aluminum`](../../../материалы/aluminum.md)
+- `aluminum` → [`aluminum`](../../../материалы/aluminum.md)
+- `aluminum` → [`aluminum`](../../../материалы/aluminum.md)
 
-## Принцип работы
-
-Требует описания на основе инженерного анализа.
 
 ## Источники
 
@@ -108,22 +111,21 @@ scaling_type: количественный
 
 ---
 
-
 ## Декомпозиция
 
 ```mermaid
 graph TD
-    emi-generator["izdelie_emi-generator"]
-    emi-generator_capacitor_b["часть_emi-generator_capacitor_bank"]
-    emi-generator --> emi-generator_capacitor_b
-    emi-generator_antenna["часть_emi-generator_antenna"]
-    emi-generator --> emi-generator_antenna
-    emi-generator_switch["часть_emi-generator_switch"]
-    emi-generator --> emi-generator_switch
-    emi-generator_source["часть_emi-generator_source"]
-    emi-generator --> emi-generator_source
-    emi-generator_waveguide["часть_emi-generator_waveguide"]
-    emi-generator --> emi-generator_waveguide
-    emi-generator_housing["часть_emi-generator_housing"]
-    emi-generator --> emi-generator_housing
+    izdelie_emi_generator["izdelie_emi-generator"]
+    ______emi_generator_capacitor_bank["часть_emi-generator_capacitor_bank"]
+    izdelie_emi_generator --> ______emi_generator_capacitor_bank
+    ______emi_generator_antenna["часть_emi-generator_antenna"]
+    izdelie_emi_generator --> ______emi_generator_antenna
+    ______emi_generator_switch["часть_emi-generator_switch"]
+    izdelie_emi_generator --> ______emi_generator_switch
+    ______emi_generator_source["часть_emi-generator_source"]
+    izdelie_emi_generator --> ______emi_generator_source
+    ______emi_generator_waveguide["часть_emi-generator_waveguide"]
+    izdelie_emi_generator --> ______emi_generator_waveguide
+    ______emi_generator_housing["часть_emi-generator_housing"]
+    izdelie_emi_generator --> ______emi_generator_housing
 ```
