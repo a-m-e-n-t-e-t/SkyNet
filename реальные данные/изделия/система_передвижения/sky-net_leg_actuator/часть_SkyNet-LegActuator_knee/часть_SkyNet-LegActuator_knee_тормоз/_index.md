@@ -96,7 +96,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `spring_steel` (форма: a229_маслоотпущенная) → [`spring_steel.md`](../../../материалы/spring_steel.md)
+- `spring_steel` (форма: a229_маслоотпущенная) → [`spring_steel.md`](../../../../../материалы/spring_steel.md)
 
 ## Источники
 

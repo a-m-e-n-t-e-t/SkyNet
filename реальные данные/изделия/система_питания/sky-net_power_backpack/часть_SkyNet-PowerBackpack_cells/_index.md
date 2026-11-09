@@ -118,9 +118,9 @@ graph TD
 
 ## Используемые материалы
 
-- `nmc_graphite` (форма: nmc811_graphite_baseline) → [`nmc_graphite.md`](../../../материалы/nmc_graphite.md)
-- `nickel` (форма: легирующий_элемент_и_покрытия) → [`nickel.md`](../../../материалы/nickel.md)
-- `pcm_rt35` (форма: аккумуляторные_термопрокладки) → [`pcm_rt35.md`](../../../материалы/pcm_rt35.md)
+- `nmc_graphite` (форма: nmc811_graphite_baseline) → [`nmc_graphite.md`](../../../../материалы/nmc_graphite.md)
+- `nickel` (форма: легирующий_элемент_и_покрытия) → [`nickel.md`](../../../../материалы/nickel.md)
+- `pcm_rt35` (форма: аккумуляторные_термопрокладки) → [`pcm_rt35.md`](../../../../материалы/pcm_rt35.md)
 
 ## Источники
 

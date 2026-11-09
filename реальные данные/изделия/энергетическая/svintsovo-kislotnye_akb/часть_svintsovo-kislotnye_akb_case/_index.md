@@ -80,7 +80,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `polypropylene` → [`polypropylene.md`](../../../материалы/polypropylene.md)
+- `polypropylene` → [`polypropylene.md`](../../../../материалы/polypropylene.md)
 
 ## Источники
 

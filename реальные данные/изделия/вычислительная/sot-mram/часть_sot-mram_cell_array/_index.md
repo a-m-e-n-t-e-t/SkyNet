@@ -72,7 +72,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `coefeb_mgo` → [`coefeb_mgo.md`](../../../материалы/coefeb_mgo.md)
+- `coefeb_mgo` → [`coefeb_mgo.md`](../../../../материалы/coefeb_mgo.md)
 
 ## Источники
 

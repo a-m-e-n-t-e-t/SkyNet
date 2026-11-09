@@ -273,8 +273,8 @@ real_check:
 ## Используемые материалы
 
 - `am241_oxide` → [`am241_oxide.md`](../../../реальные данные/материалы/) — AmO₂ диоксид америция-241
-- `ir_mosi2-tasi2_tab2_ii` → [`ir_mosi2-tasi2_tab2_ii.md`](../../материалы/ir_mosi2-tasi2_tab2_ии.md) — MoSi₂-TaSi₂-TaB₂ самовосстанавливающееся покрытие
-- `ti-6al-4v_legirovannyi_3_5_mas_tantala_ii` → [`ti-6al-4v_legirovannyi_3_5_mas_tantala_ii.md`](../../материалы/ti-6al-4v_legirovannyi_3_5_mas_tantala_ии.md) — Ti-6Al-4V с 3.5 мас.% Ta
+- `ir_mosi2-tasi2_tab2_ii` → [`ir_mosi2-tasi2_tab2_ii.md`](../../../материалы/ir_mosi2-tasi2_tab2_ии.md) — MoSi₂-TaSi₂-TaB₂ самовосстанавливающееся покрытие
+- `ti-6al-4v_legirovannyi_3_5_mas_tantala_ii` → [`ti-6al-4v_legirovannyi_3_5_mas_tantala_ii.md`](../../../материалы/ti-6al-4v_legirovannyi_3_5_mas_tantala_ии.md) — Ti-6Al-4V с 3.5 мас.% Ta
 - `stainless_steel_mesh` → [`stainless_steel_mesh.md`](../../../реальные данные/материалы/) — нержавеющая сетка
 - `smco` → [`smco.md`](../../../реальные данные/материалы/) — самарий-кобальт магниты
 - `al_6061-t6` → [`al_6061-t6.md`](../../../реальные данные/материалы/) — алюминий 6061-T6

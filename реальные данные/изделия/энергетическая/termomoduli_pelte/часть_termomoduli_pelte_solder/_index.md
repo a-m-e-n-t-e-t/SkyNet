@@ -72,7 +72,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `splav_sn-pb` → [`splav_sn-pb.md`](../../../материалы/splav_sn-pb.md)
+- `splav_sn-pb` → [`splav_sn-pb.md`](../../../../материалы/splav_sn-pb.md)
 
 ## Источники
 

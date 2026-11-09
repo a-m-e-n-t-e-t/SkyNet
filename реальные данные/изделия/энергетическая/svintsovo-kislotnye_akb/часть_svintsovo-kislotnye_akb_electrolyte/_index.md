@@ -79,7 +79,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `h2so4_aqueous` → [`h2so4_aqueous.md`](../../../материалы/h2so4_aqueous.md)
+- `h2so4_aqueous` → [`h2so4_aqueous.md`](../../../../материалы/h2so4_aqueous.md)
 
 ## Источники
 

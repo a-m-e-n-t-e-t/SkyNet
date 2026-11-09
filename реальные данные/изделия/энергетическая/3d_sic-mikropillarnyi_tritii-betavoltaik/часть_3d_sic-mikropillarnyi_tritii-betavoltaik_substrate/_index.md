@@ -73,7 +73,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `monokristallicheskogo_sic` → [`monokristallicheskogo_sic.md`](../../../материалы/monokristallicheskogo_sic.md)
+- `monokristallicheskogo_sic` → [`monokristallicheskogo_sic.md`](../../../../материалы/monokristallicheskogo_sic.md)
 
 ## Источники
 

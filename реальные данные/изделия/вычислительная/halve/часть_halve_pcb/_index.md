@@ -78,7 +78,7 @@ Multilayer PCB с signal, power и ground layers.
 
 ## Используемые материалы
 
-- `fr4` → [`fr4.md`](../../../материалы/fr4.md)
+- `fr4` → [`fr4.md`](../../../../материалы/fr4.md)
 
 ## Источники
 

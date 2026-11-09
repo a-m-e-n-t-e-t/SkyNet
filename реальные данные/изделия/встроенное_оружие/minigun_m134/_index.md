@@ -96,7 +96,7 @@ Minigun M134
 
 ## Используемые технологии
 
-- [`frezervanie_chpu`](../../технологии/frezervanie_chpu.md) — ЧПУ-фрезерование: обработка деталей core (Ст3, крепёж и элементы блока) и корпуса housing (Ti-6Al-4V, 5-осевое фрезерование — стандарт авиационного производства титановых корпусов/кронштейнов, Carr Machine: «structural brackets, housings, fittings… in Ti-6Al-4V with 5-axis milling»; режимы для Ti: carbide-инструмент, низкие скорости резания ~150–200 SFM, высоконапорная СОЖ — ptsmake)
+- [`frezervanie_chpu`](../../../технологии/frezervanie_chpu.md) — ЧПУ-фрезерование: обработка деталей core (Ст3, крепёж и элементы блока) и корпуса housing (Ti-6Al-4V, 5-осевое фрезерование — стандарт авиационного производства титановых корпусов/кронштейнов, Carr Machine: «structural brackets, housings, fittings… in Ti-6Al-4V with 5-axis milling»; режимы для Ti: carbide-инструмент, низкие скорости резания ~150–200 SFM, высоконапорная СОЖ — ptsmake)
 
 ## Используемые материалы
 

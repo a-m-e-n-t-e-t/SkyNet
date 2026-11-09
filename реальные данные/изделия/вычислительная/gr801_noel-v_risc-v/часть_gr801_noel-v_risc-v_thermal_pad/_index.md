@@ -72,7 +72,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `silikon_40_50_shore_a` → [`silikon_40_50_shore_a.md`](../../../материалы/silikon_40_50_shore_a.md)
+- `silikon_40_50_shore_a` → [`silikon_40_50_shore_a.md`](../../../../материалы/silikon_40_50_shore_a.md)
 
 ## Источники
 
