@@ -1,8 +1,9 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_ni-ysz
 псевдонимы: [material_ni_ysz_cermet]
-канонический_id: material_ni-ysz
 тип: материал
 класс: кермет
 химический_состав: 'Ni–YSZ кермет: Ni + 8YSZ ((ZrO₂)₀.₉₂(Y₂O₃)₀.₀₈); исходный анодный порошок NiO:YSZ 50:50–65:35 масс.% (Ni 28–55 об.% после восстановления); рабочее состояние — металлический Ni + керамический каркас кубического YSZ + пористость 25–40%'
@@ -59,7 +60,6 @@ id: material_ni-ysz
   теплоёмкость_J_kgK: 450
   коэффициент_термического_расширения_1_K: 1.27e-5
   электропроводность_S_m: 4.0e4
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -91,13 +91,23 @@ id: material_ni-ysz
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Ni-YSZ (кермет Ni–диоксид циркония, стабилизированный иттрием)
-
 ## Описание
 
 Ni-YSZ — стандартный кермет-анод твердооксидных топливных элементов (SOFC): перколяционный композит из металлического никеля и кубического YSZ (8 мол.% Y₂O₃ в ZrO₂, флюорит Fm-3m). Ni даёт электронную проводимость и каталитическую активность в реакции HOR (низкая стоимость, отмечено в обзоре Sikstrom 2024); YSZ-каркас — ионный транспорт O²⁻ к границам трёх фаз (TPB), термическую стабильность и согласование ТКЛР с электролитом. Класс в файле исправлен: в заглушке ошибочно стоял `металл` — реальный класс **кермет** (композит металл+керамика), металлические пороги P022.5 неприменимы.
 
 См. также расширенную запись: `material_ni_ysz_cermet` (материалы/ni_ysz_cermet.md) — та же материаловедческая база с акцентом на анодную поддержку и аммиачные SOFC.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
+- Веб-верификация (issue #661): см. «Источники (F28)»
 
 ## Химический состав
 
@@ -154,26 +164,6 @@ _Обратные ссылки ещё не проставлены._ (типов�
 - Ni-ScSZ: выше ионная проводимость YSZ-фазы.
 - Керамические аноды (LSCM, SFM): redox-стабильность, но ниже катализ HOR.
 - Cu-cermet: прямые углеводороды (Cu не катализирует коксообразование).
-
-## Источники (F28)
-
-1. SOFC book chapter — Anodes, Ni-YSZ Cermet Anode (σ анода 0.1–1000 См/см): https://ebrary.net/203870/engineering/anodes
-2. Elmutasim 2025, ACS Appl Mater Interfaces — Ni content → 122/313.4/383.9 мВт/см² при 800 °C (DA-SOFC): https://pmc.ncbi.nlm.nih.gov/articles/PMC12673522
-3. DW Ni 2016, J. Power Sources — прочность и модуль Ni-YSZ от температуры: https://www.sciencedirect.com/science/article/abs/pii/S0378775316301355
-4. Wei, Jülich (Energie & Umwelt 391) — механика SOFC, σ(Ni-YSZ) от содержания Ni: https://juser.fz-juelich.de/record/842212/files/Energie_Umwelt_391.pdf
-5. Primdahl 1999, Risø-R-1137 — Ni/YSZ cermet anodes: https://orbit.dtu.dk/files/108663705/ris_r_1137.pdf
-6. Johnson 2008, J. Power Sources 181:85 — эффективный модуль и ТКЛР пористых Ni-YSZ: https://ui.adsabs.harvard.edu/abs/2008JPS...181...85J/abstract
-7. Betke 2020, Materials — Ni-YSZ керметные пены (σ до 19×10³ См/м): https://pmc.ncbi.nlm.nih.gov/articles/PMC7321227
-8. Kitahara 2012 — механика Ni-YSZ, пластичность при Ni >44 об.%: https://tohoku.elsevierpure.com/en/publications/mechanical-properties-of-anode-materials-based-on-ni-ysz-in-sofc-
-9. Mukhopadhyay 2011, ECS Trans 35 — electroless многослойный анод (1.6%/1000 ч): https://research-portal.st-andrews.ac.uk/en/publications/254a8207-721b-43df-8cb6-1224b1e0691f
-10. FuelCellStore — NiO-YSZ anode powder (60% NiO / 40% YSZ): https://www.fuelcellstore.com/nickel-oxide-ysz-anode-powder-for-general-applications
-11. Sikstrom 2024, tutorial review SOFC — Ni-анод: цена, катализ HOR: https://pmc.ncbi.nlm.nih.gov/articles/PMC12882970
-12. Thermophysical Properties of YSZ and Ni-YSZ vs T: https://www.researchgate.net/publication/229740935_Thermophysical_Properties_of_YSZ_and_Ni-YSZ_as_a_Function_of_Temperature
-
-## Источники
-
-- CSV: `начальные данные_final.csv` (пользовательский ввод)
-- Веб-верификация (issue #661): см. «Источники (F28)»
 
 ## Источники (слиты из material_ni_ysz_cermet)
 

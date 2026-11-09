@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 1
+
+
+
 id: material_lead_free_solder
-псевдонимы: []
-канонический_id: material_lead_free_solder
 тип: материал
 класс: металл
 химический_состав: 'SAC305 (Sn-3.0Ag-0.5Cu, IPC J-STD-006 обозначение Sn96.5Ag3.0Cu0.5): Sn 96.5 ± 0.5 %, Ag 3.0 ± 0.2 %, Cu 0.5 ± 0.2 %, Pb ≤ 0.05 % (RoHS-лимит ≤ 0.1 %); примеси нормируются J-STD-006; свинец отсутствует — отличие от legacy Sn63Pb37 (файл material_splav_sn-pb): бессвинцовый припой не та субстанция, а самостоятельный сплав семейства Sn-Ag-Cu'
@@ -60,7 +60,6 @@ id: material_lead_free_solder
   теплоёмкость_J_kgK: 227
   коэффициент_термического_расширения_1_K: 2.17e-05
   электропроводность_S_m: 7.6e+06
-наследуемые: {}
 дополнительные:
   солидус_ликвидус: '217 °C (solidus) / 220 °C (liquidus) — узкий пастельный интервал 3 °C (Kester: 217–219; Indalloy 256: 217/220; INVACU: 217/220); практический диапазон плавления 217–220 °C'
   плотность_разброс: '7.37 г/см³ (Kester TDS) / 7.38 (INVACU) — номинал 7380 кг/м³'
@@ -92,22 +91,32 @@ id: material_lead_free_solder
     описание: 'Sn-57Bi-1Ag / Sn42Bi58 — ликвидус 138 °C: самый низкий из промышленных Pb-free; хрупкость Bi-фазы ограничивает механику и низкотемпературную эксплуатацию'
     свойства: {ликвидус_C: '138', компромисс: 'хрупкость Bi, low-temp step soldering'}
     применение: 'второй шаг ступенчатой пайки, термочувствительные компоненты'
-свойства_таблица:
-  плотность_kg_m3: '7380 (7.37–7.38 г/см³ — Kester/INVACU)'
-  теплопроводность_W_mK: '58 (INVACU; SAC405 — 62)'
-  температура_плавления_C: 'solidus 217 / liquidus 220 (Kester 217–219)'
-  теплоёмкость_J_kgK: '227 (NIST Sn-Ag-Cu)'
-  модуль_упругости_ГПа: '45 объёмный номинал; на соединениях 32–52 ГПа (Nguyen 2011, Cao 2024 — наноиндентирование)'
-  коэффициент_Пуассона: '0.36 (SAC-соединения, Nguyen 2011)'
-  прочность_МПа: 'предел текучести 30–50, прочность 32–58 (сильно зависит от скорости деформации/старения — NIST, Paska 2024)'
-  cte: '21.7×10⁻⁶ 1/К (NIST Sn-Ag-Cu)'
-  электропроводность_S_m: '7.6×10⁶ (ρv 0.132 Ом·мм²/м — INVACU)'
-  процесс: 'рефлов 235–250 °C пик; волна 255–265 °C ванна'
-  предел_Tj_силовых: '~175–200 °C (выше — переход на спечённое Ag: k 130–250 Вт/(м·К))'
 дата_создания: 2026-11-08
 дата_обновления: 2026-11-08
 ---
-# material_lead_free_solder — Бессвинцовый припой SAC305 (Sn-3.0Ag-0.5Cu)
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- [Kester: SAC305 TDS — melting 217–219 °C, density 7.37 g/cm³, lead-free wave/selective](https://www.kester.com/downloads?Command=Core_Download&EntryId=45147) (обращение 2026-11-08)
+- [MacDermid Alpha: ALPHA VACULOY SAC300/305/350/380/387/400/405 TDS — ванна 255–265 °C, применимость wave/selective](https://www.macdermidalpha.com/sites/default/files/2025-01/ALPHA-VACULOY-SAC-300-305-350-380-387-400-405-SLD-TDS-GL-EN-06Sep2023.pdf) (обращение 2026-11-08)
+- [INVACU: таблица сплавов — SAC305 217/220 °C, 7.38 г/см³, 0.132 Ом·мм²/м, k 58; SAC405 7.44, k 62](https://www.google.com/goto?url=CAESXQHEIkXX1UcMdAC_hsizHM0q37-dMkdHwoS-cTFbnvT7pYeYsG4ffbzdnWgOAhM0pZcvqpLY56tBuAmb11TqL3IFzTN4xf8pzmxobFXzofYJ-Yo0J3GUOpnNmrnlfA) (снипет web_search 2026-11-08)
+- [Indalloy 256 (SAC305) preforms — melting range 217 solidus / 220 liquidus](https://www.google.com/goto?url=CAESngEBxCJF1_o5cFM2ctkLOu6xNFLHiNXatoMjewq4Es2gCstbGQo4hR-_amTUBnZnYgfw9LhJhOKZkixJWzusStpuIq5zk9UtXAPJZlzuHf_NUpX4X6McAHrmcFEIsJx4T82A0ocYRAibn9hsBZm73ZVzgIiBJqAwsFHXP5WNJ7Xf3ciS-V6f4wL-lNe61qYXFHISJXfCc0OYuEQfkBe6rg) (снипет web_search 2026-11-08)
+- [NIST (Siewert et al. 2002): Properties of Lead-Free Solders — сводка свойств Sn-Ag-Cu (cp, CTE, механика)](https://www.msed.nist.gov/solder/NIST_LeadfreeSolder_v4.pdf) (обращение 2026-11-08)
+- [NIST Metallurgy: Sn-Ag-Cu Properties and Creep Data — CTE и модуль для расчётов напряжений](https://www.metallurgy.nist.gov/solder/clech/Sn-Ag-Cu_Other.htm) (обращение 2026-11-08)
+- [Nguyen T.T. et al. 2011: механика реальных соединений SAC105/305/405 — Пуассон, E, CTE при разных температурах](https://www.google.com/goto?url=CAEShgEBxCJF19KHtufNoAmDOOJUfW5DobvKlNERzq0KprVXq8OaG8SuODE0copw-dx7ffodNUvN4237RAvjZc2U7VzeQoHKj7GzREIhC3isAl45cflxj4AvkNJ5ZZrEJw5fShbeL7m4qIJi30EASf7sW8_Q9uu24skYL4ftOs4Hi2zAhcVM-8EIfw) (снипет web_search 2026-11-08)
+- [Механическая характеристика SAC305: предел текучести падает 60–80 % от 25 до 200 °C](https://www.google.com/goto?url=CAESqgEBxCJF1-1L3FY-otI0ApplmYcyfb-9LM3io1v47_KkfDkLRwegSGfbaEM0fd3sdQiieRK4h8eQBpGNrgC6RXfO-RMAPH47cWIdxb6-ipDVfLRb6fEWPv4nhutbsj-4kGQNTGoS1wKu9lfDF1jSB8_4xqOzscx72W1JwLKxAiY_bH61z6KYC82lqEBRenuAcFjx4Ly_5Yl8ZCNrjNyVN9yTAJNGx6ycBNYtmQ) (снипет web_search 2026-11-08)
+- [Paska Z. et al. 2024: сравнение растяжения и ползучести SAC305 vs SACX0807](https://www.google.com/goto?url=CAESZAHEIkXX6etGh9niH8n16DQ5APSj6HJfOk3fhJZxQMAQfn7ExjaXyQcxjujNH-nxAmjU9Ka1S0brrMio9vvTzZ9miQEt1zzraPOZvyDBVlj2BvriF7uadr3QiQIa8oL0CGK2QdQ) (снипет web_search 2026-11-08)
+- [HVT: Silver Sintering vs Soldering Power Module — SiC Tj > 200 °C, процесс 230–260 °C](https://www.hvttec.com/silver-sintering-vs-soldering-power-module-comparison.html) (обращение 2026-11-08)
+- [ProactivePCB: SiC Die Attach Services — Pb-free solder применим пока worst-case Tj в надёжном диапазоне припоя](https://proactivepcb.com/articles/mission-critical-electronics/sic-die-attach-services) (обращение 2026-11-08)
+- [IMAP: Die Attach of Power Devices Using Silver Sintering — классические Pb-free SAC (Tm чуть выше 200 °C) vs sinter Ag](https://imapsource.org/article/66574-die-attach-of-power-devices-using-silver-sintering-bonding-process-optimisation-and-characterization.pdf) (обращение 2026-11-08)
+- [Kester: Alloy Temperature Chart — Sn-Cu ~227 °C, Sn-Bi 138 °C](https://www.kester.com/knowledge-base/alloy-temperature-chart) (обращение 2026-11-08)
+- [Канонический файл material_splav_sn-pb — legacy Sn63Pb37 183 °C (НЕ та субстанция, Pb-содержащий)](https://github.com/a-m-e-n-t-e-t/SkyNet/blob/main/%D1%80%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5/%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B/splav_sn-pb.md) (внутренняя ссылка 2026-11-08)
 
 ## Общее описание
 
@@ -139,20 +148,3 @@ SiC MOSFET работают с Tj > 200 °C, а припой надёжен по
 ## Аналоги и заменители
 
 **SAC405** (Sn-4.0Ag-0.5Cu: прочнее, k 62, ρ 7.44 — INVACU), **SAC105** (Sn-1.0Ag-0.5Cu: дешевле и ударостойче, E 32.5–35.5 ГПа на соединениях), **Sn-0.7Cu-0.05Ni** (Ag-free wave: 227 °C, superior fluidity), **Sn-57Bi-1Ag** (138 °C low-temp step soldering), **Sn-5Sb** (высокотемпературный, ~240 °C — die attach), **спечённое серебро** (Ag-sinter: k 130–250 Вт/(м·К), не плавится, для Tj > 200 °C SiC — главный конкурент паевого attach в силовых модулях), **AuSn** (280 °C, герметичные оптические/силовые, дорого). Legacy Sn63Pb37 остаётся вне RoHS-ниш (авиация/оборона — exemption) и эталоном сравнения.
-
-## Источники
-
-- [Kester: SAC305 TDS — melting 217–219 °C, density 7.37 g/cm³, lead-free wave/selective](https://www.kester.com/downloads?Command=Core_Download&EntryId=45147) (обращение 2026-11-08)
-- [MacDermid Alpha: ALPHA VACULOY SAC300/305/350/380/387/400/405 TDS — ванна 255–265 °C, применимость wave/selective](https://www.macdermidalpha.com/sites/default/files/2025-01/ALPHA-VACULOY-SAC-300-305-350-380-387-400-405-SLD-TDS-GL-EN-06Sep2023.pdf) (обращение 2026-11-08)
-- [INVACU: таблица сплавов — SAC305 217/220 °C, 7.38 г/см³, 0.132 Ом·мм²/м, k 58; SAC405 7.44, k 62](https://www.google.com/goto?url=CAESXQHEIkXX1UcMdAC_hsizHM0q37-dMkdHwoS-cTFbnvT7pYeYsG4ffbzdnWgOAhM0pZcvqpLY56tBuAmb11TqL3IFzTN4xf8pzmxobFXzofYJ-Yo0J3GUOpnNmrnlfA) (снипет web_search 2026-11-08)
-- [Indalloy 256 (SAC305) preforms — melting range 217 solidus / 220 liquidus](https://www.google.com/goto?url=CAESngEBxCJF1_o5cFM2ctkLOu6xNFLHiNXatoMjewq4Es2gCstbGQo4hR-_amTUBnZnYgfw9LhJhOKZkixJWzusStpuIq5zk9UtXAPJZlzuHf_NUpX4X6McAHrmcFEIsJx4T82A0ocYRAibn9hsBZm73ZVzgIiBJqAwsFHXP5WNJ7Xf3ciS-V6f4wL-lNe61qYXFHISJXfCc0OYuEQfkBe6rg) (снипет web_search 2026-11-08)
-- [NIST (Siewert et al. 2002): Properties of Lead-Free Solders — сводка свойств Sn-Ag-Cu (cp, CTE, механика)](https://www.msed.nist.gov/solder/NIST_LeadfreeSolder_v4.pdf) (обращение 2026-11-08)
-- [NIST Metallurgy: Sn-Ag-Cu Properties and Creep Data — CTE и модуль для расчётов напряжений](https://www.metallurgy.nist.gov/solder/clech/Sn-Ag-Cu_Other.htm) (обращение 2026-11-08)
-- [Nguyen T.T. et al. 2011: механика реальных соединений SAC105/305/405 — Пуассон, E, CTE при разных температурах](https://www.google.com/goto?url=CAEShgEBxCJF19KHtufNoAmDOOJUfW5DobvKlNERzq0KprVXq8OaG8SuODE0copw-dx7ffodNUvN4237RAvjZc2U7VzeQoHKj7GzREIhC3isAl45cflxj4AvkNJ5ZZrEJw5fShbeL7m4qIJi30EASf7sW8_Q9uu24skYL4ftOs4Hi2zAhcVM-8EIfw) (снипет web_search 2026-11-08)
-- [Механическая характеристика SAC305: предел текучести падает 60–80 % от 25 до 200 °C](https://www.google.com/goto?url=CAESqgEBxCJF1-1L3FY-otI0ApplmYcyfb-9LM3io1v47_KkfDkLRwegSGfbaEM0fd3sdQiieRK4h8eQBpGNrgC6RXfO-RMAPH47cWIdxb6-ipDVfLRb6fEWPv4nhutbsj-4kGQNTGoS1wKu9lfDF1jSB8_4xqOzscx72W1JwLKxAiY_bH61z6KYC82lqEBRenuAcFjx4Ly_5Yl8ZCNrjNyVN9yTAJNGx6ycBNYtmQ) (снипет web_search 2026-11-08)
-- [Paska Z. et al. 2024: сравнение растяжения и ползучести SAC305 vs SACX0807](https://www.google.com/goto?url=CAESZAHEIkXX6etGh9niH8n16DQ5APSj6HJfOk3fhJZxQMAQfn7ExjaXyQcxjujNH-nxAmjU9Ka1S0brrMio9vvTzZ9miQEt1zzraPOZvyDBVlj2BvriF7uadr3QiQIa8oL0CGK2QdQ) (снипет web_search 2026-11-08)
-- [HVT: Silver Sintering vs Soldering Power Module — SiC Tj > 200 °C, процесс 230–260 °C](https://www.hvttec.com/silver-sintering-vs-soldering-power-module-comparison.html) (обращение 2026-11-08)
-- [ProactivePCB: SiC Die Attach Services — Pb-free solder применим пока worst-case Tj в надёжном диапазоне припоя](https://proactivepcb.com/articles/mission-critical-electronics/sic-die-attach-services) (обращение 2026-11-08)
-- [IMAP: Die Attach of Power Devices Using Silver Sintering — классические Pb-free SAC (Tm чуть выше 200 °C) vs sinter Ag](https://imapsource.org/article/66574-die-attach-of-power-devices-using-silver-sintering-bonding-process-optimisation-and-characterization.pdf) (обращение 2026-11-08)
-- [Kester: Alloy Temperature Chart — Sn-Cu ~227 °C, Sn-Bi 138 °C](https://www.kester.com/knowledge-base/alloy-temperature-chart) (обращение 2026-11-08)
-- [Канонический файл material_splav_sn-pb — legacy Sn63Pb37 183 °C (НЕ та субстанция, Pb-содержащий)](https://github.com/a-m-e-n-t-e-t/SkyNet/blob/main/%D1%80%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5/%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B/splav_sn-pb.md) (внутренняя ссылка 2026-11-08)

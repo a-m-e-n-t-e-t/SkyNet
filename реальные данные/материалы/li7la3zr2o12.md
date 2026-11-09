@@ -1,7 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_li7la3zr2o12
-псевдонимы: []
 канонический_id: 'material_li7la3zr2o12'
 тип: материал
 класс: керамика
@@ -52,7 +53,6 @@ id: material_li7la3zr2o12
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: null
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   ионная_проводимость_RT_S_cm: '1×10⁻³ – 2×10⁻³ (кубическая Ta-LLZO, 25–27 °C)'
@@ -82,8 +82,6 @@ id: material_li7la3zr2o12
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Li₇La₃Zr₂O₁₂
-
 ## Описание
 
 Li₇La₃Zr₂O₁₂ (LLZO) — гранатовая литий-проводящая керамика, ведущий оксидный твёрдый электролит для всесто-литиевых (all-solid-state) аккумуляторов: сочетает ионную проводимость 0.1–1 мС/см при комнатной температуре (кубическая фаза) с химической стабильностью в контакте с Li-металлом.
@@ -92,6 +90,27 @@ Li₇La₃Zr₂O₁₂ (LLZO) — гранатовая литий-проводя
 
 **Класс:** керамика (литий-проводящий твёрдый электролит)
 **Кристаллическая структура:** кубический гранат (пр. гр. Ia-3d) — номинальная стехиометрическая фаза при КТ тетрагональна; кубическая фаза стабилизируется допированием Al³⁺/Ta⁵⁺, создающим Li-вакансии («Li-stuffed garnet»)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- S. Yu, R.D. Siebert et al., «Elastic Properties of the Solid Electrolyte Li₇La₃Zr₂O₁₂ (LLZO)» — E 150.3 ± 2.2 ГПа (Al), 153.8 ± 2.7 ГПа (Ta), ν = 0.26: <https://www.osti.gov/servlets/purl/1261353> (проверено 2026-11-06)
+- J. Sastre et al., «Lithium Garnet Li₇La₃Zr₂O₁₂ Electrolyte for All-Solid-State Batteries», Adv. Mater. Interfaces 2020 — σ 0.1–1 мС/см: <https://advanced.onlinelibrary.wiley.com/doi/10.1002/admi.202000425> (проверено 2026-11-06)
+- E.J. Cheng et al., «Li-stuffed garnet solid electrolytes: Current status» 2025 — кубический LLZO до 10⁻³ См/см при КТ: <https://www.sciencedirect.com/science/article/pii/S2405829724007979> (проверено 2026-11-06)
+- A. Lisa, «Systematic Study of Ta-doped LLZO Synthesis», Ohio State 2023 — ρ_теор Ta-LLZO 5.5 г/см³, пеллеты 5.7 ± 0.4 г/см³: <https://kb.osu.edu/bitstreams/f2fad28b-cc53-4f86-b103-7c036bac48e1/download> (проверено 2026-11-06)
+- L. Lin et al., «Ultrafast Sintering and Dopant Effects in Garnet LLZO», OSTI 2025 — спекание >1200 °C для плотности >90%: <https://www.osti.gov/servlets/purl/3014631> (проверено 2026-11-06)
+- J. Qu et al. 2025 — спекание >1200 °C, относительная плотность 94.19%: <https://pmc.ncbi.nlm.nih.gov/articles/PMC12073242> (проверено 2026-11-06)
+- «Li₇La₃Zr₂O₁₂ (LLZO): An Overview», Encyclopedia MDPI — 5×10⁻⁴ См/см при 33 °C, Ea 0.32 эВ: <https://encyclopedia.pub/entry/12681> (проверено 2026-11-06)
+- Xnergy — коммерческие Ta-LLZO пеллеты, ~2 мС/см при 27 °C: <https://xnergy.us/product/llzo-garnet-oxide-solid-state-electrolyte> (проверено 2026-11-06)
+- J.F. Nonemacher et al., «Fracture toughness of single grains and polycrystalline LLZO», J. Eur. Ceram. Soc. 2020: <https://juser.fz-juelich.de/record/875304/files/Nonemacher%20J%20Eu%20Ceram%20Soc%202020.pdf> (проверено 2026-11-06)
+- K. Touidjine et al., «The impact of lithium carbonate on tape cast LLZO» 2024 — Li₂CO₃ интерфаза: <https://research.utwente.nl/files/471510587/1-s2.0-S2405829724003143-main.pdf> (проверено 2026-11-06)
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -137,17 +156,3 @@ Li₇La₃Zr₂O₁₂ (номинально). Практические сост
 ## Применение в изделиях
 
 _Обратные ссылки ещё не проставлены._
-
-## Источники (F28)
-
-- S. Yu, R.D. Siebert et al., «Elastic Properties of the Solid Electrolyte Li₇La₃Zr₂O₁₂ (LLZO)» — E 150.3 ± 2.2 ГПа (Al), 153.8 ± 2.7 ГПа (Ta), ν = 0.26: <https://www.osti.gov/servlets/purl/1261353> (проверено 2026-11-06)
-- J. Sastre et al., «Lithium Garnet Li₇La₃Zr₂O₁₂ Electrolyte for All-Solid-State Batteries», Adv. Mater. Interfaces 2020 — σ 0.1–1 мС/см: <https://advanced.onlinelibrary.wiley.com/doi/10.1002/admi.202000425> (проверено 2026-11-06)
-- E.J. Cheng et al., «Li-stuffed garnet solid electrolytes: Current status» 2025 — кубический LLZO до 10⁻³ См/см при КТ: <https://www.sciencedirect.com/science/article/pii/S2405829724007979> (проверено 2026-11-06)
-- A. Lisa, «Systematic Study of Ta-doped LLZO Synthesis», Ohio State 2023 — ρ_теор Ta-LLZO 5.5 г/см³, пеллеты 5.7 ± 0.4 г/см³: <https://kb.osu.edu/bitstreams/f2fad28b-cc53-4f86-b103-7c036bac48e1/download> (проверено 2026-11-06)
-- L. Lin et al., «Ultrafast Sintering and Dopant Effects in Garnet LLZO», OSTI 2025 — спекание >1200 °C для плотности >90%: <https://www.osti.gov/servlets/purl/3014631> (проверено 2026-11-06)
-- J. Qu et al. 2025 — спекание >1200 °C, относительная плотность 94.19%: <https://pmc.ncbi.nlm.nih.gov/articles/PMC12073242> (проверено 2026-11-06)
-- «Li₇La₃Zr₂O₁₂ (LLZO): An Overview», Encyclopedia MDPI — 5×10⁻⁴ См/см при 33 °C, Ea 0.32 эВ: <https://encyclopedia.pub/entry/12681> (проверено 2026-11-06)
-- Xnergy — коммерческие Ta-LLZO пеллеты, ~2 мС/см при 27 °C: <https://xnergy.us/product/llzo-garnet-oxide-solid-state-electrolyte> (проверено 2026-11-06)
-- J.F. Nonemacher et al., «Fracture toughness of single grains and polycrystalline LLZO», J. Eur. Ceram. Soc. 2020: <https://juser.fz-juelich.de/record/875304/files/Nonemacher%20J%20Eu%20Ceram%20Soc%202020.pdf> (проверено 2026-11-06)
-- K. Touidjine et al., «The impact of lithium carbonate on tape cast LLZO» 2024 — Li₂CO₃ интерфаза: <https://research.utwente.nl/files/471510587/1-s2.0-S2405829724003143-main.pdf> (проверено 2026-11-06)
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

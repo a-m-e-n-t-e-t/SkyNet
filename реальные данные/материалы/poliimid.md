@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_poliimid
-псевдонимы: []
-канонический_id: material_poliimid
 тип: материал
 класс: полимер
 химический_состав: 'Ароматический полиимид PMDA-ODA (тип Kapton): повторяющееся звено C22H10N2O5 (M ≈ 382.2 г/моль) из пиромеллитового диангидрида (PMDA) и 4,4′-оксианилина (ODA); чередующиеся имидные циклы C(=O)–N–C(=O) и фениленовые/дифениловый эфирный сегменты'
@@ -96,7 +96,6 @@ id: material_poliimid
   теплоёмкость_J_kgK: 1090
   коэффициент_термического_расширения_1_K: 2.0e-5
   электропроводность_S_m: 7.1e-16
-наследуемые: {}
 дополнительные:
   цена_usd_kg: 375
   твердость_vickers_HV: null
@@ -115,8 +114,6 @@ id: material_poliimid
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Полиимид (PMDA-ODA, тип Kapton)
-
 ## Описание
 
 Ароматический термореактивный полиимид на основе пиромеллитового диангидрида (PMDA) и 4,4′-оксианилина (ODA) — химическая основа плёнок Kapton HN (DuPont) и монолитного Vespel SP. Аморфный полимер с исключительно широким рабочим диапазоном температур от −269 до +400 °C (DuPont), не плавится и горит только через обугливание (UL 94 V-0). Эталонный гибкий диэлектрик электроники: FPC-подложки, пассивация ИС, MLI-изоляция космических аппаратов, изоляция проводов.
@@ -125,6 +122,20 @@ id: material_poliimid
 
 **Класс:** полимер (ароматический полиимид)
 **Вариант структуры:** аморфная плёнка PMDA-ODA (рентген-аморфная, Tg 360–410 °C)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- https://www.mit.edu/~6.777/matprops/polyimide.htm (основные свойства Kapton HN, DuPont GS-96-7)
+- https://www.epectec.com/downloads/DuPont-Kapton-HN-Polyimide-Film.pdf (datasheet DuPont Kapton HN)
+- http://mu2e.phy.duke.edu/cw/misc/0404_kapton_properties.cfm.htm (электрические и тепловые таблицы Kapton)
+- https://filmide.com/polyimide-film-pricing-cost-factors (цены 2025)
 
 ## Химический состав
 
@@ -186,20 +197,3 @@ _Обратные ссылки проставляются автоматичес
 - PEI (Ultem) — дешевле, Tg ~217 °C.
 - PEEK — кристаллический, Tm 343 °C, выше износостойкость, ниже температурный потолок.
 - Для FPC: PET/PI-композиты и LCP-плёнки (ниже цена, выше влагобарьер).
-
-## Источники (F28)
-
-- MIT 6.777 Material Property Database — Polyimide (зеркало DuPont Kapton GS-96-7: ρ 1.42 г/см³, E 2.5 ГПа, ν 0.34, σраст 231/139 МПа, Cp 1.09 Дж/(г·К), k 0.12 Вт/(м·К), εr 3.4, ρv 1.5e17 Ом·см; residual stress 35 МПа PD-PI): https://www.mit.edu/~6.777/matprops/polyimide.htm
-- DuPont Kapton HN Polyimide Film datasheet (зеркало epectec; Tg-переход, диапазон применения, типовые таблицы): https://www.epectec.com/downloads/DuPont-Kapton-HN-Polyimide-Film.pdf
-- Physical Properties of KAPTON (CTE 20 ppm/°C; ρv 1.4e17/4.4e14 Ом·см; εr 3.1–3.5; прочность 272 В/мкм; UL94 V-0): http://mu2e.phy.duke.edu/cw/misc/0404_kapton_properties.cfm.htm
-- Kapton FPC Data Sheet (Tg 360–410 °C, переход второго порядка): https://sterlingplasticsinc.com/product/dupont-kapton-hn-polyimide
-- Polyimide Film Pricing and Cost Factors (стандартная плёнка 300–450 USD/кг; малая усадка 400–550 USD/кг): https://filmide.com/polyimide-film-pricing-cost-factors
-- Goodfellow — Polyimide Film: Properties, Grades, Processing (σраст ~170 МПа, E ~2.5 ГПа для стандартных марок): https://www.goodfellow.com/global/resources/polyimide-film
-- ACS Appl. Polym. Mater. 7(3):1440 — Anisotropic Thermal Conductivity of Kapton Films (анизотропия k в ориентированных плёнках): https://pubs.acs.org/aapmcd/article/7/3/1440/3661247
-
-## Источники
-
-- https://www.mit.edu/~6.777/matprops/polyimide.htm (основные свойства Kapton HN, DuPont GS-96-7)
-- https://www.epectec.com/downloads/DuPont-Kapton-HN-Polyimide-Film.pdf (datasheet DuPont Kapton HN)
-- http://mu2e.phy.duke.edu/cw/misc/0404_kapton_properties.cfm.htm (электрические и тепловые таблицы Kapton)
-- https://filmide.com/polyimide-film-pricing-cost-factors (цены 2025)

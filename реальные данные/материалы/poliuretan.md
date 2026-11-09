@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_poliuretan
-псевдонимы: []
-канонический_id: material_poliuretan
 тип: материал
 класс: полимер
 химический_состав: 'Полиуретан — блок-сополимер диизоцианатов (MDI/TDI/NDI), макродиолов (полиэфирные, полиэфиркарбонатные, политетраметиленгликолевые) и удлинителей цепи (1,4-бутандиол, MOCA); повторяющееся уретановое звено –NH–C(=O)–O–; чередование жёстких (изоцианатных) и мягких (полиольных) сегментов с микрофазовым разделением'
@@ -99,7 +99,6 @@ id: material_poliuretan
   теплоёмкость_J_kgK: 1800
   коэффициент_термического_расширения_1_K: 1.2e-4
   электропроводность_S_m: 1.0e-13
-наследуемые: {}
 дополнительные:
   цена_usd_kg: 2.5
   твердость_vickers_HV: null
@@ -120,8 +119,6 @@ id: material_poliuretan
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Полиуретан (сегментированный уретановый эластомер)
-
 ## Описание
 
 Полиуретан (PUR/PU) — класс полимеров, получаемых реакцией диизоцианатов (MDI, TDI, NDI) с многоатомными спиртами (полиэфирные, полиэфиркарбонатные, поликапролактоновые макродиолы) и удлинителями цепи (1,4-бутандиол, MOCA). Сегментированное строение — чередование жёстких изоцианатных и мягких полиольных сегментов с микрофазовым разделением — даёт одновременно резиновую упругость и высокие прочность/износостойкость: истирание в 5–10 раз лучше резин и полиамида, несущая способность колёс в 3–4 раза выше резины того же размера. Формы: сшитые литьевые эластомеры (колёса, уплотнения, демпферы), термопластичные TPU (кабельные оболочки, плёнки), микроячеистые эластомеры (подошвы, амортизация), жёсткие и эластичные пены (теплоизоляция, сиденья).
@@ -130,6 +127,22 @@ id: material_poliuretan
 
 **Класс:** полимер (сегментированный уретановый эластомер)
 **Вариант структуры:** сшитый литьевой эластомер MDI+BDO (Shore 85A–95A, микрофазово разделённый, аморфный)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- https://www.lookpolymers.com/polymer_Overview-of-materials-for-Thermoset-Polyurethane-Elastomer-Unreinforced.php (агрегированные свойства термореактивного PU)
+- https://gallaghercorp.com/physical-constants-urethane-elastomers (физконстанты литьевых компаундов)
+- https://analyzing-testing.netzsch.com/en-US/polymers-netzsch-com/thermosets/pur-polyurethane (термоанализ: cp, деструкция, k)
+- https://www.angreen.com/news/tpu-melting-point.html (Tm/Tg TPU)
+- https://www.formerra.com/products/chemistries/thermoplastic-polyurethane-tpu (обзор TPU-марок и применений)
+- https://www.mordorintelligence.com/industry-reports/thermoplastic-polyurethanes-market (цены спота TPU)
 
 ## Химический состав
 
@@ -191,27 +204,3 @@ _Обратные ссылки проставляются автоматичес
 - Полиамид (PA12) — выше жёсткость, хуже упругость и износ в парах «металл-эластомер».
 - Силикон — шире температурный диапазон (−60…+200 °C), но прочность и износ существенно ниже.
 - Для теплоизоляции: EPS/XPS (дешевле, k хуже 0.031–0.038), минвата (негорючесть, k ~0.037–0.045).
-
-## Источники (F28)
-
-- Overview of Materials for Thermoset Polyurethane Elastomer, Unreinforced (агрегированная таблица: k 0.140–0.390 Вт/(м·К), σраст 0.52–63 МПа, E 0.00379–0.248 ГПа, Shore A 10–105, Tg −46…−40 °C, ТКЛР 95–153 мкм/(м·°C), ρv 8×10¹²–10¹⁶ Ом·см, compression set 4.5–93 %): https://www.lookpolymers.com/polymer_Overview-of-materials-for-Thermoset-Polyurethane-Elastomer-Unreinforced.php
-- Gallagher Corp — Physical Constants of Urethane Elastomers (удельный вес 1.08–1.25, теплопроводность 0.75–0.92 BTU·in ≈ 0.11–0.13 Вт/(м·К), ТКЛР 0.8–1.4×10⁻⁴ 1/К по компаундам GC 1085…GC980): https://gallaghercorp.com/physical-constants-urethane-elastomers
-- NETZSCH — Polyurethane (PUR) Thermal Analysis (cp 1.70–2.10 Дж/(г·К), деструкция 240–350 °C, k <0.19 Вт/(м·К), ρ 1.10–1.70 г/см³, Tg обзорно 10–180 °C): https://analyzing-testing.netzsch.com/en-US/polymers-netzsch-com/thermosets/pur-polyurethane
-- Angreen — TPU Melting Point and Glass Transition Temperature (Tm 180–210 °C DSC; Tg −50…−30 °C DMA; σраст 25–40 МПа ASTM D412; удлинение 300–600 %): https://www.angreen.com/news/tpu-melting-point.html
-- Formerra — Thermoplastic Polyurethane (TPU) Overview (Shore 60A–75D, −40…+100 °C, удлинение 400–800 %, износ 5–10× резин/ПА, полиэфирные vs полиэфирные типы, UL94 V-0–HB, FDA/ISO 10993): https://www.formerra.com/products/chemistries/thermoplastic-polyurethane-tpu
-- Patsnap Eureka — Cast Polyurethane Elastomers (синтез: MDI/TDI-преполимеры NCO 3–10 %, NCO/OH 1.03–1.10, удлинители BDO/MOCA; Shore A 60–D 85): https://eureka.patsnap.com/materials/cast-polyurethane-elastomers
-- Kimpur — What is Rigid Polyurethane Foam (ρ 30–40 кг/м³, k 0.018–0.024 Вт/(м·К)): https://kimpur.com/en/what-is-rigid-polyurethane-foam-what-are-the-application-areas
-- Poliuretano.it — Thermal Conductivity of PU Foam (k 0.022–0.028 Вт/(м·К) — лучший массовый утеплитель): https://www.poliuretano.it/EN/thermal_conductivity_polyurethane.html
-- Acoustafoam — Rigid Polyurethane Foam (ρ 33–60 кг/м³, k 0.022–0.028 Вт/(м·К); ASTM C177 0.022 @20 °C, закрыто-ячеистость 91 %): https://acoustafoam.com/rigid-foam
-- Uniflex Inc. — Polyurethane Rubber Technical Data (таблицы твёрдость/модуль Shore 40A–90A, ASTM D2240/D412): https://www.uniflexinc.com/blog/polyurethane-rubber-technical-data/
-- Mordor Intelligence — Thermoplastic Polyurethanes Market (азиатский спот TPU 1800–2400 USD/t 2024–2025): https://www.mordorintelligence.com/industry-reports/thermoplastic-polyurethanes-market
-- Plantech — Directory of ASTM Test Methods for Cast Urethane Parts (свод ASTM-методов для литьевых PU: D412, D395 и др.): https://plantech.com/project/directory-of-astm-test-methods-for-cast-urethane-parts
-
-## Источники
-
-- https://www.lookpolymers.com/polymer_Overview-of-materials-for-Thermoset-Polyurethane-Elastomer-Unreinforced.php (агрегированные свойства термореактивного PU)
-- https://gallaghercorp.com/physical-constants-urethane-elastomers (физконстанты литьевых компаундов)
-- https://analyzing-testing.netzsch.com/en-US/polymers-netzsch-com/thermosets/pur-polyurethane (термоанализ: cp, деструкция, k)
-- https://www.angreen.com/news/tpu-melting-point.html (Tm/Tg TPU)
-- https://www.formerra.com/products/chemistries/thermoplastic-polyurethane-tpu (обзор TPU-марок и применений)
-- https://www.mordorintelligence.com/industry-reports/thermoplastic-polyurethanes-market (цены спота TPU)

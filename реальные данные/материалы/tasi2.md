@@ -1,7 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_tasi2
-псевдонимы: []
 канонический_id: 'material_tasi2'
 тип: материал
 класс: керамика
@@ -62,7 +63,6 @@ id: material_tasi2
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: 8.8e-06
   электропроводность_S_m: 2.1e6
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: 1156
@@ -98,8 +98,6 @@ id: material_tasi2
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: TaSi₂
-
 ## Описание
 
 Дисилицид тантала TaSi₂ (CAS 12039-79-1) — тугоплавкое интерметаллическое соединение системы Ta-Si с керамической жаростойкостью и металлической проводимостью. Кристаллизуется в единственной стабильной стехиометрии 1:2 — гексагональной фазе C40 (структурный тип CrSi₂, пространственная группа P6₄22). Температура плавления 2200 °C, плотность 9.14 г/см³ (порошки Micron Metals, чистота >99.5 %).
@@ -117,6 +115,24 @@ TaSi₂ — «многообещающий кандидат для многоф�
 
 **Класс:** керамика (тугоплавкий силицид, интерметаллид с металлической проводимостью)
 **Кристаллическая структура:** гексагональная фаза C40 (тип CrSi₂)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Micron Metals USA — Tantalum Disilicide Powder (Tпл 2200 °C, плотность 9.14 г/см³, гексагональная структура, чистота): https://micronmetals.com/product/tantalum-disilicide-powder
+- Yu Y. et al. Investigation of the microstructure and physical properties (J Mater Res Technol, 2024): спечённый TaSi₂ — плотность 9.182 г/см³, HV 11.34 ГПа, K_IC 11.97 МПа·√м: https://www.sciencedirect.com/science/article/pii/S2238785424003569
+- Ravindra N.M. et al. Electrical and compositional properties of TaSi₂ films (плёнки 45–50 мкОм·см): https://www.researchgate.net/publication/248129270_Electrical_and_compositional_properties_of_TaSi2_films
+- Microstructure and thermal stability of TaSi₂ coating (Tпл 2200 °C, многофункциональные защитные покрытия): https://www.sciencedirect.com/science/article/abs/pii/S0257897223007796
+- GuideChem — Tantalum Silicide 12039-79-1 (диффузионные барьеры, омические контакты, термостабильность): https://www.guidechem.com/encyclopedia/tantalum-silicide-dic16746.html
+- LTS Chem — Tantalum Silicide powder (ρ 8.5–50 мкОм·см, КТР 8.8·10⁻⁶ 1/К): https://ltschem.com/product/POTASI23252N5
+- SPACEMATDB — Tantalum (сравнение: λ 58.6 Вт/(м·К), КТР 6.5, Tпл 3000 °C, c_p 142 Дж/(кг·К)): https://www.spacematdb.com/spacemat/m-datasearch.php?name=Tantalum
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -174,14 +190,3 @@ TaSi₂ — «многообещающий кандидат для многоф�
 - **TiSi₂ (C54)** — ниже ρ плёнок (~15–25 мкОм·см) для контактов, но Tпл ниже (1500 °C);
 - **NbSi₂** — C40-аналог для КМ с Nb;
 - **чистый Ta** — Tпл 3000 °C, λ 58.6 Вт/(м·К), но вдвое тяжелее и без окислительной защиты.
-
-## Источники
-
-- Micron Metals USA — Tantalum Disilicide Powder (Tпл 2200 °C, плотность 9.14 г/см³, гексагональная структура, чистота): https://micronmetals.com/product/tantalum-disilicide-powder
-- Yu Y. et al. Investigation of the microstructure and physical properties (J Mater Res Technol, 2024): спечённый TaSi₂ — плотность 9.182 г/см³, HV 11.34 ГПа, K_IC 11.97 МПа·√м: https://www.sciencedirect.com/science/article/pii/S2238785424003569
-- Ravindra N.M. et al. Electrical and compositional properties of TaSi₂ films (плёнки 45–50 мкОм·см): https://www.researchgate.net/publication/248129270_Electrical_and_compositional_properties_of_TaSi2_films
-- Microstructure and thermal stability of TaSi₂ coating (Tпл 2200 °C, многофункциональные защитные покрытия): https://www.sciencedirect.com/science/article/abs/pii/S0257897223007796
-- GuideChem — Tantalum Silicide 12039-79-1 (диффузионные барьеры, омические контакты, термостабильность): https://www.guidechem.com/encyclopedia/tantalum-silicide-dic16746.html
-- LTS Chem — Tantalum Silicide powder (ρ 8.5–50 мкОм·см, КТР 8.8·10⁻⁶ 1/К): https://ltschem.com/product/POTASI23252N5
-- SPACEMATDB — Tantalum (сравнение: λ 58.6 Вт/(м·К), КТР 6.5, Tпл 3000 °C, c_p 142 Дж/(кг·К)): https://www.spacematdb.com/spacemat/m-datasearch.php?name=Tantalum
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

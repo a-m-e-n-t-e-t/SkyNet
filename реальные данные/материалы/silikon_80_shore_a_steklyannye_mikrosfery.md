@@ -1,5 +1,7 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_silikon_80_shore_a_steklyannye_mikrosfery
 псевдонимы: [силиконовая_синтаксическая_пена, silicone_glass_microballoon_syntactic_foam, силикон_со_стеклянными_микросферами]
 канонический_id: 'material_silikon_80_shore_a_steklyannye_mikrosfery'
@@ -86,7 +88,6 @@ id: material_silikon_80_shore_a_steklyannye_mikrosfery
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: 1.0e-13
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -112,8 +113,6 @@ id: material_silikon_80_shore_a_steklyannye_mikrosfery
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Силикон 80 Shore A + стеклянные микросферы
-
 ## Описание
 
 Эластомерный композит класса **синтаксическая пена**: сшитый силиконовый каучук VMQ твёрдостью 80 Shore A, заполненный полыми стеклянными микросферами (микробаллонами) 10–100 мкм. «Синтаксический» = «собранный вместе»: закрытая пористость создана не вспениванием газа, а введением готовых полых частиц — поэтому пена не впитывает воду (поры герметичны) и держит гидростатическое давление. Каноничная система класса — силиконовая резина/стеклянные микробаллоны ρ = 0.64 г/см³ (Staggs, Allied-Signal Kansas City, 1992). Компаунд сочетает силиконовый температурный конверт (−55…+200…260 °C) с плотностью 0.55–0.72 г/см³ (в ~1.7–2 раза легче чистого силикона), теплопроводностью 0.13–0.17 Вт/(м·К) (теплоизоляция) и плавучестью; вариант со сплошными сферами даёт износостойкие жёсткие блоки.
@@ -122,6 +121,23 @@ id: material_silikon_80_shore_a_steklyannye_mikrosfery
 
 **Класс:** эластомерный композит (синтаксическая пена)
 **Структура:** пористый_двухфазный_композит — аморфная сшитая VMQ-матрица + распределённые полые стеклянные микросферы (закрытая сферическая пористость внутри оболочек)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- W. A. Staggs, «High density thin-walled syntactic foam. Final report» (Allied-Signal Aerospace Co., Kansas City Div., апрель 1992; OSTI ID 10142787): силиконовая резина/стеклянные микробаллоны ρ = 0.64 г/см³, две системы силиконовых смол, физические и термодинамические свойства, технология снижения пустот — <https://www.osti.gov/biblio/10142787>;
+- H. Wang et al., «Hollow glass microspheres/phenolic syntactic foams with excellent mechanical and thermal insulate performance» (Front. Chem. 11:1216706, 2023; PMC10267378): λ по нагрузкам 0.129–0.170 Вт/(м·К) (10–40 мас.%), прочность/модуль vs загрузка — <https://pmc.ncbi.nlm.nih.gov/articles/PMC10267378>;
+- Engineered Syntactic Systems (ESS), «HZ Grade Microsphere Syntactic Foam» (таблица марок HZ-34/43/45: плотность 0.55–0.72 г/см³, σсж 85–118 МПа, E 3.8–4.7 ГПа, глубины 7000–11 000 м, водопоглощение ≤1 %) — <https://ess.globecomposite.com/hz-grade-microsphere-syntactic-foam>;
+- 3M, «Glass Bubbles iM16K / K25» (тех. бюллетени: ρ 0.46/0.25 г/см³, смятие 16 000/750 psi, содово-известково-боросиликатное стекло) — <https://multimedia.3m.com/mws/media/91049O/3m-glass-bubbles-k-s-and-im-series.pdf>;
+- Wikipedia, «Syntactic foam» (класс: состав, закрытая пористость, низкий КТР, radar/sonar transparency) — <https://en.wikipedia.org/wiki/Syntactic_foam>;
+- Wacker Chemie AG, «Solid and liquid silicone rubber» (6709-EN): свойства матрицы VMQ (ρ 1.05–1.60, λ 0.2–0.3, конверт −50…+250 °C, ряд R 401/80) — <https://www.wacker.com/h/medias/6709-EN.pdf>;
+- CSV: `начальные данные_final.csv` (пользовательский ввод, исходное наименование).
 
 ## Химический состав
 
@@ -178,13 +194,3 @@ _Обратные ссылки ещё не проставлены (матери�
 - **Чистый силикон 80 Shore A:** прочнее и эластичнее, но тяжелее в ~1.8 раза и теплопроводнее;
 - **Пенополиуретаны/полиэтилен:** дешевле, но открытая/связанная газовая пористость → водонасыщение под давлением, узкий температурный конверт;
 - **Теплопроводящие силиконы с BN/Al₂O₃:** противоположная задача (теплоотвод, λ до 0.9–1.2 Вт/(м·К)) — не путать при выборе.
-
-## Источники
-
-- W. A. Staggs, «High density thin-walled syntactic foam. Final report» (Allied-Signal Aerospace Co., Kansas City Div., апрель 1992; OSTI ID 10142787): силиконовая резина/стеклянные микробаллоны ρ = 0.64 г/см³, две системы силиконовых смол, физические и термодинамические свойства, технология снижения пустот — <https://www.osti.gov/biblio/10142787>;
-- H. Wang et al., «Hollow glass microspheres/phenolic syntactic foams with excellent mechanical and thermal insulate performance» (Front. Chem. 11:1216706, 2023; PMC10267378): λ по нагрузкам 0.129–0.170 Вт/(м·К) (10–40 мас.%), прочность/модуль vs загрузка — <https://pmc.ncbi.nlm.nih.gov/articles/PMC10267378>;
-- Engineered Syntactic Systems (ESS), «HZ Grade Microsphere Syntactic Foam» (таблица марок HZ-34/43/45: плотность 0.55–0.72 г/см³, σсж 85–118 МПа, E 3.8–4.7 ГПа, глубины 7000–11 000 м, водопоглощение ≤1 %) — <https://ess.globecomposite.com/hz-grade-microsphere-syntactic-foam>;
-- 3M, «Glass Bubbles iM16K / K25» (тех. бюллетени: ρ 0.46/0.25 г/см³, смятие 16 000/750 psi, содово-известково-боросиликатное стекло) — <https://multimedia.3m.com/mws/media/91049O/3m-glass-bubbles-k-s-and-im-series.pdf>;
-- Wikipedia, «Syntactic foam» (класс: состав, закрытая пористость, низкий КТР, radar/sonar transparency) — <https://en.wikipedia.org/wiki/Syntactic_foam>;
-- Wacker Chemie AG, «Solid and liquid silicone rubber» (6709-EN): свойства матрицы VMQ (ρ 1.05–1.60, λ 0.2–0.3, конверт −50…+250 °C, ряд R 401/80) — <https://www.wacker.com/h/medias/6709-EN.pdf>;
-- CSV: `начальные данные_final.csv` (пользовательский ввод, исходное наименование).

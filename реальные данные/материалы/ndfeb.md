@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 4
+
+
+
 id: material_ndfeb
-псевдонимы: []
-канонический_id: material_ndfeb
 тип: материал
 класс: магнитотвёрдый_сплав
 химический_состав: интерметаллид Nd₂Fe₁₄B (тетрагональная фаза); типовой спечённый магнит ≈ Fe 64–68 мас.%, Nd 29–32 мас.%, B ~1 мас.%, добавки Dy/Tb/Pr в термостабильных грейдах
@@ -53,7 +53,6 @@ id: material_ndfeb
   теплоёмкость_J_kgK: 420
   коэффициент_термического_расширения_1_K: 5.2e-6
   электропроводность_S_m: 625000.0
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   остаточная_индукция_Тл: 'типично 1.0–1.45 по грейдам N35–N55'
@@ -86,8 +85,6 @@ id: material_ndfeb
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: NdFeB (неодимовый магнит)
-
 ## Описание
 
 NdFeB — магнитотвёрдый материал на основе интерметаллида Nd₂Fe₁₄B с тетрагональной решёткой: самый сильный класс промышленных постоянных магнитов по магнитной энергии на единицу массы. Открыт почти одновременно в 1984 г. — Masato Sagawa (Sumitomo Special Metals, спечённые магниты) и John Croat (General Motors, мельтспан-порошки для магнитопластичных магнитов). Комбинация высокого (BH)max и умеренной цены сделала NdFeB основой электродвигателей EV, ветрогенераторов и магнитной левитации.
@@ -97,6 +94,32 @@ NdFeB — магнитотвёрдый материал на основе инт
 **Класс:** магнитотвёрдый сплав (интерметаллид Nd₂Fe₁₄B) — уточнено с ошибочного «металл»
 **Кристаллическая структура:** поликристалл тетрагональной фазы Nd₂Fe₁₄B (P4₂/mnm) с анизотропной текстурой и Nd-обогащённой межзёренной фазой
 **Вариант структуры:** спечённый поликристалл
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- K&J Magnetics, «Neodymium Magnet Specifications» — ρ 7.4–7.5 г/см³, HV 560–600, E 160 ГПа, растяжение 80 МПа, КТР ∥ 5.2/⊥ −0.8×10⁻⁶ 1/К, теплоёмкость 350–500 Дж/(кг·К), ρэл 160 мкОм·см, Кюри 310 °C: <https://www.kjmagnetics.com/neodymium-magnet-specifications.asp> (проверено 2026-11-06)
+- Wikipedia, «Neodymium magnet» — Nd₂Fe₁₄B тетрагональная фаза, открытие 1984: <https://en.wikipedia.org/wiki/Neodymium_magnet> (проверено 2026-11-06)
+- IEEE Spectrum (2022), «The Magnet That Made the Modern World» — Sagawa и Croat: <https://spectrum.ieee.org/the-men-who-made-the-magnet-that-made-the-modern-world> (проверено 2026-11-06)
+- Radial Magnet, «Magnet Grades Explained» — N52: (BH)max 49–53 MGOe: <https://radialmagnet.com/demystifying-magnet-grades-understanding-the-strengths-and-uses-of-different-magnetic-mate> (проверено 2026-11-06)
+- Advanced Magnets, «Sintered NdFeB Magnet Grades» — Hcj >12 кОе для N52: <https://www.advancedmagnets.com/how-to-understand-the-rare-earth-permanent-magnets-grades-part-1-sintered-neodymium> (проверено 2026-11-06)
+- Goudsmit, «NdFeB grade system» (2025) — E 140–200 ГПа, изгиб 100–400 МПа: <https://www.goudsmitmagnetics.com/uploads/pdf/Neodymium_grades_available_at_Goudsmit_20250822_1547.pdf> (проверено 2026-11-06)
+- Miotti, «Neodymium Iron Boron Magnets» — ρ 7.5–7.6 г/см³, изгиб 250 МПа, растяжение 75 МПа: <https://www.miottisrl.com/en/product/neodymium-iron-boron-magnets-ndfeb> (проверено 2026-11-06)
+- ND Magnetics, «Physical and Mechanical Characteristics» — растяжение 80 МПа, μrec 1.05: <http://www.ndmagnetics.com/news1/shownews.php?id=14> (проверено 2026-11-06)
+- Source Magnets, «Magnet Physical Properties» — k 11 Вт/(м·К), теплоёмкость 370 Дж/(кг·К): <https://sourcemagnets.com/magnet-physical-properties> (проверено 2026-11-06)
+- KSC Magnet FAQ — температурные грейды N/M/H/SH/UH/EH: <https://www.kscmagnet.com/en/faq.html> (проверено 2026-11-06)
+- SM Magnetics, «Understanding Magnet Grades» — грейды по температурам: <https://smmagnetics.com/blogs/news/understanding-magnet-grades-and-magnet-tables> (проверено 2026-11-06)
+- D. Brown et al., «Developments in the Processing and Properties of NdFeB-Type Permanent Magnets» — bonded: 10–18 MGOe: <https://www.researchgate.net/publication/222625948_Developments_in_the_Processing_and_Properties_of_NdFeB-Type_Perm> (проверено 2026-11-06)
+- Stanford Magnets, «A Brief Introduction to Neodymium Magnets» — MQ3 радиальные кольца до 240 кДж/м³: <https://www.stanfordmagnets.com/a-brief-introduction-to-neodymium-magnets-ndfeb.html> (проверено 2026-11-06)
+- CC Magnetics, «Preparation Process of Sintered NdFeB Magnets» — спекание 1050–1080 °C: <https://www.ccmagnetics.com/blog/preparation-process-of-sintered-ndfeb-magnets-sintering-heat-treatment-and-machini> (проверено 2026-11-06)
+- Y. Dai et al. (2025) — коррозионная стойкость, Nd-фаза 665 °C: <https://pmc.ncbi.nlm.nih.gov/articles/PMC12194711> (проверено 2026-11-06)
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -162,22 +185,3 @@ NdFeB — магнитотвёрдый материал на основе инт
 - `izdelie_vysokotemperaturnyi_sverhprovodyaschii_podshipnik` — HTS_подшипник
 - `часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_magnets` — постоянные_магниты
 - `часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_magnet` — магнит_ротор
-
-## Источники (F28)
-
-- K&J Magnetics, «Neodymium Magnet Specifications» — ρ 7.4–7.5 г/см³, HV 560–600, E 160 ГПа, растяжение 80 МПа, КТР ∥ 5.2/⊥ −0.8×10⁻⁶ 1/К, теплоёмкость 350–500 Дж/(кг·К), ρэл 160 мкОм·см, Кюри 310 °C: <https://www.kjmagnetics.com/neodymium-magnet-specifications.asp> (проверено 2026-11-06)
-- Wikipedia, «Neodymium magnet» — Nd₂Fe₁₄B тетрагональная фаза, открытие 1984: <https://en.wikipedia.org/wiki/Neodymium_magnet> (проверено 2026-11-06)
-- IEEE Spectrum (2022), «The Magnet That Made the Modern World» — Sagawa и Croat: <https://spectrum.ieee.org/the-men-who-made-the-magnet-that-made-the-modern-world> (проверено 2026-11-06)
-- Radial Magnet, «Magnet Grades Explained» — N52: (BH)max 49–53 MGOe: <https://radialmagnet.com/demystifying-magnet-grades-understanding-the-strengths-and-uses-of-different-magnetic-mate> (проверено 2026-11-06)
-- Advanced Magnets, «Sintered NdFeB Magnet Grades» — Hcj >12 кОе для N52: <https://www.advancedmagnets.com/how-to-understand-the-rare-earth-permanent-magnets-grades-part-1-sintered-neodymium> (проверено 2026-11-06)
-- Goudsmit, «NdFeB grade system» (2025) — E 140–200 ГПа, изгиб 100–400 МПа: <https://www.goudsmitmagnetics.com/uploads/pdf/Neodymium_grades_available_at_Goudsmit_20250822_1547.pdf> (проверено 2026-11-06)
-- Miotti, «Neodymium Iron Boron Magnets» — ρ 7.5–7.6 г/см³, изгиб 250 МПа, растяжение 75 МПа: <https://www.miottisrl.com/en/product/neodymium-iron-boron-magnets-ndfeb> (проверено 2026-11-06)
-- ND Magnetics, «Physical and Mechanical Characteristics» — растяжение 80 МПа, μrec 1.05: <http://www.ndmagnetics.com/news1/shownews.php?id=14> (проверено 2026-11-06)
-- Source Magnets, «Magnet Physical Properties» — k 11 Вт/(м·К), теплоёмкость 370 Дж/(кг·К): <https://sourcemagnets.com/magnet-physical-properties> (проверено 2026-11-06)
-- KSC Magnet FAQ — температурные грейды N/M/H/SH/UH/EH: <https://www.kscmagnet.com/en/faq.html> (проверено 2026-11-06)
-- SM Magnetics, «Understanding Magnet Grades» — грейды по температурам: <https://smmagnetics.com/blogs/news/understanding-magnet-grades-and-magnet-tables> (проверено 2026-11-06)
-- D. Brown et al., «Developments in the Processing and Properties of NdFeB-Type Permanent Magnets» — bonded: 10–18 MGOe: <https://www.researchgate.net/publication/222625948_Developments_in_the_Processing_and_Properties_of_NdFeB-Type_Perm> (проверено 2026-11-06)
-- Stanford Magnets, «A Brief Introduction to Neodymium Magnets» — MQ3 радиальные кольца до 240 кДж/м³: <https://www.stanfordmagnets.com/a-brief-introduction-to-neodymium-magnets-ndfeb.html> (проверено 2026-11-06)
-- CC Magnetics, «Preparation Process of Sintered NdFeB Magnets» — спекание 1050–1080 °C: <https://www.ccmagnetics.com/blog/preparation-process-of-sintered-ndfeb-magnets-sintering-heat-treatment-and-machini> (проверено 2026-11-06)
-- Y. Dai et al. (2025) — коррозионная стойкость, Nd-фаза 665 °C: <https://pmc.ncbi.nlm.nih.gov/articles/PMC12194711> (проверено 2026-11-06)
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

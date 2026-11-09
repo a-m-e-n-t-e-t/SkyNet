@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 4
+
+
+
 id: material_bt_resin
-псевдонимы: []
-канонический_id: material_bt_resin
 тип: материал
 класс: полимер
 химический_состав: 'BT (bismaleimide-triazine) — сополимерная сшитая сеть бисмалеимида (тип. 4,4''-бисмалеимидодифенилметан, BMI-M) и цианатного эфира (тип. 2,2-бис(4-цианатофенил)пропан, BE); триазиновые кольца образуются при тримеризации –O–C≡N групп цианата с присоединением бималеимидных двойных связей; товарные композиции MGC модифицируются эпоксидными смолами (BT-epoxy), кварцевым наполнителем (SiO₂) и E-стеклотканью в ламинатах; безгалогенные марки HFBT — без бром/хлор замедлителей горения'
@@ -61,7 +61,6 @@ id: material_bt_resin
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: 2.7e-05
   электропроводность_S_m: null
-наследуемые: {}
 дополнительные:
   температура_стеклования_C: '180 (BT-epoxy композиция); 180–210 (товарные BT); 190–290 (чистые BMI-цианатные сети, Liu 2023)'
   температура_деструкции_C: 325
@@ -101,20 +100,26 @@ id: material_bt_resin
     описание: 'марка MGC HFBT — halogen-free BT для IC plastic packages: без бром/хлор замедлителей горения, хорошая теплостойкость, высокая жёсткость, совместимость с безсвинцовым рифлоу — экология RoHS/WEEE'
     свойства: {температура_деструкции_C: '325', макс_рабочая_температура_C: '180'}
     применение: 'IC plastic packages, безгалогенные платы экокласса'
-свойства_таблица:
-  плотность_kg_m3: '1200 (1.2 г/см³, BT-epoxy — PCBDirectory)'
-  теплопроводность_W_mK: '0.35 (BT-epoxy); 0.25–0.35 ненаполненная; 0.8–2.5 с керамическим наполнителем (PatSnap)'
-  макс_рабочая_температура_C: '180 — верх непрерывной эксплуатации по Tg; кратковременно до ~210 (верхний Tg товарных BT)'
-  температура_стеклования_C: '180–210 (товарные); 190–290 (чистые BMI-CE сети, Liu 2023)'
-  температура_деструкции_C: '325 (PCBDirectory)'
-  коэффициент_термического_расширения_1_K: '27 ppm/°C = 2.7e-5 1/K (BT-epoxy)'
-  диэлектрическая_постоянная: '3.70 @ 1 ГГц (BT-epoxy)'
-  влагопоглощение_процентов: '<0.05'
-  прочность_на_изгиб_МПа: '99.88 (PCBDirectory)'
-  ширина_трасс_мкм: '<20 (современные BT-подложки MGC)'
 ---
+## Технические характеристики
 
-# material_bt_resin — BT-смола (бисмалеимид-триазиновая)
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- [Mitsubishi Gas Chemical — BT Resin: официальная страница технологии (изобретение MGC, первое предложение смоляных ламинатов для PCB в Японии 1976, No.1 мировая доля BT-ламинатов, трассы от >100 мкм до <20 мкм)](https://www.mgc.co.jp/eng/rd/technology/bt.html) (обращение 2026-11-08)
+- [PCBDirectory: What is BT-Epoxy in PCB Manufacturing (Tg 180 °C, CTE 27 ppm/°C, Td 325 °C, ρ 1.2 г/см³, k 0.35 Вт/(м·К), Dk 3.70 @ 1 ГГц, влагопоглощение <0.05 %, изгиб 99.88 МПа)](https://www.pcbdirectory.com/community/what-is-bt-epoxy-in-pcb-manufacturing) (обращение 2026-11-08)
+- [PatSnap Eureka: BT Resin Electronics (k 0.25–0.35 Вт/(м·К) ненаполненная → 0.8–2.5 с керамическим наполнителем; Dk 2.8–3.2)](https://eureka.patsnap.com/materials/bt-resin-electronics) (снипет web_search 2026-11-08)
+- [Liu X. et al., European Polymer Journal 2023: BT resin — high thermal resistance Tg 190–290 °C (цит. 51)](https://www.sciencedirect.com/science/article/abs/pii/S0014305723004263) (снипет web_search 2026-11-08)
+- [US Patent 4456712A: Bismaleimide triazine compositions (патентная семья BT; коммерческое обозначение BT resin от Mitsubishi Gas Chemical)](https://patents.google.com/patent/US4456712A/en) (обращение 2026-11-08)
+- [MGC HFBT — halogen free BT material for IC plastic packages (безсвинцовый рифлоу, теплостойкость, высокая жёсткость)](https://www.mgc.co.jp/eng/products/sc/btprint/lineup/hfbt.html) (обращение 2026-11-08)
+- [JLCPCB: BT Resin Packaging (сополимеризация бисмалеимида и цианатных производных триазина; Tg 180–210 °C, Dk/Df низкие, влагопоглощение <0.05 %)](https://jlcpcb.com/blog/bt-resin-packaging) (снипет web_search 2026-11-08)
+- [Polymer Innovation Blog: Polymers in Electronic Packaging (MGC — primary substrate core supplier, BT-ламинаты с начала 1980-х)](https://polymerinnovationblog.com/polymers-in-electronic-packaging-introduction-to-semiconductor-sub) (снипет web_search 2026-11-08)
+- [OURPCB: BT boards для telecom/computing/automotive — термостойкость выше 180 °C (356 °F)](https://www.ourpcb.com/pcb-manufacturer/assembly/bt) (снипет web_search 2026-11-08)
+- [Zion Market Research: Bismaleimide Triazine (BT) Resin Market (объём 2024 — 852.36 млн USD, прогноз 1823.21 млн USD)](https://www.zionmarketresearch.com/report/bismaleimide-triazine-bt-resin-market) (снипет web_search 2026-11-08)
 
 ## Общее описание
 
@@ -165,16 +170,3 @@ BT-смола (bismaleimide-triazine, BT) — высокопроизводите
 ## Аналоги и заменители
 
 FR4 (material_fr4) — базовый эпоксидно-стеклянный ламинат: в 2–4 раза дешевле, но Tg 130–140 °C, выше Dk (~4.2–4.5) и влагопоглощение — не держит безсвинцовый монтаж и многоразовые термоциклы высоконадёжных подложек. Полиимидные ламинаты — Tg до 260 °C и стойкость к температуре, но цена в разы выше и сложнее обработка; ниша — гибкие платы и авиационика. Керамические подложки Al₂O₃/AlN — несравнимо выше теплопроводность (24–180 Вт/(м·К)) и ниже CTE, но цена и хрупкость ограничивают массовые IC-подложки. ABF-плёнка (Ajinomoto build-up film) — альтернатива для тонких наращиваемых слоёв внутри подложек, не заменяя BT-core. Для термически тяжёлых кристаллов BT-подложка комбинируется с медными тепловыми перемычками (material_copper) и CuCr1Zr-выводами (material_copper_alloy) — как в каталоге для нейроморфных изделий.
-
-## Источники
-
-- [Mitsubishi Gas Chemical — BT Resin: официальная страница технологии (изобретение MGC, первое предложение смоляных ламинатов для PCB в Японии 1976, No.1 мировая доля BT-ламинатов, трассы от >100 мкм до <20 мкм)](https://www.mgc.co.jp/eng/rd/technology/bt.html) (обращение 2026-11-08)
-- [PCBDirectory: What is BT-Epoxy in PCB Manufacturing (Tg 180 °C, CTE 27 ppm/°C, Td 325 °C, ρ 1.2 г/см³, k 0.35 Вт/(м·К), Dk 3.70 @ 1 ГГц, влагопоглощение <0.05 %, изгиб 99.88 МПа)](https://www.pcbdirectory.com/community/what-is-bt-epoxy-in-pcb-manufacturing) (обращение 2026-11-08)
-- [PatSnap Eureka: BT Resin Electronics (k 0.25–0.35 Вт/(м·К) ненаполненная → 0.8–2.5 с керамическим наполнителем; Dk 2.8–3.2)](https://eureka.patsnap.com/materials/bt-resin-electronics) (снипет web_search 2026-11-08)
-- [Liu X. et al., European Polymer Journal 2023: BT resin — high thermal resistance Tg 190–290 °C (цит. 51)](https://www.sciencedirect.com/science/article/abs/pii/S0014305723004263) (снипет web_search 2026-11-08)
-- [US Patent 4456712A: Bismaleimide triazine compositions (патентная семья BT; коммерческое обозначение BT resin от Mitsubishi Gas Chemical)](https://patents.google.com/patent/US4456712A/en) (обращение 2026-11-08)
-- [MGC HFBT — halogen free BT material for IC plastic packages (безсвинцовый рифлоу, теплостойкость, высокая жёсткость)](https://www.mgc.co.jp/eng/products/sc/btprint/lineup/hfbt.html) (обращение 2026-11-08)
-- [JLCPCB: BT Resin Packaging (сополимеризация бисмалеимида и цианатных производных триазина; Tg 180–210 °C, Dk/Df низкие, влагопоглощение <0.05 %)](https://jlcpcb.com/blog/bt-resin-packaging) (снипет web_search 2026-11-08)
-- [Polymer Innovation Blog: Polymers in Electronic Packaging (MGC — primary substrate core supplier, BT-ламинаты с начала 1980-х)](https://polymerinnovationblog.com/polymers-in-electronic-packaging-introduction-to-semiconductor-sub) (снипет web_search 2026-11-08)
-- [OURPCB: BT boards для telecom/computing/automotive — термостойкость выше 180 °C (356 °F)](https://www.ourpcb.com/pcb-manufacturer/assembly/bt) (снипет web_search 2026-11-08)
-- [Zion Market Research: Bismaleimide Triazine (BT) Resin Market (объём 2024 — 852.36 млн USD, прогноз 1823.21 млн USD)](https://www.zionmarketresearch.com/report/bismaleimide-triazine-bt-resin-market) (снипет web_search 2026-11-08)

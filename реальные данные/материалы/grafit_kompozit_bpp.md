@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_grafit_kompozit_bpp
-псевдонимы: []
-канонический_id: material_grafit_kompozit_bpp
 тип: материал
 класс: композит
 химический_состав: 'Плотный графит для биполярных пластин PEM-топливных элементов: кристаллический (изостатический) графит с пропиткой смолой для газонепроницаемости; зольность минимальная'
@@ -53,7 +53,6 @@ id: material_grafit_kompozit_bpp
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: 83333
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -87,11 +86,25 @@ id: material_grafit_kompozit_bpp
 дата_обновления: 2026-11-06
 источник_дата: 2026-11-06
 ---
-# Материал: графит биполярных пластин PEM (композит, пропитанный смолой)
-
 ## Описание
 
 Графитовый материал биполярных пластин низкотемпературных топливных элементов. Датшит производителя (CFCCarbon, fuel cell graphite bipolar plate): плотность >1.95 г/см³ (в файле 1950 кг/м³ — минимальное), удельное электрическое сопротивление <12 мкОм·м (соответствует электропроводности >8.33×10⁴ См/м), прочность на сжатие >100 МПа, прочность на изгиб >50 МПа, минимальная газонепроницаемая толщина 0.3 мм, рабочий диапазон 150–180 °C. Целевые габариты пластин серийного PEM-стека по Middelman et al. (J. Power Sources 118, 2003): 250×250 мм при толщине 2 мм, глубина/ширина каналов 0.5 мм.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- CFCCarbon, Properties of fuel cell graphite bipolar plates (датшит): плотность >1.95 г/см³, уд. сопротивление <12 мкОм·м, сжатие >100 МПа, изгиб >50 МПа, мин. толщина 0.3 мм, рабочая температура 150–180 °C: https://www.cfccarbon.com/news/properties-of-fuel-cell-graphite-bipolar-plates.html (проверено 2026-11-05)
+- Middelman et al., Bipolar plates for PEM fuel cells, J. Power Sources 118 (2003): пластина 250×250×2 мм, каналы 0.5×0.5 мм: https://www.sciencedirect.com/science/article/abs/pii/S0378775303000703 (проверено 2026-11-05)
+- TMNetch — Graphite Bipolar Plates: Materials and Manufacturing (machining/molding/impregnation): https://tmnetch.com/understanding-graphite-bipolar-plates
+- DOE FCTO Bipolar Plates Workshop (Norley 2017) — Expanded graphite: интеркалированный flake graphite: https://www.energy.gov/sites/prod/files/2017/05/f34/fcto_bipolar_plates_workshop_norley.pdf
+- Dhakate et al. (2008), IJHE 33, 7146 — Expanded graphite-based composite bipolar plates: http://ui.adsabs.harvard.edu/abs/2008IJHE...33.7146D/abstract
+- Schunk Carbon Technology — Bipolar Plates (Durapower для PEMFC/DMFC): https://www.schunk-group.com/carbon-technology/en/products/bipolar-plates
 
 ## Применение
 
@@ -107,12 +120,3 @@ id: material_grafit_kompozit_bpp
 3. **Расширенный графит (expanded graphite)** — интеркалированный чешуйчатый графит, гибкие ламинаты, каналы тиснением; лёгкие пластины (DOE Workshop 2017, Dhakate 2008).
 4. **Углерод-углеродный композит** — углеродное волокно в графитовой матрице: прочность и ударостойкость выше монолита (космос, мобильные системы).
 5. **Смолопропитанный плотный** — вакуумная пропитка для газонепроницаемости от 0.3 мм; базовая герметизирующая модификация файла.
-
-## Источники
-
-- CFCCarbon, Properties of fuel cell graphite bipolar plates (датшит): плотность >1.95 г/см³, уд. сопротивление <12 мкОм·м, сжатие >100 МПа, изгиб >50 МПа, мин. толщина 0.3 мм, рабочая температура 150–180 °C: https://www.cfccarbon.com/news/properties-of-fuel-cell-graphite-bipolar-plates.html (проверено 2026-11-05)
-- Middelman et al., Bipolar plates for PEM fuel cells, J. Power Sources 118 (2003): пластина 250×250×2 мм, каналы 0.5×0.5 мм: https://www.sciencedirect.com/science/article/abs/pii/S0378775303000703 (проверено 2026-11-05)
-- TMNetch — Graphite Bipolar Plates: Materials and Manufacturing (machining/molding/impregnation): https://tmnetch.com/understanding-graphite-bipolar-plates
-- DOE FCTO Bipolar Plates Workshop (Norley 2017) — Expanded graphite: интеркалированный flake graphite: https://www.energy.gov/sites/prod/files/2017/05/f34/fcto_bipolar_plates_workshop_norley.pdf
-- Dhakate et al. (2008), IJHE 33, 7146 — Expanded graphite-based composite bipolar plates: http://ui.adsabs.harvard.edu/abs/2008IJHE...33.7146D/abstract
-- Schunk Carbon Technology — Bipolar Plates (Durapower для PEMFC/DMFC): https://www.schunk-group.com/carbon-technology/en/products/bipolar-plates

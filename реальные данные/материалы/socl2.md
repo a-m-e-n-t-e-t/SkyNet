@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 1
+
+
+
 id: material_socl2
-псевдонимы: []
-канонический_id: material_socl2
 тип: материал
 класс: неорганическая_жидкость
 химический_состав: 'тионилхлорид SOCl₂ — чистая безводная неорганическая молекулярная жидкость (сульфинил-дихлорид, M = 118.97 г/моль), содержание ≥99 % (anhydrous/reagent grade); полярный апротонный растворитель (дипольный момент 1.44 Д), слабо самоионизирующийся; примеси-недопуски: H₂O (реагирует), свободный Cl₂, SO₂Cl₂; в ячейке Li-SOCl₂ — и растворитель электролита, и жидкий катод (деполяризатор); производительность мировая ~45 тыс. т/год (начало 1990-х)'
@@ -60,7 +60,6 @@ id: material_socl2
   теплоёмкость_J_kgK: 1020
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: null
-наследуемые: {}
 дополнительные:
   температура_кипения_C: '74.6 °C (Wikipedia) / 75.9 °C @760 мм рт. ст. (Patsnap) / 76.1 °C (OSHA 169 °F) — летучая жидкость; в герметичном элементе — под давлением паров, макс_рабочая 85 °C (верх рабочего окна Li-SOCl₂)'
   температурная_зависимость_плотности: 'ρ = 1638 − 1.5·(T−20) кг/м³ (линейная, Patsnap): 1638 при 20 °C → 1615 при 35 °C; учёт при дозировке католита в производстве элементов'
@@ -95,23 +94,29 @@ id: material_socl2
     форма: 'раствор LiAlCl₄ 1.0–1.5 М в SOCl₂ — ДРУГАЯ субстанция'
     отличия: 'добавленная соль меняет состав: проводимость ~10⁻² См/см класс (против самоионизирующегося чистого), вязкость выше, Tm/bp сдвигаются; отдельный файл material_socl2_lialcl4_electrolit'
     где: 'фактический электролит элементов Li-SOCl₂'
-свойства_таблица:
-  плотность_kg_m3: '1638 при 20 °C (ρ = 1638 − 1.5·(T−20), Patsnap) — одна из самых плотных молекулярных жидкостей-растворителей'
-  теплопроводность_W_mK: '0.15 при 25 °C (Patsnap) — низкая; электролит удерживает тепло (NASA White 1989)'
-  теплоёмкость_J_kgK: '1020 (1.02 Дж/(г·К) при 25 °C, Patsnap)'
-  температура_плавления_C: '−104.5 °C (Wikipedia; OSHA: замерзание −156 °F = −104.4 °C — согласовано)'
-  температура_кипения_C: '74.6–76 °C при 1 атм (Wikipedia 74.6 / Patsnap 75.9 / OSHA 76.1)'
-  молярная_масса: '118.97 г/моль (Wikipedia/OSHA)'
-  вязкость: '0.58 сП при 25 °C (Patsnap; Wikipedia 0.6 сП)'
-  дипольный_момент: '1.44 Д (Wikipedia) — полярный апротонный растворитель'
-  пар_давление: '~100 мм рт. ст. при 21 °C (Patsnap 21.4 °C; OSHA 70 °F) — высоколетучая'
-  гидролиз: 'SOCl₂ + H₂O → SO₂↑ + 2HCl↑ (Wikipedia) — дымит на воздухе'
-  реакция_разряда: '4Li + 2SOCl₂ → 4LiCl + S + SO₂; НРЦ 3.6 В (Tadiran; теор. 3.65 — Patsnap)'
-  опасность: 'UN 1836 класс 8 PG I ERG 137 (CAMEO NOAA); CWC Schedule 3; токсично+коррозионно'
 дата_создания: 2026-11-08
 дата_обновления: 2026-11-08
 ---
-# material_socl2 — Тионилхлорид SOCl₂ (жидкий катод и растворитель католита)
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- [Wikipedia: Thionyl chloride — ρ 1.638, mp −104.5 °C, bp 74.6 °C, M 118.97, вязкость 0.6 сП, диполь 1.44 Д, гидролиз, CWC Schedule 3, ~45 тыс. т/год](https://en.wikipedia.org/wiki/Thionyl_chloride) (обращение 2026-11-08)
+- [Patsnap eureka: Thionyl Chloride Anhydrous Grade — k 0.15 Вт/(м·К) @25 °C, cp 1.02 Дж/(г·К), ρ(T), вязкость 0.58 сП E_акт 12 кДж/моль, σ 28.5 мН/м, ΔHисп 31.7 кДж/моль, vp 100 мм @21.4 °C](https://eureka.patsnap.com/materials/thionyl-chloride-anhydrous) (обращение 2026-11-08)
+- [Patsnap eureka: Thionyl Chloride Battery Electrolyte — реакция 4Li + 2SOCl₂ → 4LiCl + S + SO₂, теоретическое напряжение 3.65 В](https://eureka.patsnap.com/materials/thionyl-chloride-electrolyte) (обращение 2026-11-08)
+- [OSHA Chemical Data: THIONYL CHLORIDE — bp 169 °F, freezing −156 °F, M 119.0, vp 100 мм @70 °F](http://www.osha.gov/chemicaldata/628) (обращение 2026-11-08)
+- [CAMEO Chemicals NOAA: UN/NA 1836 Thionyl chloride — класс 8 Corrosive, ERG 137](https://cameochemicals.noaa.gov/unna/1836) (обращение 2026-11-08)
+- [Tadiran Technical Brochure LTC-Batteries — Liquid Cathode/Catholyte, суммарная реакция 4Li + 2SOCl₂ → 4LiCl + S + SO₂](https://tadiranbatteries.de/wp-content/uploads/2021/05/Technical-Brochure-LTC-Batteries.pdf) (обращение 2026-11-08)
+- [M. Jain et al. 1999: Analysis of a Lithium/Thionyl Chloride Battery under Moderate-Rate Discharge — проводимость католита как функция T и концентрации LiAlCl₄ (цит. 42)](https://scholarcommons.sc.edu/eche_facpub) (обращение 2026-11-08)
+- [J.W. Bailey & L.H. Bennett 1990, DTIC ADA219822: New Liquid Cathode Electrolytes in High Rate Cells — сравнение солей относительно 1.5 М LiAlCl₄](https://apps.dtic.mil/sti/tr/pdf/ADA219822.pdf) (обращение 2026-11-08)
+- [R.E. White et al. 1989, NASA NTRS: Optimization of the Lithium/Thionyl Chloride Battery — низкая теплопроводность электролита удерживает тепло](https://ntrs.nasa.gov/api/citations/19890006743/downloads/19890006743.pdf) (обращение 2026-11-08)
+- [NJ.gov RTK Factsheet 1850: Thionyl Chloride — токсичность, коррозионность, отёк лёгких](https://nj.gov/health/eoh/rtkweb/documents/fs/1850.pdf) (обращение 2026-11-08)
+- Изделие-контекст: izdelie_litii-tionilhloridnye_batarei — файл изделия; смежные материалы lithium_metal/carbon_black/pp_membrane/stainless_steel_304 и раствор-электролит material_socl2_lialcl4_electrolit
 
 ## Общее описание
 
@@ -145,17 +150,3 @@ id: material_socl2
 - Дозировка католита с учётом температурной зависимости плотности (ρ = 1638 − 1.5·(T−20)) в сухих комнатах <1 % RH
 - Капиллярная пропитка пористого угольного катода и PP-сепаратора перед герметизацией (низкая вязкость 0.58 сП, σ_пов 28.5 мН/м)
 - Транспорт и хранение по UN 1836 (класс 8, PG I, ERG 137) с OPCW-декларированием (CWC Schedule 3)
-
-## Источники
-
-- [Wikipedia: Thionyl chloride — ρ 1.638, mp −104.5 °C, bp 74.6 °C, M 118.97, вязкость 0.6 сП, диполь 1.44 Д, гидролиз, CWC Schedule 3, ~45 тыс. т/год](https://en.wikipedia.org/wiki/Thionyl_chloride) (обращение 2026-11-08)
-- [Patsnap eureka: Thionyl Chloride Anhydrous Grade — k 0.15 Вт/(м·К) @25 °C, cp 1.02 Дж/(г·К), ρ(T), вязкость 0.58 сП E_акт 12 кДж/моль, σ 28.5 мН/м, ΔHисп 31.7 кДж/моль, vp 100 мм @21.4 °C](https://eureka.patsnap.com/materials/thionyl-chloride-anhydrous) (обращение 2026-11-08)
-- [Patsnap eureka: Thionyl Chloride Battery Electrolyte — реакция 4Li + 2SOCl₂ → 4LiCl + S + SO₂, теоретическое напряжение 3.65 В](https://eureka.patsnap.com/materials/thionyl-chloride-electrolyte) (обращение 2026-11-08)
-- [OSHA Chemical Data: THIONYL CHLORIDE — bp 169 °F, freezing −156 °F, M 119.0, vp 100 мм @70 °F](http://www.osha.gov/chemicaldata/628) (обращение 2026-11-08)
-- [CAMEO Chemicals NOAA: UN/NA 1836 Thionyl chloride — класс 8 Corrosive, ERG 137](https://cameochemicals.noaa.gov/unna/1836) (обращение 2026-11-08)
-- [Tadiran Technical Brochure LTC-Batteries — Liquid Cathode/Catholyte, суммарная реакция 4Li + 2SOCl₂ → 4LiCl + S + SO₂](https://tadiranbatteries.de/wp-content/uploads/2021/05/Technical-Brochure-LTC-Batteries.pdf) (обращение 2026-11-08)
-- [M. Jain et al. 1999: Analysis of a Lithium/Thionyl Chloride Battery under Moderate-Rate Discharge — проводимость католита как функция T и концентрации LiAlCl₄ (цит. 42)](https://scholarcommons.sc.edu/eche_facpub) (обращение 2026-11-08)
-- [J.W. Bailey & L.H. Bennett 1990, DTIC ADA219822: New Liquid Cathode Electrolytes in High Rate Cells — сравнение солей относительно 1.5 М LiAlCl₄](https://apps.dtic.mil/sti/tr/pdf/ADA219822.pdf) (обращение 2026-11-08)
-- [R.E. White et al. 1989, NASA NTRS: Optimization of the Lithium/Thionyl Chloride Battery — низкая теплопроводность электролита удерживает тепло](https://ntrs.nasa.gov/api/citations/19890006743/downloads/19890006743.pdf) (обращение 2026-11-08)
-- [NJ.gov RTK Factsheet 1850: Thionyl Chloride — токсичность, коррозионность, отёк лёгких](https://nj.gov/health/eoh/rtkweb/documents/fs/1850.pdf) (обращение 2026-11-08)
-- Изделие-контекст: izdelie_litii-tionilhloridnye_batarei — файл изделия; смежные материалы lithium_metal/carbon_black/pp_membrane/stainless_steel_304 и раствор-электролит material_socl2_lialcl4_electrolit

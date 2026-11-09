@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 4
+
+
+
 id: material_copper_alloy
-псевдонимы: []
-канонический_id: material_copper_alloy
 тип: материал
 класс: сплав
 химический_состав: 'CuCr1Zr (EN CW106C, UNS C18400): Cu — основа (баланс); Cr 0.8 % (0.5–1.2); Zr 0.06–0.08 % (0.03–0.3) — дисперсионно-твердеющий высокопроводящий медный сплав; примеси по EN ≤0.05 (Sn+Fe+Ni суммарно)'
@@ -60,7 +60,6 @@ id: material_copper_alloy
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: 1.645e-05
   электропроводность_S_m: 46510000
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_brinell_HB: 130
@@ -106,11 +105,26 @@ id: material_copper_alloy
 дата_создания: 2026-11-08
 дата_обновления: 2026-11-08
 ---
-# Материал: Дисперсионно-твердеющий медный сплав CuCr1Zr (CW106C / C18400)
-
 ## Описание
 
 CuCr1Zr — осаждаемо-твердеющий высокопроводящий медный сплав: медная гцк-матрица упрочняется когерентными bcc-выделениями хрома и дисперсоидами циркония после закалки (950–1000 °C) и старения (425–500 °C). Компромисс, недостижимый для чистой меди: 80 % IACS (σ 4.65×10⁷ См/м) и k 320 Вт/(м·К) при σт 300 МПа и HB 130 — прочность силового крепежа при проводимости, достаточной для токоведущих штырьков и выводных рамок. Температура разупрочнения 450–500 °C выдерживает пайку и термоциклы силовых модулей (−55…+175 °C). В репозитории материал закрывает две роли в вычислительных изделиях: выводные штырьки/шарики нейроморфных процессоров (intel_loihi_2, brainchip_akida_2, halve — части *_pins_balls, доля_массы 0.10) и выводную рамку SiC-MOSFET (lead frame, доля_массы 0.475 — главный массовый носитель). Классические применения CW106C вне репозитория — сварочные электроды (Zr против прилипания на оцинковке) и токоведущие узлы фьюжена (heat sink divertor ITER).
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- [Copper Alloys (UK): CW106C — Copper Alloys datasheet (ρ 8.9 г/см³, интервал плавления 1070–1080 °C, k 320 Вт/(м·К), сопротивление 2.15 мкОм·м, КТР 16.45×10⁻⁶, σв 380, σт 300, HB 130, Izod 35 Дж, μ 1.01)](https://copperalloys.net/alloys/cw106c) (обращение 2026-11-08)
+- [copper.fyi Knowledge Base: Copper-chromium-zirconium CuCr1Zr (состав Cr 0.8 / Zr 0.06–0.08, σв 220–540, σ0.2 100–440, ε 35–5 %, HV 55–175, 80 % IACS, k 300 против меди 394, разупрочнение 450–500 °C, режимы ТО)](https://help.copper.fyi/hc/en-us/articles/360021212740-Copper-chromium-zirconium-CuCr1Zr) (обращение 2026-11-08)
+- [AZoM: Chromium Copper Alloy UNS C18400 (80 % IACS, ρ 8.89 г/см³)](https://www.google.com/goto?url=CAESbQHEIkXXqJXsbRjOkvkAHKHlxPh9O82RFFdk0pLRp8OFTEPcV_8FI8upTHWATPDNE48_g6js9vf38ygFoqYYj--Sv9DdmlXNxUDGyu4CfV9yvjnSnGjc7JeQoAeFtslhou0aJ6GigB2xL72nV40) (снипет web_search 2026-11-08)
+- [PatSnap Eureka: Copper Chromium Zirconium High Conductivity Alloy (75–95 % IACS, 500–750 МПа через дисперсионное твердение — диапазон семейства)](https://eureka.patsnap.com/materials/cu-cr-zr-high-conductivity) (снипет web_search 2026-11-08)
+- [Applus Laboratories Materials Portal: CuCr1Zr CW106C datasheet (E/G/ν при температурах — blurred paywall; используется как обоснование null модуля)](https://www.appluslaboratories.com/materials-portal/datasheet/cucr1zr-cw106c/392212467) (обращение 2026-11-08)
+- [EOS: CopperAlloy CuCrZr — аддитивный вариант сплава (SLM, высокая проводимость + прочность)](https://www.google.com/goto?url=CAESzQEBxCJF14v8A9y4ZJRQwCaOTub58-D7GTVyItbqyKdw4IYR-8xcdfDX2VGxPVia3ouu2zoC2sWGkJxOz6fR_iqZc1QvChSBiNhTsIUt8_187t84BzvdlUQMeRIH6DCKfuIHUmvJjqpvjJkQISBwFvrV-wxJHAMtqqUmja3wf6hejxUcL0PVrHtiGg7mYpojyWLLFgFq9JWKS2vmrLwnQMGqH05GUZLdvclHapZkcdFvBv46BZKyZBk9N-bWGka3YSXoKcbJ6iK1XILiqvX5) (снипет web_search 2026-11-08)
+- [Guide to Copper Alloys and Copper Nickel Alloys (типовые для медных сплавов: ν 0.34–0.35, G 45–58 ГПа — обоснование Пуассона)](https://www.google.com/goto?url=CAESbgHEIkXXeHwHoqTrQu0502GXKYYqEAwOMlJIIejYqzzFIqZ9G7ocDjvdlKftVqm5J9GdHCjG3wbcQRtYVC_FTOypY-eUZjfCCe2usCtGlujl6QdbH-vvKeysiX87hRqDH_EE2AsXxya7bh1n-st2) (снипет web_search 2026-11-08)
 
 ## Химический состав
 
@@ -160,13 +174,3 @@ Cu — баланс; Cr 0.8 % (номинал, диапазон 0.5–1.2); Zr 0
 ## Аналоги и заменители
 
 Максимальная прочность на изгиб при жёстких требованиях к упругости контактов: BeCu C17200 (σт до 1100 МПа) — но 22 % IACS делает его непригодным для токоведущих штырьков (в каталоге отдельный material_becu). Дешёвый массовый lead frame: CuFe2P C19400 (k ~260, σт ~380) — для больших партий бытовых модулей. Выше теплостойкость: CuNiSi C7025 (σт до 600, разупрочнение ~550 °C) — тонкие ленты высокоплотных рамок. Для межсоединений внутри кристалла (где прочность не нужна) — чистая медь Cu-ETP (material_copper): 100 % IACS. Криогенные токоподводы: CuAg0.1 или OFHC Cu при требовании максимальной k при 4 K.
-
-## Источники
-
-- [Copper Alloys (UK): CW106C — Copper Alloys datasheet (ρ 8.9 г/см³, интервал плавления 1070–1080 °C, k 320 Вт/(м·К), сопротивление 2.15 мкОм·м, КТР 16.45×10⁻⁶, σв 380, σт 300, HB 130, Izod 35 Дж, μ 1.01)](https://copperalloys.net/alloys/cw106c) (обращение 2026-11-08)
-- [copper.fyi Knowledge Base: Copper-chromium-zirconium CuCr1Zr (состав Cr 0.8 / Zr 0.06–0.08, σв 220–540, σ0.2 100–440, ε 35–5 %, HV 55–175, 80 % IACS, k 300 против меди 394, разупрочнение 450–500 °C, режимы ТО)](https://help.copper.fyi/hc/en-us/articles/360021212740-Copper-chromium-zirconium-CuCr1Zr) (обращение 2026-11-08)
-- [AZoM: Chromium Copper Alloy UNS C18400 (80 % IACS, ρ 8.89 г/см³)](https://www.google.com/goto?url=CAESbQHEIkXXqJXsbRjOkvkAHKHlxPh9O82RFFdk0pLRp8OFTEPcV_8FI8upTHWATPDNE48_g6js9vf38ygFoqYYj--Sv9DdmlXNxUDGyu4CfV9yvjnSnGjc7JeQoAeFtslhou0aJ6GigB2xL72nV40) (снипет web_search 2026-11-08)
-- [PatSnap Eureka: Copper Chromium Zirconium High Conductivity Alloy (75–95 % IACS, 500–750 МПа через дисперсионное твердение — диапазон семейства)](https://eureka.patsnap.com/materials/cu-cr-zr-high-conductivity) (снипет web_search 2026-11-08)
-- [Applus Laboratories Materials Portal: CuCr1Zr CW106C datasheet (E/G/ν при температурах — blurred paywall; используется как обоснование null модуля)](https://www.appluslaboratories.com/materials-portal/datasheet/cucr1zr-cw106c/392212467) (обращение 2026-11-08)
-- [EOS: CopperAlloy CuCrZr — аддитивный вариант сплава (SLM, высокая проводимость + прочность)](https://www.google.com/goto?url=CAESzQEBxCJF14v8A9y4ZJRQwCaOTub58-D7GTVyItbqyKdw4IYR-8xcdfDX2VGxPVia3ouu2zoC2sWGkJxOz6fR_iqZc1QvChSBiNhTsIUt8_187t84BzvdlUQMeRIH6DCKfuIHUmvJjqpvjJkQISBwFvrV-wxJHAMtqqUmja3wf6hejxUcL0PVrHtiGg7mYpojyWLLFgFq9JWKS2vmrLwnQMGqH05GUZLdvclHapZkcdFvBv46BZKyZBk9N-bWGka3YSXoKcbJ6iK1XILiqvX5) (снипет web_search 2026-11-08)
-- [Guide to Copper Alloys and Copper Nickel Alloys (типовые для медных сплавов: ν 0.34–0.35, G 45–58 ГПа — обоснование Пуассона)](https://www.google.com/goto?url=CAESbgHEIkXXeHwHoqTrQu0502GXKYYqEAwOMlJIIejYqzzFIqZ9G7ocDjvdlKftVqm5J9GdHCjG3wbcQRtYVC_FTOypY-eUZjfCCe2usCtGlujl6QdbH-vvKeysiX87hRqDH_EE2AsXxya7bh1n-st2) (снипет web_search 2026-11-08)

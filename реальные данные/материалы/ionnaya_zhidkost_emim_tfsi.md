@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_ionnaya_zhidkost_emim_tfsi
-псевдонимы: []
-канонический_id: material_ionnaya_zhidkost_emim_tfsi
 тип: материал
 класс: органический_жидкий_электролит
 химический_состав: Ионная жидкость [EMIM][TFSI]
@@ -66,7 +66,6 @@ id: material_ionnaya_zhidkost_emim_tfsi
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: 6.63
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -105,14 +104,31 @@ id: material_ionnaya_zhidkost_emim_tfsi
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Ионная жидкость [EMIM][TFSI]
-
 ## Описание
 
 [EMIM][TFSI] — 1-этил-3-метилимидазолий бис(трифлуорометилсульфонил)имид (CAS 174899-82-2) — гидрофобная комнатнотемпературная ионная жидкость (RTIL): ионный расплав соли [C₈H₁₁N₂]⁺[C₂F₆NO₄S₂]⁻ с температурой плавления −18…−16 °C, т.е. жидкая при комнатной температуре. Родоначальник класса — синтез Bonhôte и соавт. (EPFL), Inorg. Chem. 1996, 35(5), 1168–1178: «Hydrophobic, Highly Conductive Ambient-Temperature Molten Salts» с температурами плавления от −30 °C до комнатной — перспективные среды для электрохимических, фотоэлектрических и синтетических применений. Отличается низким давлением паров, высокой термической стабильностью, хорошей проводимостью и широким электрохимическим окном (Sigma-Aldrich).
 
 **Класс:** органический жидкий электролит (ионная жидкость; исходная пометка «полимер» исправлена — материал является жидкой солью, а не полимером)
 **Кристаллическая структура:** аморфный (жидкость без дальнего кристаллического порядка)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- proionic, EMIM-TFSI electronic grade TDS (ρ 1.52 г/см³, σ 6.63 мС/см, Tm −18…−16 °C, вязкость 39.4 cP, H₂O <20 ppmw, M 391.31): https://www.proionic.com/product/1-ethyl-3-methylimidazolium-bistrifluoromethylsulfonylimide-electro
+- Rocolab, EMIM TFSI battery grade CAS 174899-82-2 (>99.5 %, σ 6.63 мС/см @ 20 °C, DSSC/батареи): https://roco.global/product/emim-tfsi-cas-174899-82-2-battery-grade/
+- Sigma-Aldrich 11291, [EMIM][N(Tf)₂] (RTIL, зелёный растворитель ZnO-синтеза, широкое ЭХ-окно): https://www.sigmaaldrich.com/US/en/product/sial/11291
+- Bonhôte et al., Inorg. Chem. 1996, 35(5), 1168–1178 — оригинальный синтез гидрофобных проводящих RT-расплавов (PubMed 11666305): https://pubmed.ncbi.nlm.nih.gov/11666305
+- Hung et al. 2023, Processes 11(10):2966 (реактивная опасность [EMIM][Tf₂N] выше 280 °C): https://www.mdpi.com/2227-9717/11/10/2966
+- Lishchuk et al. 2023, Scientific Reports (теплопроводность ИЖ 0.12–0.15 Вт/(м·К)): https://hal.science/hal-04101473v1/file/s41598-023-32834-8.pdf
+- IOLITEC TDS EMIM FSI (родственная ИЖ: M 291.30, Tm −23 °C, ρ 1.4499): https://iolitec.de/sites/iolitec.de/files/2024-01/TDS%20IL-0342%2C%20EMIM%20FSI.pdf
+- Haskins et al. 2014 (проводимость [pyr14][TFSI] на порядок ниже EMIM-систем): https://pubmed.ncbi.nlm.nih.gov/25159701
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -163,15 +179,3 @@ _Обратные ссылки ещё не проставлены._
 ## Аналоги и заменители
 
 Родственные ИЖ: [EMIM][FSI] (1-этил-3-метилимидазолий бис(фторсульфонил)имид, M 291.30 г/моль, Tm −23 °C, ρ 1.4499 г/см³ — IOLITEC TDS) — ниже вязкость и выше проводимость, но хуже гидролитическая стабильность; [pyr14][TFSI] (пирролидиниевая) — ниже проводимость на порядок (Haskins 2014). Выбор определяется балансом вязкость/проводимость/стабильность.
-
-## Источники
-
-- proionic, EMIM-TFSI electronic grade TDS (ρ 1.52 г/см³, σ 6.63 мС/см, Tm −18…−16 °C, вязкость 39.4 cP, H₂O <20 ppmw, M 391.31): https://www.proionic.com/product/1-ethyl-3-methylimidazolium-bistrifluoromethylsulfonylimide-electro
-- Rocolab, EMIM TFSI battery grade CAS 174899-82-2 (>99.5 %, σ 6.63 мС/см @ 20 °C, DSSC/батареи): https://roco.global/product/emim-tfsi-cas-174899-82-2-battery-grade/
-- Sigma-Aldrich 11291, [EMIM][N(Tf)₂] (RTIL, зелёный растворитель ZnO-синтеза, широкое ЭХ-окно): https://www.sigmaaldrich.com/US/en/product/sial/11291
-- Bonhôte et al., Inorg. Chem. 1996, 35(5), 1168–1178 — оригинальный синтез гидрофобных проводящих RT-расплавов (PubMed 11666305): https://pubmed.ncbi.nlm.nih.gov/11666305
-- Hung et al. 2023, Processes 11(10):2966 (реактивная опасность [EMIM][Tf₂N] выше 280 °C): https://www.mdpi.com/2227-9717/11/10/2966
-- Lishchuk et al. 2023, Scientific Reports (теплопроводность ИЖ 0.12–0.15 Вт/(м·К)): https://hal.science/hal-04101473v1/file/s41598-023-32834-8.pdf
-- IOLITEC TDS EMIM FSI (родственная ИЖ: M 291.30, Tm −23 °C, ρ 1.4499): https://iolitec.de/sites/iolitec.de/files/2024-01/TDS%20IL-0342%2C%20EMIM%20FSI.pdf
-- Haskins et al. 2014 (проводимость [pyr14][TFSI] на порядок ниже EMIM-систем): https://pubmed.ncbi.nlm.nih.gov/25159701
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

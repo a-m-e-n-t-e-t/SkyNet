@@ -1,8 +1,9 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_monokristallicheskogo_sic
 псевдонимы: [material_silicon_carbide]  # рабочая субстанция приборных применений (die MOSFET, бета-вольтаик diode/substrate, TPV heat source) — F31 [B-sem] алиас-связь, субстанция канонизирует material_monokristallicheskogo_sic
-канонический_id: material_monokristallicheskogo_sic
 тип: материал
 класс: керамика
 химический_состав: SiC — стехиометрический карбид кремния (50 ат.% Si / 50 ат.% C); монокристалл 4H-SiC, n-легирование азотом (подложки) или высокочистый без легирования
@@ -53,7 +54,6 @@ id: material_monokristallicheskogo_sic
   теплоёмкость_J_kgK: 630
   коэффициент_термического_расширения_1_K: 4.0e-6
   электропроводность_S_m: 5000.0
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   ширина_запрещённой_зоны_эВ: '4H: 3.26; 6H: 3.03 (Si: 1.12)'
@@ -85,8 +85,6 @@ id: material_monokristallicheskogo_sic
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: монокристаллический SiC
-
 ## Описание
 
 Карбид кремния (SiC) — ковалентная керамика и широкозонный полупроводник, сочетающий экстремальную твёрдость, термостойкость и химическую инертность. Монокристаллический SiC выпускается в виде подложек для силовой и СВЧ-электроники; базовый политип современной промышленности — гексагональный 4H-SiC. Материал существует в ~170 политипах, из которых промышленное значение имеют 3C (β), 4H и 6H (α).
@@ -96,6 +94,29 @@ id: material_monokristallicheskogo_sic
 **Класс:** керамика (карбид; широкозонный полупроводник) — исправлено с ошибочного «металл»
 **Кристаллическая структура:** монокристалл 4H-SiC (P6₃mc); политипы 3C/4H/6H
 **Вариант структуры:** 4h_sic_монокристалл
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Powerway Wafer, «4H N Type SiC» — таблица 4H vs 6H: ρ 3.21×10³ кг/м³, E_g 3.26/3.03 эВ, k 490 Вт/(м·К), μ 800/400 см²/(В·с), пробивное поле 2–4×10⁸ В/м, n-подложки 0.012–0.028 Ом·см: <https://www.powerwaywafer.com/4h-n-type-sic.html> (проверено 2026-11-06)
+- Preciseceramic, «Silicon Carbide Properties: A Summary» — E 440 ГПа, изгиб 490 МПа, HV 32 ГПа, КТР 4.0×10⁻⁶/°C, k 120 Вт/(м·К): <https://www.preciseceramic.com/blog/silicon-carbide-properties-a-summary.html> (проверено 2026-11-06)
+- P. Chai et al., «Mechanical Behavior Investigation of 4H-SiC Single Crystal» (2020) — ν=0.2: <https://pmc.ncbi.nlm.nih.gov/articles/PMC7019960> (проверено 2026-11-06)
+- J. Ben Messaoud et al., Micromachines 2019 — E=410 ГПа (bulge test): <https://www.mdpi.com/2072-666X/10/12/801> (проверено 2026-11-06)
+- PatSnap Eureka, «Closed Cell Silicon Carbide» — теоретическая плотность 3.21 г/см³, E_g 4H 3.26 эВ: <https://eureka.patsnap.com/materials/closed-cell-sic-properties> (проверено 2026-11-06)
+- PatSnap Eureka, «High Purity Silicon Carbide» — сублимация 2830 °C, разложение >2700 °C в вакууме: <https://eureka.patsnap.com/materials/high-purity-sic-synthesis> (проверено 2026-11-06)
+- Accuratus, «Silicon Carbide, SiC Ceramic Properties» — теплоёмкость 750 Дж/(кг·К): <https://accuratus.com/silicar.html> (проверено 2026-11-06)
+- S.J. Zinkle, «Thermophysical and Mechanical Properties of SiC» (UCLA/Fusion) — 620–640 Дж/(кг·К) при 20 °C, 1200–1250 при 1000 °C: <https://www.fusion.ucla.edu/files/2019/08/SiC.pdf> (проверено 2026-11-06)
+- J.J. Neumeier et al., «Thermal expansion of 4H and 6H SiC from 5 K to 340 K» (2024) — анизотропия КТР: <https://www3.aps.anl.gov/haskel/PS/SiC-JPCM-Dilatometry.pdf> (проверено 2026-11-06)
+- Y.Y. Kim et al. (2022) — модули плёнок 3C/4H-SiC 280–350 ГПа: <https://pmc.ncbi.nlm.nih.gov/articles/PMC8954920> (проверено 2026-11-06)
+- Wolfspeed, «Revolutionizing Power Electronics with SiC» — Cree осн. 1987, первые коммерческие SiC-пластины 1992: <https://www.wolfspeed.com/knowledge-center/article/revolutionizing-power-electronics-with-silicon-carbide-to-pionee> (проверено 2026-11-06)
+- K. Vasilevskiy, «Historical Introduction to Silicon Carbide» (2020) — метод Лели, поставщики подложек: <https://mrforum.com/wp-content/uploads/woocommerce_uploads/PDFxyz1/9781644900673/1.pdf> (проверено 2026-11-06)
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -154,19 +175,3 @@ id: material_monokristallicheskogo_sic
 ## Применение в изделиях
 
 _Обратные ссылки ещё не проставлены._
-
-## Источники (F28)
-
-- Powerway Wafer, «4H N Type SiC» — таблица 4H vs 6H: ρ 3.21×10³ кг/м³, E_g 3.26/3.03 эВ, k 490 Вт/(м·К), μ 800/400 см²/(В·с), пробивное поле 2–4×10⁸ В/м, n-подложки 0.012–0.028 Ом·см: <https://www.powerwaywafer.com/4h-n-type-sic.html> (проверено 2026-11-06)
-- Preciseceramic, «Silicon Carbide Properties: A Summary» — E 440 ГПа, изгиб 490 МПа, HV 32 ГПа, КТР 4.0×10⁻⁶/°C, k 120 Вт/(м·К): <https://www.preciseceramic.com/blog/silicon-carbide-properties-a-summary.html> (проверено 2026-11-06)
-- P. Chai et al., «Mechanical Behavior Investigation of 4H-SiC Single Crystal» (2020) — ν=0.2: <https://pmc.ncbi.nlm.nih.gov/articles/PMC7019960> (проверено 2026-11-06)
-- J. Ben Messaoud et al., Micromachines 2019 — E=410 ГПа (bulge test): <https://www.mdpi.com/2072-666X/10/12/801> (проверено 2026-11-06)
-- PatSnap Eureka, «Closed Cell Silicon Carbide» — теоретическая плотность 3.21 г/см³, E_g 4H 3.26 эВ: <https://eureka.patsnap.com/materials/closed-cell-sic-properties> (проверено 2026-11-06)
-- PatSnap Eureka, «High Purity Silicon Carbide» — сублимация 2830 °C, разложение >2700 °C в вакууме: <https://eureka.patsnap.com/materials/high-purity-sic-synthesis> (проверено 2026-11-06)
-- Accuratus, «Silicon Carbide, SiC Ceramic Properties» — теплоёмкость 750 Дж/(кг·К): <https://accuratus.com/silicar.html> (проверено 2026-11-06)
-- S.J. Zinkle, «Thermophysical and Mechanical Properties of SiC» (UCLA/Fusion) — 620–640 Дж/(кг·К) при 20 °C, 1200–1250 при 1000 °C: <https://www.fusion.ucla.edu/files/2019/08/SiC.pdf> (проверено 2026-11-06)
-- J.J. Neumeier et al., «Thermal expansion of 4H and 6H SiC from 5 K to 340 K» (2024) — анизотропия КТР: <https://www3.aps.anl.gov/haskel/PS/SiC-JPCM-Dilatometry.pdf> (проверено 2026-11-06)
-- Y.Y. Kim et al. (2022) — модули плёнок 3C/4H-SiC 280–350 ГПа: <https://pmc.ncbi.nlm.nih.gov/articles/PMC8954920> (проверено 2026-11-06)
-- Wolfspeed, «Revolutionizing Power Electronics with SiC» — Cree осн. 1987, первые коммерческие SiC-пластины 1992: <https://www.wolfspeed.com/knowledge-center/article/revolutionizing-power-electronics-with-silicon-carbide-to-pionee> (проверено 2026-11-06)
-- K. Vasilevskiy, «Historical Introduction to Silicon Carbide» (2020) — метод Лели, поставщики подложек: <https://mrforum.com/wp-content/uploads/woocommerce_uploads/PDFxyz1/9781644900673/1.pdf> (проверено 2026-11-06)
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

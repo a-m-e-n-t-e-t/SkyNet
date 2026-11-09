@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_ionogel
-псевдонимы: []
-канонический_id: material_ionogel
 тип: материал
 класс: полимер
 химический_состав: 'UV-отверждаемая полиуретанакрилатная сеть (PUA) 25 масс. % + ионная жидкость [EMIM][TFSI] 75 масс. % (оптимум Han 2021)'
@@ -68,7 +68,6 @@ id: material_ionogel
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: 2.65
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -106,14 +105,33 @@ id: material_ionogel
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Ионогель (UV-curable PUA + EMITFSI)
-
 ## Описание
 
 Ионогель PUA/EMITFSI — гибкая свободностоящая мембрана из УФ-отверждённой полиуретанакрилатной сети (25 масс. % PUA), набухшей гидрофобной ионной жидкостью EMITFSI (75 масс. %). Предложен как электролит всётвердотельного суперконденсатора с рабочим напряжением 4 В (Han и соавт., Kyungpook National University, Chem. Eng. J. 416, 129089, 2021). Изготавливается бессольвентной in-situ полимеризацией — компоненты не требуют летучих растворителей, УФ-отверждение формирует сеть непосредственно в устройстве. Соотношение EMITFSI/PUA оптимизировано из баланса «самостоятельность мембраны ↔ высокая ионная проводимость»; стабильность обеспечивается водородными связями.
 
 **Класс:** полимер (гелевый полимерный электролит; исходная пометка «металл» исправлена — материал представляет собой полимерную сеть, набухшую ионной жидкостью)
 **Кристаллическая структура:** аморфный (полимерная сеть без дальнего порядка)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Han et al. 2021, Chemical Engineering Journal 416, 129089 — UV-curable ionogel for all-solid-state supercapacitor (4 В, 25/75 PUA/EMITFSI, 150.88 Ф/г, 93.93 Вт·ч/кг, 2000.96 Вт/кг, 99 %/1000 циклов, 92 %/100 изгибов): https://www.sciencedirect.com/science/article/abs/pii/S138589472100680X
+- KNU Research Portal, аннотация публикации Han 2021: https://research.knu.ac.kr/en/publications/uv-curable-ionogel-for-all-solid-state-supercapacitor
+- ADS abstract 2021ChEnJ.41629089H: https://ui.adsabs.harvard.edu/abs/2021ChEnJ.41629089H/abstract
+- Suen et al. 2022, Advanced Materials Interfaces — обзор ионогелей (σ ионогеля 30–50 % от ИЖ): https://onlinelibrary.wiley.com/doi/10.1002/admi.202201405
+- proionic, EMIM-TFSI electronic grade TDS (ρ 1.52 г/см³, σ 6.63 мС/см @ 20 °C): https://www.proionic.com/product/1-ethyl-3-methylimidazolium-bistrifluoromethylsulfonylimide-electro
+- makeitfrom, Polyurethane Rubber AU/EU (k 0.19 Вт/(м·К), cp 1760, σв 39 МПа, удлинение 580 %, макс. 90 °C): https://www.makeitfrom.com/material-properties/Polyurethane-Rubber-AU-EU
+- Misumi, таблица эфирных полиуретанов (плотность 1.15–1.20 г/см³): https://us.misumi-ec.com/maker/misumi/mech/product/ur/detail/detail.html
+- Lishchuk et al. 2023, Scientific Reports (k ионных жидкостей 0.12–0.15 Вт/(м·К)): https://hal.science/hal-04101473v1/file/s41598-023-32834-8.pdf
+- Rodriguez et al. 2025, ACS Applied Polymer Materials (CNF-ионогели 52.0/78.7 МПа, «превосходят типичные»): https://pubs.acs.org/doi/10.1021/acsapm.6c01588
+- Pietrzyk-Thel et al. 2025, Journal of Materials Science & Technology (PVA-ионогели): https://www.sciopen.com/article/10.1016/j.jmat.2024.01.008
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -167,17 +185,3 @@ _Обратные ссылки ещё не проставлены._
 - Чистая ионная жидкость [EMIM][TFSI] (файл `ionnaya_zhidkost_emim_tfsi.md`): выше проводимость (6.63 мС/см), но нет механической самостоятельности — ионогель связывает ИЖ в форму;
 - CNF-ионогели (Rodriguez 2025): модуль 52–78.7 МПа — для нагруженных гибких носителей ценой части проводимости;
 - PVA-ионогели (Pietrzyk-Thel 2025): высокая гибкость и стабильность — водная/спиртовая база ограничивает окно напряжения.
-
-## Источники
-
-- Han et al. 2021, Chemical Engineering Journal 416, 129089 — UV-curable ionogel for all-solid-state supercapacitor (4 В, 25/75 PUA/EMITFSI, 150.88 Ф/г, 93.93 Вт·ч/кг, 2000.96 Вт/кг, 99 %/1000 циклов, 92 %/100 изгибов): https://www.sciencedirect.com/science/article/abs/pii/S138589472100680X
-- KNU Research Portal, аннотация публикации Han 2021: https://research.knu.ac.kr/en/publications/uv-curable-ionogel-for-all-solid-state-supercapacitor
-- ADS abstract 2021ChEnJ.41629089H: https://ui.adsabs.harvard.edu/abs/2021ChEnJ.41629089H/abstract
-- Suen et al. 2022, Advanced Materials Interfaces — обзор ионогелей (σ ионогеля 30–50 % от ИЖ): https://onlinelibrary.wiley.com/doi/10.1002/admi.202201405
-- proionic, EMIM-TFSI electronic grade TDS (ρ 1.52 г/см³, σ 6.63 мС/см @ 20 °C): https://www.proionic.com/product/1-ethyl-3-methylimidazolium-bistrifluoromethylsulfonylimide-electro
-- makeitfrom, Polyurethane Rubber AU/EU (k 0.19 Вт/(м·К), cp 1760, σв 39 МПа, удлинение 580 %, макс. 90 °C): https://www.makeitfrom.com/material-properties/Polyurethane-Rubber-AU-EU
-- Misumi, таблица эфирных полиуретанов (плотность 1.15–1.20 г/см³): https://us.misumi-ec.com/maker/misumi/mech/product/ur/detail/detail.html
-- Lishchuk et al. 2023, Scientific Reports (k ионных жидкостей 0.12–0.15 Вт/(м·К)): https://hal.science/hal-04101473v1/file/s41598-023-32834-8.pdf
-- Rodriguez et al. 2025, ACS Applied Polymer Materials (CNF-ионогели 52.0/78.7 МПа, «превосходят типичные»): https://pubs.acs.org/doi/10.1021/acsapm.6c01588
-- Pietrzyk-Thel et al. 2025, Journal of Materials Science & Technology (PVA-ионогели): https://www.sciopen.com/article/10.1016/j.jmat.2024.01.008
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

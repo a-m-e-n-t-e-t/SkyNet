@@ -1,7 +1,8 @@
 ---
+
+
+
 id: tekhnologia_tverdofaznyi_sintez
-псевдонимы: []
-канонический_id: tekhnologia_tverdofaznyi_sintez
 тип: технология
 категория: обработка
 область_применения: 
@@ -58,6 +59,21 @@ id: tekhnologia_tverdofaznyi_sintez
 
 Полное наименование (как в CSV): `твердофазный синтез`
 
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | технология | — | canon |
+
+
+## Источники
+
+- MDPI Ceramics: [Crystal Structure and Preparation of Li₇La₃Zr₂O₁₂ (LLZO)](https://www.mdpi.com/2673-3293/2/3/26) — Raju 2021, review: кальцинирование/спекание, избыток Li, mother powder
+- Encyclopedia.pub: [Li₇La₃Zr₂O₁₂ (LLZO): An Overview](https://encyclopedia.pub/entry/12681) — первый LLZO по Murugan 2007: твердофазный синтез, спекание 1230 °C/36 ч
+- IOP Conf. Ser.: [Synthesis of Li₇La₃Zr₂O₁₂ Solid Electrolyte by Solid-State Reaction](https://iopscience.iop.org/article/10.1088/1757-899X/678/1/012150/pdf) — Liu 2019: кубическая фаза, Ea 0.51 эВ
+- ACS Appl. Energy Mater.: [Effects of Different Doping Strategies on Cubic Li₇La₃Zr₂O₁₂](https://pubs.acs.org/aaemcq/article/7/24/12141/213856/Effects-of-Different-Doping-Strategies-on-Cubic) — Gaukås 2024: Al-легирование x=0.20–0.40
+- OSU Knowledge Bank: [Systematic Study of Ta-doped LLZO Synthesis](https://kb.osu.edu/bitstreams/f2fad28b-cc53-4f86-b103-7c036bac48e1/download) — Lisa 2023: подготовка прекурсоров, кальцинирование, спекание
+
 ## Физический принцип
 
 Реакция идёт твёрдофазной диффузией: контакт между частицами прекурсоров обеспечивает взаимную диффузию катионов (Li⁺, La³⁺, Zr⁴⁺) через точечные дефекты при температурах 0.5–0.7 T_пл; Li₂CO₃ разлагается с выделением CO₂, создавая пористость, поэтому требуются промежуточное кальцинирование и переизмельчение для однородности фазы. Кубическая фаза c-LLZO (Ia-3d) стабилизируется supervalent-легированием Al/Ta (вакансии по литию), тогда как стехиометрический LLZO при охлаждении переходит в тетрагональную фазу с проводимостью на ~2 порядка ниже.
@@ -85,11 +101,3 @@ id: tekhnologia_tverdofaznyi_sintez
 - соосаждение и раствор-горение (нанопорошки, но больше примесей)
 - механохимический синтез в высокоэнергетических мельницах (без кальцинирования для некоторых фаз)
 - горячее изостатическое прессование (hip) — для уплотнения уже синтезированного порошка LLZO до >95 % теоретической плотности
-
-## Источники
-
-- MDPI Ceramics: [Crystal Structure and Preparation of Li₇La₃Zr₂O₁₂ (LLZO)](https://www.mdpi.com/2673-3293/2/3/26) — Raju 2021, review: кальцинирование/спекание, избыток Li, mother powder
-- Encyclopedia.pub: [Li₇La₃Zr₂O₁₂ (LLZO): An Overview](https://encyclopedia.pub/entry/12681) — первый LLZO по Murugan 2007: твердофазный синтез, спекание 1230 °C/36 ч
-- IOP Conf. Ser.: [Synthesis of Li₇La₃Zr₂O₁₂ Solid Electrolyte by Solid-State Reaction](https://iopscience.iop.org/article/10.1088/1757-899X/678/1/012150/pdf) — Liu 2019: кубическая фаза, Ea 0.51 эВ
-- ACS Appl. Energy Mater.: [Effects of Different Doping Strategies on Cubic Li₇La₃Zr₂O₁₂](https://pubs.acs.org/aaemcq/article/7/24/12141/213856/Effects-of-Different-Doping-Strategies-on-Cubic) — Gaukås 2024: Al-легирование x=0.20–0.40
-- OSU Knowledge Bank: [Systematic Study of Ta-doped LLZO Synthesis](https://kb.osu.edu/bitstreams/f2fad28b-cc53-4f86-b103-7c036bac48e1/download) — Lisa 2023: подготовка прекурсоров, кальцинирование, спекание

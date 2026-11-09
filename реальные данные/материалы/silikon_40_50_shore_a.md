@@ -1,8 +1,9 @@
 ---
-применяется_в_изделиях_счёт: 2
+
+
+
 id: material_silikon_40_50_shore_a
 псевдонимы: [силиконовый каучук 40–50 Shore A, VMQ-каучук 40–50 Shore A, silicone rubber 40–50 Shore A]
-канонический_id: material_silikon_40_50_shore_a
 тип: материал
 класс: эластомер
 химический_состав: 'Полидиметилсилоксан (PDMS, VMQ): основа –[Si(CH₃)₂–O]ₙ– с винильными сшивочными группами (~0.05–0.5 мол. %), наполнитель — пирогенный кремнезём SiO₂ 10–30 мас.% (типа HDK®), вулканизация пероксидная (HCR-марки) или платиновая присоединительная (RTV-2/LSR)'
@@ -95,7 +96,6 @@ id: material_silikon_40_50_shore_a
   теплоёмкость_J_kgK: 1250
   коэффициент_термического_расширения_1_K: 3.0e-4
   электропроводность_S_m: 1.0e-13
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -117,8 +117,6 @@ id: material_silikon_40_50_shore_a
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Силикон 40–50 Shore A
-
 ## Описание
 
 Силиконовый каучук средней твёрдости (40–50 Shore A) — аморфный сшитый эластомер на основе полидиметилсилоксана (PDMS/VMQ) с пирогенным кремнезёмным наполнителем. Опорные марки диапазона — Wacker ELASTOSIL® R 401/40 S и R 401/50 S (пероксидная HCR-вулканизация, прозрачные, общего назначения: экструзия трубок/профилей и формование уплотнений). Ключевые отличия от органических эластомеров: температурный конверт −50…+250 °C без существенной деградации свойств (специальные марки до −110/+300 °C), высокий ресурс на озон/UV/погоду без стабилизаторов, физиологическая инертность и диэлектрические свойства (εr 2.7–3.3, Eпр >20 кВ/мм), делающие силикон основным диэлектриком диэластомерных актуаторов (DEA).
@@ -129,6 +127,21 @@ id: material_silikon_40_50_shore_a
 
 **Класс:** эластомер (силиконовый каучук VMQ)
 **Структура:** аморфный_сшитый_эластомер — рентген-аморфная сшитая PDMS-сетка; обратимая кристаллизация цепей только ниже ~−40 °C (Wacker: «hardens at very low temperatures (−40 °C) due to reversible crystallization»)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Wacker Chemie AG, «Solid and liquid silicone rubber — material and processing guide» (6709-EN): таблица марок ELASTOSIL® R (с.92: R 401/40 S, R 401/50 S), «Facts and figures about silicone» (с.83–87: плотность, λ, cp, КТР, εr, Eпр, ρv, компрессионный остаток, температурное поведение) — <https://www.wacker.com/h/medias/6709-EN.pdf>;
+- Wacker Chemie AG, «ELASTOSIL® P — Silicone Elastomers for Orthotics and Prosthetics» (7847-EN): таблица марок P 7600/P 7670/P 7683… (твёрдости Shore A/Shore 00, механика) — <https://www.wacker.com/h/medias/7847-EN.pdf>;
+- D. McCoul et al., «On the applicability of printed elastomeric actuators…» (Smart Mater. Struct. 26, 125022, 2017): печатные силиконовые DEA-мембраны, поля 84–130 В/мкм, деформации 2.4–6.1 % — <https://zenodo.org/records/2581172/files/McCoul_2017_Smart_Mater._Struct._26_125022.pdf>;
+- A. M. Smith et al., «Facile Determination of the Poisson's Ratio and Young's Modulus of Polyacrylamide Gels and PDMS» (ACS Appl. Polym. Mater. 2024, 6, 2405; PMC10897882): ν(PDMS) ≈ 0.49, модуль порядка МПа — <https://pmc.ncbi.nlm.nih.gov/articles/PMC10897882>;
+- CSV: `начальные данные_final.csv` (пользовательский ввод, исходное наименование).
 
 ## Химический состав
 
@@ -199,11 +212,3 @@ id: material_silikon_40_50_shore_a
 - **Органические эластомеры:** EPDM (хуже температурный конверт, ~130 °C), натуральный каучук (лучше демпфирование, но −50…+80 °C и слабая озоно/UV-стойкость);
 - **Фторсиликон (FVMQ):** при требовании стойкости к топливам/маслам;
 - **Термопластичные полиуретаны (TPU):** для износостойких оболочек, но уже температурный конверт и выше гистерезис.
-
-## Источники
-
-- Wacker Chemie AG, «Solid and liquid silicone rubber — material and processing guide» (6709-EN): таблица марок ELASTOSIL® R (с.92: R 401/40 S, R 401/50 S), «Facts and figures about silicone» (с.83–87: плотность, λ, cp, КТР, εr, Eпр, ρv, компрессионный остаток, температурное поведение) — <https://www.wacker.com/h/medias/6709-EN.pdf>;
-- Wacker Chemie AG, «ELASTOSIL® P — Silicone Elastomers for Orthotics and Prosthetics» (7847-EN): таблица марок P 7600/P 7670/P 7683… (твёрдости Shore A/Shore 00, механика) — <https://www.wacker.com/h/medias/7847-EN.pdf>;
-- D. McCoul et al., «On the applicability of printed elastomeric actuators…» (Smart Mater. Struct. 26, 125022, 2017): печатные силиконовые DEA-мембраны, поля 84–130 В/мкм, деформации 2.4–6.1 % — <https://zenodo.org/records/2581172/files/McCoul_2017_Smart_Mater._Struct._26_125022.pdf>;
-- A. M. Smith et al., «Facile Determination of the Poisson's Ratio and Young's Modulus of Polyacrylamide Gels and PDMS» (ACS Appl. Polym. Mater. 2024, 6, 2405; PMC10897882): ν(PDMS) ≈ 0.49, модуль порядка МПа — <https://pmc.ncbi.nlm.nih.gov/articles/PMC10897882>;
-- CSV: `начальные данные_final.csv` (пользовательский ввод, исходное наименование).

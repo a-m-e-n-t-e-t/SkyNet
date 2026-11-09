@@ -1,7 +1,8 @@
 ---
+
+
+
 id: material_magnitnaya_rezina_ferritovyi_poroshok
-псевдонимы: []
-канонический_id: material_magnitnaya_rezina_ferritovyi_poroshok
 тип: материал
 класс: композит
 химический_состав: 'Fe₃O₄ (магнетит) 1–20 wt% + силиконовый каучук (Ecoflex/PDMS)'
@@ -51,7 +52,6 @@ id: material_magnitnaya_rezina_ferritovyi_poroshok
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: null
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   наполнитель: 'Fe₃O₄ (магнетит, шпинель) 1–20 wt% в Ecoflex 0030 (Song 2018)'
@@ -82,8 +82,6 @@ id: material_magnitnaya_rezina_ferritovyi_poroshok
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Магнитная резина: ферритовый порошок
-
 ## Описание
 
 Магнитная резина — магнитоактивный эластомерный композит: частицы ферритового порошка (Fe₃O₄, магнетит) диспергированы в сшитой силиконовой матрице (Ecoflex/PDMS). Материал объединяет эластичность каучука с магнитным откликом наполнителя: деформируется под внешним магнитным полем и обратимо меняет модуль, что делает его ключевым материалом мягкой робототехники и магнитореологических (MRE) устройств.
@@ -92,6 +90,25 @@ id: material_magnitnaya_rezina_ferritovyi_poroshok
 
 **Класс:** композит (магнитоактивный эластомер; эластомерная матрица + магнитный наполнитель)
 **Структура:** аморфная сшитая силиконовая матрица с дисперсными частицами Fe₃O₄ (объёмная фаза — шпинель); вариант с анизотропными цепочками частиц формируется отверждением в магнитном поле
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- K. Song et al., «Fe₃O₄–Silicone Mixture as Flexible Actuator» — ρ 1240 кг/м³, E 1.75 ± 0.11 МПа, Ecoflex 0030, 1–20 wt%, p2p 5.19 мм @5 wt%, резонанс 3 Гц: <https://pmc.ncbi.nlm.nih.gov/articles/PMC5978130> (проверено 2026-11-06)
+- J. Bernat et al., «Magnetorheological elastomers for soft robotics», Sci. Rep. 2026 — 41 formulation на 7 силиконах, рост Ms и жёсткости с концентрацией наполнителя: <https://www.nature.com/articles/s41598-026-74334-5_reference.pdf> (проверено 2026-11-06)
+- A.K. Bastola, M. Hoang, «A review on magneto-mechanical characterizations of magnetorheological elastomers», Composites Communications 2020: <https://www.sciencedirect.com/science/article/pii/S1359836820333977> (проверено 2026-11-06)
+- Y. Li et al., «A state-of-the-art review on magnetorheological elastomer devices» — виброгасители, виброизоляторы, сейсмоизоляторы: <https://opus.lib.uts.edu.au/rest/bitstreams/835e7b9d-6b8f-4b69-9b15-65d199a35a6e/retrieve> (проверено 2026-11-06)
+- C. Zhang et al., «Magnetodielectric Properties of Ordered Microstructured MRE», Polymers 2023 — εr 12.9 (Fe₃O₄@rGO/PDMS, 60 wt%, 500 мТ): <https://www.mdpi.com/2073-4360/15/4/941> (проверено 2026-11-06)
+- J.A. Carpenter et al., «Facile Manufacturing Route for Magneto-Responsive Soft Actuators» 2021 — намагничивание постоянными магнитами при отверждении: <https://d-nb.info/1233070371/34> (проверено 2026-11-06)
+- «Magnetic, mechanical, and actuation behavior of silicone-based composites» — Ms 7.1 ± 0.1 эму/г при 10 wt% Fe₃O₄, линейный рост: <https://www.researchgate.net/figure/Magnetic-mechanical-and-actuation-behavior-of-silicone-based-composites-prepared-with_fig3_351438802> (проверено 2026-11-06)
+- «One magnetic elastomer, two modes: Move on command» 2026 — Fe₃O₄ наночастицы в силиконе, два режима движения: <https://www.eurekalert.org/news-releases/1130140> (проверено 2026-11-06)
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -134,15 +151,3 @@ Fe₃O₄ (магнетит) 1–20 wt% + силиконовый каучук (E
 ## Применение в изделиях
 
 _Обратные ссылки ещё не проставлены._
-
-## Источники (F28)
-
-- K. Song et al., «Fe₃O₄–Silicone Mixture as Flexible Actuator» — ρ 1240 кг/м³, E 1.75 ± 0.11 МПа, Ecoflex 0030, 1–20 wt%, p2p 5.19 мм @5 wt%, резонанс 3 Гц: <https://pmc.ncbi.nlm.nih.gov/articles/PMC5978130> (проверено 2026-11-06)
-- J. Bernat et al., «Magnetorheological elastomers for soft robotics», Sci. Rep. 2026 — 41 formulation на 7 силиконах, рост Ms и жёсткости с концентрацией наполнителя: <https://www.nature.com/articles/s41598-026-74334-5_reference.pdf> (проверено 2026-11-06)
-- A.K. Bastola, M. Hoang, «A review on magneto-mechanical characterizations of magnetorheological elastomers», Composites Communications 2020: <https://www.sciencedirect.com/science/article/pii/S1359836820333977> (проверено 2026-11-06)
-- Y. Li et al., «A state-of-the-art review on magnetorheological elastomer devices» — виброгасители, виброизоляторы, сейсмоизоляторы: <https://opus.lib.uts.edu.au/rest/bitstreams/835e7b9d-6b8f-4b69-9b15-65d199a35a6e/retrieve> (проверено 2026-11-06)
-- C. Zhang et al., «Magnetodielectric Properties of Ordered Microstructured MRE», Polymers 2023 — εr 12.9 (Fe₃O₄@rGO/PDMS, 60 wt%, 500 мТ): <https://www.mdpi.com/2073-4360/15/4/941> (проверено 2026-11-06)
-- J.A. Carpenter et al., «Facile Manufacturing Route for Magneto-Responsive Soft Actuators» 2021 — намагничивание постоянными магнитами при отверждении: <https://d-nb.info/1233070371/34> (проверено 2026-11-06)
-- «Magnetic, mechanical, and actuation behavior of silicone-based composites» — Ms 7.1 ± 0.1 эму/г при 10 wt% Fe₃O₄, линейный рост: <https://www.researchgate.net/figure/Magnetic-mechanical-and-actuation-behavior-of-silicone-based-composites-prepared-with_fig3_351438802> (проверено 2026-11-06)
-- «One magnetic elastomer, two modes: Move on command» 2026 — Fe₃O₄ наночастицы в силиконе, два режима движения: <https://www.eurekalert.org/news-releases/1130140> (проверено 2026-11-06)
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

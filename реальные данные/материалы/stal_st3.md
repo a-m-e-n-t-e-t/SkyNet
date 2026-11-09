@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 1
+
+
+
 id: material_stal_st3
-псевдонимы: []
-канонический_id: material_stal_st3
 тип: материал
 класс: металл
 химический_состав: 'Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.'
@@ -70,7 +70,6 @@ id: material_stal_st3
   теплоёмкость_J_kgK: 470
   коэффициент_термического_расширения_1_K: 1.2e-5
   электропроводность_S_m: 6.99e6
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -82,11 +81,23 @@ id: material_stal_st3
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Сталь Ст3
-
 ## Описание
 
 Сталь Ст3 (Ст3сп/Ст3пс, ГОСТ 380-2005) — углеродистая сталь обыкновенного качества, массовый конструкционный и магнитомягкий материал: C 0.14–0.22 %, Mn 0.40–0.65 %, Si 0.15–0.30 %. Механические свойства (krugi.by): σв 370–510 МПа, σ0.2 235–345 МПа, δ 20–30 %, твёрдость ≤131 HB. Отличительная комбинация для магнитной техники: высокая индукция насыщения и малая коэрцитивная сила (феррито-перлитная структура не сохраняет остаточную намагниченность) — стандартный материал магнитопроводов электромагнитных порошковых муфт, тормозов и реле; хорошая свариваемость и обрабатываемость (Practical Machinist). Европейский аналог — S235JR (EN 10025-2).
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Krugi.by — Сталь Ст3: химический состав, свойства (σв 370–510, σ0.2 235–345, δ 20–30 %): https://krugi.by/stal-st3
+- Practical Machinist — What kind of steel for electromagnetic clutch parts (low carbon steel, не сохраняет магнетизм): https://www.practicalmachinist.com/forum/threads/what-kind-of-steel-for-electromagnetic-clutch-parts.152296
+- Hardhub — Марка стали Ст3 (ГОСТ 380): https://hardhub.ru/spravochniki/marki-stali-i-splavov/stal-konstruktsionnaya/stal-konstruktsionnaya-uglerodistaya-obyknovennogo-kachestva/show/st3
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Физические свойства
 
@@ -120,10 +131,3 @@ id: material_stal_st3
 ## Аналоги и заменители
 
 (Заполняется при сравнительном анализе)
-
-## Источники
-
-- Krugi.by — Сталь Ст3: химический состав, свойства (σв 370–510, σ0.2 235–345, δ 20–30 %): https://krugi.by/stal-st3
-- Practical Machinist — What kind of steel for electromagnetic clutch parts (low carbon steel, не сохраняет магнетизм): https://www.practicalmachinist.com/forum/threads/what-kind-of-steel-for-electromagnetic-clutch-parts.152296
-- Hardhub — Марка стали Ст3 (ГОСТ 380): https://hardhub.ru/spravochniki/marki-stali-i-splavov/stal-konstruktsionnaya/stal-konstruktsionnaya-uglerodistaya-obyknovennogo-kachestva/show/st3
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

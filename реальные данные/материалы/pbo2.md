@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_pbo2
-псевдонимы: []
-канонический_id: material_pbo2
 тип: материал
 класс: керамика
 химический_состав: 'PbO2 (диоксид свинца, β-фаза) — активная масса положительных пластин свинцово-кислотных АКБ; паста из свинцового сурика/литиевого оксида с пористостью ~50%'
@@ -79,7 +79,6 @@ id: material_pbo2
   теплоёмкость_J_kgK: 256
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: 1.0e+6
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -93,11 +92,23 @@ id: material_pbo2
 дата_создания: 2026-11-05
 дата_обновления: 2026-11-06
 ---
-# Материал: PbO₂ (активная масса положительной пластины)
-
 ## Описание
 
 Диоксид свинца PbO₂ — сильный окислитель и активная масса положительных пластин свинцово-кислотных аккумуляторов. При разряде восстанавливается до PbSO₄, при заряде — обратно; толщина решётки положительной пластины (рамка) составляет 1.8–2.0 мм при 15–16 поперечных рёбрах (патент CN112103513A, Chaowei Power). Паста наносится на решётку из Pb-Sb/Pb-Ca сплава и формирует пористую структуру с развитой поверхностью. Кристаллическая β-фаза (рутильный тип) обеспечивает высокое напряжение разряда 2.1 В на ячейку.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- https://patents.google.com/patent/CN112103513A/en (Positive plate and negative plate of lead-acid storage battery, Chaowei Power, 2020)
+- https://suzukibattery.sg/blog/engineering/lead-acid-battery-plates (PbO₂ — positive plate active material)
+- https://en.wikipedia.org/wiki/Lead_dioxide (плотность 9.4 г/см³, разложение ~290 °C)
+- Wikipedia — Lead dioxide: α-PbO2 орторомбический Pbcn (a=0.497, b=0.596, c=0.544 нм, Z=4) vs β-PbO2 тетрагональный рутил P4₂/mnm (a=0.491, c=0.3385 нм, Z=2); ρ 9.38 г/см³; E°=+2.05 В; разложение с 290 °C; применения (аноды Cu/Zn, дихромат, глиоксиловая кислота, спички/пиротехника, вулканизация полисульфидов, разрядники) — https://en.wikipedia.org/wiki/Lead_dioxide
 
 ## Физические свойства
 
@@ -128,19 +139,3 @@ id: material_pbo2
 - Электролитическое осаждение β-PbO₂ из кислых растворов Pb(II) (анодные покрытия на Ti/графите).
 - Химическое окисление соединений Pb(II) (сурик, плюмбит) — активная масса пасты положительных пластин; формование на решётке Pb-Sb/Pb-Ca + электрохимическое формование (formation).
 - Минеральный платтнерит — окисленные зоны гидротермальных свинцовых месторождений.
-
-## Источники (F28)
-
-- Wikipedia — Lead dioxide (ρ 9.38 г/см³; β P4₂/mnm tP6 a=0.491, c=0.3385 нм; α Pbcn oP12; Моос 5.5; металлическая проводимость ρ до 10⁻⁴ Ом·см; разложение 290/350/375/600 °C): https://en.wikipedia.org/wiki/Lead_dioxide
-- Wikipedia — Plattnerite (β-PbO₂, rutile group, a=4.95 Å, c=3.38 Å, Z=2; скрутиннит — α-диморф): https://en.wikipedia.org/wiki/Plattnerite
-- Webmineral — Plattnerite Mineral Data (SG 8.5–9.63, Моос 5.5, Dana 04.04.01.06 / Strunz 04.DB.05, Baur & Khan 1971): http://webmineral.com/data/Plattnerite.shtml
-- NIST WebBook — lead dioxide, Solid Phase Shomate (Chase 1998, 298–1200 K; Cp, H°, S°): https://webbook.nist.gov/cgi/cbook.cgi?ID=C1309600&Mask=2
-- Thermal transformations of lead oxides (β-PbO из PbO₂ при нагреве до 650 °C): https://www.researchgate.net/publication/243956665_Thermal_transformations_of_lead_oxides
-- Li 2026, ChemistryOpen — Cu/PbO₂ анод для электрохимической очистки стоков (σ-электрод, OER): https://pmc.ncbi.nlm.nih.gov/articles/PMC13373460
-
-## Источники
-
-- https://patents.google.com/patent/CN112103513A/en (Positive plate and negative plate of lead-acid storage battery, Chaowei Power, 2020)
-- https://suzukibattery.sg/blog/engineering/lead-acid-battery-plates (PbO₂ — positive plate active material)
-- https://en.wikipedia.org/wiki/Lead_dioxide (плотность 9.4 г/см³, разложение ~290 °C)
-- Wikipedia — Lead dioxide: α-PbO2 орторомбический Pbcn (a=0.497, b=0.596, c=0.544 нм, Z=4) vs β-PbO2 тетрагональный рутил P4₂/mnm (a=0.491, c=0.3385 нм, Z=2); ρ 9.38 г/см³; E°=+2.05 В; разложение с 290 °C; применения (аноды Cu/Zn, дихромат, глиоксиловая кислота, спички/пиротехника, вулканизация полисульфидов, разрядники) — https://en.wikipedia.org/wiki/Lead_dioxide

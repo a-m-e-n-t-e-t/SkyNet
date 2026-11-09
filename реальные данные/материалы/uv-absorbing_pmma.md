@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_uv-absorbing_pmma
-псевдонимы: []
-канонический_id: material_uv-absorbing_pmma
 тип: материал
 класс: полимер
 химический_состав: 'полиметилметакрилат [–CH2–C(CH3)(COOCH3)–]n (атактический) + бензотриазольный УФ-абсорбер (класс 2-(2H-бензотриазол-2-ил)-фенолов, ~0.2–1 масс.%) в объёме листа'
@@ -50,7 +50,6 @@ id: material_uv-absorbing_pmma
   теплоёмкость_J_kgK: 1460
   коэффициент_термического_расширения_1_K: 1.0e-4
   электропроводность_S_m: 1.0e-13
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -77,11 +76,27 @@ id: material_uv-absorbing_pmma
 источник_url: https://www.acrylite.co/files/content/acrylite.co/documents/product-information/ACRYLITE-Gallery-UV-filtering-OP3-technical-information.pdf
 источник_дата: 2026-11-06
 ---
-# Материал: UV-absorbing PMMA (УФ-абсорбирующий полиметилметакрилат)
-
 ## Описание
 
 УФ-абсорбирующий PMMA — акриловое (органическое) стекло с введённым в объём бензотриазольным УФ-абсорбером. Базовый полимер — атактический полиметилметакрилат [–CH2–C(CH3)(COOCH3)–]n, аморфный, оптически прозрачный (92% пропускание видимого диапазона, показатель преломления 1.4905 при 589.3 нм, плотность 1.18 г/см³). В отличие от чистого PMMA, который пропускает значительную долю ближнего УФ-А, композиция с абсорбером (консервационные марки типа ACRYLITE® Gallery UV filtering OP-3 / UF-3 производства Röhm) блокирует ~98% УФ-излучения в диапазоне 320–380 нм — основном диапазоне выцветания красителей. Защита объёмная (bulk): абсорбер распределён по всей толщине листа, а не нанесён плёнкой, поэтому не истирается и не отслаивается.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- ACRYLITE® Gallery UV filtering (OP-3) technical information (Röhm): https://www.acrylite.co/files/content/acrylite.co/documents/product-information/ACRYLITE-Gallery-UV-filtering-OP3-technical-information.pdf — ~98% блокировка УФ 320–380 нм, защита в объёме листа
+- ACRYLITE Gallery UV filtering OP3 (страница бренда): https://www.acrylite.co/products/brands/acrylite-gallery/uv-filtering
+- Wikipedia — Poly(methyl methacrylate): https://en.wikipedia.org/wiki/Poly(methyl_methacrylate) — плотность 1.18 г/см³, Tg 105 °C (атактический), n=1.4905
+- Mueller-Kunststoffe, datasheet PMMA: https://www.mueller-kunststoffe.ch/medien/datenblaetter/mueller-kunststoffe-datenblatt-pmma-en.pdf — теплопроводность 0.19 Вт/(м·К) (ISO 22007-4), Tg 110 °C (ISO 3146)
+- NETZSCH — PMMA Polymethylmethacrylate: https://analyzing-testing.netzsch.com/en-US/polymers-netzsch-com/engineering-thermoplastics/pmma-polymethylmethacrylate — CTE 90–110×10⁻⁶ 1/K, cp 1.45–1.47 Дж/(г·К)
+- SpecialChem — PMMA guide: https://www.specialchem.com/plastics/guide/polymethyl-methacrylate-pmma-acrylic — melt temperature 200–250 °C
+- profplastic — PMMA: https://www.profplastic.com/en/materials/pmma-polymethyl-methacrylate — размягчение/деградация 160–200 °C
+- E Plastics — UV filtering acrylic OP-3: https://www.eplastics.com/plexiglass/acrylic-sheets/uv-filtering — фильтрация 98% УФ
 
 ## Структура
 
@@ -146,14 +161,3 @@ PMMA — классический аморфный термопласт: сво�
 - Поликарбонат с УФ-слоем — в ~30 раз ударопрочнее, но ниже твёрдость поверхности и оптика (n≈1.586), выше цена
 - Обычное силикатное стекло с УФ-плёнкой — твёрже и царапиностойче, но тяжелее и хрупче
 - Закалённое стекло (ToughGuard и аналоги) — само по себе блокирует <375 нм лишь частично (~97% УФ-Б, но хуже с УФ-А)
-
-## Источники
-
-- ACRYLITE® Gallery UV filtering (OP-3) technical information (Röhm): https://www.acrylite.co/files/content/acrylite.co/documents/product-information/ACRYLITE-Gallery-UV-filtering-OP3-technical-information.pdf — ~98% блокировка УФ 320–380 нм, защита в объёме листа
-- ACRYLITE Gallery UV filtering OP3 (страница бренда): https://www.acrylite.co/products/brands/acrylite-gallery/uv-filtering
-- Wikipedia — Poly(methyl methacrylate): https://en.wikipedia.org/wiki/Poly(methyl_methacrylate) — плотность 1.18 г/см³, Tg 105 °C (атактический), n=1.4905
-- Mueller-Kunststoffe, datasheet PMMA: https://www.mueller-kunststoffe.ch/medien/datenblaetter/mueller-kunststoffe-datenblatt-pmma-en.pdf — теплопроводность 0.19 Вт/(м·К) (ISO 22007-4), Tg 110 °C (ISO 3146)
-- NETZSCH — PMMA Polymethylmethacrylate: https://analyzing-testing.netzsch.com/en-US/polymers-netzsch-com/engineering-thermoplastics/pmma-polymethylmethacrylate — CTE 90–110×10⁻⁶ 1/K, cp 1.45–1.47 Дж/(г·К)
-- SpecialChem — PMMA guide: https://www.specialchem.com/plastics/guide/polymethyl-methacrylate-pmma-acrylic — melt temperature 200–250 °C
-- profplastic — PMMA: https://www.profplastic.com/en/materials/pmma-polymethyl-methacrylate — размягчение/деградация 160–200 °C
-- E Plastics — UV filtering acrylic OP-3: https://www.eplastics.com/plexiglass/acrylic-sheets/uv-filtering — фильтрация 98% УФ

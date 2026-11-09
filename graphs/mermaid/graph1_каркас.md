@@ -2,46 +2,46 @@
 
 ```mermaid
 graph LR
+    izdelie_kompensatory[прочее]
     izdelie_elastomernyh_dempferah[прочее]
     izdelie_reshetchatyi_karkas[прочее]
-    izdelie_kompensatory[прочее]
-    часть_elastomernyh_dempferah_connectors[разъёмы]
-    часть_elastomernyh_dempferah_mounting[крепёж]
-    часть_elastomernyh_dempferah_core[основной_элемент]
-    часть_elastomernyh_dempferah_housing[корпус]
-    часть_reshetchatyi_karkas_housing[корпус]
-    часть_reshetchatyi_karkas_core[основной_элемент]
-    часть_reshetchatyi_karkas_mounting[крепёж]
-    часть_reshetchatyi_karkas_connectors[разъёмы]
-    часть_reshetchatyi_karkas_core_фиттинги[узловая_бобышка]
-    часть_reshetchatyi_karkas_core_диафрагмы[перфорированная_рамка]
-    часть_reshetchatyi_karkas_core_стрингеры[силовой_профиль]
     часть_kompensatory_mounting[крепёж]
-    часть_kompensatory_core[основной_элемент]
     часть_kompensatory_housing[корпус]
+    часть_kompensatory_core[основной_элемент]
     часть_kompensatory_connectors[разъёмы]
     часть_kompensatory_core_диафрагмы[гофрированная_диафрагма]
     часть_kompensatory_core_фиттинги[концевое_кольцо]
+    часть_elastomernyh_dempferah_core[основной_элемент]
+    часть_elastomernyh_dempferah_connectors[разъёмы]
+    часть_elastomernyh_dempferah_mounting[крепёж]
+    часть_elastomernyh_dempferah_housing[корпус]
+    часть_reshetchatyi_karkas_connectors[разъёмы]
+    часть_reshetchatyi_karkas_mounting[крепёж]
+    часть_reshetchatyi_karkas_housing[корпус]
+    часть_reshetchatyi_karkas_core[основной_элемент]
+    часть_reshetchatyi_karkas_core_фиттинги[узловая_бобышка]
+    часть_reshetchatyi_karkas_core_диафрагмы[перфорированная_рамка]
+    часть_reshetchatyi_karkas_core_стрингеры[силовой_профиль]
     izdelie_SkyNet_T800[прочее]
-    izdelie_SkyNet_Rev9[прочее]
-    izdelie_SkyNet_TX[прочее]
     izdelie_SkyNet_T600[прочее]
     izdelie_SkyNet_HKTank[прочее]
     izdelie_SkyNet_Cameron[прочее]
+    izdelie_SkyNet_TX[прочее]
+    izdelie_SkyNet_Rev9[прочее]
     izdelie_SkyNet_HKAerial[прочее]
-    izdelie_SkyNet_T850[прочее]
     izdelie_SkyNet_MarcusWright[прочее]
+    izdelie_SkyNet_T850[прочее]
     часть_t800_эндоскелет_торс[hyperalloy_endoskeleton]
-    часть_rev9_endoskeleton[carbon_endoskeleton]
-    часть_t_x_эндоскелет[hyperalloy_endoskeleton_tx]
     часть_t600_эндоскелет[titanium_endoskeleton]
     часть_hk_tank_башня[turret]
     часть_hk_tank_корпус[tank_body]
     часть_cameron_эндоскелет[titanium_endoskeleton_small]
+    часть_t_x_эндоскелет[hyperalloy_endoskeleton_tx]
+    часть_rev9_endoskeleton[carbon_endoskeleton]
     часть_hk_aerial_фюзеляж[fuselage]
     часть_hk_aerial_крылья[wings]
-    часть_t850_эндоскелет[hyperalloy_endoskeleton]
     часть_marcus_эндоскелет[cybernetic_endoskeleton]
+    часть_t850_эндоскелет[hyperalloy_endoskeleton]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_aluminum[Al ≥ 99.5 % (основа); …]
     material_becu[Cu основа; Be 1.90–2.1…]
@@ -54,46 +54,46 @@ graph LR
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
     material_titanium_alloy[Ti-6Al-4V (Grade 5) — …]
     material_tungsten_alloy[W-Ni-Fe (W 90-97%) — т…]
+    izdelie_kompensatory -->|материал| material_inconel_718
+    izdelie_kompensatory -->|материал| material_al_6061_t6
     izdelie_elastomernyh_dempferah -->|материал| material_silikon_40_50_shore_a
     izdelie_elastomernyh_dempferah -->|материал| material_aluminum
     izdelie_reshetchatyi_karkas -->|материал| material_al_6061_t6
     izdelie_reshetchatyi_karkas -->|материал| material_aluminum
-    izdelie_kompensatory -->|материал| material_inconel_718
-    izdelie_kompensatory -->|материал| material_al_6061_t6
-    часть_elastomernyh_dempferah_connectors -->|материал| material_becu
-    часть_elastomernyh_dempferah_mounting -->|материал| material_stal_st3
-    часть_elastomernyh_dempferah_core -->|материал| material_silikon_40_50_shore_a
-    часть_elastomernyh_dempferah_housing -->|материал| material_al_6061_t6
-    часть_reshetchatyi_karkas_housing -->|материал| material_stal_st3
-    часть_reshetchatyi_karkas_core -->|материал| material_al_6061_t6
-    часть_reshetchatyi_karkas_mounting -->|материал| material_stal_st3
-    часть_reshetchatyi_karkas_connectors -->|материал| material_al_6061_t6
-    часть_reshetchatyi_karkas_core_фиттинги -->|материал| material_al_6061_t6
-    часть_reshetchatyi_karkas_core_диафрагмы -->|материал| material_al_6061_t6
-    часть_reshetchatyi_karkas_core_стрингеры -->|материал| material_al_6061_t6
     часть_kompensatory_mounting -->|материал| material_ss_aisi_304
-    часть_kompensatory_core -->|материал| material_inconel_718
     часть_kompensatory_housing -->|материал| material_al_6061_t6
+    часть_kompensatory_core -->|материал| material_inconel_718
     часть_kompensatory_connectors -->|материал| material_stal_st3
     часть_kompensatory_core_диафрагмы -->|материал| material_inconel_718
     часть_kompensatory_core_фиттинги -->|материал| material_inconel_718
+    часть_elastomernyh_dempferah_core -->|материал| material_silikon_40_50_shore_a
+    часть_elastomernyh_dempferah_connectors -->|материал| material_becu
+    часть_elastomernyh_dempferah_mounting -->|материал| material_stal_st3
+    часть_elastomernyh_dempferah_housing -->|материал| material_al_6061_t6
+    часть_reshetchatyi_karkas_connectors -->|материал| material_al_6061_t6
+    часть_reshetchatyi_karkas_mounting -->|материал| material_stal_st3
+    часть_reshetchatyi_karkas_housing -->|материал| material_stal_st3
+    часть_reshetchatyi_karkas_core -->|материал| material_al_6061_t6
+    часть_reshetchatyi_karkas_core_фиттинги -->|материал| material_al_6061_t6
+    часть_reshetchatyi_karkas_core_диафрагмы -->|материал| material_al_6061_t6
+    часть_reshetchatyi_karkas_core_стрингеры -->|материал| material_al_6061_t6
     izdelie_SkyNet_T800 -->|материал| material_si
     izdelie_SkyNet_T800 -->|материал| material_poliimid
     izdelie_SkyNet_T800 -->|материал| material_al_6061_t6
-    izdelie_SkyNet_TX -->|материал| material_tungsten_alloy
     izdelie_SkyNet_T600 -->|материал| material_titanium_alloy
     izdelie_SkyNet_Cameron -->|материал| material_titanium_alloy
+    izdelie_SkyNet_TX -->|материал| material_tungsten_alloy
     izdelie_SkyNet_HKAerial -->|материал| material_titanium_alloy
     izdelie_SkyNet_HKAerial -->|материал| material_inconel_718
     izdelie_SkyNet_HKAerial -->|материал| material_tungsten_alloy
     часть_t800_эндоскелет_торс -->|материал| material_ti_6al_4v
-    часть_t_x_эндоскелет -->|материал| material_ti_6al_4v
     часть_t600_эндоскелет -->|материал| material_ti_6al_4v
     часть_cameron_эндоскелет -->|материал| material_ti_6al_4v
+    часть_t_x_эндоскелет -->|материал| material_ti_6al_4v
     часть_hk_aerial_фюзеляж -->|материал| material_ti_6al_4v
     часть_hk_aerial_крылья -->|материал| material_ti_6al_4v
-    часть_t850_эндоскелет -->|материал| material_ti_6al_4v
     часть_marcus_эндоскелет -->|материал| material_al_6061_t6
+    часть_t850_эндоскелет -->|материал| material_ti_6al_4v
 ```
 
 | Материал | Используется в частях |
@@ -106,7 +106,7 @@ graph LR
 | `Полидиметилсилоксан (PDMS, VMQ): основа –[Si(CH₃)₂–O]ₙ– с винильными сшивочными группами (~0.05–0.5 мол. %), наполнитель — пирогенный кремнезём SiO₂ 10–30 мас.% (типа HDK®), вулканизация пероксидная (HCR-марки) или платиновая присоединительная (RTV-2/LSR)` | 2 |
 | `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 2 |
 | `W-Ni-Fe (W 90-97%) — тяжёлый сплав для радиационной защиты` | 2 |
-| `Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)` | 1 |
 | `нержавеющая сталь AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240)` | 1 |
+| `Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)` | 1 |
 | `Si (кремний); электронный сорт ≥99.9999999% (9N) для подложек ИС, солнечный ≥99.9999% (6N), металлургический ~98–99% (Si-Fe, Si-Ca примеси)` | 1 |
 | `Ароматический полиимид PMDA-ODA (тип Kapton): повторяющееся звено C22H10N2O5 (M ≈ 382.2 г/моль) из пиромеллитового диангидрида (PMDA) и 4,4′-оксианилина (ODA); чередующиеся имидные циклы C(=O)–N–C(=O) и фениленовые/дифениловый эфирный сегменты` | 1 |

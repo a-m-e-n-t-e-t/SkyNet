@@ -1,7 +1,8 @@
 ---
+
+
+
 id: tekhnologia_galogenoaktivirovannaya_tsementatsiya
-псевдонимы: []
-канонический_id: tekhnologia_galogenoaktivirovannaya_tsementatsiya
 тип: технология
 категория: обработка
 область_применения: 
@@ -57,6 +58,17 @@ id: tekhnologia_galogenoaktivirovannaya_tsementatsiya
 
 Полное наименование (как в CSV): `галогеноактивированная цементация`
 
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | технология | — | canon |
+
+
+## Источники
+
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
+
 ## Входные ресурсы
 
 Требует уточнения.
@@ -84,7 +96,3 @@ id: tekhnologia_galogenoaktivirovannaya_tsementatsiya
 ## Альтернативные технологии
 
 (Заполняется при сравнительном анализе)
-
-## Источники
-
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

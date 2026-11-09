@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 1
+
+
+
 id: material_tio2_memristor
-псевдонимы: []
-канонический_id: material_tio2_memristor
 тип: материал
 класс: керамика
 химический_состав: 'TiO₂ (диоксид титана, рутил как равновесная фаза); мемристорная форма — бислой TiO₂ (стехиометрический, высокоомный) / TiO₂₋ₓ (дефицит по кислороду, проводящий); вакансии кислорода V_O — мобильные двухзарядные доноры; проводящая предельная фаза — Magnéli TinO₂n−1 (Ti₄O₇ … Ti₁₀O₁₉)'
@@ -55,7 +55,6 @@ id: material_tio2_memristor
   теплоёмкость_J_kgK: 690
   коэффициент_термического_расширения_1_K: 8.2e-06
   электропроводность_S_m: 100000
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_по_моосу: 6.5
@@ -97,11 +96,28 @@ id: material_tio2_memristor
 дата_создания: 2026-11-08
 дата_обновления: 2026-11-08
 ---
-# Материал: Диоксид титана мемристорный (TiO₂/TiO₂₋ₓ, рутил)
-
 ## Описание
 
 Диоксид титана в мемристорном применении — бислой рутил-структурного TiO₂ толщиной 50 нм: высокоомный стехиометрический слой плюс проводящий дефицитный TiO₂₋ₓ, заключённые между Ti (верхний, 5 нм — источник вакансий) и Pt (нижний, 5 нм) электродами. Именно на этой структуре HP Labs доказал существование мемристора — четвёртого пассивного элемента электрических цепей, теоретически предсказанного Леоном Чуа в 1971 (Strukov, Snider, Stewart, Williams, Nature 453, 2008, «The missing memristor found», >15 000 цитирований). Физика переключения: вакансии кислорода V_O⁺⁺ в рутиле — мобильные двухзарядные доноры; положительное напряжение на Ti дрейфует их в стехиометрический слой, сдвигая границу раздела TiO₂/TiO₂₋ₓ (низкое сопротивление), отрицательное возвращает (высокое). Рутил P4₂/mnm — равновесная фаза TiO₂: анатаз и брукит метастабильны и необратимо переходят в рутил при нагреве. В репозитории материал — переключающий слой кроссбара izdelie_memristornye_matritsy (доля_массы 0.28; сама часть crossbar описана на HfO₂-подобной 1T1R архитектуре — связка отражает родительскую BOM).
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- [Strukov, Snider, Stewart, Williams: The missing memristor found — Nature 453, 42–44 (2008) — оригинальное устройство TiO₂/TiO₂₋ₓ 50 нм между Ti/Pt электродами, вакансии как мобильные доноры](https://www.nature.com/articles/nature06932) (обращение 2026-11-08)
+- [Wikipedia: Memristor — конструкция HP-устройства (50 нм TiO₂, электроды Ti 5 нм / Pt 5 нм, два слоя TiO₂/TiO₂₋ₓ)](https://en.wikipedia.org/wiki/Memristor) (обращение 2026-11-08)
+- [Ekanayake et al.: Recent advances in synthesis and application of Magnéli phase titanium oxides — RSC Nanoscale 2025 (Ti₄O₇ — самая изученная фаза, σ ~1000 См/см; TiO₂₋ₓ и Magnéli — проводящие формы)](https://pubs.rsc.org/sc/article/16/7/2980/869676/Recent-advances-in-synthesis-and-application-of) (обращение 2026-11-08)
+- [Wachtman Jr., Marzullo, Teft: Elastic Constants of Rutile (TiO₂) — NBS 1962 / PMC5324963 (C11 270, C12 196, C13 147, C33 478, C44 124, C66 164 ГПа; Y 270–284, K 205–208, G 131–138)](https://pmc.ncbi.nlm.nih.gov/articles/PMC5324963) (обращение 2026-11-08)
+- [AZoM: Titanium Dioxide — Titania (TiO₂) — свойства (k 4.8–11.8 Вт/(м·К), формы anatase/rutile)](https://www.azom.com/properties.aspx?ArticleID=1179) (снипет web_search 2026-11-08)
+- [TiO₂ (Rutile) datasheet: ρ 4.26 г/см³, Tm 1840 °C, k 12.5 (‖c)/8.7 (⊥c), КТР 9.2/7.1×10⁻⁶ (снипет web_search 2026-11-08)]
+- [Pickett, M.: The Materials Science of Titanium Dioxide Memristors — диссертация 2010 (Ti₄O₇ как источник/сток вакансий, доноры в TiO₂)](https://www.google.com/goto?url=CAESfAHEIkXXi4OEoZOePFxvWkMn84QleUc9iyJ-AB_dCFNYgF6_vsaQv0jqaIvGh4dXUZ9o-38jki0D7l0myZc14R6MBgiY-Blk3HzN4w9sxW1kcpYWesl8DV0Ukd-XwiUUr5kJG3xax8yFuLVXfkoil7Otl1Km_uVfrcjwvew) (снипет web_search 2026-11-08)
+- [Baranowski et al.: Charge Transport inside TiO₂ Memristors Prepared via FEBID 2022 (Pt/TiO₂/Pt — вакансии вводятся для формирования мемристора)](https://www.google.com/goto?url=CAESbgHEIkXXVwJAJgnRRh1tozlU-D_KiCvfW0NdBH1nRnZrL_vLyXoI4Y5cc89eHGFnindagXLh4zqoJVj5_c_Z-XeuhhE_Shfq2UuIuU78Er99hp0FcaWLHLAVKWWFBIwbZqhqXiRfAB2HQrTfkhdE) (снипет web_search 2026-11-08)
+- [Alsaiari et al.: Growth of rutile TiO₂ thin films on Pt/TiO₂/SiO₂/Si (SSTOP) 2020 — фазовый переход металлический Magnéli ↔ дефектная TiO₂₋ₓ в переключении](https://eprints.soton.ac.uk/id/eprint/440666/1/Final_Version_Manuscript.pdf) (обращение 2026-11-08)
 
 ## Химический состав и дефектная структура
 
@@ -145,15 +161,3 @@ id: material_tio2_memristor
 ## Аналоги и заменители
 
 Когда нужен тот же биполярный непрерывный механизм с лучшей стойкостью: HfO₂/HfO₂₋ₓ (современный индустриальный стандарт RRAM — CMOS-совместим, тоньше, выше endurance; именно его описывает файл часть crossbar), Ta₂O₅₋ₓ (стабильность), Al₂O₃₋ₓ (формирующие слои). Для электрохимических электродов вместо Ti₄O₇: платино-титановые композиты или стеклоуглерод — дороже либо менее стойки. Для фотокатализа рутил заменяется на анатаз (выше активность) или легированный N/Si-TiO₂ для видимого диапазона.
-
-## Источники
-
-- [Strukov, Snider, Stewart, Williams: The missing memristor found — Nature 453, 42–44 (2008) — оригинальное устройство TiO₂/TiO₂₋ₓ 50 нм между Ti/Pt электродами, вакансии как мобильные доноры](https://www.nature.com/articles/nature06932) (обращение 2026-11-08)
-- [Wikipedia: Memristor — конструкция HP-устройства (50 нм TiO₂, электроды Ti 5 нм / Pt 5 нм, два слоя TiO₂/TiO₂₋ₓ)](https://en.wikipedia.org/wiki/Memristor) (обращение 2026-11-08)
-- [Ekanayake et al.: Recent advances in synthesis and application of Magnéli phase titanium oxides — RSC Nanoscale 2025 (Ti₄O₇ — самая изученная фаза, σ ~1000 См/см; TiO₂₋ₓ и Magnéli — проводящие формы)](https://pubs.rsc.org/sc/article/16/7/2980/869676/Recent-advances-in-synthesis-and-application-of) (обращение 2026-11-08)
-- [Wachtman Jr., Marzullo, Teft: Elastic Constants of Rutile (TiO₂) — NBS 1962 / PMC5324963 (C11 270, C12 196, C13 147, C33 478, C44 124, C66 164 ГПа; Y 270–284, K 205–208, G 131–138)](https://pmc.ncbi.nlm.nih.gov/articles/PMC5324963) (обращение 2026-11-08)
-- [AZoM: Titanium Dioxide — Titania (TiO₂) — свойства (k 4.8–11.8 Вт/(м·К), формы anatase/rutile)](https://www.azom.com/properties.aspx?ArticleID=1179) (снипет web_search 2026-11-08)
-- [TiO₂ (Rutile) datasheet: ρ 4.26 г/см³, Tm 1840 °C, k 12.5 (‖c)/8.7 (⊥c), КТР 9.2/7.1×10⁻⁶ (снипет web_search 2026-11-08)]
-- [Pickett, M.: The Materials Science of Titanium Dioxide Memristors — диссертация 2010 (Ti₄O₇ как источник/сток вакансий, доноры в TiO₂)](https://www.google.com/goto?url=CAESfAHEIkXXi4OEoZOePFxvWkMn84QleUc9iyJ-AB_dCFNYgF6_vsaQv0jqaIvGh4dXUZ9o-38jki0D7l0myZc14R6MBgiY-Blk3HzN4w9sxW1kcpYWesl8DV0Ukd-XwiUUr5kJG3xax8yFuLVXfkoil7Otl1Km_uVfrcjwvew) (снипет web_search 2026-11-08)
-- [Baranowski et al.: Charge Transport inside TiO₂ Memristors Prepared via FEBID 2022 (Pt/TiO₂/Pt — вакансии вводятся для формирования мемристора)](https://www.google.com/goto?url=CAESbgHEIkXXVwJAJgnRRh1tozlU-D_KiCvfW0NdBH1nRnZrL_vLyXoI4Y5cc89eHGFnindagXLh4zqoJVj5_c_Z-XeuhhE_Shfq2UuIuU78Er99hp0FcaWLHLAVKWWFBIwbZqhqXiRfAB2HQrTfkhdE) (снипет web_search 2026-11-08)
-- [Alsaiari et al.: Growth of rutile TiO₂ thin films on Pt/TiO₂/SiO₂/Si (SSTOP) 2020 — фазовый переход металлический Magnéli ↔ дефектная TiO₂₋ₓ в переключении](https://eprints.soton.ac.uk/id/eprint/440666/1/Final_Version_Manuscript.pdf) (обращение 2026-11-08)

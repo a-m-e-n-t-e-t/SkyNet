@@ -1845,6 +1845,12 @@
       "path": "scripts/recursive_decompose.py"
     },
     {
+      "id": "script:render_body.py",
+      "type": "script",
+      "label": "render_body.py",
+      "path": "scripts/render_body.py"
+    },
+    {
       "id": "script:validate_decomposition.py",
       "type": "script",
       "label": "validate_decomposition.py",
@@ -4505,6 +4511,18 @@
       "meta": {}
     },
     {
+      "src": "F28",
+      "dst": "script:render_body.py",
+      "type": "validated_by",
+      "meta": {}
+    },
+    {
+      "src": "script:render_body.py",
+      "dst": "F28",
+      "type": "triggers_metric",
+      "meta": {}
+    },
+    {
       "src": "F13",
       "dst": "script:validate_decomposition.py",
       "type": "validated_by",
@@ -5196,13 +5214,13 @@
     }
   ],
   "stats": {
-    "nodes": 331,
-    "edges": 534,
+    "nodes": 332,
+    "edges": 536,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,
       "metric": 217,
-      "script": 27,
+      "script": 28,
       "spec_section": 58,
       "stub": 13
     }

@@ -48,6 +48,17 @@ graph LR
     F27 --> script_validate_decomposition_py
     script_web_verify_py[web_verify.py]
     F27 --> script_web_verify_py
+    F28([F28])
+    script__metrics_py[_metrics.py]
+    F28 --> script__metrics_py
+    script_migrate_aliases_py[migrate_aliases.py]
+    F28 --> script_migrate_aliases_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F28 --> script_pre-commit-hook_py
+    script_render_body_py[render_body.py]
+    F28 --> script_render_body_py
+    script_validate_decomposition_py[validate_decomposition.py]
+    F28 --> script_validate_decomposition_py
     F31([F31])
     script__metrics_py[_metrics.py]
     F31 --> script__metrics_py
@@ -88,15 +99,6 @@ graph LR
     F13 --> script_pre-commit-hook_py
     script_validate_decomposition_py[validate_decomposition.py]
     F13 --> script_validate_decomposition_py
-    F28([F28])
-    script__metrics_py[_metrics.py]
-    F28 --> script__metrics_py
-    script_migrate_aliases_py[migrate_aliases.py]
-    F28 --> script_migrate_aliases_py
-    script_pre-commit-hook_py[pre-commit-hook.py]
-    F28 --> script_pre-commit-hook_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F28 --> script_validate_decomposition_py
     F34([F34])
     script__metrics_py[_metrics.py]
     F34 --> script__metrics_py
@@ -198,7 +200,7 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F25` | _metrics.py, pre-commit-hook.py, real_decomposition.py, validate_decomposition.py, web_verify.py | — |
 | `F26` | pre-commit-hook.py, validate_decomposition.py | — |
 | `F27` | _metrics.py, migrate_aliases.py, pre-commit-hook.py, validate_decomposition.py, web_verify.py | — |
-| `F28` | _metrics.py, migrate_aliases.py, pre-commit-hook.py, validate_decomposition.py | — |
+| `F28` | _metrics.py, migrate_aliases.py, pre-commit-hook.py, render_body.py, validate_decomposition.py | — |
 | `F29` | _metrics.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F3` | _metrics.py, classify_subsystem.py, pre-commit-hook.py | fc_изделие_подсистема, fc_модель_тип |
 | `F30` | pre-commit-hook.py, validate_decomposition.py | — |

@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 3
+
+
+
 id: material_w-ni-fe
-псевдонимы: []
-канонический_id: material_w-ni-fe
 тип: материал
 класс: металл
 химический_состав: 'Вольфрамовый тяжёлый сплав (WHA) класса 1: W ~90 % (основа), Ni ~6–7 %, Fe ~3–4 % (номинал 90W-6Ni-4Fe; вендорские составы 90W-7Ni-3Fe), примеси O ≤0.01 % (ASTM B777 Grade 1 / MIL-T-21014 Class 1, Ni-Fe связка)'
@@ -64,7 +64,6 @@ id: material_w-ni-fe
   теплоёмкость_J_kgK: 134
   коэффициент_термического_расширения_1_K: 4.8e-06
   электропроводность_S_m: 5.8e6
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -103,8 +102,6 @@ id: material_w-ni-fe
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: W-Ni-Fe
-
 ## Описание
 
 W-Ni-Fe (90-6-4) — вольфрамовый тяжёлый сплав (WHA, tungsten heavy alloy) класса 1: ~90 % вольфрама в пластичной никель-железной связке. Самый распространённый тип WHA. Создан как замена чистому вольфраму: сохраняет его плотность (17.0 против 19.25 г/см³) и рентгеновское экранирование, но обрабатывается обычным резанием, дешевле и пластичнее (Midwest Tungsten). Микроструктура после жидкофазного спекания — округлые ОЦК W-зёрна (20–60 мкм) в ГЦК γ-(Ni,Fe,W) матрице.
@@ -121,6 +118,22 @@ W-Ni-Fe (90-6-4) — вольфрамовый тяжёлый сплав (WHA, tu
 
 **Класс:** металл (вольфрамовый тяжёлый сплав, двухфазный)
 **Кристаллическая структура:** двухфазный жидкофазно спечённый поликристалл (В-зёрна ОЦК + γ-(Ni,Fe,W) ГЦК связка)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Midwest Tungsten Service — Tungsten Heavy Alloy (W Ni Fe Cu), полная таблица свойств MT-17F/175/18F/185: https://www.tungsten.com/material-info/tungsten-heavy-alloy-w-ni-fe-cu
+- Tungsten Parts Wyoming — Technical Data (ASTM B777 Classes 1–4: ρ 16.85–17.30, UTS 758, YS 517 МПа; чистый W: Tпл 3422 °C, c_p 134, λ 173): https://tungstenparts.com/resources/technical-data
+- Federal Carbide — Tungsten Heavy Alloy Grade Chart (HA170/175/180/185, MIL-T-21014 Class 1–4): https://federalcarbide.com/tungsten-heavy-alloy-grade-chart-copy-2
+- PatSnap Eureka — Tungsten Heavy Alloy: Composition, Processing (ЖФС 1460–1520 °C, Mo/Cr-вариации, KIC 25–35): https://eureka.patsnap.com/materials/tungsten-heavy-alloy
+- Admat Inc. — Tungsten Heavy Alloys (классы ASTM B-777/AMS-T-21014/MIL-T-21014/AMS 7725): https://www.admatinc.com/products/tungsten/heavy-alloy
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -186,12 +199,3 @@ W-Ni-Fe (90-6-4) — вольфрамовый тяжёлый сплав (WHA, tu
 - **Чистый вольфрам (W)** — ρ 19.25 г/см³, Tпл 3422 °C, λ 173 Вт/(м·К), но хрупок и труден в обработке;
 - **Обеднённый уран (DU)** — сопоставимая плотность (19.05 г/см³) и самообострение пенетраторов, но радиотоксичность ограничивает применение;
 - **Свинец** — дешевле и пластичнее для радиационной защиты, но в 2.3 раза менее плотный и токсичный.
-
-## Источники
-
-- Midwest Tungsten Service — Tungsten Heavy Alloy (W Ni Fe Cu), полная таблица свойств MT-17F/175/18F/185: https://www.tungsten.com/material-info/tungsten-heavy-alloy-w-ni-fe-cu
-- Tungsten Parts Wyoming — Technical Data (ASTM B777 Classes 1–4: ρ 16.85–17.30, UTS 758, YS 517 МПа; чистый W: Tпл 3422 °C, c_p 134, λ 173): https://tungstenparts.com/resources/technical-data
-- Federal Carbide — Tungsten Heavy Alloy Grade Chart (HA170/175/180/185, MIL-T-21014 Class 1–4): https://federalcarbide.com/tungsten-heavy-alloy-grade-chart-copy-2
-- PatSnap Eureka — Tungsten Heavy Alloy: Composition, Processing (ЖФС 1460–1520 °C, Mo/Cr-вариации, KIC 25–35): https://eureka.patsnap.com/materials/tungsten-heavy-alloy
-- Admat Inc. — Tungsten Heavy Alloys (классы ASTM B-777/AMS-T-21014/MIL-T-21014/AMS 7725): https://www.admatinc.com/products/tungsten/heavy-alloy
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

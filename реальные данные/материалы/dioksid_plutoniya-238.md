@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_dioksid_plutoniya-238
-псевдонимы: []
-канонический_id: material_dioksid_plutoniya-238
 тип: материал
 класс: керамика
 химический_состав: 'PuO2 на основе изотопа Pu-238 (диоксид плутония-238): для RTG-топлива изотопная доля Pu-238 > 80 % (остальное Pu-239/Pu-240 и дочерние продукты распада, прежде всего U-234); стехиометрия O/Pu ≈ 2.00'
@@ -54,7 +54,6 @@ id: material_dioksid_plutoniya-238
   теплоёмкость_J_kgK: 244
   коэффициент_термического_расширения_1_K: 7.8e-06
   электропроводность_S_m: null
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -86,11 +85,31 @@ id: material_dioksid_plutoniya-238
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: диоксид плутония-238 (PuO2)
-
 ## Описание
 
 Диоксид плутония-238 — радиоактивная актиноидная керамика на основе изотопа Pu-238 (период полураспада 87.7 года), стандартное топливо радиоизотопных термоэлектрических генераторов (РИТЭГ/RTG) и радиоизотопных нагревателей космических аппаратов. Кристаллическая решётка — кубическая типа флюорита (пространственная группа Fm-3m, параметр решётки a = 539.5 пм); цвет от тёмно-жёлтого до оливково-зелёного в зависимости от способа получения и дисперсности. Уникальная особенность материала — собственное тепловыделение за счёт α-распада: 0.567 Вт/г чистого Pu-238, что обеспечивает плотность тепловыделения, недостижимую для любой химической реакции, при исключительно низких уровнях γ- и нейтронного излучения. PuO2 практически нерастворим в воде и химически стабилен, что определяет его выбор как безопасной (недиспергируемой) формы топливного элемента. Тёмно-жёлтая гранула PuO2 светится раскалённым за счёт собственного распада.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Wikipedia — Plutonium(IV) oxide (плотность 11.5 г/см³, T_пл 2744 °C, флюорит Fm-3m a = 539.5 пм, низкая растворимость): https://en.wikipedia.org/wiki/Plutonium(IV)_oxide
+- NASA — What is Plutonium-238? (факт-лист RPS): https://science.nasa.gov/planetary-science/programs/radioisotope-power-systems/about-plutonium-238/
+- DOE/NEAC — Assessment of Plutonium-238 Production Alternatives (2008): T½ 87.7 года, ~0.57 Вт/г, изотопная чистота > 80 %: https://www.energy.gov/sites/prod/files/NEGTN0NEAC_PU-238_042108.pdf
+- First-principles расчёты теплопроводности UO2/PuO2 (UO2 11.17 Вт/(м·К) при 300 K; PuO2 ~5→2 Вт/(м·К) при 600–1300 K): https://www.researchgate.net/publication/270825514_Thermal_conductivity_of_UO2_and_PuO2_from_first-principles
+- IPEN — термическое расширение PuO2 7.8 мкм/м·°C: https://repositorio.ipen.br/bitstreams/16d99eea-17ea-450a-92a7-5072b20ce9d4/download
+- Учебное пособие по ядерному топливу — T_пл(PuO2) 2428 ± 25 °C: https://studfile.net/preview/424148/page:4
+- chemister.ru — удельная тепловая мощность Pu-238 0.567 Вт/г: https://chemister.ru/Databases/Chemdatabase/properties.php?dbid=1&id=304
+- ASTM C697 — анализ ядерной чистоты порошков и гранул PuO2: https://store.astm.org/c0697-16.html
+- Спецификация топлива Pu-238 программы Cassini (DOE/OSTI 10123416): https://www.osti.gov/servlets/purl/10123416
+- SNAP-27 (MASIER, OSTI 4758004) — 1480 Вт на микросферном Pu-238O2: https://www.osti.gov/servlets/purl/4758004
+- LWRHU — 1 Вт на гранулу Pu-238O2 (OSTI 5063463): https://www.osti.gov/servlets/purl/5063463
+- LANL/OSTI 1832379 — Am-241 как альтернативное топливо GPHS: https://www.osti.gov/servlets/purl/1832379
 
 ## Химический состав
 
@@ -136,18 +155,3 @@ Pu-238 нарабатывается облучением Np-237 в реакто�
 ## Аналоги и заменители
 
 Америций-241 рассматривается как альтернативное RTG-топливо при дефиците Pu-238 (LANL/OSTI 1832379: моделирование Am-241 в GPHS); Sr-90 — историческое топливо наземных РИТЭГ. Среди неальфа-излучающих замен прямого аналога нет: комбинация 0.567 Вт/г, 87.7 года и низкой радиации уникальна.
-
-## Источники
-
-- Wikipedia — Plutonium(IV) oxide (плотность 11.5 г/см³, T_пл 2744 °C, флюорит Fm-3m a = 539.5 пм, низкая растворимость): https://en.wikipedia.org/wiki/Plutonium(IV)_oxide
-- NASA — What is Plutonium-238? (факт-лист RPS): https://science.nasa.gov/planetary-science/programs/radioisotope-power-systems/about-plutonium-238/
-- DOE/NEAC — Assessment of Plutonium-238 Production Alternatives (2008): T½ 87.7 года, ~0.57 Вт/г, изотопная чистота > 80 %: https://www.energy.gov/sites/prod/files/NEGTN0NEAC_PU-238_042108.pdf
-- First-principles расчёты теплопроводности UO2/PuO2 (UO2 11.17 Вт/(м·К) при 300 K; PuO2 ~5→2 Вт/(м·К) при 600–1300 K): https://www.researchgate.net/publication/270825514_Thermal_conductivity_of_UO2_and_PuO2_from_first-principles
-- IPEN — термическое расширение PuO2 7.8 мкм/м·°C: https://repositorio.ipen.br/bitstreams/16d99eea-17ea-450a-92a7-5072b20ce9d4/download
-- Учебное пособие по ядерному топливу — T_пл(PuO2) 2428 ± 25 °C: https://studfile.net/preview/424148/page:4
-- chemister.ru — удельная тепловая мощность Pu-238 0.567 Вт/г: https://chemister.ru/Databases/Chemdatabase/properties.php?dbid=1&id=304
-- ASTM C697 — анализ ядерной чистоты порошков и гранул PuO2: https://store.astm.org/c0697-16.html
-- Спецификация топлива Pu-238 программы Cassini (DOE/OSTI 10123416): https://www.osti.gov/servlets/purl/10123416
-- SNAP-27 (MASIER, OSTI 4758004) — 1480 Вт на микросферном Pu-238O2: https://www.osti.gov/servlets/purl/4758004
-- LWRHU — 1 Вт на гранулу Pu-238O2 (OSTI 5063463): https://www.osti.gov/servlets/purl/5063463
-- LANL/OSTI 1832379 — Am-241 как альтернативное топливо GPHS: https://www.osti.gov/servlets/purl/1832379

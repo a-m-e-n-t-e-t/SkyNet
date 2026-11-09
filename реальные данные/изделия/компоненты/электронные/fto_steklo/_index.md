@@ -28,19 +28,7 @@ id: izdelie_fto_steklo
 ии_перепроектирован:
   статус: false
   верификация: []
-основные:
-  плотность_kg_m3: null
-  прочность_МПа: {min: null, max: null, nominal: null}
-  предел_текучести_МПа: {min: null, max: null, nominal: null}
-  модуль_упругости_ГПа: null
-  коэффициент_Пуассона: null
-  ударная_вязкость_Дж_см2: null
-  усталостная_прочность_МПа: {min: null, max: null, nominal: null}
-  температура_плавления_C: null
-  теплопроводность_W_mK: null
-  теплоёмкость_J_kgK: null
-  коэффициент_термического_расширения_1_K: null
-  электропроводность_S_m: null
+canonical_inherits: material_sio2_amorphous
 наследуемые: {}
 дополнительные:
   цена_usd_kg: null

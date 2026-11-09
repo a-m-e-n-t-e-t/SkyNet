@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_oksid_alyuminiya
-псевдонимы: []
-канонический_id: material_oksid_alyuminiya
 тип: материал
 класс: керамика
 химический_состав: 'Оксид алюминия Al₂O₃ (глинозём): 52.9 масс.% Al / 47.1 масс.% O; технические марки 96–99.9% Al₂O₃ (остальное SiO₂, MgO, CaO — спекающие добавки); высокочистый корунд ≥99.99%'
@@ -60,7 +60,6 @@ id: material_oksid_alyuminiya
   теплоёмкость_J_kgK: 880
   коэффициент_термического_расширения_1_K: 8.0e-6
   электропроводность_S_m: 1.0e-12
-наследуемые: {}
 дополнительные:
   цена_usd_kg: 1.5
   твердость_vickers_HV: 1700
@@ -94,13 +93,23 @@ id: material_oksid_alyuminiya
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Оксид алюминия (Al₂O₃)
-
 ## Описание
 
 Оксид алюминия (глинозём, Al₂O₃) — самая распространённая техническая оксидная керамика: «самый прочный и жёсткий среди оксидных керамик» (Accuratus). Класс в файле исправлен: в заглушке ошибочно стоял `металл` — реальный класс **керамика (оксидная)**, поэтому металлические пороги P022.5 (предел текучести ≥800 МПа, модуль ≥100 ГПа по текучести) к нему неприменимы; разрушение хрупкое, предел текучести не определяется (обоснованный null).
 
 Стабильная фаза — **α-Al₂O₃ (корунд)**: тригональная решётка, пространственная группа R-3c (№167, Пирсон hR30), ГПУ-упаковка кислорода с заполнением 2/3 октаэдрических позиций Al. Метастабильные переходные фазы (γ, δ, θ, κ) при обжиге >1100–1200 °C необратимо превращаются в α; γ-Al₂O₃ с развитой поверхностью используется как катализаторный носитель.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
+- Веб-верификация (issue #662): см. «Источники (F28)»
 
 ## Химический состав
 
@@ -157,22 +166,3 @@ _Обратные ссылки ещё не проставлены._ (типов�
 - ZrO₂ (Y-TZP): выше вязкость (8–12 МПа·√м) и термоударостойкость, ниже k.
 - SiC/Si₃N₄: выше прочность и износостойкость, электропроводный/дороже.
 - Сапфир: когда нужна прозрачность или чистота поверхности без пор.
-
-## Источники (F28)
-
-1. Accuratus — Aluminum Oxide, Al₂O₃ Material Properties (ρ 3.89 г/см³, Tm 2054 °C, E 370 ГПа, ν 0.22, CTE 8.0×10⁻⁶, k 26.9–30): https://accuratus.com/alumox.html
-2. Morgan Technical Ceramics — AL995 datasheet (σизг 310 МПа, вакуум-плотный): https://www.morgantechnicalceramics.com/media/ee5julaa/al995-version-2.pdf
-3. Microcertec — Alumina 99.5% (k 26.8–29.3 Вт/(м·К)): https://www.microcertec.com/materiaux.php?ss_rub=3&lng=en
-4. Stanford Advanced Materials — Alumina grades (99.5%: σизг 350–400 МПа, HV 1600–1800): https://www.samaterials.com/content/alumina-ceramic-common-types-and-specifications.html
-5. Wikipedia — Aluminium oxide (корунд: тригональная, R-3c №167): https://en.wikipedia.org/wiki/Aluminium_oxide
-6. Springer Materials — α-Al₂O₃ corundum (Pearson hR30): https://materials.springer.com/isp/crystallographic/docs/sd_1221826
-7. Stuart 2021, MDPI Energies — γ-Al₂O₃ microstructure (метастабильность, носители катализаторов): https://www.mdpi.com/1996-1073/14/20/6472
-8. AZoM — Alumina 99.5% properties: https://www.azom.com/article.aspx?ArticleID=3269
-9. NIST Ceramics Data Portal — Alumina property summary: https://srdata.nist.gov/CeramicDataPortal/Pds/Scdaos
-10. Banlanchem — Alumina Market Price Outlook 2025 ($300–380/т FOB): https://banlanchem.com/news/alumina-market-global-price
-11. Ferroceramic — Alumina 99.5% (чистоты 85–99.9%): https://ferroceramic.com/alumina-99-5
-
-## Источники
-
-- CSV: `начальные данные_final.csv` (пользовательский ввод)
-- Веб-верификация (issue #662): см. «Источники (F28)»

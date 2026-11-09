@@ -392,6 +392,27 @@ def main():
     except Exception as e:
         warnings.append(f"Генератор графов не запустился: {e}")
 
+    # 5b. v9.62: Рендеринг body-секций из frontmatter (anti-duplication)
+    #     Перегенерирует ## Технические характеристики, ## Используемые материалы,
+    #     ## Используемые технологии, ## Декомпозиция из frontmatter.
+    #     Уникальные секции (## Описание, ## Принцип работы, ## Источники) не трогаются.
+    try:
+        import subprocess
+        result = subprocess.run(
+            ['python3', os.path.join(SKYNET_REPO, 'scripts', 'render_body.py'), '--all'],
+            capture_output=True, text=True, cwd=SKYNET_REPO
+        )
+        if result.returncode != 0:
+            warnings.append(f"Body renderer не запустился: {result.stderr[:200]}")
+        else:
+            # git add обновлённых .md файлов
+            subprocess.run(
+                ['git', 'add', 'реальные данные/', 'работа и и/'],
+                cwd=SKYNET_REPO, capture_output=True
+            )
+    except Exception as e:
+        warnings.append(f"Body renderer не запустился: {e}")
+
     # v9.35: integrity-чек — проверка синхронизации _metrics.py ↔ _dedup_keys.js
     # Если в _metrics.py добавили новую named-метрику (F-xxx) но забыли
     # обновить regex в _dedup_keys.js — выдаём warning.

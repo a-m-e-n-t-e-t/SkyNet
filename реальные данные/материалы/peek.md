@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_peek
-псевдонимы: []
-канонический_id: material_peek
 тип: материал
 класс: полимер
 химический_состав: 'PEEK — полиэфирэфиркетон (PAEK): повторяющееся звено (C19H12O3)n, M = 288.3 г/моль; синтез из 4,4′-дифторбензофенона и динатриевой соли гидрохинона в дифенилсульфоне при ~300 °C'
@@ -91,7 +91,6 @@ id: material_peek
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: 4.5e-5
   электропроводность_S_m: null
-наследуемые: {}
 дополнительные:
   цена_usd_kg: 75
   твердость_vickers_HV: null
@@ -110,9 +109,6 @@ id: material_peek
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-
-# Материал: PEEK (полиэфирэфиркетон, Victrex)
-
 ## Описание
 
 PEEK — полукристаллический термопласт семейства полиарилэфиркетонов (PAEK), эталонный инженерный полимер: сохраняет механику и химстойкость до 250 °C непрерывно при Tm 343 °C и Tg 143 °C. Плотность 1320 кг/м³, E 3.6 ГПа, σраст 90–100 МПа, ударная вязкость по Карри (надрез) 55 кДж/м². Стойкий к органике и водным средам, биосовместимый, горючесть UL 94 V-0 (электротехнические марки). Заменяет металлы (сталь, алюминиевую бронзу) в узлах трения и коррозионных средах.
@@ -121,6 +117,19 @@ PEEK — полукристаллический термопласт семей�
 
 **Класс:** полимер (PAEK)
 **Вариант структуры:** полукристаллический термопласт (~30–35 % кристалличности; заглушка ошибочно считала материал аморфным)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- https://en.wikipedia.org/wiki/Polyether_ether_ketone (основные свойства, синтез)
+- https://www.victrex.com/en/products/polymers/peek-polymers/450g (450G)
+- https://www.peekchina.com/blog/peek-price-per-kg.html (цены 2025)
 
 ## Химический состав
 
@@ -175,18 +184,3 @@ _Обратные ссылки проставляются через graphs/ (с
 - PEKK, PEK, PPS, PBI (выше температура), PEI (Ultem, дешевле, ниже Tm).
 - Полиимид (Kapton/Vespel) — выше температурный потолок, дороже.
 - Наполненный PEEK CF30/GF30 — когда нужна жёсткость/размеростабильность.
-
-## Источники (F28)
-
-- Wikipedia — Polyether ether ketone (ρ 1.32; E 3.6 ГПа; σt 90–100 МПа; ε 50%; надрез 55 кДж/м²; Tm 343 °C; Tg 143 °C; k 0.25 Вт/(м·К); Tраб 250 °C; водопоглощение 0.1 %; синтез PAEK; химстойкость; полукристалличность): https://en.wikipedia.org/wiki/Polyether_ether_ketone
-- Victrex PEEK 450G — product page (σтек/модуль 450G, ISO-методы): https://www.victrex.com/en/products/polymers/peek-polymers/450g
-- Victrex 450G TDS (yield 97–98 МПа; CTE вдоль потока ниже Tg 45 ppm/K, ISO 11359): https://www.victrex.com/-/media/downloads/datasheets/victrex_tds_450g.pdf
-- Victrex 450GL20 datasheet page (низкий ТКЛР наполненных марок): https://www.victrex.com/en/downloads/datasheets/victrex-peek-450gl20
-- Victrex — A closer PEEK at PEEK (Tm 343 °C, Tg 143 °C): https://www.victrex.com/en/blog/2017/a-closer-peek-at-peek
-- PEEK Price Guide 2025 (гранулы 40–90 USD/кг; GF30 40–80; CF30 60–150): https://www.peekchina.com/blog/peek-price-per-kg.html
-
-## Источники
-
-- https://en.wikipedia.org/wiki/Polyether_ether_ketone (основные свойства, синтез)
-- https://www.victrex.com/en/products/polymers/peek-polymers/450g (450G)
-- https://www.peekchina.com/blog/peek-price-per-kg.html (цены 2025)

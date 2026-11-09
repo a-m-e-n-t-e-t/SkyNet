@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 1
+
+
+
 id: material_latun_c36000
-псевдонимы: []
-канонический_id: material_latun_c36000
 тип: материал
 класс: металл
 химический_состав: 'Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)'
@@ -57,7 +57,6 @@ id: material_latun_c36000
   теплоёмкость_J_kgK: 380
   коэффициент_термического_расширения_1_K: 20.5e-6
   электропроводность_S_m: 15.0e6
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -92,11 +91,28 @@ id: material_latun_c36000
 дата_создания: 2026-11-04
 дата_обновления: 2026-11-06
 ---
-# Материал: Латунь C36000 (CuZn39Pb3, CW614N)
-
 ## Описание
 
 Свинецсодержащая двухфазная (α+β) латунь свободной резки — самый распространённый сплав для автоматной обработки токарных деталей. По данным поставщиков (Source1 Metals, ASTM B16): плотность ≈ 8.5 г/см³, состав ~61.5% Cu + 35.5% Zn + 3% Pb + 0.35% Fe. Европейский аналог CuZn39Pb3 (CW614N, EN 12164) имеет предел прочности 360–500 МПа в зависимости от степени холодной деформации (Scribd/Wieland datasheet CW614N). Основное применение в разъёмной технике: корпуса (shell), муфты (coupling nut) и резьбовые узлы цилиндрических разъёмов M12 (IEC 61076-2-101); для защиты от коррозии и декоративного покрытия корпуса никелируются.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- https://www.source1metals.com/metals/brass/c360-brass (состав 61.5% Cu / 35.5% Zn / 3% Pb, ASTM B16, плотность ~8.5 г/см³)
+- https://www.schreier-metall.de/en/product-range/brass-special-brass/cuzn39pb3 (CuZn39Pb3 — эталон обрабатываемости резанием)
+- https://www.scribd.com/document/464299233/BB-CW614N (CW614N: прочность 360–500 МПа, Pb 2.5–3.5%)
+- https://webstore.iec.ch/en/publication/4418 (IEC 61076-2-101 — стандарт M12 разъёмов)
+- Farmer's Copper — C36000 Free Machining Brass (machinability 100, сортамент прутка): https://www.farmerscopper.com/free-machining-brass-c36000.html
+- Concast — C69300 Lead-Free Brass (machinability rating 95): https://www.concast.com/c69300.php
+- Linsy Copper — Lead-Free Brass Grades (C36000 100% благодаря Pb 2.5–3.7%): https://www.linsycopper.com/blog/lead-free-brass-guide
+- Wieland Chase — ECO BRASS lead-free advantages: https://wieland-chase.com/protecting-americans-lead-free-drinking-water
+- Diversified Bronze — C36000 Free-Cutting Brass (применения на автоматах): https://diversifiedbronze.com/resources/bronze-alloys/c36000-free-cutting-brass
 
 ## Химический состав
 
@@ -129,18 +145,6 @@ Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5%, Fe ≤ 0.35% (UNS C3
 5. **Морская свинцованная C48500 (naval brass)** — олово ~0.6–1% подавляет dezincification в морской воде.
 
 Полуфабрикаты: пруток ASTM B16 (круг 3/32"–11¾", квадрат до 4"), бесшовная труба ASTM B135, лист/полоса для штамповки; для сложных корпусных геометрий — литейная латунь C83600 (85-5-5-5).
-
-## Источники
-
-- https://www.source1metals.com/metals/brass/c360-brass (состав 61.5% Cu / 35.5% Zn / 3% Pb, ASTM B16, плотность ~8.5 г/см³)
-- https://www.schreier-metall.de/en/product-range/brass-special-brass/cuzn39pb3 (CuZn39Pb3 — эталон обрабатываемости резанием)
-- https://www.scribd.com/document/464299233/BB-CW614N (CW614N: прочность 360–500 МПа, Pb 2.5–3.5%)
-- https://webstore.iec.ch/en/publication/4418 (IEC 61076-2-101 — стандарт M12 разъёмов)
-- Farmer's Copper — C36000 Free Machining Brass (machinability 100, сортамент прутка): https://www.farmerscopper.com/free-machining-brass-c36000.html
-- Concast — C69300 Lead-Free Brass (machinability rating 95): https://www.concast.com/c69300.php
-- Linsy Copper — Lead-Free Brass Grades (C36000 100% благодаря Pb 2.5–3.7%): https://www.linsycopper.com/blog/lead-free-brass-guide
-- Wieland Chase — ECO BRASS lead-free advantages: https://wieland-chase.com/protecting-americans-lead-free-drinking-water
-- Diversified Bronze — C36000 Free-Cutting Brass (применения на автоматах): https://diversifiedbronze.com/resources/bronze-alloys/c36000-free-cutting-brass
 
 ## Применение в изделиях
 

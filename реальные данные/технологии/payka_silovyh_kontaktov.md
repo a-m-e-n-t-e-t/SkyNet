@@ -1,7 +1,8 @@
 ---
+
+
+
 id: tekhnologia_payka_silovyh_kontaktov
-псевдонимы: []
-канонический_id: tekhnologia_payka_silovyh_kontaktov
 тип: технология
 категория: сборка
 область_применения:
@@ -29,7 +30,6 @@ id: tekhnologia_payka_silovyh_kontaktov
           max: 6
           nominal: 3
   потребление_энергии_kWh: 1
-наследуемые: {}
 дополнительные:
   оборудование: []
   типичные_материалы_для_процесса: []
@@ -41,6 +41,18 @@ id: tekhnologia_payka_silovyh_kontaktov
 ## Описание
 
 Пайка силовых контактов — мягкая пайка бессвинцовым припоем SAC305 (Tпл 217 °C) медных шин, клемм и выводов силовых разъёмов (XT90/XT60). Медь IACS 100 % отводит тепло — требуются мощные паяльные станции (≥80 Вт) или пайка оплавлением в паяльной ванне.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | технология | — | canon |
+
+
+## Источники
+
+- Kester SAC305 datasheet (состав Sn/Ag/Cu, рабочие температуры): https://www.kester.com/downloads?Command=Core_Download&EntryId=45147 (проверено 2026-11-07)
+- Amass XT90 datasheet V1.2 (изоляция PA): https://www.scribd.com/document/700173312/XT90 (проверено 2026-11-07)
 
 ## Входные ресурсы
 
@@ -61,8 +73,3 @@ id: tekhnologia_payka_silovyh_kontaktov
 ## Ограничения и допуски
 
 Перегрев контакта разрушает пластиковый корпус разъёма (PA66, Tm 255–260 °C) — пайка от края, время ≤6 с.
-
-## Источники
-
-- Kester SAC305 datasheet (состав Sn/Ag/Cu, рабочие температуры): https://www.kester.com/downloads?Command=Core_Download&EntryId=45147 (проверено 2026-11-07)
-- Amass XT90 datasheet V1.2 (изоляция PA): https://www.scribd.com/document/700173312/XT90 (проверено 2026-11-07)

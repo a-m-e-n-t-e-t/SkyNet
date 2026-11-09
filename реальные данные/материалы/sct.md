@@ -1,8 +1,9 @@
 ---
-применяется_в_изделиях_счёт: 2
+
+
+
 id: material_sct
 псевдонимы: [скандий-тритид, ScT2, ScT₂, scandium tritide]
-канонический_id: material_sct
 тип: материал
 класс: гидрид_металла
 химический_состав: 'ScT₂ (Sc + 2T); гидридный аналог ScH₂ (структурный изотип)'
@@ -41,7 +42,6 @@ id: material_sct
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: null
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -69,8 +69,6 @@ id: material_sct
 источник_url: 'https://www.osti.gov/biblio/4097719 + https://www.osti.gov/biblio/1921985 + https://www.sciencedirect.com/science/article/abs/pii/S0360319925040674 + https://citylabs.net/technology-overview'
 источник_дата: 2026-11-06
 ---
-# Материал: Скандий-тритид (ScT₂)
-
 ## Описание
 
 Скандий-тритид ScT₂ — флюоритный дитритид скандия, твердотельный изотопный источник трития. Разрешена неопределённость исходного CSV `ScT? (требует уточнения)`: в изделии `izdelie_3d_sic-mikropillarnyi_tritii-betavoltaik` изотопная часть `часть_..._isotope` прямо указывает `форма_хранения: 'твердый металл-тритид (ScT₂), не сжатый газ'` — т.е. `ScT` = скандий-тритид (T = тритий).
@@ -79,6 +77,22 @@ id: material_sct
 
 **Класс:** гидрид металла (тритид)
 **Кристаллическая структура:** поликристаллический, флюоритная кубическая фаза Fm-3m (тритий в тетраэдрических междоузлиях; Selmani et al., 2025 — дигидриды переходных/редкоземельных металлов кристаллизуются в структуре флюорита)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- McGuire J.C., Kempter C.P., «Preparation and Properties of Scandium Dihydride», J. Chem. Phys. 33 (1960) — https://www.osti.gov/biblio/4097719 (a₀, ρ, Sc–H связь, 7.31×10²² H/см³, синтез при 450 °C)
+- ORNL, «Advanced Moderator Material Handbook» (FY22 Rev.2, 2022) — https://www.osti.gov/biblio/1921985 (YH₁.₈: k = 15.0 W/м·К, ρ = 4.26 г/см³, твёрдость 3 ГПа — флюоритный аналог)
+- Selmani Y., Bahmad M. et al., «Exploring the efficiency of ScH₂ scandium hydride for hydrogen storage: Insights from DFT approach», Int. J. Hydrogen Energy (2025) — https://www.sciencedirect.com/science/article/abs/pii/S0360319925040674 (флюорит Fm-3m, T в тетрапозициях)
+- Ye X. et al., «Theoretical Study of Phase Separation of Scandium Hydrides» (2015) — ScH₂.₉ криогенное хранение, разложение ScH₃→ScH₂+H₂
+- City Labs, «Tritium Metal Hydrides / NanoTritium™» — https://citylabs.net/technology-overview (твердотельные металл-тритиды в бетавольтаиках)
+- CSV: `начальные данные_final.csv` (пользовательский ввод, `ScT?` — разрешено как ScT₂)
 
 ## Химический состав
 
@@ -127,12 +141,3 @@ ScT₂ — скандий + 2 трития (структурный изотип 
 - **YH₂/YT₂ (иттрий-тритид)** — лучший термостабильный модератор (ORNL), k = 15 W/(м·К), ρ = 4.26 г/см³.
 - **LaNi₅-семейство** — эталонные гидридообразующие аккумуляторы H/T (обратимое связывание при низких давлениях).
 - Выбор ScT₂ в изделии: максимальная плотность упаковки T среди флюоритных тритидов при умеренной массе матрицы → высокая удельная объёмная активность изотопного слоя.
-
-## Источники
-
-- McGuire J.C., Kempter C.P., «Preparation and Properties of Scandium Dihydride», J. Chem. Phys. 33 (1960) — https://www.osti.gov/biblio/4097719 (a₀, ρ, Sc–H связь, 7.31×10²² H/см³, синтез при 450 °C)
-- ORNL, «Advanced Moderator Material Handbook» (FY22 Rev.2, 2022) — https://www.osti.gov/biblio/1921985 (YH₁.₈: k = 15.0 W/м·К, ρ = 4.26 г/см³, твёрдость 3 ГПа — флюоритный аналог)
-- Selmani Y., Bahmad M. et al., «Exploring the efficiency of ScH₂ scandium hydride for hydrogen storage: Insights from DFT approach», Int. J. Hydrogen Energy (2025) — https://www.sciencedirect.com/science/article/abs/pii/S0360319925040674 (флюорит Fm-3m, T в тетрапозициях)
-- Ye X. et al., «Theoretical Study of Phase Separation of Scandium Hydrides» (2015) — ScH₂.₉ криогенное хранение, разложение ScH₃→ScH₂+H₂
-- City Labs, «Tritium Metal Hydrides / NanoTritium™» — https://citylabs.net/technology-overview (твердотельные металл-тритиды в бетавольтаиках)
-- CSV: `начальные данные_final.csv` (пользовательский ввод, `ScT?` — разрешено как ScT₂)

@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 1
+
+
+
 id: material_elastomernaya_matritsa
-псевдонимы: []
-канонический_id: material_elastomernaya_matritsa
 тип: материал
 класс: полимер
 химический_состав: 'PDMS — полидиметилсилоксан (эталонная система Dow SYLGARD 184: двухкомпонентный силиконовый эластомер 10:1, ненаполненный, прозрачный)'
@@ -54,7 +54,6 @@ id: material_elastomernaya_matritsa
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: 3.45e-17
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -88,8 +87,6 @@ id: material_elastomernaya_matritsa
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Эластомерная матрица (PDMS)
-
 ## Описание
 
 Эластомерная матрица — сшитый полидиметилсилоксан (PDMS), эталонная реализация — двухкомпонентный силиконовый эластомер Dow SYLGARD 184 (10:1, прозрачный, отверждение при комнатной температуре или нагревом). Аморфная сшитая сетка без температуры плавления: очень низкий модуль (1.3–4.4 МПа по режиму отверждения), высокая диэлектрическая прочность (17.7 кВ/мм) и широкая рабочая температура (−45…+200 °C). В изделиях репозитория — эластомерная плёнка ядра диэлектрического эластомерного актуатора (DEA).
@@ -98,6 +95,23 @@ id: material_elastomernaya_matritsa
 
 **Класс:** полимер (силиконовый эластомер)
 **Кристаллическая структура:** аморфный (подтверждено; предварительная классификация верифицирована)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Dow: SYLGARD 184 Silicone Elastomer Kit (SG 1.03, 10:1, 3500 cP, λ 0.27 Вт/(м·К), 450 V/mil, Dk 2.72, ρv 2.9e14 Ом·см, Shore A 43): <https://www.dow.com/en-us/pdp.sylgard-184-silicone-elastomer-kit.01064291z.html> (проверено 2026-11-06)
+- Dow/Sylgard 184 TDS (рабочий диапазон −45…+200 °C): <https://generaladhesivos.com/proveedor-pegamento/101hoja-tecnica-Sylgard%20184.pdf> (проверено 2026-11-06)
+- R. Moučka et al., «Mechanical properties of bulk Sylgard 184» (E 1.3–4.4 МПа, прочность ~2 МПа, удлинение ~54%, плотность сшивки): <https://pmc.ncbi.nlm.nih.gov/articles/PMC8476525> (проверено 2026-11-06)
+- Z. Brounstein et al., 2021 — Sylgard 184 = PDMS-эластомер (Long-Term Thermal Aging): <https://www.mdpi.com/2073-4360/13/18/3125> (проверено 2026-11-06)
+- WPI Europe: SYLGARD 184 TDS копия: <https://www.wpi-europe.com/downloads/content/11-3184-01-sylgard-184-elastomer.pdf> (проверено 2026-11-06)
+- C.A.R. Mazelin, 2023, «A Brief Review of Sylgard 184» (UL/Mil Spec, dielectric properties): <https://www.osti.gov/biblio/1962771> (проверено 2026-11-06)
+- CSV: `начальные данные_final.csv` (пользовательский ввод — исходное наименование)
 
 ## Химический состав
 
@@ -136,13 +150,3 @@ id: material_elastomernaya_matritsa
 
 **Используется в частях/изделиях:**
 - `часть_dea_core` (DEA, приводная система) — эластомерная плёнка 60×60×5 мм с complying-электродами: при 3–10 кВ сжатие до 10–30% площади
-
-## Источники
-
-- Dow: SYLGARD 184 Silicone Elastomer Kit (SG 1.03, 10:1, 3500 cP, λ 0.27 Вт/(м·К), 450 V/mil, Dk 2.72, ρv 2.9e14 Ом·см, Shore A 43): <https://www.dow.com/en-us/pdp.sylgard-184-silicone-elastomer-kit.01064291z.html> (проверено 2026-11-06)
-- Dow/Sylgard 184 TDS (рабочий диапазон −45…+200 °C): <https://generaladhesivos.com/proveedor-pegamento/101hoja-tecnica-Sylgard%20184.pdf> (проверено 2026-11-06)
-- R. Moučka et al., «Mechanical properties of bulk Sylgard 184» (E 1.3–4.4 МПа, прочность ~2 МПа, удлинение ~54%, плотность сшивки): <https://pmc.ncbi.nlm.nih.gov/articles/PMC8476525> (проверено 2026-11-06)
-- Z. Brounstein et al., 2021 — Sylgard 184 = PDMS-эластомер (Long-Term Thermal Aging): <https://www.mdpi.com/2073-4360/13/18/3125> (проверено 2026-11-06)
-- WPI Europe: SYLGARD 184 TDS копия: <https://www.wpi-europe.com/downloads/content/11-3184-01-sylgard-184-elastomer.pdf> (проверено 2026-11-06)
-- C.A.R. Mazelin, 2023, «A Brief Review of Sylgard 184» (UL/Mil Spec, dielectric properties): <https://www.osti.gov/biblio/1962771> (проверено 2026-11-06)
-- CSV: `начальные данные_final.csv` (пользовательский ввод — исходное наименование)

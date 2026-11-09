@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_halve_p_vdf-trfe-cfe
-псевдонимы: []
-канонический_id: material_halve_p_vdf-trfe-cfe
 тип: материал
 класс: полимер
 химический_состав: 'Терполимер P(VDF-TrFE-CFE): звенья винилиденфторида CH2=CF2 (VDF), трифторэтилена CHF=CF2 (TrFE) и хлорфтормонофторэтилена (CFE); типовой состав 64.8/27.4/7.8 мол.% (J. Materiomics 2023); промышленная марка Piezotech RT-FS (Arkema)'
@@ -67,7 +67,6 @@ id: material_halve_p_vdf-trfe-cfe
   теплоёмкость_J_kgK: 1340
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: null
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -100,11 +99,29 @@ id: material_halve_p_vdf-trfe-cfe
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: P(VDF-TrFE-CFE) — релаксорный сегнетоэлектрический терполимер
-
 ## Описание
 
 Релаксорный сегнетоэлектрический терполимер поливинилиденфторид–трифторэтилен–хлорфтормонофторэтилен, P(VDF-TrFE-CFE). Строка CSV «HALVE P(VDF-TrFE-CFE)» — артефакт разбора исходных данных; материал = терполимер VDF/TrFE/CFE (префикс «HALVE P» не несёт химического смысла). CFE-комономер (типовой состав 64.8/27.4/7.8 мол.%, J. Materiomics 2023) разрушает длиннопериодное сегнетоэлектрическое упорядочение сополимера P(VDF-TrFE), формируя нанометровые полярные домены — полукристаллическую релаксорную структуру с высокой диэлектрической проницаемостью, тонкой петлёй гистерезиса и гигантской электрострикцией. Промышленно выпускается как Piezotech RT-FS (Arkema): εr = 55 @ 1 кГц, Tm = 127 °C. Классификация «металл» из CSV исправлена: это фторполимер-диэлектрик.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Piezotech (Arkema), Relaxor-ferroelectric and High-k Terpolymers Piezotech RT: εr 55 @ 1 кГц, Tm 127 °C, марка RT-FS: https://piezotech.arkema.com/en/Products/high-k-terpolymers (проверено 2026-11-06)
+- Aravindhan A. et al., Direct measurement of electrocaloric effect in P(VDF-TrFE-CFE) film using infrared imaging, J. Materiomics 9(2), 2023: состав 64.8/27.4/7.8, плёнка 15 ± 1 мкм, ΔT_ad = 3.58 К @ 100 В/мкм (30 °C): https://www.sciopen.com/article/10.1016/j.jmat.2022.10.009 (проверено 2026-11-06)
+- Bauer F., Zhang Q.M. et al., Recent advances in highly electrostrictive P(VDF-TrFE-CFE) terpolymers (Penn State, 2006): деформация >7%, модуль >0.3 ГПа: https://pure.psu.edu/en/publications/recent-advances-in-highly-electrostrictive-pvdf-trfe-cfe-terpolym (проверено 2026-11-06)
+- Chen X. et al., Relaxor ferroelectric polymer exhibits ultrahigh... (OSTI, 2022): K > 50 в широком температурном диапазоне у КТ: https://www.osti.gov/servlets/purl/1889150 (проверено 2026-11-06)
+- UCLA Pilon group, P(VDF-TrFE) synthesis & characterization: плотность коммерческой плёнки 1879 ± 39 кг/м³, переход ФП→ПЭ 65.7 °C: https://www.seas.ucla.edu/~pilon/P(VDF-TrFE)Synthesis.htm (проверено 2026-11-06)
+- Обзор PVDF-полимеров (Polymers/PMC, 2025): PVDF ρ 1780 кг/м³ (β-ориентация до 1970), Tm 160–190 °C, термостабильность −30…170 °C: https://pmc.ncbi.nlm.nih.gov/articles/PMC12029650 (проверено 2026-11-06)
+- Arkema Kynar PVDF, physical properties: теплопроводность 1.18–1.32 BTU·in/(hr·ft²·°F) = 0.17–0.19 Вт/(м·К), теплоёмкость 0.28–0.36 BTU/(lb·°F): https://hpp.arkema.com/en/product-families/kynar-fluoropolymer-family/contact-physical-and-mechanical-properties (проверено 2026-11-06)
+- Fluorotherm, PVDF properties: теплопроводность 0.2 Вт/(м·К): https://www.fluorotherm.com/technical-information/materials-overview/pvdf-properties (проверено 2026-11-06)
+- PatSnap Eureka, P(VDF-TrFE-CFE) terpolymer: Tg −30…−10 °C, εr 35–50: https://eureka.patsnap.com/materials/pvdf-trfe-cfe-terpolymer (проверено 2026-11-06)
+- Qian J. et al., Enhanced electrocaloric strength in P(VDF-TrFE-CFE) by decreasing crystalline size, 2019: https://www.sciencedirect.com/science/article/pii/S2352847819300395 (проверено 2026-11-06)
 
 ## Физические свойства
 
@@ -128,16 +145,3 @@ id: material_halve_p_vdf-trfe-cfe
 - электрокалорическое охлаждение: ΔT_ad = 3.58 К при 100 В/мкм (плёнка 15 ± 1 мкм, 64.8/27.4/7.8; J. Materiomics 2023), ECE усиливается при уменьшении кристаллитов (Qian 2019);
 - высокоёмкие плёночные конденсаторы и gate-диэлектрики TFT;
 - сенсоры и energy harvesting (промышленная линейка Piezotech RT).
-
-## Источники
-
-- Piezotech (Arkema), Relaxor-ferroelectric and High-k Terpolymers Piezotech RT: εr 55 @ 1 кГц, Tm 127 °C, марка RT-FS: https://piezotech.arkema.com/en/Products/high-k-terpolymers (проверено 2026-11-06)
-- Aravindhan A. et al., Direct measurement of electrocaloric effect in P(VDF-TrFE-CFE) film using infrared imaging, J. Materiomics 9(2), 2023: состав 64.8/27.4/7.8, плёнка 15 ± 1 мкм, ΔT_ad = 3.58 К @ 100 В/мкм (30 °C): https://www.sciopen.com/article/10.1016/j.jmat.2022.10.009 (проверено 2026-11-06)
-- Bauer F., Zhang Q.M. et al., Recent advances in highly electrostrictive P(VDF-TrFE-CFE) terpolymers (Penn State, 2006): деформация >7%, модуль >0.3 ГПа: https://pure.psu.edu/en/publications/recent-advances-in-highly-electrostrictive-pvdf-trfe-cfe-terpolym (проверено 2026-11-06)
-- Chen X. et al., Relaxor ferroelectric polymer exhibits ultrahigh... (OSTI, 2022): K > 50 в широком температурном диапазоне у КТ: https://www.osti.gov/servlets/purl/1889150 (проверено 2026-11-06)
-- UCLA Pilon group, P(VDF-TrFE) synthesis & characterization: плотность коммерческой плёнки 1879 ± 39 кг/м³, переход ФП→ПЭ 65.7 °C: https://www.seas.ucla.edu/~pilon/P(VDF-TrFE)Synthesis.htm (проверено 2026-11-06)
-- Обзор PVDF-полимеров (Polymers/PMC, 2025): PVDF ρ 1780 кг/м³ (β-ориентация до 1970), Tm 160–190 °C, термостабильность −30…170 °C: https://pmc.ncbi.nlm.nih.gov/articles/PMC12029650 (проверено 2026-11-06)
-- Arkema Kynar PVDF, physical properties: теплопроводность 1.18–1.32 BTU·in/(hr·ft²·°F) = 0.17–0.19 Вт/(м·К), теплоёмкость 0.28–0.36 BTU/(lb·°F): https://hpp.arkema.com/en/product-families/kynar-fluoropolymer-family/contact-physical-and-mechanical-properties (проверено 2026-11-06)
-- Fluorotherm, PVDF properties: теплопроводность 0.2 Вт/(м·К): https://www.fluorotherm.com/technical-information/materials-overview/pvdf-properties (проверено 2026-11-06)
-- PatSnap Eureka, P(VDF-TrFE-CFE) terpolymer: Tg −30…−10 °C, εr 35–50: https://eureka.patsnap.com/materials/pvdf-trfe-cfe-terpolymer (проверено 2026-11-06)
-- Qian J. et al., Enhanced electrocaloric strength in P(VDF-TrFE-CFE) by decreasing crystalline size, 2019: https://www.sciencedirect.com/science/article/pii/S2352847819300395 (проверено 2026-11-06)

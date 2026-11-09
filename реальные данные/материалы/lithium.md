@@ -1,8 +1,9 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_lithium
 псевдонимы: [material_lithium_metal]
-канонический_id: material_lithium
 тип: материал
 класс: металл
 химический_состав: 'Li ≥99.9% (металлический литий, марка ЛЭ-1/ЛЭ-2; примеси Na, K, Ca <0.1%)'
@@ -53,7 +54,6 @@ id: material_lithium
   теплоёмкость_J_kgK: 3580
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: 1.1e7
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -87,11 +87,27 @@ id: material_lithium
 дата_обновления: 2026-11-08
 источник_дата: 2026-11-06
 ---
-# Материал: Металлический литий (анодный)
-
 ## Описание
 
 Металлический литий — щелочной металл, самый лёгкий из конструкционных материалов (плотность 534 кг/м³, вдвое легче воды), температура плавления 180.5 °C, высокая удельная теплоёмкость 3.58 кДж/(кг·К) и электропроводность ~11 МСм/м. В первичных литиевых элементах (Li-SOCl2, Li-MnO2) металлический литий служит анодом: фольга или прессованный bobbin-цилиндр, обеспечивающий теоретическую ёмкость 3860 мА·ч/г — наивысшую среди анодных материалов. Литий исключительно реакционноспособен: на воздухе покрывается плёнкой Li2O/Li2CO3, в контакте с тионилхлоридным электролитом образует стабильный пассивирующий слой LiCl, обеспечивающий 10–20-летний срок хранения элементов. Обрабатывается прокаткой и прессовкой в инертной атмосфере; требует герметичной упаковки.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- https://en.wikipedia.org/wiki/Lithium
+- World Nuclear Association — Lithium (Li-7 в расплавносолевых реакторах, Li-6 как источник трития для термоядерного синтеза): https://world-nuclear.org/information-library/current-and-future-generation/lithium
+- SRNL Tech Brief — Recovery of Tritium from a Molten Lithium Blanket (литиевый бланкет: теплообмен + производство трития): https://www.srnl.gov/tech_briefs/recovery-of-tritium-from-a-molten-lithium-blanket
+- OSTI — Tritium Breeding Blanket for a Commercial Fusion Power Plant (TBR 1.30 при 65% обогащённом Li-6): https://www.osti.gov/servlets/purl/1305833
+- Патент US20140226775A1 — Liquid Lithium Cooled Fission Reactor: https://patents.google.com/patent/US20140226775A1/en
+- RWTH Aachen (2024) — Phase transformation paths in anode for lithium batteries (α-HCP→β-BCC переход): https://publications.rwth-aachen.de/record/1009139/files/1009139.pdf
+- PMC7311081 — Crystal Structure Influences Migration along Li and Mg Surfaces (диффузия по граням BCC Li): https://pmc.ncbi.nlm.nih.gov/articles/PMC7311081
+- Zhou et al. (2020) — Protective coatings for lithium metal anodes (Li-фольга с защитными покрытиями): https://liugroup.ucsd.edu/wp-content/uploads/2019/12/1-s2.0-S0378775319316258-main.pdf
 
 ## Формы и варианты (F28)
 
@@ -104,14 +120,3 @@ id: material_lithium
 5. **Тонкоплёночный Li** — 20–50 мкм на медном коллекторе с защитным слоем (LiF/LiPON): тонкоплёночные и next-gen Li-metal аккумуляторы.
 
 Изотопные варианты состава: природный (7.5% Li-6), обогащённый Li-7 (>99.99% — LiOH для PWR, расплавносолевые реакторы, World Nuclear), обогащённый Li-6 (60–95% — тритиевое воспроизводство, TBR 1.30 при 65%).
-
-## Источники
-
-- https://en.wikipedia.org/wiki/Lithium
-- World Nuclear Association — Lithium (Li-7 в расплавносолевых реакторах, Li-6 как источник трития для термоядерного синтеза): https://world-nuclear.org/information-library/current-and-future-generation/lithium
-- SRNL Tech Brief — Recovery of Tritium from a Molten Lithium Blanket (литиевый бланкет: теплообмен + производство трития): https://www.srnl.gov/tech_briefs/recovery-of-tritium-from-a-molten-lithium-blanket
-- OSTI — Tritium Breeding Blanket for a Commercial Fusion Power Plant (TBR 1.30 при 65% обогащённом Li-6): https://www.osti.gov/servlets/purl/1305833
-- Патент US20140226775A1 — Liquid Lithium Cooled Fission Reactor: https://patents.google.com/patent/US20140226775A1/en
-- RWTH Aachen (2024) — Phase transformation paths in anode for lithium batteries (α-HCP→β-BCC переход): https://publications.rwth-aachen.de/record/1009139/files/1009139.pdf
-- PMC7311081 — Crystal Structure Influences Migration along Li and Mg Surfaces (диффузия по граням BCC Li): https://pmc.ncbi.nlm.nih.gov/articles/PMC7311081
-- Zhou et al. (2020) — Protective coatings for lithium metal anodes (Li-фольга с защитными покрытиями): https://liugroup.ucsd.edu/wp-content/uploads/2019/12/1-s2.0-S0378775319316258-main.pdf

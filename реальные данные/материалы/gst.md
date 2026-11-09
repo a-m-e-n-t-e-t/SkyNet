@@ -1,8 +1,9 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_gst
 псевдонимы: [material_gst_chalcogenide]
-канонический_id: material_gst
 тип: материал
 класс: халькогенид
 химический_состав: 'Ge2Sb2Te5 (GST-225, соединение 225 стехиометрии GeTe:Sb2Te3 1:1); легирование N/C для повышения сопротивления аморфной фазы'
@@ -55,7 +56,6 @@ id: material_gst
   теплоёмкость_J_kgK: 210
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: null
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -89,11 +89,27 @@ id: material_gst
 дата_обновления: 2026-11-08
 источник_дата: 2026-11-06
 ---
-# Материал: Ge2Sb2Te5 (GST-225, фазопереходный халькогенид)
-
 ## Описание
 
 Ge2Sb2Te5 (GST-225) — халькогенидный стеклообразный полупроводник стехиометрии 225 (GeTe:Sb2Te3 = 1:1), базовый материал фазопереходной памяти (PCM/OUM). Температура плавления ~621 °C, теплопроводность кристаллической фазы ~0.5 W/(m·K), плотность ~6.15 г/см³ (аморфная фаза ~5.9, fcc ~6.3 г/см³). Обратимый фазовый переход аморфное↔кристаллическое обеспечивает контраст сопротивления ~5 порядков: RESET — расплав и закалка >10^9 K/с в аморфную фазу импульсом ~нс, SET — отжиг ~400–500 °C в метастабильную кубическую fcc фазу. В экспериментальных PCM-ячейках толщина слоя GST 20 нм при ширине 66–124 нм и длине 100–600 нм (AIP APL 124, 263501, 2024). Легирование C/N повышает сопротивление аморфной фазы и снижает ток RESET (ACS AMI 2014).
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- https://ar5iv.labs.arxiv.org/html/1001.1164
+- https://pubs.aip.org/aip/apl/article/124/26/263501/3299266
+- https://pubs.acs.org/doi/abs/10.1021/am503502q
+- PMC11489497 — In situ characterization of vacancy ordering in Ge-Sb-Te (4 фазы: гексагональная, метастабильная кубическая, аморфная, переходная жидкая): https://pmc.ncbi.nlm.nih.gov/articles/PMC11489497
+- Perrin-Toinin et al. (2026) — New insights on the metastable cubic GexSbyTez phase (vacancy-ordered rocksalt GST): https://hal.science/hal-05786422v1/file/MTLA48_102836.pdf
+- ResearchGate — XRD Ge2Sb2Te5 50 нм (кристаллизация в NaCl ~150 °C → гексагональная при высокой температуре): https://www.researchgate.net/figure/XRD-spectrum-of-Ge-2-Sb-2-Te-5-films-50-nm-thick-on
+- Bala et al. (2023) — Recent advances in doped Ge2Sb2Te5 thin film (N/C-легирование): https://pubs.rsc.org/ma/article/4/3/747/771902/Recent-advances-in-doped-Ge2Sb2Te
+- Nano-fab — Phase Change Materials (GST): https://nano-fab.com/phase-change-materials-gst
 
 ## Формы и варианты (F28)
 
@@ -106,14 +122,3 @@ Ge2Sb2Te5 (GST-225) — халькогенидный стеклообразны�
 5. **Легированные тонкоплёнки (N/C)** — ↑ сопротивление аморфной фазы, ↓ RESET-ток, ↑ термостабильность (RSC 2023).
 
 Стехиометрии псевдобинарной системы GeTe–Sb2Te3: GST-326 (Ge3Sb2Te6, GeTe-обогащённая — термостабильность), GST-225 (базовая), GST-124 (GeSb2Te4), GST-147 (GeSb4Te7, Sb2Te3-обогащённая — быстрое переключение); родственный AgInSbTe (AIST) для оптических носителей.
-
-## Источники
-
-- https://ar5iv.labs.arxiv.org/html/1001.1164
-- https://pubs.aip.org/aip/apl/article/124/26/263501/3299266
-- https://pubs.acs.org/doi/abs/10.1021/am503502q
-- PMC11489497 — In situ characterization of vacancy ordering in Ge-Sb-Te (4 фазы: гексагональная, метастабильная кубическая, аморфная, переходная жидкая): https://pmc.ncbi.nlm.nih.gov/articles/PMC11489497
-- Perrin-Toinin et al. (2026) — New insights on the metastable cubic GexSbyTez phase (vacancy-ordered rocksalt GST): https://hal.science/hal-05786422v1/file/MTLA48_102836.pdf
-- ResearchGate — XRD Ge2Sb2Te5 50 нм (кристаллизация в NaCl ~150 °C → гексагональная при высокой температуре): https://www.researchgate.net/figure/XRD-spectrum-of-Ge-2-Sb-2-Te-5-films-50-nm-thick-on
-- Bala et al. (2023) — Recent advances in doped Ge2Sb2Te5 thin film (N/C-легирование): https://pubs.rsc.org/ma/article/4/3/747/771902/Recent-advances-in-doped-Ge2Sb2Te
-- Nano-fab — Phase Change Materials (GST): https://nano-fab.com/phase-change-materials-gst

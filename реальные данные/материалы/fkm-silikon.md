@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 1
+
+
+
 id: material_fkm-silikon
-псевдонимы: []
-канонический_id: material_fkm-silikon
 тип: материал
 класс: полимер
 химический_состав: 'двухэластомерная композиция: винилиденфторидный фторэластомер FKM (Viton A-класс, ~66% F) + метилвинилсилоксановый каучук VMQ (Si-O-Si основа); вулканизация бисфенольная/пероксидная, наполнитель — техуглерод'
@@ -55,7 +55,6 @@ id: material_fkm-silikon
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: null
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -83,8 +82,6 @@ id: material_fkm-silikon
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: FKM-силикон
-
 ## Описание
 
 FKM-силикон — двухэластомерная композиция для уплотнений: фторкаучук FKM (фторэластомер Viton-класса) в комбинации с силиконовым каучуком VMQ. Оба компонента — сшитые аморфные эластомеры без температуры плавления. Материал применяется в скребковых кольцах (wiper) планетарных роликовинтовых пар: удержание пластичной смазки и отсечение абразива при рабочих температурах −40…+150 °C.
@@ -93,6 +90,24 @@ FKM-силикон — двухэластомерная композиция д�
 
 **Класс:** полимер (эластомерная композиция)
 **Кристаллическая структура:** аморфный (сшитая сетка; подтверждено — оба компонента аморфные эластомеры)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Chemours CRG: Properties of Viton (SG 1.7–1.9, Shore A 50–95, прочность 3.4–20.7 МПа, λ 0.06–0.13 Btu, макс. +204 °C): <https://chemours-util.my.salesforce-sites.com/CRG_VitonProperties> (проверено 2026-11-06)
+- Shin-Etsu: Characteristic properties of Silicone Rubber Compounds (λ ~0.2 Вт/(м·К), −60…+250 °C): <https://www.shinetsusilicone-global.com/catalog/pdf/rubber_e.pdf> (проверено 2026-11-06)
+- Eutsler Rubber: Silicone Rubber VMQ (−60…+230 °C): <https://www.eutsler-rubber.com/silicone-rubber-(vmq)> (проверено 2026-11-06)
+- Marco Rubber V1081 FKM datasheet (Shore A 75±5, ASTM D2240): <https://www.marcorubber.com/downloads/Marco-Material-Datasheet-V1081.pdf> (проверено 2026-11-06)
+- Mosites Rubber: Fluoroelastomer compounds (75 Shore A: 1700 psi, удлинение 180%): <https://mositesrubber.com/technical-resources/fluoroelastomer-rubber-technical-info/fluorocarbon-sea> (проверено 2026-11-06)
+- Viton A-HV tech info (прочность 13.6–15.8 МПа, удлинение 195–210%): <https://www.viton.com/en/-/media/files/viton/viton-ahv-techinfo.pdf> (проверено 2026-11-06)
+- SKF Roller screws catalogue (wiper-уплотнения, смазка роликовинтовых пар): <https://www.skf.com/skf/campaign/mechatronicsin/media/4351_EN.pdf> (проверено 2026-11-06)
+- CSV: `начальные данные_final.csv` (пользовательский ввод — исходное наименование)
 
 ## Химический состав
 
@@ -129,14 +144,3 @@ FKM-силикон — двухэластомерная композиция д�
 
 **Используется в частях/изделиях:**
 - `часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_seals` — скребковое кольцо (wiper) планетарной роликовинтовой пары (SKF, посадка Ø20 мм, фланец ~30×30×5 мм)
-
-## Источники
-
-- Chemours CRG: Properties of Viton (SG 1.7–1.9, Shore A 50–95, прочность 3.4–20.7 МПа, λ 0.06–0.13 Btu, макс. +204 °C): <https://chemours-util.my.salesforce-sites.com/CRG_VitonProperties> (проверено 2026-11-06)
-- Shin-Etsu: Characteristic properties of Silicone Rubber Compounds (λ ~0.2 Вт/(м·К), −60…+250 °C): <https://www.shinetsusilicone-global.com/catalog/pdf/rubber_e.pdf> (проверено 2026-11-06)
-- Eutsler Rubber: Silicone Rubber VMQ (−60…+230 °C): <https://www.eutsler-rubber.com/silicone-rubber-(vmq)> (проверено 2026-11-06)
-- Marco Rubber V1081 FKM datasheet (Shore A 75±5, ASTM D2240): <https://www.marcorubber.com/downloads/Marco-Material-Datasheet-V1081.pdf> (проверено 2026-11-06)
-- Mosites Rubber: Fluoroelastomer compounds (75 Shore A: 1700 psi, удлинение 180%): <https://mositesrubber.com/technical-resources/fluoroelastomer-rubber-technical-info/fluorocarbon-sea> (проверено 2026-11-06)
-- Viton A-HV tech info (прочность 13.6–15.8 МПа, удлинение 195–210%): <https://www.viton.com/en/-/media/files/viton/viton-ahv-techinfo.pdf> (проверено 2026-11-06)
-- SKF Roller screws catalogue (wiper-уплотнения, смазка роликовинтовых пар): <https://www.skf.com/skf/campaign/mechatronicsin/media/4351_EN.pdf> (проверено 2026-11-06)
-- CSV: `начальные данные_final.csv` (пользовательский ввод — исходное наименование)

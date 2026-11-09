@@ -1,7 +1,8 @@
 ---
+
+
+
 id: tekhnologia_ultrazvukovoe_poverhnostnoe_prokatyvanie
-псевдонимы: []
-канонический_id: tekhnologia_ultrazvukovoe_poverhnostnoe_prokatyvanie
 тип: технология
 категория: обработка
 область_применения: 
@@ -56,6 +57,17 @@ id: tekhnologia_ultrazvukovoe_poverhnostnoe_prokatyvanie
 
 Полное наименование (как в CSV): `Ультразвуковое поверхностное прокатывание (USRP)`
 
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | технология | — | canon |
+
+
+## Источники
+
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
+
 ## Входные ресурсы
 
 Требует уточнения.
@@ -83,7 +95,3 @@ id: tekhnologia_ultrazvukovoe_poverhnostnoe_prokatyvanie
 ## Альтернативные технологии
 
 (Заполняется при сравнительном анализе)
-
-## Источники
-
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

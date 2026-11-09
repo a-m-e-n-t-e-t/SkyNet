@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_aln
-псевдонимы: []
-канонический_id: material_aln
 тип: материал
 класс: керамика
 химический_состав: AlN
@@ -50,7 +50,6 @@ id: material_aln
   теплоёмкость_J_kgK: 740
   коэффициент_термического_расширения_1_K: 4.6e-6
   электропроводность_S_m: 1.0e-10
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: 1200
@@ -88,8 +87,6 @@ id: material_aln
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: AlN (нитрид алюминия)
-
 ## Описание
 
 Нитрид алюминия (AlN) — техническая керамика с гексагональной (вюрцитной) решёткой. Уникальное сочетание высокой теплопроводности (170–200 Вт/(м·К) у коммерческих марок; теоретический предел ~320) и высокого электросопротивления (>10¹⁴ Ом·см) делает AlN основным подложечным материалом силовой электроники. Поликристаллическая керамика получается спеканием при ~1750 °C с добавками Y₂O₃/CaF₂, удаляющими кислород из решётки (ResearchGate, спекание с CaF₂+YF₃: k > 170 Вт/(м·К)). Коэффициент термического расширения ~4.6×10⁻⁶ 1/K близок к кремнию — снижает термонапряжения в чип-подложечных сборках. Стойкость к термоудару ΔT > 600 °C.
@@ -98,6 +95,25 @@ id: material_aln
 
 **Класс:** керамика
 **Кристаллическая структура:** поликристаллический, вюрцит (гексагональная)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Precision Ceramics, Aluminum Nitride (марка PCAN1000: чистота, k = 170 Вт/(м·К), плотность 3.26 г/см³, E = 330 ГПа): https://precision-ceramics.com/materials/aluminum-nitride (проверено 2026-11-06)
+- CeramTec, Aluminium Nitride AlN Substrates (k ≥ 170 Вт/(м·К) при 20 °C, εr ≈ 8.5 при 1 МГц): https://www.ceramtec-industrial.com/en/products-applications/substrates/aln-substrates (проверено 2026-11-06)
+- GGS Ceramic, A Comprehensive Guide To Aluminum Nitride Ceramic (k 170–321 Вт/(м·К)): https://ggsceramic.com/news-item/aluminum-nitride-ceramic (проверено 2026-11-06)
+- AZoM, Aluminium Nitride / Aluminum Nitride (AlN) — Properties and Applications: https://www.azom.com/article.aspx?ArticleID=610 (проверено 2026-11-06)
+- ResearchGate, Thermal conductivity of polycrystalline aluminum nitride (AlN) ceramics (спекание 1750 °C, CaF₂+YF₃, k > 170 Вт/(м·К)): https://www.researchgate.net/publication/250982380_Thermal_conductivity_of_polycrystalline_aluminum_nitride_AlN_ceramics (проверено 2026-11-06)
+- NSM Archive (Иоффе РАН), Aluminium Nitride — Thermal properties (максимум измеренной k 2.85 Вт/(см·К) = 285 Вт/(м·К) при 300 K, Slack et al. 1987; КТР αc 5.3e-6 / αa 4.2e-6): https://www.ioffe.ru/SVA/NSM/Semicond/AlN/thermal.html (проверено 2026-11-06)
+- Li J. et al., The Innovation Materials 2025 — Aluminum Scandium Nitride frequency-switchable FBAR (d33 AlN = 5.5 пК/Н; ScAlN как усиление): https://www.the-innovation.org/data/article/materials/preview/pdf/XINNMATERIALS-2025-0014.pdf (проверено 2026-11-06)
+- Park M., Wang J., Ansari A., Transducers 2023 — 18 GHz AlScN FBAR с эпитаксиальными электродами (kt² 6 %, Al₀.₈Sc₀.₂N 120 нм): https://pure.psu.edu/en/publications/an-18ghz-alscn-film-bulk-acoustic-wave-resonator-with-epitaxial-m (проверено 2026-11-06)
+- Chen J. et al., Applied Surface Science 2019 — ALD AlN как затворный диэлектрик/пассивация: https://www.sciencedirect.com/science/article/abs/pii/S1369800118320961 (проверено 2026-11-06)
 
 ## Химический состав
 
@@ -144,15 +160,3 @@ _Обратные ссылки ещё не проставлены._
 ## Аналоги и заменители
 
 BeO (выше k, но токсичен), Al₂O₃ (дешевле, k ≈ 24–28 Вт/(м·К)), Si₃N₄ (прочнее, k ≈ 90).
-
-## Источники
-
-- Precision Ceramics, Aluminum Nitride (марка PCAN1000: чистота, k = 170 Вт/(м·К), плотность 3.26 г/см³, E = 330 ГПа): https://precision-ceramics.com/materials/aluminum-nitride (проверено 2026-11-06)
-- CeramTec, Aluminium Nitride AlN Substrates (k ≥ 170 Вт/(м·К) при 20 °C, εr ≈ 8.5 при 1 МГц): https://www.ceramtec-industrial.com/en/products-applications/substrates/aln-substrates (проверено 2026-11-06)
-- GGS Ceramic, A Comprehensive Guide To Aluminum Nitride Ceramic (k 170–321 Вт/(м·К)): https://ggsceramic.com/news-item/aluminum-nitride-ceramic (проверено 2026-11-06)
-- AZoM, Aluminium Nitride / Aluminum Nitride (AlN) — Properties and Applications: https://www.azom.com/article.aspx?ArticleID=610 (проверено 2026-11-06)
-- ResearchGate, Thermal conductivity of polycrystalline aluminum nitride (AlN) ceramics (спекание 1750 °C, CaF₂+YF₃, k > 170 Вт/(м·К)): https://www.researchgate.net/publication/250982380_Thermal_conductivity_of_polycrystalline_aluminum_nitride_AlN_ceramics (проверено 2026-11-06)
-- NSM Archive (Иоффе РАН), Aluminium Nitride — Thermal properties (максимум измеренной k 2.85 Вт/(см·К) = 285 Вт/(м·К) при 300 K, Slack et al. 1987; КТР αc 5.3e-6 / αa 4.2e-6): https://www.ioffe.ru/SVA/NSM/Semicond/AlN/thermal.html (проверено 2026-11-06)
-- Li J. et al., The Innovation Materials 2025 — Aluminum Scandium Nitride frequency-switchable FBAR (d33 AlN = 5.5 пК/Н; ScAlN как усиление): https://www.the-innovation.org/data/article/materials/preview/pdf/XINNMATERIALS-2025-0014.pdf (проверено 2026-11-06)
-- Park M., Wang J., Ansari A., Transducers 2023 — 18 GHz AlScN FBAR с эпитаксиальными электродами (kt² 6 %, Al₀.₈Sc₀.₂N 120 нм): https://pure.psu.edu/en/publications/an-18ghz-alscn-film-bulk-acoustic-wave-resonator-with-epitaxial-m (проверено 2026-11-06)
-- Chen J. et al., Applied Surface Science 2019 — ALD AlN как затворный диэлектрик/пассивация: https://www.sciencedirect.com/science/article/abs/pii/S1369800118320961 (проверено 2026-11-06)

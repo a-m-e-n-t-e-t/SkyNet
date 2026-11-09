@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_metapoverhnost
-псевдонимы: []
-канонический_id: material_metapoverhnost
 тип: материал
 класс: метаматериал
 химический_состав: метаповерхность
@@ -52,7 +52,6 @@ id: material_metapoverhnost
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: null
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   материал_резонаторов: 'диэлектрические: TiO₂ (кристаллический/аморфный), Si, Si₃N₄; плазмонные: Au, Ag'
@@ -82,8 +81,6 @@ id: material_metapoverhnost
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: метаповерхность
-
 ## Описание
 
 Метаповерхность — двумерный оптический метаматериал: планарный массив субволновых наноструктур (обычно наностолбиков), который управляет фазой, амплитудой и поляризацией света на толщине, значительно меньшей длины волны. Заменяет объёмную рефрактивную оптику «плоской»: одна структура может фокусировать, отклонять луч, поляризовать и совмещать несколько функций одновременно.
@@ -92,6 +89,26 @@ id: material_metapoverhnost
 
 **Класс:** метаматериал (двумерная функциональная оптическая структура)
 **Структура:** двумерный массив субволновых наностолбиков TiO₂ (или Si/Si₃N₄; плазмонный вариант — Au/Ag) на прозрачной подложке; функцию задаёт геометрия элементов, а не объёмный состав
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- R.C. Devlin et al., «Broadband high-efficiency dielectric metasurfaces for the visible spectrum», PNAS 2016 — TiO₂-столбики h=600 нм, фазовый охват 0–2π: <https://www.pnas.org/doi/10.1073/pnas.1611740113> (проверено 2026-11-06)
+- Y. Liang et al., «High-Efficiency, Near-Diffraction Limited, Dielectric Metasurface», Nanomaterials 2018: <https://www.mdpi.com/2079-4991/8/5/288> (проверено 2026-11-06)
+- W.L. Hsu et al., «Review of Metasurfaces and Metadevices», 2022: <https://pmc.ncbi.nlm.nih.gov/articles/PMC9231017> (проверено 2026-11-06)
+- Metalenz + STMicroelectronics — первые метаповерхности в потребительской электронике (2022): <https://metalenz.com/metalenz-and-stmicroelectronics-deliver-worlds-first-optical-metasurface-technology-for-consumer-electronics-devices> (проверено 2026-11-06)
+- Metalenz, «Metasurface Optics Applications in Automotive LiDAR and DMS»: <https://metalenz.com/wp-content/uploads/2023/06/Metasurface-Optics-Applications-in-Automotive-LiDAR-and-DMS.pdf> (проверено 2026-11-06)
+- E. Demirbas et al., «A Review of Solid-State LiDAR Principles and Metasurface Approaches» 2025: <https://pmc.ncbi.nlm.nih.gov/articles/PMC12787349> (проверено 2026-11-06)
+- Capasso Group (Harvard), «Metasurfaces and flat optics»: <https://capasso.seas.harvard.edu/metasurfaces-and-flat-optics> (проверено 2026-11-06)
+- P. Xiong et al., «All-dielectric hybrid VIS-NIR dual-function metasurface» 2023: <https://arxiv.org/pdf/2310.09393> (проверено 2026-11-06)
+- A. Mallavarapu et al., «TiO₂ Metasurfaces with Visible Quasi-Guided Mode Resonances» 2023 — наноимпринт, высоты 30–250 нм: <https://pubs.acs.org/aanmf6/article/6/18/17294/353002/TiO2-Metasurfaces-with-Visible-Quasi-Guided-Mode> (проверено 2026-11-06)
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав и геометрия
 
@@ -133,16 +150,3 @@ id: material_metapoverhnost
 ## Применение в изделиях
 
 _Обратные ссылки ещё не проставлены._ (конкретный экземпляр: `lumotive_metasurface.md` — жидкокристаллическая метаповерхность LiDAR)
-
-## Источники (F28)
-
-- R.C. Devlin et al., «Broadband high-efficiency dielectric metasurfaces for the visible spectrum», PNAS 2016 — TiO₂-столбики h=600 нм, фазовый охват 0–2π: <https://www.pnas.org/doi/10.1073/pnas.1611740113> (проверено 2026-11-06)
-- Y. Liang et al., «High-Efficiency, Near-Diffraction Limited, Dielectric Metasurface», Nanomaterials 2018: <https://www.mdpi.com/2079-4991/8/5/288> (проверено 2026-11-06)
-- W.L. Hsu et al., «Review of Metasurfaces and Metadevices», 2022: <https://pmc.ncbi.nlm.nih.gov/articles/PMC9231017> (проверено 2026-11-06)
-- Metalenz + STMicroelectronics — первые метаповерхности в потребительской электронике (2022): <https://metalenz.com/metalenz-and-stmicroelectronics-deliver-worlds-first-optical-metasurface-technology-for-consumer-electronics-devices> (проверено 2026-11-06)
-- Metalenz, «Metasurface Optics Applications in Automotive LiDAR and DMS»: <https://metalenz.com/wp-content/uploads/2023/06/Metasurface-Optics-Applications-in-Automotive-LiDAR-and-DMS.pdf> (проверено 2026-11-06)
-- E. Demirbas et al., «A Review of Solid-State LiDAR Principles and Metasurface Approaches» 2025: <https://pmc.ncbi.nlm.nih.gov/articles/PMC12787349> (проверено 2026-11-06)
-- Capasso Group (Harvard), «Metasurfaces and flat optics»: <https://capasso.seas.harvard.edu/metasurfaces-and-flat-optics> (проверено 2026-11-06)
-- P. Xiong et al., «All-dielectric hybrid VIS-NIR dual-function metasurface» 2023: <https://arxiv.org/pdf/2310.09393> (проверено 2026-11-06)
-- A. Mallavarapu et al., «TiO₂ Metasurfaces with Visible Quasi-Guided Mode Resonances» 2023 — наноимпринт, высоты 30–250 нм: <https://pubs.acs.org/aanmf6/article/6/18/17294/353002/TiO2-Metasurfaces-with-Visible-Quasi-Guided-Mode> (проверено 2026-11-06)
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

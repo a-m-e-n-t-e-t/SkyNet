@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 485
+
+
+
 id: material_ti-6al-4v
-псевдонимы: []
-канонический_id: material_ti-6al-4v
 тип: материал
 класс: металл
 химический_состав: 'Ti-6Al-4V (Grade 5, UNS R56400): Al 5.5–6.75 %, V 3.5–4.5 %, Fe ≤0.30 %, O ≤0.20 %, C ≤0.08 %, N ≤0.05 %, H ≤0.015 %, Y ≤0.005 %, Ti — остальное (ASTM-спецификация, Wikipedia/ASM)'
@@ -69,7 +69,6 @@ id: material_ti-6al-4v
   теплоёмкость_J_kgK: 526
   коэффициент_термического_расширения_1_K: 8.6e-06
   электропроводность_S_m: 5.9e5
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -109,8 +108,6 @@ id: material_ti-6al-4v
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Ti-6Al-4V
-
 ## Описание
 
 Ti-6Al-4V (Grade 5, UNS R56400) — двухфазный (α+β) титановый сплав, самый широко применяемый титановый сплав в мире (~50 % мирового потребления титана). Алюминий (5.5–6.75 %) стабилизирует α-фазу (ГПУ), ванадий (3.5–4.5 %) — β-фазу (ОЦК). Сочетает высокую прочность (до 1170 МПа в STA), низкую плотность (4430 кг/м³), превосходную коррозионную стойкость и работоспособность от криогенных температур до ~427 °C (ATI).
@@ -128,6 +125,22 @@ Ti-6Al-4V (Grade 5, UNS R56400) — двухфазный (α+β) титанов�
 
 **Класс:** металл (двухфазный α+β титановый сплав)
 **Кристаллическая структура:** двухфазный α+β поликристалл (α — ГПУ, β — ОЦК)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- ATI Ti-6Al-4V, Grade 5 Technical Data Sheet (официальный datasheet ATI, v1 1/31/2012): https://www.atimaterials.com/Products/Documents/datasheets/titanium/alloyed/ati_6-4_tds_en_v1.pdf
+- Kyocera SGS — Ti 6Al 4V (Grade 5) Titanium Alloy Data Sheet (E=114 ГПа, UTS 1170, HB 334, плавление 1604–1660 °C): https://kyocera-sgstool.co.uk/titanium-resources/titanium-information-everything-you-need-to-know/ti-6al-4v-grade-5-titanium-alloy-data-sheet
+- Wikipedia — Ti-6Al-4V (состав ASTM, λ 6.7–7.5 Вт/(м·К), E 104–113 ГПа, UTS/YS 900–950/880–920): https://en.wikipedia.org/wiki/Ti-6Al-4V
+- ChinaMetalSupply — Titanium Grade 5 Properties: Complete Engineering Guide (c_p 526, КТР 8.6–9.2·10⁻⁶, усталость 500–600 МПа @10⁷): https://chinametalsupply.com/titanium-grade-5-properties
+- TIMETAL 6-4 datasheet (Timet — самый употребимый титановый сплав, 44 стр.): https://www.timet.com/documents/datasheets/alpha-and-beta-alloys/timetal-6-4.pdf
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -654,12 +667,3 @@ Grade 5 (ASTM-спецификация, wt %): Al 5.5–6.75; V 3.5–4.5; Fe �
 - **Ti-5Al-5Mo-5V-3Cr (Ti-5553)** — β-сплав повышенной прочности для шасси;
 - **Grade 2 (чистый Ti)** — дешевле, пластичнее, но UTS всего ≥345 МПа;
 - **Al 7075-T6 / сталь 4340** — альтернативы по цене/массе в авиационных конструкциях.
-
-## Источники
-
-- ATI Ti-6Al-4V, Grade 5 Technical Data Sheet (официальный datasheet ATI, v1 1/31/2012): https://www.atimaterials.com/Products/Documents/datasheets/titanium/alloyed/ati_6-4_tds_en_v1.pdf
-- Kyocera SGS — Ti 6Al 4V (Grade 5) Titanium Alloy Data Sheet (E=114 ГПа, UTS 1170, HB 334, плавление 1604–1660 °C): https://kyocera-sgstool.co.uk/titanium-resources/titanium-information-everything-you-need-to-know/ti-6al-4v-grade-5-titanium-alloy-data-sheet
-- Wikipedia — Ti-6Al-4V (состав ASTM, λ 6.7–7.5 Вт/(м·К), E 104–113 ГПа, UTS/YS 900–950/880–920): https://en.wikipedia.org/wiki/Ti-6Al-4V
-- ChinaMetalSupply — Titanium Grade 5 Properties: Complete Engineering Guide (c_p 526, КТР 8.6–9.2·10⁻⁶, усталость 500–600 МПа @10⁷): https://chinametalsupply.com/titanium-grade-5-properties
-- TIMETAL 6-4 datasheet (Timet — самый употребимый титановый сплав, 44 стр.): https://www.timet.com/documents/datasheets/alpha-and-beta-alloys/timetal-6-4.pdf
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

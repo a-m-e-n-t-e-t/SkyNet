@@ -1,8 +1,9 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_ybco
 псевдонимы: ['Y-123', 'YBa2Cu3O7-δ', '123-фаза иттрий-бариевой керамики', 'REBCO (Y)']
-канонический_id: material_ybco
 тип: материал
 класс: керамика
 химический_состав: 'YBa2Cu3O7-δ (Y-123), δ≈0.05–0.15 для оптимального Tc: Y 13.35 масс.%, Ba 41.23 масс.%, Cu 28.62 масс.%, O 16.81 масс.% (молярная масса 666.19 г/моль); при δ→1 тетрагональная несверхпроводящая антиферромагнитная фаза'
@@ -58,7 +59,6 @@ id: material_ybco
   теплоёмкость_J_kgK: 449
   коэффициент_термического_расширения_1_K: 1.3e-05
   электропроводность_S_m: 5.0e4
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: 540
@@ -100,8 +100,6 @@ id: material_ybco
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: YBCO (Y-123)
-
 ## Описание
 
 YBCO — иттрий-бариевая медьоксидная керамика состава YBa₂Cu₃O₇₋δ (Y-123), первый в истории сверхпроводник с критической температурой выше точки кипения азота: Tc = 92–93 К при оптимальном кислородном допировании (δ ≈ 0.05–0.15). Открыт в 1987 г. командой Пола Чу (Университет Хьюстона / UAH) на основе купратных ВТСП Беднорца и Мюллера (IBM, 1986); открытие снизило стоимость криогенного обеспечения примерно на два порядка и породило целое семейство REBCO-материалов, в которых иттрий замещается редкоземельными элементами (Gd, Nd, Sm) с близкими свойствами.
@@ -109,6 +107,26 @@ YBCO — иттрий-бариевая медьоксидная керамика
 Материал сочетает уникальные сверхпроводящие характеристики с типичной для керамики хрупкостью: предел прочности при растяжении bulk-образцов 20–46 МПа, вязкость разрушения K1c < 3 МПа·√м (77 К), разрушение внутренних напряжений при 10–30 МПа. Форма выпуска определяет токонесущую способность на порядки: спечённый поликристалл — 1.65·10⁴ А/см² (77 К, самополе), однодоменный melt-textured bulk — 10⁴–10⁵ А/см² с захватом поля до 14 Тл, эпитаксиальные плёнки и 2G-ленты — свыше 10⁷ А/см² (77 К). Именно поэтому промышленные приложения разделились: bulk — для магнитных подвесов и магнитов захвата поля, 2G coated conductor — для обмоток и кабелей.
 
 В дереве изделий SkyNet материал используется в двух связках: HTS-элемент высокотемпературного сверхпроводящего подшипника (массивный керамический блок 30×30×15 мм, левитационная сила до 100 Н при 77 К, референс — блоки CAN Superconductors) и катушка индуктивного накопителя энергии (SMES), где естественной формой является 2G-лента.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Wikipedia — Yttrium barium copper oxide (формула, 666.19 г/моль, плотность 6.4 г/см³, Tc 93 К, решётка a=3.82/b=3.89/c=11.68 Å, Hc2 120/250 Тл, история открытия): https://en.wikipedia.org/wiki/Yttrium_barium_copper_oxide
+- IEEE Technav — Yttrium barium copper oxide (Tc 92 К, Jc плёнок >10¹¹ А/м², bulk trapped field >17 Тл, 2G-технологии, приложения): https://technav.ieee.org/topic/yttrium-barium-copper-oxide
+- Hlásek T. et al., IEEE Trans. Appl. Supercond. / University of Cambridge repository — «Enhanced Mechanical Properties of Single-Domain YBCO Bulk Superconductors» (TSMG-режим, E 32/52 ГПа, σр 19.6–36 МПа, HV 540±60 при 77 К, кислородный отжиг 150 ч): https://api.repository.cam.ac.uk/server/api/core/bitstreams/ee471502-9099-4edd-9146-3694e80c5fc8/content
+- Roa J.J. et al., J. Eur. Ceram. Soc. 30 (2010) — модуль Юнга плотного YBCO 123.5 ± 3.4 ГПа: https://www.sciencedirect.com/science/article/abs/pii/S0955221909005433
+- Zhang B., Zhang X., Zhou Y.-H., Natl Sci Rev 10 (2023) — «Lightweight, highly tough and durable YBa₂Cu₃O₇₋ₓ» (K1c < 3 МПа·√м при 77 К, сжатие TSMTG 212 МПа / EPIP 412 МПа, 10 000 циклов, плотность композита 2.15 г/см³): https://pmc.ncbi.nlm.nih.gov/articles/PMC10062695
+- Congreve J.V.J. et al. (2019), Cambridge repository — «Improving mechanical strength of YBCO bulk» (порог разрушения 10–30 МПа, YBCO-Ag до 170 МПа): https://www.repository.cam.ac.uk/bitstreams/a19e275b-3612-446a-9f86-4df502e4e59f/download
+- Yamada Y. et al., Jpn. J. Appl. Phys. 39 (2000) 1111 — эффективный КТР YBCO-плёнки 14.0·10⁻⁶ 1/К, критическая толщина 1.35 мкм: https://iopscience.iop.org/article/10.1143/JJAP.39.1111
+- Prayoonphokkharat P. et al., J. Alloys Compd. (2021) — теплопроводность YBCO 2.0→0.6 Вт/(м·К) в диапазоне 300–973 К: https://www.sciencedirect.com/science/article/abs/pii/S0925838821009610
+- Patsnap Eureka — Superconducting Ceramic Bulk Material (Tc 92±1 К при относительной плотности >5.90 г/см³, δ≈0.1–0.3, Y-211 пиннинг): https://eureka.patsnap.com/materials/superconducting-ceramic-bulk
+- ScienceDirect Topics — Yttrium Barium Copper Oxides (коэффициент Пуассона 0.26): https://www.sciencedirect.com/topics/chemical-engineering/yttrium-barium-copper-oxides
 
 ## Химический состав
 
@@ -190,16 +208,3 @@ YBCO — иттрий-бариевая медьоксидная керамика
 - **MgB₂:** сверхпроводник 39 К, дешевле и легче в изготовлении, работает до ~20 К; альтернатива для SMES/магнитов при гелиевых температурах.
 - **Nb₃Sn / NbTi:** низкотемпературные классики (4.2 К) для полей до 9–12 Тл; проигрывают YBCO при 20–77 К.
 - **NdBCO/SmBCO:** REBCO-родственники с лучшим пиннингом в поле для bulk-магнитов.
-
-## Источники
-
-- Wikipedia — Yttrium barium copper oxide (формула, 666.19 г/моль, плотность 6.4 г/см³, Tc 93 К, решётка a=3.82/b=3.89/c=11.68 Å, Hc2 120/250 Тл, история открытия): https://en.wikipedia.org/wiki/Yttrium_barium_copper_oxide
-- IEEE Technav — Yttrium barium copper oxide (Tc 92 К, Jc плёнок >10¹¹ А/м², bulk trapped field >17 Тл, 2G-технологии, приложения): https://technav.ieee.org/topic/yttrium-barium-copper-oxide
-- Hlásek T. et al., IEEE Trans. Appl. Supercond. / University of Cambridge repository — «Enhanced Mechanical Properties of Single-Domain YBCO Bulk Superconductors» (TSMG-режим, E 32/52 ГПа, σр 19.6–36 МПа, HV 540±60 при 77 К, кислородный отжиг 150 ч): https://api.repository.cam.ac.uk/server/api/core/bitstreams/ee471502-9099-4edd-9146-3694e80c5fc8/content
-- Roa J.J. et al., J. Eur. Ceram. Soc. 30 (2010) — модуль Юнга плотного YBCO 123.5 ± 3.4 ГПа: https://www.sciencedirect.com/science/article/abs/pii/S0955221909005433
-- Zhang B., Zhang X., Zhou Y.-H., Natl Sci Rev 10 (2023) — «Lightweight, highly tough and durable YBa₂Cu₃O₇₋ₓ» (K1c < 3 МПа·√м при 77 К, сжатие TSMTG 212 МПа / EPIP 412 МПа, 10 000 циклов, плотность композита 2.15 г/см³): https://pmc.ncbi.nlm.nih.gov/articles/PMC10062695
-- Congreve J.V.J. et al. (2019), Cambridge repository — «Improving mechanical strength of YBCO bulk» (порог разрушения 10–30 МПа, YBCO-Ag до 170 МПа): https://www.repository.cam.ac.uk/bitstreams/a19e275b-3612-446a-9f86-4df502e4e59f/download
-- Yamada Y. et al., Jpn. J. Appl. Phys. 39 (2000) 1111 — эффективный КТР YBCO-плёнки 14.0·10⁻⁶ 1/К, критическая толщина 1.35 мкм: https://iopscience.iop.org/article/10.1143/JJAP.39.1111
-- Prayoonphokkharat P. et al., J. Alloys Compd. (2021) — теплопроводность YBCO 2.0→0.6 Вт/(м·К) в диапазоне 300–973 К: https://www.sciencedirect.com/science/article/abs/pii/S0925838821009610
-- Patsnap Eureka — Superconducting Ceramic Bulk Material (Tc 92±1 К при относительной плотности >5.90 г/см³, δ≈0.1–0.3, Y-211 пиннинг): https://eureka.patsnap.com/materials/superconducting-ceramic-bulk
-- ScienceDirect Topics — Yttrium Barium Copper Oxides (коэффициент Пуассона 0.26): https://www.sciencedirect.com/topics/chemical-engineering/yttrium-barium-copper-oxides

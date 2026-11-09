@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 10
+
+
+
 id: material_inconel_718
-псевдонимы: []
-канонический_id: material_inconel_718
 тип: материал
 класс: металл
 химический_состав: 'Ni+Co 50.0–55.0; Cr 17.0–21.0; Fe баланс; Nb+Ta 4.75–5.50; Mo 2.80–3.30; Ti 0.65–1.15; Al 0.35–0.80; Co ≤1.0; C ≤0.08; Mn ≤0.35; Si ≤0.35; Cu ≤0.15; B 0.001–0.006; P ≤0.015; S ≤0.015'
@@ -67,7 +67,6 @@ id: material_inconel_718
   теплоёмкость_J_kgK: 435
   коэффициент_термического_расширения_1_K: 1.28e-05
   электропроводность_S_m: 8.26e+05
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -105,8 +104,6 @@ id: material_inconel_718
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Inconel 718
-
 ## Описание
 
 INCONEL® Alloy 718 (UNS N07718, W.Nr. 2.4668) — дисперсионно-твердеющий никелевый суперсплав системы Ni–Cr–Fe–Nb–Mo, разработанный INCO в начале 1960-х; правообладатель марки — Special Metals Corporation. Сочетает исключительно высокие пределы текучести и длительной прочности до 650 °C (1300 °F) со стойкостью к окислению до 982 °C (1800 °F); рабочий температурный диапазон от −253 °C (−423 °F). «Вялое» старение (sluggish age-hardening response) делает 718 одним из наиболее свариваемых среди упрочняемых старением никелевых суперсплавов: при сварке и отжиге не возникает самопроизвольного упрочнения.
@@ -115,6 +112,31 @@ INCONEL® Alloy 718 (UNS N07718, W.Nr. 2.4668) — дисперсионно-тв
 
 **Класс:** металл (никелевый суперсплав, дисперсионно-твердеющий)
 **Кристаллическая структура:** поликристаллическая ГЦК (FCC) γ-матрица (аустенитного типа); упрочнение метастабильной объёмноцентрированной тетрагональной γ″-фазой Ni₃Nb и γ′-фазой Ni₃(Al,Ti); карбиды MC/M₂₃C₆
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Special Metals, INCONEL alloy 718 technical bulletin (UNS N07718/W.Nr. 2.4668, состав, −423…1300 °F): https://www.specialmetals.com/documents/technical-bulletins/inconel/inconel-alloy-718.pdf
+- High Temp Metals, INCONEL 718 Technical Data (Type Analysis, физические константы, термообработки, механика, stress-rupture): https://www.hightempmetals.com/techdata/hitempInconel718data.php
+- Maher, Alloy 718 datasheet (Poisson 0.294, k 11.4 Вт/(м·К), cp 435, PREN 22.5): https://maher.com/media/pdfs/718-datasheet-rev-01.pdf
+- AddUp, IN718 Materials Data Sheet (k 11.4, cp 435, интервал плавления 1260–1336 °C, ρэ 1.25 мкОм·м): https://addupsolutions.com/wp-content/uploads/2023/09/IN718-Materials-Data-Sheet-v3.pdf
+- Xometry, Inconel 718 (состав Ni 50–55/Cr 17–21, твердость 36–40 HRC состаренный, ~25 HRC отожжённый): https://www.xometry.com/resources/materials/inconel-718
+- Renishaw, RenAM 500Q IN718 datasheet (ρ 8.2 г/см³, k 6–12 Вт/(м·К), 1290–1330 °C): https://www.renishaw.com/resourcecentre/download/data-sheet-renam-500-series-inconel-718-material-da
+- voestalpine Specialty Metals, Alloy 718 AMS 5662/5663 (твердость ≤28 HRC отожжённый → 36–43 HRC состаренный): https://www.voestalpine.com/specialtymetals/nam/en/alloy-718-ams-5662-and-5663
+- Huaxiao Alloy, Inconel 718 UNS N07718 (магнитная проницаемость 1.001 @ 200 Э, E 204 ГПа): https://www.huaxiao-alloy.com/inconel-718-uns-n07718.html
+- Rolled Alloys, 718 vs AMS vs API 6A (состояния поставки, HRC, кислые среды): https://www.rolledalloys.com/wp-content/uploads/718vsAMSvsAPI-6A_USA.pdf
+- Carpenter Technology, Alloy 718 microstructure characterization (γ-матрица + γ′ + γ″ + карбиды): https://www.carpentertechnology.com/blog/nickel-base-superalloy-718-microstructure-characterization
+- Yin et al. 2019, Materials 12, PMC6981741 (HIP и термообработка AM IN718): https://pmc.ncbi.nlm.nih.gov/articles/PMC6981741
+- Gheorghe, Rev. Mater. Plast. 43(3) (δ-Ni₃Nb орторомбическая игольчатая, 815–980 °C): https://revmaterialeplastice.ro/pdf/43%20GHEORGHE%20D%203%2018.pdf
+- SSA Corp, Inconel 718 AMS 5662 (прутки, поковки, листы): https://www.ssa-corp.com/en/718-Nickel-Inconel-718-AMS-5662-UNSN07718.php
+- Aircraft Materials UK, Alloy 718 (длительная прочность до 1300 °F, окисление до 1800 °F): https://www.aircraftmaterials.com/data/nickel/718.html
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -197,21 +219,3 @@ Type Analysis по Special Metals (UNS N07718):
 ## Аналоги и заменители
 
 Ближайший по химической базе материал репозитория — Inconel 625 (Ni–Cr–Mo–Nb): твёрдорастворный, без дисперсионного γ″-упрочнения — ниже прочность, выше коррозионная стойкость и пластичность. В изделиях с рабочими температурами до 650 °C и требованиями σ0.2 ≥ 1000 МПа замена 718 на твёрдорастворные сплавы требует пересчёта узлов.
-
-## Источники
-
-- Special Metals, INCONEL alloy 718 technical bulletin (UNS N07718/W.Nr. 2.4668, состав, −423…1300 °F): https://www.specialmetals.com/documents/technical-bulletins/inconel/inconel-alloy-718.pdf
-- High Temp Metals, INCONEL 718 Technical Data (Type Analysis, физические константы, термообработки, механика, stress-rupture): https://www.hightempmetals.com/techdata/hitempInconel718data.php
-- Maher, Alloy 718 datasheet (Poisson 0.294, k 11.4 Вт/(м·К), cp 435, PREN 22.5): https://maher.com/media/pdfs/718-datasheet-rev-01.pdf
-- AddUp, IN718 Materials Data Sheet (k 11.4, cp 435, интервал плавления 1260–1336 °C, ρэ 1.25 мкОм·м): https://addupsolutions.com/wp-content/uploads/2023/09/IN718-Materials-Data-Sheet-v3.pdf
-- Xometry, Inconel 718 (состав Ni 50–55/Cr 17–21, твердость 36–40 HRC состаренный, ~25 HRC отожжённый): https://www.xometry.com/resources/materials/inconel-718
-- Renishaw, RenAM 500Q IN718 datasheet (ρ 8.2 г/см³, k 6–12 Вт/(м·К), 1290–1330 °C): https://www.renishaw.com/resourcecentre/download/data-sheet-renam-500-series-inconel-718-material-da
-- voestalpine Specialty Metals, Alloy 718 AMS 5662/5663 (твердость ≤28 HRC отожжённый → 36–43 HRC состаренный): https://www.voestalpine.com/specialtymetals/nam/en/alloy-718-ams-5662-and-5663
-- Huaxiao Alloy, Inconel 718 UNS N07718 (магнитная проницаемость 1.001 @ 200 Э, E 204 ГПа): https://www.huaxiao-alloy.com/inconel-718-uns-n07718.html
-- Rolled Alloys, 718 vs AMS vs API 6A (состояния поставки, HRC, кислые среды): https://www.rolledalloys.com/wp-content/uploads/718vsAMSvsAPI-6A_USA.pdf
-- Carpenter Technology, Alloy 718 microstructure characterization (γ-матрица + γ′ + γ″ + карбиды): https://www.carpentertechnology.com/blog/nickel-base-superalloy-718-microstructure-characterization
-- Yin et al. 2019, Materials 12, PMC6981741 (HIP и термообработка AM IN718): https://pmc.ncbi.nlm.nih.gov/articles/PMC6981741
-- Gheorghe, Rev. Mater. Plast. 43(3) (δ-Ni₃Nb орторомбическая игольчатая, 815–980 °C): https://revmaterialeplastice.ro/pdf/43%20GHEORGHE%20D%203%2018.pdf
-- SSA Corp, Inconel 718 AMS 5662 (прутки, поковки, листы): https://www.ssa-corp.com/en/718-Nickel-Inconel-718-AMS-5662-UNSN07718.php
-- Aircraft Materials UK, Alloy 718 (длительная прочность до 1300 °F, окисление до 1800 °F): https://www.aircraftmaterials.com/data/nickel/718.html
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

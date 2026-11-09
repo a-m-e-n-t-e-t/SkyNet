@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_etfe
-псевдонимы: []
-канонический_id: material_etfe
 тип: материал
 класс: полимер
 химический_состав: 'Сополимер этилена и тетрафторэтилена (ETFE) со строгим чередованием звеньев ~1:1: (–CH₂–CH₂–)ₙ(–CF₂–CF₂–)ₘ, содержание фтора ~59–60 масс.%, без наполнителей (базовые марки); промышленные марки: Tefzel 200/280/750/HT-2184/HT-2004 (Chemours), Fluon ETFE (AGC), Neoflon EP (Daikin)'
@@ -60,7 +60,6 @@ id: material_etfe
   теплоёмкость_J_kgK: 900
   коэффициент_термического_расширения_1_K: 9.0e-5
   электропроводность_S_m: 1.0e-18
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -79,13 +78,33 @@ id: material_etfe
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: ETFE (этилен-тетрафторэтилен)
-
 ## Описание
 
 ETFE (ethylene tetrafluoroethylene) — фторполимерный термопласт, строго чередующийся сополимер этилена и тетрафторэтилена ~1:1 с формулой (–CH₂–CH₂–)ₙ(–CF₂–CF₂–)ₘ (фтор ~59–60 масс.%). Морфология полукристаллическая (кристалличность ~40–60%). Класс в файле исправлен: в заглушке ошибочно стоял `металл` — реальный класс **полимер (фторполимер)**, поэтому металлические пороги P022.5 (предел текучести ≥800 МПа, модуль ≥100 ГПа) к нему неприменимы; фактический уровень соответствует инженерным термопластам.
 
 Ключевые торговые марки: **Tefzel** 200/280/750/HT-2184/HT-2004 (Chemours), **Fluon ETFE** (AGC), **Neoflon EP** (Daikin). В дереве изделий применяется как плёнка-инкапсуляция перовскитного тандемного фотоэлектрического модуля (изделие `perovskite_tandem`, часть `часть_perovskite_tandem_encapsulant`): диффузионный барьер против влаги/кислорода при прозрачности в диапазоне 350–1100 нм.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- NETZSCH, «ETFE: Ethylene-tetrafluoroethylene» (ρ 1.7 г/см³, λ 0.23 Вт/(м·К), Tm 225–275 °C, Tg 75–85 °C, cp 0.9 Дж/(г·К), E 1100 МПа, CTE 40×10⁻⁶/K, разложение 385–400 °C): https://analyzing-testing.netzsch.com/en-US/polymers-netzsch-com/high-temperature-resistant-thermoplastics/etfe-ethylene-tetrafluoroethylene (проверено 2026-11-06)
+- Chemours «Tefzel ETFE 200 Product Information» (коэффициент расширения 0–100 °C): https://www.teflon.com/en/-/media/files/teflon/tefzel-etfe-200-product-info.pdf (проверено 2026-11-06)
+- Tefzel Properties Handbook (Tm 220–280 °C, HT-2004 83 МПа, изод «no break» −60 °C, верхняя температура 175 °C): https://americandurafilm.com/wp-content/uploads/2022/02/Tefzel-Properties.pdf и https://www.tetrachim.com/wp-content/uploads/2020/11/C11590_Tefzel_Properties-Handbook.pdf (проверено 2026-11-06)
+- Fluorotherm «ETFE Properties» (Tm 225–270 °C, λ 0.238 Вт/(м·К), предел текучести 2800 psi, ρ 1.7 г/см³, cp 1.9–2.0 кДж/(кг·К)): https://www.fluorotherm.com/technical-information/materials-overview/etfe-properties (проверено 2026-11-06)
+- Fluorocarbon.co.uk (рабочая температура −100…250 °C, λ ASTM C177): https://fluorocarbon.co.uk/resources/blog/what-is-ethylene-tetrafluoroethylene-etfe (проверено 2026-11-06)
+- Polyfluor (Tm ~260 °C, непрерывно до 150 °C): https://www.polyfluor.nl/en/etfe-what-can-this-material-really-handle (проверено 2026-11-06)
+- Folien-Zentrum, Tefzel film datasheet (D882: 41 МПа, 300%): https://folien-zentrum.com/en/productattachment/download/file/attachment_id/311 (проверено 2026-11-06)
+- Sterling Plastics, Tefzel datasheet (диэлектрическая прочность 1800 В/мил, ε 2.5 @1 МГц, ρv 10¹⁷): https://sterlingplasticsinc.com/product/tefzel-etfe-ethylene-tetrafluoroethylene (проверено 2026-11-06)
+- Tefzel mill shapes datasheet (ASTM D3159-95a, TS break ≈41 МПа): https://plasticfilms.co/tefzel/index.htm (проверено 2026-11-06)
+- Aerospace Wire, «DuPont Tefzel 750» (рейтинг 200 °C, прочность при 160 °C): http://aerospacewire.com/Tefzel750.pdf (проверено 2026-11-06)
+- UL Prospector, Tefzel HT-2184 (химстойкое исполнение): https://www.ulprospector.com/plastics/en/datasheet/436527/tefzel-etfe-ht-2184 (проверено 2026-11-06)
+- Goodfellow, ETFE film (полукристаллический, 1.7 г/см³, Tm 270 °C): https://www.goodfellow.com/global/resources/ethylene-tetrafluoroethylene-copolymer-etfe-film-material-information (проверено 2026-11-06)
 
 ## Химический состав
 
@@ -136,18 +155,3 @@ ETFE (ethylene tetrafluoroethylene) — фторполимерный термо�
 ## Аналоги и заменители
 
 PTFE (выше рабочая температура и химстойкость, ниже жёсткость и ударопрочность), FEP/PFA (аналогичные фторполимеры), PVDF (дешевле, ниже химстойкость), пероксидно-сшитая EVA (стандартная инкапсуляция Si-PV — Witteck et al., NREL 2024).
-
-## Источники
-
-- NETZSCH, «ETFE: Ethylene-tetrafluoroethylene» (ρ 1.7 г/см³, λ 0.23 Вт/(м·К), Tm 225–275 °C, Tg 75–85 °C, cp 0.9 Дж/(г·К), E 1100 МПа, CTE 40×10⁻⁶/K, разложение 385–400 °C): https://analyzing-testing.netzsch.com/en-US/polymers-netzsch-com/high-temperature-resistant-thermoplastics/etfe-ethylene-tetrafluoroethylene (проверено 2026-11-06)
-- Chemours «Tefzel ETFE 200 Product Information» (коэффициент расширения 0–100 °C): https://www.teflon.com/en/-/media/files/teflon/tefzel-etfe-200-product-info.pdf (проверено 2026-11-06)
-- Tefzel Properties Handbook (Tm 220–280 °C, HT-2004 83 МПа, изод «no break» −60 °C, верхняя температура 175 °C): https://americandurafilm.com/wp-content/uploads/2022/02/Tefzel-Properties.pdf и https://www.tetrachim.com/wp-content/uploads/2020/11/C11590_Tefzel_Properties-Handbook.pdf (проверено 2026-11-06)
-- Fluorotherm «ETFE Properties» (Tm 225–270 °C, λ 0.238 Вт/(м·К), предел текучести 2800 psi, ρ 1.7 г/см³, cp 1.9–2.0 кДж/(кг·К)): https://www.fluorotherm.com/technical-information/materials-overview/etfe-properties (проверено 2026-11-06)
-- Fluorocarbon.co.uk (рабочая температура −100…250 °C, λ ASTM C177): https://fluorocarbon.co.uk/resources/blog/what-is-ethylene-tetrafluoroethylene-etfe (проверено 2026-11-06)
-- Polyfluor (Tm ~260 °C, непрерывно до 150 °C): https://www.polyfluor.nl/en/etfe-what-can-this-material-really-handle (проверено 2026-11-06)
-- Folien-Zentrum, Tefzel film datasheet (D882: 41 МПа, 300%): https://folien-zentrum.com/en/productattachment/download/file/attachment_id/311 (проверено 2026-11-06)
-- Sterling Plastics, Tefzel datasheet (диэлектрическая прочность 1800 В/мил, ε 2.5 @1 МГц, ρv 10¹⁷): https://sterlingplasticsinc.com/product/tefzel-etfe-ethylene-tetrafluoroethylene (проверено 2026-11-06)
-- Tefzel mill shapes datasheet (ASTM D3159-95a, TS break ≈41 МПа): https://plasticfilms.co/tefzel/index.htm (проверено 2026-11-06)
-- Aerospace Wire, «DuPont Tefzel 750» (рейтинг 200 °C, прочность при 160 °C): http://aerospacewire.com/Tefzel750.pdf (проверено 2026-11-06)
-- UL Prospector, Tefzel HT-2184 (химстойкое исполнение): https://www.ulprospector.com/plastics/en/datasheet/436527/tefzel-etfe-ht-2184 (проверено 2026-11-06)
-- Goodfellow, ETFE film (полукристаллический, 1.7 г/см³, Tm 270 °C): https://www.goodfellow.com/global/resources/ethylene-tetrafluoroethylene-copolymer-etfe-film-material-information (проверено 2026-11-06)

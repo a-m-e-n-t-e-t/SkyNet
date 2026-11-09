@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 2
+
+
+
 id: material_neilon_6_66
-псевдонимы: []
-канонический_id: material_neilon_6_66
 тип: материал
 класс: полимер
 химический_состав: 'Полиамид 6/6 (PA66, нейлон 6/6): продукт поликонденсации гексаметилендиамина (6 C) и адипиновой кислоты (6 C), повторяющееся звено –[NH–(CH₂)₆–NH–OC–(CH₂)₄–CO]ₙ–; промышленные марки: Zytel 101 (DuPont), Ultramid A3K (BASF), Durethan A (Lanxess)'
@@ -58,7 +58,6 @@ id: material_neilon_6_66
   теплоёмкость_J_kgK: 1500
   коэффициент_термического_расширения_1_K: 8.0e-5
   электропроводность_S_m: 1.0e-13
-наследуемые: {}
 дополнительные:
   цена_usd_kg: 3.1
   твердость_vickers_HV: null
@@ -85,13 +84,23 @@ id: material_neilon_6_66
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Нейлон 6/6 (PA66)
-
 ## Описание
 
 Нейлон 6/6 (PA66, polyhexamethylene adipamide) — полукристаллический инженерный термопласт, продукт поликонденсации гексаметилендиамина (6 атомов C) и адипиновой кислоты (6 атомов C), откуда и обозначение «6/6». Морфология полукристаллическая (кристалличность ~35–50%): α-фаза PA66 — триклинная структура из водородносвязанных листов цепей, при нагреве выше ~160 °C переходит в псевдогексагональную γ-фазу (Brill-переход). По жёсткости, прочности, теплостойкости и износостойкости PA66 превосходит PA6 (Tm 255–260 °C против 200–215 °C), при этом держит непрерывную эксплуатацию до 120–150 °C в термостабилизированных марках.
 
 Ключевые торговые марки: **Zytel 101** (DuPont), **Ultramid A3K** (BASF), **Durethan A** (Lanxess). В дереве изделий применяется в 3D-печатных диэлектрических эластомерных актуаторах (изделие `3d-pechatnye_dea`, части `часть_3d-pechatnye_dea_housing` — корпус, `часть_3d-pechatnye_dea_mounting` — крепёж, FDM/SLS), а также как корпус разъёма Deutsch DT06-2S (газостатические подшипники на гелии) и нейлоновый крепёж рамки преднатяга DES-датчиков.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
+- Веб-верификация (issue #659): см. «Источники (F28)»
 
 ## Химический состав
 
@@ -153,23 +162,3 @@ id: material_neilon_6_66
 - PA6 (нейлон 6): дешевле, выше вязкость, ниже Tm (200–215 °C) и жёсткость.
 - PA66-GF30: прочность 160–210 МПа, модуль 10–11 ГПа — для нагруженного крепежа (AZoM).
 - PA12 / PA11: для SLS, ниже влагопоглощение; POM: ниже ползучесть и влагопоглощение.
-
-## Источники (F28)
-
-1. Direct Plastics — Nylon 6.6 Data Sheet (ρ 1.15 г/см³, Tm 258 °C, k 0.36 Вт/(м·К), σв 85 МПа): https://www.directplastics.co.uk/pub/pdf/datasheets/Nylon%206.6%20Data%20Sheet.pdf
-2. Xometry — Nylon 6/6 (CTE 80×10⁻⁶ 1/К, cp 1500 Дж/(кг·К), Tm 255 °C): https://xometry.hk/wp-content/uploads/sites/5/2025/06/Nylon-6_6.pdf
-3. NETZSCH — PA6.6: Polyamide 6.6 (полукристаллический термопласт): https://analyzing-testing.netzsch.com/en-US/polymers-netzsch-com/engineering-thermoplastics/pa6-6-polyamide-6-6
-4. Al-Shawabkeh 2023, Heliyon — α-триклинная структура PA66 и Brill-переход: https://www.sciencedirect.com/science/article/pii/S2405844023082506
-5. PatSnap Eureka — Nylon 66: structure & processing (поликонденсация гексаметилендиамина + адипиновая кислота): https://eureka.patsnap.com/materials/nylon-66-structure-processing
-6. MatWeb — Nylon 66 overview (Rockwell R108, влагопоглощение 2.1%, Izod 46.7 кДж/м², электрическая прочность 30.6 кВ/мм): https://www.matweb.com/search/datasheettext.aspx?matguid=389dba4b231842fa83c303e77a829b05
-7. Vital Parts — Nylon 66 materials (коэффициент Пуассона 0.37–0.40, надрезанный Изод 0.55–10 кДж/м²): https://www.vital-parts.co.uk/materials/Nylon_66_1.pdf
-8. NylonPlastic — механика по грейдам (PA66: σв 82 МПа, удлинение 60%, E 3.0 ГПа): https://nylonplastic.com/nylon-material-properties/
-9. BusinessAnalytiq — PA66 price index (09.2026): https://businessanalytiq.com/procurementanalytics/index/pa66-price-index
-10. Manufyn — PA66 material guide (непрерывная эксплуатация 120–150 °C): https://manufyn.com/resources/materials/plastics/nylon-pa66
-11. AZoM — PA66 30% GF (прочность 160–210 МПа, модуль 10–11 ГПа): https://www.azom.com/article.aspx?ArticleID=2050
-12. Smith Metal — Engineering Plastic Nylon 66 & 6 (Tm 260/200 °C, k 0.23 Вт/(м·К)): https://www.smithmetal.com/pdf/plastics/nylon-6-66.pdf
-
-## Источники
-
-- CSV: `начальные данные_final.csv` (пользовательский ввод)
-- Веб-верификация (issue #659): см. «Источники (F28)»

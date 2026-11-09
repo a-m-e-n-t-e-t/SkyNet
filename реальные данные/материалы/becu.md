@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 4
+
+
+
 id: material_becu
-псевдонимы: []
-канонический_id: material_becu
 тип: материал
 класс: металл
 химический_состав: 'Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)'
@@ -62,7 +62,6 @@ id: material_becu
   теплоёмкость_J_kgK: 420
   коэффициент_термического_расширения_1_K: 1.78e-05
   электропроводность_S_m: 1.29e7
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: 375
@@ -95,11 +94,27 @@ id: material_becu
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: BeCu (медно-бериллиевый сплав C17200)
-
 ## Описание
 
 Бериллиевая медь (BeCu, Alloy 25, CuBe2, UNS C17200) — термообрабатываемый медный сплав с 1.9–2.15 % Be и 0.2–0.6 % Co/Ni, эталонный материал для пружинящих электрических контактов. Дисперсионное упрочнение γ''-фазой после старения при ~315 °C даёт наивысшую прочность среди всех деформируемых медных сплавов (σв до 1450 МПа) при сохранении 22–28 % IACS электропроводности, теплопроводности ~105 Вт/(м·К) и уникального сочетания немагнитности и отсутствия искрообразования при ударе. В репозитории применяется как материал разъёмов 3D-печатной DEA (`часть_3d-pechatnye_dea_connectors`) и гранатомёта M320 (`часть_granatomet_m320_connectors`).
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- [AZoM: Beryllium Copper UNS C17200 datasheet (σв > 1380 МПа, CTE 17.8×10⁻⁶, ρ 8.36, ν 0.285)](https://www.azom.com/article.aspx?ArticleID=6326)
+- [AZoM: Beryllium Copper UNS C17200 — Copper Alloy (T_пл 866 °C, Be 1.9 / Co 0.20, Cp)](https://www.azom.com/article.aspx?ArticleID=6300)
+- [National Bronze: C17200 PDF (ρ 8.25 г/см³, solidus 1590 °F / liquidus 1800 °F, Cp 0.10 Btu/lb·°F)](https://www.nationalbronze.com/pdfs/C17200.pdf)
+- [Wikipedia: Beryllium copper (solidus 866 °C, liquidus 982 °C, состав C17200)](https://en.wikipedia.org/wiki/Beryllium_copper)
+- [Triangle Alloy: BeCu C17200 (CuBe2) supplier (k 105 Вт/(м·К), ρ 8.3 г/см³)](https://trianglealloy.com/beryllium-copper-c17200-cube2-alloy25-supplier)
+- [LFA Wire: Beryllium Copper Tempered Alloy 25 C17200 (k 62–75 BTU, электропроводность 22–28 % IACS)](https://www.lfawire.com/tempered-alloy-25_c17200.htm)
+- [Fisk Alloy: C172 Beryllium Copper CuBe2 (annealing range 774–802 °C)](https://fiskalloy.com/product/c17200)
+- [Lai et al. 2023 (PMC): Rotating Bending Fatigue Behaviors of C17200 (UTS при 25/450 °C)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9864880)
 
 ## Химический состав
 
@@ -152,14 +167,3 @@ id: material_becu
 ## Аналоги и заменители
 
 Для контактов: фосфористая бронза C51900/C52100 (дешевле, но σв ≤ 700 МПа и выше релаксация), CuNiSiCr-сплавы (C18080 и др. — лучше проводимость при средней прочности), CuNiSn (Spinodal, C72900 — ближайший конкурент по прочности). Для неискрящего инструмента: CuBe2 безальтернативен по твёрдости; более дешёвые Al-бронзы (C63000) мягче. Для пресс-форм: CuNiSiCr и CuCrZr при требованиях к проводимости > 50 % IACS.
-
-## Источники
-
-- [AZoM: Beryllium Copper UNS C17200 datasheet (σв > 1380 МПа, CTE 17.8×10⁻⁶, ρ 8.36, ν 0.285)](https://www.azom.com/article.aspx?ArticleID=6326)
-- [AZoM: Beryllium Copper UNS C17200 — Copper Alloy (T_пл 866 °C, Be 1.9 / Co 0.20, Cp)](https://www.azom.com/article.aspx?ArticleID=6300)
-- [National Bronze: C17200 PDF (ρ 8.25 г/см³, solidus 1590 °F / liquidus 1800 °F, Cp 0.10 Btu/lb·°F)](https://www.nationalbronze.com/pdfs/C17200.pdf)
-- [Wikipedia: Beryllium copper (solidus 866 °C, liquidus 982 °C, состав C17200)](https://en.wikipedia.org/wiki/Beryllium_copper)
-- [Triangle Alloy: BeCu C17200 (CuBe2) supplier (k 105 Вт/(м·К), ρ 8.3 г/см³)](https://trianglealloy.com/beryllium-copper-c17200-cube2-alloy25-supplier)
-- [LFA Wire: Beryllium Copper Tempered Alloy 25 C17200 (k 62–75 BTU, электропроводность 22–28 % IACS)](https://www.lfawire.com/tempered-alloy-25_c17200.htm)
-- [Fisk Alloy: C172 Beryllium Copper CuBe2 (annealing range 774–802 °C)](https://fiskalloy.com/product/c17200)
-- [Lai et al. 2023 (PMC): Rotating Bending Fatigue Behaviors of C17200 (UTS при 25/450 °C)](https://pmc.ncbi.nlm.nih.gov/articles/PMC9864880)

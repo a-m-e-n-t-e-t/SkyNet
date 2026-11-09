@@ -1,8 +1,9 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_ss_aisi_304
 псевдонимы: [material_stainless_steel_304]
-канонический_id: material_ss_aisi_304
 тип: материал
 класс: металл
 химический_состав: 'нержавеющая сталь AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240)'
@@ -65,7 +66,6 @@ id: material_ss_aisi_304
   теплоёмкость_J_kgK: 500
   коэффициент_термического_расширения_1_K: 1.69e-05
   электропроводность_S_m: 1.39e6
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -106,8 +106,6 @@ id: material_ss_aisi_304
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-08
 ---
-# Материал: SS AISI 304
-
 ## Описание
 
 AISI Type 304 — универсальная аустенитная хром-никелевая нержавеющая сталь 18-8 (18 % Cr, 8 % Ni), самая распространённая нержавеющая сталь в мире (европейский аналог EN 1.4301 / X5CrNi18-10, японский SUS304). Производится в США в т.ч. Cleveland-Cliffs (наследник AK Steel), thicknesses 0.25–6.35 мм лист/полоса, ширина до 1524 мм.
@@ -123,6 +121,22 @@ AISI Type 304 — универсальная аустенитная хром-н�
 
 **Класс:** металл (аустенитная нержавеющая сталь)
 **Кристаллическая структура:** аустенитный поликристалл (ГЦК); нестабилен к мартенситу деформации
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Cleveland-Cliffs 304/304L Stainless Steel Product Data (официальный datasheet, May 2021): https://www.clevelandcliffs.com/_assets/_904405b2b262e8b0d6d17a215fa19780/clevelandcliffs/db/1190/10510/file/CLF_ProductData_304-304LSS_052021.pdf
+- AK Steel 304/304L Data Sheet (зеркало): https://www.spacematdb.com/spacemat/manudatasheets/304_304L_Data_Sheet.pdf
+- AZoM Grade 304 Stainless Steel Properties: https://www.azom.com/article.aspx?ArticleID=2867
+- thyssenkrupp Materials UK — Stainless Steel 304 1.4301 (EN-требования 520–720 МПа, δ ≥45 %): https://www.thyssenkrupp-materials.co.uk/stainless-steel-304-14301.html
+- Kim C.S. Thermophysical Properties of Stainless Steels (Argonne, 1975) — экспериментальные λ 304L до 1600 K: https://www.osti.gov/biblio/7342082
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -184,12 +198,3 @@ Type 304 (Cleveland-Cliffs, wt %): Cr 18.0–20.0; Ni 8.0–12.0; C ≤0.08; Mn 
 - **AISI 430 (1.4016)** — ферритная без никеля, дешевле, магнитна, ниже стойкость и пластичность;
 - **SUS 304** — японский аналог (JIS G4303);
 - **201/202** — экономичные Cr-Mn-Ni сорта (замещение части Ni марганцем).
-
-## Источники
-
-- Cleveland-Cliffs 304/304L Stainless Steel Product Data (официальный datasheet, May 2021): https://www.clevelandcliffs.com/_assets/_904405b2b262e8b0d6d17a215fa19780/clevelandcliffs/db/1190/10510/file/CLF_ProductData_304-304LSS_052021.pdf
-- AK Steel 304/304L Data Sheet (зеркало): https://www.spacematdb.com/spacemat/manudatasheets/304_304L_Data_Sheet.pdf
-- AZoM Grade 304 Stainless Steel Properties: https://www.azom.com/article.aspx?ArticleID=2867
-- thyssenkrupp Materials UK — Stainless Steel 304 1.4301 (EN-требования 520–720 МПа, δ ≥45 %): https://www.thyssenkrupp-materials.co.uk/stainless-steel-304-14301.html
-- Kim C.S. Thermophysical Properties of Stainless Steels (Argonne, 1975) — экспериментальные λ 304L до 1600 K: https://www.osti.gov/biblio/7342082
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

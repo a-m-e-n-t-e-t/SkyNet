@@ -1,4 +1,7 @@
 ---
+
+
+
 id: izdelie_provodnikovaya_nanoreshetka
 тип: материал
 категория: прочее
@@ -48,7 +51,6 @@ scaling_type: количественный
           min: 0
           max: 100
           nominal: 1
-наследуемые: {}
 дополнительные:
   цена_usd: null
 дата_создания: 2026-11-03
@@ -56,8 +58,6 @@ scaling_type: количественный
 источник: user_input
 источник_разбора: пользовательский ввод
 ---
-# Изделие: Проводниковая нанорешётка
-
 ## Описание
 
 Проводниковая нанорешётка (Al, шаг 200 нм, высота 500 нм) на сапфировой подложке
@@ -68,26 +68,29 @@ scaling_type: количественный
 
 | Параметр | Значение | Единица | Источник |
 |---|---|---|---|
-| подсистема | прочее | — | classify_subsystem |
-| категория | прочее | — | — |
+| подсистема | прочее | — | canon |
+| подтип | прочее | — | canon |
+| масса | 0.1–100 (номинал 5) | kg | canon |
+| габариты (Д×Ш×В) | 200×200×50 | mm | canon |
+| выработка энергии | 0–100 | W | canon |
+| выработка тепла | 0–100 | W | canon |
+| тип узла | материал | — | canon |
+| уровень_номер | 1 | — | canon |
 
-(Параметры требуют уточнения через веб-поиск и вычислений; см. fc_изделие_масса, fc_изделие_стандарты в _field_contracts.yaml)
+
+## Принцип работы
+
+Требует описания на основе инженерного анализа.
 
 ## Состав
 
 Изделие верхнего уровня. Дочерние части не указаны (требуется декомпозиция).
 
-## Используемые технологии
-
-(Ссылки на реальные_данные/технологии/ добавляются после связывания)
-
 ## Используемые материалы
 
-(Ссылки на реальные_данные/материалы/ добавляются после связывания)
+- `mxene` → [`mxene`](../материалы/mxene.md)
+- `aluminum` → [`aluminum`](../материалы/aluminum.md)
 
-## Принцип работы
-
-Требует описания на основе инженерного анализа.
 
 ## Источники
 
@@ -95,18 +98,17 @@ scaling_type: количественный
 
 ---
 
-
 ## Декомпозиция
 
 ```mermaid
 graph TD
-    provodnikovaya_nanor["izdelie_provodnikovaya_nanoreshetka"]
-    provodnikovaya_nanoreshet["часть_provodnikovaya_nanoreshetka_core"]
-    provodnikovaya_nanor --> provodnikovaya_nanoreshet
-    provodnikovaya_nanoreshet["часть_provodnikovaya_nanoreshetka_housing"]
-    provodnikovaya_nanor --> provodnikovaya_nanoreshet
-    provodnikovaya_nanoreshet["часть_provodnikovaya_nanoreshetka_connectors"]
-    provodnikovaya_nanor --> provodnikovaya_nanoreshet
-    provodnikovaya_nanoreshet["часть_provodnikovaya_nanoreshetka_mounting"]
-    provodnikovaya_nanor --> provodnikovaya_nanoreshet
+    izdelie_provodnikovaya_nanoreshetka["izdelie_provodnikovaya_nanoreshetka"]
+    ______provodnikovaya_nanoreshetka_core["часть_provodnikovaya_nanoreshetka_core"]
+    izdelie_provodnikovaya_nanoreshetka --> ______provodnikovaya_nanoreshetka_core
+    ______provodnikovaya_nanoreshetka_housing["часть_provodnikovaya_nanoreshetka_housing"]
+    izdelie_provodnikovaya_nanoreshetka --> ______provodnikovaya_nanoreshetka_housing
+    ______provodnikovaya_nanoreshetka_connectors["часть_provodnikovaya_nanoreshetka_connectors"]
+    izdelie_provodnikovaya_nanoreshetka --> ______provodnikovaya_nanoreshetka_connectors
+    ______provodnikovaya_nanoreshetka_mounting["часть_provodnikovaya_nanoreshetka_mounting"]
+    izdelie_provodnikovaya_nanoreshetka --> ______provodnikovaya_nanoreshetka_mounting
 ```

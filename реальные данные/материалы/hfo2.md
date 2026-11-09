@@ -1,7 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_hfo2
-псевдонимы: []
 канонический_id: 'material_hfo2'
 тип: материал
 класс: керамика
@@ -65,7 +66,6 @@ id: material_hfo2
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: 6.0e-06
   электропроводность_S_m: null
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -104,11 +104,27 @@ id: material_hfo2
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: HfO₂ — диоксид гафния (гафния)
-
 ## Описание
 
 Диоксид гафния HfO₂ — тугоплавкая высококонденсаторная керамика (ρ = 9680 кг/м³, Tm = 2758 °C). При комнатной температуре стабильна моноклинная бадделеитовая фаза P2₁/c; при нагреве последовательно переходят тетрагональная P4₂/nmc (~1700 °C) и кубическая флюоритовая Fm3̄m (~2600 °C). В наноплёнках метастабильно закрепляются полярные орторомбические фазы Pca2₁/Pmn2₁ — источник ферроэлектричества в CMOS-совместимом материале. Диэлектрическая проницаемость в 4–6 раз выше SiO₂ (3.9), что сделало HfO₂ стандартной high-k затворной диэлектрикой (внедрена Intel в 2007 г., 45 нм) и материалом DRAM-конденсаторов, FeFET/FRAM-памяти, высокопреломляющих оптических покрытий.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Wikipedia — Hafnium(IV) oxide: ρ 9.68 г/см³, Tm 2758 °C, фазы m→t→c (~1700/~2600 °C), εr 4–6× SiO₂, Intel 2007, ферроэлектрические Pca2₁/Pmn2₁: https://en.wikipedia.org/wiki/Hafnium(IV)_oxide (проверено 2026-11-06)
+- Lesker, HfO₂ evaporation process notes: ρ 9.68 г/см³, Tm 2758 °C, давление пара 10⁻⁴ Торр @ 2500 °C: https://www.lesker.com/newweb/deposition_materials/deposition-materials-notes.cfm?pgid=hf2 (проверено 2026-11-06)
+- MakeItFrom — Hafnia (HfO₂): теплопроводность 1.1 Вт/(м·К), E 57 ГПа, CTE 6.0 мкм/(м·К), ρ 9.7 г/см³: https://www.makeitfrom.com/material-properties/Hafnia-Hafnium-Oxide-HfO2 (проверено 2026-11-06)
+- Globalsino — HfO₂/HfOₓ: ρ 9680 кг/м³, CTE 5.8×10⁻⁶ K⁻¹, Mohs 6.5: https://www.globalsino.com/EM/page2069.html (проверено 2026-11-06)
+- Laudadio E. et al., Phase Properties of Different HfO₂ Polymorphs: A DFT Study, Crystals 12(1):90, 2022: фазы P2₁/c, P4₂/nmc, Fm3̄m, Pca2₁; εr моноклинной ≈ 22: https://www.mdpi.com/2073-4352/12/1/90 (проверено 2026-11-06)
+- Pavoni E. et al., The Effect of Y Doping on Monoclinic, Orthorhombic and Tetragonal HfO₂ (PMC, 2022): стабилизация фаз легированием: https://pmc.ncbi.nlm.nih.gov/articles/PMC9740846 (проверено 2026-11-06)
+- Banerjee D. et al., Orthorhombic phases in bulk pure HfO₂, 2021: решёточная теплопроводность фаз при КТ 5.56 / 2.87 Вт/(м·К): https://www.sciencedirect.com/science/article/abs/pii/S2352492820328385 (проверено 2026-11-06)
+- VI Material — Hafnium Oxide: Tm ~2810 °C, Mohs 6.5–7.5, химическая инертность: https://vimaterial.de/en/hafnium-oxide-hfo2 (проверено 2026-11-06)
 
 ## Физические свойства
 
@@ -133,14 +149,3 @@ id: material_hfo2
 - ферроэлектрическая память FeFET/FRAM (CMOS-совместимая);
 - высокопреломляющие оптические покрытия (напыление электронным лучом, 10⁻⁴ Торр при 2500 °C);
 - высокотемпературная керамика: тигли, теплоизоляция, защитные покрытия.
-
-## Источники
-
-- Wikipedia — Hafnium(IV) oxide: ρ 9.68 г/см³, Tm 2758 °C, фазы m→t→c (~1700/~2600 °C), εr 4–6× SiO₂, Intel 2007, ферроэлектрические Pca2₁/Pmn2₁: https://en.wikipedia.org/wiki/Hafnium(IV)_oxide (проверено 2026-11-06)
-- Lesker, HfO₂ evaporation process notes: ρ 9.68 г/см³, Tm 2758 °C, давление пара 10⁻⁴ Торр @ 2500 °C: https://www.lesker.com/newweb/deposition_materials/deposition-materials-notes.cfm?pgid=hf2 (проверено 2026-11-06)
-- MakeItFrom — Hafnia (HfO₂): теплопроводность 1.1 Вт/(м·К), E 57 ГПа, CTE 6.0 мкм/(м·К), ρ 9.7 г/см³: https://www.makeitfrom.com/material-properties/Hafnia-Hafnium-Oxide-HfO2 (проверено 2026-11-06)
-- Globalsino — HfO₂/HfOₓ: ρ 9680 кг/м³, CTE 5.8×10⁻⁶ K⁻¹, Mohs 6.5: https://www.globalsino.com/EM/page2069.html (проверено 2026-11-06)
-- Laudadio E. et al., Phase Properties of Different HfO₂ Polymorphs: A DFT Study, Crystals 12(1):90, 2022: фазы P2₁/c, P4₂/nmc, Fm3̄m, Pca2₁; εr моноклинной ≈ 22: https://www.mdpi.com/2073-4352/12/1/90 (проверено 2026-11-06)
-- Pavoni E. et al., The Effect of Y Doping on Monoclinic, Orthorhombic and Tetragonal HfO₂ (PMC, 2022): стабилизация фаз легированием: https://pmc.ncbi.nlm.nih.gov/articles/PMC9740846 (проверено 2026-11-06)
-- Banerjee D. et al., Orthorhombic phases in bulk pure HfO₂, 2021: решёточная теплопроводность фаз при КТ 5.56 / 2.87 Вт/(м·К): https://www.sciencedirect.com/science/article/abs/pii/S2352492820328385 (проверено 2026-11-06)
-- VI Material — Hafnium Oxide: Tm ~2810 °C, Mohs 6.5–7.5, химическая инертность: https://vimaterial.de/en/hafnium-oxide-hfo2 (проверено 2026-11-06)

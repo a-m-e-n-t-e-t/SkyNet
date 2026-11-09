@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_mxene
-псевдонимы: []
-канонический_id: material_mxene
 тип: материал
 класс: керамика
 химический_состав: Ti₃C₂Tx — карбид титана с поверхностными терминациями –O/–OH/–F (Tx)
@@ -53,7 +53,6 @@ id: material_mxene
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: 1400000.0
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   терминации_tx: '–O, –OH, –F (соотношение зависит от протокола травления)'
@@ -83,8 +82,6 @@ id: material_mxene
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: MXene (Ti₃C₂Tx)
-
 ## Описание
 
 MXene — семейство двумерных (2D) карбидов и нитридов ранних переходных металлов с общей формулой Mₙ₊₁XₙTx; флагманский и наиболее изученный представитель — Ti₃C₂Tx. Материал получают селективным травлением алюминиевых слоёв из MAX-фазы Ti₃AlC₂ (50 % HF, 2011 г., Drexel University); Tx — поверхностные терминации –O, –OH, –F. Редкая для керамики комбинация металлической проводимости, гибкости и гидрофильности сделала MXene одним из самых цитируемых новых материалов последних 15 лет.
@@ -94,6 +91,27 @@ MXene — семейство двумерных (2D) карбидов и нит�
 **Класс:** керамика (карбид раннего переходного металла, 2D-форма)
 **Кристаллическая структура:** гексагональная (P6₃/mmc); слои Ti₃C₂ толщиной ~1 нм, разделённые терминациями Tx
 **Вариант структуры:** layered (слоистая 2D структура)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- PatSnap Eureka, «Titanium Carbide MXene: Comprehensive Analysis» — ρ≈4.2 г/см³, E=330±30 ГПа, k=55.8 Вт/(м·К), σ 6500–24 000 S/см: <https://eureka.patsnap.com/materials/titanium-carbide-mxene> (проверено 2026-11-06)
+- A. Lipatov et al., «Elastic properties of 2D Ti₃C₂Tₓ MXene monolayers and bilayers» (2018) — E=333±30 ГПа, прочность 17.3±1.6 ГПа: <https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1130&context=chemfacpub> (проверено 2026-11-06)
+- C. Rong et al., «Elastic properties and tensile strength of 2D Ti₃C₂Tₓ MXene» (2024): <https://pmc.ncbi.nlm.nih.gov/articles/PMC10879101> (проверено 2026-11-06)
+- R. Liu et al., «High-Thermal-Stability and High-Thermal-Conductivity Ti₃C₂Tₓ» ACS Omega 2018 — k≈55.8 Вт/(м·К): <https://pubs.acs.org/acsodf/article/3/3/2609/749520/High-Thermal-Stability-and-High-Thermal> (проверено 2026-11-06)
+- L. Chen et al., «Measurement and Analysis of Thermal Conductivity of Ti₃C₂Tₓ films» 2018 — 1.26–2.84 Вт/(м·К): <https://pmc.ncbi.nlm.nih.gov/articles/PMC6164662> (проверено 2026-11-06)
+- M. Han et al., «MXenes for Electromagnetic Interference Shielding» (2020) — напылённые плёнки ~14 000 S/см: <https://scholarworks.indianapolis.iu.edu/bitstreams/7908a391-0845-4716-88a9-9ab7401c95ad/download> (проверено 2026-11-06)
+- A. Lee et al., «Multi-year Study of Environmental Stability of Ti₃C₂Tₓ» (2024) — окисление выше 450 °C: <https://link.springer.com/article/10.1007/s41127-024-00076-8> (проверено 2026-11-06)
+- M. Pogorielov et al., «MXenes — A New Class of Two-Dimensional Materials» (2021) — открытие 2011, Drexel University: <https://pmc.ncbi.nlm.nih.gov/articles/PMC8706983> (проверено 2026-11-06)
+- K. Prenger et al., «Metal Cation Pre-Intercalated Ti₃C₂Tₓ» (2022) — 300 Ф/г: <https://pubs.acs.org/aaemcq/article/5/8/9373/365872/Metal-Cation-Pre-Intercalated-Ti3C2Tx-MXene-as> (проверено 2026-11-06)
+- S. Hussain et al., «Unlocking exceptional EMI shielding in Ti₃C₂Tₓ MXenes» (2025): <https://pmc.ncbi.nlm.nih.gov/articles/PMC12373269> (проверено 2026-11-06)
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -149,17 +167,3 @@ MXene — семейство двумерных (2D) карбидов и нит�
 ## Применение в изделиях
 
 _Обратные ссылки ещё не проставлены._
-
-## Источники (F28)
-
-- PatSnap Eureka, «Titanium Carbide MXene: Comprehensive Analysis» — ρ≈4.2 г/см³, E=330±30 ГПа, k=55.8 Вт/(м·К), σ 6500–24 000 S/см: <https://eureka.patsnap.com/materials/titanium-carbide-mxene> (проверено 2026-11-06)
-- A. Lipatov et al., «Elastic properties of 2D Ti₃C₂Tₓ MXene monolayers and bilayers» (2018) — E=333±30 ГПа, прочность 17.3±1.6 ГПа: <https://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=1130&context=chemfacpub> (проверено 2026-11-06)
-- C. Rong et al., «Elastic properties and tensile strength of 2D Ti₃C₂Tₓ MXene» (2024): <https://pmc.ncbi.nlm.nih.gov/articles/PMC10879101> (проверено 2026-11-06)
-- R. Liu et al., «High-Thermal-Stability and High-Thermal-Conductivity Ti₃C₂Tₓ» ACS Omega 2018 — k≈55.8 Вт/(м·К): <https://pubs.acs.org/acsodf/article/3/3/2609/749520/High-Thermal-Stability-and-High-Thermal> (проверено 2026-11-06)
-- L. Chen et al., «Measurement and Analysis of Thermal Conductivity of Ti₃C₂Tₓ films» 2018 — 1.26–2.84 Вт/(м·К): <https://pmc.ncbi.nlm.nih.gov/articles/PMC6164662> (проверено 2026-11-06)
-- M. Han et al., «MXenes for Electromagnetic Interference Shielding» (2020) — напылённые плёнки ~14 000 S/см: <https://scholarworks.indianapolis.iu.edu/bitstreams/7908a391-0845-4716-88a9-9ab7401c95ad/download> (проверено 2026-11-06)
-- A. Lee et al., «Multi-year Study of Environmental Stability of Ti₃C₂Tₓ» (2024) — окисление выше 450 °C: <https://link.springer.com/article/10.1007/s41127-024-00076-8> (проверено 2026-11-06)
-- M. Pogorielov et al., «MXenes — A New Class of Two-Dimensional Materials» (2021) — открытие 2011, Drexel University: <https://pmc.ncbi.nlm.nih.gov/articles/PMC8706983> (проверено 2026-11-06)
-- K. Prenger et al., «Metal Cation Pre-Intercalated Ti₃C₂Tₓ» (2022) — 300 Ф/г: <https://pubs.acs.org/aaemcq/article/5/8/9373/365872/Metal-Cation-Pre-Intercalated-Ti3C2Tx-MXene-as> (проверено 2026-11-06)
-- S. Hussain et al., «Unlocking exceptional EMI shielding in Ti₃C₂Tₓ MXenes» (2025): <https://pmc.ncbi.nlm.nih.gov/articles/PMC12373269> (проверено 2026-11-06)
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

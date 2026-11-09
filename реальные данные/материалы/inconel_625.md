@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 3
+
+
+
 id: material_inconel_625
-псевдонимы: []
-канонический_id: material_inconel_625
 тип: материал
 класс: металл
 химический_состав: 'Ni баланс; Cr 20.0–23.0; Mo 8.0–10.0; Nb+Ta 3.15–4.15; Fe ≤5.0; Co ≤1.0; C ≤0.10; Mn ≤0.50; Si ≤0.50; Al ≤0.40; Ti ≤0.40; P ≤0.015; S ≤0.015'
@@ -65,7 +65,6 @@ id: material_inconel_625
   теплоёмкость_J_kgK: 410
   коэффициент_термического_расширения_1_K: 1.31e-05
   электропроводность_S_m: 7.94e+05
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -105,8 +104,6 @@ id: material_inconel_625
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Inconel 625
-
 ## Описание
 
 INCONEL® Alloy 625 (UNS N06625, W.Nr. 2.4856) — немагнитный коррозионно- и окалиностойкий никелевый сплав, упрочнённый твёрдым раствором тугоплавких металлов Mo и Nb в никель-хромовой матрице (дисперсионное упрочнение не требуется — Special Metals). Сочетает выдающуюся прочность и вязкость в диапазоне от криогенных температур до 1093 °C (2000 °F) с высокой усталостной прочностью и стойкостью к хлоридному коррозионному растрескиванию под напряжением. Разработан INCO в 1962 г.; правообладатель марки — Special Metals Corporation.
@@ -115,6 +112,29 @@ INCONEL® Alloy 625 (UNS N06625, W.Nr. 2.4856) — немагнитный кор
 
 **Класс:** металл (никелевый суперсплав, твёрдорастворный)
 **Кристаллическая структура:** поликристаллическая ГЦК (FCC) Ni–Cr матрица; упрочнение твёрдым раствором Mo/Nb; карбиды MC/M6C, стабилизирующие границы зёрен
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Special Metals, INCONEL alloy 625 technical bulletin (UNS N06625/W.Nr. 2.4856, состав, 1290–1350 °C, морские применения): https://www.specialmetals.com/documents/technical-bulletins/inconel/inconel-alloy-625.pdf
+- High Temp Metals, INCONEL 625 Technical Data (Type Analysis, физические свойства, термообработки, механика, Charpy, rupture): https://www.hightempmetals.com/techdata/hitempInconel625data.php
+- Aerospace Metals, INCONEL Alloy 625 datasheet (ρ 8.44 г/см³, k 9.8 Вт/(м·К), σт 460 МПа): https://www.aerospacemetals.com/wp-content/uploads/2023/08/Special-Metals-INCONEL%C2%AE-Alloy-625.pdf
+- UPMET, 625 datasheet (плавление 1280–1350 °C, cp 0.098 Btu/lb·°F): https://www.upmet.com/sites/default/files/products/datasheet/625-datasheet.pdf
+- Wikipedia, Inconel 625 (состав N06625, Poisson 0.278–0.336): https://en.wikipedia.org/wiki/Inconel_625
+- Renishaw, RenAM 500Q IN625 datasheet (k 9–11 Вт/(м·К), ТКЛР 13×10⁻⁶, 1290–1350 °C): https://www.renishaw.com/resourcecentre/download/data-sheet-renam-500-series-inconel-625-material-da
+- SSA Corp, Inconel 625 AMS 5666 UNS N06625 (прутки, поковки, листы): https://www.ssa-corp.com/en/625-Nickel-Inconel-625-AMS-5666-UNSN06625.php
+- NeoNickel, Alloy 625 composition & properties (твёрдорастворное упрочнение Mo/Nb, карбиды MC/M6C): https://www.neonickel.com/technical-resources/alloy-625-composition-properties
+- Langley Alloys, What is Inconel 625 (Grade 1 отожжённый / Grade 2 solution annealed): https://www.langleyalloys.com/technical-resources/what-is-inconel-625
+- NIST Lass 2017, Formation of Ni₃Nb δ-phase in stress-relieved AM IN625 (деградация вязкости/пластичности): https://www.nist.gov/publications/formation-ni3nb-delta-phase-stress-relieved-inconel-625-produced-p
+- VDM Metals, Alloy 625 datasheet (ASTM/AMS стандарты): https://www.vdm-metals.com/fileadmin/user_upload/Downloads/Data_Sheets/Data_Sheet_VDM_Alloy_625.pdf
+- MTS Forge, Inconel 625 (твёрдорастворный, 120–160 ksi): https://www.mtsforgepa.com/feeds/blog/inconel-625
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -190,19 +210,3 @@ Type Analysis по Special Metals (UNS N06625):
 ## Аналоги и заменители
 
 Ближайший родственный материал репозитория — Inconel 718 (Ni–Cr–Fe–Nb–Mo): упрочняется дисперсионно (γ″/γ′), выше прочность (σ0.2 ≥ 1034 МПа), но ограничен ~650 °C по упрочнению; 625 выигрывает по коррозионной стойкости, пластичности и рабочим температурам до 1093 °C. Выбор между ними определяется приоритетом: прочность при ≤650 °C (718) против коррозионной стойкости и ползучести выше 650 °C (625).
-
-## Источники
-
-- Special Metals, INCONEL alloy 625 technical bulletin (UNS N06625/W.Nr. 2.4856, состав, 1290–1350 °C, морские применения): https://www.specialmetals.com/documents/technical-bulletins/inconel/inconel-alloy-625.pdf
-- High Temp Metals, INCONEL 625 Technical Data (Type Analysis, физические свойства, термообработки, механика, Charpy, rupture): https://www.hightempmetals.com/techdata/hitempInconel625data.php
-- Aerospace Metals, INCONEL Alloy 625 datasheet (ρ 8.44 г/см³, k 9.8 Вт/(м·К), σт 460 МПа): https://www.aerospacemetals.com/wp-content/uploads/2023/08/Special-Metals-INCONEL%C2%AE-Alloy-625.pdf
-- UPMET, 625 datasheet (плавление 1280–1350 °C, cp 0.098 Btu/lb·°F): https://www.upmet.com/sites/default/files/products/datasheet/625-datasheet.pdf
-- Wikipedia, Inconel 625 (состав N06625, Poisson 0.278–0.336): https://en.wikipedia.org/wiki/Inconel_625
-- Renishaw, RenAM 500Q IN625 datasheet (k 9–11 Вт/(м·К), ТКЛР 13×10⁻⁶, 1290–1350 °C): https://www.renishaw.com/resourcecentre/download/data-sheet-renam-500-series-inconel-625-material-da
-- SSA Corp, Inconel 625 AMS 5666 UNS N06625 (прутки, поковки, листы): https://www.ssa-corp.com/en/625-Nickel-Inconel-625-AMS-5666-UNSN06625.php
-- NeoNickel, Alloy 625 composition & properties (твёрдорастворное упрочнение Mo/Nb, карбиды MC/M6C): https://www.neonickel.com/technical-resources/alloy-625-composition-properties
-- Langley Alloys, What is Inconel 625 (Grade 1 отожжённый / Grade 2 solution annealed): https://www.langleyalloys.com/technical-resources/what-is-inconel-625
-- NIST Lass 2017, Formation of Ni₃Nb δ-phase in stress-relieved AM IN625 (деградация вязкости/пластичности): https://www.nist.gov/publications/formation-ni3nb-delta-phase-stress-relieved-inconel-625-produced-p
-- VDM Metals, Alloy 625 datasheet (ASTM/AMS стандарты): https://www.vdm-metals.com/fileadmin/user_upload/Downloads/Data_Sheets/Data_Sheet_VDM_Alloy_625.pdf
-- MTS Forge, Inconel 625 (твёрдорастворный, 120–160 ksi): https://www.mtsforgepa.com/feeds/blog/inconel-625
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

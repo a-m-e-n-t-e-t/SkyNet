@@ -1,7 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 6
+
+
+
 id: material_bi2te3
-псевдонимы: []
 канонический_id: 'material_bi2te3'
 тип: материал
 класс: полупроводник
@@ -58,7 +59,6 @@ id: material_bi2te3
   теплоёмкость_J_kgK: 155
   коэффициент_термического_расширения_1_K: 1.3e-05
   электропроводность_S_m: 100000
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -90,11 +90,30 @@ id: material_bi2te3
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Bi₂Te₃ (теллурид висмута)
-
 ## Описание
 
 Теллурид висмута Bi₂Te₃ — узкозонный слоистый полупроводник (Eg 0.15–0.3 эВ), эталонный термоэлектрический материал околокомнатного диапазона с 1950-х годов и до сих пор: ZT ≈ 1–1.2 при 300 K. Кристаллизуется в ромбоэдрической решётке R-3m (тип тетрадимита): пятислойные пакеты Te–Bi–Te–Bi–Te, связанные ван-дер-ваальсовыми зазорами — отсюда сильная анизотропия и лёгкое расслоение. Промышленные термоэлектрики — легированные твёрдые растворы: p-тип Bi₀.₅Sb₁.₅Te₃ и n-тип Bi₂Te₂.₇Se₀.₃. В контексте репозитория используется в модулях Пельтье (в т.ч. реверсивных), термоэлектрических генераторах и термопарах РТГ.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- [Wikipedia — Bismuth telluride (плотность 7.74 г/см³, T_пл 580 °C)](https://en.wikipedia.org/wiki/Bismuth_telluride)
+- [Goodfellow — Bi₂Te₃ material information (Eg 0.15–0.3 эВ, ZT ~1.2 при 300 K, S до 400 мкВ/К в плёнках)](https://www.goodfellow.com/de/resources/bismuth-telluride-bi2te3-material-information/)
+- [Everredtronics — коммерческие p/n-ветви Bi₂Te₃ (k 1.2–1.6 Вт/(м·К), σ 850–1250 См/см, до ~450 K)](https://www.everredtronics.com/thermoelectric_materials.html)
+- [Ferrotec Thermoelectric Reference (анизотропия сопротивления ×4)](https://thermal.ferrotec.com/technology/thermoelectric-reference-guide/thermalref02)
+- [Witting et al. 2019 — обзор термоэлектрических свойств Bi₂Te₃ (NSF)](https://par.nsf.gov/servlets/purl/10122580)
+- [Goldsmid 2014 (PMC) — Bi₂Te₃ и сплавы для термоэлектрического охлаждения](https://pmc.ncbi.nlm.nih.gov/articles/PMC5453363)
+- [Thermal expansion of bismuth telluride (в плоскости ~10×10⁻⁶ 1/K)](https://www.researchgate.net/publication/227109210_Thermal_expansion_of_bismuth_telluride)
+- [Wong et al. 2025 (Glasgow) — Bi₂Te₃ ТЭГ: КПД 6–7 %](https://eprints.gla.ac.uk/359265/1/359265.pdf)
+- [Bi₂Te₃-модули: 6.9 % КПД, 0.31 Вт/см² при ΔT 200 K (ResearchGate)](https://www.researchgate.net/publication/379805600_Bi2Te3-Based_Thermoelectric_Modules_for_Efficient)
+- [Ziolkowski et al. 2022 — round-robin испытания ТЭ-материалов, ASTM E1225](https://pmc.ncbi.nlm.nih.gov/articles/PMC8911437)
+- [Future Market Insights — IEC 62830-7 (термоэлектрические приборы)](https://www.futuremarketinsights.com/reports/thermoelectric-modules-market)
 
 ## Химический состав
 
@@ -143,17 +162,3 @@ Bi₂Te₃ (стехиометрия 40 ат.% Bi / 60 ат.% Te, M = 800.8 г/�
 ## Аналоги и заменители
 
 Выше 500 K: PbTe (средне-T), скаттерудиты CoSb₃, Half-Heusler (TiNiSn), SiGe (высокие T, классика RTG-каскадов). Ниже 250 K: Bi-Sb сплавы. По сочетанию ZT при ~300 K, доступности и зрелости технологий Bi₂Te₃ остаётся вне конкуренции; главные ограничения — стоимость теллура, хрупкость и окисление при пайке (Ni-барьеры).
-
-## Источники
-
-- [Wikipedia — Bismuth telluride (плотность 7.74 г/см³, T_пл 580 °C)](https://en.wikipedia.org/wiki/Bismuth_telluride)
-- [Goodfellow — Bi₂Te₃ material information (Eg 0.15–0.3 эВ, ZT ~1.2 при 300 K, S до 400 мкВ/К в плёнках)](https://www.goodfellow.com/de/resources/bismuth-telluride-bi2te3-material-information/)
-- [Everredtronics — коммерческие p/n-ветви Bi₂Te₃ (k 1.2–1.6 Вт/(м·К), σ 850–1250 См/см, до ~450 K)](https://www.everredtronics.com/thermoelectric_materials.html)
-- [Ferrotec Thermoelectric Reference (анизотропия сопротивления ×4)](https://thermal.ferrotec.com/technology/thermoelectric-reference-guide/thermalref02)
-- [Witting et al. 2019 — обзор термоэлектрических свойств Bi₂Te₃ (NSF)](https://par.nsf.gov/servlets/purl/10122580)
-- [Goldsmid 2014 (PMC) — Bi₂Te₃ и сплавы для термоэлектрического охлаждения](https://pmc.ncbi.nlm.nih.gov/articles/PMC5453363)
-- [Thermal expansion of bismuth telluride (в плоскости ~10×10⁻⁶ 1/K)](https://www.researchgate.net/publication/227109210_Thermal_expansion_of_bismuth_telluride)
-- [Wong et al. 2025 (Glasgow) — Bi₂Te₃ ТЭГ: КПД 6–7 %](https://eprints.gla.ac.uk/359265/1/359265.pdf)
-- [Bi₂Te₃-модули: 6.9 % КПД, 0.31 Вт/см² при ΔT 200 K (ResearchGate)](https://www.researchgate.net/publication/379805600_Bi2Te3-Based_Thermoelectric_Modules_for_Efficient)
-- [Ziolkowski et al. 2022 — round-robin испытания ТЭ-материалов, ASTM E1225](https://pmc.ncbi.nlm.nih.gov/articles/PMC8911437)
-- [Future Market Insights — IEC 62830-7 (термоэлектрические приборы)](https://www.futuremarketinsights.com/reports/thermoelectric-modules-market)

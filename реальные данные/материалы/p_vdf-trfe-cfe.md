@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 1
+
+
+
 id: material_p_vdf-trfe-cfe
-псевдонимы: []
-канонический_id: material_p_vdf-trfe-cfe
 тип: материал
 класс: полимер
 химический_состав: 'Терполимер винилиденфторид–трифторэтилен–хлорфторэтилен P(VDF-TrFE-CFE): типично 58.5–72.2 мол.% VDF / 17.8–31.5 TrFE / 7–11.5 CFE (референс LIST/Arkema: 64.8/27.4/7.8 мол.%); Mw 400–600 кг/моль (Piezotech RT); полукристаллический, кристалличность 20–35%'
@@ -55,7 +55,6 @@ id: material_p_vdf-trfe-cfe
   теплоёмкость_J_kgK: 1120
   коэффициент_термического_расширения_1_K: 1.5e-4
   электропроводность_S_m: 1.0e-12
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: null
@@ -91,13 +90,23 @@ id: material_p_vdf-trfe-cfe
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: P(VDF-TrFE-CFE) — релаксорный сегнетоэлектрический терполимер
-
 ## Описание
 
 P(VDF-TrFE-CFE) — полукристаллический фторполимерный терполимер (винилиденфторид–трифторэтилен–хлорфторэтилен), первый представитель класса **релаксорных сегнетоэлектрических полимеров**. Объёмный атом Cl в CFE-звене стерически разрушает регулярную all-trans конформацию P(VDF-TrFE), дробя сегнетоэлектрические домены до наномасштаба: петля P-E становится тонкой (slim), переход размытым (0–40 °C), а электрострикция — рекордной для полимеров (**>7%** по Bauer/Fousson/Zhang 2006, IEEE TDEI 13(5):1149–1153, синтез в Institut de Saint-Louis).
 
 Класс в файле исправлен: в заглушке ошибочно стоял `металл` — реальный класс **полимер (фторполимер, электроактивный)**; металлические пороги P022.5 (предел текучести ≥800 МПа, модуль ≥100 ГПа) неприменимы: модуль ~0.22 ГПа.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
+- Веб-верификация (issue #663): см. «Источники (F28)»
 
 ## Химический состав
 
@@ -150,21 +159,3 @@ VDF 58.5–72.2 мол.% (дипольная основа), TrFE 17.8–31.5 м�
 - P(VDF-TrFE-CFE-FA) (тетраполимер): пьезо-режим, k33 88%, d33 >1000 пм/В.
 - PVDF/P(VDF-TrFE): дешевле, ниже электрострикция; PZT/PMN-PT керамика: выше k33, но хрупкие.
 - Эластомерные DEA (акриловые/силиконовые): большие штаммы, но нужны кВ-напряжения.
-
-## Источники (F28)
-
-1. Bauer F., Fousson E., Zhang Q.M. — Recent advances in highly electrostrictive P(VDF-TrFE-CFE) terpolymers, IEEE Trans. Dielectr. Electr. Insul. 13(5):1149–1153 (2006) — штамм >7%, εr≈50, пробой >400 МВ/м, ~10 Дж/см³: https://pure.psu.edu/en/publications/recent-advances-in-highly-electrostrictive-pvdf-trfe-cfe-terpolym
-2. Chen X. et al. — Relaxor ferroelectric polymer exhibits ultrahigh electromechanical coupling at low electric field (k33 88%, d33 >1000 пм/В, Y=0.224 ГПа DMA): https://par.nsf.gov/servlets/purl/10403992
-3. Piezotech RT-TS Technical Guide (Arkema) — Tm 122 °C, S33 2–5%, M33 30–60 нм²/В², E 0.1–0.5 ГПа, Mw 400–600: https://page.arkema.com/rs/253-HSZ-754/images/Technical%20Guide%20Piezotech%20RT-TS.pdf
-4. Aravindhan et al., J. Materiomics — Direct measurement of ECE in P(VDF-TrFE-CFE) film (64.8/27.4/7.8 мол.%, ΔT_ad 3.58 К при 100 В/мкм): https://www.sciopen.com/article/10.1016/j.jmat.2022.10.009
-5. Gallucci et al. 2026 (PMC12980257) — фталат-фри пластификация: E 74.8 МПа, εr 16.5, 4.5% @ 130 В/мкм: https://europepmc.org/articles/pmc12980257?pdf=render
-6. Patsnap Eureka — P(VDF-TrFE-CFE) comprehensive analysis (Tg −30…−10, Tm 130–150, кристалличность 20–35%, переход 0–40 °C): https://eureka.patsnap.com/materials/pvdf-trfe-cfe-terpolymer
-7. Yi et al. 2022 — intrinsic thermal conductivity PVDF ~0.19 Вт/(м·К): https://www.google.com/search?q=Enhancing+Thermal+Conductivity+of+Polyvinylidene+Fluoride+Yi+2022
-8. Fluorotherm — PVDF properties (k 0.2 Вт/(м·К), cp 1.2–1.6 кДж/(кг·К)): https://www.fluorotherm.com/technical-information/materials-overview/pvdf-properties
-9. Liu et al. 2018, Compos. Sci. Technol. — нанокомпозиты P(VDF-TrFE-CFE): 24.4 Дж/см³: https://www.sciencedirect.com/science/article/pii/S1359835X18301210
-10. CCIEurolam — Piezotech RT: стабильность до 120 °C: https://www.ccieurolam.com/en/products/electroactive-powder-and-inks
-
-## Источники
-
-- CSV: `начальные данные_final.csv` (пользовательский ввод)
-- Веб-верификация (issue #663): см. «Источники (F28)»

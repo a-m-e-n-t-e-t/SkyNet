@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 1
+
+
+
 id: material_carbon_black
-псевдонимы: []
-канонический_id: material_carbon_black
 тип: материал
 класс: керамика
 химический_состав: 'элементарный углерод C > 99 % (ацетиленовая сажа Denka — чистейшая марка для сухих батарей, зола и переходные металлы < 0.1 %); семейство технического углерода: печная сажа (furnace black, N330/N550), термическая (thermal black N990), ацетиленовая (acetylene black), батарейные проводящие марки Ketjenblack EC-600JD / Super P / Super C65; поверхностные группы (O, S — следы furnace-процесса) определяют смачиваемость в катодных пастах'
@@ -60,7 +60,6 @@ id: material_carbon_black
   теплоёмкость_J_kgK: 720
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: {min: 2.9e+02, max: 3.7e+02, nominal: 3.3e+02}
-наследуемые: {}
 дополнительные:
   плотность_истинная_vs_насыпная: 'истинная плотность частицы ~1.8 г/см³ (турбостратный углерод; графит 2.26); насыпная — на 1.5 порядка ниже: порошок ацетиленовой сажи ~20–60 кг/м³ (IARC: «very fluffy»), гранулы/press 50 % ~300–400 кг/м³; в таблице — истинная плотность частицы'
   сопротивление_давление: 'электросопротивление сильно зависит от компрессии: 0.270–0.350 Ом·см при 6.3 бар (US4279880A — C > 99 %); рыхлый порошок — на порядки выше; в катоде формовка под давлением создаёт перколяционную сеть'
@@ -92,20 +91,30 @@ id: material_carbon_black
     описание: 'Super P / Super C65 (Imerys): ацетиленово-подобная цепочечная структура, частицы ~40 нм, S 62 м²/г — индустриальный эталон проводящей добавки Li-ion с 1990-х; воспроизводимость партий — ключевой аргумент'
     свойства: {s_м2_г: '62', частица_нм: '~40', роль: 'эталон Li-ion добавки'}
     применение: 'Li-ion электроды (катоды/аноды), лабораторный стандарт'
-свойства_таблица:
-  плотность_kg_m3: '1800 истинная частицы (1700–1900); насыпная 20–60 (порошок) / 300–400 (гранулы press 50 %)'
-  теплопроводность_W_mK: 'номинал 1.7 (аморфный углерод); диапазон 0.2–15 (графитизированные 5–15; термическая — изолятор)'
-  температура_плавления_C: '3642 сублимация (углерод не плавится при 1 атм; графитизация 2000–3000 °C)'
-  теплоёмкость_J_kgK: '720 (типовое для углерода)'
-  электропроводность_S_m: '290–370 при 6.3 бар (0.27–0.35 Ом·см, US4279880A); сильная зависимость от компрессии; порошок — порядки ниже'
-  частица_нм: '15–45 (acetylene/Ketjen/Super P) — 250–300 (thermal N990)'
-  поверхность_BET: '9 (N990) — 1270 (Ketjen EC-600JD) м²/г'
-  dbp_structure: 'N330 ~100 — Ketjen 380–420 мл/100 г'
-  чистота: 'acetylene: C > 99 %, зола <0.1 % (Li-марки — ультрачистые Li-100/Li-250)'
 дата_создания: 2026-11-08
 дата_обновления: 2026-11-08
 ---
-# material_carbon_black — Технический углерод (сажа) для катодов Li-SOCl2
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- [Denka: DENKA BLACK — ацетиленовая сажа, thermal decomposition C2H2, highly purified and extremely conductive, идеал для сухих батарей](https://www.denka.co.jp/eng/product/detail_00025) (обращение 2026-11-08)
+- [Denka: DENKA BLACK Li — ультрачистая ацетиленовая сажа с минимальными металлическими примесями для Li-ion и next-gen батарей](https://www.google.com/goto?url=CAESbgHEIkXXFhxHS5ff1JBR-rmFfKESi63acurwVYQtadncG8WdFF3xwMTlrM6Rv-m488ThZ0ph3DqT5SWzIWrXnsxESkMgvmdYpsITYxQZ42serU_DW1WWHYha2IRiwzoJfG1iduuYgtI_S50WSYYE) (снипет web_search 2026-11-08)
+- [US4279880A: Acetylene black with high electrical conductivity — C > 99 %, сопротивление 0.270–0.350 Ом·см при 6.3 бар](https://patents.google.com/patent/US4279880A/en) (обращение 2026-11-08)
+- [WO2015128278A1: Pelleted acetylene black — ASTM D1937-10 гранулирование](https://patents.google.com/patent/WO2015128278A1/en) (обращение 2026-11-08)
+- [Wikipedia: Carbon black — производство (неполное сжигание coal tar/нефти), типы](https://en.wikipedia.org/wiki/Carbon_black) (обращение 2026-11-08)
+- [IARC Monographs 93 (2010): Carbon Black, Titanium Dioxide, and Talc — типы CB, ацетиленовая «very fluffy» с низкой насыпной плотностью](https://www.google.com/goto?url=CAESagHEIkXXdtctO3_L2IDIxtnIPaarLUlgIKZ0zz00HuNZVbusrHCATwDmZmOEcrviydhq2Me9w_SqhCklpyFtx6aBwRX5cuw1R4I8aoVk6DgY20EUCNF_MpFRW-_JIg-kbCCC01mPfH68N1A) (снипет web_search 2026-11-08)
+- [Carbon Black Conductive Material (2026): графитизированные CB — k 5–15 Вт/(м·К) для dual electrical-thermal management](https://www.google.com/goto?url=CAESeQHEIkXXaMbIDKeJjERQwGa0166GEiNKQoQrw2VuN25wqBZY6m310VUMOY8SprttvEq6wGdKIIcHXEK6mmef6oRi8BGNKNenyGD91EMf0tn9L7jCI_lJZ5wQmtVaxVlD2WqPQ55l93mge09-kd8ReocwyS2xYgOscrw) (снипет web_search 2026-11-08)
+- [Cabot THERMAX: среднетермическая сажа — низкая теплопроводность и инертность → высокотемпературная изоляция](https://www.google.com/goto?url=CAEShQEBxCJF19u-Y6esyFXd74BiYVMmwas4byCXyLRAsFyeDmmF2cQhwQyPyxRLwWQe0nuLPNAs1-lbxwePswTSZucU9QgZgCTs8c7aqf_79dRnPDKRhBmR1uca2WMUFoazkFlajnzz9_MVaF8v6JULTzcKFgmDYTbfCaIx5GchZi5qCQw5nmRL) (снипет web_search 2026-11-08)
+- [Khodabakhshi & Forg (2020): Carbon Black Reborn — structure/chemistry для renewable energy (furnace/thermal/acetylene типы)](https://www.google.com/goto?url=CAESpQEBxCJF1_Npxq0icuFgBu7JJRAeGj_ZUukVF-5KVVU32rfPLHpwU66Ytp-c1_BMvtPtDujF7m0H1L69UY_9_TYprkNRTbgZhFfbA35bypAkg0fCaGRplABOVuBHnRvG2Du4ao6vx0jQBZ09GUzm4N3DG3ushT-OLktTkmLI5QZUETRca2Xml-aTnf0ZEm7AMT75cRh31TKr1En2nEu4nTDmUcoP2yI) (снипет web_search 2026-11-08)
+- [Canrud: Acetylene Black vs Super-P vs Ketjen Black — выбор проводящей добавки (Ketjen — top conductivity, high cost)](https://www.canrud.com/knowledge/battery-material/acetylene-black-vs-super-p-vs-ketjen-black-which-conductive-additive-to-choose-368) (обращение 2026-11-08)
+- [ITNANO: Super P Li — acetylene black, chain-like branched particle structure](https://www.itnano.store/post/yp-80f-activated-carbon-the-industry-standard-benchmark-material-for-edlc-supercapacitor-research-1) (обращение 2026-11-08)
+- [Канонический файл material_carbon_ptfe — композит сажа+PTFE 20 % (сажа здесь — наполнитель, не субстанция)](https://github.com/a-m-e-n-t-e-t/SkyNet/blob/main/%D1%80%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5/%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B/carbon_ptfe.md) (внутренняя ссылка 2026-11-08)
 
 ## Общее описание
 
@@ -133,18 +142,3 @@ Carbon black (технический углерод, сажа) — аморфн�
 ## Аналоги и заменители
 
 **Графен/CNT-добавки** — выше проводимость при меньших долях, но цена и диспергирование; **графитированный CB** (5–15 Вт/(м·К)) — когда нужно тепло-управление; **carbon_ptfe** (сажа+PTFE 20 %) — готовый композит катодной формы того же элемента; **турбостратный графит/KB-синтетика** — для теплопроводных применений; **thermal N990** — когда нужна изоляция, не проводимость. Legacy-проводники катодов — кухонная сажа lampblack — устарела по чистоте.
-
-## Источники
-
-- [Denka: DENKA BLACK — ацетиленовая сажа, thermal decomposition C2H2, highly purified and extremely conductive, идеал для сухих батарей](https://www.denka.co.jp/eng/product/detail_00025) (обращение 2026-11-08)
-- [Denka: DENKA BLACK Li — ультрачистая ацетиленовая сажа с минимальными металлическими примесями для Li-ion и next-gen батарей](https://www.google.com/goto?url=CAESbgHEIkXXFhxHS5ff1JBR-rmFfKESi63acurwVYQtadncG8WdFF3xwMTlrM6Rv-m488ThZ0ph3DqT5SWzIWrXnsxESkMgvmdYpsITYxQZ42serU_DW1WWHYha2IRiwzoJfG1iduuYgtI_S50WSYYE) (снипет web_search 2026-11-08)
-- [US4279880A: Acetylene black with high electrical conductivity — C > 99 %, сопротивление 0.270–0.350 Ом·см при 6.3 бар](https://patents.google.com/patent/US4279880A/en) (обращение 2026-11-08)
-- [WO2015128278A1: Pelleted acetylene black — ASTM D1937-10 гранулирование](https://patents.google.com/patent/WO2015128278A1/en) (обращение 2026-11-08)
-- [Wikipedia: Carbon black — производство (неполное сжигание coal tar/нефти), типы](https://en.wikipedia.org/wiki/Carbon_black) (обращение 2026-11-08)
-- [IARC Monographs 93 (2010): Carbon Black, Titanium Dioxide, and Talc — типы CB, ацетиленовая «very fluffy» с низкой насыпной плотностью](https://www.google.com/goto?url=CAESagHEIkXXdtctO3_L2IDIxtnIPaarLUlgIKZ0zz00HuNZVbusrHCATwDmZmOEcrviydhq2Me9w_SqhCklpyFtx6aBwRX5cuw1R4I8aoVk6DgY20EUCNF_MpFRW-_JIg-kbCCC01mPfH68N1A) (снипет web_search 2026-11-08)
-- [Carbon Black Conductive Material (2026): графитизированные CB — k 5–15 Вт/(м·К) для dual electrical-thermal management](https://www.google.com/goto?url=CAESeQHEIkXXaMbIDKeJjERQwGa0166GEiNKQoQrw2VuN25wqBZY6m310VUMOY8SprttvEq6wGdKIIcHXEK6mmef6oRi8BGNKNenyGD91EMf0tn9L7jCI_lJZ5wQmtVaxVlD2WqPQ55l93mge09-kd8ReocwyS2xYgOscrw) (снипет web_search 2026-11-08)
-- [Cabot THERMAX: среднетермическая сажа — низкая теплопроводность и инертность → высокотемпературная изоляция](https://www.google.com/goto?url=CAEShQEBxCJF19u-Y6esyFXd74BiYVMmwas4byCXyLRAsFyeDmmF2cQhwQyPyxRLwWQe0nuLPNAs1-lbxwePswTSZucU9QgZgCTs8c7aqf_79dRnPDKRhBmR1uca2WMUFoazkFlajnzz9_MVaF8v6JULTzcKFgmDYTbfCaIx5GchZi5qCQw5nmRL) (снипет web_search 2026-11-08)
-- [Khodabakhshi & Forg (2020): Carbon Black Reborn — structure/chemistry для renewable energy (furnace/thermal/acetylene типы)](https://www.google.com/goto?url=CAESpQEBxCJF1_Npxq0icuFgBu7JJRAeGj_ZUukVF-5KVVU32rfPLHpwU66Ytp-c1_BMvtPtDujF7m0H1L69UY_9_TYprkNRTbgZhFfbA35bypAkg0fCaGRplABOVuBHnRvG2Du4ao6vx0jQBZ09GUzm4N3DG3ushT-OLktTkmLI5QZUETRca2Xml-aTnf0ZEm7AMT75cRh31TKr1En2nEu4nTDmUcoP2yI) (снипет web_search 2026-11-08)
-- [Canrud: Acetylene Black vs Super-P vs Ketjen Black — выбор проводящей добавки (Ketjen — top conductivity, high cost)](https://www.canrud.com/knowledge/battery-material/acetylene-black-vs-super-p-vs-ketjen-black-which-conductive-additive-to-choose-368) (обращение 2026-11-08)
-- [ITNANO: Super P Li — acetylene black, chain-like branched particle structure](https://www.itnano.store/post/yp-80f-activated-carbon-the-industry-standard-benchmark-material-for-edlc-supercapacitor-research-1) (обращение 2026-11-08)
-- [Канонический файл material_carbon_ptfe — композит сажа+PTFE 20 % (сажа здесь — наполнитель, не субстанция)](https://github.com/a-m-e-n-t-e-t/SkyNet/blob/main/%D1%80%D0%B5%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5/%D0%BC%D0%B0%D1%82%D0%B5%D1%80%D0%B8%D0%B0%D0%BB%D1%8B/carbon_ptfe.md) (внутренняя ссылка 2026-11-08)

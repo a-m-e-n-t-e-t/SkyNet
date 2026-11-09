@@ -1,7 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 4
+
+
+
 id: material_b4c
-псевдонимы: []
 канонический_id: 'material_b4c'
 тип: материал
 класс: керамика
@@ -59,7 +60,6 @@ id: material_b4c
   теплоёмкость_J_kgK: 950
   коэффициент_термического_расширения_1_K: 5.5e-06
   электропроводность_S_m: 100
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: 2800
@@ -91,11 +91,29 @@ id: material_b4c
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: B₄C (карбид бора)
-
 ## Описание
 
 Карбид бора B₄C («чёрный алмаз») — сверхтвёрдая ковалентная неметаллическая керамика, третий по твёрдости материал после алмаза и кубического нитрида бора. Ромбоэдрическая решётка R-3m построена из икосаэдров B₁₂/B₁₁C, связанных линейными цепями C-B-C. Уникальное сочетание: твёрдость 27.4–33 ГПа при плотности всего 2.52 г/см³ (самая лёгкая из сверхтвёрдых керамик), температура плавления 2445 °C, химическая инертность к кислотам и щелочам, и — главное для ядерной техники — гигантское сечение поглощения тепловых нейтронов изотопом ¹⁰B. В контексте репозитория используется как поглотитель в стержнях управления реактора деления (`часть_mikroreaktor_deleniya_control_rods`) и в связанных изделиях нейтронной защиты.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- [Preciseceramic: B₄C datasheet (ρ 2.52, HV 27.4–33 ГПа, E 450 ГПа, изгиб 350–425 МПа, сжатие 2900 МПа, k 27–90, Cp 950, ν 0.17–0.2, T_пл 2445 °C)](https://www.preciseceramic.com/products/boron-carbide-b4c.html)
+- [AZoM: Boron Carbide Properties (Knoop 2900–3580, k 17–42 Вт/(м·К), T_пл 2445 °C)](https://www.azom.com/article.aspx?ArticleID=75)
+- [US Electrofused Minerals: B₄C PDF (k 29–67 Вт/(м·К), ρ_эл 0.1–10 Ом·см)](https://usminerals.com/files/produtosAtualizadosPDF/BORON%20CARBIDE%20-%20BORON%20CARBIDE%20ok.pdf?6)
+- [Panadyne: B₄C Technical Data (k 28 Вт/(м·К), CTE 5.54×10⁻⁶ 1/K)](https://panadyne.com/boron-carbide-technical-data)
+- [Kuliiev et al. 2020 (PMC): SPS B₄C — CTE 5.73×10⁻⁶ 1/K (300–1970 K)](https://pmc.ncbi.nlm.nih.gov/articles/PMC7178422)
+- [3M Boron Carbide (λ 36 Вт/(м·К), R₁ 204 K)](https://multimedia.3m.com/mws/media/1004125O/3m-boron-carbide.pdf)
+- [GNPGraystar: Nuclear Grade B₄C по ASTM C750](https://gnpgraystar.com/boron-carbide-2/nuclear-grade-boron-carbide)
+- [Neway: ядерный B₄C — ASTM C750 (порошок) / ASTM C751 (гранулы)](https://www.newayprecision.com/blogs/nuclear-b4c-neutron-shielding-blocks-for-reactor-safety-and-rad)
+- [ANL 2018: ресурс стержней управления с B₄C — выгорание ¹⁰B](https://publications.anl.gov/anlpubs/2019/03/150841.pdf)
+- [Preciseceramic blog: B₁₀B₄C для нейтронной защиты](https://www.preciseceramic.com/blog/boron-carbide-b10-for-effective-neutron-shielding-in-nuclear-rad)
 
 ## Химический состав
 
@@ -149,16 +167,3 @@ B₄C — бор-углеродная фаза при 78.2–81.4 ат.% B (ст
 ## Аналоги и заменители
 
 В стержнях управления: гафний (Hf — дороже, но пластичнее), сплавы Ag-In-Cd (PWR), карбиды самария/европия (Sm₂O₃, Eu₂O₃) и композиты B₄C/SiC. Для брони: SiC и Al₂O₃ (тяжелее или мягче). Для абразивов: SiC, алмазный порошок. По суммарному сочетанию «сечение поглощения × твёрдость × плотность × цена» B₄C вне конкуренции.
-
-## Источники
-
-- [Preciseceramic: B₄C datasheet (ρ 2.52, HV 27.4–33 ГПа, E 450 ГПа, изгиб 350–425 МПа, сжатие 2900 МПа, k 27–90, Cp 950, ν 0.17–0.2, T_пл 2445 °C)](https://www.preciseceramic.com/products/boron-carbide-b4c.html)
-- [AZoM: Boron Carbide Properties (Knoop 2900–3580, k 17–42 Вт/(м·К), T_пл 2445 °C)](https://www.azom.com/article.aspx?ArticleID=75)
-- [US Electrofused Minerals: B₄C PDF (k 29–67 Вт/(м·К), ρ_эл 0.1–10 Ом·см)](https://usminerals.com/files/produtosAtualizadosPDF/BORON%20CARBIDE%20-%20BORON%20CARBIDE%20ok.pdf?6)
-- [Panadyne: B₄C Technical Data (k 28 Вт/(м·К), CTE 5.54×10⁻⁶ 1/K)](https://panadyne.com/boron-carbide-technical-data)
-- [Kuliiev et al. 2020 (PMC): SPS B₄C — CTE 5.73×10⁻⁶ 1/K (300–1970 K)](https://pmc.ncbi.nlm.nih.gov/articles/PMC7178422)
-- [3M Boron Carbide (λ 36 Вт/(м·К), R₁ 204 K)](https://multimedia.3m.com/mws/media/1004125O/3m-boron-carbide.pdf)
-- [GNPGraystar: Nuclear Grade B₄C по ASTM C750](https://gnpgraystar.com/boron-carbide-2/nuclear-grade-boron-carbide)
-- [Neway: ядерный B₄C — ASTM C750 (порошок) / ASTM C751 (гранулы)](https://www.newayprecision.com/blogs/nuclear-b4c-neutron-shielding-blocks-for-reactor-safety-and-rad)
-- [ANL 2018: ресурс стержней управления с B₄C — выгорание ¹⁰B](https://publications.anl.gov/anlpubs/2019/03/150841.pdf)
-- [Preciseceramic blog: B₁₀B₄C для нейтронной защиты](https://www.preciseceramic.com/blog/boron-carbide-b10-for-effective-neutron-shielding-in-nuclear-rad)

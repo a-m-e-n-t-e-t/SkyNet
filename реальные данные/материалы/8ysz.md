@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 1
+
+
+
 id: material_8ysz
-псевдонимы: []
-канонический_id: material_8ysz
 тип: материал
 класс: керамика
 химический_состав: 'ZrO₂ + 8 mol% Y₂O₃ (Zr₀.₉₂Y₀.₀₈O₁.₉₆)'
@@ -56,7 +56,6 @@ id: material_8ysz
   теплоёмкость_J_kgK: null
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: null
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   ионная_проводимость_1000C_S_cm: 0.1
@@ -95,8 +94,6 @@ id: material_8ysz
 дата_создания: 2026-11-04
 дата_обновления: 2026-11-06
 ---
-# Материал: 8YSZ
-
 ## Описание
 
 8YSZ — циркония диоксид, стабилизированный 8 mol% оксида иттрия (8 mol% Yttria-Stabilized Zirconia), полностью кубическая фаза.
@@ -105,6 +102,29 @@ id: material_8ysz
 
 **Класс:** керамика (твердый оксидный электролит)
 **Кристаллическая структура:** кубическая (флюорит) — 8 mol% Y₂O₃ полностью стабилизируют кубическую фазу ZrO₂; по данным отраслевого справочника, «The 8 mol% composition represents the thermodynamic optimum for suppressing the tetragonal-to-monoclinic transformation while maintaining the oxygen vacancy concentration needed for useful ionic conductivity».
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- 8YSZ yttria stabilized zirconia: properties, applications, selection guide: <https://en.zz-zirconia.com/8ysz-yttria-stabilized-zirconia-properties-applications-selection-guide> (проверено 2026-11-04)
+- Yuki Makinose et al., «Ionic Conductivity of Electrolytes Composed of Oleate-Capped Yttria-Stabilized Zirconia Nanoparticles», ACS Omega 2023: <https://pmc.ncbi.nlm.nih.gov/articles/PMC10753559> (проверено 2026-11-04)
+- C.H. Lim et al., «Composition, processing, and properties of biphasic zirconia» (температурные диапазоны полиморфов m/t/c): <https://pmc.ncbi.nlm.nih.gov/articles/PMC10497227> (проверено 2026-11-06)
+- 3Y-TZP: Properties & Uses (ρ 6.05 г/см³, изгиб 1000 МПа): <https://www.fabdigit.com/materials/ceramic-3y-tzp> (проверено 2026-11-06)
+- 3Y-TZP dental: изгиб 900–1200 МПа, K_IC 4–6 МПа·√m: <https://xdentlab.com/3y-tzp-zirconia-in-dental-ceramic-frameworks-a-comprehensive-overview> (проверено 2026-11-06)
+- J. Schürrlein et al., 2021 — K_IC ~4.5 (3Y-TZP) vs 3.5/2.5 (4Y/5Y-PSZ): <https://inis.iaea.org/records/d663f-hr905> (проверено 2026-11-06)
+- Zirconia Coating: λ 1.8–2.3 Вт/(м·К) при 1000 °C, 7–8 wt% YSZ TBC: <https://eureka.patsnap.com/materials/zirconia-coating-techniques> (проверено 2026-11-06)
+- J.L. Smialek, «Revisiting the Birth of 7YSZ Thermal Barrier Coatings» (TBC промышленный стандарт): <https://www.mdpi.com/2079-6412/8/7/255> (проверено 2026-11-06)
+- Zirconia (ZrO₂) general properties (ρ 5850 кг/м³, λ 1.8 Вт/(м·К) чистого ZrO₂): <https://www.chemicalbook.com/article/zirconia-zirconium-dioxide-general-properties-commercial-zircon> (проверено 2026-11-06)
+- J. Zhu et al., 2003 — аморфный/нанокристаллический YSZ high-k ~27: <https://www.sciencedirect.com/science/article/abs/pii/S0167577X03003069> (проверено 2026-11-06)
+- B.E. Park et al., 2017 — ALD YSZ как диэлектрик конденсаторов: <https://www.sciencedirect.com/science/article/abs/pii/S0925838817320121> (проверено 2026-11-06)
+- ISO 6872 (тестирование стоматологической керамики, классы прочности): <https://www.instron.com/en/testing-solutions/iso-standards/iso-6872> (проверено 2026-11-06)
+- Advanced Ceramics Testing Standards (ASTM C1161/C1327/C1421): <https://infinitalab.com/blog/advanced-ceramics-testing-properties/> (проверено 2026-11-06)
 
 ## Химический состав
 
@@ -137,22 +157,6 @@ ZrO₂ + 8 mol% Y₂O₃ (Zr₀.₉₂Y₀.₀₈O₁.₉₆); чистота �
 - ASTM C1161 — прочность на изгиб технической керамики при комнатной температуре
 - ASTM C1327 — твёрдость по Виккерсу технической керамики
 - ASTM C1421 — вязкость разрушения технической керамики (по балке с предварительно наведённой трещиной)
-
-## Источники (F28)
-
-- 8YSZ yttria stabilized zirconia: properties, applications, selection guide: <https://en.zz-zirconia.com/8ysz-yttria-stabilized-zirconia-properties-applications-selection-guide> (проверено 2026-11-04)
-- Yuki Makinose et al., «Ionic Conductivity of Electrolytes Composed of Oleate-Capped Yttria-Stabilized Zirconia Nanoparticles», ACS Omega 2023: <https://pmc.ncbi.nlm.nih.gov/articles/PMC10753559> (проверено 2026-11-04)
-- C.H. Lim et al., «Composition, processing, and properties of biphasic zirconia» (температурные диапазоны полиморфов m/t/c): <https://pmc.ncbi.nlm.nih.gov/articles/PMC10497227> (проверено 2026-11-06)
-- 3Y-TZP: Properties & Uses (ρ 6.05 г/см³, изгиб 1000 МПа): <https://www.fabdigit.com/materials/ceramic-3y-tzp> (проверено 2026-11-06)
-- 3Y-TZP dental: изгиб 900–1200 МПа, K_IC 4–6 МПа·√m: <https://xdentlab.com/3y-tzp-zirconia-in-dental-ceramic-frameworks-a-comprehensive-overview> (проверено 2026-11-06)
-- J. Schürrlein et al., 2021 — K_IC ~4.5 (3Y-TZP) vs 3.5/2.5 (4Y/5Y-PSZ): <https://inis.iaea.org/records/d663f-hr905> (проверено 2026-11-06)
-- Zirconia Coating: λ 1.8–2.3 Вт/(м·К) при 1000 °C, 7–8 wt% YSZ TBC: <https://eureka.patsnap.com/materials/zirconia-coating-techniques> (проверено 2026-11-06)
-- J.L. Smialek, «Revisiting the Birth of 7YSZ Thermal Barrier Coatings» (TBC промышленный стандарт): <https://www.mdpi.com/2079-6412/8/7/255> (проверено 2026-11-06)
-- Zirconia (ZrO₂) general properties (ρ 5850 кг/м³, λ 1.8 Вт/(м·К) чистого ZrO₂): <https://www.chemicalbook.com/article/zirconia-zirconium-dioxide-general-properties-commercial-zircon> (проверено 2026-11-06)
-- J. Zhu et al., 2003 — аморфный/нанокристаллический YSZ high-k ~27: <https://www.sciencedirect.com/science/article/abs/pii/S0167577X03003069> (проверено 2026-11-06)
-- B.E. Park et al., 2017 — ALD YSZ как диэлектрик конденсаторов: <https://www.sciencedirect.com/science/article/abs/pii/S0925838817320121> (проверено 2026-11-06)
-- ISO 6872 (тестирование стоматологической керамики, классы прочности): <https://www.instron.com/en/testing-solutions/iso-standards/iso-6872> (проверено 2026-11-06)
-- Advanced Ceramics Testing Standards (ASTM C1161/C1327/C1421): <https://infinitalab.com/blog/advanced-ceramics-testing-properties/> (проверено 2026-11-06)
 
 ## Применение в изделиях
 

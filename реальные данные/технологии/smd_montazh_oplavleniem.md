@@ -1,7 +1,8 @@
 ---
+
+
+
 id: tekhnologia_smd_montazh_oplavleniem
-псевдонимы: []
-канонический_id: tekhnologia_smd_montazh_oplavleniem
 тип: технология
 категория: сборка
 область_применения:
@@ -33,7 +34,6 @@ id: tekhnologia_smd_montazh_oplavleniem
           max: 4
           nominal: 2
   потребление_энергии_kWh: 8
-наследуемые: {}
 дополнительные:
   оборудование: []
   типичные_материалы_для_процесса: []
@@ -45,6 +45,18 @@ id: tekhnologia_smd_montazh_oplavleniem
 ## Описание
 
 SMD-монтаж оплавлением (reflow) — основной процесс поверхностного монтажа печатных плат: паяльная паста (SAC305 Sn/Ag/Cu, Tпл 217 °C) наносится через трафарет, компоненты размещаются, плата проходит термоцикл конвечной печи с пиком 240–250 °C (рекомендация 240–245 °C для SAC305).
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | технология | — | canon |
+
+
+## Источники
+
+- Kester SAC305 datasheet (solder pot 255–265 °C для волны, профиль оплавления SAC305): https://www.kester.com/downloads?Command=Core_Download&EntryId=45147 (проверено 2026-11-07)
+- Kester Standard Reflow Profile for Leaded vs. Lead-Free: https://www.kester.com/Portals/0/Documents/Knowledge%20Base/Standard%20Reflow%20Profile%20for%20Leaded%20vs.%20Lead-Free (проверено 2026-11-07)
 
 ## Входные ресурсы
 
@@ -65,8 +77,3 @@ SMD-монтаж оплавлением (reflow) — основной проце
 ## Ограничения и допуски
 
 Тепломасса платы ограничивает градиенты; крупногабаритные компоненты (шунты, MOSFET-банки) — с паяными ножками волной/селективно.
-
-## Источники
-
-- Kester SAC305 datasheet (solder pot 255–265 °C для волны, профиль оплавления SAC305): https://www.kester.com/downloads?Command=Core_Download&EntryId=45147 (проверено 2026-11-07)
-- Kester Standard Reflow Profile for Leaded vs. Lead-Free: https://www.kester.com/Portals/0/Documents/Knowledge%20Base/Standard%20Reflow%20Profile%20for%20Leaded%20vs.%20Lead-Free (проверено 2026-11-07)

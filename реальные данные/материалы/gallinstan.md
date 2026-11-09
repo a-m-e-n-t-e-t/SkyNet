@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 3
+
+
+
 id: material_gallinstan
-псевдонимы: []
-канонический_id: material_gallinstan
 тип: материал
 класс: металл
 химический_состав: 'Эвтектика Ga-In-Sn: Ga 68.5% / In 21.5% / Sn 10.0% (коммерческий Galinstan); жидкий металл при комнатной температуре, нетоксичная замена ртути'
@@ -61,7 +61,6 @@ id: material_gallinstan
   теплоёмкость_J_kgK: 296
   коэффициент_термического_расширения_1_K: null
   электропроводность_S_m: 3460000
-наследуемые: {}
 примечание_механика: 'Прочностные поля (прочность/текучесть/модуль/Пуассон/ударная/усталость/CTE) оставлены null обоснованно: при комнатной температуре Galinstan — жидкость, механические характеристики твёрдого тела неприменимы; кинематическая вязкость 0.0024 Па·с при 20°C, поверхностное натяжение 0.535-0.718 Н/м, давление паров <1e-8 Торр при 500°C, кипение >1300°C'
 дополнительные:
   цена_usd_kg: null
@@ -85,8 +84,6 @@ id: material_gallinstan
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-06
 ---
-# Материал: Галлинстан
-
 ## Описание
 
 Галлинстан (Ga-In-Sn, 67% Ga)
@@ -95,6 +92,23 @@ id: material_gallinstan
 
 **Класс:** металл
 **Кристаллическая структура:** аморфный (предварительная классификация; требует верификации через веб-поиск P062, F62)
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Wikipedia — Galinstan (composition 68.5/21.5/10, density 6.44 g/cm3 at 20°C, mp -19°C, bp >1300°C, k 16.5 W/m-K, σ 3.46e6 S/m, cp 296 J/kg-K, viscosity 0.0024 Pa-s, surface tension 0.535-0.718 N/m, vapor pressure <1e-8 Torr at 500°C, applications): https://en.wikipedia.org/wiki/Galinstan
+- Galimet — Galinstan liquid metal alloy (density 6.44 g/cm3, thermal conductivity 16.5 W/m-1K-1, mercury replacement): https://www.galimet.com/galinstan
+- Jaytee Alloys — Galinstan liquid metal alloy (density ~6.44 g/cm3, viscosity ~0.0024 Pa-s, k ~16.5 W/m-K, σ ~3.4e6 S/m, mp -19°C, bp >1300°C): https://www.jayteealloys.com/galinstan-liquid-metal-alloy.php
+- Goodfellow — Ga 68.5 In 21.5 Sn 10 material information (melts ~-19°C, stable up to ~1300°C under inert conditions): https://www.goodfellow.com/uk/resources/gallium-indium-tin-ga68-5-in21-5-sn10-material-information/
+- Geratherm — Galinstan as non-toxic measuring liquid replacing mercury: https://www.geratherm.com/products/temperature-measurement/classic-/-classic-plus
+- Shentu et al. 2023, Metals 13(3):615 — solidification point of Galinstan -19°C, Ga-In-Sn low-melting alloys: https://www.mdpi.com/2075-4701/13/3/615
+- CSV: `начальные данные_final.csv` (пользовательский ввод)
 
 ## Химический состав
 
@@ -134,17 +148,3 @@ id: material_gallinstan
 ## Аналоги и заменители
 
 (Заполняется при сравнительном анализе)
-
-## Описание
-
-Galinstan — коммерческое название жидкометаллической эвтектики Ga-In-Sn (Ga 68.5% / In 21.5% / Sn 10.0%). Тпл -19°C, поэтому при комнатной температуре это жидкость: плотность 6440 кг/м3, теплопроводность 16.5 Вт/(м·К), электропроводность 3.46e6 См/м, теплоёмкость 296 Дж/(кг·К), динамическая вязкость 0.0024 Па·с (20°C), поверхностное натяжение 0.535-0.718 Н/м (зависит от производителя). Кипение >1300°C, давление паров <1e-8 Торр при 500°C. Нетоксичен и используется как замена ртути (RoHS); агрессивен к алюминию (растворяет защитный оксид) и образует сплавы с Cu, Sn, Pb, Zn поверхностями — контейнеры стальные/стеклянные или с оксидным барьером.
-
-## Источники
-
-- Wikipedia — Galinstan (composition 68.5/21.5/10, density 6.44 g/cm3 at 20°C, mp -19°C, bp >1300°C, k 16.5 W/m-K, σ 3.46e6 S/m, cp 296 J/kg-K, viscosity 0.0024 Pa-s, surface tension 0.535-0.718 N/m, vapor pressure <1e-8 Torr at 500°C, applications): https://en.wikipedia.org/wiki/Galinstan
-- Galimet — Galinstan liquid metal alloy (density 6.44 g/cm3, thermal conductivity 16.5 W/m-1K-1, mercury replacement): https://www.galimet.com/galinstan
-- Jaytee Alloys — Galinstan liquid metal alloy (density ~6.44 g/cm3, viscosity ~0.0024 Pa-s, k ~16.5 W/m-K, σ ~3.4e6 S/m, mp -19°C, bp >1300°C): https://www.jayteealloys.com/galinstan-liquid-metal-alloy.php
-- Goodfellow — Ga 68.5 In 21.5 Sn 10 material information (melts ~-19°C, stable up to ~1300°C under inert conditions): https://www.goodfellow.com/uk/resources/gallium-indium-tin-ga68-5-in21-5-sn10-material-information/
-- Geratherm — Galinstan as non-toxic measuring liquid replacing mercury: https://www.geratherm.com/products/temperature-measurement/classic-/-classic-plus
-- Shentu et al. 2023, Metals 13(3):615 — solidification point of Galinstan -19°C, Ga-In-Sn low-melting alloys: https://www.mdpi.com/2075-4701/13/3/615
-- CSV: `начальные данные_final.csv` (пользовательский ввод)

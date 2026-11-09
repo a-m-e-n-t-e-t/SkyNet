@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 1
+
+
+
 id: material_nichrome
-псевдонимы: []
-канонический_id: material_nichrome
 тип: материал
 класс: металл (сплав)
 химический_состав: 'Нихром 80/20 (Nikrothal 80, NiCr8020): Ni — основа (бал.), Cr 19.0–21.0 %, Si 1.0–1.7 %, Mn ≤1.0 %, Fe ≤2.0 %, C ≤0.10 %'
@@ -78,7 +78,6 @@ id: material_nichrome
   теплоёмкость_J_kgK: 460
   коэффициент_термического_расширения_1_K: 1.41e-05
   электропроводность_S_m: 9.17e5
-наследуемые: {}
 дополнительные:
   цена_usd_kg: null
   твердость_vickers_HV: 180
@@ -93,11 +92,25 @@ id: material_nichrome
 дата_создания: 2026-11-05
 дата_обновления: 2026-11-06
 ---
-# Материал: Нихром 80/20 (Nikrothal 80 — резистивный сплав)
-
 ## Описание
 
 Аустенитный никель-хромовый резистивный сплав (NiCr 80/20) для работы при температурах до 1200 °C. Высокое удельное сопротивление (1.09 Ом·мм²/м при 20 °C) при низком температурном коэффициенте (Ct 1.01 при 100 °C — 1.07 при 1200 °C), хорошая стойкость к окислению и стабильность формы; отличная свариваемость и пластичность (A = 30 %). Стандартный материал резистивных элементов (проволочные резисторы, в т.ч. в стекловидной эмали), нагревателей бытовых и промышленных печей, металлических трубчатых и патронных нагревателей.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
+## Источники
+
+- Kanthal (Alleima) — Nikrothal® 80 wire datasheet, updated 2024-09-05: состав, плотность 8.30 г/см³, ρ 1.09 Ом·мм²/м, Ct-таблица, КТР 14.1–17.2×10⁻⁶/К, λ 15 Вт/(м·К), c 460 Дж/(кг·К), Tпл 1400 °C, Rp0.2/Rm/A/HV, ползучесть — https://www.kanthal.com/en/products/datasheets/material-datasheets/wire/resistance-heating-wire-and-resistance-wire/nikrothal-80
+- Ohmite 20 series (Brown Devil) — проволочные резисторы в стекловидной эмали на керамическом сердечнике: https://www.ohmite.com/res-20
+- Kanthal (Alleima) — Nikrothal® 60 wire datasheet: Ni 57–60/Cr 14–18/Fe бал., ρ 1.11 Ом·мм²/м, Tэл max 1150 °C, плотность 8.20 г/см³, λ/c/КТР-таблицы, Rm 700–730 МПа — https://www.kanthal.com/en/products/datasheets/material-datasheets/wire/resistance-heating-wire-and-resistance-wire/nikrothal-60
+- Kanthal (Alleima) — Nikrothal® 20 wire datasheet: Ni 19–21/Cr 23–25/Si 2.3–2.5/Fe бал., ρ 0.95 Ом·мм²/м, Tэл max 1050 °C, плотность 7.80 г/см³, Rm 650–675 МПа — https://www.kanthal.com/en/products/datasheets/material-datasheets/wire/resistance-heating-wire-and-resistance-wire/nikrothal-20
+- AlloyStrip — 6J22 (Karma) precision resistance wire: Ni бал./Cr 19–21.5/Al 2.7–3.2/Fe 2–3, ρ 1.33±8 % мкОм·м, TCR ≤±30 ppm/°C, термоЭДС vs Pt ≤2.5 мкВ/°C, −60…+300 °C, плотность 8.1 г/см³ — https://www.alloystrip.com/precision-alloy/6j22-karma-resistance-wire.html
+- PatSnap Eureka — nickel-chromium thin-film resistors: Ni80Cr20/NiCrAl/NiCrSi-O плёнки, 10–2000 Ом/□, TCR +50…±10 ppm/°C, 5–200 нм, дрейф <0.1 %/2000 ч @125 °C, лазерная подгонка Nd:YAG — https://eureka.patsnap.com/materials/nickel-chromium-resistance
 
 ## Химический состав
 
@@ -146,12 +159,3 @@ Ni — основа (баланс); Cr 19.0–21.0 %; Si 1.0–1.7 %; Mn ≤1.0 
 
 - Nikrothal 20 (NiCrFe 20/23/ост.) — ρ 0.95 Ом·мм²/м, до 1050 °C
 - Kanthal A-1 (FeCrAl) — до 1400 °C, выше ρ (1.39 мкОм·м), но хрупче после эксплуатации
-
-## Источники
-
-- Kanthal (Alleima) — Nikrothal® 80 wire datasheet, updated 2024-09-05: состав, плотность 8.30 г/см³, ρ 1.09 Ом·мм²/м, Ct-таблица, КТР 14.1–17.2×10⁻⁶/К, λ 15 Вт/(м·К), c 460 Дж/(кг·К), Tпл 1400 °C, Rp0.2/Rm/A/HV, ползучесть — https://www.kanthal.com/en/products/datasheets/material-datasheets/wire/resistance-heating-wire-and-resistance-wire/nikrothal-80
-- Ohmite 20 series (Brown Devil) — проволочные резисторы в стекловидной эмали на керамическом сердечнике: https://www.ohmite.com/res-20
-- Kanthal (Alleima) — Nikrothal® 60 wire datasheet: Ni 57–60/Cr 14–18/Fe бал., ρ 1.11 Ом·мм²/м, Tэл max 1150 °C, плотность 8.20 г/см³, λ/c/КТР-таблицы, Rm 700–730 МПа — https://www.kanthal.com/en/products/datasheets/material-datasheets/wire/resistance-heating-wire-and-resistance-wire/nikrothal-60
-- Kanthal (Alleima) — Nikrothal® 20 wire datasheet: Ni 19–21/Cr 23–25/Si 2.3–2.5/Fe бал., ρ 0.95 Ом·мм²/м, Tэл max 1050 °C, плотность 7.80 г/см³, Rm 650–675 МПа — https://www.kanthal.com/en/products/datasheets/material-datasheets/wire/resistance-heating-wire-and-resistance-wire/nikrothal-20
-- AlloyStrip — 6J22 (Karma) precision resistance wire: Ni бал./Cr 19–21.5/Al 2.7–3.2/Fe 2–3, ρ 1.33±8 % мкОм·м, TCR ≤±30 ppm/°C, термоЭДС vs Pt ≤2.5 мкВ/°C, −60…+300 °C, плотность 8.1 г/см³ — https://www.alloystrip.com/precision-alloy/6j22-karma-resistance-wire.html
-- PatSnap Eureka — nickel-chromium thin-film resistors: Ni80Cr20/NiCrAl/NiCrSi-O плёнки, 10–2000 Ом/□, TCR +50…±10 ppm/°C, 5–200 нм, дрейф <0.1 %/2000 ч @125 °C, лазерная подгонка Nd:YAG — https://eureka.patsnap.com/materials/nickel-chromium-resistance

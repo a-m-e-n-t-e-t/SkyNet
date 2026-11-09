@@ -1,8 +1,8 @@
 ---
-применяется_в_изделиях_счёт: 0
+
+
+
 id: material_nafion
-псевдонимы: []
-канонический_id: material_nafion
 тип: материал
 класс: полимер
 химический_состав: 'перфторсульфоновая кислота (PFSA): PTFE-подобная основа с боковыми цепями –O–CF₂–CF(CF₃)–O–CF₂–CF₂–SO₃H, EW ≈1100 г/моль (Nafion 117, Chemours)'
@@ -66,21 +66,36 @@ id: material_nafion
   рабочая_температура_C:
     min: 0
     max: 90
-наследуемые: {}
 дополнительные:
   ASR_мОм_см2: 183
   газ_кроссовер_относительно_N115: '−30 %'
   producer: 'Chemours (бывш. DuPont), товарный ряд N115/N117/N211/N212/N211'
 ---
-# Материал: Nafion (PFSA, Nafion 117)
-
 ## Описание
 
 Перфторсульфоновая кислота (PFSA) — класс иономера и фактический эталон протонообменных мембран: полукристаллическая перфторированная (PTFE-подобная) основа с боковыми цепями, оканчивающимися суперкислотными группами –SO₃H. Товарный Nafion 117 (Chemours): EW ≈1100 г/моль, толщина 183 мкм, протонная проводимость ≥0.10 S/см при 25 °C и полном увлажнении, ASR 183 мОм·см²; газ-кроссовер на ~30 % ниже, чем у Nafion 115 (127 мкм), что делает 117-й типоразмер стандартом DMFC и стека с жёсткими требованиями к смешению газов (Canrud, 2026; SCI Materials Hub). Химическая инертность перфторированного скелета обеспечивает стойкость в кислой среде (pH 0–3) при 60–90 °C; ограничение — работа только в гидратированном состоянии и механическая деградация при термоциклировании (Lufrano et al., PMC7865616, 2021). Физические константы (verify #725): удельный вес 1.98 в сухой H+-форме (таблица Chemours/Fuel Cell Earth); теплопроводность 0.188 W/(м·К) в сухом состоянии (Appl. Phys. Lett. 124, 262202, 2024; 0.13–0.16 при 30–65 °C по Chen et al. 2020, рост до 0.40 при 100 % RH); DSC показывает эндотермики ~120 °C (ионные домены) и ~230 °C — плавление кристаллических TFE-фаз, после которого начинается деградация (de Almeida & Kawano 1999; Deng et al. 1998).
 
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | материал | — | canon |
+
+
 ## Принцип работы
 
 Селективный ионный транспорт: при гидратации сульфонаты диссоциируют, H⁺ перемещается по сети нанокластеров (3–5 нм) механизмами Гроттгуса и везикулярной диффузии; электронная проводимость и газопроницаемость пренебрежимо малы. Проводимость монотонно следует за содержанием воды (λ-зависимость), поэтому эксплуатация требует управления влажностью реагентов.
+
+## Источники
+
+- Canrud — Nafion Membrane Comparison: 115 vs 117 vs 211 vs 212: https://www.canrud.com/knowledge/testing-analysis/nafion-membrane-comparison-115-vs-117-vs-211-vs-212-202
+- SCI Materials Hub — Nafion N117: http://en.scimaterials.cn/ProDetail.aspx?ProId=350
+- Lufrano et al., 2021 — Morphology of Nafion-Based Membranes (EW 1100): https://pmc.ncbi.nlm.nih.gov/articles/PMC7865616
+- Nafion.com — Sulfonic Membranes: https://www.nafion.com/en/products/sulfonic-membranes
+- Fuel Cell Earth — Nafion Membrane Chart (Specific Gravity 1.97–1.98): https://www.fuelcellearth.com/nafion-membrane-chart/
+- Kwon et al., Appl. Phys. Lett. 124, 262202 (2024) — Exceptional thermal conductivity increase of Nafion by hydration (0.188 W/m·K dry → 0.400 при 100 % RH): https://pubs.aip.org/aip/apl/article/124/26/262202/3299974
+- de Almeida & Kawano (1999) — Thermal Behavior of Nafion Membranes (DSC-пики ~120 и ~230 °C): http://20.210.105.67/research/wp-content/uploads/2007/05/jtac-99-thermal-behavior-of-nafion.pdf
+- Chen et al. (2020) — Study on thermal conductivity of PEM (0.13–0.16 W/m·K, 30–65 °C): https://www.sciencedirect.com/science/article/abs/pii/S1364032120306213
 
 ## Сравнение структур
 
@@ -99,14 +114,3 @@ id: material_nafion
 - ASTM F2029-22 (водородный кроссовер PEM-мембран)
 - DOE MEFED-PEM (требования к мембранам тяговых ТЭ)
 - IEC 62282-2 (безопасность модулей ТЭ)
-
-## Источники
-
-- Canrud — Nafion Membrane Comparison: 115 vs 117 vs 211 vs 212: https://www.canrud.com/knowledge/testing-analysis/nafion-membrane-comparison-115-vs-117-vs-211-vs-212-202
-- SCI Materials Hub — Nafion N117: http://en.scimaterials.cn/ProDetail.aspx?ProId=350
-- Lufrano et al., 2021 — Morphology of Nafion-Based Membranes (EW 1100): https://pmc.ncbi.nlm.nih.gov/articles/PMC7865616
-- Nafion.com — Sulfonic Membranes: https://www.nafion.com/en/products/sulfonic-membranes
-- Fuel Cell Earth — Nafion Membrane Chart (Specific Gravity 1.97–1.98): https://www.fuelcellearth.com/nafion-membrane-chart/
-- Kwon et al., Appl. Phys. Lett. 124, 262202 (2024) — Exceptional thermal conductivity increase of Nafion by hydration (0.188 W/m·K dry → 0.400 при 100 % RH): https://pubs.aip.org/aip/apl/article/124/26/262202/3299974
-- de Almeida & Kawano (1999) — Thermal Behavior of Nafion Membranes (DSC-пики ~120 и ~230 °C): http://20.210.105.67/research/wp-content/uploads/2007/05/jtac-99-thermal-behavior-of-nafion.pdf
-- Chen et al. (2020) — Study on thermal conductivity of PEM (0.13–0.16 W/m·K, 30–65 °C): https://www.sciencedirect.com/science/article/abs/pii/S1364032120306213

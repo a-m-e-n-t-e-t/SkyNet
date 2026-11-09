@@ -146,15 +146,13 @@ def graph1_build() -> dict:
         label = d.get("подтип", nid)
         add_node(nid, ntype, label, d.get("_path", ""), subsystem)
 
-        # has_part / child_of
+        # has_part (canonical direction — parent→child; reverse index built on load)
+        # v9.62: mirror-рёбра (child_of, part_of, used_in, researches) убраны —
+        # экономия ~277 KB в graph1_data.json; reverse-index строится на лету.
         children = d.get("дочерние_части", []) or []
         if isinstance(children, list):
             for c in children:
                 add_edge(nid, c, "has_part")
-
-        parent = d.get("родитель")
-        if parent and parent != "null":
-            add_edge(nid, parent, "child_of")
 
         # uses_material — YAML-список словарей, парсим текстом (parse_frontmatter не читает списки словарей)
         _txt = f.read_text(encoding="utf-8")
@@ -267,19 +265,9 @@ def graph1_build() -> dict:
         else:
             dangling[e["type"]].add(e["dst"] if e["dst"] not in ids else e["src"])
     edges = clean
-    for e in list(edges):
-        if e["type"] == "uses_material":
-            edges.append({"src": e["dst"], "dst": e["src"], "type": "used_in",
-                          "meta": {"forward": "uses_material"}})
-        elif e["type"] == "has_part":
-            edges.append({"src": e["dst"], "dst": e["src"], "type": "part_of",
-                          "meta": {"forward": "has_part"}})
-        elif e["type"] == "complies_with":
-            edges.append({"src": e["dst"], "dst": e["src"], "type": "referenced_by",
-                          "meta": {"forward": "complies_with"}})
-        elif e["type"] == "researched_by":
-            edges.append({"src": e["dst"], "dst": e["src"], "type": "researches",
-                          "meta": {"forward": "researched_by"}})
+    # v9.62: mirror-рёбра убраны (used_in, part_of, researches, referenced_by)
+    # reverse-index строится на лету при загрузке графа
+    # Оставляем только canonical directions: has_part, uses_material, researched_by, complies_with
 
     return {
         "kind": "graph1_data",

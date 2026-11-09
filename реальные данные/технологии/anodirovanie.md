@@ -1,7 +1,8 @@
 ---
+
+
+
 id: tekhnologia_anodirovanie
-псевдонимы: []
-канонический_id: tekhnologia_anodirovanie
 тип: технология
 категория: покрытие
 область_применения:
@@ -36,7 +37,6 @@ id: tekhnologia_anodirovanie
           max: 20
           nominal: 15
   потребление_энергии_kWh: 3
-наследуемые: {}
 дополнительные:
   оборудование: []
   типичные_материалы_для_процесса: []
@@ -48,6 +48,18 @@ id: tekhnologia_anodirovanie
 ## Описание
 
 Анодирование (Type II, сернокислое) — электрохимическое формирование оксидного слоя Al2O3 на алюминии: коррозионная стойкость, изоляция, возможность окрашивания. По reference guide Anodizing Council: ванна 15 % H2SO4 @ 20 °C, ток ~12 А/кв.фт (≈1.3 А/дм²); толщина Type II 0.0002–0.001 дюйма (5–25 мкм), диапазон ванны 18–24 °C.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| тип узла | технология | — | canon |
+
+
+## Источники
+
+- Anodizing Reference Guide (Anodizing Council: 15 % H2SO4 @ 20 °C, 12 A/sq ft, Type II thickness): https://www.anodizing.org/anodizing-reference-guide (проверено 2026-11-07)
+- Our Guide to Sulfuric Acid Anodizing (Fictiv: толщина слоя 5–25 мкм): https://www.fictiv.com/articles/our-guide-to-sulfuric-acid-anodizing (проверено 2026-11-07)
 
 ## Входные ресурсы
 
@@ -68,8 +80,3 @@ id: tekhnologia_anodirovanie
 ## Ограничения и допуски
 
 Контактная точка остаётся неанодированной (нужна токоподводка); для теплоотводов анодирование повышает тепловое излучение (~0.8 ε против 0.05 у голого Al).
-
-## Источники
-
-- Anodizing Reference Guide (Anodizing Council: 15 % H2SO4 @ 20 °C, 12 A/sq ft, Type II thickness): https://www.anodizing.org/anodizing-reference-guide (проверено 2026-11-07)
-- Our Guide to Sulfuric Acid Anodizing (Fictiv: толщина слоя 5–25 мкм): https://www.fictiv.com/articles/our-guide-to-sulfuric-acid-anodizing (проверено 2026-11-07)
