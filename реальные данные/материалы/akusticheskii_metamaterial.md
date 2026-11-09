@@ -13,6 +13,7 @@
 
 
 
+
 id: material_akusticheskii_metamaterial
 тип: материал
 класс: прочее

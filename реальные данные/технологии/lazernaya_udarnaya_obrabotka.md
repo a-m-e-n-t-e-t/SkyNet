@@ -13,6 +13,7 @@
 
 
 
+
 id: tekhnologia_lazernaya_udarnaya_obrabotka
 тип: технология
 категория: обработка

@@ -29,12 +29,15 @@ id: izdelie_litii-tionilhloridnye_batarei
     доля_массы: 0.18
   - часть: часть_litii-tionilhloridnye_batarei_electrolyte
     материал: socl2
+    форма: католит_и_жидкий_катод_lisocl2
     доля_массы: 0.38
   - часть: часть_litii-tionilhloridnye_batarei_separator
     материал: pp_membrane
+    форма: сепаратор_lisocl2_bobbin
     доля_массы: 0.019
   - часть: часть_litii-tionilhloridnye_batarei_case
     материал: stainless_steel_304
+    форма: корпус_lisocl2_bobbin
     доля_массы: 0.19
 
 технологии_частей:

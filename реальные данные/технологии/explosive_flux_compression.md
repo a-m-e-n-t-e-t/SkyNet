@@ -13,6 +13,7 @@
 
 
 
+
 id: tekhnologia_explosive_flux_compression
 тип: технология
 категория: обработка

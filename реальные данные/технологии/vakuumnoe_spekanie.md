@@ -13,6 +13,7 @@
 
 
 
+
 id: tekhnologia_vakuumnoe_spekanie
 тип: технология
 категория: обработка

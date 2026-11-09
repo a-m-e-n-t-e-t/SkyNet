@@ -13,6 +13,7 @@
 
 
 
+
 id: material_silikon_40_50_shore_a
 псевдонимы: [силиконовый каучук 40–50 Shore A, VMQ-каучук 40–50 Shore A, silicone rubber 40–50 Shore A]
 тип: материал
