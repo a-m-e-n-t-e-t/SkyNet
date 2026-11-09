@@ -23,6 +23,7 @@
 
 
 
+
 id: tekhnologia_anodirovanie
 тип: технология
 категория: покрытие
