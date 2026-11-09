@@ -4926,6 +4926,67 @@
       "used_in_issues": [
         2046
       ]
+    },
+    {
+      "id": "ws_mikrokanalnaya_plastina_frezerovanie",
+      "query": "microchannel cold plate copper manufacturing CNC milled channels 0.2-0.8 mm multi-blade milling; chemical etching alternative",
+      "keywords": [
+        "microchannel cold plate",
+        "copper",
+        "multi-blade milling",
+        "CNC",
+        "chemical etching"
+      ],
+      "results_count": 7,
+      "key_facts": [
+        "Multi-blade milling Cu-микроканалов: ширина 0.2–0.8 мм, высота 0.5–2 мм — экономичное изготовление (Zhou et al. 2019, Applied Thermal Engineering)",
+        "Составной стековый инструмент из дисковых лезвий: гидравлический диаметр 0.632 мм, длина 40 мм (Zhou et al. 2018, IJAMT)",
+        "Каналы МКТЭ fabricated by precision machining or chemical etching (патент US7360309B2); травление — альтернатива мехобработке (Precision Micro)",
+        "Промышленные cold plates: Cu и Cu-композиты, тепловой поток до 50 Вт/см², микромеханизированные каналы + пайка/фрезеровка (ThermAvant); ширина каналов 200–500 мкм (cooling-thermal)"
+      ],
+      "created_at": "2026-11-10",
+      "last_used": "2026-11-10",
+      "usage_count": 1,
+      "results": [
+        {
+          "url": "https://www.thermavant.com/thermavant-products/cold-plates",
+          "title": "Cold Plates | ThermAvant",
+          "snippet": "Micromachined channels, brazed and milled; Cu/Cu-composites; до 50 Вт/см²"
+        },
+        {
+          "url": "https://www.sciencedirect.com/science/article/abs/pii/S1290072918301716",
+          "title": "Zhou 2019 — Heat transfer Cu-based microchannel",
+          "snippet": "Multi-blade milling: высота 0.5–2 мм, ширина 0.2–0.8 мм"
+        },
+        {
+          "url": "https://link.springer.com/article/10.1007/s00170-017-1390-y",
+          "title": "Zhou 2018 — Multi-blade milling Cu microchannel (IJAMT)",
+          "snippet": "Стековый инструмент, гидр. диаметр 0.632 мм"
+        },
+        {
+          "url": "https://www.ptsmake.com/cnc-machining-for-liquid-cooling-components",
+          "title": "CNC Machining for Liquid Cooling (ptsmake)",
+          "snippet": "CNC milling микроканалов"
+        },
+        {
+          "url": "https://cooling-thermal.com/blog/microchannel-cold-plate-manufacturing",
+          "title": "Microchannel Cold Plate Manufacturing Guide",
+          "snippet": "Ширина каналов 200–500 мкм"
+        },
+        {
+          "url": "https://www.precisionmicro.com/plate-heat-exchangers-manufacture",
+          "title": "Chemical etching plate heat exchangers (Precision Micro)",
+          "snippet": "Травление вместо мехобработки"
+        },
+        {
+          "url": "https://patents.google.com/patent/US7360309B2/en",
+          "title": "US7360309B2 — Method of manufacturing microchannel heat exchangers",
+          "snippet": "Precision machining or chemical etching"
+        }
+      ],
+      "used_in_issues": [
+        928
+      ]
     }
   ]
 }
