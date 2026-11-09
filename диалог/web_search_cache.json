@@ -5462,6 +5462,42 @@
         "ResearchGate 317768544 — PP separators coated with inorganic materials (+28–45 % resistance)",
         "Micromeritics — Characterizing Li-Ion Battery Separators (porosity 40–60 %)"
       ]
+    },
+    {
+      "id": "ws_0081",
+      "query": "McKibben muscle braided sleeve manufacturing maypole braiding braid angle Festo DMSP contraction",
+      "keywords": [
+        "McKibben",
+        "braiding",
+        "braid angle",
+        "hollow round braid",
+        "Festo DMSP",
+        "manufacturing",
+        "contraction",
+        "54.44"
+      ],
+      "results_count": 10,
+      "key_facts": [
+        "McKibben muscle = эластомерная камера + плетёный рукав + подвод среды; нити nylon/polyester/carbon (BJSTR.MS.ID.006211, 2021)",
+        "Коммерческий угол плетения 15–35°, критический угол 54.44° (за ним удлинение вместо сокращения) (BJSTR.MS.ID.006211)",
+        "Festo DMSP: max contraction 25 % номинальной длины, ход 0…2250 мм, DMSP-20 диаметр при сокращении 40 мм (datasheet 541404)",
+        "Kortman et al. 2025 Materials & Design — процесс локального управления углом плетения (hollow round braid на conventional braiding machine, TU Delft)",
+        "Truong et al. 2018 — 3D-печатные плетёные рукава (PCL + альгинат), гидравлическая McKibben с изометрическим усилием"
+      ],
+      "created_at": "2026-11-09T23:27:42.804165+00:00",
+      "last_used": "2026-11-09T23:27:42.804178+00:00",
+      "usage_count": 1,
+      "used_in_issues": [
+        972
+      ],
+      "results": [
+        "From Traditional Braiding Methods to Additive Manufacturing of Braided Sleeves: https://biomedres.us/fulltexts/BJSTR.MS.ID.006211.php",
+        "Kortman et al. 2025, Materials & Design: https://www.sciencedirect.com/science/article/pii/S0264127525016090",
+        "Kortman et al. 2026 TU Delft PDF: https://research.tudelft.nl/files/313966707/kortman-et-al-2026-advancing-mckibben-artificial-muscles-bio-inspired-design-for-complex-motion.pdf",
+        "Festo DMSP datasheet 541404: https://ftp.festo.com/Public/PNEUMATIC/SOFTWARE_SERVICE/Datasheet/EN_GB/541404.pdf",
+        "Truong et al. 2018 3D Printed Braided Sleeves: https://www.researchgate.net/publication/328811633_Three-Dimensional_Printed_Braided_Sleeves_for_Manufacturing_McKibben_Artificial_Muscles",
+        "Festo Fluidic Muscle DMSP: https://www.festo.com/us/en/p/fluidic-muscle-id_DMSP"
+      ]
     }
   ]
 }

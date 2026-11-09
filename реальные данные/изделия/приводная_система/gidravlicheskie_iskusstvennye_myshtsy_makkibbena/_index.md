@@ -23,6 +23,32 @@ id: izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena
   - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
     материал: aluminum
     доля_массы: 0.27
+технологии_частей:
+  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
+    технология: pletenie_opletki
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: uhmwpe
+        роль: обрабатываемый
+  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
+  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors
+    технология: tokarnaya_obrabotka_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
+  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
+
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -71,14 +97,12 @@ scaling_type: количественный
 дополнительные:
   цена_usd: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-07
+дата_обновления: 2026-11-10
 источник: web_search
 источник_разбора: веб-верификация
 источник_url: https://ftp.festo.com/public/PNEUMATIC/SOFTWARE_SERVICE/DataSheet/EN_GB/534202.pdf
 источник_дата: 2026-11-07
 ---
-# Изделие: гидравлические искусственные мышцы МакКиббена
-
 ## Описание
 
 Приводная сборка на основе гидравлической искусственной мышцы Мак-Киббена: эластичная камера в текстильной оплётке (активная длина 250 мм, Ø15 мм) в жёстком защитном кожухе (288 мм) с концевыми цанговыми фитингами и блоком разъёмов/манометрирования. Референс-класс — Fluidic Muscle Festo DMSP/MAS (размер 20: внутренний Ø20 мм, номинальная длина 250 мм, макс. сокращение 25 % номинальной длины, расширение до Ø40 мм при полном ходе). Габариты сборки 292×36×38 мм — конверт «мышца в кожухе + фланец разъёма 38999 (32.9×32.9×36)»; масса 0.05–50 кг, номинал 1 кг (кластерное исполнение из нескольких мышц на общем коллекторе).
@@ -89,15 +113,19 @@ scaling_type: количественный
 
 | Параметр | Значение | Единица | Источник |
 |---|---|---|---|
-| подсистема | приводная_система | — | classify_subsystem |
-| категория | прочее | — | — |
-| габариты сборки | 292×36×38 | мм | Festo MAS/DMSP datasheet + bounding box (кожух 288 мм + фланец 38999) |
-| активная длина мышцы | 250 | мм | Festo DMSP-20-250N (номинальная длина) |
-| макс. сокращение | 25 | % ном. длины | Festo DMSP/MAS документация |
-| рабочий ход | 0–62.5 | мм | 25 % от 250 мм |
-| тяга (класс MAS-20) | до ~1000 | Н | Festo MAS-20 при 8 бар (зависит от давления) |
+| подсистема | приводная_система | — | canon |
+| подтип | прочее | — | canon |
+| масса | 0.05–50 (номинал 1) | kg | canon |
+| габариты (Д×Ш×В) | 292×36×38 | mm | canon |
+| выработка энергии | 0 | W | canon |
+| выработка тепла | 0.1–50 | W | canon |
+| тип узла | изделие | — | canon |
+| уровень_номер | 1 | — | canon |
 
-(Параметры требуют уточнения через веб-поиск и вычислений; см. fc_изделие_масса, fc_изделие_стандарты в _field_contracts.yaml)
+
+## Принцип работы
+
+Мышца Мак-Киббена — тянущий пневмо/гидропривод: эластичная внутренняя камера (силикон) в оплётке из высокопрочных волокон (Kevlar). При подаче рабочего давления (гидравлика/пневматика) камера расширяется, оплётка раскрывает угол плетения — мышца сокращается по длине (до 20–25 %) и наращивает тянущее усилие. Одностороннее действие; возврат — внешней пружиной/нагрузкой/антагонистом. Класс Festo DMSP/MAS: номинальная длина до 2250 мм, стандартная длина ≈ 10× внутреннего диаметра, макс. сокращение 25 % номинальной длины.
 
 ## Состав
 
@@ -112,15 +140,17 @@ scaling_type: количественный
 
 ## Используемые технологии
 
-(Ссылки на реальные_данные/технологии/ добавляются после связывания)
+- `pletenie_opletki` (доля: 1.0)
+- `frezervanie_chpu` (доля: 1.0)
+- `tokarnaya_obrabotka_chpu` (доля: 1.0)
+- `frezervanie_chpu` (доля: 1.0)
+
 
 ## Используемые материалы
 
-(Ссылки на реальные_данные/материалы/ добавляются после связывания)
+- `silicone-textile_composite` → [`silicone-textile_composite`](../../../материалы/silicone-textile_composite.md)
+- `aluminum` → [`aluminum`](../../../материалы/aluminum.md)
 
-## Принцип работы
-
-Мышца Мак-Киббена — тянущий пневмо/гидропривод: эластичная внутренняя камера (силикон) в оплётке из высокопрочных волокон (Kevlar). При подаче рабочего давления (гидравлика/пневматика) камера расширяется, оплётка раскрывает угол плетения — мышца сокращается по длине (до 20–25 %) и наращивает тянущее усилие. Одностороннее действие; возврат — внешней пружиной/нагрузкой/антагонистом. Класс Festo DMSP/MAS: номинальная длина до 2250 мм, стандартная длина ≈ 10× внутреннего диаметра, макс. сокращение 25 % номинальной длины.
 
 ## Источники
 
@@ -131,18 +161,17 @@ scaling_type: количественный
 
 ---
 
-
 ## Декомпозиция
 
 ```mermaid
 graph TD
-    gidravlicheskie_isku["izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena"]
-    gidravlicheskie_iskusstve["часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core"]
-    gidravlicheskie_isku --> gidravlicheskie_iskusstve
-    gidravlicheskie_iskusstve["часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing"]
-    gidravlicheskie_isku --> gidravlicheskie_iskusstve
-    gidravlicheskie_iskusstve["часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors"]
-    gidravlicheskie_isku --> gidravlicheskie_iskusstve
-    gidravlicheskie_iskusstve["часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting"]
-    gidravlicheskie_isku --> gidravlicheskie_iskusstve
+    izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena["izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena"]
+    ______gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core["часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core"]
+    izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena --> ______gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
+    ______gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing["часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing"]
+    izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena --> ______gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
+    ______gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors["часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors"]
+    izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena --> ______gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors
+    ______gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting["часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting"]
+    izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena --> ______gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
 ```
