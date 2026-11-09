@@ -1,6 +1,6 @@
 ---
 id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran
-тип: изделие
+тип: часть
 категория: машиностроение
 уровень_иерархии: неделимый
 уровень_номер: 3

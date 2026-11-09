@@ -1,6 +1,6 @@
 ---
 id: часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_hts_element
-тип: изделие
+тип: часть
 категория: машиностроение
 уровень_иерархии: промежуточный
 уровень_номер: 2

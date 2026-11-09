@@ -1,6 +1,6 @@
 ---
 id: часть_alyuminievo-vozdushnye_toplivnye_elementy_electrolyte
-тип: изделие
+тип: часть
 категория: машиностроение
 уровень_иерархии: промежуточный
 уровень_номер: 2

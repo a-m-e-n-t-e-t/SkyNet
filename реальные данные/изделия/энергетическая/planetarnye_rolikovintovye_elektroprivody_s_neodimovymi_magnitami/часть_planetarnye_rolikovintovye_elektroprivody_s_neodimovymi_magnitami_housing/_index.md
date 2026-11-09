@@ -1,6 +1,6 @@
 ---
 id: часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_housing
-тип: изделие
+тип: часть
 категория: машиностроение
 уровень_иерархии: неделимый
 уровень_номер: 2

@@ -1,6 +1,6 @@
 ---
 id: часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_cryostat
-тип: изделие
+тип: часть
 категория: машиностроение
 уровень_иерархии: промежуточный
 уровень_номер: 2

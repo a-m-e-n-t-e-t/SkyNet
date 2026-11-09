@@ -1,6 +1,6 @@
 ---
 id: часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_housing
-тип: изделие
+тип: часть
 категория: машиностроение
 уровень_иерархии: неделимый
 уровень_номер: 2

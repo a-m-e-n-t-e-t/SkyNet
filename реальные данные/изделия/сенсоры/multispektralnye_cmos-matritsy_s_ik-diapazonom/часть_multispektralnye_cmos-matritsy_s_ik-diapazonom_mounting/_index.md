@@ -1,6 +1,6 @@
 ---
 id: часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_mounting
-тип: изделие
+тип: часть
 категория: машиностроение
 уровень_иерархии: неделимый
 уровень_номер: 2

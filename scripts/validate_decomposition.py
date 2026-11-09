@@ -3464,9 +3464,12 @@ _CATEGORY_PREFIXES = ('material_', 'izdelie_', 'tekhnologia_', 'часть_', 'S
 
 # Какое значение поля `тип` ожидается в каждой директории категории.
 # v9.33: добавлена категория 'модели' для фантастические данные/модели/.
+# v9.60: для каталога 'изделия' принято ЛЮБОЕ из 4 значений тип
+# (изделие — legacy, или новые сборка/часть/компонент после миграции A2).
+# Для остальных каталогов — прежнее строгое соответствие.
 _EXPECTED_TYPE_BY_DIR = {
     'материалы': 'материал',
-    'изделия':   'изделие',
+    'изделия':   ('изделие', 'сборка', 'часть', 'компонент'),  # v9.60: 4 типа
     'технологии': 'технология',
     'модели':    'модель_SkyNet',  # v9.33 NEW
 }
@@ -3578,13 +3581,19 @@ def check_F33(entries: list[tuple[Path, str, dict]] | None = None) -> dict:
     for f, cat, data in entries:
         t = str(data.get('тип', '')).strip()
         expected = _EXPECTED_TYPE_BY_DIR.get(cat)
-        if expected and t and t != expected:
-            mid = str(data.get('id', '')).strip() or f.name
-            violations.append(
-                f"{mid}: тип={t!r} не соответствует директории {cat!r} "
-                f"(ожидается {expected!r}) — реклассифицируйте файл или "
-                f"исправьте тип")
-            type_mismatch_files.add(mid)
+        if expected and t:
+            # v9.60: 'expected' может быть tuple (множество допустимых значений)
+            if isinstance(expected, tuple):
+                ok = t in expected
+            else:
+                ok = (t == expected)
+            if not ok:
+                mid = str(data.get('id', '')).strip() or f.name
+                violations.append(
+                    f"{mid}: тип={t!r} не соответствует директории {cat!r} "
+                    f"(ожидается {expected!r}) — реклассифицируйте файл или "
+                    f"исправьте тип")
+                type_mismatch_files.add(mid)
 
     # (b) normalized-name collision between categories
     by_name: dict[str, list[tuple[str, str]]] = {}  # name → [(cat, id), ...]

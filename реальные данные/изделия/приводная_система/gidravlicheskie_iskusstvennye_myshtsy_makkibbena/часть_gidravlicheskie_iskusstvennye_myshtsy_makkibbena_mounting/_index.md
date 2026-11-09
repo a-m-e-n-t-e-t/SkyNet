@@ -1,6 +1,6 @@
 ---
 id: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
-тип: изделие
+тип: часть
 категория: машиностроение
 уровень_иерархии: неделимый
 уровень_номер: 2

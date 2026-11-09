@@ -1,6 +1,6 @@
 ---
 id: часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_shaft
-тип: изделие
+тип: часть
 категория: машиностроение
 уровень_иерархии: неделимый
 уровень_номер: 2

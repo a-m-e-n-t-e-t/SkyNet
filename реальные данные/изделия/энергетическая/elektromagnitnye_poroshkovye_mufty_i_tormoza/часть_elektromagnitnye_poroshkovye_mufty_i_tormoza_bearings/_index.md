@@ -1,6 +1,6 @@
 ---
 id: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_bearings
-тип: изделие
+тип: часть
 категория: машиностроение
 уровень_иерархии: неделимый
 уровень_номер: 2

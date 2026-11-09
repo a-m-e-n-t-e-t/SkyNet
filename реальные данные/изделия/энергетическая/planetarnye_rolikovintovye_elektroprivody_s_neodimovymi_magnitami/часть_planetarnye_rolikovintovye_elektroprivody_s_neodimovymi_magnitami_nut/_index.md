@@ -1,6 +1,6 @@
 ---
 id: часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_nut
-тип: изделие
+тип: часть
 категория: машиностроение
 уровень_иерархии: промежуточный
 уровень_номер: 2
