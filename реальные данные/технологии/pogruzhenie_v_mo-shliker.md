@@ -26,6 +26,7 @@
 
 
 
+
 id: tekhnologia_pogruzhenie_v_mo-shliker
 тип: технология
 категория: обработка

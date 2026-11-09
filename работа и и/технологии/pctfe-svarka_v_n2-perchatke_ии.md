@@ -26,6 +26,7 @@
 
 
 
+
 id: tekhnologia_pctfe-svarka_v_n2-perchatke_ii
 тип: технология
 категория: обработка

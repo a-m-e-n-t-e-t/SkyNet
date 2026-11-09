@@ -26,6 +26,7 @@
 
 
 
+
 id: material_magnitnaya_rezina_ferritovyi_poroshok
 тип: материал
 класс: композит
