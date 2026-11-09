@@ -301,7 +301,7 @@ DECOMP_TEMPLATES: dict[str, dict] = {
         'materials': [
             ('isotope', 'pu238_oxide', 0.95),
             ('heater_head', 'inconel_625', 0.95),
-            ('regenerator', 'stainless_steel_mesh', 0.95),
+            ('regenerator', 'ss_316l', 0.95),
             ('piston', 'inconel_718', 0.95),
             ('alternator', 'copper_wire', 0.6),
         ]
@@ -470,7 +470,7 @@ DECOMP_TEMPLATES: dict[str, dict] = {
         ],
         'materials': [
             ('heater_head', 'inconel_625', 0.95),
-            ('regenerator', 'stainless_steel_mesh', 0.95),
+            ('regenerator', 'ss_316l', 0.95),
             ('displacer_piston', 'inconel_718', 0.9),
             ('power_piston', 'inconel_718', 0.9),
             ('alternator', 'copper_wire', 0.6),

@@ -6989,13 +6989,6 @@
       "subsystem": ""
     },
     {
-      "id": "material_stainless_steel_mesh",
-      "type": "material",
-      "label": "Нержавеющая сталь 316L (AISI 316L / UNS S31603 / EN 1.4404 X2CrNiMo17-12-2): Fe — остальное; Cr 16.0–18.0 %, Ni 10.0–14.0 %, Mo 2.0–3.0 %, C ≤0.03 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 % — основа проволоки/волокна для сетки/войлока регенератора (Cleveland-Cliffs ASTM A240, RAFIHIHET Wire Mesh)",
-      "path": "реальные данные/материалы/stainless_steel_mesh.md",
-      "subsystem": ""
-    },
-    {
       "id": "material_stal_st3",
       "type": "material",
       "label": "Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.",
@@ -8733,7 +8726,7 @@
     },
     {
       "src": "izdelie_asrg",
-      "dst": "material_stainless_steel_mesh",
+      "dst": "material_ss_316l",
       "type": "uses_material",
       "meta": {}
     },
@@ -9369,7 +9362,7 @@
     },
     {
       "src": "izdelie_nasa_asc-e_srsc",
-      "dst": "material_stainless_steel_mesh",
+      "dst": "material_ss_316l",
       "type": "uses_material",
       "meta": {}
     },
@@ -11313,7 +11306,7 @@
     },
     {
       "src": "часть_nasa_asc-e_srsc_regenerator",
-      "dst": "material_stainless_steel_mesh",
+      "dst": "material_ss_316l",
       "type": "uses_material",
       "meta": {}
     },
@@ -20487,7 +20480,7 @@
     },
     {
       "src": "izdelie_asrg_v28_ии",
-      "dst": "material_stainless_steel_mesh",
+      "dst": "material_ss_316l",
       "type": "uses_material",
       "meta": {}
     },
@@ -20589,7 +20582,7 @@
     },
     {
       "src": "часть_asrg_v28_ии_regenerator",
-      "dst": "material_stainless_steel_mesh",
+      "dst": "material_ss_316l",
       "type": "uses_material",
       "meta": {}
     },
@@ -22876,7 +22869,7 @@
       }
     },
     {
-      "src": "material_stainless_steel_mesh",
+      "src": "material_ss_316l",
       "dst": "izdelie_asrg",
       "type": "used_in",
       "meta": {
@@ -23724,7 +23717,7 @@
       }
     },
     {
-      "src": "material_stainless_steel_mesh",
+      "src": "material_ss_316l",
       "dst": "izdelie_nasa_asc-e_srsc",
       "type": "used_in",
       "meta": {
@@ -25428,7 +25421,7 @@
       }
     },
     {
-      "src": "material_stainless_steel_mesh",
+      "src": "material_ss_316l",
       "dst": "часть_nasa_asc-e_srsc_regenerator",
       "type": "used_in",
       "meta": {
@@ -33996,7 +33989,7 @@
       }
     },
     {
-      "src": "material_stainless_steel_mesh",
+      "src": "material_ss_316l",
       "dst": "izdelie_asrg_v28_ии",
       "type": "used_in",
       "meta": {
@@ -34084,7 +34077,7 @@
       }
     },
     {
-      "src": "material_stainless_steel_mesh",
+      "src": "material_ss_316l",
       "dst": "часть_asrg_v28_ии_regenerator",
       "type": "used_in",
       "meta": {
@@ -35311,7 +35304,6 @@
       "standart_ASTM A228/A228M-18",
       "standart_ASTM A240 (AISI 304)",
       "standart_ASTM A240 (sheet/strip)",
-      "standart_ASTM A240 (нержавеющие листы/полосы для холодной вытяжки проволоки)",
       "standart_ASTM A276 (stainless steel bars/shapes, UNS S44004)",
       "standart_ASTM A276 (пруток и профили нержавеющие)",
       "standart_ASTM A295 (high-carbon bearing quality steel)",
@@ -35422,7 +35414,6 @@
       "standart_ASTM E1461 (теплопроводность лазерной вспышкой)",
       "standart_ASTM E2653",
       "standart_ASTM E2653 (sodium technology)",
-      "standart_ASTM E2814 (стандартные плетёные сетки для тестирования сит)",
       "standart_ASTM E793 (энтальпия плавления/кристаллизации, DSC)",
       "standart_ASTM E8",
       "standart_ASTM E831/E228 (ТКЛР дилатометрией)",
@@ -35627,7 +35618,6 @@
       "standart_ISO 4762 (M5)",
       "standart_ISO 4762 (M6)",
       "standart_ISO 4762 (M8)",
-      "standart_ISO 4783 (тканые металлические проволочные сетки)",
       "standart_ISO 527 (растяжение пластиков)",
       "standart_ISO 5834-1",
       "standart_ISO 5834-2",
@@ -35973,10 +35963,10 @@
     ]
   },
   "stats": {
-    "nodes": 1125,
+    "nodes": 1124,
     "edges": 4010,
     "dangling": {
-      "complies_with": 543,
+      "complies_with": 540,
       "has_part": 6,
       "researched_by": 88,
       "uses_material": 49
@@ -35985,7 +35975,7 @@
       "chast": 674,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 133,
-      "material": 222,
+      "material": 221,
       "standart": 8,
       "tekhnologia": 78
     }

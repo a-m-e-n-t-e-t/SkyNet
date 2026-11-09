@@ -12,7 +12,7 @@ id: часть_asrg_v28_ии_regenerator
 дочерние_части: []
 материалы_частей:
   - часть: часть_asrg_v28_ии_regenerator
-    материал: stainless_steel_mesh
+    материал: ss_316l
     доля_массы: 1.0
 scaling_type: количественный
 соединители: []

@@ -23,7 +23,7 @@ id: izdelie_nasa_asc-e_srsc
     форма: авиакосмические_двигатели
     доля_массы: 0.19
   - часть: часть_nasa_asc-e_srsc_regenerator
-    материал: stainless_steel_mesh
+    материал: ss_316l
     форма: сетка_регенератора_стирлинга
     доля_массы: 0.095
   - часть: часть_nasa_asc-e_srsc_displacer_piston
@@ -49,7 +49,7 @@ id: izdelie_nasa_asc-e_srsc
     суммарная_доля_массы: 0.19
     источники_частей:
       - часть_nasa_asc-e_srsc_heater_head
-  - материал: stainless_steel_mesh
+  - материал: ss_316l
     форма: сетка_регенератора_стирлинга
     суммарная_доля_массы: 0.095
     источники_частей:
@@ -82,7 +82,7 @@ id: izdelie_nasa_asc-e_srsc
     технология: vakuumnoe_spekanie
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: stainless_steel_mesh
+      - материал: ss_316l
         роль: обрабатываемый
   - часть: часть_nasa_asc-e_srsc_displacer_piston
     технология: frezervanie_chpu
@@ -182,7 +182,7 @@ NASA ASC-e / SRSC — компактный свободнопоршневой д
 ## Используемые материалы
 
 - `inconel_625` → [`материалы/inconel_625.md`](../../../материалы/inconel_625.md) — heater_head
-- `stainless_steel_mesh` → [`материалы/stainless_steel_mesh.md`](../../../материалы/stainless_steel_mesh.md) — regenerator
+- `ss_316l` → [`ss_316l`](../../../материалы/ss_316l.md) — regenerator (форма: сетка_регенератора_стирлинга)
 - `inconel_718` → [`материалы/inconel_718.md`](../../../материалы/inconel_718.md) — displacer_piston, power_piston
 - `copper` → [`материалы/copper.md`](../../../материалы/copper.md) — alternator
 - `al_6061-t6` → [`материалы/al_6061-t6.md`](../../../материалы/al_6061-t6.md) — cooler
