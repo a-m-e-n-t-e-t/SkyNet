@@ -30,12 +30,15 @@ id: izdelie_mikroreaktor_deleniya
     доля_массы: 0.38
   - часть: часть_mikroreaktor_deleniya_heat_exchanger
     материал: inconel_625
+    форма: химическая_промышленность
     доля_массы: 0.15
   - часть: часть_mikroreaktor_deleniya_shielding
     материал: concrete_barite
+    форма: боковая_защита_микрореактора
     доля_массы: 0.38
   - часть: часть_mikroreaktor_deleniya_vessel
     материал: stainless_steel_316
+    форма: поликристаллический_прокат
     доля_массы: 0.19
   - часть: часть_mikroreaktor_deleniya_coolant
     материал: sodium
