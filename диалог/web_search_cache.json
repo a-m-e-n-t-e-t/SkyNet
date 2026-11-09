@@ -5103,6 +5103,56 @@
       "used_in_issues": [
         926
       ]
+    },
+    {
+      "id": "ws_0072",
+      "query": "M12 circular connector brass body CNC turned screw machined manufacturing C36000",
+      "keywords": [
+        "M12",
+        "connector",
+        "brass",
+        "C36000",
+        "CNC",
+        "turned"
+      ],
+      "results": [
+        {
+          "title": "CNC Machined Brass Parts",
+          "url": "https://resoluteprecision.com/material/metals/brass-cnc-machining",
+          "snippet": "C36000 (360 free-machining brass) — Excellent machinability and the standard choice for many machined fittings, valves, connector bodies, and fasteners."
+        },
+        {
+          "title": "Brass C36000 Machined Parts",
+          "url": "https://www.coxmanufacturing.com/brass-360",
+          "snippet": "Brass CDA 360 alloy has the highest machinability of all copper alloys, extremely popular for parts that require strength, weight, or a polished surface finish. Read more"
+        },
+        {
+          "title": "C36000 Brass Machined Parts C36000 Brass Components",
+          "url": "https://conexmetals.com/product/c36000-brass-machined-parts-c36000-brass-components-brass-fittings",
+          "snippet": "Our C36000 Brass machined parts are produced using state-of-the-art CNC machining , automatic bar feeders, and multi-spindle machines to ensure high precision ... Read more"
+        },
+        {
+          "title": "Precision CNC Machined Brass Parts & Components",
+          "url": "https://www.whbagshaw.com/cnc-machining/cnc-materials/custom-made-precision-brass-parts-and-components",
+          "snippet": "Also known as C36000 , alloy 360, or free cutting brass , free machining brass consists of approximately 60%-63% copper, brass turned connector Common CNC Brass ..."
+        },
+        {
+          "title": "Free-Cutting Brass C36000 — Chemistry, Properties &",
+          "url": "https://www.innovationfasteners.com/materials/brass-c36000",
+          "snippet": "The fastest-machining engineering metal — 3 percent lead brass for turned fittings, terminals, valve parts and volume screw-machine work."
+        },
+        {
+          "title": "Brass CNC Machining Parts Support Diverse Applications",
+          "url": "https://www.einpresswire.com/article/951716431/brass-cnc-machining-parts-support-diverse-applications-across-industrial-sectors",
+          "snippet": "Oct 23, 2026 — C36000 brass CNC parts are used for valve stems, threaded fittings, bushings, electrical connectors , and small instrument components. The alloy ... Read more"
+        }
+      ],
+      "created_at": "2026-11-09T20:26:11.655171+00:00",
+      "last_used": "2026-11-09T20:26:11.655171+00:00",
+      "usage_count": 1,
+      "used_in_issues": [
+        929
+      ]
     }
   ]
 }

@@ -13667,7 +13667,7 @@
     },
     {
       "src": "izdelie_razryvnye_mufty_iso_16028",
-      "dst": "material_aluminum",
+      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
