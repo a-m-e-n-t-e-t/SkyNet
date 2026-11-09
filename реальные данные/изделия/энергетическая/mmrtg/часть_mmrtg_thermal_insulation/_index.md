@@ -14,6 +14,7 @@ id: часть_mmrtg_thermal_insulation
 материалы_частей:
   - часть: часть_mmrtg_thermal_insulation
     материал: silica_aerogel_blanket
+    форма: pyrogel_xte_промышленный_высокотемпературный
     доля_массы: 1.0
 
 scaling_type: количественный

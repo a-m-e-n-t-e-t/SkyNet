@@ -14,6 +14,7 @@ id: часть_mmrtg_thermocouples
 материалы_частей:
   - часть: часть_mmrtg_thermocouples
     материал: pbte_teg
+    форма: mmrtg_couple
     доля_массы: 1.0
 
 scaling_type: количественный
