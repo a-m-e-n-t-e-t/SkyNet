@@ -73,7 +73,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `al_bondwire` → [`al_bondwire.md`](../../../../материалы/al_bondwire.md)
+- `al_bondwire` → [`aluminum.md`](../../../../материалы/aluminum.md)
 
 ## Источники
 

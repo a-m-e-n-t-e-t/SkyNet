@@ -85,7 +85,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `carbon_ptfe` → [`carbon_ptfe.md`](../../../../материалы/carbon_ptfe.md) — углеродная сажа + PTFE 20% + MnO₂ + никелевая сетка (Gaskatel MOC-тип)
+- `carbon_ptfe` → [`ptfe.md`](../../../../материалы/ptfe.md) — углеродная сажа + PTFE 20% + MnO₂ + никелевая сетка (Gaskatel MOC-тип)
 
 ## Источники
 

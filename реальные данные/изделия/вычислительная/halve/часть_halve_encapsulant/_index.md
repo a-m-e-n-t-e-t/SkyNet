@@ -84,7 +84,7 @@ Glob-top заливка формует купол над кристаллом и
 
 ## Используемые материалы
 
-- `epoksid_epon_828_teta` (DGEBA EPON 828 + ТЭТА, Tg 150°C) → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
+- `epoksid_epon_828_teta` (DGEBA EPON 828 + ТЭТА, Tg 150°C) → [`epoxy.md`](../../../../материалы/epoxy.md)
 
 ## Источники
 

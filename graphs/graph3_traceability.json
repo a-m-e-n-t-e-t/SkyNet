@@ -1737,12 +1737,6 @@
       "path": "scripts/classify_subsystem.py"
     },
     {
-      "id": "script:decompose_all_izdeliya.py",
-      "type": "script",
-      "label": "decompose_all_izdeliya.py",
-      "path": "scripts/decompose_all_izdeliya.py"
-    },
-    {
       "id": "script:fix_801.py",
       "type": "script",
       "label": "fix_801.py",
@@ -3845,18 +3839,6 @@
       "meta": {}
     },
     {
-      "src": "F35",
-      "dst": "script:decompose_all_izdeliya.py",
-      "type": "validated_by",
-      "meta": {}
-    },
-    {
-      "src": "script:decompose_all_izdeliya.py",
-      "dst": "F35",
-      "type": "triggers_metric",
-      "meta": {}
-    },
-    {
       "src": "F22",
       "dst": "script:fix_801.py",
       "type": "validated_by",
@@ -5166,13 +5148,13 @@
     }
   ],
   "stats": {
-    "nodes": 332,
-    "edges": 528,
+    "nodes": 331,
+    "edges": 526,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,
       "metric": 217,
-      "script": 28,
+      "script": 27,
       "spec_section": 58,
       "stub": 13
     }

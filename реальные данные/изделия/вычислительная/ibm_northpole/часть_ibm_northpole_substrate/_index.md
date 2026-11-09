@@ -73,7 +73,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `bt_abf_substrate` → [`bt_abf_substrate.md`](../../../../материалы/bt_abf_substrate.md)
+- `bt_abf_substrate` → [`bt_resin.md`](../../../../материалы/bt_resin.md)
 
 ## Источники
 

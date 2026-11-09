@@ -77,7 +77,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `silicone-textile_composite` → [`silicone-textile_composite.md`](../../../../материалы/silicone-textile_composite.md) — текстильно-силиконовый композит
+- `silicone-textile_composite` → [`ptfe.md`](../../../../материалы/ptfe.md) — текстильно-силиконовый композит
 
 ## Источники
 

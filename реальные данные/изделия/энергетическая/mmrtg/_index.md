@@ -70,7 +70,7 @@ id: izdelie_mmrtg
     технология: sborka_v_termoizolyatsionnoi_opravke
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: silica_aerogel_blanket
+      - материал: sio2_amorphous
         роль: обрабатываемый
 
 наследуемые_материалы:
@@ -94,7 +94,7 @@ id: izdelie_mmrtg
     суммарная_доля_массы: 0.285
     источники_частей:
       - часть_mmrtg_housing
-  - материал: silica_aerogel_blanket
+  - материал: sio2_amorphous
     форма: pyrogel_xte_промышленный_высокотемпературный
     суммарная_доля_массы: 0.09
     источники_частей:

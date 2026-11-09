@@ -60,7 +60,7 @@ id: izdelie_ni-63_betavoltaik_4h-sic
     технология: sborka_v_termoizolyatsionnoi_opravke
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: epoksid_epon_828_teta
+      - материал: epoxy
         роль: изоляционный_слой
   - часть: часть_ni-63_betavoltaik_4h-sic_case
     технология: frezervanie_chpu
@@ -83,7 +83,7 @@ id: izdelie_ni-63_betavoltaik_4h-sic
     форма: electroplated_foil
     суммарная_доля_массы: 0.2375
     источники_частей: [часть_ni-63_betavoltaik_4h-sic_isotope]
-  - материал: epoksid_epon_828_teta
+  - материал: epoxy
     форма: cast_resin_ambient_cure
     суммарная_доля_массы: 0.095
     источники_частей: [часть_ni-63_betavoltaik_4h-sic_encapsulant]
@@ -192,7 +192,7 @@ scaling_type: количественный
 - `ni-63` (электроосаждённая фольга изотопа) → [`ni-63.md`](../../../материалы/ni-63.md)
 - `monokristallicheskogo_sic` (4H-SiC кристалл и подложка) → [`monokristallicheskogo_sic.md`](../../../материалы/monokristallicheskogo_sic.md)
 - `ti-6al-4v` (корпус, AMS 4928) → [`ti-6al-4v.md`](../../../материалы/ti-6al-4v.md)
-- `epoksid_epon_828_teta` (заливка) → [`epoksid_epon_828_teta.md`](../../../материалы/epoksid_epon_828_teta.md)
+- `epoksid_epon_828_teta` (заливка) → [`epoxy.md`](../../../материалы/epoxy.md)
 
 ## Принцип работы
 

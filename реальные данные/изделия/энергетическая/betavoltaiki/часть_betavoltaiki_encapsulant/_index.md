@@ -87,7 +87,7 @@ Transfer molding: жидкая композиция Epon 828 (13 phr TETA) за�
 
 ## Используемые материалы
 
-- `epoksid_epon_828_teta` → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
+- `epoksid_epon_828_teta` → [`epoxy.md`](../../../../материалы/epoxy.md)
 
 ## Источники
 

@@ -75,7 +75,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `tedlar_pet` → [`tedlar_pet.md`](../../../../материалы/tedlar_pet.md)
+- `tedlar_pet` → [`pet.md`](../../../../материалы/pet.md)
 
 ## Источники
 

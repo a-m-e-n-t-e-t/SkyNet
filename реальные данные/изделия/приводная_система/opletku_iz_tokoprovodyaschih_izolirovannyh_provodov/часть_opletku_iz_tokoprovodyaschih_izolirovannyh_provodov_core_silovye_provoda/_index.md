@@ -25,7 +25,7 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_
     материалы_для_процесса:
       - материал: copper
         роль: токоведущая_основа
-      - материал: silicone-textile_composite
+      - материал: ptfe
         роль: изоляционный_слой
 
 scaling_type: количественный

@@ -76,7 +76,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `spectra` → [`spectra.md`](../../../../материалы/spectra.md) — UHMWPE Spectra/Dyneema
+- `spectra` → [`uhmwpe.md`](../../../../материалы/uhmwpe.md) — UHMWPE Spectra/Dyneema
 
 ## Источники
 

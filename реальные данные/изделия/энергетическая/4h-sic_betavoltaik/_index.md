@@ -60,7 +60,7 @@ id: izdelie_4h-sic_betavoltaik
     технология: sborka_v_termoizolyatsionnoi_opravke
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: epoksid_epon_828_teta
+      - материал: epoxy
         роль: изоляционный_слой
   - часть: часть_4h-sic_betavoltaik_case
     технология: frezervanie_chpu
@@ -78,7 +78,7 @@ id: izdelie_4h-sic_betavoltaik
     источники_частей:
       - часть_4h-sic_betavoltaik_sic_diode
       - часть_4h-sic_betavoltaik_substrate
-  - материал: epoksid_epon_828_teta
+  - материал: epoxy
     суммарная_доля_массы: 0.095
     источники_частей:
       - часть_4h-sic_betavoltaik_encapsulant

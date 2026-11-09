@@ -127,13 +127,6 @@ graph LR
     P087 --> script_pre-commit-hook_py
     script_validate_decomposition_py[validate_decomposition.py]
     P087 --> script_validate_decomposition_py
-    F35([F35])
-    script_decompose_all_izdeliya_py[decompose_all_izdeliya.py]
-    F35 --> script_decompose_all_izdeliya_py
-    script_recursive_decompose_py[recursive_decompose.py]
-    F35 --> script_recursive_decompose_py
-    script_validate_decomposition_py[validate_decomposition.py]
-    F35 --> script_validate_decomposition_py
     F14([F14])
     script_generate_decomposition_py[generate_decomposition.py]
     F14 --> script_generate_decomposition_py
@@ -172,6 +165,11 @@ graph LR
     F70h --> script__helpers_py
     script_pre-commit-hook_py[pre-commit-hook.py]
     F70h --> script_pre-commit-hook_py
+    F81([F81])
+    script__helpers_py[_helpers.py]
+    F81 --> script__helpers_py
+    script_pre-commit-hook_py[pre-commit-hook.py]
+    F81 --> script_pre-commit-hook_py
 ```
 
 _Показаны топ-20 метрик по числу скриптов-валидаторов (из 73 метрик)._
@@ -202,7 +200,7 @@ _Показаны топ-20 метрик по числу скриптов-вал
 | `F32` | _metrics.py, migrate_aliases.py, migrate_dedup_materials.py, pre-commit-hook.py, validate_decomposition.py | — |
 | `F33` | _metrics.py, validate_decomposition.py | — |
 | `F34` | _metrics.py, pre-commit-hook.py, recursive_decompose.py, validate_decomposition.py | — |
-| `F35` | decompose_all_izdeliya.py, recursive_decompose.py, validate_decomposition.py | — |
+| `F35` | recursive_decompose.py, validate_decomposition.py | — |
 | `F36` | generate_graphs.py | — |
 | `F37` | generate_graphs.py, pipeline.py | — |
 | `F38` | generate_graphs.py, pipeline.py | — |

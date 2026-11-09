@@ -53,7 +53,7 @@ id: izdelie_intel_loihi_2
     технология: ion_implantation_si
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: silicon_wafer
+      - материал: si
         роль: обрабатываемый
   - часть: часть_intel_loihi_2_substrate
     технология: bare-die_integration
@@ -77,19 +77,19 @@ id: izdelie_intel_loihi_2
     технология: anderfill
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: epoxy_molding
+      - материал: epoxy
         роль: обрабатываемый
   - часть: часть_intel_loihi_2_capacitors
     технология: smd_montazh_oplavleniem
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: ceramic_mlcc
+      - материал: batio3
         роль: обрабатываемый
   - часть: часть_intel_loihi_2_pcb
     технология: smd_montazh_oplavleniem
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: fr4
+      - материал: epoxy
         роль: обрабатываемый
 
 scaling_type: количественный

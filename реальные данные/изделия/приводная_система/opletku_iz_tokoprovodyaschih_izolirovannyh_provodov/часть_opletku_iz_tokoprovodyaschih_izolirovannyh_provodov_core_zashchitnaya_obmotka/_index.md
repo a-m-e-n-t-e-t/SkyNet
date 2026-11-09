@@ -22,7 +22,7 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchit
     технология: spiralnaya_navivka
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: tedlar_pet
+      - материал: pet
         роль: лента_обмотки
 
 scaling_type: количественный
@@ -84,7 +84,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `tedlar_pet` → [`tedlar_pet.md`](../../../../материалы/tedlar_pet.md) — Tedlar/PET (лента защитной обмотки)
+- `tedlar_pet` → [`pet.md`](../../../../материалы/pet.md) — Tedlar/PET (лента защитной обмотки)
 
 ## Источники
 

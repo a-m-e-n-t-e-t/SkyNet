@@ -74,7 +74,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `silicone-textile_composite` → [`silicone-textile_composite.md`](../../../../../реальные%20данные/материалы/silicone-textile_composite.md) — инженерный аналог животканиевого покрова (силикон-тканевая оболочка); канон — живая ткань по шаблону Эллисон Янг
+- `silicone-textile_composite` → [`ptfe.md`](../../../../../реальные%20данные/материалы/ptfe.md) — инженерный аналог животканиевого покрова (силикон-тканевая оболочка); канон — живая ткань по шаблону Эллисон Янг
 
 ## Источники
 
@@ -83,4 +83,4 @@ scaling_type: количественный
 - Канон (колтановый эндоскелет серии): https://terminator.fandom.com/wiki/T-900/The_Sarah_Connor_Chronicles (колтан продвинутее титана T-600)
 - Инженерный аналог (силиконовая протезная кожа): [Smooth-On Dragon Skin — платиновый силикон для реалистичных протезов](https://www.smooth-on.com/product-line/dragon-skin)
 - Инженерный аналог (твёрдость под кожу): [True Skin silicones Shore A 10/20/30 (Chemical Concepts)](https://www.chemical-concepts.com/true-skin-silicones-are-transforming-the-prosthetics-industry/)
-- Материалы: [`silicone-textile_composite.md`](../../../../../реальные%20данные/материалы/silicone-textile_composite.md)
+- Материалы: [`ptfe.md`](../../../../../реальные%20данные/материалы/ptfe.md)

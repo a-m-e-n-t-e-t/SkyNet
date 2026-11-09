@@ -73,7 +73,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `emc_underfill` → [`emc_underfill.md`](../../../../материалы/emc_underfill.md)
+- `emc_underfill` → [`epoxy.md`](../../../../материалы/epoxy.md)
 
 ## Источники
 

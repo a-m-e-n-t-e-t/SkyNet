@@ -72,7 +72,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `carbon_ptfe` → [`carbon_ptfe.md`](../../../../материалы/carbon_ptfe.md)
+- `carbon_ptfe` → [`ptfe.md`](../../../../материалы/ptfe.md)
 
 ## Источники
 

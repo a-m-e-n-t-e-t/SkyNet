@@ -44,11 +44,11 @@ id: izdelie_perovskite_tandem
     суммарная_доля_массы: 0.38
     источники_частей:
       - часть_perovskite_tandem_cells
-  - материал: low_iron_glass
+  - материал: sio2_amorphous
     суммарная_доля_массы: 0.285
     источники_частей:
       - часть_perovskite_tandem_front_glass
-  - материал: tedlar_pet
+  - материал: pet
     суммарная_доля_массы: 0.095
     источники_частей:
       - часть_perovskite_tandem_backsheet
@@ -65,7 +65,7 @@ id: izdelie_perovskite_tandem
     технология: dc_magnetron_sputtering
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: low_iron_glass
+      - материал: sio2_amorphous
         роль: подложка
 scaling_type: количественный
 соединители: []

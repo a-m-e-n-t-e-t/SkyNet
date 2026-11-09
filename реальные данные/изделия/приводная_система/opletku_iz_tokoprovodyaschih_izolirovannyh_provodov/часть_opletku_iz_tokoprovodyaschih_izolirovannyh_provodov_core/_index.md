@@ -40,7 +40,7 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core
     материалы_для_процесса:
       - материал: copper
         роль: токоведущая_основа
-      - материал: silicone-textile_composite
+      - материал: ptfe
         роль: изоляционный_слой
   - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda
     технология: izolirovannye_emalyu
@@ -48,7 +48,7 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core
     материалы_для_процесса:
       - материал: copper
         роль: токоведущая_основа
-      - материал: silicone-textile_composite
+      - материал: ptfe
         роль: изоляционный_слой
   - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran
     технология: galvanika
@@ -62,7 +62,7 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core
     технология: spiralnaya_navivka
     доля_использования: 0.11
     материалы_для_процесса:
-      - материал: tedlar_pet
+      - материал: pet
         роль: лента_обмотки
 
 наследуемые_материалы:
@@ -77,7 +77,7 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core
     суммарная_доля_массы: 0.16
     источники_частей:
       - часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran
-  - материал: tedlar_pet
+  - материал: pet
     форма: tpt_классическая_двусторонняя
     суммарная_доля_массы: 0.11
     источники_частей:
@@ -150,7 +150,7 @@ scaling_type: количественный
 ## Используемые материалы
 
 - `copper` → [`copper.md`](../../../../материалы/copper.md) — медь (проводниковая)
-- `tedlar_pet` → [`tedlar_pet.md`](../../../../материалы/tedlar_pet.md) — ПЭТ (защитный чулок)
+- `tedlar_pet` → [`pet.md`](../../../../материалы/pet.md) — ПЭТ (защитный чулок)
 
 ## Источники
 

@@ -77,7 +77,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `ptfe-kompozit_du_vtulki` → [`ptfe-kompozit_du_vtulki.md`](../../../../материалы/ptfe-kompozit_du_vtulki.md) — PTFE-композит (втулка)
+- `ptfe-kompozit_du_vtulki` → [`ptfe.md`](../../../../материалы/ptfe.md) — PTFE-композит (втулка)
 
 ## Источники
 

@@ -88,7 +88,7 @@ Transfer molding / заливка: жидкая система Epon 828 + ТЭТ
 
 ## Используемые материалы
 
-- `epoksid_epon_828_teta` → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
+- `epoksid_epon_828_teta` → [`epoxy.md`](../../../../материалы/epoxy.md)
 
 ## Источники
 

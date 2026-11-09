@@ -14,7 +14,6 @@ graph TB
     script_capture_dialog_py(("capture_dialog.py"))
     script_check_model_completeness_py(("check_model_completeness.py"))
     script_classify_subsystem_py(("classify_subsystem.py"))
-    script_decompose_all_izdeliya_py(("decompose_all_izdeliya.py"))
     script_fix_801_py(("fix_801.py"))
     script_fix_yaml_corruption_py(("fix_yaml_corruption.py"))
     script_generate_decomposition_py(("generate_decomposition.py"))
@@ -200,8 +199,6 @@ graph TB
     concept_требования_к_ии__шаблоны_подсистем_md(("_шаблоны_подсистем.md"('[', ']')
     concept_диалог_CHANGELOG_md(("CHANGELOG.md"('[', ']')
     script__metrics_py -.->|imports| script__metrics_py
-    script_decompose_all_izdeliya_py -.->|imports| script_validate_decomposition_py
-    script_decompose_all_izdeliya_py -.->|imports| script__helpers_py
     script_fix_yaml_corruption_py -.->|imports| script_migrate_aliases_py
     script_generate_decomposition_py -.->|imports| script_validate_decomposition_py
     script_generate_decomposition_py -.->|imports| script__helpers_py
@@ -249,14 +246,16 @@ graph TB
     section_§11_0_ТИПЫ_МОДЕЛЕЙ_SKYNET_(v9_22_НОВОЕ_—_7_типов) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§11_1_13_подсистем_+_1_fallback_(классификация) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
     section_§11_2_Иерархия_изделий_(подсистема_=_классификация,_НЕ_урове -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
+    section_§11_3_7_антипаттернов_(уроки_из_прошлых_реализаций) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
+    section_§11_4_Полный_реестр_подтипов_(146_подтипов) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 197, рёбер: 228 (показано топ-50)._
+_Узлов: 196, рёбер: 225 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|
 | spec_section | 149 |
-| script | 28 |
+| script | 27 |
 | concept_doc | 17 |
 | catalog | 1 |
 | readme | 1 |

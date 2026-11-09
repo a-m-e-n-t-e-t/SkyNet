@@ -83,7 +83,7 @@ Cast resin (заливка): EPON 828 смешивается с TETA в стех
 
 ## Используемые материалы
 
-- `epoksid_epon_828_teta` → [`epoksid_epon_828_teta.md`](../../../../материалы/epoksid_epon_828_teta.md)
+- `epoksid_epon_828_teta` → [`epoxy.md`](../../../../материалы/epoxy.md)
 
 ## Источники
 

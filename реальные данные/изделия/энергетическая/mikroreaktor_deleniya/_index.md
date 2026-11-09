@@ -49,7 +49,7 @@ id: izdelie_mikroreaktor_deleniya
     технология: vakuumnoe_spekanie
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: uo2_pellets
+      - материал: uo2
         роль: обрабатываемый
   - часть: часть_mikroreaktor_deleniya_moderator
     технология: otzhig
@@ -73,7 +73,7 @@ id: izdelie_mikroreaktor_deleniya
     технология: ebw
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: stainless_steel_316
+      - материал: ss_316l
         роль: обрабатываемый
   - часть: часть_mikroreaktor_deleniya_coolant
     технология: izgotovlenie_natrievyh_heat_trub
@@ -83,7 +83,7 @@ id: izdelie_mikroreaktor_deleniya
         роль: обрабатываемый
 
 наследуемые_материалы:
-  - материал: uo2_pellets
+  - материал: uo2
     форма: топливные_пебблы_triso
     суммарная_доля_массы: 0.095
     источники_частей:
@@ -103,7 +103,7 @@ id: izdelie_mikroreaktor_deleniya
     суммарная_доля_массы: 0.38
     источники_частей:
       - часть_mikroreaktor_deleniya_shielding
-  - материал: stainless_steel_316
+  - материал: ss_316l
     форма: поликристаллический_прокат
     суммарная_доля_массы: 0.19
     источники_частей:

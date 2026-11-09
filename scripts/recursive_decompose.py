@@ -144,18 +144,16 @@ def generate_part_content(*, part_id: str, parent_id: str, subsystem: str,
                           file_path: Path, tip: str = 'часть',
                           materials_bom: list | None = None,
                           children_ids: list | None = None,
-                          component_ids: list | None = None,
                           level_number: int = 2) -> str:
     """Сгенерировать содержимое часть_*.md файла (frontmatter + body).
 
-    v9.60.1: реальная генерация с корректным BOM, markdown-ссылками.
+    v9.61: упрощено — поле 'компоненты_частей' упразднено (вариант C).
+    Закупочные sub-assemblies теперь тип: изделие с is_purchased: true.
     """
     materials_bom = materials_bom or []
     children_ids = children_ids or []
-    component_ids = component_ids or []
 
     children_yaml = serialize_children_yaml(children_ids)
-    comp_yaml = serialize_children_yaml(component_ids)
     materials_yaml = serialize_materials_bom(part_id, materials_bom)
 
     # Markdown-ссылка на canonical материал (если BOM есть)
@@ -171,9 +169,8 @@ def generate_part_content(*, part_id: str, parent_id: str, subsystem: str,
             material_link_lines.append(f'- `{mat_id}` → (canonical material link)')
     material_links_block = '\n'.join(material_link_lines) if material_link_lines else '(BOM не определён)'
 
-    # уровень_иерархии по tip
-    hier = {'изделие': 'верхний', 'сборка': 'промежуточный',
-            'часть': 'неделимый', 'компонент': 'неделимый'}.get(tip, 'неделимый')
+    # уровень_иерархии по tip (3 типа: изделие/сборка/часть)
+    hier = {'изделие': 'верхний', 'сборка': 'промежуточный', 'часть': 'неделимый'}.get(tip, 'неделимый')
 
     return f"""---
 id: {part_id}
@@ -186,7 +183,7 @@ id: {part_id}
 стандарты: []
 исследовательская_группа: null
 родитель: {parent_id}
-дочерние_части:{children_yaml}компоненты_частей:{comp_yaml}материалы_частей:{materials_yaml}scaling_type: количественный
+дочерние_части:{children_yaml}материалы_частей:{materials_yaml}scaling_type: количественный
 соединители: []
 версия: реальная
 статус_реальности: real
@@ -217,7 +214,7 @@ id: {part_id}
 ## Описание
 
 Дочерняя часть `{parent_id}` (подсистема: {subsystem}, подтип: {subtype}).
-Сгенерировано `recursive_decompose.py v9.60.1` на основе `_decomp_registry.yaml`.
+Сгенерировано `recursive_decompose.py v9.61` на основе `_decomp_registry.yaml`.
 
 ## Технические характеристики
 
@@ -244,7 +241,7 @@ id: {part_id}
 
 ## Источники
 
-- Канон: декомпозиция `{parent_id}` (recursive_decompose.py v9.60.1, {TODAY})
+- Канон: декомпозиция `{parent_id}` (recursive_decompose.py v9.61, {TODAY})
 - Реестр: `scripts/_decomp_registry.yaml`
 """
 
@@ -366,8 +363,9 @@ def decompose_node(subtype: str, parent_id: str, subsystem: str,
                              f'{"top-level не тронут (нужно решение: неделимый или добавить в реестр)" if depth == 1 else "создан stub"}'}
 
     if action == 'STOP_ATOMIC':
-        # Закупочный компонент или атомарная часть — записать BOM из реестра
-        tip = 'компонент' if info.get('is_purchased') else 'часть'
+        # v9.61: закупочные sub-assemblies теперь тип: изделие (с is_purchased: true)
+        # Либо тип: часть (если is_purchased: false). В обоих случаях нужен BOM.
+        tip = 'изделие' if info.get('is_purchased') else 'часть'
         materials_bom = []
         for m in info.get('materials', []):
             materials_bom.append((m.get('материал'), m.get('форма'), m.get('доля', 1.0)))

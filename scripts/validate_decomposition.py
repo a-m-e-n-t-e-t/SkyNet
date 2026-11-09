@@ -317,11 +317,12 @@ def load_all_izdeliya() -> dict[str, dict]:
         for f in izd_dir.rglob("_index.md"):
             data, _, body = read_yaml_frontmatter(f)
             if data and 'id' in data:
-                # v9.60: принимаем legacy 'изделие' И новые значения 'сборка|часть|компонент'
-                # плюс 'модель_SkyNet' (canon). После полной миграции (Фаза 3) legacy
-                # 'изделие' для не-top-level узлов станет BLOCKING (F35a).
+                # v9.61: принимаем 'изделие' (top-level + закупочные),
+                # 'сборка' (промежуточные), 'часть' (leaf атомарные),
+                # плюс 'модель_SkyNet' (canon). Вариант C: тип 'компонент' упразднён
+                # — закупочные sub-assemblies теперь тип: изделие с is_purchased: true.
                 if data.get('тип') not in ('изделие', 'модель_SkyNet',
-                                             'сборка', 'часть', 'компонент'):
+                                             'сборка', 'часть'):
                     continue
                 data['_path'] = str(f)
                 data['_filename'] = f.name
@@ -1409,12 +1410,13 @@ def check_F16(izdeliya: dict[str, dict]) -> dict:
     # v9.60 Фаза 2.7: правила для новых типов (сборка/часть/компонент)
     # — 'сборка' ОБЯЗАНА иметь непустые дочерние_части
     # — 'часть' и 'компонент' НЕ должны иметь дочерние_части (must be leaf)
-    # — 'компонент' ОБЯЗАН иметь непустые материалы_частей (BOM)
-    # Проверяем только если тип ∈ {сборка, часть, компонент} (пропускаем legacy 'изделие')
+    # — 'часть' обязана иметь материалы_частей (BOM)
+    # Проверяем только если тип ∈ {сборка, часть} (пропускаем legacy 'изделие')
+    # v9.61: тип 'компонент' упразднён — закупочные теперь тип: изделие с is_purchased: true
     for izd_id, data in izdeliya.items():
         tip = data.get('тип', '')
-        if tip not in ('сборка', 'часть', 'компонент'):
-            continue  # legacy 'изделие' — пропускаем (старые правила выше)
+        if tip not in ('сборка', 'часть'):
+            continue  # 'изделие' (top-level и закупочные) — пропускаем (старые правила выше)
         children = data.get('дочерние_части', [])
         children_list = children if isinstance(children, list) else []
         materials_parts = data.get('материалы_частей', [])
@@ -1424,7 +1426,7 @@ def check_F16(izdeliya: dict[str, dict]) -> dict:
             if not children_list:
                 violations.append(
                     f"{izd_id}: тип='сборка' но дочерние_части=[] — "
-                    f"сборка обязана иметь детей (или смените тип на 'часть'/'компонент')")
+                    f"сборка обязана иметь детей (или смените тип на 'часть')")
                 total += 1
             else:
                 valid += 1
@@ -1439,20 +1441,6 @@ def check_F16(izdeliya: dict[str, dict]) -> dict:
                 violations.append(
                     f"{izd_id}: тип='часть' но материалы_частей=[] — "
                     f"часть обязана иметь BOM (canonical материал)")
-                total += 1
-            else:
-                valid += 1
-                total += 1
-        elif tip == 'компонент':
-            if children_list:
-                violations.append(
-                    f"{izd_id}: тип='компонент' но имеет {len(children_list)} дочерних_частей — "
-                    f"компонент должен быть leaf (закупочный sub-assembly)")
-                total += 1
-            elif not materials_list:
-                violations.append(
-                    f"{izd_id}: тип='компонент' но материалы_частей=[] — "
-                    f"компонент обязан иметь BOM (canonical материал закупочного узла)")
                 total += 1
             else:
                 valid += 1
@@ -1616,10 +1604,9 @@ SCHEMA_IZDELIE = {
         # izdelie_* — top-level изделия (уровень 1)
         # часть_*  — дочерние части (уровень 2, промежуточные)
         "id": {"type": "string", "pattern": r"^(izdelie|часть)_[\w+-]+$"},
-        # v9.60: enum расширен с ['изделие'] до 4 значений.
-        # Во время переходного периода все 4 валидны; после полной миграции
-        # legacy 'изделие' для не-top-level узлов станет BLOCKING (F35a).
-        "тип": {"type": "string", "enum": ["изделие", "сборка", "часть", "компонент"]},
+        # v9.61: enum сокращён до 3 значений (компонент упразднён —
+        # закупочные sub-assemblies теперь тип: изделие с is_purchased: true).
+        "тип": {"type": "string", "enum": ["изделие", "сборка", "часть"]},
         "категория": {"type": "string"},
         "уровень_иерархии": {"type": "string", "enum": ["верхний", "промежуточный", "неделимый"]},
         # v9.48: глубина декомпозиции НЕ ОГРАНИЧЕНА — maximum убран.
@@ -3546,12 +3533,13 @@ _CATEGORY_PREFIXES = ('material_', 'izdelie_', 'tekhnologia_', 'часть_', 'S
 
 # Какое значение поля `тип` ожидается в каждой директории категории.
 # v9.33: добавлена категория 'модели' для фантастические данные/модели/.
-# v9.60: для каталога 'изделия' принято ЛЮБОЕ из 4 значений тип
-# (изделие — legacy, или новые сборка/часть/компонент после миграции A2).
-# Для остальных каталогов — прежнее строгое соответствие.
+# v9.61: для каталога 'изделия' принято ЛЮБОЕ из 3 значений тип
+# (изделие — top-level и закупочные sub-assemblies,
+#  сборка — промежуточные, часть — leaf атомарные).
+# Вариант C: тип 'компонент' упразднён.
 _EXPECTED_TYPE_BY_DIR = {
     'материалы': 'материал',
-    'изделия':   ('изделие', 'сборка', 'часть', 'компонент'),  # v9.60: 4 типа
+    'изделия':   ('изделие', 'сборка', 'часть'),  # v9.61: 3 типа (без компонент)
     'технологии': 'технология',
     'модели':    'модель_SkyNet',  # v9.33 NEW
 }
@@ -3892,10 +3880,10 @@ def check_F35(izdeliya: dict[str, dict]) -> dict:
     violations = []
     total = 0
     valid = 0
-    purchased_components_found = []
+    # v9.61: purchased_components_found убран — упразднён вместе с типом 'компонент'
 
     for izd_id, data in izdeliya.items():
-        tip = data.get('тип', 'изделие')  # текущее значение (после миграции будет сборка/часть/компонент)
+        tip = data.get('тип', 'изделие')  # v9.61: 3 типа (изделие/сборка/часть)
         children = data.get('дочерние_части', [])
         if not isinstance(children, list):
             children = []
@@ -3914,38 +3902,32 @@ def check_F35(izdeliya: dict[str, dict]) -> dict:
             if mat in canonical:
                 valid += 1
             else:
-                # НЕ canonical → это закупочный компонент, замаскированный под материал
+                # НЕ canonical → нужно создать canonical файл или заменить на canonical
                 violations.append(
                     f"{izd_id}: материалы_частей содержит non-canonical '{mat}' — "
-                    f"это закупочный компонент? Создайте узел 'тип: компонент' и "
-                    f"заполните его BOM с canonical материалом."
+                    f"создайте canonical файл материалы/{mat}.md или замените на canonical материал."
                 )
-                purchased_components_found.append((izd_id, mat))
 
-        # F35a (future, для тип='компонент' после миграции):
-        # Пока что смотрим на leaf узлы без детей — это кандидаты в компоненты/части
+        # F35a: leaf узлы без материалы_частей — WARN (нужно заполнить BOM)
         if not children:
             if not materials_parts:
-                # leaf без материалов — WARN (нужно заполнить BOM)
-                if tip in ('изделие', 'часть', 'компонент', 'неделимый'):
+                if tip in ('изделие', 'часть'):
                     violations.append(
                         f"{izd_id}: leaf узел (тип={tip}) без материалы_частей — "
-                        f"нужно заполнить BOM (canonical материал) ИЛИ пометить как 'компонент' "
-                        f"и создать отдельный узел с BOM."
+                        f"нужно заполнить BOM (canonical материал)."
                     )
                     total += 1
 
     ratio = valid / max(1, total)
     return {
         'metric': 'F35',
-        'description': 'Components consistency — разделение тип/материал/компонент (v9.60, non-blocking)',
+        'description': 'Components consistency — canonical-only материалы_частей (v9.61, non-blocking)',
         'total': total,
         'valid': valid,
         'ratio': round(ratio, 4),
-        'pass': True,  # NON-BLOCKING в Фазе 1.3
-        'blocking': False,  # станет True в Фазе 2.3
+        'pass': True,  # NON-BLOCKING
+        'blocking': False,
         'violations': violations,
-        'purchased_components': purchased_components_found,
     }
 
 
@@ -3983,11 +3965,9 @@ def check_F_scal(izdeliya: dict[str, dict]) -> dict:
     valid = 0
 
     for izd_id, data in izdeliya.items():
-        # v9.60: расширяем фильтр на все узлы под изделиями/ (legacy 'изделие'
-        # + новые 'сборка', 'часть', 'компонент'). F-scal применим к любому узлу
-        # с физическим режимом (даже закупочные компоненты имеют масштабируемость
-        # — сортамент/series).
-        if data.get('тип') not in ('изделие', 'сборка', 'часть', 'компонент'):
+        # v9.61: расширяем фильтр на 3 типа (изделие/сборка/часть).
+        # F-scal применим к любому узлу с физическим режимом.
+        if data.get('тип') not in ('изделие', 'сборка', 'часть'):
             continue
         # v9.32.1: убраны фильтры уровня/родителя/детей — проверяем ВСЕ изделия
         # (top-level + промежуточные + leaf-части любого уровня)
@@ -4564,8 +4544,6 @@ def run_all_checks() -> dict:
         print(f"  violations: {len(r['violations'])} (первые 5):")
         for v in r['violations'][:5]:
             print(f"    - {v[:120]}")
-    if r.get('purchased_components'):
-        print(f"  purchased_components: {len(r['purchased_components'])} (нужно создать файлы canonical материалов)")
 
     # F-scal — масштабируемость (v9.32 / P087; SOFT-метрика: pass=True всегда,
     # violations идут в --json-out → workflow создаёт verify-task issues)

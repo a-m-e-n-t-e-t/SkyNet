@@ -68,7 +68,7 @@ id: izdelie_vodorodnye_toplivnye_elementy
     технология: gidrofobnoe_pokrytie
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: carbon_ptfe
+      - материал: ptfe
         роль: обрабатываемый
   - часть: часть_vodorodnye_toplivnye_elementy_bipolar_plate
     технология: frezervanie_chpu
@@ -94,7 +94,7 @@ id: izdelie_vodorodnye_toplivnye_elementy
     источники_частей:
       - часть_vodorodnye_toplivnye_elementy_catalyst_anode
       - часть_vodorodnye_toplivnye_elementy_catalyst_cathode
-  - материал: carbon_ptfe
+  - материал: ptfe
     форма: безкаталитический_углеродный_GDL
     суммарная_доля_массы: 0.095
     источники_частей:

@@ -44,7 +44,7 @@ id: izdelie_kondensatory_keramicheskie
     технология: vakuumnoe_spekanie
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: barium_titanate
+      - материал: batio3
         роль: обрабатываемый
   - часть: часть_kondensatory_keramicheskie_inner_electrodes
     технология: pogruzhenie_v_mo-shliker
@@ -68,7 +68,7 @@ id: izdelie_kondensatory_keramicheskie
     технология: galvanika
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: tin_metal
+      - материал: tin
         роль: обрабатываемый
 
 наследуемые_материалы:
@@ -88,7 +88,7 @@ id: izdelie_kondensatory_keramicheskie
     источники_частей:
       - часть_kondensatory_keramicheskie_outer_electrodes
       - часть_kondensatory_keramicheskie_termination
-  - материал: tin_metal
+  - материал: tin
     форма: matte_sn_покрытие_MLCC
     суммарная_доля_массы: 0.09
     источники_частей:

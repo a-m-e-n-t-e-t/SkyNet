@@ -83,7 +83,7 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `silica_aerogel_blanket` → [`silica_aerogel_blanket.md`](../../../../материалы/silica_aerogel_blanket.md)
+- `silica_aerogel_blanket` → [`sio2_amorphous.md`](../../../../материалы/sio2_amorphous.md)
 
 ## Источники
 

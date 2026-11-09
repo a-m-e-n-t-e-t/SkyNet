@@ -858,11 +858,12 @@ decomp_registry:
       форма: null
   катод_LSM:
     is_atomic: true
-    is_purchased: true
-    materials: []
-    needs_canonical_file: lsm_cathode
-    note: Требуется создать canonical файл материалы/lsm_cathode.md (is_purchased=true до создания). После создания — переписать
-      is_purchased=false и заполнить materials.
+    is_purchased: false  # v9.61: canonical файл lsm_cathode.md существует в материалы/
+    materials:
+    - материал: lsm_cathode
+      форма: null
+      доля: 1.0
+    note: v9.61 — canonical файл lsm_cathode.md существует; is_purchased=false.
   керамические_слои:
     is_atomic: true
     is_purchased: false
