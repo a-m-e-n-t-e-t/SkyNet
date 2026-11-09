@@ -255,30 +255,44 @@ def _read_yaml_frontmatter_uncached(filepath: Path) -> tuple[dict, str, str]:
         return {}, "", text
     
     rest = text[3:].lstrip('\n')
-    
-    # v9.31: найти первый markdown заголовок (# на отдельной строке)
-    body_match = re.search(r"^(#+\s+\S)", rest, re.MULTILINE)
-    
-    if body_match:
-        # YAML = всё до body_match.start()
-        yaml_section = rest[:body_match.start()].rstrip()
-        body = rest[body_match.start():]
-        
-        # Убрать trailing --- из yaml_section (если есть closing ---)
-        # Найти последний --- в yaml_section
-        closing_match = re.search(r"\n---\s*$", yaml_section, re.MULTILINE)
-        if closing_match:
-            yaml_text = yaml_section[:closing_match.start()].rstrip()
-        else:
-            yaml_text = yaml_section
+
+    # v9.62 fix: приоритет — закрывающий `---` (строка ровно '---').
+    # Комментарии YAML '#' внутри frontmatter (например, '# F34: ...',
+    # '# v9.56: ...') легальны, но старая эвристика `^(#+\s+\S)` принимала
+    # их за первый markdown-заголовок body — frontmatter обрывался на
+    # первом комментарии, все поля после него (подсистема, статус_реальности,
+    # форма, технологии_частей, масштабируемость) терялись → ложные
+    # F18/F29/F27e/F-scal/F35 нарушения (6 блокирующих F18 на коммитах
+    # 5bc1a5fc..6cbd6c9e, issues #3033–#3036). Зеркало логики render_body.py
+    # (text.find('\n---', 3)) и _helpers.py (_read_yaml_frontmatter_safe).
+    closing = re.search(r"^---\s*$", rest, re.MULTILINE)
+
+    if closing:
+        yaml_text = rest[:closing.start()].rstrip()
+        body = rest[closing.end():].lstrip('\n')
     else:
-        # Нет markdown заголовка — всё YAML
-        yaml_text = rest.rstrip()
-        # Убрать trailing ---
-        closing_match = re.search(r"\n---\s*$", yaml_text, re.MULTILINE)
-        if closing_match:
-            yaml_text = yaml_text[:closing_match.start()].rstrip()
-        body = ""
+        # Fallback: файл без закрывающего `---` — YAML до первого
+        # markdown-заголовка (v9.31 эвристика).
+        body_match = re.search(r"^(#+\s+\S)", rest, re.MULTILINE)
+
+        if body_match:
+            # YAML = всё до body_match.start()
+            yaml_text = rest[:body_match.start()].rstrip()
+            body = rest[body_match.start():]
+
+            # Убрать trailing --- из yaml_section (если есть closing ---)
+            # Найти последний --- в yaml_section
+            closing_match = re.search(r"\n---\s*$", yaml_text, re.MULTILINE)
+            if closing_match:
+                yaml_text = yaml_text[:closing_match.start()].rstrip()
+        else:
+            # Нет markdown заголовка — всё YAML
+            yaml_text = rest.rstrip()
+            # Убрать trailing ---
+            closing_match = re.search(r"\n---\s*$", yaml_text, re.MULTILINE)
+            if closing_match:
+                yaml_text = yaml_text[:closing_match.start()].rstrip()
+            body = ""
     
     data = parse_yaml_block(yaml_text)
     return data, yaml_text, body

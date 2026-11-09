@@ -4,12 +4,12 @@
 graph LR
     izdelie_ads_b_priemnik[прочее]
     часть_ads_b_priemnik_connectors[разъёмы]
+    часть_ads_b_priemnik_mounting[крепёж]
     часть_ads_b_priemnik_core[основной_элемент]
     часть_ads_b_priemnik_housing[корпус]
-    часть_ads_b_priemnik_mounting[крепёж]
     часть_t800_гиро_навигация[imu_gyro]
-    часть_hk_tank_навигация[gps_nav]
     часть_hk_aerial_навигация[radar_navigation]
+    часть_hk_tank_навигация[gps_nav]
     часть_t850_навигация[imu_gyro]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_aluminum[Al ≥ 99.5 % (основа); …]
@@ -17,9 +17,9 @@ graph LR
     izdelie_ads_b_priemnik -->|материал| material_al_6061_t6
     izdelie_ads_b_priemnik -->|материал| material_aluminum
     часть_ads_b_priemnik_connectors -->|материал| material_latun_c36000
+    часть_ads_b_priemnik_mounting -->|материал| material_al_6061_t6
     часть_ads_b_priemnik_core -->|материал| material_al_6061_t6
     часть_ads_b_priemnik_housing -->|материал| material_al_6061_t6
-    часть_ads_b_priemnik_mounting -->|материал| material_al_6061_t6
     часть_t800_гиро_навигация -->|материал| material_al_6061_t6
     часть_hk_aerial_навигация -->|материал| material_al_6061_t6
     часть_t850_навигация -->|материал| material_al_6061_t6
