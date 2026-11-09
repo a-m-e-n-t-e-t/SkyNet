@@ -5213,6 +5213,34 @@
      "snippet": "annealing critical during Cu-ETP wire drawing; voltage vs machine speed."
     }
    ]
+  },
+  {
+   "id": "ws_0075",
+   "query": "sheet metal stamping AISI 304 springback 2-5 deg blanking clearance spring steel 301 full-hard",
+   "keywords": [
+    "stamping",
+    "AISI 304",
+    "springback",
+    "blanking",
+    "301 full-hard"
+   ],
+   "results": [
+    {
+     "title": "Understanding Sheet Metal Springback — Proto Space Mfg (2025)",
+     "url": "https://protospacemfg.com/blog/post/understanding-sheet-metal-springback",
+     "snippet": "304 stainless steel: plan 3-5 degrees springback."
+    },
+    {
+     "title": "The Fabricator — springback hows and whys (2014)",
+     "url": "https://www.thefabricator.com/thefabricator/article/bending/bending-basics-the-hows-and-whys-of-springback-and-springforward",
+     "snippet": "304 stainless 2-3 deg; aluminum 1.5-2 deg; cold-rolled steel 0.75-1.0 deg."
+    },
+    {
+     "title": "BQUQ — Stainless Steel Stamping design tips (2026)",
+     "url": "https://www.bquq.com/blog/stainless-steel-stamping-304-316-and-spring-steel-design-tips.html",
+     "snippet": "Spring steel stamping: 301 full-hard (yield 965 MPa) or 17-7PH (1380 MPa)."
+    }
+   ]
   }
  ]
 }
