@@ -1713,6 +1713,12 @@
       "path": "scripts/_stubs.py"
     },
     {
+      "id": "script:audit_broken_links.py",
+      "type": "script",
+      "label": "audit_broken_links.py",
+      "path": "scripts/audit_broken_links.py"
+    },
+    {
       "id": "script:capture_dialog.py",
       "type": "script",
       "label": "capture_dialog.py",
@@ -3803,6 +3809,12 @@
       "meta": {}
     },
     {
+      "src": "script:audit_broken_links.py",
+      "dst": "pattern:*.md",
+      "type": "checks_files",
+      "meta": {}
+    },
+    {
       "src": "F86",
       "dst": "script:check_model_completeness.py",
       "type": "validated_by",
@@ -5130,13 +5142,13 @@
     }
   ],
   "stats": {
-    "nodes": 330,
-    "edges": 524,
+    "nodes": 331,
+    "edges": 525,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,
       "metric": 217,
-      "script": 26,
+      "script": 27,
       "spec_section": 58,
       "stub": 13
     }

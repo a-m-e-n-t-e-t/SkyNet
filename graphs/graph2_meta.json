@@ -51,6 +51,12 @@
       "path": "scripts/_stubs.py"
     },
     {
+      "id": "script:audit_broken_links.py",
+      "type": "script",
+      "label": "audit_broken_links.py",
+      "path": "scripts/audit_broken_links.py"
+    },
+    {
       "id": "script:capture_dialog.py",
       "type": "script",
       "label": "capture_dialog.py",
@@ -2526,13 +2532,13 @@
     }
   ],
   "stats": {
-    "nodes": 195,
+    "nodes": 196,
     "edges": 225,
     "by_type": {
       "catalog": 1,
       "concept_doc": 17,
       "readme": 1,
-      "script": 26,
+      "script": 27,
       "spec": 1,
       "spec_section": 149
     }

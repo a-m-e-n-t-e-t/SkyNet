@@ -10,6 +10,7 @@ graph TB
     script__migrate_256_variant_d_py(("_migrate_256_variant_d.py"))
     script__migrate_256_variant_d_fix_links_py(("_migrate_256_variant_d_fix_links.py"))
     script__stubs_py(("_stubs.py"))
+    script_audit_broken_links_py(("audit_broken_links.py"))
     script_capture_dialog_py(("capture_dialog.py"))
     script_check_model_completeness_py(("check_model_completeness.py"))
     script_classify_subsystem_py(("classify_subsystem.py"))
@@ -249,12 +250,12 @@ graph TB
     section_§11_4_Полный_реестр_подтипов_(146_подтипов) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 195, рёбер: 225 (показано топ-50)._
+_Узлов: 196, рёбер: 225 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|
 | spec_section | 149 |
-| script | 26 |
+| script | 27 |
 | concept_doc | 17 |
 | catalog | 1 |
 | readme | 1 |
