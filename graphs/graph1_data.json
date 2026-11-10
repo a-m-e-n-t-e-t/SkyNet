@@ -11109,6 +11109,12 @@
     },
     {
       "src": "izdelie_povorotnoe_uplotnenie",
+      "dst": "material_ptfe",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_povorotnoe_uplotnenie",
       "dst": "material_aluminum",
       "type": "uses_material",
       "meta": {}
@@ -11758,6 +11764,12 @@
     {
       "src": "часть_tsa_mounting",
       "dst": "material_al_6061-t6",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_povorotnoe_uplotnenie_core",
+      "dst": "material_ptfe",
       "type": "uses_material",
       "meta": {}
     },
@@ -18464,7 +18476,6 @@
       "material_plastic_qfp",
       "material_pp_membrane",
       "material_pt_carbon",
-      "material_ptfe-kompozit_du_vtulki",
       "material_raytheon_an_vlg8_flir",
       "material_rha_steel_class_a",
       "material_rha_steel_class_b",
@@ -18487,12 +18498,12 @@
   },
   "stats": {
     "nodes": 1173,
-    "edges": 1594,
+    "edges": 1596,
     "dangling": {
       "complies_with": 543,
       "has_part": 4,
       "researched_by": 89,
-      "uses_material": 59
+      "uses_material": 58
     },
     "by_type": {
       "chast": 664,

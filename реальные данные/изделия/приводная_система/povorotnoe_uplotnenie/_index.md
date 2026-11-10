@@ -18,11 +18,41 @@ id: izdelie_povorotnoe_uplotnenie
   - часть_povorotnoe_uplotnenie_mounting
 материалы_частей:
   - часть: часть_povorotnoe_uplotnenie_core
-    материал: ptfe-kompozit_du_vtulki
+    материал: ptfe
+    форма: уплотнения_и_скользящие_узлы
     доля_массы: 0.45
   - часть: часть_povorotnoe_uplotnenie_housing
     материал: aluminum
+    форма: корпуса_электроники
     доля_массы: 0.27
+технологии_частей:
+  - часть: часть_povorotnoe_uplotnenie_core
+    технология: tokarnaya_obrabotka_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: ptfe
+        роль: обрабатываемый
+технологии_частей:
+  - часть: часть_povorotnoe_uplotnenie_housing
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: aluminum
+        роль: обрабатываемый
+технологии_частей:
+  - часть: часть_povorotnoe_uplotnenie_connectors
+    технология: tokarnaya_obrabotka_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
+технологии_частей:
+  - часть: часть_povorotnoe_uplotnenie_mounting
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: stal_st3
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -53,7 +83,7 @@ scaling_type: количественный
 дополнительные:
   цена_usd: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
+дата_обновления: 2026-11-10
 источник: web_search
 источник_разбора: веб-верификация
 источник_url: https://www.deublin.com/en/products/2620-000-252

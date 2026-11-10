@@ -5623,5 +5623,20 @@
       "https://www.ulprospector.com/Plastics/en/datasheet/214203/braskem-pp-ep-200k",
       "https://www.lyondellbasell.com/en/our-solutions/products/polymers/resin-type/polypropylene-impact-copolymer"
     ]
+  },
+  "ws_0090": {
+    "query": "rotary union hydraulic manufacturing aluminum housing CNC machining PTFE seal bushing turned components Deublin",
+    "date": "2026-11-10",
+    "key_facts": [
+      "Deublin rotary union: aluminum housing, stainless/carbon steel rotor (1102-070-166 datasheet)",
+      "Bushings устанавливаются heat-shrink посадкой: корпус нагревается, втулка охлаждается (Deublin Design Considerations, pneumaticstoday)",
+      "Уплотнительные втулки PTFE-композит — токарная обработка из заготовки (PTFE механически обрабатывается, не литьётся)",
+      "Подсоединения NPT-фитинги — токарные детали (datasheet Deublin)"
+    ],
+    "sources": [
+      "https://www.deublin.com/_Resources/Persistent/1/5/3/b/153bf0c94814024bc58f09f7d12550896c785764/GeneralBrochure%20-%20GIB%20252%20US_LowRes.pdf",
+      "https://pneumaticstoday.com/deublin-design-considerations-for-rotating-unions",
+      "https://www.deublin.com/en/products/1102-070-166"
+    ]
   }
 }
