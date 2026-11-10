@@ -5653,5 +5653,25 @@
       "https://www.researchgate.net/publication/359183160_Ionic_Polymer-Metal_Composite_Actuators",
       "https://www.researchgate.net/figure/Schematic-diagram-of-the-preparation-route-of-the-ionic-polymer-metal-composite-IPMC_fig1_371673290"
     ]
+  },
+  "ws_0092": {
+    "query": "AISI 1045 steel properties density thermal conductivity tensile yield fatigue datasheet hot rolled normalized cold drawn",
+    "date": "2026-11-10",
+    "key_facts": [
+      "Состав: C 0.43–0.50 %, Mn 0.60–0.90 %, Si 0.15–0.35 %, P ≤0.04 %, S ≤0.05 % (solitaire, AISI/SAE J403)",
+      "Горячекатаная/нормализованная: Rm 570–700 МПа (Azom 6130); HR-точка: Rm 565, текучесть 310 МПа, HB 163 (solitaire)",
+      "Холоднотянутая 19–32 мм: Rm 625, текучесть 530 МПа, ρ 7.85 г/см³ (Elgin/MW Components)",
+      "Теплофизика: k 51.9 Вт/(м·К) @200 °C, Cp 577.78 Дж/(кг·К) @200 °C, CTE 11.2e-6 (0–100 °C), плавление 1433 °C (solitaire)",
+      "Электросопротивление 32×10⁻⁸ Ом·м @200 °C (solitaire) → σ 3.1e6 См/м",
+      "Усталость hot-rolled: 220 МПа (makeitfrom, сравнение с Q&T 4340); Q&T Rm 650–900+ МПа (cncmachiningshops)"
+    ],
+    "sources": [
+      "https://www.solitaire-overseas.com/blog/sae-1045-steel",
+      "https://www.azom.com/article.aspx?ArticleID=6130",
+      "https://www.azom.com/article.aspx?ArticleID=9153",
+      "https://www.mwcomponents.com/uploads/Resource-Center/Elgin-Material-Sheets/Carbon-Steel-Grade-1045-Fact-Sheet_Elgin-Website.pdf",
+      "https://www.makeitfrom.com/compare/Hot-Rolled-1045-Carbon-Steel/Quenched-and-Tempered-4340-Ni-Cr-Mo-Steel",
+      "https://www.cncmachiningshops.com/1045-steel"
+    ]
   }
 }

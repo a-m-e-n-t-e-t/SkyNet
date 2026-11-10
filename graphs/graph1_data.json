@@ -7215,7 +7215,7 @@
     {
       "id": "material_steel_1045",
       "type": "material",
-      "label": "Сталь 1045 (AISI) — ротор электромагнитной муфты",
+      "label": "Fe ~98 %; C 0.43–0.50 %, Mn 0.60–0.90 %, Si 0.15–0.35 %, P ≤0.04 %, S ≤0.05 % (AISI/SAE J403, UNS G10450; solitaire-overseas)",
       "path": "реальные данные/материалы/steel_1045.md",
       "subsystem": ""
     },
@@ -17802,6 +17802,7 @@
       "standart_AEC-Q200",
       "standart_AEC-Q200 (пассивные компоненты — BaTiO3-MLCC automotive)",
       "standart_AEC-Q200 — квалификация пассивных компонентов для automotive",
+      "standart_AISI/SAE J403",
       "standart_AMS 2408",
       "standart_AMS 4025/4026/4027 (лист, плита, пруток T6/T651)",
       "standart_AMS 4027",
@@ -18299,6 +18300,7 @@
       "standart_UNS C11000 (EN CW004A / JIS C110)",
       "standart_UNS C17200 (Alloy 25 / CuBe2, EN CW101C)",
       "standart_UNS C18400",
+      "standart_UNS G10450",
       "standart_UNS N02200/N02201 (Ni ≥99.0/99.6%)",
       "standart_UNS N06625",
       "standart_UNS N07718",
@@ -18327,6 +18329,7 @@
       "standart_ГОСТ 26996-86 (полипропилен и сополимеры пропилена — марки сырья)",
       "standart_ГОСТ 27006 (бетоны тяжёлые)",
       "standart_ГОСТ 380-2005 (стали углеродистые обыкновенного качества, марки Ст0–Ст6)",
+      "standart_ГОСТ 45 (ближайший аналог)",
       "standart_ГОСТ 535-2005 (прокат сортовой из стали обыкновенного качества)",
       "standart_ГОСТ 5632 (09Х18МШ / мартенситные коррозионностойкие)",
       "standart_ГОСТ 5744-75 (порошки карбида бора)",
@@ -18430,6 +18433,7 @@
       "group_widetronix",
       "group_wolfspeed",
       "group_zeno_power",
+      "group_Стандарт AISI/SAE (J403), UNS G10450; справочные datasheets — Azom (Articles 6130/9153), solitaire-overseas, Elgin/MW Components, makeitfrom",
       "group_группа Q. M. Zhang (Penn State University); промышленная марка Piezotech (Arkema)",
       "group_группа Капассо (Harvard) — пионерские металлинзы; Capasso Group / Metalenz (коммерциализация)",
       "group_изотактический PP — Дж. Натта (G. Natta, Montecatini, 1954; Нобелевская премия по химии 1963, совместно с К. Циглером); промышленная марка Moplen — Montell/LyondellBasell (батарейные марки Moplen, Pro-fax, Hostacom — цит. в источниках файла)",
@@ -18500,9 +18504,9 @@
     "nodes": 1173,
     "edges": 1596,
     "dangling": {
-      "complies_with": 543,
+      "complies_with": 546,
       "has_part": 4,
-      "researched_by": 89,
+      "researched_by": 90,
       "uses_material": 58
     },
     "by_type": {
