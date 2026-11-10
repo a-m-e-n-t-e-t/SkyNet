@@ -113,8 +113,8 @@ graph LR
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_aluminum[Al ≥ 99.5 % (основа); …]
     material_copper[Cu ≥99.9% (электролити…]
-    material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
+    material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     izdelie_halve -->|материал| material_copper
     izdelie_brainchip_akida_2 -->|материал| material_copper
     izdelie_stm32 -->|материал| material_aluminum

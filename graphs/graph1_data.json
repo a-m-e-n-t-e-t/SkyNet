@@ -10461,7 +10461,7 @@
     },
     {
       "src": "izdelie_belleville_shaiby",
-      "dst": "material_stal_st3",
+      "dst": "material_spring_steel",
       "type": "uses_material",
       "meta": {}
     },
@@ -11253,7 +11253,7 @@
     },
     {
       "src": "часть_belleville_shaiby_core",
-      "dst": "material_stal_st3",
+      "dst": "material_spring_steel",
       "type": "uses_material",
       "meta": {}
     },

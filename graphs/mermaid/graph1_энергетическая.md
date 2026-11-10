@@ -155,8 +155,8 @@ graph LR
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_aluminum[Al ≥ 99.5 % (основа); …]
     material_copper[Cu ≥99.9% (электролити…]
-    material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
+    material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     izdelie_mptm -->|материал| material_copper
     izdelie_tpv_lenty -->|материал| material_al_6061_t6
     izdelie_svobodnoporshnevoi_stirling -->|материал| material_al_6061_t6
