@@ -18420,6 +18420,7 @@
       "group_zeno_power",
       "group_группа Q. M. Zhang (Penn State University); промышленная марка Piezotech (Arkema)",
       "group_группа Капассо (Harvard) — пионерские металлинзы; Capasso Group / Metalenz (коммерциализация)",
+      "group_изотактический PP — Дж. Натта (G. Natta, Montecatini, 1954; Нобелевская премия по химии 1963, совместно с К. Циглером); промышленная марка Moplen — Montell/LyondellBasell (батарейные марки Moplen, Pro-fax, Hostacom — цит. в источниках файла)",
       "group_производство изотопа — Oak Ridge National Laboratory / US DOE Isotope Program (захват нейтрона на обогащённом ⁶²Ni); бетавольтаика — Betavolt (Китай, BV100, 2024); метрология — NIST"
     ],
     "uses_material": [
@@ -18490,7 +18491,7 @@
     "dangling": {
       "complies_with": 543,
       "has_part": 4,
-      "researched_by": 88,
+      "researched_by": 89,
       "uses_material": 59
     },
     "by_type": {
