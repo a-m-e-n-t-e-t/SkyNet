@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
-# scripts/cron_run.sh v9.58 — транзакционная обёртка cron-цикла агента verify-task.
+# scripts/cron_run.sh v9.59 — транзакционная обёртка cron-цикла агента verify-task.
+#
+# Изменения v9.59 (по сравнению с v9.58):
+#   1. Step 0: sanity-sweep — снимает мёртвые in-progress со всех ЗАКРЫТЫХ issues
+#      (вызов scripts/sweep_closed_inprogress.sh). Лечит кейсы вида #966,
+#      когда цикл закрыл issue вручную без cleanup-ветки unlabeled.
+#   2. cleanup() trap усилен: если на момент выхода #${ISSUE} уже закрыт —
+#      метка in-progress гарантированно снимается (любой exit code).
 #
 # Изменения v9.58 (по сравнению с v9.37):
 #   1. Complexity-aware stale-detection (порог 30/45/60 мин для quick/medium/complex)
@@ -58,9 +65,19 @@ INITIAL_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 INITIAL_COMMIT="$(git rev-parse HEAD)"
 MODIFIED_BEFORE="$(git status --porcelain | wc -l)"
 
-echo "[cron_run v9.58] === Transaction begin ==="
-echo "[cron_run v9.58] issue=#${ISSUE} files=${#FILES[@]} branch=${INITIAL_BRANCH} commit=${INITIAL_COMMIT:0:8}"
-echo "[cron_run v9.58] modified files before: ${MODIFIED_BEFORE}"
+echo "[cron_run v9.59] === Transaction begin ==="
+echo "[cron_run v9.59] issue=#${ISSUE} files=${#FILES[@]} branch=${INITIAL_BRANCH} commit=${INITIAL_COMMIT:0:8}"
+echo "[cron_run v9.59] modified files before: ${MODIFIED_BEFORE}"
+
+# === v9.59: Step 0 — Sweep stale in-progress on CLOSED issues (global sanity check) ===
+# Запускается до любых изменений. Снимает мёртвые метки с уже закрытых issues,
+# которые могли остаться после ручного закрытия или падения цикла между close и unlabeled.
+echo "[cron_run v9.59] Step 0: Sweep stale in-progress on closed issues (global)"
+if [ -x "${REPO_ROOT}/scripts/sweep_closed_inprogress.sh" ]; then
+    bash "${REPO_ROOT}/scripts/sweep_closed_inprogress.sh" 2>&1 | sed 's/^/[cron_run v9.59]   /' || true
+else
+    echo "[cron_run v9.59] ⚠️  sweep_closed_inprogress.sh not found — skip"
+fi
 
 # === v9.58: Helper — получить сложность issue из labels ===
 get_complexity() {
@@ -291,40 +308,63 @@ except Exception:
 cleanup() {
     local EXIT_CODE=$?
     echo ""
-    echo "[cron_run v9.58] === Cleanup (exit=$EXIT_CODE) ==="
+    echo "[cron_run v9.59] === Cleanup (exit=$EXIT_CODE) ==="
+
+    # v9.59: GUARANTEED in-progress sweep — если #${ISSUE} закрыт, метка обязана быть снята.
+    # Это ловит кейсы, когда цикл упал между close (Step 7) и remove label (Step 8),
+    # а также ручные закрытия «нарушение не воспроизводится» без commit-фазы.
+    local CURRENT_STATE
+    CURRENT_STATE=$(curl -s -H "Authorization: token ${PAT}" \
+        "https://api.github.com/repos/${REPO}/issues/${ISSUE}" | \
+        python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('state','unknown'))" 2>/dev/null || echo "unknown")
+    if [ "${CURRENT_STATE}" = "closed" ]; then
+        echo "[cron_run v9.59] Issue #${ISSUE} is closed — guaranteed in-progress removal"
+        local SWEEP_CODE
+        SWEEP_CODE=$(curl -s -X DELETE -H "Authorization: token ${PAT}" \
+            "https://api.github.com/repos/${REPO}/issues/${ISSUE}/labels/in-progress" \
+            -o /dev/null -w "%{http_code}" 2>/dev/null || echo "000")
+        # 200/204 = снято; 404 = метки уже нет — оба варианта OK
+        if [ "${SWEEP_CODE}" = "200" ] || [ "${SWEEP_CODE}" = "204" ] || [ "${SWEEP_CODE}" = "404" ]; then
+            echo "[cron_run v9.59] ✓ guaranteed sweep done (HTTP ${SWEEP_CODE})"
+        else
+            echo "[cron_run v9.59] ⚠️  sweep returned HTTP ${SWEEP_CODE} (issue still closed)"
+        fi
+    else
+        echo "[cron_run v9.59] Issue #${ISSUE} state=${CURRENT_STATE} — leave in-progress in place"
+    fi
 
     if [ $EXIT_CODE -eq 0 ]; then
         # Успех — проверяем, что нет orphaned edits
         local NEW_MODS
         NEW_MODS=$(git status --porcelain | grep -vE '^\?\?' | wc -l)
         if [ "$NEW_MODS" -gt 0 ]; then
-            echo "[cron_run v9.58] ⚠️  Success exit but $NEW_MODS modified files remain in working tree:"
+            echo "[cron_run v9.59] ⚠️  Success exit but $NEW_MODS modified files remain in working tree:"
             git status --porcelain | grep -vE '^\?\?' | head -10
-            echo "[cron_run v9.58] These are orphaned edits — kept for next cycle (NOT restored)."
+            echo "[cron_run v9.59] These are orphaned edits — kept for next cycle (NOT restored)."
         else
-            echo "[cron_run v9.58] ✓ Working tree clean"
+            echo "[cron_run v9.59] ✓ Working tree clean"
         fi
         return 0
     fi
 
     # Failure — restore issue labels if we changed them
-    echo "[cron_run v9.58] ⚠️  Cycle failed at exit=$EXIT_CODE"
-    echo "[cron_run v9.58] Checking if we added in-progress label to #${ISSUE}..."
+    echo "[cron_run v9.59] ⚠️  Cycle failed at exit=$EXIT_CODE"
+    echo "[cron_run v9.59] Checking if we added in-progress label to #${ISSUE}..."
 
     local NEW_MODS
     NEW_MODS=$(git status --porcelain | grep -vE '^\?\?' | wc -l)
     if [ "$NEW_MODS" -gt 0 ]; then
-        echo "[cron_run v9.58] Orphaned edits preserved ($NEW_MODS files):"
+        echo "[cron_run v9.59] Orphaned edits preserved ($NEW_MODS files):"
         git status --porcelain | grep -vE '^\?\?' | head -10
     fi
 
-    echo "[cron_run v9.58] ✗ Cycle ended with error — issue #${ISSUE} may need manual cleanup"
+    echo "[cron_run v9.59] ✗ Cycle ended with error — issue #${ISSUE} may need manual cleanup"
 }
 
 trap cleanup EXIT INT TERM
 
-# === Step 1: Verify in-progress lock (v9.58: complexity-aware) ===
-echo "[cron_run v9.58] Step 1: Check in-progress lock on #${ISSUE}"
+# === Step 1: Verify in-progress lock (v9.59: complexity-aware) ===
+echo "[cron_run v9.59] Step 1: Check in-progress lock on #${ISSUE}"
 LABELS_JSON=$(curl -s -H "Authorization: token $PAT" \
     "https://api.github.com/repos/${REPO}/issues/${ISSUE}/labels")
 HAS_INPROGRESS=$(echo "$LABELS_JSON" | python3 -c "
@@ -336,11 +376,20 @@ except Exception:
     print('error')
 ")
 
+# v9.59: если issue уже закрыт — ничего не делать, метка будет снята cleanup-trap'ом
+CURRENT_STATE=$(curl -s -H "Authorization: token $PAT" \
+    "https://api.github.com/repos/${REPO}/issues/${ISSUE}" | \
+    python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('state','unknown'))" 2>/dev/null || echo "unknown")
+if [ "${CURRENT_STATE}" = "closed" ]; then
+    echo "[cron_run v9.59] Issue #${ISSUE} is already CLOSED — nothing to commit. Cleanup-trap снимет метку."
+    exit 0
+fi
+
 if [ "$HAS_INPROGRESS" = "yes" ]; then
-    # v9.58: получить сложность issue для complexity-aware threshold
+    # v9.59: получить сложность issue для complexity-aware threshold
     COMPLEXITY=$(get_complexity "$ISSUE")
     THRESHOLD=$(get_stale_threshold "$COMPLEXITY")
-    echo "[cron_run v9.58] issue complexity: ${COMPLEXITY:-none} → stale threshold: ${THRESHOLD} min"
+    echo "[cron_run v9.59] issue complexity: ${COMPLEXITY:-none} → stale threshold: ${THRESHOLD} min"
 
     # Check age via timeline
     TIMELINE=$(curl -s -H "Authorization: token $PAT" \
@@ -363,38 +412,38 @@ try:
 except Exception as e:
     print(999)
 ")
-    echo "[cron_run v9.58] in-progress label age: ${AGE_MIN} min (threshold: ${THRESHOLD})"
+    echo "[cron_run v9.59] in-progress label age: ${AGE_MIN} min (threshold: ${THRESHOLD})"
     if [ "$AGE_MIN" -lt "$THRESHOLD" ]; then
-        echo "[cron_run v9.58] ⚠️  Lock is ACTIVE (<${THRESHOLD} min for ${COMPLEXITY:-default}) — another cycle is running. Exit without changes."
+        echo "[cron_run v9.59] ⚠️  Lock is ACTIVE (<${THRESHOLD} min for ${COMPLEXITY:-default}) — another cycle is running. Exit without changes."
         exit 0
     fi
-    echo "[cron_run v9.58] Lock is STALE (>=${THRESHOLD} min) — removing and taking over."
+    echo "[cron_run v9.59] Lock is STALE (>=${THRESHOLD} min) — removing and taking over."
     curl -s -X DELETE -H "Authorization: token $PAT" \
         "https://api.github.com/repos/${REPO}/issues/${ISSUE}/labels/in-progress" >/dev/null
 fi
 
 # === Step 2: Add in-progress label ===
-echo "[cron_run v9.58] Step 2: Add in-progress label to #${ISSUE}"
+echo "[cron_run v9.59] Step 2: Add in-progress label to #${ISSUE}"
 curl -s -X POST -H "Authorization: token $PAT" -H "Content-Type: application/json" \
     "https://api.github.com/repos/${REPO}/issues/${ISSUE}/labels" \
     -d '{"labels":["in-progress"]}' >/dev/null
-echo "[cron_run v9.58] ✓ in-progress label set"
+echo "[cron_run v9.59] ✓ in-progress label set"
 
 # === Step 3: Stage files ===
-echo "[cron_run v9.58] Step 3: Stage ${#FILES[@]} file(s)"
+echo "[cron_run v9.59] Step 3: Stage ${#FILES[@]} file(s)"
 for f in "${FILES[@]}"; do
     if [ ! -f "$f" ]; then
-        echo "[cron_run v9.58] ERROR: file not found: $f" >&2
+        echo "[cron_run v9.59] ERROR: file not found: $f" >&2
         exit 4
     fi
     git add "$f"
-    echo "[cron_run v9.58]   staged: $f"
+    echo "[cron_run v9.59]   staged: $f"
 done
 
 # === Step 4: Commit (atomic via git) ===
-echo "[cron_run v9.58] Step 4: git commit"
+echo "[cron_run v9.59] Step 4: git commit"
 
-# v9.58: если issue sub-issue — добавить parent-ссылку в коммит
+# v9.59: если issue sub-issue — добавить parent-ссылку в коммит
 PARENT_NUM=""
 if [ "$(is_sub_issue "$ISSUE")" = "yes" ]; then
     PARENT_NUM=$(get_parent_number "$ISSUE")
@@ -405,47 +454,47 @@ if [ -n "$PARENT_NUM" ]; then
 
 Files: ${#FILES[@]}
 Source: web_search via z-ai function
-Cycle: cron_run.sh v9.58 (transactional, complexity-aware)
+Cycle: cron_run.sh v9.59 (transactional, complexity-aware, sweep-on-start)
 Parent: #${PARENT_NUM}"
 else
     COMMIT_MSG="fix(verify): #${ISSUE} batch — real data from web_search
 
 Files: ${#FILES[@]}
 Source: web_search via z-ai function
-Cycle: cron_run.sh v9.58 (transactional, complexity-aware)"
+Cycle: cron_run.sh v9.59 (transactional, complexity-aware, sweep-on-start)"
 fi
 
 if ! git commit -m "$COMMIT_MSG" 2>&1 | tail -5; then
-    echo "[cron_run v9.58] git commit failed — see above" >&2
+    echo "[cron_run v9.59] git commit failed — see above" >&2
     exit 5
 fi
 NEW_COMMIT=$(git rev-parse HEAD)
-echo "[cron_run v9.58] ✓ committed: ${NEW_COMMIT:0:8}"
+echo "[cron_run v9.59] ✓ committed: ${NEW_COMMIT:0:8}"
 
 # === Step 5: Push (with rebase) ===
-echo "[cron_run v9.58] Step 5: git push"
+echo "[cron_run v9.59] Step 5: git push"
 if ! git pull --rebase origin main 2>&1 | tail -5; then
-    echo "[cron_run v9.58] rebase failed — aborting push" >&2
+    echo "[cron_run v9.59] rebase failed — aborting push" >&2
     exit 6
 fi
 if ! git push origin main 2>&1 | tail -5; then
-    echo "[cron_run v9.58] push failed — see above" >&2
+    echo "[cron_run v9.59] push failed — see above" >&2
     exit 7
 fi
-echo "[cron_run v9.58] ✓ pushed"
+echo "[cron_run v9.59] ✓ pushed"
 
 # === Step 6: Comment on issue ===
-echo "[cron_run v9.58] Step 6: Post comment to #${ISSUE}"
+echo "[cron_run v9.59] Step 6: Post comment to #${ISSUE}"
 SHORT_SHA="${NEW_COMMIT:0:8}"
 
-# v9.58: получить сложность issue для комментария
+# v9.59: получить сложность issue для комментария
 COMPLEXITY=$(get_complexity "$ISSUE")
 COMPLEXITY_LINE=""
 if [ -n "$COMPLEXITY" ]; then
     COMPLEXITY_LINE="**Сложность:** ${COMPLEXITY}"
 fi
 
-# v9.58: sub-issue info
+# v9.59: sub-issue info
 SUB_INFO=""
 if [ -n "$PARENT_NUM" ]; then
     SUB_INFO="**Parent:** #${PARENT_NUM}
@@ -454,7 +503,7 @@ if [ -n "$PARENT_NUM" ]; then
 fi
 
 COMMENT_BODY=$(cat <<EOF
-## Транзакционный cron-цикл завершён (v9.58)
+## Транзакционный cron-цикл завершён (v9.59)
 
 ${SUB_INFO}**Commit:** [\`${SHORT_SHA}\`](https://github.com/${REPO}/commit/${NEW_COMMIT})
 
@@ -463,50 +512,51 @@ $(for f in "${FILES[@]}"; do echo "- \`$f\`"; done)
 
 **Источник данных:** web_search через \`z-ai function -n web_search\`
 ${COMPLEXITY_LINE}
-**Протокол:** \`scripts/cron_run.sh\` v9.58 (транзакционный, complexity-aware stale-detection)
+**Протокол:** \`scripts/cron_run.sh\` v9.59 (транзакционный, complexity-aware stale-detection, sweep-on-start)
 **Lock:** in-progress добавлен → будет снят после закрытия issue
 EOF
 )
 curl -s -X POST -H "Authorization: token $PAT" -H "Content-Type: application/json" \
     "https://api.github.com/repos/${REPO}/issues/${ISSUE}/comments" \
     -d "$(python3 -c "import json,sys; print(json.dumps({'body': sys.stdin.read()}))" <<< "$COMMENT_BODY")" >/dev/null
-echo "[cron_run v9.58] ✓ comment posted"
+echo "[cron_run v9.59] ✓ comment posted"
 
 # === Step 7: Close issue ===
-echo "[cron_run v9.58] Step 7: Close #${ISSUE}"
+echo "[cron_run v9.59] Step 7: Close #${ISSUE}"
 curl -s -X PATCH -H "Authorization: token $PAT" -H "Content-Type: application/json" \
     "https://api.github.com/repos/${REPO}/issues/${ISSUE}" \
     -d '{"state":"closed","state_reason":"completed"}' >/dev/null
-echo "[cron_run v9.58] ✓ issue closed"
+echo "[cron_run v9.59] ✓ issue closed"
 
 # === Step 8: Remove in-progress label ===
-echo "[cron_run v9.58] Step 8: Remove in-progress label"
+echo "[cron_run v9.59] Step 8: Remove in-progress label"
 curl -s -X DELETE -H "Authorization: token $PAT" \
     "https://api.github.com/repos/${REPO}/issues/${ISSUE}/labels/in-progress" >/dev/null
-echo "[cron_run v9.58] ✓ in-progress removed"
+echo "[cron_run v9.59] ✓ in-progress removed"
 
 # === Step 9 (NEW v9.58): Parent auto-close check ===
 if [ -n "$PARENT_NUM" ]; then
-    echo "[cron_run v9.58] Step 9: Check parent #${PARENT_NUM} for auto-close"
+    echo "[cron_run v9.59] Step 9: Check parent #${PARENT_NUM} for auto-close"
     RESULT=$(check_all_subs_closed "$PARENT_NUM")
     case "$RESULT" in
         all-closed)
-            echo "[cron_run v9.58] All sub-issues of #${PARENT_NUM} closed — auto-closing parent"
+            echo "[cron_run v9.59] All sub-issues of #${PARENT_NUM} closed — auto-closing parent"
             auto_close_parent "$PARENT_NUM"
             ;;
         has-open)
-            echo "[cron_run v9.58] Parent #${PARENT_NUM} still has open sub-issues — keep parent open"
+            echo "[cron_run v9.59] Parent #${PARENT_NUM} still has open sub-issues — keep parent open"
             ;;
         no-subs)
-            echo "[cron_run v9.58] ⚠️ No sub-issues found for parent #${PARENT_NUM} — skip auto-close"
+            echo "[cron_run v9.59] ⚠️ No sub-issues found for parent #${PARENT_NUM} — skip auto-close"
             ;;
     esac
 fi
 
 echo ""
-echo "[cron_run v9.58] === Transaction complete ==="
-echo "[cron_run v9.58] Issue #${ISSUE} → closed"
-echo "[cron_run v9.58] Commit ${SHORT_SHA} pushed to main"
-echo "[cron_run v9.58] Lock released"
+echo "[cron_run v9.59] === Transaction complete ==="
+echo "[cron_run v9.59] Issue #${ISSUE} → closed"
+echo "[cron_run v9.59] Commit ${SHORT_SHA} pushed to main"
+echo "[cron_run v9.59] Lock released"
 
 # trap cleanup вызовет exit 0 — проверит, что working tree чист
+# v9.59: cleanup() также сделает гарантированный sweep (closed → remove label)
