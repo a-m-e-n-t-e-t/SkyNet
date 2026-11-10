@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_SkyNet-HKTank
 тип: изделие
 категория: машиностроение
@@ -23,13 +22,35 @@ id: izdelie_SkyNet-HKTank
 материалы_частей:
   - часть: часть_hk_tank_корпус
     материал: rolled_homogeneous_armor
+    форма: плита_катаная_броневая
     доля_массы: 0.45
   - часть: часть_hk_tank_гусеница_левая
     материал: steel_track
+    форма: трак_штампованный
     доля_массы: 0.2000
   - часть: часть_hk_tank_башня
     материал: rolled_homogeneous_armor
+    форма: плита_катаная_броневая
     доля_массы: 0.0603
+технологии_частей:
+  - часть: часть_hk_tank_корпус
+    технология: tekhnologia_shtampovka_listovaya
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: rolled_homogeneous_armor
+        роль: обрабатываемый
+  - часть: часть_hk_tank_гусеница_левая
+    технология: tekhnologia_goryachaya_shtampovka
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: steel_track
+        роль: обрабатываемый
+  - часть: часть_hk_tank_башня
+    технология: tekhnologia_shtampovka_listovaya
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: rolled_homogeneous_armor
+        роль: обрабатываемый
 
 scaling_type: количественный
 соединители: []
@@ -53,9 +74,6 @@ scaling_type: количественный
 источник_url: https://terminator.fandom.com/wiki/HK-Tank
 источник_дата: 2026-11-07
 ---
-
-# Изделие-обёртка: SkyNet-HKTank
-
 ## Описание
 
 Wrapper-изделие для модели `SkyNet-HKTank` (тип: наземный_гусеничный, подсистема: каркас).
@@ -63,32 +81,15 @@ Wrapper-изделие для модели `SkyNet-HKTank` (тип: наземн
 Создано для поддержки декомпозиции: дочерние части (часть_*) ссылаются на
 этот id как на родителя. Сама модель остаётся в фантастические данные/модели/.
 
-## Декомпозиция
+## Технические характеристики
 
-```mermaid
-graph TD
-    HKTank["SkyNet-HKTank"]
-    hk_tank_корпус["часть_hk_tank_корпус"]
-    HKTank --> hk_tank_корпус
-    hk_tank_гусеница_левая["часть_hk_tank_гусеница_левая"]
-    HKTank --> hk_tank_гусеница_левая
-    HKTank --> hk_tank_гусеница_правая
-    hk_tank_башня["часть_hk_tank_башня"]
-    HKTank --> hk_tank_башня
-    hk_tank_плазма_пушка_1["часть_hk_tank_плазма_пушка_1"]
-    HKTank --> hk_tank_плазма_пушка_1
-    HKTank --> hk_tank_плазма_пушка_2
-    hk_tank_сенсоры["часть_hk_tank_сенсоры"]
-    HKTank --> hk_tank_сенсоры
-    hk_tank_двигатель["часть_hk_tank_двигатель"]
-    HKTank --> hk_tank_двигатель
-    hk_tank_связь["часть_hk_tank_связь"]
-    HKTank --> hk_tank_связь
-    hk_tank_навигация["часть_hk_tank_навигация"]
-    HKTank --> hk_tank_навигация
-    hk_tank_боеприпасы["часть_hk_tank_боеприпасы"]
-    HKTank --> hk_tank_боеприпасы
-```
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| подсистема | каркас | — | canon |
+| подтип | прочее | — | canon |
+| тип узла | изделие | — | canon |
+| уровень_номер | 1 | — | canon |
+
 
 ## Состав
 
@@ -103,10 +104,50 @@ graph TD
 - `часть_hk_tank_навигация`
 - `часть_hk_tank_боеприпасы`
 
-## Связанная модель
+## Используемые технологии
 
-- [`SkyNet-HKTank`](../../../../фантастические%20данные/модели/hk_tank) — модель SkyNet
+- `tekhnologia_shtampovka_listovaya` (доля: 1.0)
+- `tekhnologia_goryachaya_shtampovka` (доля: 1.0)
+- `tekhnologia_shtampovka_listovaya` (доля: 1.0)
+
+
+## Используемые материалы
+
+- `rolled_homogeneous_armor` (форма: плита_катаная_броневая) → [`rolled_homogeneous_armor`](../../../материалы/rolled_homogeneous_armor.md)
+- `steel_track` (форма: трак_штампованный) → [`steel_track`](../../../материалы/steel_track.md)
+- `rolled_homogeneous_armor` (форма: плита_катаная_броневая) → [`rolled_homogeneous_armor`](../../../материалы/rolled_homogeneous_armor.md)
+
 
 ## Источники
 
 - Wrapper-изделие создано автоматически (2026-11-03) для поддержки декомпозиции
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    izdelie_SkyNet_HKTank["izdelie_SkyNet-HKTank"]
+    ______hk_tank_______["часть_hk_tank_корпус"]
+    izdelie_SkyNet_HKTank --> ______hk_tank_______
+    ______hk_tank_______________["часть_hk_tank_гусеница_левая"]
+    izdelie_SkyNet_HKTank --> ______hk_tank_______________
+    ______hk_tank______["часть_hk_tank_башня"]
+    izdelie_SkyNet_HKTank --> ______hk_tank______
+    ______hk_tank______________1["часть_hk_tank_плазма_пушка_1"]
+    izdelie_SkyNet_HKTank --> ______hk_tank______________1
+    ______hk_tank________["часть_hk_tank_сенсоры"]
+    izdelie_SkyNet_HKTank --> ______hk_tank________
+    ______hk_tank__________["часть_hk_tank_двигатель"]
+    izdelie_SkyNet_HKTank --> ______hk_tank__________
+    ______hk_tank______["часть_hk_tank_связь"]
+    izdelie_SkyNet_HKTank --> ______hk_tank______
+    ______hk_tank__________["часть_hk_tank_навигация"]
+    izdelie_SkyNet_HKTank --> ______hk_tank__________
+    ______hk_tank___________["часть_hk_tank_боеприпасы"]
+    izdelie_SkyNet_HKTank --> ______hk_tank___________
+```
+
+
+## Связанная модель
+
+- [`SkyNet-HKTank`](../../../../фантастические%20данные/модели/hk_tank) — модель SkyNet
