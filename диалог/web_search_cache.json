@@ -5565,5 +5565,21 @@
       "https://www.americanpiezo.com/products-services/buzzers",
       "https://www.bestartech.com/product-category/piezo-elements"
     ]
+  },
+  "ws_0086": {
+    "query": "Daramic microporous polyethylene lead acid battery separator porosity thickness properties silica",
+    "date": "2026-11-10",
+    "key_facts": [
+      "PE-сепаратор фактически = silica separator: >50 wt% SiO₂, ~20 wt% PE (Daramic)",
+      "Пористость PE-сепараторов 50–65%; осаждённый SiO₂ делает кислотно-смачиваемым (entek.com)",
+      "SLI стандарт: толщина 0.1–0.5 мм, пористость ~50–60%, стойкость к растворителям (suzukibattery)",
+      "Ультратонкий размер пор подавляет дендритный рост Pb (WO2009023329A2)"
+    ],
+    "sources": [
+      "https://entek.com/lead-acid/pe_technology",
+      "https://www.daramic.com/storage/wysiwyg/Oil%20in%20Polyethylene%20Separators%20comp.pdf",
+      "https://suzukibattery.sg/blog/engineering/lead-acid-battery-separators",
+      "https://patents.google.com/patent/WO2009023329A2/en"
+    ]
   }
 }
