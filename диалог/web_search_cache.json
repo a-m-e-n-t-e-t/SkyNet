@@ -5581,5 +5581,47 @@
       "https://suzukibattery.sg/blog/engineering/lead-acid-battery-separators",
       "https://patents.google.com/patent/WO2009023329A2/en"
     ]
+  },
+  "ws_0087": {
+    "query": "polypropylene fatigue limit endurance limit MPa 30-40% of tensile strength",
+    "date": "2026-11-10",
+    "key_facts": [
+      "Предел выносливости PP = 30–40% от прочности на растяжение (Patsnap eureka, Polypropylene Fatigue Resistant)",
+      "При UTS 25–35 МПа (номинал 30) → предел выносливости ≈ 8–14 МПа, номинал 11 МПа",
+      "Endurance limit определяется как макс. напряжение без повреждения после 10⁶ циклов (Karger-Kocsis, Fatigue performance of PP and related composites)",
+      "PP обладает хорошей flexural fatigue стойкостью (living hinges — миллионы циклов), что отмечено в сравнение_структур гомополимера"
+    ],
+    "sources": [
+      "https://eureka.patsnap.com/materials/polypropylene-fatigue-resistant",
+      "https://www.researchgate.net/profile/Jozsef-Karger-Kocsis/publication/267513636_Fatigue_performance_of_polypropylene_and_related_composites"
+    ]
+  },
+  "ws_0088": {
+    "query": "polypropylene homopolymer notched izod impact strength kJ/m2 23C ASTM D256",
+    "date": "2026-11-10",
+    "key_facts": [
+      "Notched Izod PP гомополимера при 23 °C ≈ 0.4–0.7 Дж/см² (4–7 кДж/м², ISO 180/ASTM D256)",
+      "PPCP (ударный сополимер) заметно выше гомополимера за счёт каучуковой фазы (контекст Braskem RP347: 1.20 Дж/см)",
+      "Конвенция поля в репо: notched значение в Дж/см² — прецедент neilon_6_66: 0.5 (сухой как отлитый)",
+      "Испытания по ASTM D256 / ISO 180 — стандарт для пластиков (matestlabs/prestogroup)"
+    ],
+    "sources": [
+      "https://www.lookpolymers.com/findproperty.php?pid=2&sx_id=128&value=2.25&type=3",
+      "https://matestlabs.com/test-standards/astm-d256",
+      "https://www.prestogroup.com/articles/best-practices-for-material-durability-in-oil-gas-astm-d256-izod-impact-testing"
+    ]
+  },
+  "ws_0089": {
+    "query": "EP200K polypropylene impact copolymer producer datasheet",
+    "date": "2026-11-10",
+    "key_facts": [
+      "EP200K — марка Braskem: low fluidity heterophasic (impact) copolymer, good impact at low temperatures (UL Prospector)",
+      "Заявления polychemer: EP200K formulated for battery boxes, blow molding, panels",
+      "Семейство PP impact copolymers — полимеризация пропилена + этилена на катализаторах Циглера-Натта (LyondellBasell)"
+    ],
+    "sources": [
+      "https://www.ulprospector.com/Plastics/en/datasheet/214203/braskem-pp-ep-200k",
+      "https://www.lyondellbasell.com/en/our-solutions/products/polymers/resin-type/polypropylene-impact-copolymer"
+    ]
   }
 }
