@@ -25,29 +25,34 @@ set -uo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
 
-# v9.59: Auto-recovery PAT (тот же механизм что в cron_run.sh)
-if [ ! -f /tmp/.pat_tmp ]; then
-    if [ -f /home/z/my-project/.pat_tmp ]; then
-        cp /home/z/my-project/.pat_tmp /tmp/.pat_tmp
-        chmod 600 /tmp/.pat_tmp
-        echo "[sweep v9.59] ✓ PAT recovered from /home/z/my-project/.pat_tmp" >&2
-    else
-        REMOTE_URL=$(git remote get-url origin 2>/dev/null || echo "")
-        case "$REMOTE_URL" in
-            https://x-access-token:*@*)
-                echo "$REMOTE_URL" | sed -nE 's#https://x-access-token:([^@]+)@.*#\1#p' > /tmp/.pat_tmp
-                chmod 600 /tmp/.pat_tmp
-                cp /tmp/.pat_tmp /home/z/my-project/.pat_tmp 2>/dev/null || true
-                echo "[sweep v9.59] ✓ PAT recovered from git remote URL" >&2
-                ;;
-            *)
-                echo "ERROR: PAT not found" >&2; exit 3
-                ;;
-        esac
+# v9.59: Auto-recovery PAT (4 уровня: tmp → home → git remote → Yandex Disk)
+# Логика в scripts/pat_recovery.sh
+if [ -f "${REPO_ROOT}/scripts/pat_recovery.sh" ]; then
+    # shellcheck disable=SC1091
+    source "${REPO_ROOT}/scripts/pat_recovery.sh"
+    if ! pat_recover; then
+        echo "ERROR: PAT recovery failed" >&2; exit 3
     fi
+else
+    # Fallback inline
+    if [ ! -f /tmp/.pat_tmp ]; then
+        if [ -f /home/z/my-project/.pat_tmp ]; then
+            cp /home/z/my-project/.pat_tmp /tmp/.pat_tmp && chmod 600 /tmp/.pat_tmp
+        else
+            REMOTE_URL=$(git remote get-url origin 2>/dev/null || echo "")
+            case "$REMOTE_URL" in
+                https://x-access-token:*@*)
+                    echo "$REMOTE_URL" | sed -nE 's#https://x-access-token:([^@]+)@.*#\1#p' > /tmp/.pat_tmp
+                    chmod 600 /tmp/.pat_tmp
+                    ;;
+                *)
+                    echo "ERROR: PAT not found" >&2; exit 3
+                    ;;
+            esac
+        fi
+    fi
+    PAT="$(cat /tmp/.pat_tmp)"
 fi
-
-[ -f /tmp/.pat_tmp ] || { echo "ERROR: /tmp/.pat_tmp not found" >&2; exit 3; }
 
 DRY_RUN=0
 VERBOSE=0
