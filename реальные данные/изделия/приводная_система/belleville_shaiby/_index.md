@@ -18,8 +18,8 @@ id: izdelie_belleville_shaiby
   - часть_belleville_shaiby_mounting
 материалы_частей:
   - часть: часть_belleville_shaiby_core
-    материал: stal_st3
-    форма: строительные_конструкции_и_крепёж
+    материал: spring_steel
+    форма: a231_a232_хром_ванадиевая
     доля_массы: 0.45
   - часть: часть_belleville_shaiby_housing
     материал: al_6061-t6
@@ -30,8 +30,8 @@ id: izdelie_belleville_shaiby
 # bellevillesprings.com), ЧПУ-фрезерование корпуса, литьё под давлением PA66-корпуса
 # разъёма Deutsch DT06-4S, ЧПУ-точение стяжного узла (100Cr6)
 наследуемые_материалы:
-  - материал: stal_st3
-    форма: строительные_конструкции_и_крепёж
+  - материал: spring_steel
+    форма: a231_a232_хром_ванадиевая
     суммарная_доля_массы: 0.45
     источники_частей:
       - часть_belleville_shaiby_core
@@ -45,7 +45,7 @@ id: izdelie_belleville_shaiby
     технология: shtampovka_listovaya
     доля_использования: 1.0
     материалы_для_процесса:
-      - материал: stal_st3
+      - материал: spring_steel
         роль: обрабатываемый
   - часть: часть_belleville_shaiby_housing
     технология: frezervanie_chpu
