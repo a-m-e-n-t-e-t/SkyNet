@@ -2,32 +2,32 @@
 
 ```mermaid
 graph LR
+    izdelie_mikrokanalnye_ohlazhdayuschie_plastiny[прочее]
     izdelie_reversivnye_pelte[реверсивный_модуль_Пельтье]
     izdelie_loop_heat_pipe[прочее]
-    izdelie_termomoduli_pelte[модуль_Пельтье]
     izdelie_kapillyarnaya_teplovaya_trubka[прочее]
-    izdelie_mikrokanalnye_ohlazhdayuschie_plastiny[прочее]
-    часть_reversivnye_pelte_ceramic_top[керамика_верх]
-    часть_reversivnye_pelte_peltier_couples[термоэлементы]
-    часть_reversivnye_pelte_electrodes[электроды]
-    часть_reversivnye_pelte_solder[припой]
-    часть_loop_heat_pipe_housing[корпус]
-    часть_loop_heat_pipe_core[основной_элемент]
-    часть_loop_heat_pipe_mounting[крепёж]
-    часть_loop_heat_pipe_connectors[разъёмы]
-    часть_termomoduli_pelte_ceramic_top[керамика_верх]
-    часть_termomoduli_pelte_electrodes[электроды]
-    часть_termomoduli_pelte_peltier_couples[термоэлементы]
-    часть_termomoduli_pelte_solder[припой]
-    часть_termomoduli_pelte_wires[провода]
-    часть_kapillyarnaya_teplovaya_trubka_connectors[разъёмы]
-    часть_kapillyarnaya_teplovaya_trubka_housing[корпус]
-    часть_kapillyarnaya_teplovaya_trubka_core[основной_элемент]
-    часть_kapillyarnaya_teplovaya_trubka_mounting[крепёж]
-    часть_mikrokanalnye_ohlazhdayuschie_plastiny_connectors[разъёмы]
+    izdelie_termomoduli_pelte[модуль_Пельтье]
+    часть_mikrokanalnye_ohlazhdayuschie_plastiny_mounting[крепёж]
     часть_mikrokanalnye_ohlazhdayuschie_plastiny_core[основной_элемент]
     часть_mikrokanalnye_ohlazhdayuschie_plastiny_housing[корпус]
-    часть_mikrokanalnye_ohlazhdayuschie_plastiny_mounting[крепёж]
+    часть_mikrokanalnye_ohlazhdayuschie_plastiny_connectors[разъёмы]
+    часть_reversivnye_pelte_ceramic_top[керамика_верх]
+    часть_reversivnye_pelte_electrodes[электроды]
+    часть_reversivnye_pelte_peltier_couples[термоэлементы]
+    часть_reversivnye_pelte_solder[припой]
+    часть_loop_heat_pipe_connectors[разъёмы]
+    часть_loop_heat_pipe_core[основной_элемент]
+    часть_loop_heat_pipe_mounting[крепёж]
+    часть_loop_heat_pipe_housing[корпус]
+    часть_kapillyarnaya_teplovaya_trubka_housing[корпус]
+    часть_kapillyarnaya_teplovaya_trubka_core[основной_элемент]
+    часть_kapillyarnaya_teplovaya_trubka_connectors[разъёмы]
+    часть_kapillyarnaya_teplovaya_trubka_mounting[крепёж]
+    часть_termomoduli_pelte_electrodes[электроды]
+    часть_termomoduli_pelte_wires[провода]
+    часть_termomoduli_pelte_solder[припой]
+    часть_termomoduli_pelte_ceramic_top[керамика_верх]
+    часть_termomoduli_pelte_peltier_couples[термоэлементы]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_aluminum[Al ≥ 99.5 % (основа); …]
     material_bi2te3[Bi₂Te₃ (теллурид висму…]
@@ -37,41 +37,41 @@ graph LR
     material_splav_sn_pb[Sn 63 ± 0.5 %, Pb — ос…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
+    izdelie_mikrokanalnye_ohlazhdayuschie_plastiny -->|материал| material_copper
+    izdelie_mikrokanalnye_ohlazhdayuschie_plastiny -->|материал| material_al_6061_t6
     izdelie_reversivnye_pelte -->|материал| material_bi2te3
     izdelie_reversivnye_pelte -->|материал| material_oksid_alyuminiya
     izdelie_reversivnye_pelte -->|материал| material_copper
     izdelie_reversivnye_pelte -->|материал| material_splav_sn_pb
     izdelie_loop_heat_pipe -->|материал| material_stal_st3
     izdelie_loop_heat_pipe -->|материал| material_al_6061_t6
+    izdelie_kapillyarnaya_teplovaya_trubka -->|материал| material_copper
+    izdelie_kapillyarnaya_teplovaya_trubka -->|материал| material_aluminum
     izdelie_termomoduli_pelte -->|материал| material_bi2te3
     izdelie_termomoduli_pelte -->|материал| material_oksid_alyuminiya
     izdelie_termomoduli_pelte -->|материал| material_copper
     izdelie_termomoduli_pelte -->|материал| material_splav_sn_pb
-    izdelie_kapillyarnaya_teplovaya_trubka -->|материал| material_copper
-    izdelie_kapillyarnaya_teplovaya_trubka -->|материал| material_aluminum
-    izdelie_mikrokanalnye_ohlazhdayuschie_plastiny -->|материал| material_copper
-    izdelie_mikrokanalnye_ohlazhdayuschie_plastiny -->|материал| material_al_6061_t6
-    часть_reversivnye_pelte_ceramic_top -->|материал| material_oksid_alyuminiya
-    часть_reversivnye_pelte_peltier_couples -->|материал| material_bi2te3
-    часть_reversivnye_pelte_electrodes -->|материал| material_copper
-    часть_reversivnye_pelte_solder -->|материал| material_splav_sn_pb
-    часть_loop_heat_pipe_housing -->|материал| material_al_6061_t6
-    часть_loop_heat_pipe_core -->|материал| material_stal_st3
-    часть_loop_heat_pipe_mounting -->|материал| material_ti_6al_4v
-    часть_loop_heat_pipe_connectors -->|материал| material_al_6061_t6
-    часть_termomoduli_pelte_ceramic_top -->|материал| material_oksid_alyuminiya
-    часть_termomoduli_pelte_electrodes -->|материал| material_copper
-    часть_termomoduli_pelte_peltier_couples -->|материал| material_bi2te3
-    часть_termomoduli_pelte_solder -->|материал| material_splav_sn_pb
-    часть_termomoduli_pelte_wires -->|материал| material_copper
-    часть_kapillyarnaya_teplovaya_trubka_connectors -->|материал| material_latun_c36000
-    часть_kapillyarnaya_teplovaya_trubka_housing -->|материал| material_al_6061_t6
-    часть_kapillyarnaya_teplovaya_trubka_core -->|материал| material_copper
-    часть_kapillyarnaya_teplovaya_trubka_mounting -->|материал| material_al_6061_t6
-    часть_mikrokanalnye_ohlazhdayuschie_plastiny_connectors -->|материал| material_al_6061_t6
+    часть_mikrokanalnye_ohlazhdayuschie_plastiny_mounting -->|материал| material_ti_6al_4v
     часть_mikrokanalnye_ohlazhdayuschie_plastiny_core -->|материал| material_copper
     часть_mikrokanalnye_ohlazhdayuschie_plastiny_housing -->|материал| material_al_6061_t6
-    часть_mikrokanalnye_ohlazhdayuschie_plastiny_mounting -->|материал| material_ti_6al_4v
+    часть_mikrokanalnye_ohlazhdayuschie_plastiny_connectors -->|материал| material_al_6061_t6
+    часть_reversivnye_pelte_ceramic_top -->|материал| material_oksid_alyuminiya
+    часть_reversivnye_pelte_electrodes -->|материал| material_copper
+    часть_reversivnye_pelte_peltier_couples -->|материал| material_bi2te3
+    часть_reversivnye_pelte_solder -->|материал| material_splav_sn_pb
+    часть_loop_heat_pipe_connectors -->|материал| material_al_6061_t6
+    часть_loop_heat_pipe_core -->|материал| material_stal_st3
+    часть_loop_heat_pipe_mounting -->|материал| material_ti_6al_4v
+    часть_loop_heat_pipe_housing -->|материал| material_al_6061_t6
+    часть_kapillyarnaya_teplovaya_trubka_housing -->|материал| material_al_6061_t6
+    часть_kapillyarnaya_teplovaya_trubka_core -->|материал| material_copper
+    часть_kapillyarnaya_teplovaya_trubka_connectors -->|материал| material_latun_c36000
+    часть_kapillyarnaya_teplovaya_trubka_mounting -->|материал| material_al_6061_t6
+    часть_termomoduli_pelte_electrodes -->|материал| material_copper
+    часть_termomoduli_pelte_wires -->|материал| material_copper
+    часть_termomoduli_pelte_solder -->|материал| material_splav_sn_pb
+    часть_termomoduli_pelte_ceramic_top -->|материал| material_oksid_alyuminiya
+    часть_termomoduli_pelte_peltier_couples -->|материал| material_bi2te3
 ```
 
 | Материал | Используется в частях |

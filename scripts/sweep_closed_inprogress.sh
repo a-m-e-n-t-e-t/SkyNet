@@ -25,9 +25,29 @@ set -uo pipefail
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
 
+# v9.59: Auto-recovery PAT (тот же механизм что в cron_run.sh)
+if [ ! -f /tmp/.pat_tmp ]; then
+    if [ -f /home/z/my-project/.pat_tmp ]; then
+        cp /home/z/my-project/.pat_tmp /tmp/.pat_tmp
+        chmod 600 /tmp/.pat_tmp
+        echo "[sweep v9.59] ✓ PAT recovered from /home/z/my-project/.pat_tmp" >&2
+    else
+        REMOTE_URL=$(git remote get-url origin 2>/dev/null || echo "")
+        case "$REMOTE_URL" in
+            https://x-access-token:*@*)
+                echo "$REMOTE_URL" | sed -nE 's#https://x-access-token:([^@]+)@.*#\1#p' > /tmp/.pat_tmp
+                chmod 600 /tmp/.pat_tmp
+                cp /tmp/.pat_tmp /home/z/my-project/.pat_tmp 2>/dev/null || true
+                echo "[sweep v9.59] ✓ PAT recovered from git remote URL" >&2
+                ;;
+            *)
+                echo "ERROR: PAT not found" >&2; exit 3
+                ;;
+        esac
+    fi
+fi
+
 [ -f /tmp/.pat_tmp ] || { echo "ERROR: /tmp/.pat_tmp not found" >&2; exit 3; }
-PAT="$(cat /tmp/.pat_tmp)"
-REPO="a-m-e-n-t-e-t/SkyNet"
 
 DRY_RUN=0
 VERBOSE=0

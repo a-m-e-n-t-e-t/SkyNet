@@ -52,9 +52,38 @@ REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
 
 # === Pre-flight ===
-[ -f /tmp/.pat_tmp ] || { echo "ERROR: /tmp/.pat_tmp not found" >&2; exit 3; }
+# v9.59: Auto-recovery PAT — /tmp не переживает sandbox-recycle.
+# Стратегия: tmp → home → git remote URL (last resort).
+if [ ! -f /tmp/.pat_tmp ]; then
+    echo "[cron_run v9.59] /tmp/.pat_tmp missing (sandbox recycled?) — auto-recovery:"
+    if [ -f /home/z/my-project/.pat_tmp ]; then
+        cp /home/z/my-project/.pat_tmp /tmp/.pat_tmp
+        chmod 600 /tmp/.pat_tmp
+        echo "[cron_run v9.59] ✓ recovered from /home/z/my-project/.pat_tmp (persistent storage)"
+    else
+        # Last resort: extract from git remote URL
+        REMOTE_URL=$(git remote get-url origin 2>/dev/null || echo "")
+        case "$REMOTE_URL" in
+            https://x-access-token:*@*)
+                echo "$REMOTE_URL" | sed -nE 's#https://x-access-token:([^@]+)@.*#\1#p' > /tmp/.pat_tmp
+                chmod 600 /tmp/.pat_tmp
+                cp /tmp/.pat_tmp /home/z/my-project/.pat_tmp 2>/dev/null || true
+                echo "[cron_run v9.59] ✓ recovered from git remote URL + saved to persistent storage"
+                ;;
+            *)
+                echo "ERROR: PAT not found in /tmp/.pat_tmp, /home/z/my-project/.pat_tmp, or git remote URL" >&2
+                echo "       Sandbox may have been recycled; manual PAT injection required." >&2
+                exit 3
+                ;;
+        esac
+    fi
+fi
+[ -f /tmp/.pat_tmp ] || { echo "ERROR: /tmp/.pat_tmp not found after recovery attempts" >&2; exit 3; }
 PAT="$(cat /tmp/.pat_tmp)"
 REPO="a-m-e-n-t-e-t/SkyNet"
+
+# v9.59: синхронизируем персистентную копию (на случай если в /tmp только что восстановили)
+[ -f /home/z/my-project/.pat_tmp ] || { cp /tmp/.pat_tmp /home/z/my-project/.pat_tmp 2>/dev/null && chmod 600 /home/z/my-project/.pat_tmp; } || true
 
 # v9.58: путь к web-search кэшу (создаётся при первом использовании)
 CACHE_DIR="диалог"
