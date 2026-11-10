@@ -7376,7 +7376,7 @@
     {
       "id": "material_tungsten_alloy",
       "type": "material",
-      "label": "W-Ni-Fe (W 90-97%) — тяжёлый сплав для радиационной защиты",
+      "label": "W-Ni-Fe тяжёлый сплав (W 90–97 % по AMS 7725 классы 1–4; типовой состав 90W-7Ni-3Fe): W-зёрна (ОЦК) в матрице γ-Ni-Fe (ГЦК), жидкофазное спекание (LPS) порошковой шихты",
       "path": "реальные данные/материалы/tungsten_alloy.md",
       "subsystem": ""
     },
@@ -17017,7 +17017,19 @@
     },
     {
       "src": "izdelie_SkyNet-TX",
+      "dst": "material_ti-6al-4v",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-TX",
       "dst": "material_tungsten_alloy",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_SkyNet-TX",
+      "dst": "material_silicone-textile_composite",
       "type": "uses_material",
       "meta": {}
     },
@@ -17930,6 +17942,7 @@
       "standart_AMS 5663 (прямое старение)",
       "standart_AMS 5666 (прутки/поковки)",
       "standart_AMS 6440 (авиационные подшипниковые стали)",
+      "standart_AMS 7725 (классы 1–4, W 90–97 %, спечённые отожжённые формы)",
       "standart_AMS 7725E Class 1 Type 2 (W-Ni-Fe бруски/заготовки)",
       "standart_ANSI/ASME B1.1 (1/4-20 UNC)",
       "standart_API 6A / NACE MR0175 (кислые среды)",
@@ -17986,6 +17999,7 @@
       "standart_ASTM B637",
       "standart_ASTM B760",
       "standart_ASTM B760 (вольфрамовая плита)",
+      "standart_ASTM B777 (лист/плита/пруток WHA)",
       "standart_ASTM B777 Grade 1 (ρ 16.85–17.30 г/см³, UTS ≥758 МПа, YS ≥517 МПа, δ ≥5 %, HRC ≤32)",
       "standart_ASTM C1161",
       "standart_ASTM C1161 (изгиб технической керамики)",
@@ -18578,7 +18592,6 @@
       "material_gst_chalcogenide",
       "material_hyperalloy_t800",
       "material_hyperalloy_t850",
-      "material_hyperalloy_tx",
       "material_inconel_718_turbine",
       "material_ir_mosi2-tasi2_tab2_ii",
       "material_karbon",
@@ -18614,12 +18627,12 @@
   },
   "stats": {
     "nodes": 1177,
-    "edges": 1610,
+    "edges": 1612,
     "dangling": {
-      "complies_with": 548,
+      "complies_with": 550,
       "has_part": 4,
       "researched_by": 93,
-      "uses_material": 53
+      "uses_material": 52
     },
     "by_type": {
       "chast": 664,
