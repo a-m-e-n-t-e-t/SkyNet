@@ -17,6 +17,13 @@ id: часть_pezoelektricheskii_gromkogovoritel_mounting
     материал: latun_c36000
     доля_массы: 1.0
 
+технологии_частей:
+  - часть: часть_pezoelektricheskii_gromkogovoritel_mounting
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: latun_c36000
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -38,7 +45,7 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-10
 источник: web_search
 источник_разбора: канон
 источник_url: https://www.murata.com/-/media/webrenewal/support/faqs/products/sound/sounder/char/sc0002/p37e.ashx?la=en

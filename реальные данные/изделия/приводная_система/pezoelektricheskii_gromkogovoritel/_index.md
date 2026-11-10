@@ -23,6 +23,34 @@ id: izdelie_pezoelektricheskii_gromkogovoritel
   - часть: часть_pezoelektricheskii_gromkogovoritel_housing
     материал: aluminum
     доля_массы: 0.27
+технологии_частей:
+  - часть: часть_pezoelektricheskii_gromkogovoritel_core
+    технология: shtampovka_listovaya
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: latun_c36000
+        роль: обрабатываемый
+технологии_частей:
+  - часть: часть_pezoelektricheskii_gromkogovoritel_housing
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
+технологии_частей:
+  - часть: часть_pezoelektricheskii_gromkogovoritel_connectors
+    технология: tokarnaya_obrabotka_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: latun_c36000
+        роль: обрабатываемый
+технологии_частей:
+  - часть: часть_pezoelektricheskii_gromkogovoritel_mounting
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: latun_c36000
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -53,7 +81,7 @@ scaling_type: количественный
 дополнительные:
   цена_usd: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
+дата_обновления: 2026-11-10
 источник: user_input
 источник_разбора: пользовательский ввод
 ---

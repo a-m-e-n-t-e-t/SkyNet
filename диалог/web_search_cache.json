@@ -5549,5 +5549,21 @@
       "https://discoverbattery.com/support/learning-center/battery-101/what-is-the-freezing-point-of-battery-acid",
       "https://www.engineeringtoolbox.com/thermal-conductivity-liquids-d_1260.html"
     ]
+  },
+  "ws_0085": {
+    "query": "piezoelectric buzzer speaker brass disc diaphragm piezo ceramic element stamped construction",
+    "date": "2026-11-10",
+    "key_facts": [
+      "Пьезо-диафрагма = керамическая пластина PZT с электродами, bonded к металлической пластине (латунь или нержавейка) (piezoelements.com, Murata)",
+      "Толщина металлической диафрагмы < 0.5 мм (bestartech.com)",
+      "Рабочий элемент — тонкий диск пьезокерамики, bonded к такой же тонкой металлической диафрагме (americanpiezo.com)",
+      "Промышленный выпуск диафрагм — вырубка/штамповка из тонкого листа латуни"
+    ],
+    "sources": [
+      "https://www.piezoelements.com/piezo-ceramic/piezo-disc/piezo-disk.html",
+      "https://www.murata.com/~/media/webrenewal/support/library/catalog/products/sound/p15e.ashx",
+      "https://www.americanpiezo.com/products-services/buzzers",
+      "https://www.bestartech.com/product-category/piezo-elements"
+    ]
   }
 }

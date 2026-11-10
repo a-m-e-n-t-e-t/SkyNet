@@ -17,6 +17,13 @@ id: часть_pezoelektricheskii_gromkogovoritel_connectors
     материал: latun_c36000
     доля_массы: 1.0
 
+технологии_частей:
+  - часть: часть_pezoelektricheskii_gromkogovoritel_connectors
+    технология: tokarnaya_obrabotka_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: latun_c36000
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -41,7 +48,7 @@ scaling_type: количественный
   pin_count: 2
 
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-05
+дата_обновления: 2026-11-10
 источник: web_search
 источник_разбора: веб-верификация
 источник_url: https://www.phoenixcontact.com
