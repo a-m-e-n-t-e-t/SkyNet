@@ -5516,5 +5516,22 @@
       "https://zldetch.com/productdetail/35.html",
       "https://www.photofabrication.com/materials/beryllium-copper"
     ]
+  },
+  "ws_0083": {
+    "query": "8YSZ yttria stabilized zirconia SOFC electrolyte density thermal conductivity melting point ionic conductivity properties",
+    "date": "2026-11-10",
+    "key_facts": [
+      "8YSZ = ZrO₂ + 8 mol% Y₂O₃, полностью стабилизированная кубическая флюоритная фаза Fm-3m",
+      "λ bulk 2.0–2.3 W/mK; плазменные покрытия пористость 10–15% → эффективная λ 0.8–1.2 W/mK (zz-zirconia)",
+      "ионная проводимость 0.10–0.13 S/cm при 1000 °C (zz-zirconia)",
+      "CTE ~11×10⁻⁶/°C; K1c 1.5–2.0 MPa·m½; макс. рабочая ~1200 °C, TBC до 1250 °C (zz-zirconia, oerlikon)",
+      "ρ 5.85–6.10 g/cc (спечённая ~6.05); E 200–210 ГПа (preciseceramic); T плавления 2710 °C (wikipedia YSZ)"
+    ],
+    "sources": [
+      "https://en.zz-zirconia.com/8ysz-yttria-stabilized-zirconia-properties-applications-selection-guide",
+      "https://www.preciseceramic.com/products/yttria-stabilized-zirconia.html",
+      "https://en.wikipedia.org/wiki/Yttria-stabilized_zirconia",
+      "https://www.oerlikon.com/ecoma/files/DSM-0273_8YO_ZrO_AggSint.pdf"
+    ]
   }
 }
