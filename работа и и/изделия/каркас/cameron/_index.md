@@ -1,5 +1,4 @@
 ---
-
 id: izdelie_SkyNet-Cameron
 тип: изделие
 категория: машиностроение
@@ -21,11 +20,35 @@ id: izdelie_SkyNet-Cameron
   - часть_cameron_ткань_кожа
 материалы_частей:
   - часть: часть_cameron_эндоскелет
-    материал: titanium_alloy
+    материал: ti-6al-4v
+    форма: планер_и_космические_изделия
     доля_массы: 0.4842
   - часть: часть_cameron_ткань_кожа
-    материал: living_tissue_clone
+    материал: silicone-textile_composite
+    форма: протезная_кожа_силиконовая
     доля_массы: 0.031
+технологии_частей:
+  - часть: часть_cameron_эндоскелет
+    технология: ebw
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: ti-6al-4v
+        роль: обрабатываемый
+  - часть: часть_cameron_ткань_кожа
+    технология: parylene_c
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: silicone-textile_composite
+        роль: обрабатываемый
+наследуемые_материалы:
+  - материал: ti-6al-4v
+    суммарная_доля_массы: 0.4842
+    источники_частей:
+      - часть_cameron_эндоскелет
+  - материал: silicone-textile_composite
+    суммарная_доля_массы: 0.031
+    источники_частей:
+      - часть_cameron_ткань_кожа
 
 scaling_type: количественный
 соединители: []
@@ -49,9 +72,6 @@ scaling_type: количественный
 источник_дата: 2026-11-07
 источник_разбора: канон
 ---
-
-# Изделие-обёртка: SkyNet-Cameron
-
 ## Описание
 
 Wrapper-изделие для модели `SkyNet-Cameron` (тип: гуманоидный, подсистема: каркас).
@@ -59,30 +79,15 @@ Wrapper-изделие для модели `SkyNet-Cameron` (тип: гуман�
 Создано для поддержки декомпозиции: дочерние части (часть_*) ссылаются на
 этот id как на родителя. Сама модель остаётся в фантастические данные/модели/.
 
-## Декомпозиция
+## Технические характеристики
 
-```mermaid
-graph TD
-    Cameron["SkyNet-Cameron"]
-    cameron_cpu["часть_cameron_cpu"]
-    Cameron --> cameron_cpu
-    cameron_эндоскелет["часть_cameron_эндоскелет"]
-    Cameron --> cameron_эндоскелет
-    cameron_топливная_ячейка_["часть_cameron_топливная_ячейка_1"]
-    Cameron --> cameron_топливная_ячейка_
-    cameron_топливная_ячейка_["часть_cameron_топливная_ячейка_2"]
-    Cameron --> cameron_топливная_ячейка_
-    cameron_рука_левая["часть_cameron_рука_левая"]
-    Cameron --> cameron_рука_левая
-    Cameron --> cameron_рука_правая
-    cameron_нога_левая["часть_cameron_нога_левая"]
-    Cameron --> cameron_нога_левая
-    Cameron --> cameron_нога_правая
-    cameron_сенсоры["часть_cameron_сенсоры"]
-    Cameron --> cameron_сенсоры
-    cameron_ткань_кожа["часть_cameron_ткань_кожа"]
-    Cameron --> cameron_ткань_кожа
-```
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| подсистема | каркас | — | canon |
+| подтип | прочее | — | canon |
+| тип узла | изделие | — | canon |
+| уровень_номер | 1 | — | canon |
+
 
 ## Состав
 
@@ -96,10 +101,46 @@ graph TD
 - `часть_cameron_сенсоры`
 - `часть_cameron_ткань_кожа`
 
-## Связанная модель
+## Используемые технологии
 
-- [`SkyNet-Cameron`](../../../../фантастические%20данные/модели/cameron_phillips) — модель SkyNet
+- `ebw` (доля: 1.0)
+- `parylene_c` (доля: 1.0)
+
+
+## Используемые материалы
+
+- `ti-6al-4v` (форма: планер_и_космические_изделия) → [`ti-6al-4v`](../../../материалы/ti-6al-4v.md)
+- `silicone-textile_composite` (форма: протезная_кожа_силиконовая) → [`silicone-textile_composite`](../../../материалы/silicone-textile_composite.md)
+
 
 ## Источники
 
 - Wrapper-изделие создано автоматически (2026-11-03) для поддержки декомпозиции
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    izdelie_SkyNet_Cameron["izdelie_SkyNet-Cameron"]
+    ______cameron_cpu["часть_cameron_cpu"]
+    izdelie_SkyNet_Cameron --> ______cameron_cpu
+    ______cameron___________["часть_cameron_эндоскелет"]
+    izdelie_SkyNet_Cameron --> ______cameron___________
+    ______cameron__________________1["часть_cameron_топливная_ячейка_1"]
+    izdelie_SkyNet_Cameron --> ______cameron__________________1
+    ______cameron__________________2["часть_cameron_топливная_ячейка_2"]
+    izdelie_SkyNet_Cameron --> ______cameron__________________2
+    ______cameron___________["часть_cameron_рука_левая"]
+    izdelie_SkyNet_Cameron --> ______cameron___________
+    ______cameron___________["часть_cameron_нога_левая"]
+    izdelie_SkyNet_Cameron --> ______cameron___________
+    ______cameron________["часть_cameron_сенсоры"]
+    izdelie_SkyNet_Cameron --> ______cameron________
+    ______cameron___________["часть_cameron_ткань_кожа"]
+    izdelie_SkyNet_Cameron --> ______cameron___________
+```
+
+
+## Связанная модель
+
+- [`SkyNet-Cameron`](../../../../фантастические%20данные/модели/cameron_phillips) — модель SkyNet
