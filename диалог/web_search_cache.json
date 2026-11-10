@@ -5703,5 +5703,17 @@
   ],
   "issue": "#1002 izdelie_tcp F27e",
   "action": "технологии_частей: core→spiralnaya_navivka (навивка+отжиг термофиксации 20–150 °C), housing→tokarnaya_obrabotka_chpu, connectors→lite_pod_davleniem (TPI), mounting→frezervanie_chpu"
+ },
+ "ws_0095": {
+  "query": "BLDC motor housing aluminum manufacturing CNC turning milling stator lamination stamping Maxon EC45",
+  "date": "2026-11-10",
+  "key_facts": [
+   "BLDC статорные пакеты: штамповка/лазерная резка ламинаций 0.2/0.35/0.5 мм кремнистой стали (lamistacks.com)",
+   "Корпуса моторов: CNC Lathe (токарная) — стандартный процесс моторных housing (swihartindustries.com)",
+   "maxon EC45 — референс BLDC Ø45×90 (maxongroup.com)",
+   "Прецеденты в репо (bldc_enkoder): connectors→tokarnaya_obrabotka_chpu, housing/mounting→frezervanie_chpu"
+  ],
+  "issue": "#1004 izdelie_bldc F27e",
+  "action": "технологии_частей: core→shtampovka_listovaya (статорный пакет), housing→frezervanie_chpu, connectors→tokarnaya_obrabotka_chpu (MIL-DTL-38999), mounting→frezervanie_chpu; материалы_для_процесса=al_6061-t6 по FM"
  }
 }
