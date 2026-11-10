@@ -5771,5 +5771,10 @@
   "date": "2026-11-10",
   "url": "https://en.wikipedia.org/wiki/Rheinmetall_Rh-120",
   "result": "EFC barrel life ~1500 rounds originally, увеличен с новыми пропеллентами; inetres M256: Safe Service Life 4500, EFC 1500"
+ },
+ "M134 Minigun 7.62мм 2000-6000 rpm": {
+  "date": "2026-11-10",
+  "url": "https://en.wikipedia.org/wiki/M134_Minigun",
+  "result": "M134: американский 7.62×51 мм NATO шестиствольный роторный пулемёт, 2000–6000 выстрелов/мин"
  }
 }
