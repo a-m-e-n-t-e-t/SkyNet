@@ -31,8 +31,8 @@ id: izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza
     форма: валы_и_магнитопроводы_муфт
     доля_массы: 0.285
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_powder
-    материал: iron_powder
-    форма: ферромагнитный_порошок_рабочего_зазора
+    материал: karbonilnoe_zhelezo
+    форма: mr_fluid_cip_ew
     доля_массы: 0.057
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_bearings
     материал: stainless_steel_440c
@@ -83,7 +83,7 @@ id: izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza
       - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_rotor
       - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_stator
   - материал: karbonilnoe_zhelezo
-    форма: ферромагнитный_порошок_рабочего_зазора
+    форма: mr_fluid_cip_ew
     суммарная_доля_массы: 0.057
     источники_частей:
       - часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_powder
@@ -126,7 +126,7 @@ scaling_type: количественный
   источник_url: https://www.scribd.com/doc/317064781/Clutch-Fl50k-Powder-Magnetic-Particle
   источник_url_2: https://www.kendrion.com/en/products/clutches-and-brakes
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
+дата_обновления: 2026-11-10
 источник: user_input
 источник_разбора: пользовательский ввод
 ---
@@ -152,7 +152,7 @@ scaling_type: количественный
 
 ## Состав
 
-Изделие верхнего уровня (уровень 1), 6 частей уровня 2: coil (катушка возбуждения, copper, 0.8 кг), rotor (ротор с валом Ø30, steel_1045, 1.5 кг), stator (статорное кольцо с магнитопроводом, steel_1045, 1.5 кг), powder (магнитопорошковая смесь в рабочем зазоре, iron_powder, 0.3 кг), bearings (подшипниковые опоры вала, stainless_steel_440c, 0.3 кг), housing (корпус с фланцем Ø110 M6 и кабельным вводом, stal_st3, 5 кг оценка).
+Изделие верхнего уровня (уровень 1), 6 частей уровня 2: coil (катушка возбуждения, copper, 0.8 кг), rotor (ротор с валом Ø30, steel_1045, 1.5 кг), stator (статорное кольцо с магнитопроводом, steel_1045, 1.5 кг), powder (магнитопорошковая смесь в рабочем зазоре, karbonilnoe_zhelezo, 0.3 кг), bearings (подшипниковые опоры вала, stainless_steel_440c, 0.3 кг), housing (корпус с фланцем Ø110 M6 и кабельным вводом, stal_st3, 5 кг оценка).
 
 ## Используемые технологии
 

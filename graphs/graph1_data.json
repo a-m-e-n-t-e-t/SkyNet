@@ -10623,6 +10623,12 @@
     },
     {
       "src": "izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza",
+      "dst": "material_karbonilnoe_zhelezo",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza",
       "dst": "material_stainless_steel_440c",
       "type": "uses_material",
       "meta": {}
@@ -18464,7 +18470,6 @@
       "material_hyperalloy_tx",
       "material_inconel_718_turbine",
       "material_ir_mosi2-tasi2_tab2_ii",
-      "material_iron_powder",
       "material_karbon",
       "material_lithium_hydrogen_cell",
       "material_lithium_metal",
@@ -18502,12 +18507,12 @@
   },
   "stats": {
     "nodes": 1173,
-    "edges": 1596,
+    "edges": 1597,
     "dangling": {
       "complies_with": 546,
       "has_part": 4,
       "researched_by": 90,
-      "uses_material": 58
+      "uses_material": 57
     },
     "by_type": {
       "chast": 664,

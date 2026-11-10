@@ -14,6 +14,7 @@ id: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_powder
 материалы_частей:
   - часть: часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_powder
     материал: karbonilnoe_zhelezo
+    форма: mr_fluid_cip_ew
     доля_массы: 1.0
 
 scaling_type: количественный
