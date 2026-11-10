@@ -5761,5 +5761,15 @@
   "date": "2026-11-10",
   "url": "https://www.bs-track.com/why-bs-track",
   "result": "борированные стали C ~0.25%: стойкость к трещинам; LS Mtron: forging + heat treatment + machining + assembly; Fushun: hot-rolled sections для track shoe"
+ },
+ "M1 Abrams масса композитная броня 66.8 т": {
+  "date": "2026-11-10",
+  "url": "https://en.wikipedia.org/wiki/M1_Abrams",
+  "result": "M1 Abrams ~73.6 short tons (66.8 metric tons), композитная (Chobham) броня, M1A2 120mm M256 smoothbore"
+ },
+ "M256 Rh-120 EFC ресурс ствола": {
+  "date": "2026-11-10",
+  "url": "https://en.wikipedia.org/wiki/Rheinmetall_Rh-120",
+  "result": "EFC barrel life ~1500 rounds originally, увеличен с новыми пропеллентами; inetres M256: Safe Service Life 4500, EFC 1500"
  }
 }
