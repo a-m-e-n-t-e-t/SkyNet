@@ -14,8 +14,17 @@ id: часть_termomoduli_pelte_peltier_couples
 материалы_частей:
   - часть: часть_termomoduli_pelte_peltier_couples
     материал: bi2te3
+    форма: модуль_пельтье
     доля_массы: 1.0
 
+# F27e: технология обработки части (vakuumnoe_spekanie; файл технологии/ существует)
+технологии_частей:
+  - часть: часть_termomoduli_pelte_peltier_couples
+    технология: vakuumnoe_spekanie
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: bi2te3
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная

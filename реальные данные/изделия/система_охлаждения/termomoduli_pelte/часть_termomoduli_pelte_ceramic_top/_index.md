@@ -15,8 +15,17 @@ id: часть_termomoduli_pelte_ceramic_top
 материалы_частей:
   - часть: часть_termomoduli_pelte_ceramic_top
     материал: oksid_alyuminiya
+    форма: electronic_substrate
     доля_массы: 1.0
 
+# F27e: технология обработки части (tape_casting; файл технологии/ существует)
+технологии_частей:
+  - часть: часть_termomoduli_pelte_ceramic_top
+    технология: tape_casting
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: oksid_alyuminiya
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная

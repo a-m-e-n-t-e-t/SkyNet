@@ -14,8 +14,17 @@ id: часть_termomoduli_pelte_solder
 материалы_частей:
   - часть: часть_termomoduli_pelte_solder
     материал: splav_sn-pb
+    форма: smt_tht_пайка_pcb
     доля_массы: 1.0
 
+# F27e: технология обработки части (payka_silovyh_kontaktov; файл технологии/ существует)
+технологии_частей:
+  - часть: часть_termomoduli_pelte_solder
+    технология: payka_silovyh_kontaktov
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: splav_sn-pb
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная

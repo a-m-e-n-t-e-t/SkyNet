@@ -14,8 +14,17 @@ id: часть_termomoduli_pelte_electrodes
 материалы_частей:
   - часть: часть_termomoduli_pelte_electrodes
     материал: copper
+    форма: шины_и_заземление
     доля_массы: 1.0
 
+# F27e: технология обработки части (shtampovka_listovaya; файл технологии/ существует)
+технологии_частей:
+  - часть: часть_termomoduli_pelte_electrodes
+    технология: shtampovka_listovaya
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: copper
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
