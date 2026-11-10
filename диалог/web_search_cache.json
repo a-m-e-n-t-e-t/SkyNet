@@ -5499,5 +5499,22 @@
         "Festo Fluidic Muscle DMSP: https://www.festo.com/us/en/p/fluidic-muscle-id_DMSP"
       ]
     }
-  ]
+  ],
+  "ws_0082": {
+    "query": "beryllium copper CuBe thin sheet 0.15 mm disc spring stamped blanked photochemical etching flexure manufacturing",
+    "date": "2026-11-10",
+    "key_facts": [
+      "Precision BeCu spring sheet обрабатывается фотохимическим травлением (zldetch.com) — эластичность и коррозионная стойкость",
+      "Beryllium Copper Photochemical Etching — стандарт для прецизионных деталей из BeCu (e-fab.com)",
+      "Microphoto: BeCu = медный сплав с 0.5-3% Be, прецизионное травление листов (microphoto.net)",
+      "CuBe disc springs — дисковые пружины из бериллиевой бронзы: высокие усилия при малых ходах (coilingtech.com)",
+      "PEI: machining/etching BeCu для контактов и ECI-экранов (photofabrication.com)"
+    ],
+    "sources": [
+      "https://www.e-fab.com/material/beryllium-copper",
+      "https://www.coilingtech.com/blog/beryllium-copper-disc-spring",
+      "https://zldetch.com/productdetail/35.html",
+      "https://www.photofabrication.com/materials/beryllium-copper"
+    ]
+  }
 }
