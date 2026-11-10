@@ -14,8 +14,17 @@ id: часть_marx_generator_output_terminal
 материалы_частей:
   - часть: часть_marx_generator_output_terminal
     материал: copper
+    форма: шины_и_заземление
     доля_массы: 1.0
 
+# F27e: технология обработки части (tokarnaya_obrabotka_chpu; файл технологии/ существует)
+технологии_частей:
+  - часть: часть_marx_generator_output_terminal
+    технология: tokarnaya_obrabotka_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: copper
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная

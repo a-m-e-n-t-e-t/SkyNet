@@ -14,8 +14,17 @@ id: часть_marx_generator_resistors
 материалы_частей:
   - часть: часть_marx_generator_resistors
     материал: nichrome
+    форма: nikrothal_80_wire_heating
     доля_массы: 1.0
 
+# F27e: технология обработки части (volochenie; файл технологии/ существует)
+технологии_частей:
+  - часть: часть_marx_generator_resistors
+    технология: volochenie
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: nichrome
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
