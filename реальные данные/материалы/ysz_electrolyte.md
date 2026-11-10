@@ -85,9 +85,9 @@ id: material_ysz_electrolyte
 ---
 ## Описание
 
-Иттрий-стабилизированный диоксид циркония — кислород-ионный проводник при 800°C, стандартный электролит SOFC.
+Иттрий-стабилизированный диоксид циркония (8YSZ) — кислород-ионный проводник: 8 mol% Y₂O₃ полностью стабилизирует кубическую флюоритную фазу (Fm-3m) ZrO₂ и создаёт концентрацию кислородных вакансий, обеспечивающую ионную проводимость 0.10–0.13 S/cm при 1000 °C. Стандартный электролит SOFC/SOEC; в низкотемпературных SOFC применяется в виде субмикронных плёнок (<10 мкм). Низкая теплопроводность (2.0–2.3 Вт/м·К bulk; 0.8–1.2 в плазменных покрытиях с пористостью 10–15%) при CTE ~11×10⁻⁶/K делает материал также промышленным стандартом тепловых барьерных покрытий (TBC) до 1200–1250 °C.
 
-**STUB:** Этот файл создан автоматически в v9.60 Фазе 2.5b для устранения 35 битых ссылок в `decompose_all_izdeliya.py:DECOMP_TEMPLATES`. Содержимое — минимальная заготовка. Требуется детальное наполнение (физические свойства, варианты_по_применению, стандарты) через cron-агента `verify_decomposition.yml`.
+Механика заполнена по кубической марке: E ≈ 200 ГПа, вязкость разрушения 1.5–2.0 MPa·m½; изгибная прочность конкретно для кубической 8YSZ в полученных источниках не приводится (3Y-TZP 900–1200 МПа — другая марка), поле оставлено null до профильного источника.
 
 ## Технические характеристики
 
@@ -98,6 +98,11 @@ id: material_ysz_electrolyte
 
 ## Источники
 
+- [ZZ Zirconia — 8YSZ: properties, applications, selection guide](https://en.zz-zirconia.com/8ysz-yttria-stabilized-zirconia-properties-applications-selection-guide) — λ 2.0–2.3 Вт/м·К, ионная 0.10–0.13 S/cm @1000 °C, CTE ~11×10⁻⁶, K1c 1.5–2.0, T макс 1200 °C (web_search 2026-11-10)
+- [Precision Ceramics — Yttria Stabilized Zirconia](https://www.preciseceramic.com/products/yttria-stabilized-zirconia.html) — ρ 5.85–6.10 g/cc, E 200–210 ГПа, T макс 2400 °C
+- [Wikipedia — Yttria-stabilized zirconia](https://en.wikipedia.org/wiki/Yttria-stabilized_zirconia) — T плавления 2710 °C, фазовая стабилизация
+- [Oerlikon Metco DSM-0273 — 8YSZ thermal spray powders](https://www.oerlikon.com/ecoma/files/DSM-0273_8YO_ZrO_AggSint.pdf) — TBC защита до 1250 °C
+
 ## Химический состав
 
-ZrO₂ + 8 mol% Y₂O₃ (8YSZ) — твёрдый электролит SOFC
+ZrO₂ + 8 mol% Y₂O₃ (Zr₀.₉₂Y₀.₀₈O₁.₉₆) — твёрдый кислород-ионный электролит; чистота ≥99.9% (примеси SiO₂+Al₂O₃+Fe₂O₃+TiO₂ ≤ 0.1 wt%)
