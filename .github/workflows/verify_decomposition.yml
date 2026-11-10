@@ -1,4 +1,18 @@
 # SkyNet Decomposition Verification — auto-create issues for files needing verification
+# v9.59 (FIX supplement-duplication): регекс \\w+ НЕ ловил F-scal / F-ai-lineage /
+#   F-fant-children (содержат дефис). Каждый прогон считал эти violation «новыми»
+#   и добавлял supplement-комментарий → 490 issues получили 50–113 одинаковых
+#   комментариев с одним dedup_key (F-scal:izdelie_X...).
+#   Дополнительно: scanning тела issue НЕ включал комментарии → даже для
+#   бездефисных метрик повторный supplement не отбрасывался после первого.
+#   Фикс v9.59:
+#     (1) regex: \\w+ → [\\w-]+ (ловит все 3 дефисные метрики);
+#     (2) regex: ' — ' → ' [—:] ' (ловит оба формата: Нарушения em-dash
+#         И Чек-листы colon `**METRIC**: violation`);
+#     (3) supplement-dedup: fetch listComments(issue) → combinedText =
+#         body + все комментарии, и парсим violations из combined.
+#     (4) Split step: тот же regex-фикс ([\\w-]+) — иначе parent с F-scal
+#         violations недооценивались и не разбивались на sub-issues.
 # v9.57 (HYBRID): группировка violations по file_id — один issue на файл.
 #   - Если открытый issue с этим file_id уже есть → supplement: добавляем комментарий
 #     с новыми violations, не покрытыми исходным чек-листом (dedup_keys сравниваются).
@@ -266,10 +280,36 @@ jobs:
                 // v9.57: сравниваем по ПОЛНОМУ тексту violation (metric|violation_text),
                 // не по dedup_key — F27f на одном файле с разными технологиями
                 // может давать одинаковый dedup_key (F27f:часть_X), но violations разные.
-                const existingBody = existing.body || '';
+                //
+                // v9.59 FIX duplication: регулярка \w+ НЕ ловила метрики с дефисом
+                // (F-scal, F-ai-lineage, F-fant-children) → каждый прогон добавлял
+                // новый supplement с тем же violation. Также НЕ сканировались
+                // комментарии → даже после первого supplement-комментария повтор
+                // не отбрасывался.
+                //   Фикс: (1) [\w-]+ вместо \w+;
+                //         (2) разделитель ' [—:] ' (em-dash ИЛИ colon);
+                //         (3) сканируем body AND все комментарии listComments.
+                let combinedText = existing.body || '';
+                try {
+                  for (let page = 1; page <= 5; page++) {
+                    const resp = await github.rest.issues.listComments({
+                      owner: context.repo.owner, repo: context.repo.repo,
+                      issue_number: existing.number,
+                      per_page: 100, page: page,
+                    });
+                    if (resp.data.length === 0) break;
+                    for (const c of resp.data) {
+                      combinedText += '\n' + (c.body || '');
+                    }
+                    if (resp.data.length < 100) break;
+                  }
+                } catch (e) {
+                  console.log(`  #${existing.number}: comment fetch failed (${e.message}), body-only dedup`);
+                }
                 const existingViolations = new Set();
-                // Из тела issue: парсим строки "- [ ] **METRIC** — VIOLATION_TEXT"
-                for (const m of existingBody.matchAll(/- \[ \] \*\*(\w+)\*\* — (.+)/g)) {
+                // v9.59: [\w-]+ — ловит F-scal/F-ai-lineage/F-fant-children.
+                // v9.59: [—:] — оба формата (Нарушения em-dash + Чек-листы colon).
+                for (const m of combinedText.matchAll(/- \[ \] \*\*([\w-]+)\*\* [—:] (.+)/g)) {
                   existingViolations.add(m[1] + '|' + m[2].trim());
                 }
                 const newViols = viols.filter(v => !existingViolations.has(v.metric + '|' + v.violation));
@@ -535,7 +575,9 @@ jobs:
               }
               const body = parent.body || '';
               const viols = [];
-              for (const m of body.matchAll(/- \[ \] \*\*(\w+)\*\* — (.+)/g)) {
+              // v9.59: [\w-]+ — ловит F-scal/F-ai-lineage/F-fant-children;
+              //        [—:] — оба формата (Нарушения em-dash + Чек-листы colon).
+              for (const m of body.matchAll(/- \[ \] \*\*([\w-]+)\*\* [—:] (.+)/g)) {
                 viols.push({ metric: m[1], violation: m[2].trim() });
               }
               if (viols.length < threshold) { skipped++; continue; }
