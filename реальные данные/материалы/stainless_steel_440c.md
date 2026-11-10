@@ -5,7 +5,7 @@ id: material_stainless_steel_440c
 класс: металл
 химический_состав: 'Fe (основа), C 0.95–1.20 масс.%, Cr 16–18 масс.%, Mo ≤ 0.75 масс.%, Mn ≤ 1.0 масс.%, Si ≤ 1.0 масс.%, P/S ≤ 0.04/0.03 % (ASTM A276, UNS S44004)'
 кристаллическая_структура: 'мартенситная нержавеющая сталь; после закалки (1010–1070 °C, масло/воздух) и отпуска 148 °C — отпущенный мартенсит с карбидами хрома (M7C3/M23C6), обеспечивающими высшую твёрдость среди нержавеющих сталей'
-вариант_структуры: закалённые_шарики_hrc60
+вариант_структуры: martensitic_quenched
 оптимальная_структура:
   структура: 'закалённые шарики/детали 58–60 HRC (Wikipedia 440C: heat treated to 58–60 HRC; поставка шаров с HRC 60–65), отпуск 148 °C (300 °F) по ASTM A276'
   обоснование_выбора: 'подшипники качения в средах, где хромистая 52100 корродирует: максимальная твёрдость нержавеющих сталей (~HRC 60) + коррозионная стойкость уровня 304-подобных сортов'
@@ -38,6 +38,8 @@ id: material_stainless_steel_440c
   верификация: []
 основные:
   плотность_kg_m3: 7700
+  теплопроводность_W_mK: {min: 23, max: 27, nominal: 24.2}
+  температура_плавления_C: {min: 1371, max: 1482, nominal: 1427}
   твёрдость_HRC: {min: 58, max: 60, nominal: 59}
   модуль_упругости_ГПа: {min: 190, max: 210, nominal: 200}
   предел_прочности_МПа: {min: 1750, max: 2000, nominal: 1900}
@@ -59,10 +61,11 @@ id: material_stainless_steel_440c
 
 ## Источники
 
-- Wikipedia — 440C (58–60 HRC, rolling contact stainless bearings)
+- Wikipedia — 440C (58–60 HRC, rolling contact stainless bearings; теплопроводность 24.2 W/m·K при 100 °C): https://en.wikipedia.org/wiki/440C (проверено 2026-11-10)
+- Rolled Alloys — 440C Stainless Steel Data Sheet (плотность 0.275 lb/in³ ≈ 7610 кг/м³; интервал плавления 2500–2700 °F = 1371–1482 °C): https://www.rolledalloys.com/wp-content/uploads/440C_stainless-steel-data-sheet.pdf (обращение 2026-11-10)
+- AZoM — Stainless Steel Grade 440 (UNS S44000; теплопроводность 23–27 W/m·K): https://www.azom.com/properties.aspx?ArticleID=1024 (обращение 2026-11-10)
 - ASTM A276/A276M — Stainless Steel Bars and Shapes (UNS S44004)
 - astmsteel.com — 440C Stainless Steel (отпуск 148 °C → HRC ~60), 2024-02-27
-- AZoM — A261: 440C Stainless Steel properties
 
 ## Варианты применения (варианты_по_применению)
 
