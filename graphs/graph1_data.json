@@ -7418,7 +7418,7 @@
     {
       "id": "material_ysz_electrolyte",
       "type": "material",
-      "label": "ZrO₂ + 8 mol% Y₂O₃ (8YSZ) — твёрдый электролит SOFC",
+      "label": "ZrO₂ + 8 mol% Y₂O₃ (Zr₀.₉₂Y₀.₀₈O₁.₉₆) — твёрдый кислород-ионный электролит",
       "path": "реальные данные/материалы/ysz_electrolyte.md",
       "subsystem": ""
     },
@@ -17940,6 +17940,7 @@
       "standart_AlN substrate grade (PCAN1000 / CeramTec ALN)",
       "standart_Arbe Phoenix Integration Guide",
       "standart_BASF CIP grades (EW/HQ/HS/SM)",
+      "standart_BCI specifications",
       "standart_BME/PME — технологии внутренних электродов (Ni vs Ag/Pd)",
       "standart_Bosch Sensortec PCB Guide",
       "standart_CAS 12039-79-1 (реестровый идентификатор соединения TaSi₂)",
@@ -17983,6 +17984,7 @@
       "standart_EN 1092-1 (Type 01, PN10 DN50)",
       "standart_EN 12164",
       "standart_EN 13345",
+      "standart_EN 50342",
       "standart_EN 50342-1",
       "standart_EN 50342-1 (стартерные свинцово-кислотные АКБ)",
       "standart_EN 50598",
@@ -18170,6 +18172,7 @@
       "standart_JEDEC MS-001 (DIP)",
       "standart_JEDEC MS-024 (QFP размеры тела/шаг выводов семейство)",
       "standart_JIS C 5101-11",
+      "standart_JIS D 5301",
       "standart_JIS D5301",
       "standart_JIS G4805 (SUJ2)",
       "standart_JIS Z 3282 / ISO 9453 — составы бессвинцовых припоев",
@@ -18485,7 +18488,7 @@
     "nodes": 1173,
     "edges": 1594,
     "dangling": {
-      "complies_with": 540,
+      "complies_with": 543,
       "has_part": 4,
       "researched_by": 88,
       "uses_material": 59
