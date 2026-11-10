@@ -5689,5 +5689,19 @@
   ],
   "issue": "#1001 material_stainless_steel_440c",
   "action": "добавлены теплопроводность {23,27,24.2}, плавление {1371,1482,1427}; вариант_структуры закалённые_шарики_hrc60 → martensitic_quenched (консистентно с 100cr6.md)"
+ },
+ "ws_0094": {
+  "query": "twisted and coiled polymer actuator fabrication nylon fishing line twist coiling annealing Haines Mirvakili",
+  "date": "2026-11-10",
+  "key_facts": [
+   "Фабрикация TCP: скручивание нейлоновой мононити (fishing line) DC-мотором до порога самонавивки в коил (Mirvakili 2014 MIT, IEEE Pulse 2015)",
+   "Silver painted / silver coated nylon 6,6 threads — стандартная автоматизированная процедура (Mirvakili 2014; Wu 2022)",
+   "Термофиксация отжигом: нейлон 120–150 °C; UHMWPE 130 °C даёт лучший результат (Man 2023, Sensors & Actuators A 364)",
+   "Джоулев нагрев через серебряное покрытие/выводы; 2-ply TCP — удвоенный ход",
+   "Haines 2014 (Science 347:868-872) — базовый протокол: twist → coil → anneal → train",
+   "Источники: embs.org/pulse/articles/twisted-lines, dspace.mit.edu (Mirvakili), pmc.ncbi.nlm.nih.gov/articles/PMC9696038, ui.adsabs.harvard.edu (Man 2023)"
+  ],
+  "issue": "#1002 izdelie_tcp F27e",
+  "action": "технологии_частей: core→spiralnaya_navivka (навивка+отжиг термофиксации 20–150 °C), housing→tokarnaya_obrabotka_chpu, connectors→lite_pod_davleniem (TPI), mounting→frezervanie_chpu"
  }
 }
