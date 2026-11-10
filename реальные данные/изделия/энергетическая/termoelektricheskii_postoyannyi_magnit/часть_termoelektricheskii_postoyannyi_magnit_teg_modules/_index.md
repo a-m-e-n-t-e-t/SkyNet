@@ -15,8 +15,17 @@ id: часть_termoelektricheskii_postoyannyi_magnit_teg_modules
 материалы_частей:
   - часть: часть_termoelektricheskii_postoyannyi_magnit_teg_modules
     материал: bi2te3
+    форма: тэг_генератор
     доля_массы: 1.0
 
+# F27e: технология обработки части (vakuumnoe_spekanie; файл технологии/ существует)
+технологии_частей:
+  - часть: часть_termoelektricheskii_postoyannyi_magnit_teg_modules
+    технология: vakuumnoe_spekanie
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: bi2te3
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная

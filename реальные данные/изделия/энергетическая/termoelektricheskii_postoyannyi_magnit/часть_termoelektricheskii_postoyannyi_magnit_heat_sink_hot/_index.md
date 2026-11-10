@@ -14,8 +14,17 @@ id: часть_termoelektricheskii_postoyannyi_magnit_heat_sink_hot
 материалы_частей:
   - часть: часть_termoelektricheskii_postoyannyi_magnit_heat_sink_hot
     материал: al_6061-t6
+    форма: теплоотводящие_узлы
     доля_массы: 1.0
 
+# F27e: технология обработки части (frezervanie_chpu; файл технологии/ существует)
+технологии_частей:
+  - часть: часть_termoelektricheskii_postoyannyi_magnit_heat_sink_hot
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная

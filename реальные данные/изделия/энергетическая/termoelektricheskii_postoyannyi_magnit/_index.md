@@ -19,13 +19,95 @@ id: izdelie_termoelektricheskii_postoyannyi_magnit
 материалы_частей:
   - часть: часть_termoelektricheskii_postoyannyi_magnit_teg_modules
     материал: bi2te3
+    форма: тэг_генератор
     доля_массы: 0.36
   - часть: часть_termoelektricheskii_postoyannyi_magnit_heat_sink_hot
-    материал: copper
-    доля_массы: 0.19
+    материал: al_6061-t6
+    форма: теплоотводящие_узлы
+    доля_массы: 0.2
   - часть: часть_termoelektricheskii_postoyannyi_magnit_heat_sink_cold
-    материал: aluminum
-    доля_массы: 0.19
+    материал: al_6061-t6
+    форма: теплоотводящие_узлы
+    доля_массы: 0.2
+  - часть: часть_termoelektricheskii_postoyannyi_magnit_clamping
+    материал: ss_aisi_304
+    форма: крепёж_пружины_холоднодеформ
+    доля_массы: 0.1
+  - часть: часть_termoelektricheskii_postoyannyi_magnit_insulation
+    материал: sio2_amorphous
+    форма: аэрогель_основа
+    доля_массы: 0.1
+# F29 B-BOM: агрегация (материал, форма) по частям; доли = масса_части/0.5 кг
+# (0.18→0.36; 0.1→0.2; 0.1→0.2; 0.05→0.1; 0.05→0.1); al_6061-t6 = hot+cold
+наследуемые_материалы:
+  - материал: bi2te3
+    форма: тэг_генератор
+    суммарная_доля_массы: 0.36
+    источники_частей:
+      - часть_termoelektricheskii_postoyannyi_magnit_teg_modules
+  - материал: al_6061-t6
+    форма: теплоотводящие_узлы
+    суммарная_доля_массы: 0.4
+    источники_частей:
+      - часть_termoelektricheskii_postoyannyi_magnit_heat_sink_hot
+      - часть_termoelektricheskii_postoyannyi_magnit_heat_sink_cold
+  - материал: ss_aisi_304
+    форма: крепёж_пружины_холоднодеформ
+    суммарная_доля_массы: 0.1
+    источники_частей:
+      - часть_termoelektricheskii_postoyannyi_magnit_clamping
+  - материал: sio2_amorphous
+    форма: аэрогель_основа
+    суммарная_доля_массы: 0.1
+    источники_частей:
+      - часть_termoelektricheskii_postoyannyi_magnit_insulation
+# F27e: технология обработки каждой части (прецеденты mmrtg; файлы существуют)
+технологии_частей:
+  - часть: часть_termoelektricheskii_postoyannyi_magnit_teg_modules
+    технология: vakuumnoe_spekanie
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: bi2te3
+        роль: обрабатываемый
+  - часть: часть_termoelektricheskii_postoyannyi_magnit_heat_sink_hot
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
+  - часть: часть_termoelektricheskii_postoyannyi_magnit_heat_sink_cold
+    технология: frezervanie_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: al_6061-t6
+        роль: обрабатываемый
+  - часть: часть_termoelektricheskii_postoyannyi_magnit_clamping
+    технология: tokarnaya_obrabotka_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: ss_aisi_304
+        роль: обрабатываемый
+  - часть: часть_termoelektricheskii_postoyannyi_magnit_insulation
+    технология: sborka_v_termoizolyatsionnoi_opravke
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: sio2_amorphous
+        роль: обрабатываемый
+# F-scal (P087 §12.6): масштабирование TEG по числу модулей / тепловому потоку
+масштабируемость:
+  режим: масштабируемая
+  параметры: [масса_kg, выработка_энергии_W]
+  пределы:
+    min: {масса_kg: 0.1, выработка_энергии_W: 0.01}
+    max: {масса_kg: 5, выработка_энергии_W: 10}
+  закон_масштабирования:
+    масса: '≈ линейный от числа модулей TXL-127-25Q в батарее (15×) и площади теплосьёмников'
+    электрическая_мощность: 'P_эл = η·Q_гор (η≈8 % BiTe при 250 °C, Nozariasbmarz 2020) — ∝ числу термопар и ΔT'
+  ограничивающие_части:
+    - часть: часть_termoelektricheskii_postoyannyi_magnit_teg_modules
+      причина: 'ZT≈1 Bi2Te3 задаёт КПД 8 % и P_эл батареи 1.785 Вт (PML)'
+    - часть: часть_termoelektricheskii_postoyannyi_magnit_heat_sink_cold
+      причина: 'рассеивание Q_хол ≈ 11.5 Вт ограничивает тепловой поток стека'
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -41,9 +123,9 @@ scaling_type: количественный
           max: 5
           nominal: 0.5
   габариты_mm:
-          l: 50
-          w: 50
-          h: 5
+          l: 65
+          w: 65
+          h: 65
   выработка_энергии_W:
           min: 0.01
           max: 10

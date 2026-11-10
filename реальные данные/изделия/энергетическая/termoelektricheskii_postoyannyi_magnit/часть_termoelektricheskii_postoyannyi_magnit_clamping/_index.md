@@ -14,8 +14,17 @@ id: часть_termoelektricheskii_postoyannyi_magnit_clamping
 материалы_частей:
   - часть: часть_termoelektricheskii_postoyannyi_magnit_clamping
     материал: ss_aisi_304
+    форма: крепёж_пружины_холоднодеформ
     доля_массы: 1.0
 
+# F27e: технология обработки части (tokarnaya_obrabotka_chpu; файл технологии/ существует)
+технологии_частей:
+  - часть: часть_termoelektricheskii_postoyannyi_magnit_clamping
+    технология: tokarnaya_obrabotka_chpu
+    доля_использования: 1.0
+    материалы_для_процесса:
+      - материал: ss_aisi_304
+        роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
