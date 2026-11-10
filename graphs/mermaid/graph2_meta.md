@@ -14,6 +14,8 @@ graph TB
     script_capture_dialog_py(("capture_dialog.py"))
     script_check_model_completeness_py(("check_model_completeness.py"))
     script_classify_subsystem_py(("classify_subsystem.py"))
+    script_fix_1002_tcp_py(("fix_1002_tcp.py"))
+    script_fix_1004_bldc_py(("fix_1004_bldc.py"))
     script_fix_801_py(("fix_801.py"))
     script_fix_yaml_corruption_py(("fix_yaml_corruption.py"))
     script_generate_decomposition_py(("generate_decomposition.py"))
@@ -251,12 +253,12 @@ graph TB
     section_§11_3_7_антипаттернов_(уроки_из_прошлых_реализаций) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 197, рёбер: 227 (показано топ-50)._
+_Узлов: 199, рёбер: 227 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|
 | spec_section | 149 |
-| script | 28 |
+| script | 30 |
 | concept_doc | 17 |
 | catalog | 1 |
 | readme | 1 |

@@ -1737,6 +1737,18 @@
       "path": "scripts/classify_subsystem.py"
     },
     {
+      "id": "script:fix_1002_tcp.py",
+      "type": "script",
+      "label": "fix_1002_tcp.py",
+      "path": "scripts/fix_1002_tcp.py"
+    },
+    {
+      "id": "script:fix_1004_bldc.py",
+      "type": "script",
+      "label": "fix_1004_bldc.py",
+      "path": "scripts/fix_1004_bldc.py"
+    },
+    {
       "id": "script:fix_801.py",
       "type": "script",
       "label": "fix_801.py",
@@ -5214,13 +5226,13 @@
     }
   ],
   "stats": {
-    "nodes": 332,
+    "nodes": 334,
     "edges": 536,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,
       "metric": 217,
-      "script": 28,
+      "script": 30,
       "spec_section": 58,
       "stub": 13
     }
