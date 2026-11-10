@@ -4,13 +4,16 @@
 # Восстановление GitHub PAT для cron-агента SkyNet.
 # Используется cron_run.sh и sweep_closed_inprogress.sh в pre-flight.
 #
-# Стратегия (4 уровня, по убыванию предпочтительности):
+# Стратегия (5 уровней, по убыванию предпочтительности):
 #   1. /tmp/.pat_tmp                     — быстрый путь, но исчезает при sandbox-recycle
 #   2. /home/z/my-project/.pat_tmp         — персистентное, переживает recycle
 #   3. git remote get-url origin          — URL репозитория содержит x-access-token:...
 #   4. Yandex Disk публичная ссылка       — Token.docx на disk.yandex.ru/i/3RiKQucdvHI2Sg
 #                                          (не требует OAuth, публичный доступ через
 #                                          cloud-api.yandex.net/v1/disk/public/resources)
+#   5. scripts/.pat.enc в git репозитории — зашифрованный PAT (AES-256-CBC + PBKDF2,
+#                                          ключ из SHA-256 URL Яндекс.Диска). Last resort
+#                                          когда Yandex Disk API упал (429).
 #
 # Использование:
 #   source scripts/pat_recovery.sh
@@ -20,10 +23,11 @@
 
 # Константы
 PAT_REPO_ROOT="${PAT_REPO_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
-PAT_HOME_STORAGE="/home/z/my-project/.pat_tmp"
-PAT_TMP_STORAGE="/tmp/.pat_tmp"
-PAT_YANDEX_PUBLIC_KEY="https://disk.yandex.ru/i/3RiKQucdvHI2Sg"
-PAT_YANDEX_API="https://cloud-api.yandex.net/v1/disk/public/resources"
+PAT_HOME_STORAGE="${PAT_HOME_STORAGE:-/home/z/my-project/.pat_tmp}"
+PAT_TMP_STORAGE="${PAT_TMP_STORAGE:-/tmp/.pat_tmp}"
+PAT_YANDEX_PUBLIC_KEY="${PAT_YANDEX_PUBLIC_KEY:-https://disk.yandex.ru/i/3RiKQucdvHI2Sg}"
+PAT_YANDEX_API="${PAT_YANDEX_API:-https://cloud-api.yandex.net/v1/disk/public/resources}"
+PAT_ENC_FILE="${PAT_ENC_FILE:-${PAT_REPO_ROOT}/scripts/.pat.enc}"
 
 # Вспомогательная: валидация PAT через GitHub API /user
 _pat_validate() {
@@ -87,6 +91,24 @@ else:
     return 0
 }
 
+# Уровень 5: Зашифрованный PAT в git репозитории (scripts/.pat.enc)
+# Last resort: Yandex Disk API упал (429), но raw-файл .pat.enc доступен локально
+# из git clone. Шифр AES-256-CBC + PBKDF2 (100000 итераций), ключ = SHA-256(URL Яндекс.Диска).
+_pat_from_encrypted() {
+    [ ! -f "$PAT_ENC_FILE" ] && return 1
+    [ ! -f "${PAT_REPO_ROOT}/scripts/pat_crypto.sh" ] && return 1
+
+    # Source pat_crypto.sh для функции pat_decrypt
+    # shellcheck disable=SC1091
+    source "${PAT_REPO_ROOT}/scripts/pat_crypto.sh"
+
+    local token
+    token=$(pat_decrypt < "$PAT_ENC_FILE" 2>/dev/null)
+    [ -z "$token" ] && return 1
+    echo "$token"
+    return 0
+}
+
 # Главная функция: восстановить PAT в /tmp/.pat_tmp
 pat_recover() {
     # Уровень 1: /tmp/.pat_tmp существует
@@ -143,12 +165,26 @@ pat_recover() {
     fi
     echo "[pat_recovery v9.59]   Yandex Disk download/validation failed" >&2
 
+    # Уровень 5: Зашифрованный PAT в git репозитории
+    echo "[pat_recovery v9.59]   trying encrypted PAT from scripts/.pat.enc..." >&2
+    local enc_token
+    enc_token=$(_pat_from_encrypted)
+    if [ -n "$enc_token" ] && _pat_validate "$enc_token"; then
+        PAT="$enc_token"
+        echo "$PAT" > "$PAT_TMP_STORAGE"; chmod 600 "$PAT_TMP_STORAGE"
+        cp "$PAT_TMP_STORAGE" "$PAT_HOME_STORAGE" 2>/dev/null && chmod 600 "$PAT_HOME_STORAGE"
+        echo "[pat_recovery v9.59] ✓ recovered from encrypted .pat.enc + saved to persistent storage" >&2
+        return 0
+    fi
+    echo "[pat_recovery v9.59]   encrypted .pat.enc decryption/validation failed" >&2
+
     # Все уровни провалены
-    echo "ERROR: PAT recovery failed at all 4 levels" >&2
+    echo "ERROR: PAT recovery failed at all 5 levels" >&2
     echo "       1. /tmp/.pat_tmp                       — missing/invalid" >&2
     echo "       2. /home/z/my-project/.pat_tmp         — missing/invalid" >&2
     echo "       3. git remote get-url origin           — no token or invalid" >&2
     echo "       4. Yandex Disk public link             — failed" >&2
+    echo "       5. scripts/.pat.enc (encrypted)        — missing/invalid" >&2
     echo "       Manual PAT injection required." >&2
     return 3
 }
