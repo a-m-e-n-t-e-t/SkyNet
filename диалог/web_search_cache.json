@@ -5533,5 +5533,21 @@
       "https://en.wikipedia.org/wiki/Yttria-stabilized_zirconia",
       "https://www.oerlikon.com/ecoma/files/DSM-0273_8YO_ZrO_AggSint.pdf"
     ]
+  },
+  "ws_0084": {
+    "query": "lead acid battery electrolyte freezing point SG 1.265 / thermal conductivity sulfuric acid aqueous solution",
+    "date": "2026-11-10",
+    "key_facts": [
+      "Точка замерзания электролита 100% SOC (SG 1.265–1.280): −57…−68 °C (hzhmarine)",
+      "SG 1.265 → −75 °F (−59.4 °C) (discoverbattery)",
+      "SG 1.225 (75% SOC) → −48.3 °C (discoverbattery)",
+      "λ концентрированной H₂SO₄ 0.5 Вт/м·К; воды 0.58 Вт/м·К (Engineering Toolbox) → электролит 27–39 мас.% 0.5–0.58",
+      "Разряженный электролит (разбавленный) замерзает раньше — опасность при хранении АКБ на морозе"
+    ],
+    "sources": [
+      "https://www.hzhmarine.com/news/winter-s-bite-protecting-your-marine-lead-acid-batteries-from-fr",
+      "https://discoverbattery.com/support/learning-center/battery-101/what-is-the-freezing-point-of-battery-acid",
+      "https://www.engineeringtoolbox.com/thermal-conductivity-liquids-d_1260.html"
+    ]
   }
 }

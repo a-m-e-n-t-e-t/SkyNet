@@ -47,13 +47,14 @@ id: material_h2so4_aqueous
   коэффициент_Пуассона: null
   ударная_вязкость_Дж_см2: null
   усталостная_прочность_МПа: {min: null, max: null, nominal: null}
-  температура_плавления_C: null
-  теплопроводность_W_mK: null
+  температура_плавления_C: -57
+  теплопроводность_W_mK: {min: 0.5, max: 0.58, nominal: 0.55}
   температура_кипения_C: null
 дополнительные:
   концентрация_мас_процентов: '27–39 (полностью заряженная SLI: SG ≈1.265)'
   рабочее_давление_Pa: атмосферное
   примечание: 'Сильный электролит: коррозионен, требует кислотостойких материалов и герметизации; flooded-исполнение требует доливки воды'
+  примечание_замерзание: 'SG 1.265–1.280 (100% заряда): −57…−68 °C; SG 1.225 (75%): −48 °C; при глубоком разряде электролит (разбавленный) замерзает раньше — разряженные АКБ недопустимо оставлять на морозе'
 
 сравнение_структур:
   водный_раствор_стандартный:
@@ -64,7 +65,7 @@ id: material_h2so4_aqueous
 ---
 ## Описание
 
-Жидкий неорганический электролит свинцово-кислотных АКБ: водный раствор серной кислоты 27–39 мас.% (SG 1.24–1.30). Электрохимическая пара Pb/PbO₂ работает по двойной сульфатной теории: при разряде H₂SO₄ расходуется на сульфатацию обеих пластин (Pb + PbO₂ + 2H₂SO₄ → 2PbSO₄ + 2H₂O, E° = 2.05 В), поэтому плотность электролита служит прямым индикатором заряженности. В flooded-исполнении (SLI) электролит свободный, уровень контролируется и доливается; в VRLA (AGM/gel) — иммобилизован в порах сепаратора, SG 1.26–1.30 при 25 °C, доливка не предусмотрена.
+Жидкий неорганический электролит свинцово-кислотных АКБ: водный раствор серной кислоты 27–39 мас.% (SG 1.24–1.30). Электрохимическая пара Pb/PbO₂ работает по двойной сульфатной теории: при разряде H₂SO₄ расходуется на сульфатацию обеих пластин (Pb + PbO₂ + 2H₂SO₄ → 2PbSO₄ + 2H₂O, E° = 2.05 В), поэтому плотность электролита служит прямым индикатором заряженности. В flooded-исполнении (SLI) электролит свободный, уровень контролируется и доливается; в VRLA (AGM/gel) — иммобилизован в порах сепаратора, SG 1.26–1.30 при 25 °C, доливка не предусмотрена. Теплопроводность 0.5–0.58 Вт/м·К (между концентрированной H₂SO₄ 0.5 и водой 0.58); точка замерзания зависит от SOC: полный заряд (SG 1.265–1.280) — −57…−68 °C, 75% (SG 1.225) — −48 °C.
 
 ## Технические характеристики
 
@@ -78,6 +79,7 @@ id: material_h2so4_aqueous
 - Wikipedia — Lead–acid battery (flooded vs VRLA: доливка только в flooded; ЭДС/химия): https://en.wikipedia.org/wiki/Lead%E2%80%93acid_battery
 - Bogart Engineering — измерение SG заливного электролита (полностью заряженная ≈1.265): https://www.bogartengineering.com/how-to-measure-lead-acid-battery-electrolyte-specific-gravity/
 - BETTER-TECH — роль кислотного электролита (SG ≈1.265 при полном заряде; падение при разряде): https://www.better-tech.net/the-role-of-acid-electrolyte-in-lead-acid-battery/
-- Battery Acid Composition & Safety Guide — flooded 1.24–1.28 SG (автомобильные/промышленные, доливка воды); VRLA/AGM исполнение: https://www.google.com/search?q=Battery+Acid+Composition+%26+Safety+Guide
-- Battery Acid: Sulphuric Acid, SG, Dilution and Safety — концентрация 27–39 мас.%: https://www.google.com/search?q=Battery+Acid+SG+Dilution+and+Safety
+- Battery Acid Composition & Safety Guide — flooded 1.24–1.28 SG (автомобильные/промышленные, доливка воды); VRLA/AGM исполнение: https://www.hzhmarine.com/news/winter-s-bite-protecting-your-marine-lead-acid-batteries-from-fr
+- Battery Acid: Sulphuric Acid, SG, Dilution and Safety — концентрация 27–39 мас.%, точка замерзания SG 1.265 → −59.4 °C: https://discoverbattery.com/support/learning-center/battery-101/what-is-the-freezing-point-of-battery-acid
+- Engineering Toolbox — Liquids Thermal Conductivities: H₂SO₄ концентрированная 0.5 Вт/м·К, вода 0.58 → электролит 27–39 мас.%: 0.5–0.58 Вт/м·К: https://www.engineeringtoolbox.com/thermal-conductivity-liquids-d_1260.html
 - Материалы: реальные данные/материалы/
