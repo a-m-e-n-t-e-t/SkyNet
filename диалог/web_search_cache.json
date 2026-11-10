@@ -5638,5 +5638,20 @@
       "https://pneumaticstoday.com/deublin-design-considerations-for-rotating-unions",
       "https://www.deublin.com/en/products/1102-070-166"
     ]
+  },
+  "ws_0091": {
+    "query": "IPMC ionic polymer metal composite Nafion platinum electroless reduction manufacturing + JST SH connector housing injection molded",
+    "date": "2026-11-10",
+    "key_facts": [
+      "IPMC = тонкий лист Nafion с платиной, нанесённой на обе стороны (electroless plating, химическое восстановление) — ResearchGate 234873297",
+      "Patterned electrodes — electroless-plating с маскировкой Nafion (ResearchGate 276350529); Ni-Au-Nafion IPMC через восстановление (239829541)",
+      "Ядро актора — ионоmer-мембрана + проводящие металлические электроды (Ionic Polymer–Metal Composite Actuators, 2024)",
+      "Корпус разъёма JST SH — литьё термопластика под давлением (инжекционное литьё), контакты — штамповка ленты"
+    ],
+    "sources": [
+      "https://www.researchgate.net/publication/234873297_Electromechanical_response_of_ionic_polymer-metal_composites",
+      "https://www.researchgate.net/publication/359183160_Ionic_Polymer-Metal_Composite_Actuators",
+      "https://www.researchgate.net/figure/Schematic-diagram-of-the-preparation-route-of-the-ionic-polymer-metal-composite-IPMC_fig1_371673290"
+    ]
   }
 }
