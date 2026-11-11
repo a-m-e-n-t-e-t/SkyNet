@@ -1,112 +1,188 @@
 ---
 id: SkyNet-MotoTerminator
 web_verification: terminator.fandom.com/wiki/Moto-Terminator (2026-11-03)
-тактико_технические_характеристики: 
+тактико_технические_характеристики:
   мобильность:
-          скорость_км_ч: 322
-          тип: мотоциклетный
+    скорость_км_ч: 322
+    тип: мотоциклетный
   вооружение: plasma_emitters
 тип: модель_SkyNet
 класс: наземный_колёсный
 категория: наземный_HK
 тип_модели: наземный_колёсный
 источник_происхождения: фильм
-функции: ["преследование", "патруль", "штурм"]
+функции:
+- преследование
+- патруль
+- штурм
 канон_источник: 'Terminator: Salvation (2009)'
-произведения: ["work_004", "work_045"]
+произведения:
+- work_004
+- work_045
 производитель: Скайнет
 статус_реальности: canon
 подтип_модели: стандартный
 многослойная_броня:
   слои:
-    - номер: 1
-      материал: b4c  # B₄C
-      толщина_мм: {min: 2, target: 10}
-    - номер: 2
-      материал: ti6al4v  # Ti-6Al-4V
-      толщина_мм: {min: 2, target: 10}
-    - номер: 3
-      материал: uhmwpe_dyneema  # UHMWPE
-      толщина_мм: {min: 2, target: 10}
+  - номер: 1
+    материал: b4c
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 2
+    материал: ti6al4v
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 3
+    материал: uhmwpe_dyneema
+    толщина_мм:
+      min: 2
+      target: 10
   тип_брони: наземный_колёсный
-  соответствует_типу_модели: true  # F74, max_mass_percent: 40, min_layers: 3
+  соответствует_типу_модели: true
 доступность: фантастический
-expected_subsystems: ["вычислительная", "энергетическая", "каркас", "сенсоры", "приводная_система", "система_связи", "навигация", "система_питания", "система_передвижения"]
+expected_subsystems:
+- вычислительная
+- энергетическая
+- каркас
+- сенсоры
+- приводная_система
+- система_связи
+- навигация
+- система_питания
+- система_передвижения
 relations:
   successor_of: null
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: 
-  - izdelie_tverdooksidnyi_toplivnyi_element
-  - izdelie_nasa_asc-e_srsc
-  - izdelie_superkondensatory
-  - izdelie_SkyNet-HKAerial
-  - izdelie_SkyNet-Rev9
-  - izdelie_SkyNet-Cameron
-  - izdelie_metalinza
-  - izdelie_mwir_nbn_640
-  - izdelie_lidar_robosense_ac1
-  - izdelie_hasel
-  - izdelie_povorotnoe_uplotnenie
-  - izdelie_elektroflyuidnye_volokna_mit
-  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-  - izdelie_razryvnye_mufty_iso_16028
-  - izdelie_flat-face_couplings_iso_16028
+реализация_промышленная:
+- izdelie_tverdooksidnyi_toplivnyi_element
+- izdelie_nasa_asc-e_srsc
+- izdelie_superkondensatory
+- izdelie_SkyNet-HKAerial
+- izdelie_SkyNet-Rev9
+- izdelie_SkyNet-Cameron
+- izdelie_metalinza
+- izdelie_mwir_nbn_640
+- izdelie_lidar_robosense_ac1
+- izdelie_hasel
+- izdelie_povorotnoe_uplotnenie
+- izdelie_elektroflyuidnye_volokna_mit
+- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+- izdelie_razryvnye_mufty_iso_16028
+- izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_разбора: канон
 ии_перепроектирован:
   статус: false
   верификация: []
+источник_url: https://terminator.fandom.com/wiki/Moto-Terminator
+источник_дата: '2026-11-11'
+уровень_иерархии: верхний
+уровень_номер: 1
+дочерние_части:
+- izdelie_tverdooksidnyi_toplivnyi_element
+- izdelie_SkyNet-HKAerial
+- izdelie_lidar_robosense_ac1
+- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+- izdelie_bldc_enkoder
+основные:
+  масса_kg:
+    min: 180.0
+    max: 250.0
+    nominal: 220.0
+  габариты_mm:
+    l: 2100
+    w: 800
+    h: 1100
+масштабируемость:
+  режим: квантуемая
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1000
+    единица: шт
+  - имя: масса_единицы
+    диапазон:
+    - 180.0
+    - 250.0
+    единица: kg
+  - имя: скорость
+    диапазон:
+    - 200
+    - 322
+    единица: km/h
+  пределы:
+    max_единиц_в_системе: 1000
+    min_массы: 180.0
+    max_массы: 250.0
+    min_скорости: 200
+    max_скорости: 322
+  закон_масштабирования: 'линейный — масса_парка = N × масса_единицы; каждая единица
+    независима (autonomous pursuit); canon: Skynet Moto-Terminator (Terminator Salvation
+    2009), Ducati Monster 1100 S base, 200 mph (322 km/h), dual plasma emitters'
+  ограничивающие_части:
+  - izdelie_tverdooksidnyi_toplivnyi_element (SOFC — критическая зависимость от топливных
+    элементов)
+  - izdelie_lidar_robosense_ac1 (LiDAR — критическая зависимость от поставок RoboSense)
+  - izdelie_bldc_enkoder (BLDC motor — критическая зависимость от Maxon/Faulhaber)
+дата_обновления: '2026-11-11'
+наследуемые_материалы:
+- материал: b4c
+  суммарная_доля_массы: 0.15
+  источники_частей:
+  - многослойная_броня_слой_1_B4C
+  форма: баллистическая_керамика
+- материал: ti-6al-4v
+  суммарная_доля_массы: 0.4
+  источники_частей:
+  - многослойная_броня_слой_2_Ti6Al4V
+  форма: планер_и_космические_изделия
+- материал: uhmwpe
+  суммарная_доля_массы: 0.1
+  источники_частей:
+  - многослойная_броня_слой_3_UHMWPE
+  форма: высоконагруженные_тонкие_шнуры
 ---
-# v9.31: структурные поля §12.4.1-§12.4.X — добавлены как placeholder
-# Реальные значения будут заполнены через web_search для каждой модели.
-требования_выживаемости: 
-  эми_защита: industrial
-  термобарьер:
-          рабочий_диапазон_C:
-                      min: -40
-                      target: 60
-маскировка_инфильтратора: n/a (patrol)
-тактико_технические_характеристики: 
-  мобильность:
-          скорость_км_ч: 200
-          тип: мотоциклетный
-  вооружение: 'плазма-пушки на винглетах (canon T:S)'
-защита_от_собственной_радиации: n/a
-кибербезопасность: 
-  аппаратные_меры:
-          HSM: true
-          secure_boot: true
-          TPM: true
-          anti_tamper: zeroization
-  iff: SkyNet IFF v3.1 (transponder 1090 MHz + crypto)
-  шифрование: AES-256 + SkyNet proprietary
-  skynet_protocol: Hive (collective consciousness) или Rogue (autonomous)
-эмс_внутренняя: ECM + radar
-компоновка_изделий: мотоциклетный форм-фактор
-трассировка_соединителей: []
-программное_обеспечение: 'Neural Net CPU + SkyNet OS (Hive mode по умолчанию, Rogue для автономных)'
-единая_эми_стратегия: SkyNet patrol protocol
-единая_герметичность: IP65
-сертификация_модели_целого: 
-  тест_skyet: phase_5 (F70 metrics PASS)
-  канон_верификация: 'источник_разбора=канон'
-журнал_экземпляра: SkyNet patrol unit registry
-утилизация_после_120_лет: 'T-800: 120 лет на 1 топливной ячейке (canon); после истощения — замена ячеек или разборка на запчасти'
-экипаж_оператор: 0
-промышленная_база: Skynet automated factory (Cyberdyne Systems / CRS)
-alice_specs: ALICE sync protocol v9.31 (SkyNet hive-mind)
-original_improved: canon
-дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
----
-# SkyNet-MotoTerminator
-
 ## Описание
 
 Moto-Terminator — автономный мотоцикл; 2 колеса; высокая скорость; плазменные орудия спереди; используется в погоне за людьми.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| масса | 180.0–250.0 (номинал 220.0) | kg | canon |
+| габариты (Д×Ш×В) | 2100×800×1100 | mm | canon |
+| тип узла | модель_SkyNet | — | canon |
+| уровень_номер | 1 | — | canon |
+
+
+## Источники
+
+- Канон: Terminator: Salvation (2009)
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    SkyNet_MotoTerminator["SkyNet-MotoTerminator"]
+    izdelie_tverdooksidnyi_toplivnyi_element["izdelie_tverdooksidnyi_toplivnyi_element"]
+    SkyNet_MotoTerminator --> izdelie_tverdooksidnyi_toplivnyi_element
+    izdelie_SkyNet_HKAerial["izdelie_SkyNet-HKAerial"]
+    SkyNet_MotoTerminator --> izdelie_SkyNet_HKAerial
+    izdelie_lidar_robosense_ac1["izdelie_lidar_robosense_ac1"]
+    SkyNet_MotoTerminator --> izdelie_lidar_robosense_ac1
+    izdelie_radiatsionno_stoikii_neiromorfnyi_tmr["izdelie_radiatsionno-stoikii_neiromorfnyi_tmr"]
+    SkyNet_MotoTerminator --> izdelie_radiatsionno_stoikii_neiromorfnyi_tmr
+    izdelie_bldc_enkoder["izdelie_bldc_enkoder"]
+    SkyNet_MotoTerminator --> izdelie_bldc_enkoder
+```
+
 
 ## Источник канон
 
@@ -149,7 +225,3 @@ Moto-Terminator — автономный мотоцикл; 2 колеса; вы�
 
 - ✅ `work_004` — «Terminator Salvation» (2009) → [`work_004.md`](../произведения/work_004.md)
 - 📚 `work_045` — «Terminator: Salvation (game)» (2009) → [`work_045.md`](../произведения/work_045.md)
-
-## Источники
-
-- Канон: Terminator: Salvation (2009)
