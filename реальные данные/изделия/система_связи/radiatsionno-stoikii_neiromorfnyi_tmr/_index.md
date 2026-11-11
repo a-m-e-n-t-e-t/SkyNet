@@ -6,23 +6,25 @@ id: izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
 уровень_номер: 1
 подсистема: система_связи
 подтип: прочее
-стандарты: 
-  - FCC Part 15
-  - ETSI EN 301 489
+стандарты:
+- FCC Part 15
+- ETSI EN 301 489
 исследовательская_группа: harris_thales
 родитель: null
 дочерние_части:
-  - часть_radiatsionno-stoikii_neiromorfnyi_tmr_core
-  - часть_radiatsionno-stoikii_neiromorfnyi_tmr_housing
-  - часть_radiatsionno-stoikii_neiromorfnyi_tmr_connectors
-  - часть_radiatsionno-stoikii_neiromorfnyi_tmr_mounting
+- часть_radiatsionno-stoikii_neiromorfnyi_tmr_core
+- часть_radiatsionno-stoikii_neiromorfnyi_tmr_housing
+- часть_radiatsionno-stoikii_neiromorfnyi_tmr_connectors
+- часть_radiatsionno-stoikii_neiromorfnyi_tmr_mounting
 материалы_частей:
-  - часть: часть_radiatsionno-stoikii_neiromorfnyi_tmr_core
-    материал: si
-    доля_массы: 0.45
-  - часть: часть_radiatsionno-stoikii_neiromorfnyi_tmr_housing
-    материал: aluminum
-    доля_массы: 0.27
+- часть: часть_radiatsionno-stoikii_neiromorfnyi_tmr_core
+  материал: si
+  форма: кремниевые_пластины_интегральных_схем
+  доля_массы: 0.45
+- часть: часть_radiatsionno-stoikii_neiromorfnyi_tmr_housing
+  материал: aluminum
+  форма: корпуса_электроники
+  доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -32,32 +34,101 @@ scaling_type: количественный
 ии_перепроектирован:
   статус: false
   верификация: []
-основные: 
+основные:
   масса_kg:
-          min: 0.005
-          max: 5
-          nominal: 0.1
+    min: 0.005
+    max: 5
+    nominal: 0.1
   габариты_mm:
-          l: 50
-          w: 30
-          h: 5
+    l: 120
+    w: 120
+    h: 30
   выработка_энергии_W:
-          min: 0
-          max: 0
-          nominal: 0
+    min: 0
+    max: 0
+    nominal: 0
   выработка_тепла_W:
-          min: 0.01
-          max: 5
-          nominal: 1.5
+    min: 0.01
+    max: 5
+    nominal: 1.5
 наследуемые: {}
 дополнительные:
   цена_usd: null
-  тепловой_баланс_обоснование: вычислительный модуль не генерирует энергию — вся электрическая мощность переходит в тепло (КПД вычислений ≈ 0); системный номинал 1.5 Вт = ядро-процессор нейроморфного класса ~1 Вт (Intel Loihi 2 — измеренно 1.55 Вт при 103.94 GOP/s/W, arXiv 2408.16096) + интерфейсная логика и DC-DC конвертеры платы модуля ~0.5 Вт; класс-прецедент радиационно-стойких бортовых вычислителей GR740 LEON4FT — менее 3 Вт (core typical); Σ детей = 1.0 ≤ 1.5 — баланс сходится с запасом ×1.5
+  тепловой_баланс_обоснование: вычислительный модуль не генерирует энергию — вся электрическая
+    мощность переходит в тепло (КПД вычислений ≈ 0); системный номинал 1.5 Вт = ядро-процессор
+    нейроморфного класса ~1 Вт (Intel Loihi 2 — измеренно 1.55 Вт при 103.94 GOP/s/W,
+    arXiv 2408.16096) + интерфейсная логика и DC-DC конвертеры платы модуля ~0.5 Вт;
+    класс-прецедент радиационно-стойких бортовых вычислителей GR740 LEON4FT — менее
+    3 Вт (core typical); Σ детей = 1.0 ≤ 1.5 — баланс сходится с запасом ×1.5
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
-источник: user_input
-источник_разбора: пользовательский ввод
+дата_обновления: '2026-11-11'
+источник: web_search
+источник_разбора: веб-верификация
+технологии_частей:
+- часть: часть_radiatsionno-stoikii_neiromorfnyi_tmr_core
+  технология: cmos_7nm_intel4
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: si
+    роль: обрабатываемый
+- часть: часть_radiatsionno-stoikii_neiromorfnyi_tmr_housing
+  технология: anodirovanie
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: aluminum
+    роль: обрабатываемый
+наследуемые_материалы:
+- материал: si
+  суммарная_доля_массы: 0.45
+  источники_частей:
+  - часть_radiatsionno-stoikii_neiromorfnyi_tmr_core
+  форма: кремниевые_пластины_интегральных_схем
+- материал: aluminum
+  суммарная_доля_массы: 0.27
+  источники_частей:
+  - часть_radiatsionno-stoikii_neiromorfnyi_tmr_housing
+  форма: корпуса_электроники
+масштабируемость:
+  режим: масштабируемая
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1000
+    единица: шт
+  - имя: масса_единицы
+    диапазон:
+    - 0.05
+    - 2.0
+    единица: kg
+  - имя: количество_нейронов
+    диапазон:
+    - 128000
+    - 1000000
+    единица: шт
+  - имя: потребляемая_мощность
+    диапазон:
+    - 0.5
+    - 5.0
+    единица: W
+  пределы:
+    max_единиц_в_системе: 1000
+    min_мощности: 0.5
+    max_мощности: 5.0
+    min_радиационная_стойкость_krad: 100
+  закон_масштабирования: 'нелинейный — при N<10: масса = N × масса_единицы × 1.0 (board-level
+    scaling); при N≥10: масса × 0.85 (базовая плата разделяется); радиационная стойкость
+    TMR ≤ 100 Krad (MRAM-based, NASA TechPort 2026); типовая единица: Intel Loihi
+    2 (60 mm² die, 1M neurons, 128M synapses, ~1W, 4 GHz spike rate)'
+  ограничивающие_части:
+  - часть_radiatsionno-stoikii_neiromorfnyi_tmr_core (Intel Loihi 2 die — критическая
+    зависимость, не space-qualified; TMR via NASA Schumann 2022 architecture)
+  - часть_radiatsionno-stoikii_neiromorfnyi_tmr_housing (aluminum + anodizing MIL-A-8625,
+    FCC Part 15 + ETSI EN 301 489 — стандартное производство)
+источник_url: https://ntrs.nasa.gov/citations/20220013182
+источник_дата: '2026-11-11'
 ---
+
 # Изделие: радиационно-стойкий нейроморфный TMR
 
 ## Описание
