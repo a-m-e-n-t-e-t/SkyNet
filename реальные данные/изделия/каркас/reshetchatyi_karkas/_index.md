@@ -6,24 +6,25 @@ id: izdelie_reshetchatyi_karkas
 уровень_номер: 1
 подсистема: каркас
 подтип: прочее
-стандарты: 
-  - ASTM A36
-  - ISO 630
+стандарты:
+- ASTM A36
+- ISO 630
 исследовательская_группа: boeing_lockheed
 родитель: null
 дочерние_части:
-  - часть_reshetchatyi_karkas_core
-  - часть_reshetchatyi_karkas_housing
-  - часть_reshetchatyi_karkas_connectors
-  - часть_reshetchatyi_karkas_mounting
+- часть_reshetchatyi_karkas_core
+- часть_reshetchatyi_karkas_housing
+- часть_reshetchatyi_karkas_connectors
+- часть_reshetchatyi_karkas_mounting
 материалы_частей:
-  - часть: часть_reshetchatyi_karkas_core
-    материал: al_6061-t6
-    форма: силовые_элементы_конструкций
-    доля_массы: 0.45
-  - часть: часть_reshetchatyi_karkas_housing
-    материал: aluminum
-    доля_массы: 0.27
+- часть: часть_reshetchatyi_karkas_core
+  материал: al_6061-t6
+  форма: силовые_элементы_конструкций
+  доля_массы: 0.45
+- часть: часть_reshetchatyi_karkas_housing
+  материал: aluminum
+  доля_массы: 0.27
+  форма: корпуса_электроники
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -33,33 +34,81 @@ scaling_type: количественный
 ии_перепроектирован:
   статус: false
   верификация: []
-основные: 
+основные:
   масса_kg:
-          min: 1
-          max: 1000
-          nominal: 50
+    min: 1
+    max: 1000
+    nominal: 50
   габариты_mm:
-          l: 530
-          w: 500
-          h: 500
+    l: 530
+    w: 500
+    h: 500
   выработка_энергии_W:
-          min: 0
-          max: 0
-          nominal: 0
+    min: 0
+    max: 0
+    nominal: 0
   выработка_тепла_W:
-          min: 0
-          max: 0.2
-          nominal: 0.1
+    min: 0
+    max: 0.2
+    nominal: 0.1
 наследуемые: {}
 дополнительные:
   цена_usd: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
-источник: user_input
-источник_разбора: пользовательский ввод
-источник_url: https://lectromec.com/blog/connector-contact-resistance
-источник_дата: 2026-11-07
+дата_обновления: '2026-11-11'
+источник: web_search
+источник_разбора: веб-верификация
+источник_url: https://en.wikipedia.org/wiki/Lattice_truss_structure
+источник_дата: '2026-11-11'
+технологии_частей:
+- часть: часть_reshetchatyi_karkas_core
+  технология: frezervanie_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: al_6061-t6
+    роль: обрабатываемый
+- часть: часть_reshetchatyi_karkas_housing
+  технология: anodirovanie
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: aluminum
+    роль: обрабатываемый
+наследуемые_материалы:
+- материал: al_6061-t6
+  суммарная_доля_массы: 1.35
+  источники_частей:
+  - часть_reshetchatyi_karkas_core
+  форма: силовые_элементы_конструкций
+- материал: stal_st3
+  суммарная_доля_массы: 0.27
+  источники_частей:
+  - часть_reshetchatyi_karkas_housing
+  форма: строительные_конструкции_и_крепёж
+масштабируемость:
+  режим: масштабируемая
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1000
+    единица: шт
+  - имя: масса_единицы
+    диапазон:
+    - 0.5
+    - 50.0
+    единица: kg
+  пределы:
+    max_единиц_в_системе: 1000
+    min_массы: 0.5
+    max_массы: 50.0
+  закон_масштабирования: 'линейный — масса_системы = N × масса_единицы; типовая установка:
+    lattice frame (stal_st3 + aluminum, промышленный каркас)'
+  ограничивающие_части:
+  - часть_reshetchatyi_karkas_core (stal_st3 lattice structure — критическая сварная
+    конструкция)
+  - часть_reshetchatyi_karkas_housing (aluminum + anodizing — стандартное производство)
 ---
+
 # Изделие: Решётчатый каркас
 
 ## Описание
