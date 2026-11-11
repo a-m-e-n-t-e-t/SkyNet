@@ -7,23 +7,23 @@ id: часть_pezoelektricheskii_gromkogovoritel_mounting
 подсистема: приводная_система
 подтип: крепёж
 стандарты:
-  - ISO 261 (M2)
-  - Murata Mounting Guide
+- ISO 261 (M2)
+- Murata Mounting Guide
 исследовательская_группа: null
 родитель: izdelie_pezoelektricheskii_gromkogovoritel
 дочерние_части: []
 материалы_частей:
-  - часть: часть_pezoelektricheskii_gromkogovoritel_mounting
-    материал: latun_c36000
-    доля_массы: 1.0
-
+- часть: часть_pezoelektricheskii_gromkogovoritel_mounting
+  материал: latun_c36000
+  доля_массы: 1.0
+  форма: крепёж_пружины_холоднодеформ
 технологии_частей:
-  - часть: часть_pezoelektricheskii_gromkogovoritel_mounting
-    технология: frezervanie_chpu
-    доля_использования: 1.0
-    материалы_для_процесса:
-      - материал: latun_c36000
-        роль: обрабатываемый
+- часть: часть_pezoelektricheskii_gromkogovoritel_mounting
+  технология: frezervanie_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: latun_c36000
+    роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -50,7 +50,20 @@ scaling_type: количественный
 источник_разбора: канон
 источник_url: https://www.murata.com/-/media/webrenewal/support/faqs/products/sound/sounder/char/sc0002/p37e.ashx?la=en
 источник_дата: 2026-11-05
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node (часть_pezoelektricheskii_gromkogovoritel_mounting)
+  ограничивающие_части: []
 ---
+
 # Часть: часть_pezoelektricheskii_gromkogovoritel_mounting
 
 ## Описание
