@@ -7,16 +7,16 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors
 подсистема: приводная_система
 подтип: разъёмы
 стандарты:
-  - IEC 60603
-  - MIL-DTL-38999
+- IEC 60603
+- MIL-DTL-38999
 исследовательская_группа: null
 родитель: izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov
 дочерние_части: []
 материалы_частей:
-  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors
-    материал: al_6061-t6
-    доля_массы: 1.0
-
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors
+  материал: al_6061-t6
+  доля_массы: 1.0
+  форма: крепёж_и_монтажные_плиты
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -37,16 +37,37 @@ scaling_type: количественный
   выработка_тепла_W: 0.1
 наследуемые: {}
 дополнительные:
-  тип: 'mixed signal + power'
+  тип: mixed signal + power
   pin_count: 19
-
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: веб-верификация
 источник_url: https://nepp.nasa.gov/npsl/connectors/m38999/38999_s3.htm
 источник_дата: 2026-11-05
+технологии_частей:
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors
+  технология: frezervanie_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: al_6061-t6
+    роль: обрабатываемый
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — деталь не масштабируется (leaf node в составе
+    родительского изделия)
+  ограничивающие_части: []
 ---
+
+
 
 # Часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors
 

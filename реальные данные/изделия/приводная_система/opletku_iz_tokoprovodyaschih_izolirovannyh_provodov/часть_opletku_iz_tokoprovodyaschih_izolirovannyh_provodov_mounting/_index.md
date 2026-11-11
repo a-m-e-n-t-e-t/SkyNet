@@ -7,16 +7,15 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting
 подсистема: приводная_система
 подтип: крепёж
 стандарты:
-  - ISO 1179 (пневмопорты)
-  - ISO 898-1
+- ISO 1179 (пневмопорты)
+- ISO 898-1
 исследовательская_группа: null
 родитель: izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov
 дочерние_части: []
 материалы_частей:
-  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting
-    материал: ss_aisi_304
-    доля_массы: 1.0
-
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting
+  материал: ss_aisi_304
+  доля_массы: 1.0
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -43,7 +42,28 @@ scaling_type: количественный
 источник_разбора: канон
 источник_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC5424474
 источник_дата: 2026-11-05
+технологии_частей:
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting
+  технология: frezervanie_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: ss_aisi_304
+    роль: обрабатываемый
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — деталь не масштабируется (leaf node в составе
+    родительского изделия)
+  ограничивающие_части: []
 ---
+
 # Часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting
 
 ## Описание

@@ -7,16 +7,15 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing
 подсистема: приводная_система
 подтип: корпус
 стандарты:
-  - ASTM B348
-  - AMS 4928
+- ASTM B348
+- AMS 4928
 исследовательская_группа: null
 родитель: izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov
 дочерние_части: []
 материалы_частей:
-  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing
-    материал: al_6061-t6
-    доля_массы: 1.0
-
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing
+  материал: al_6061-t6
+  доля_массы: 1.0
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -37,16 +36,36 @@ scaling_type: количественный
   выработка_тепла_W: 0
 наследуемые: {}
 дополнительные:
-  материал: 'Ti-6Al-4V (Grade 5)'
-  защита: 'radiation shielding'
-
+  материал: Ti-6Al-4V (Grade 5)
+  защита: radiation shielding
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: веб-верификация
 источник_url: https://en.wikipedia.org/wiki/Cable_harness
 источник_дата: 2026-11-05
+технологии_частей:
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing
+  технология: frezervanie_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: al_6061-t6
+    роль: обрабатываемый
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — деталь не масштабируется (leaf node в составе
+    родительского изделия)
+  ограничивающие_части: []
 ---
+
 
 # Часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing
 
