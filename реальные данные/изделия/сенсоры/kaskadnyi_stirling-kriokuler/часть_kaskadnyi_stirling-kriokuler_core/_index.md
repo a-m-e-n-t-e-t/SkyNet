@@ -45,6 +45,7 @@ scaling_type: количественный
 ---
 
 
+
 # Часть: часть_kaskadnyi_stirling-kriokuler_core
 
 ## Описание
