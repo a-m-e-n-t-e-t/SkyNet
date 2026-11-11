@@ -6,26 +6,29 @@ id: izdelie_sot-mram
 уровень_номер: 1
 подсистема: вычислительная
 подтип: память_MRAM
-стандарты: 
-  - JEDEC JESD47
+стандарты:
+- JEDEC JESD47
 исследовательская_группа: imec
 родитель: null
 дочерние_части:
-  - часть_sot-mram_cell_array
-  - часть_sot-mram_periphery
-  - часть_sot-mram_sense_amplifiers
-  - часть_sot-mram_row_decoders
-  - часть_sot-mram_io_interface
+- часть_sot-mram_cell_array
+- часть_sot-mram_periphery
+- часть_sot-mram_sense_amplifiers
+- часть_sot-mram_row_decoders
+- часть_sot-mram_io_interface
 материалы_частей:
-  - часть: часть_sot-mram_cell_array
-    материал: silicon_wafer
-    доля_массы: 0.36
-  - часть: часть_sot-mram_periphery
-    материал: silicon_wafer
-    доля_массы: 0.18
-  - часть: часть_sot-mram_sense_amplifiers
-    материал: silicon_wafer
-    доля_массы: 0.09
+- часть: часть_sot-mram_cell_array
+  материал: si
+  доля_массы: 0.36
+  форма: подложки_ис_и_мэмс
+- часть: часть_sot-mram_periphery
+  материал: si
+  доля_массы: 0.18
+  форма: подложки_ис_и_мэмс
+- часть: часть_sot-mram_sense_amplifiers
+  материал: si
+  доля_массы: 0.09
+  форма: подложки_ис_и_мэмс
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -35,53 +38,93 @@ scaling_type: количественный
 ии_перепроектирован:
   статус: false
   верификация: []
-основные: 
+основные:
   масса_kg:
-          min: 0.001
-          max: 0.01
-          nominal: 0.003
+    min: 0.001
+    max: 0.01
+    nominal: 0.003
   габариты_mm:
-          l: 8
-          w: 8
-          h: 1
+    l: 8
+    w: 8
+    h: 1
   выработка_энергии_W:
-          min: 0
-          max: 0
-          nominal: 0
+    min: 0
+    max: 0
+    nominal: 0
   выработка_тепла_W:
-          min: 0.01
-          max: 0.1
-          nominal: 0.05
+    min: 0.01
+    max: 0.1
+    nominal: 0.05
 наследуемые: {}
 масштабируемость:
-  режим: квантуемая
-  параметры: [ёмкость_Mb, объём_кристалла_mm2]
+  режим: масштабируемая
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1000
+    единица: шт
+  - имя: масса_единицы
+    диапазон:
+    - 0.005
+    - 0.1
+    единица: kg
+  - имя: ёмкость_Mb
+    диапазон:
+    - 1
+    - 1024
+    единица: Mb
   пределы:
-    min: {ёмкость_Mb: 1,    объём_кристалла_mm2: 1}     # test chip
-    max: {ёмкость_Mb: 8192, объём_кристалла_mm2: 858}   # reticle limit 26×33 мм = 858 мм²
-  шаг:
-    ёмкость_Mb: [256, 1024, 2048, 4096, 8192]           # стандартный ряд плотностей
-    объём_кристалла_mm2: null                            # непрерывно (floorplan)
-  закон_масштабирования:
-    площадь_кристалла: линейный                          # A ∝ ёмкость (cell pitch зафиксирован CD)
-    запись_энергия: постоянный                           # <100 fJ/bit imec 2023 — не зависит от объёма
-    пропускная_способность: логарифмический              # t_RC растёт с плотностью
+    max_единиц_в_системе: 1000
+    min_массы: 0.005
+    max_массы: 0.1
+  закон_масштабирования: 'линейный — масса_системы = N × масса_единицы; типовая установка:
+    SOT-MRAM (Spin-Orbit Torque MRAM, 28nm CMOS, 1T-1MTJ cell, 1-1024 Mb)'
   ограничивающие_части:
-    - часть: часть_sot-mram_cell_array
-      предел: литография CD ~50 нм (imec 2023) → reticle limit 26×33 мм = 858 мм² на кристалл
-    - часть: часть_sot-mram_io_interface
-      предел: стандарт DDR4/5 pinout (288/288 контактов) → ограничивает ширину шины и интерфейсную полосу
+  - часть_sot-mram_cell_array (MTJ cells on Si wafer — критическая литография)
+  - часть_sot-mram_periphery (CMOS periphery — критическая зависимость от foundry)
 дополнительные:
   объём_Mb: 256
   время_доступа_ns: 2
   источник: IMEC SOT-MRAM
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
-источник: user_input
-источник_разбора: пользовательский ввод
+дата_обновления: '2026-11-11'
+источник: web_search
+источник_разбора: веб-верификация
+технологии_частей:
+- часть: часть_sot-mram_cell_array
+  технология: cmos_7nm_intel4
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: si
+    роль: обрабатываемый
+- часть: часть_sot-mram_periphery
+  технология: cmos_7nm_intel4
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: si
+    роль: обрабатываемый
+- часть: часть_sot-mram_sense_amplifiers
+  технология: cmos_7nm_intel4
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: si
+    роль: обрабатываемый
+наследуемые_материалы:
+- материал: coefeb_mgo
+  суммарная_доля_массы: 0.36
+  источники_частей:
+  - часть_sot-mram_cell_array
+  форма: stt_mram
+- материал: si
+  суммарная_доля_массы: 0.27
+  источники_частей:
+  - часть_sot-mram_periphery
+  - часть_sot-mram_sense_amplifiers
+  форма: подложки_ис_и_мэмс
+источник_url: https://en.wikipedia.org/wiki/Magnetoresistive_random-access_memory
+источник_дата: '2026-11-11'
 ---
-# Изделие: SOT-MRAM
-
 ## Описание
 
 SOT-MRAM
@@ -92,10 +135,19 @@ SOT-MRAM
 
 | Параметр | Значение | Единица | Источник |
 |---|---|---|---|
-| подсистема | вычислительная | — | classify_subsystem |
-| категория | прочее | — | — |
+| подсистема | вычислительная | — | canon |
+| подтип | память_MRAM | — | canon |
+| масса | 0.001–0.01 (номинал 0.003) | kg | canon |
+| габариты (Д×Ш×В) | 8×8×1 | mm | canon |
+| выработка энергии | 0 | W | canon |
+| выработка тепла | 0.01–0.1 | W | canon |
+| тип узла | изделие | — | canon |
+| уровень_номер | 1 | — | canon |
 
-(Параметры требуют уточнения через веб-поиск и вычислений; см. fc_изделие_масса, fc_изделие_стандарты в _field_contracts.yaml)
+
+## Принцип работы
+
+Требует описания на основе инженерного анализа.
 
 ## Состав
 
@@ -103,15 +155,17 @@ SOT-MRAM
 
 ## Используемые технологии
 
-(Ссылки на реальные_данные/технологии/ добавляются после связывания)
+- `cmos_7nm_intel4` (доля: 1.0)
+- `cmos_7nm_intel4` (доля: 1.0)
+- `cmos_7nm_intel4` (доля: 1.0)
+
 
 ## Используемые материалы
 
-(Ссылки на реальные_данные/материалы/ добавляются после связывания)
+- `si` (форма: подложки_ис_и_мэмс) → [`si`](../../../материалы/si.md)
+- `si` (форма: подложки_ис_и_мэмс) → [`si`](../../../материалы/si.md)
+- `si` (форма: подложки_ис_и_мэмс) → [`si`](../../../материалы/si.md)
 
-## Принцип работы
-
-Требует описания на основе инженерного анализа.
 
 ## Источники
 
@@ -119,20 +173,19 @@ SOT-MRAM
 
 ---
 
-
 ## Декомпозиция
 
 ```mermaid
 graph TD
-    sot-mram["izdelie_sot-mram"]
-    sot-mram_cell_array["часть_sot-mram_cell_array"]
-    sot-mram --> sot-mram_cell_array
-    sot-mram_periphery["часть_sot-mram_periphery"]
-    sot-mram --> sot-mram_periphery
-    sot-mram_sense_amplifiers["часть_sot-mram_sense_amplifiers"]
-    sot-mram --> sot-mram_sense_amplifiers
-    sot-mram_row_decoders["часть_sot-mram_row_decoders"]
-    sot-mram --> sot-mram_row_decoders
-    sot-mram_io_interface["часть_sot-mram_io_interface"]
-    sot-mram --> sot-mram_io_interface
+    izdelie_sot_mram["izdelie_sot-mram"]
+    ______sot_mram_cell_array["часть_sot-mram_cell_array"]
+    izdelie_sot_mram --> ______sot_mram_cell_array
+    ______sot_mram_periphery["часть_sot-mram_periphery"]
+    izdelie_sot_mram --> ______sot_mram_periphery
+    ______sot_mram_sense_amplifiers["часть_sot-mram_sense_amplifiers"]
+    izdelie_sot_mram --> ______sot_mram_sense_amplifiers
+    ______sot_mram_row_decoders["часть_sot-mram_row_decoders"]
+    izdelie_sot_mram --> ______sot_mram_row_decoders
+    ______sot_mram_io_interface["часть_sot-mram_io_interface"]
+    izdelie_sot_mram --> ______sot_mram_io_interface
 ```

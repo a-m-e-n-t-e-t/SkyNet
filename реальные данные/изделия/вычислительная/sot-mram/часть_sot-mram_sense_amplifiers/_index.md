@@ -7,16 +7,16 @@ id: часть_sot-mram_sense_amplifiers
 подсистема: вычислительная
 подтип: sense_amplifiers
 стандарты:
-  - IMEC SOT-MRAM LL-Cache (2023)
-  - IEEE SSCS 7nm SOT-MRAM
+- IMEC SOT-MRAM LL-Cache (2023)
+- IEEE SSCS 7nm SOT-MRAM
 исследовательская_группа: null
 родитель: izdelie_sot-mram
 дочерние_части: []
 материалы_частей:
-  - часть: часть_sot-mram_sense_amplifiers
-    материал: si
-    доля_массы: 1.0
-
+- часть: часть_sot-mram_sense_amplifiers
+  материал: si
+  доля_массы: 1.0
+  форма: подложки_ис_и_мэмс
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -34,7 +34,7 @@ scaling_type: количественный
     w: 0.9
     h: 0.4
   выработка_энергии_W: 0
-  выработка_тепла_W: 0.010
+  выработка_тепла_W: 0.01
 наследуемые: {}
 дополнительные: {}
 дата_создания: 2026-11-03
@@ -43,7 +43,27 @@ scaling_type: количественный
 источник_разбора: канон
 источник_url: https://www.imec-int.com/en/articles/novel-sot-mram-architecture-opens-doors-high-density-last-level-cache-memory-applications
 источник_дата: 2026-11-07
+технологии_частей:
+- часть: часть_sot-mram_sense_amplifiers
+  технология: cmos_7nm_intel4
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: si
+    роль: обрабатываемый
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node (часть_sot-mram_sense_amplifiers)
+  ограничивающие_части: []
 ---
+
 # Часть: часть_sot-mram_sense_amplifiers
 
 ## Описание
