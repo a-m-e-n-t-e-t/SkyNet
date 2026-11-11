@@ -6695,6 +6695,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_tedlar_pet",
+      "type": "material",
+      "label": "биполярно-ориентированная полиэтилентерефталатная (BOPET) плёнка DuPont Tedlar (PVF — polyvinyl fluoride), Tg 40-80°C, T_плав 198-200°C",
+      "path": "реальные данные/материалы/tedlar_pet.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_teng",
       "type": "material",
       "label": "TENG",
@@ -7795,18 +7802,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_tcp",
-      "dst": "material_neilon_6_66",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_tcp",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_pezoelektricheskii_gromkogovoritel",
       "dst": "часть_pezoelektricheskii_gromkogovoritel_core",
       "type": "has_part",
@@ -7855,18 +7850,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_apa",
-      "dst": "material_batio3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_apa",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_ipmc",
       "dst": "часть_ipmc_core",
       "type": "has_part",
@@ -7888,18 +7871,6 @@
       "src": "izdelie_ipmc",
       "dst": "часть_ipmc_mounting",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_ipmc",
-      "dst": "material_nafion",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_ipmc",
-      "dst": "material_aluminum",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8053,18 +8024,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_elektroflyuidnye_volokna_mit",
-      "dst": "material_ionnaya_zhidkost_emim_tfsi",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_elektroflyuidnye_volokna_mit",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena",
       "dst": "часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core",
       "type": "has_part",
@@ -8155,18 +8114,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_bldc",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_bldc",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov",
       "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
       "type": "has_part",
@@ -8188,18 +8135,6 @@
       "src": "izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov",
       "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov",
-      "dst": "material_copper",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov",
-      "dst": "material_aluminum",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8461,36 +8396,6 @@
       "meta": {}
     },
     {
-      "src": "часть_tcp_mounting",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_tcp_connectors",
-      "dst": "material_poliimid",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_tcp_core",
-      "dst": "material_neilon_6_66",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_tcp_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_apa_connectors",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_apa_core",
       "dst": "часть_apa_core_piezostack",
       "type": "has_part",
@@ -8500,30 +8405,6 @@
       "src": "часть_apa_core",
       "dst": "часть_apa_core_shell",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "часть_apa_core",
-      "dst": "material_batio3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_apa_core",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_apa_mounting",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_apa_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8539,12 +8420,6 @@
       "meta": {}
     },
     {
-      "src": "часть_ipmc_mounting",
-      "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_ipmc_core",
       "dst": "часть_ipmc_core_membrane",
       "type": "has_part",
@@ -8554,30 +8429,6 @@
       "src": "часть_ipmc_core",
       "dst": "часть_ipmc_core_electrodes",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "часть_ipmc_core",
-      "dst": "material_nafion",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_ipmc_core",
-      "dst": "material_pt",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_ipmc_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_ipmc_connectors",
-      "dst": "material_poliimid",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8653,30 +8504,6 @@
       "meta": {}
     },
     {
-      "src": "часть_elektroflyuidnye_volokna_mit_core",
-      "dst": "material_ionnaya_zhidkost_emim_tfsi",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_elektroflyuidnye_volokna_mit_mounting",
-      "dst": "material_ss_aisi_304",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_elektroflyuidnye_volokna_mit_connectors",
-      "dst": "material_poliimid",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_elektroflyuidnye_volokna_mit_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_magnet",
       "dst": "material_ndfeb",
       "type": "uses_material",
@@ -8707,48 +8534,6 @@
       "meta": {}
     },
     {
-      "src": "часть_bldc_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_bldc_mounting",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_bldc_connectors",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_bldc_core",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting",
-      "dst": "material_ss_aisi_304",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
       "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda",
       "type": "has_part",
@@ -8770,30 +8555,6 @@
       "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
       "dst": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core",
-      "dst": "material_copper",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran",
-      "dst": "material_copper",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda",
-      "dst": "material_copper",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda",
-      "dst": "material_copper",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8977,24 +8738,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_SkyNet-LegActuator",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_SkyNet-LegActuator",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_SkyNet-LegActuator",
-      "dst": "material_ss_aisi_304",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_SkyNet-LegActuator_hip",
       "dst": "часть_SkyNet-LegActuator_hip_двигатель",
       "type": "has_part",
@@ -9016,36 +8759,6 @@
       "src": "часть_SkyNet-LegActuator_hip",
       "dst": "часть_SkyNet-LegActuator_hip_тормоз",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-LegActuator_hip",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-LegActuator_hip",
-      "dst": "material_copper",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-LegActuator_hip",
-      "dst": "material_100cr6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-LegActuator_hip",
-      "dst": "material_spring_steel",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-LegActuator_mounting",
-      "dst": "material_ss_aisi_304",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -9073,30 +8786,6 @@
       "meta": {}
     },
     {
-      "src": "часть_SkyNet-LegActuator_ankle",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-LegActuator_ankle",
-      "dst": "material_copper",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-LegActuator_ankle",
-      "dst": "material_100cr6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-LegActuator_ankle",
-      "dst": "material_spring_steel",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_SkyNet-LegActuator_knee",
       "dst": "часть_SkyNet-LegActuator_knee_двигатель",
       "type": "has_part",
@@ -9118,36 +8807,6 @@
       "src": "часть_SkyNet-LegActuator_knee",
       "dst": "часть_SkyNet-LegActuator_knee_тормоз",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-LegActuator_knee",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-LegActuator_knee",
-      "dst": "material_copper",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-LegActuator_knee",
-      "dst": "material_100cr6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-LegActuator_knee",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-LegActuator_knee",
-      "dst": "material_spring_steel",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -9982,6 +9641,12 @@
       "src": "izdelie_perovskite_tandem",
       "dst": "часть_perovskite_tandem_encapsulant",
       "type": "has_part",
+      "meta": {}
+    },
+    {
+      "src": "izdelie_perovskite_tandem",
+      "dst": "material_tedlar_pet",
+      "type": "uses_material",
       "meta": {}
     },
     {
@@ -10881,6 +10546,12 @@
     {
       "src": "часть_perovskite_tandem_junction_box",
       "dst": "material_peek",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_perovskite_tandem_backsheet",
+      "dst": "material_tedlar_pet",
       "type": "uses_material",
       "meta": {}
     },
@@ -14917,18 +14588,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_reshetchatyi_karkas",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_reshetchatyi_karkas",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_elastomernyh_dempferah",
       "dst": "часть_elastomernyh_dempferah_core",
       "type": "has_part",
@@ -15013,12 +14672,6 @@
       "meta": {}
     },
     {
-      "src": "часть_reshetchatyi_karkas_housing",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_reshetchatyi_karkas_core",
       "dst": "часть_reshetchatyi_karkas_core_стрингеры",
       "type": "has_part",
@@ -15034,24 +14687,6 @@
       "src": "часть_reshetchatyi_karkas_core",
       "dst": "часть_reshetchatyi_karkas_core_фиттинги",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "часть_reshetchatyi_karkas_core",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_reshetchatyi_karkas_mounting",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_reshetchatyi_karkas_connectors",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15793,8 +15428,10 @@
       "standart_IEC 60904",
       "standart_IEC 61076-2-101",
       "standart_IEC 61215",
+      "standart_IEC 61215 (PV module design qualification)",
       "standart_IEC 61215 (PV-модули: квалификационные испытания рамы)",
       "standart_IEC 61730",
+      "standart_IEC 61730 (PV module safety)",
       "standart_IEC 61960",
       "standart_IEC 62133-2",
       "standart_IEC 62133-2 (Li-ion аккумулирование)",
@@ -15951,6 +15588,7 @@
       "standart_MIL-STD-883, метод 2011.9 (испытание прочности проволочных соединений, pull test)",
       "standart_MIL-T-10727",
       "standart_MIL-T-21014D Class 1 (высокоплотный вольфрамовый сплав 90 % W)",
+      "standart_MIL-W-22759 (aerospace wire)",
       "standart_MMPA 0100-00 (Standard Specifications for Permanent Magnet Materials)",
       "standart_MSFC-STD-5003",
       "standart_Microgen Engine Corporation Specs",
@@ -16091,6 +15729,7 @@
       "group_Boulos et al. 2005 Materials Research Bulletin (гидротермальный синтез наноразмерного BaTiO3, 159 цитирований); Urek & Boštjančič 1998 Journal of the European Ceramic Society (гидротермальный синтез мелких порошков, 78 цитирований); Buscaglia (CNR-ITEC, обзор BaTiO3-based ceramics, 103 цитирований); Sahoo et al. (твердофазный синтез BaCO3+TiO2: кальцинация 800–1100 °C, спекание >1300 °C); Rani et al. 2022 (влияние температуры спекания 1350 °C на гексагональную фазу); Xing et al. 2016 Materials & Design (теплофизика монолитного BaTiO3 — канон)",
       "group_Celgard, LLC (Asahi Kasei) — микропористые полиолефиновые сепараторы Celgard 2400/2500 (монослой PP 25 мкм, melt integrity 165 °C); Hollingsworth & Vose — nonwoven-сепараторы первичных литиевых элементов (Li-SOCl2, 30–35 г/м², «little to no metals»); C.T. Love 2011 (J. Power Sources, термомеханический анализ коммерческих сепараторов Celgard 2400/2500 — porosity/pore dimension, цит. 244); патент US6368742B2 (PP microporous membrane for battery separator — пористость 40–65 %, оптимум 47–57 %); NETZSCH Analyzing & Testing (термофизика iPP: cp 1.8 Дж/(г·К), CTE); INEOS Olefins & Polymers (Typical Engineering Properties of Polypropylene — ρ 905, k, механика); LabCore 2026 (разбор Celgard 2325 vs 2400: монослой PP без shutdown, Tm 165 °C)",
       "group_Denka (ацетиленовая сажа DENKA BLACK с 1940-х, марки Powder/Granule/Press 50–100 %/Li-100/Li-250 — стандарт сухих батарей); Orion Engineered Carbons, Cabot (печные марки, THERMAX); Imerys/Timcal (Super P — батарейный стандарт); AkzoNobel/Resil (Ketjenblack EC-600JD); IARC Monograph 93 (2010 — типы CB, насыпные плотности); Khodabakhshi & Forg (2020, Carbon Black Reborn — структура/химия CB для renewable applications); патент US4279880A (проводящая ацетиленовая сажа — сопротивление при 6.3 бар)",
+      "group_DuPont Tedlar SP product line (dupont.com); IEC 61730 (PV module safety); IEC 61215 (PV module design qualification)",
       "group_DuPont — изобретатель поливинилфторида (PVF, 1940-е), товарный знак Tedlar® и коммерческий выпуск плёнки с 1961 г.; ПЭТ-сердцевина boPET — DuPont/ICI/Hoechst (середина 1950-х — первая двуосно-ориентированная полимерная плёнка массового производства; бренды Mylar®/Melinex®, ныне Mylar Specialty Films — ребрендинг DuPont Teijin Films, 2024)",
       "group_E.A. Skrabek и D.S. Trimmer (Teledyne Energy Systems) — изобретатели TAGS-85 ((GeTe)0.85(AgSbTe2)0.15; CRC Handbook of Thermoelectrics, гл. 22), впервые применён в РИТЭГ SNAP-19 (Viking/Pioneer); программа SNAP (США) — первый космический РИТЭГ SNAP-3 (1961) на парах PbTe; Teledyne Energy Systems — изготовитель PbTe/TAGS-пар MMRTG (Curiosity/Perseverance) по контракту с Aerojet Rocketdyne",
       "group_EN 12163/12164/12165 — стандартизация CW106C; UNS C18400 / ASTM B301 — американская стандартизация хромистой меди; термомеханическая обработка дисперсионно-твердеющих медных сплавов — промышленные KME/Aurubis (CCZr); применение в ITER divertor heat sink — программа EU Fusion (CuCrZr)",
@@ -16207,26 +15846,25 @@
       "material_silicon_wafer",
       "material_stainless_steel_304",
       "material_stainless_steel_316",
-      "material_tedlar_pet",
       "material_ti-6al-4v_legirovannyi_3_5_mas_tantala_ii",
       "material_uo2_pellets",
       "material_ybco_bulk"
     ]
   },
   "stats": {
-    "nodes": 1094,
-    "edges": 1311,
+    "nodes": 1095,
+    "edges": 1249,
     "dangling": {
-      "complies_with": 542,
+      "complies_with": 545,
       "has_part": 4,
-      "researched_by": 95,
-      "uses_material": 33
+      "researched_by": 96,
+      "uses_material": 32
     },
     "by_type": {
       "chast": 589,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 192,
-      "material": 201,
+      "material": 202,
       "standart": 8,
       "tekhnologia": 94
     }

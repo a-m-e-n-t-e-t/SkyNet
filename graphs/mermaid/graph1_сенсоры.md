@@ -162,7 +162,7 @@ graph LR
     material_aluminum[Al ≥ 99.5 % (основа); …]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_si[Si (кремний); электрон…]
-    material_ss_aisi_304[нержавеющая сталь AISI…]
+    material_latun_c36000[Cu 60–63% (основа), Zn…]
     izdelie_mwir_nbn_640 -->|материал| material_al_6061_t6
     izdelie_mwir_nbn_640 -->|материал| material_aluminum
     izdelie_pmut -->|материал| material_aluminum
@@ -203,20 +203,22 @@ graph LR
     часть_mwir_nbn_640_mounting -->|материал| material_al_6061_t6
     часть_mwir_nbn_640_core -->|материал| material_al_6061_t6
     часть_pmut_housing -->|материал| material_al_6061_t6
-    часть_pmut_mounting -->|материал| material_ss_aisi_304
+    часть_pmut_connectors -->|материал| material_latun_c36000
     часть_mwir_2_core -->|материал| material_al_6061_t6
     часть_mwir_2_housing -->|материал| material_al_6061_t6
     часть_sensora_volnovogo_fronta_mounting -->|материал| material_al_6061_t6
+    часть_sensora_volnovogo_fronta_connectors -->|материал| material_latun_c36000
     часть_sensora_volnovogo_fronta_housing -->|материал| material_al_6061_t6
     часть_sensora_volnovogo_fronta_core -->|материал| material_al_6061_t6
     часть_multispektralnye_cmos_matritsy_s_ik_diapazonom_mounting -->|материал| material_al_6061_t6
     часть_multispektralnye_cmos_matritsy_s_ik_diapazonom_core -->|материал| material_al_6061_t6
     часть_multispektralnye_cmos_matritsy_s_ik_diapazonom_housing -->|материал| material_al_6061_t6
     часть_pezo_mems_housing -->|материал| material_al_6061_t6
-    часть_pezo_mems_mounting -->|материал| material_ss_aisi_304
+    часть_pezo_mems_connectors -->|материал| material_latun_c36000
     часть_tverdotelnyi_mmwave_radar_core -->|материал| material_al_6061_t6
     часть_tverdotelnyi_mmwave_radar_mounting -->|материал| material_al_6061_t6
     часть_tverdotelnyi_mmwave_radar_housing -->|материал| material_al_6061_t6
+    часть_tverdotelnyi_mmwave_radar_connectors -->|материал| material_latun_c36000
     часть_metalinza_mounting -->|материал| material_al_6061_t6
     часть_metalinza_housing -->|материал| material_al_6061_t6
     часть_event_cameras_housing -->|материал| material_al_6061_t6
@@ -225,6 +227,7 @@ graph LR
     часть_ferritovye_klinya_na_kabelyah_sensorov_housing -->|материал| material_al_6061_t6
     часть_ferritovye_klinya_na_kabelyah_sensorov_connectors -->|материал| material_stal_st3
     часть_quantum_cascade_laser_housing -->|материал| material_al_6061_t6
+    часть_quantum_cascade_laser_connectors -->|материал| material_latun_c36000
     часть_quantum_cascade_laser_core -->|материал| material_al_6061_t6
     часть_lwir_boson_1024_core -->|материал| material_al_6061_t6
     часть_lwir_boson_1024_housing -->|материал| material_al_6061_t6
@@ -232,12 +235,13 @@ graph LR
     часть_mems_mikrofonov_housing -->|материал| material_al_6061_t6
     часть_mems_mikrofonov_mounting -->|материал| material_al_6061_t6
     часть_poristyi_gazovyi_podshipnik_iz_sic_housing -->|материал| material_al_6061_t6
-    часть_poristyi_gazovyi_podshipnik_iz_sic_mounting -->|материал| material_ss_aisi_304
     часть_poristyi_gazovyi_podshipnik_iz_sic_connectors -->|материал| material_al_6061_t6
+    часть_ultrakorotkoimpulsnye_lazery_connectors -->|материал| material_latun_c36000
     часть_ultrakorotkoimpulsnye_lazery_mounting -->|материал| material_al_6061_t6
     часть_cw_lazer_mounting -->|материал| material_al_6061_t6
     часть_cw_lazer_connectors -->|материал| material_al_6061_t6
     часть_dvs_core -->|материал| material_al_6061_t6
+    часть_dvs_connectors -->|материал| material_latun_c36000
     часть_dvs_mounting -->|материал| material_al_6061_t6
     часть_dvs_housing -->|материал| material_al_6061_t6
     часть_mems_imu_housing -->|материал| material_al_6061_t6
@@ -246,15 +250,19 @@ graph LR
     часть_pezo_sensor_connectors -->|материал| material_stal_st3
     часть_pezo_sensor_mounting -->|материал| material_al_6061_t6
     часть_pezo_sensor_housing -->|материал| material_al_6061_t6
+    часть_flir_connectors -->|материал| material_latun_c36000
     часть_flir_core -->|материал| material_si
     часть_flir_mounting -->|материал| material_al_6061_t6
     часть_flir_housing -->|материал| material_al_6061_t6
     часть_flir_boson_640_housing -->|материал| material_al_6061_t6
     часть_flir_boson_640_core -->|материал| material_al_6061_t6
     часть_flir_boson_640_mounting -->|материал| material_al_6061_t6
+    часть_eo_ir_kamera_connectors -->|материал| material_latun_c36000
     часть_eo_ir_kamera_mounting -->|материал| material_al_6061_t6
+    часть_dielektricheskie_elastomernye_datchiki_connectors -->|материал| material_latun_c36000
     часть_dielektricheskie_elastomernye_datchiki_housing -->|материал| material_al_6061_t6
     часть_pezoelektricheskie_mems_mounting -->|материал| material_al_6061_t6
+    часть_pezoelektricheskie_mems_connectors -->|материал| material_latun_c36000
     часть_pezoelektricheskie_mems_housing -->|материал| material_al_6061_t6
     часть_flir_lwir_2_core -->|материал| material_al_6061_t6
     часть_flir_lwir_2_housing -->|материал| material_al_6061_t6

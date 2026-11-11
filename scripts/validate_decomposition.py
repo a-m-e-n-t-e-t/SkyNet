@@ -3687,6 +3687,8 @@ def check_F33(entries: list[tuple[Path, str, dict]] | None = None) -> dict:
         # pcm_rt35: Phase-Change Material RT35 (вещество-парафин) vs изделие-обёртка
         # для композитных термопрокладок в изделия/компоненты/композитные/
         'pcm_rt35': 'Phase-Change Material RT35 (вещество) vs композитная термопрокладка (изделие)',
+        # tedlar_pet: DuPont Tedlar (PVF плёнка, материал) vs izdelie_tedlar_pet (изделие-обёртка)
+        'tedlar_pet': 'DuPont Tedlar PVF плёнка (материал) vs изделие-обёртка (изделие)',
     }
 
     total = len(entries)
