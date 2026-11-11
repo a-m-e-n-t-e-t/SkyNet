@@ -7,15 +7,15 @@ id: часть_ultrakorotkoimpulsnye_lazery_core
 подсистема: сенсоры
 подтип: основной_элемент
 стандарты:
-  - ISO 9001
+- ISO 9001
 исследовательская_группа: null
 родитель: izdelie_ultrakorotkoimpulsnye_lazery
 дочерние_части: []
 материалы_частей:
-  - часть: часть_ultrakorotkoimpulsnye_lazery_core
-    материал: al_6061-t6
-    доля_массы: 1.0
-
+- часть: часть_ultrakorotkoimpulsnye_lazery_core
+  материал: al_6061-t6
+  форма: силовые_элементы_конструкций
+  доля_массы: 1.0
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -43,6 +43,7 @@ scaling_type: количественный
 источник_url: https://en.wikipedia.org/wiki/Ultrashort_pulse
 источник_дата: 2026-11-05
 ---
+
 
 # Часть: часть_ultrakorotkoimpulsnye_lazery_core
 
