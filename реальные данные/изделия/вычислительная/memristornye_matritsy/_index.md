@@ -10,18 +10,20 @@ id: izdelie_memristornye_matritsy
 исследовательская_группа: hp_labs
 родитель: null
 дочерние_части:
-  - часть_memristornye_matritsy_crossbar
-  - часть_memristornye_matritsy_word_drivers
-  - часть_memristornye_matritsy_bit_sense
-  - часть_memristornye_matritsy_adc
-  - часть_memristornye_matritsy_controller
+- часть_memristornye_matritsy_crossbar
+- часть_memristornye_matritsy_word_drivers
+- часть_memristornye_matritsy_bit_sense
+- часть_memristornye_matritsy_adc
+- часть_memristornye_matritsy_controller
 материалы_частей:
-  - часть: часть_memristornye_matritsy_crossbar
-    материал: tio2_memristor
-    доля_массы: 0.28
-  - часть: часть_memristornye_matritsy_word_drivers
-    материал: silicon_wafer
-    доля_массы: 0.18
+- часть: часть_memristornye_matritsy_crossbar
+  материал: hfo2
+  форма: high_k_затворная_диэлектрика
+  доля_массы: 0.28
+- часть: часть_memristornye_matritsy_word_drivers
+  материал: si
+  форма: подложки_ис_и_мэмс
+  доля_массы: 0.18
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -31,36 +33,95 @@ scaling_type: количественный
 ии_перепроектирован:
   статус: false
   верификация: []
-основные: 
+основные:
   масса_kg:
-          min: 0.005
-          max: 0.05
-          nominal: 0.01
+    min: 0.005
+    max: 0.05
+    nominal: 0.01
   габариты_mm:
-          l: 12
-          w: 12
-          h: 1
+    l: 12
+    w: 12
+    h: 1
   выработка_энергии_W:
-          min: 0
-          max: 0
-          nominal: 0
+    min: 0
+    max: 0
+    nominal: 0
   выработка_тепла_W:
-          min: 0.1
-          max: 2.0
-          nominal: 1.2
+    min: 0.1
+    max: 2.0
+    nominal: 1.2
 наследуемые: {}
-дополнительные: 
+дополнительные:
   технология: memristor crossbar
   источник: HP Labs research
   источник_url: https://www.nature.com/articles/s41467-024-45670-9
   источник_url_2: https://www.frontiersin.org/journals/nanotechnology/articles/10.3389/fnano.2021.734121/full
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-10
+дата_обновления: '2026-11-11'
 источник: web_search
-источник_url: https://www.nature.com/articles/s41467-024-45670-9
+источник_url: https://knowm.com/products/w-sdc-memristor-crossbars
 источник_разбора: веб-верификация
-источник_дата: 2026-11-10
+источник_дата: '2026-11-11'
+технологии_частей:
+- часть: часть_memristornye_matritsy_crossbar
+  технология: magnetron_sputtering_tio2
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: tio2_memristor
+    роль: обрабатываемый
+- часть: часть_memristornye_matritsy_word_drivers
+  технология: cmos_7nm_intel4
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: si
+    роль: обрабатываемый
+наследуемые_материалы:
+- материал: hfo2
+  суммарная_доля_массы: 0.28
+  источники_частей:
+  - часть_memristornye_matritsy_crossbar
+  форма: high_k_затворная_диэлектрика
+- материал: si
+  суммарная_доля_массы: 0.18
+  источники_частей:
+  - часть_memristornye_matritsy_word_drivers
+  форма: подложки_ис_и_мэмс
+масштабируемость:
+  режим: масштабируемая
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1000
+    единица: шт
+  - имя: масса_единицы
+    диапазон:
+    - 0.005
+    - 0.05
+    единица: kg
+  - имя: размер_матрицы
+    диапазон:
+    - 8
+    - 256
+    единица: cells
+  пределы:
+    max_единиц_в_системе: 1000
+    min_массы: 0.005
+    max_массы: 0.05
+    min_матрицы: 8
+    max_матрицы: 256
+  закон_масштабирования: 'нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
+    overhead на PCB+connectors); типовая установка: Knowm W-SDC memristor crossbar
+    (8x8 to 32x32, 5×5 μm lateral, 2 nm feature); Intel Optane M.2 (80×22×2 mm, 10g,
+    16-32 GB)'
+  ограничивающие_части:
+  - часть_memristornye_matritsy_crossbar (TiO2 + W-SDC memristors — критическая точность
+    производства, lab-grade)
+  - часть_memristornye_matritsy_word_drivers (silicon CMOS drivers — критическая зависимость
+    от CMOS foundry)
 ---
+
+
 # Изделие: мемристорные матрицы
 
 ## Описание
