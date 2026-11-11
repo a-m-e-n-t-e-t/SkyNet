@@ -86,66 +86,15 @@ relations:
 источник_дата: '2026-11-11'
 уровень_иерархии: верхний
 уровень_номер: 1
-дочерние_части:
-- izdelie_tverdooksidnyi_topливnyi_element
-- izdelie_SkyNet-HKAerial
-- izdelie_SkyNet-Cameron
-- izdelie_lidar_robosense_ac1
-- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-- izdelie_bldc_enkoder
 основные:
   масса_kg:
     min: 85.0
     max: 110.0
     nominal: 95.0
   рост_m: 1.78
-масштабируемость:
-  режим: квантуемая
-  параметры:
-  - имя: количество_единиц
-    диапазон:
-    - 1
-    - 100
-    единица: шт
-  - имя: масса_единицы
-    диапазон:
-    - 85.0
-    - 110.0
-    единица: kg
-  - имя: рост_единицы
-    диапазон:
-    - 1.75
-    - 1.83
-    единица: m
-  пределы:
-    max_единиц_в_системе: 100
-    min_массы: 85.0
-    max_массы: 110.0
-  закон_масштабирования: 'линейный — масса_парка = N × масса_единицы; canon: T-3000
-    (Terminator Genisys 2015), John Connor nanite-infused, 95 kg, 50 km/h, machine
-    phase matter'
-  ограничивающие_части:
-  - izdelie_tverdooksidnyi_topливnyi_element (SOFC — критическая зависимость)
-  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr (нейроморфный AI processor)
-наследуемые_материалы:
-- материал: b4c
-  суммарная_доля_массы: 0.08
-  источники_частей:
-  - многослойная_броня_слой_1
-  форма: баллистическая_керамика
-- материал: ti-6al-4v
-  суммарная_доля_массы: 0.3
-  источники_частей:
-  - многослойная_броня_слой_2
-  - endoskeleton
-  форма: планер_и_космические_изделия
-- материал: uhmwpe
-  суммарная_доля_массы: 0.04
-  источники_частей:
-  - многослойная_броня_слой_3
-  форма: высоконагруженные_тонкие_шнуры
 дата_обновления: '2026-11-11'
 ---
+
 ## Описание
 
 T-3000 — Джон Коннор, конвертированный в киборга наноботами; фазовая материя (как T-1000, но улучшенная); устойчив к плазме; миссия: защита Genisys.
@@ -168,8 +117,8 @@ T-3000 — Джон Коннор, конвертированный в кибор
 ```mermaid
 graph TD
     SkyNet_T3000["SkyNet-T3000"]
-    izdelie_tverdooksidnyi_top___nyi_element["izdelie_tverdooksidnyi_topливnyi_element"]
-    SkyNet_T3000 --> izdelie_tverdooksidnyi_top___nyi_element
+    izdelie_tverdooksidnyi_toplivnyi_element["izdelie_tverdooksidnyi_toplivnyi_element"]
+    SkyNet_T3000 --> izdelie_tverdooksidnyi_toplivnyi_element
     izdelie_SkyNet_HKAerial["izdelie_SkyNet-HKAerial"]
     SkyNet_T3000 --> izdelie_SkyNet_HKAerial
     izdelie_SkyNet_Cameron["izdelie_SkyNet-Cameron"]

@@ -85,66 +85,15 @@ relations:
 источник_дата: '2026-11-11'
 уровень_иерархии: верхний
 уровень_номер: 1
-дочерние_части:
-- izdelie_tverdooksidnyi_topливnyi_element
-- izdelie_SkyNet-HKAerial
-- izdelie_SkyNet-Cameron
-- izdelie_lidar_robosense_ac1
-- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-- izdelie_bldc_enkoder
 основные:
   масса_kg:
     min: 200.0
     max: 240.0
     nominal: 220.0
   рост_m: 2.4
-масштабируемость:
-  режим: квантуемая
-  параметры:
-  - имя: количество_единиц
-    диапазон:
-    - 1
-    - 1000
-    единица: шт
-  - имя: масса_единицы
-    диапазон:
-    - 200.0
-    - 240.0
-    единица: kg
-  - имя: рост_единицы
-    диапазон:
-    - 2.3
-    - 2.5
-    единица: m
-  пределы:
-    max_единиц_в_системе: 1000
-    min_массы: 200.0
-    max_массы: 240.0
-  закон_масштабирования: 'линейный — масса_парка = N × масса_единицы; canon: T-70
-    (T2 3D Battle Across Time 1996), 8 ft tall (2.4m), 220 kg, early hydraulic Terminator,
-    базовый пехотинец Skynet'
-  ограничивающие_части:
-  - izdelie_tverdooksidnyi_topливnyi_element (SOFC — критическая зависимость)
-  - izdelie_bldc_enkoder (BLDC/hydraulic приводы — early Terminator hydraulics)
-наследуемые_материалы:
-- материал: b4c
-  суммарная_доля_массы: 0.12
-  источники_частей:
-  - многослойная_броня_слой_1
-  форма: баллистическая_керамика
-- материал: ti-6al-4v
-  суммарная_доля_массы: 0.4
-  источники_частей:
-  - многослойная_броня_слой_2
-  - endoskeleton
-  форма: планер_и_космические_изделия
-- материал: uhmwpe
-  суммарная_доля_массы: 0.06
-  источники_частей:
-  - многослойная_броня_слой_3
-  форма: высоконагруженные_тонкие_шнуры
 дата_обновления: '2026-11-11'
 ---
+
 ## Описание
 
 Прототип гуманоидного терминатора Скайнет; первая бипедальная модель; рост ~2.5м, цельнометаллический эндоскелет без живой ткани.
@@ -167,8 +116,8 @@ relations:
 ```mermaid
 graph TD
     SkyNet_T70["SkyNet-T70"]
-    izdelie_tverdooksidnyi_top___nyi_element["izdelie_tverdooksidnyi_topливnyi_element"]
-    SkyNet_T70 --> izdelie_tverdooksidnyi_top___nyi_element
+    izdelie_tverdooksidnyi_toplivnyi_element["izdelie_tverdooksidnyi_toplivnyi_element"]
+    SkyNet_T70 --> izdelie_tverdooksidnyi_toplivnyi_element
     izdelie_SkyNet_HKAerial["izdelie_SkyNet-HKAerial"]
     SkyNet_T70 --> izdelie_SkyNet_HKAerial
     izdelie_SkyNet_Cameron["izdelie_SkyNet-Cameron"]

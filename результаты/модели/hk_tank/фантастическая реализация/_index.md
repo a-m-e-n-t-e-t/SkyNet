@@ -1,74 +1,90 @@
 ---
 id: SkyNet-HKTank
 web_verification: terminator.fandom.com/wiki/HK-Tank + robots.fandom.com (2026-11-03)
-тактико_технические_характеристики: 
+тактико_технические_характеристики:
   мобильность:
-          скорость_км_ч: 50
-          масса_kg: 30000
+    скорость_км_ч: 50
+    масса_kg: 30000
   габариты:
-          высота_m: 10
+    высота_m: 10
   питание: fusion_reactor
   вооружение: 2-3 phased_plasma_cannons + dual_machine_guns
-дочерние_части: 
-  - часть_hk_tank_корпус
-  - часть_hk_tank_гусеница_левая
-  - часть_hk_tank_башня
-  - часть_hk_tank_плазма_пушка_1
-  - часть_hk_tank_сенсоры
-  - часть_hk_tank_двигатель
-  - часть_hk_tank_связь
-  - часть_hk_tank_навигация
-  - часть_hk_tank_боеприпасы
 тип: модель_SkyNet
 класс: наземный_гусеничный
 категория: наземный_HK
 тип_модели: наземный_гусеничный
 источник_происхождения: фильм
-функции: ["штурм", "гвардия", "тяжёлая поддержка"]
+функции:
+- штурм
+- гвардия
+- тяжёлая поддержка
 канон_источник: T1 (1984), T2 (1991), T:S (2009)
-произведения: ["work_001", "work_002", "work_004", "work_042", "work_045"]
+произведения:
+- work_001
+- work_002
+- work_004
+- work_042
+- work_045
 производитель: Скайнет
 статус_реальности: canon
 подтип_модели: стандартный
 многослойная_броня:
   слои:
-    - номер: 1
-      материал: b4c  # B₄C (внешний)
-      толщина_мм: {min: 2, target: 10}
-    - номер: 2
-      материал: rha_steel  # RHA steel (кин.)
-      толщина_мм: {min: 2, target: 10}
-    - номер: 3
-      материал: uhmwpe_dyneema  # UHMWPE (арамидный)
-      толщина_мм: {min: 2, target: 10}
-    - номер: 4
-      материал: rubber  # Резина (подложка)
-      толщина_мм: {min: 2, target: 10}
+  - номер: 1
+    материал: b4c
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 2
+    материал: rha_steel
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 3
+    материал: uhmwpe_dyneema
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 4
+    материал: rubber
+    толщина_мм:
+      min: 2
+      target: 10
   тип_брони: наземный_гусеничный
-  соответствует_типу_модели: true  # F74, max_mass_percent: 50, min_layers: 4
+  соответствует_типу_модели: true
 доступность: фантастический
-expected_subsystems: ["вычислительная", "энергетическая", "каркас", "броня", "сенсоры", "приводная_система", "система_связи", "навигация", "система_питания", "система_передвижения"]
+expected_subsystems:
+- вычислительная
+- энергетическая
+- каркас
+- броня
+- сенсоры
+- приводная_система
+- система_связи
+- навигация
+- система_питания
+- система_передвижения
 relations:
   successor_of: null
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: 
-  - izdelie_tverdooksidnyi_toplivnyi_element
-  - izdelie_nasa_asc-e_srsc
-  - izdelie_superkondensatory
-  - izdelie_SkyNet-HKAerial
-  - izdelie_SkyNet-Rev9
-  - izdelie_SkyNet-Cameron
-  - izdelie_metalinza
-  - izdelie_mwir_nbn_640
-  - izdelie_lidar_robosense_ac1
-  - izdelie_hasel
-  - izdelie_povorotnoe_uplotnenie
-  - izdelie_elektroflyuidnye_volokna_mit
-  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-  - izdelie_razryvnye_mufty_iso_16028
-  - izdelie_flat-face_couplings_iso_16028
+реализация_промышленная:
+- izdelie_tverdooksidnyi_toplivnyi_element
+- izdelie_nasa_asc-e_srsc
+- izdelie_superkondensatory
+- izdelie_SkyNet-HKAerial
+- izdelie_SkyNet-Rev9
+- izdelie_SkyNet-Cameron
+- izdelie_metalinza
+- izdelie_mwir_nbn_640
+- izdelie_lidar_robosense_ac1
+- izdelie_hasel
+- izdelie_povorotnoe_uplotnenie
+- izdelie_elektroflyuidnye_volokna_mit
+- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+- izdelie_razryvnye_mufty_iso_16028
+- izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_url: https://terminator.fandom.com/wiki/HK-Tank
@@ -78,6 +94,7 @@ relations:
   статус: false
   верификация: []
 ---
+
 # v9.31: структурные поля §12.4.1-§12.4.X — добавлены как placeholder
 # Реальные значения будут заполнены через web_search для каждой модели.
 требования_выживаемости: 

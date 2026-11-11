@@ -85,66 +85,15 @@ relations:
 источник_дата: '2026-11-11'
 уровень_иерархии: верхний
 уровень_номер: 1
-дочерние_части:
-- izdelie_tverdooksidnyi_topливnyi_element
-- izdelie_SkyNet-HKAerial
-- izdelie_SkyNet-Cameron
-- izdelie_lidar_robosense_ac1
-- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-- izdelie_bldc_enkoder
 основные:
   масса_kg:
     min: 85.0
     max: 100.0
     nominal: 90.0
   рост_m: 1.8
-масштабируемость:
-  режим: квантуемая
-  параметры:
-  - имя: количество_единиц
-    диапазон:
-    - 1
-    - 100
-    единица: шт
-  - имя: масса_единицы
-    диапазон:
-    - 85.0
-    - 100.0
-    единица: kg
-  - имя: рост_единицы
-    диапазон:
-    - 1.78
-    - 1.83
-    единица: m
-  пределы:
-    max_единиц_в_системе: 100
-    min_массы: 85.0
-    max_массы: 100.0
-  закон_масштабирования: 'линейный — масса_парка = N × масса_единицы; canon: T-5000
-    (Terminator Genisys 2015), Skynet avatar Alex (Matt Smith), 90 kg, advanced model
-    from alternate timeline'
-  ограничивающие_части:
-  - izdelie_tverdooksidnyi_topливnyi_element (SOFC — критическая зависимость)
-  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr (нейроморфный AI processor)
-наследуемые_материалы:
-- материал: b4c
-  суммарная_доля_массы: 0.08
-  источники_частей:
-  - многослойная_броня_слой_1
-  форма: баллистическая_керамика
-- материал: ti-6al-4v
-  суммарная_доля_массы: 0.3
-  источники_частей:
-  - многослойная_броня_слой_2
-  - endoskeleton
-  форма: планер_и_космические_изделия
-- материал: uhmwpe
-  суммарная_доля_массы: 0.04
-  источники_частей:
-  - многослойная_броня_слой_3
-  форма: высоконагруженные_тонкие_шнуры
 дата_обновления: '2026-11-11'
 ---
+
 ## Описание
 
 T-5000 — физическая форма Скайнет (avatar «Alex»); может заражать людей наноботами (как в случае с Джоном Коннором → T-3000); высшая форма.
@@ -167,8 +116,8 @@ T-5000 — физическая форма Скайнет (avatar «Alex»); м�
 ```mermaid
 graph TD
     SkyNet_T5000["SkyNet-T5000"]
-    izdelie_tverdooksidnyi_top___nyi_element["izdelie_tverdooksidnyi_topливnyi_element"]
-    SkyNet_T5000 --> izdelie_tverdooksidnyi_top___nyi_element
+    izdelie_tverdooksidnyi_toplivnyi_element["izdelie_tverdooksidnyi_toplivnyi_element"]
+    SkyNet_T5000 --> izdelie_tverdooksidnyi_toplivnyi_element
     izdelie_SkyNet_HKAerial["izdelie_SkyNet-HKAerial"]
     SkyNet_T5000 --> izdelie_SkyNet_HKAerial
     izdelie_SkyNet_Cameron["izdelie_SkyNet-Cameron"]

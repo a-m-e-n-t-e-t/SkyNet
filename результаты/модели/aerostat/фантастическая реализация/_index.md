@@ -80,60 +80,15 @@ relations:
 источник_дата: '2026-11-11'
 уровень_иерархии: верхний
 уровень_номер: 1
-дочерние_части:
-- izdelie_tverdooksidnyi_topливnyi_element
-- izdelie_lidar_robosense_ac1
-- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-- izdelie_bldc_enkoder
 основные:
   масса_kg:
     min: 1.0
     max: 10.0
     nominal: 5.0
   размер_m: 0.5
-масштабируемость:
-  режим: квантуемая
-  параметры:
-  - имя: количество_единиц
-    диапазон:
-    - 1
-    - 1000
-    единица: шт
-  - имя: масса_единицы
-    диапазон:
-    - 1.0
-    - 10.0
-    единица: kg
-  - имя: скорость
-    диапазон:
-    - 40
-    - 100
-    единица: km/h
-  пределы:
-    max_единиц_в_системе: 1000
-    min_массы: 1.0
-    max_массы: 10.0
-    min_скорости: 40
-    max_скорости: 100
-  закон_масштабирования: 'линейный — масса_парка = N × масса_единицы; canon: Aerostat
-    (Terminator Salvation 2009), car wheel size ~0.5m, turbofan, lighter-than-air,
-    scout unit signals Harvesters'
-  ограничивающие_части:
-  - izdelie_bldc_enkoder (BLDC motor for turbofan — критическая зависимость)
-наследуемые_материалы:
-- материал: al_6061-t6
-  суммарная_доля_массы: 0.55
-  источники_частей:
-  - многослойная_броня_слой_1
-  - endoskeleton
-  форма: силовые_элементы_конструкций
-- материал: uhmwpe
-  суммарная_доля_массы: 0.05
-  источники_частей:
-  - многослойная_броня_слой_2
-  форма: высоконагруженные_тонкие_шнуры
 дата_обновления: '2026-11-11'
 ---
+
 ## Описание
 
 Aerostat — малый сферический дрон; плавающий/парящий в воздухе; глаза-сенсоры; мгновенное обнаружение людей.
@@ -156,8 +111,8 @@ Aerostat — малый сферический дрон; плавающий/па
 ```mermaid
 graph TD
     SkyNet_Aerostat["SkyNet-Aerostat"]
-    izdelie_tverdooksidnyi_top___nyi_element["izdelie_tverdooksidnyi_topливnyi_element"]
-    SkyNet_Aerostat --> izdelie_tverdooksidnyi_top___nyi_element
+    izdelie_tverdooksidnyi_toplivnyi_element["izdelie_tverdooksidnyi_toplivnyi_element"]
+    SkyNet_Aerostat --> izdelie_tverdooksidnyi_toplivnyi_element
     izdelie_lidar_robosense_ac1["izdelie_lidar_robosense_ac1"]
     SkyNet_Aerostat --> izdelie_lidar_robosense_ac1
     izdelie_radiatsionno_stoikii_neiromorfnyi_tmr["izdelie_radiatsionno-stoikii_neiromorfnyi_tmr"]

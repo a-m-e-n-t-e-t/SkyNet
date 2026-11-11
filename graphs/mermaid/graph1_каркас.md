@@ -6,90 +6,60 @@ graph LR
     izdelie_reshetchatyi_karkas[прочее]
     izdelie_elastomernyh_dempferah[прочее]
     часть_kompensatory_connectors[разъёмы]
-    часть_kompensatory_housing[корпус]
     часть_kompensatory_mounting[крепёж]
+    часть_kompensatory_housing[корпус]
     часть_kompensatory_core[основной_элемент]
-    часть_kompensatory_core_фиттинги[концевое_кольцо]
     часть_kompensatory_core_диафрагмы[гофрированная_диафрагма]
-    часть_reshetchatyi_karkas_mounting[крепёж]
+    часть_kompensatory_core_фиттинги[концевое_кольцо]
     часть_reshetchatyi_karkas_housing[корпус]
     часть_reshetchatyi_karkas_core[основной_элемент]
+    часть_reshetchatyi_karkas_mounting[крепёж]
     часть_reshetchatyi_karkas_connectors[разъёмы]
-    часть_reshetchatyi_karkas_core_диафрагмы[перфорированная_рамка]
-    часть_reshetchatyi_karkas_core_стрингеры[силовой_профиль]
     часть_reshetchatyi_karkas_core_фиттинги[узловая_бобышка]
+    часть_reshetchatyi_karkas_core_стрингеры[силовой_профиль]
+    часть_reshetchatyi_karkas_core_диафрагмы[перфорированная_рамка]
     часть_elastomernyh_dempferah_housing[корпус]
+    часть_elastomernyh_dempferah_connectors[разъёмы]
     часть_elastomernyh_dempferah_mounting[крепёж]
     часть_elastomernyh_dempferah_core[основной_элемент]
-    часть_elastomernyh_dempferah_connectors[разъёмы]
-    izdelie_SkyNet_MarcusWright[прочее]
-    izdelie_SkyNet_HKTank[прочее]
-    izdelie_SkyNet_HKAerial[прочее]
-    izdelie_SkyNet_T600[прочее]
-    izdelie_SkyNet_Cameron[прочее]
-    izdelie_SkyNet_T850[прочее]
-    izdelie_SkyNet_Rev9[прочее]
-    izdelie_SkyNet_T800[прочее]
-    izdelie_SkyNet_TX[прочее]
-    часть_marcus_эндоскелет[cybernetic_endoskeleton]
-    часть_hk_tank_башня[turret]
-    часть_hk_tank_корпус[tank_body]
-    часть_hk_aerial_крылья[wings]
-    часть_hk_aerial_фюзеляж[fuselage]
-    часть_t600_эндоскелет[titanium_endoskeleton]
-    часть_cameron_эндоскелет[titanium_endoskeleton_small]
-    часть_t850_эндоскелет[hyperalloy_endoskeleton]
-    часть_rev9_endoskeleton[carbon_endoskeleton]
-    часть_t800_эндоскелет_торс[hyperalloy_endoskeleton]
-    часть_t_x_эндоскелет[hyperalloy_endoskeleton_tx]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_aluminum[Al ≥ 99.5 % (основа); …]
-    material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
-    material_si[Si (кремний); электрон…]
+    material_becu[Cu основа; Be 1.90–2.1…]
+    material_inconel_718[Ni+Co 50.0–55.0; Cr 17…]
+    material_silikon_40_50_shore_a[Полидиметилсилоксан (P…]
+    material_ss_aisi_304[нержавеющая сталь AISI…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
+    izdelie_kompensatory -->|материал| material_inconel_718
     izdelie_kompensatory -->|материал| material_al_6061_t6
     izdelie_reshetchatyi_karkas -->|материал| material_al_6061_t6
     izdelie_reshetchatyi_karkas -->|материал| material_aluminum
+    izdelie_elastomernyh_dempferah -->|материал| material_silikon_40_50_shore_a
     izdelie_elastomernyh_dempferah -->|материал| material_aluminum
     часть_kompensatory_connectors -->|материал| material_stal_st3
+    часть_kompensatory_mounting -->|материал| material_ss_aisi_304
     часть_kompensatory_housing -->|материал| material_al_6061_t6
-    часть_reshetchatyi_karkas_mounting -->|материал| material_stal_st3
+    часть_kompensatory_core -->|материал| material_inconel_718
+    часть_kompensatory_core_диафрагмы -->|материал| material_inconel_718
+    часть_kompensatory_core_фиттинги -->|материал| material_inconel_718
     часть_reshetchatyi_karkas_housing -->|материал| material_stal_st3
     часть_reshetchatyi_karkas_core -->|материал| material_al_6061_t6
+    часть_reshetchatyi_karkas_mounting -->|материал| material_stal_st3
     часть_reshetchatyi_karkas_connectors -->|материал| material_al_6061_t6
-    часть_reshetchatyi_karkas_core_диафрагмы -->|материал| material_al_6061_t6
-    часть_reshetchatyi_karkas_core_стрингеры -->|материал| material_al_6061_t6
     часть_reshetchatyi_karkas_core_фиттинги -->|материал| material_al_6061_t6
+    часть_reshetchatyi_karkas_core_стрингеры -->|материал| material_al_6061_t6
+    часть_reshetchatyi_karkas_core_диафрагмы -->|материал| material_al_6061_t6
     часть_elastomernyh_dempferah_housing -->|материал| material_al_6061_t6
+    часть_elastomernyh_dempferah_connectors -->|материал| material_becu
     часть_elastomernyh_dempferah_mounting -->|материал| material_stal_st3
-    izdelie_SkyNet_T600 -->|материал| material_ti_6al_4v
-    izdelie_SkyNet_Cameron -->|материал| material_ti_6al_4v
-    izdelie_SkyNet_T800 -->|материал| material_si
-    izdelie_SkyNet_T800 -->|материал| material_al_6061_t6
-    izdelie_SkyNet_TX -->|материал| material_ti_6al_4v
-    часть_hk_aerial_крылья -->|материал| material_ti_6al_4v
-    часть_t600_эндоскелет -->|материал| material_ti_6al_4v
-    часть_cameron_эндоскелет -->|материал| material_ti_6al_4v
-    часть_t800_эндоскелет_торс -->|материал| material_ti_6al_4v
-    часть_t_x_эндоскелет -->|материал| material_ti_6al_4v
+    часть_elastomernyh_dempferah_core -->|материал| material_silikon_40_50_shore_a
 ```
-
-_Показаны 5 наиболее часто используемых материалов (полный список — в graph1_data.json)._
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 10 |
-| `Ti-6Al-4V (Grade 5, UNS R56400): Al 5.5–6.75 %, V 3.5–4.5 %, Fe ≤0.30 %, O ≤0.20 %, C ≤0.08 %, N ≤0.05 %, H ≤0.015 %, Y ≤0.005 %, Ti — остальное (ASTM-спецификация, Wikipedia/ASM)` | 8 |
+| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 9 |
 | `Ni+Co 50.0–55.0; Cr 17.0–21.0; Fe баланс; Nb+Ta 4.75–5.50; Mo 2.80–3.30; Ti 0.65–1.15; Al 0.35–0.80; Co ≤1.0; C ≤0.08; Mn ≤0.35; Si ≤0.35; Cu ≤0.15; B 0.001–0.006; P ≤0.015; S ≤0.015` | 4 |
 | `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 4 |
 | `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 2 |
 | `Полидиметилсилоксан (PDMS, VMQ): основа –[Si(CH₃)₂–O]ₙ– с винильными сшивочными группами (~0.05–0.5 мол. %), наполнитель — пирогенный кремнезём SiO₂ 10–30 мас.% (типа HDK®), вулканизация пероксидная (HCR-марки) или платиновая присоединительная (RTV-2/LSR)` | 2 |
-| `Ароматический полиимид PMDA-ODA (тип Kapton): повторяющееся звено C22H10N2O5 (M ≈ 382.2 г/моль) из пиромеллитового диангидрида (PMDA) и 4,4′-оксианилина (ODA); чередующиеся имидные циклы C(=O)–N–C(=O) и фениленовые/дифениловый эфирный сегменты` | 2 |
-| `силиконовый эластомер (medical-grade RTV силикон, полидиметилсилоксан) + текстильная армирующая подложка (вязаное полотно powernet / полиэфирная сетка); каталитически сшитый двухкомпонентный RTV (Elkem Healthcare, MDPI Materials 2024)` | 2 |
 | `нержавеющая сталь AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240)` | 1 |
 | `Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)` | 1 |
-| `Fe ~97 %; C 0.25–0.32 %, Ni 1.0–1.4 %, Cr 0.9–1.4 %, Mo 0.3–0.6 %, Mn 0.3–1.0 %, Si 0.15–0.35 %, P ≤0.015 %, S ≤0.010 % (MIL-DTL-12560K — состав устанавливается производителем в пределах спецификации, quicksearch.dla.mil)` | 1 |
-| `Fe ~97.5 %; C 0.25–0.35 %, Mn 0.6–1.2 %, Si 0.15–0.40 %, Cr 0.4–1.0 %, Ni ≤0.5 %, Mo 0.15–0.40 %, B 0.0005–0.003 % (бор-микролегирование), P ≤0.025 %, S ≤0.015 % (траковые стали: горячекатаные профили для track shoe, fushunspecialsteel; борированные стали с низким S и C ~0.25 %, bs-track.com)` | 1 |
-| `Полиуретан — блок-сополимер диизоцианатов (MDI/TDI/NDI), макродиолов (полиэфирные, полиэфиркарбонатные, политетраметиленгликолевые) и удлинителей цепи (1,4-бутандиол, MOCA); повторяющееся уретановое звено –NH–C(=O)–O–; чередование жёстких (изоцианатных) и мягких (полиольных) сегментов с микрофазовым разделением` | 1 |
-| `Si (кремний); электронный сорт ≥99.9999999% (9N) для подложек ИС, солнечный ≥99.9999% (6N), металлургический ~98–99% (Si-Fe, Si-Ca примеси)` | 1 |
-| `W-Ni-Fe тяжёлый сплав (W 90–97 % по AMS 7725 классы 1–4; типовой состав 90W-7Ni-3Fe): W-зёрна (ОЦК) в матрице γ-Ni-Fe (ГЦК), жидкофазное спекание (LPS) порошковой шихты` | 1 |

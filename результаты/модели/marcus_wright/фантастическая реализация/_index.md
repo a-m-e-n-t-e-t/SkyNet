@@ -1,69 +1,79 @@
 ---
 id: SkyNet-MarcusWright
 web_verification: terminator.fandom.com/wiki/Marcus_Wright + robots.fandom.com (2026-11-03)
-тактико_технические_характеристики: 
+тактико_технические_характеристики:
   мобильность:
-          максимальная_скорость_км_ч: 30
-          масса_kg: 90
-дочерние_части: 
-  - часть_marcus_человеческий_мозг
-  - часть_marcus_эндоскелет
-  - часть_marcus_сердце_гибрид
-  - часть_marcus_топливная_ячейка
-  - часть_marcus_рука_левая
-  - часть_marcus_нога_левая
-  - часть_marcus_человеческое_сердце
-  - часть_marcus_человеческая_кожа
+    максимальная_скорость_км_ч: 30
+    масса_kg: 90
 тип: модель_SkyNet
 класс: гуманоидный
 категория: гибрид
 тип_модели: гуманоидный
 источник_происхождения: фильм
-функции: ["гибрид человек-киборг", "инфильтрация (осознанная)"]
+функции:
+- гибрид человек-киборг
+- инфильтрация (осознанная)
 канон_источник: 'Terminator: Salvation (2009)'
-произведения: ["work_004"]
+произведения:
+- work_004
 производитель: Cyberdyne Systems
 статус_реальности: canon
 подтип_модели: стандартный
 многослойная_броня:
   слои:
-    - номер: 1
-      материал: b4c  # B₄C керамика (внешний жертвенный)
-      толщина_мм: {min: 2, target: 10}
-    - номер: 2
-      материал: ti6al4v  # Ti-6Al-4V (кин. слой)
-      толщина_мм: {min: 2, target: 10}
-    - номер: 3
-      материал: uhmwpe_dyneema  # UHMWPE Dyneema (арамидный подслой)
-      толщина_мм: {min: 2, target: 10}
+  - номер: 1
+    материал: b4c
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 2
+    материал: ti6al4v
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 3
+    материал: uhmwpe_dyneema
+    толщина_мм:
+      min: 2
+      target: 10
   тип_брони: гуманоидный
-  соответствует_типу_модели: true  # F74, max_mass_percent: 30, min_layers: 3
+  соответствует_типу_модели: true
 доступность: фантастический
-expected_subsystems: ["вычислительная", "энергетическая", "каркас", "броня", "сенсоры", "приводная_система", "система_связи", "навигация", "система_питания", "система_передвижения"]
+expected_subsystems:
+- вычислительная
+- энергетическая
+- каркас
+- броня
+- сенсоры
+- приводная_система
+- система_связи
+- навигация
+- система_питания
+- система_передвижения
 relations:
   successor_of: null
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: 
-  - izdelie_halve
-  - izdelie_kondensatory_keramicheskie
-  - izdelie_sic_mosfet
-  - izdelie_tverdooksidnyi_toplivnyi_element
-  - izdelie_nasa_asc-e_srsc
-  - izdelie_superkondensatory
-  - izdelie_SkyNet-HKAerial
-  - izdelie_SkyNet-Rev9
-  - izdelie_SkyNet-Cameron
-  - izdelie_metalinza
-  - izdelie_mwir_nbn_640
-  - izdelie_lidar_robosense_ac1
-  - izdelie_hasel
-  - izdelie_povorotnoe_uplotnenie
-  - izdelie_elektroflyuidnye_volokna_mit
-  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-  - izdelie_razryvnye_mufty_iso_16028
-  - izdelie_flat-face_couplings_iso_16028
+реализация_промышленная:
+- izdelie_halve
+- izdelie_kondensatory_keramicheskie
+- izdelie_sic_mosfet
+- izdelie_tverdooksidnyi_toplivnyi_element
+- izdelie_nasa_asc-e_srsc
+- izdelie_superkondensatory
+- izdelie_SkyNet-HKAerial
+- izdelie_SkyNet-Rev9
+- izdelie_SkyNet-Cameron
+- izdelie_metalinza
+- izdelie_mwir_nbn_640
+- izdelie_lidar_robosense_ac1
+- izdelie_hasel
+- izdelie_povorotnoe_uplotnenie
+- izdelie_elektroflyuidnye_volokna_mit
+- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+- izdelie_razryvnye_mufty_iso_16028
+- izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_url: https://terminator.fandom.com/wiki/Marcus_Wright
@@ -73,6 +83,7 @@ relations:
   статус: false
   верификация: []
 ---
+
 # v9.31: структурные поля §12.4.1-§12.4.X — добавлены как placeholder
 # Реальные значения будут заполнены через web_search для каждой модели.
 требования_выживаемости: 

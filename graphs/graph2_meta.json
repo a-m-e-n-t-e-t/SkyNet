@@ -141,6 +141,18 @@
       "path": "scripts/migrate_material_form.py"
     },
     {
+      "id": "script:move_models_to_results.py",
+      "type": "script",
+      "label": "move_models_to_results.py",
+      "path": "scripts/move_models_to_results.py"
+    },
+    {
+      "id": "script:move_work_ii_parts.py",
+      "type": "script",
+      "label": "move_work_ii_parts.py",
+      "path": "scripts/move_work_ii_parts.py"
+    },
+    {
       "id": "script:organize_models.py",
       "type": "script",
       "label": "organize_models.py",
@@ -2586,13 +2598,13 @@
     }
   ],
   "stats": {
-    "nodes": 202,
+    "nodes": 204,
     "edges": 228,
     "by_type": {
       "catalog": 1,
       "concept_doc": 18,
       "readme": 1,
-      "script": 32,
+      "script": 34,
       "spec": 1,
       "spec_section": 149
     }

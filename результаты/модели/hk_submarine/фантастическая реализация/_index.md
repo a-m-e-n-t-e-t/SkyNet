@@ -89,67 +89,15 @@ relations:
 источник_дата: '2026-11-11'
 уровень_иерархии: верхний
 уровень_номер: 1
-дочерние_части:
-- izdelie_tverdooksidnyi_topливnyi_element
-- izdelie_lidar_robosense_ac1
-- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-- izdelie_bldc_enkoder
 основные:
   масса_kg:
     min: 50000.0
     max: 200000.0
     nominal: 100000.0
   длина_m: 30.0
-масштабируемость:
-  режим: квантуемая
-  параметры:
-  - имя: количество_единиц
-    диапазон:
-    - 1
-    - 50
-    единица: шт
-  - имя: масса_единицы
-    диапазон:
-    - 50000.0
-    - 200000.0
-    единица: kg
-  - имя: скорость
-    диапазон:
-    - 20
-    - 30
-    единица: knots
-  - имя: глубина_погружения
-    диапазон:
-    - 200
-    - 500
-    единица: m
-  пределы:
-    max_единиц_в_системе: 50
-    min_массы: 50000.0
-    max_массы: 200000.0
-    min_глубины: 200
-    max_глубины: 500
-  закон_масштабирования: 'линейный — масса_флота = N × масса_единицы; canon: HK-Submarine
-    (The Terminator 1984, mentioned by Kyle Reese), 25 knots, 300m depth, patrol water
-    routes'
-  ограничивающие_части:
-  - izdelie_tverdooksidnyi_topливnyi_element (SOFC for underwater power — критическая
-    зависимость)
-  - izdelie_bldc_enkoder (electric propulsion for stealth)
-наследуемые_материалы:
-- материал: ti-6al-4v
-  суммарная_доля_массы: 0.5
-  источники_частей:
-  - многослойная_броня_слой_2
-  - hull
-  форма: планер_и_космические_изделия
-- материал: uhmwpe
-  суммарная_доля_массы: 0.04
-  источники_частей:
-  - многослойная_броня_слой_3
-  форма: высоконагруженные_тонкие_шнуры
 дата_обновления: '2026-11-11'
 ---
+
 ## Описание
 
 Hunter-Killer Submarine — подводный охотник; SONAR; ракетное вооружение; упоминается в каноне T1.
@@ -172,8 +120,8 @@ Hunter-Killer Submarine — подводный охотник; SONAR; ракет
 ```mermaid
 graph TD
     SkyNet_HKSubmarine["SkyNet-HKSubmarine"]
-    izdelie_tverdooksidnyi_top___nyi_element["izdelie_tverdooksidnyi_topливnyi_element"]
-    SkyNet_HKSubmarine --> izdelie_tverdooksidnyi_top___nyi_element
+    izdelie_tverdooksidnyi_toplivnyi_element["izdelie_tverdooksidnyi_toplivnyi_element"]
+    SkyNet_HKSubmarine --> izdelie_tverdooksidnyi_toplivnyi_element
     izdelie_lidar_robosense_ac1["izdelie_lidar_robosense_ac1"]
     SkyNet_HKSubmarine --> izdelie_lidar_robosense_ac1
     izdelie_radiatsionno_stoikii_neiromorfnyi_tmr["izdelie_radiatsionno-stoikii_neiromorfnyi_tmr"]

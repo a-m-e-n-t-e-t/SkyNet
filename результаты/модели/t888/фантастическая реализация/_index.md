@@ -85,66 +85,15 @@ relations:
 источник_дата: '2026-11-11'
 уровень_иерархии: верхний
 уровень_номер: 1
-дочерние_части:
-- izdelie_tverdooksidnyi_topливnyi_element
-- izdelie_SkyNet-HKAerial
-- izdelie_SkyNet-Cameron
-- izdelie_lidar_robosense_ac1
-- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-- izdelie_bldc_enkoder
 основные:
   масса_kg:
     min: 170.0
     max: 200.0
     nominal: 180.0
   рост_m: 1.85
-масштабируемость:
-  режим: квантуемая
-  параметры:
-  - имя: количество_единиц
-    диапазон:
-    - 1
-    - 1000
-    единица: шт
-  - имя: масса_единицы
-    диапазон:
-    - 170.0
-    - 200.0
-    единица: kg
-  - имя: рост_единицы
-    диапазон:
-    - 1.8
-    - 1.9
-    единица: m
-  пределы:
-    max_единиц_в_системе: 1000
-    min_массы: 170.0
-    max_массы: 200.0
-  закон_масштабирования: 'линейный — масса_парка = N × масса_единицы; canon: T-888
-    (TSCC 2008-2009), 180 kg, coltan+hyperalloy endoskeleton, 40 km/h, гибче T-800'
-  ограничивающие_части:
-  - izdelie_tverdooksidnyi_topливnyi_element (SOFC — критическая зависимость)
-  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr (нейроморфный процессор)
-  - izdelie_bldc_enkoder (BLDC приводы для конечностей)
-наследуемые_материалы:
-- материал: b4c
-  суммарная_доля_массы: 0.1
-  источники_частей:
-  - многослойная_броня_слой_1
-  форма: баллистическая_керамика
-- материал: ti-6al-4v
-  суммарная_доля_массы: 0.35
-  источники_частей:
-  - многослойная_броня_слой_2
-  - endoskeleton
-  форма: планер_и_космические_изделия
-- материал: uhmwpe
-  суммарная_доля_массы: 0.05
-  источники_частей:
-  - многослойная_броня_слой_3
-  форма: высоконагруженные_тонкие_шнуры
 дата_обновления: '2026-11-11'
 ---
+
 ## Описание
 
 T-888 — серия T:SCC; Cromartie (Model 1001), Vick Chamberlain, Carter, Cameron Phillips (перепрограммирован Resistance); улучшенный эндоскелет coltan-tungsten.
@@ -167,8 +116,8 @@ T-888 — серия T:SCC; Cromartie (Model 1001), Vick Chamberlain, Carter, Ca
 ```mermaid
 graph TD
     SkyNet_T888["SkyNet-T888"]
-    izdelie_tverdooksidnyi_top___nyi_element["izdelie_tverdooksidnyi_topливnyi_element"]
-    SkyNet_T888 --> izdelie_tverdooksidnyi_top___nyi_element
+    izdelie_tverdooksidnyi_toplivnyi_element["izdelie_tverdooksidnyi_toplivnyi_element"]
+    SkyNet_T888 --> izdelie_tverdooksidnyi_toplivnyi_element
     izdelie_SkyNet_HKAerial["izdelie_SkyNet-HKAerial"]
     SkyNet_T888 --> izdelie_SkyNet_HKAerial
     izdelie_SkyNet_Cameron["izdelie_SkyNet-Cameron"]

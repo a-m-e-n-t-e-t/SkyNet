@@ -90,61 +90,15 @@ relations:
 источник_дата: '2026-11-11'
 уровень_иерархии: верхний
 уровень_номер: 1
-дочерние_части:
-- izdelie_tverdooksidnyi_topливnyi_element
-- izdelie_lidar_robosense_ac1
-- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-- izdelie_bldc_enkoder
 основные:
   масса_kg:
     min: 30.0
     max: 100.0
     nominal: 60.0
   длина_m: 2.0
-масштабируемость:
-  режим: квантуемая
-  параметры:
-  - имя: количество_единиц
-    диапазон:
-    - 1
-    - 500
-    единица: шт
-  - имя: масса_единицы
-    диапазон:
-    - 30.0
-    - 100.0
-    единица: kg
-  - имя: скорость
-    диапазон:
-    - 10
-    - 30
-    единица: km/h
-  пределы:
-    max_единиц_в_системе: 500
-    min_массы: 30.0
-    max_массы: 100.0
-    min_скорости: 10
-    max_скорости: 30
-  закон_масштабирования: 'линейный — масса_парка = N × масса_единицы; canon: Hydrobot
-    (Terminator Salvation 2009), serpent-like water unit, 15 knots (28 km/h), claw
-    head, patrols water'
-  ограничивающие_части:
-  - izdelie_tverdooksidnyi_topливnyi_element (SOFC — критическая зависимость)
-  - izdelie_bldc_enkoder (BLDC motors for aquatic propulsion)
-наследуемые_материалы:
-- материал: ti-6al-4v
-  суммарная_доля_массы: 0.4
-  источники_частей:
-  - многослойная_броня_слой_2
-  - endoskeleton
-  форма: планер_и_космические_изделия
-- материал: uhmwpe
-  суммарная_доля_массы: 0.05
-  источники_частей:
-  - многослойная_броня_слой_3
-  форма: высоконагруженные_тонкие_шнуры
 дата_обновления: '2026-11-11'
 ---
+
 ## Описание
 
 Hydrobot — змееобразный водный терминатор; плавающий; хватательные манипуляторы-«зубы»; патрулирует реки и каналы.
@@ -167,8 +121,8 @@ Hydrobot — змееобразный водный терминатор; пла�
 ```mermaid
 graph TD
     SkyNet_Hydrobot["SkyNet-Hydrobot"]
-    izdelie_tverdooksidnyi_top___nyi_element["izdelie_tverdooksidnyi_topливnyi_element"]
-    SkyNet_Hydrobot --> izdelie_tverdooksidnyi_top___nyi_element
+    izdelie_tverdooksidnyi_toplivnyi_element["izdelie_tverdooksidnyi_toplivnyi_element"]
+    SkyNet_Hydrobot --> izdelie_tverdooksidnyi_toplivnyi_element
     izdelie_lidar_robosense_ac1["izdelie_lidar_robosense_ac1"]
     SkyNet_Hydrobot --> izdelie_lidar_robosense_ac1
     izdelie_radiatsionno_stoikii_neiromorfnyi_tmr["izdelie_radiatsionno-stoikii_neiromorfnyi_tmr"]

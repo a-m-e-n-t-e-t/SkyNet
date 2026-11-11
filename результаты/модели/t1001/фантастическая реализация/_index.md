@@ -1,20 +1,22 @@
 ---
 id: SkyNet-T1001
 web_verification: terminator.fandom.com/wiki/T-1001 (T:SCC Catherine Weaver)
-тактико_технические_характеристики: 
+тактико_технические_характеристики:
   мобильность:
-          максимальная_скорость_км_ч: 64
-          масса_kg: 130
-дочерние_части: 
-  - часть_t1001_миметический_полисплав
+    максимальная_скорость_км_ч: 64
+    масса_kg: 130
 тип: модель_SkyNet
 класс: гуманоидный
 категория: жидкий_металл
 тип_модели: жидкий_металл
 источник_происхождения: сериал
-функции: ["инфильтрация", " assassination", "корпоративная"]
+функции:
+- инфильтрация
+- ' assassination'
+- корпоративная
 канон_источник: 'Terminator: The Sarah Connor Chronicles (Catherine Weaver)'
-произведения: ["work_007"]
+произведения:
+- work_007
 производитель: Скайнет
 статус_реальности: canon
 подтип_модели: жидкий_металл
@@ -25,10 +27,10 @@ relations:
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: 
-  - izdelie_halve
-  - izdelie_kondensatory_keramicheskie
-  - izdelie_sic_mosfet
+реализация_промышленная:
+- izdelie_halve
+- izdelie_kondensatory_keramicheskie
+- izdelie_sic_mosfet
 реализация_ии: []
 источник: web_search
 источник_разбора: канон
@@ -36,6 +38,7 @@ relations:
   статус: false
   верификация: []
 ---
+
 # v9.31: структурные поля §12.4.1-§12.4.X — добавлены как placeholder
 # Реальные значения будут заполнены через web_search для каждой модели.
 многослойная_броня: []

@@ -80,62 +80,15 @@ relations:
 источник_дата: '2026-11-11'
 уровень_иерархии: верхний
 уровень_номер: 1
-дочерние_части:
-- izdelie_tverdooksidnyi_topливnyi_element
-- izdelie_SkyNet-HKAerial
-- izdelie_lidar_robosense_ac1
-- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-- izdelie_bldc_enkoder
 основные:
   масса_kg:
     min: 100.0
     max: 200.0
     nominal: 136.0
   размах_крыльев_m: 1.8
-масштабируемость:
-  режим: квантуемая
-  параметры:
-  - имя: количество_единиц
-    диапазон:
-    - 1
-    - 500
-    единица: шт
-  - имя: масса_единицы
-    диапазон:
-    - 100.0
-    - 200.0
-    единица: kg
-  - имя: скорость
-    диапазон:
-    - 300
-    - 500
-    единица: km/h
-  пределы:
-    max_единиц_в_системе: 500
-    min_массы: 100.0
-    max_массы: 200.0
-    min_скорости: 300
-    max_скорости: 500
-  закон_масштабирования: 'линейный — масса_парка = N × масса_единицы; canon: HK-Drone
-    (T3 2003), 1.8m wingspan, 136 kg, VTOL, 2 machine guns + 2 missile pods; prototype
-    for HK-Aerial'
-  ограничивающие_части:
-  - izdelie_tverdooksidnyi_topливnyi_element (SOFC — критическая зависимость)
-  - izdelie_bldc_enkoder (BLDC motors for VTOL)
-наследуемые_материалы:
-- материал: al_6061-t6
-  суммарная_доля_массы: 0.55
-  источники_частей:
-  - многослойная_броня_слой_1
-  - endoskeleton
-  форма: силовые_элементы_конструкций
-- материал: uhmwpe
-  суммарная_доля_массы: 0.05
-  источники_частей:
-  - многослойная_броня_слой_2
-  форма: высоконагруженные_тонкие_шнуры
 дата_обновления: '2026-11-11'
 ---
+
 ## Описание
 
 HK-Drone — малый беспилотник; винтокрылый; автономный патруль; не имеет оружия или лёгкое.
@@ -158,8 +111,8 @@ HK-Drone — малый беспилотник; винтокрылый; авто
 ```mermaid
 graph TD
     SkyNet_HKDrone["SkyNet-HKDrone"]
-    izdelie_tverdooksidnyi_top___nyi_element["izdelie_tverdooksidnyi_topливnyi_element"]
-    SkyNet_HKDrone --> izdelie_tverdooksidnyi_top___nyi_element
+    izdelie_tverdooksidnyi_toplivnyi_element["izdelie_tverdooksidnyi_toplivnyi_element"]
+    SkyNet_HKDrone --> izdelie_tverdooksidnyi_toplivnyi_element
     izdelie_SkyNet_HKAerial["izdelie_SkyNet-HKAerial"]
     SkyNet_HKDrone --> izdelie_SkyNet_HKAerial
     izdelie_lidar_robosense_ac1["izdelie_lidar_robosense_ac1"]

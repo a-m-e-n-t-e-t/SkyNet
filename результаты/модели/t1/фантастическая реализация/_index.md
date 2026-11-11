@@ -90,66 +90,15 @@ relations:
 источник_дата: '2026-11-11'
 уровень_иерархии: верхний
 уровень_номер: 1
-дочерние_части:
-- izdelie_tverdooksidnyi_topливnyi_element
-- izdelie_SkyNet-HKAerial
-- izdelie_lidar_robosense_ac1
-- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-- izdelie_bldc_enkoder
 основные:
   масса_kg:
     min: 1500.0
     max: 2200.0
     nominal: 2000.0
   высота_m: 2.4
-масштабируемость:
-  режим: квантуемая
-  параметры:
-  - имя: количество_единиц
-    диапазон:
-    - 1
-    - 500
-    единица: шт
-  - имя: масса_единицы
-    диапазон:
-    - 1500.0
-    - 2200.0
-    единица: kg
-  - имя: скорость
-    диапазон:
-    - 20
-    - 30
-    единица: km/h
-  пределы:
-    max_единиц_в_системе: 500
-    min_массы: 1500.0
-    max_массы: 2200.0
-    min_скорости: 20
-    max_скорости: 30
-  закон_масштабирования: 'линейный — масса_парка = N × масса_единицы; canon: T-1 Battlefield
-    Robot (T3 2003), 8 ft tall (2.4m), 2000 kg, 25 km/h, dual plasma cannons, tracked
-    platform; prototype for HK-Tank'
-  ограничивающие_части:
-  - izdelie_tverdooksidnyi_topливnyi_element (SOFC — критическая зависимость)
-  - izdelie_bldc_enkoder (BLDC/hydraulic motors for tracks)
-наследуемые_материалы:
-- материал: b4c
-  суммарная_доля_массы: 0.15
-  источники_частей:
-  - многослойная_броня_слой_1
-  форма: баллистическая_керамика
-- материал: ti-6al-4v
-  суммарная_доля_массы: 0.5
-  источники_частей:
-  - многослойная_броня_слой_2
-  форма: планер_и_космические_изделия
-- материал: uhmwpe
-  суммарная_доля_массы: 0.05
-  источники_частей:
-  - многослойная_броня_слой_3
-  форма: высоконагруженные_тонкие_шнуры
 дата_обновления: '2026-11-11'
 ---
+
 ## Описание
 
 T-1 — прототип наземного боевого дрона; гусеницы; автономный; запущен Cyberdyne до Судного дня; вооружён 2 Minigun M134.
@@ -172,8 +121,8 @@ T-1 — прототип наземного боевого дрона; гусе�
 ```mermaid
 graph TD
     SkyNet_T1["SkyNet-T1"]
-    izdelie_tverdooksidnyi_top___nyi_element["izdelie_tverdooksidnyi_topливnyi_element"]
-    SkyNet_T1 --> izdelie_tverdooksidnyi_top___nyi_element
+    izdelie_tverdooksidnyi_toplivnyi_element["izdelie_tverdooksidnyi_toplivnyi_element"]
+    SkyNet_T1 --> izdelie_tverdooksidnyi_toplivnyi_element
     izdelie_SkyNet_HKAerial["izdelie_SkyNet-HKAerial"]
     SkyNet_T1 --> izdelie_SkyNet_HKAerial
     izdelie_lidar_robosense_ac1["izdelie_lidar_robosense_ac1"]

@@ -1,70 +1,85 @@
 ---
 id: SkyNet-HKAerial
 web_verification: terminator.fandom.com/wiki/HK-Aerial + worldofjaymz.fandom.com (2026-11-03)
-тактико_технические_характеристики: 
+тактико_технические_характеристики:
   мобильность:
-          скорость_км_ч: 500
-          тип: VTOL
-          потолок_m: 10000
+    скорость_км_ч: 500
+    тип: VTOL
+    потолок_m: 10000
   габариты:
-          длина_m: 34.2
-          ширина_m: 32.9
-          высота_m: 5.2
-          масса_kg: 13608
+    длина_m: 34.2
+    ширина_m: 32.9
+    высота_m: 5.2
+    масса_kg: 13608
   питание: nuclear_power_cell
   вооружение: plasma_cannons_2 + lasers + missiles
-дочерние_части: 
-  - часть_hk_aerial_фюзеляж
-  - часть_hk_aerial_двигатель_левый
-  - часть_hk_aerial_сенсоры
-  - часть_hk_aerial_плазма_пушка
-  - часть_hk_aerial_навигация
-  - часть_hk_aerial_связь
-  - часть_hk_aerial_крылья
 тип: модель_SkyNet
 класс: воздушный
 категория: воздушный_HK
 тип_модели: воздушный
 источник_происхождения: фильм
-функции: ["патруль", "разведка", "удар"]
+функции:
+- патруль
+- разведка
+- удар
 канон_источник: 'T2: Judgment Day (1991), T: Salvation (2009)'
-произведения: ["work_002", "work_004", "work_042", "work_045"]
+произведения:
+- work_002
+- work_004
+- work_042
+- work_045
 производитель: Скайнет
 статус_реальности: canon
 подтип_модели: стандартный
 многослойная_броня:
   слои:
-    - номер: 1
-      материал: al_6061_t6  # Al 6061-T6 (лёгкий кин.)
-      толщина_мм: {min: 2, target: 10}
-    - номер: 2
-      материал: uhmwpe_dyneema  # UHMWPE (энергопоглощение)
-      толщина_мм: {min: 2, target: 10}
+  - номер: 1
+    материал: al_6061_t6
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 2
+    материал: uhmwpe_dyneema
+    толщина_мм:
+      min: 2
+      target: 10
   тип_брони: воздушный
-  соответствует_типу_модели: true  # F74, max_mass_percent: 15, min_layers: 2
+  соответствует_типу_модели: true
 доступность: фантастический
-expected_subsystems: ["вычислительная", "энергетическая", "каркас", "броня", "маскировка", "сенсоры", "приводная_система", "система_связи", "навигация", "система_охлаждения", "система_питания", "система_передвижения"]
+expected_subsystems:
+- вычислительная
+- энергетическая
+- каркас
+- броня
+- маскировка
+- сенсоры
+- приводная_система
+- система_связи
+- навигация
+- система_охлаждения
+- система_питания
+- система_передвижения
 relations:
   successor_of: null
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: 
-  - izdelie_tverdooksidnyi_toplivnyi_element
-  - izdelie_nasa_asc-e_srsc
-  - izdelie_superkondensatory
-  - izdelie_SkyNet-HKAerial
-  - izdelie_SkyNet-Rev9
-  - izdelie_SkyNet-Cameron
-  - izdelie_metalinza
-  - izdelie_mwir_nbn_640
-  - izdelie_lidar_robosense_ac1
-  - izdelie_hasel
-  - izdelie_povorotnoe_uplotnenie
-  - izdelie_elektroflyuidnye_volokna_mit
-  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-  - izdelie_razryvnye_mufty_iso_16028
-  - izdelie_flat-face_couplings_iso_16028
+реализация_промышленная:
+- izdelie_tverdooksidnyi_toplivnyi_element
+- izdelie_nasa_asc-e_srsc
+- izdelie_superkondensatory
+- izdelie_SkyNet-HKAerial
+- izdelie_SkyNet-Rev9
+- izdelie_SkyNet-Cameron
+- izdelie_metalinza
+- izdelie_mwir_nbn_640
+- izdelie_lidar_robosense_ac1
+- izdelie_hasel
+- izdelie_povorotnoe_uplotnenie
+- izdelie_elektroflyuidnye_volokna_mit
+- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+- izdelie_razryvnye_mufty_iso_16028
+- izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_url: https://terminator.fandom.com/wiki/HK-Aerial
@@ -74,6 +89,7 @@ relations:
   статус: false
   верификация: []
 ---
+
 # v9.31: структурные поля §12.4.1-§12.4.X — добавлены как placeholder
 # Реальные значения будут заполнены через web_search для каждой модели.
 требования_выживаемости: 

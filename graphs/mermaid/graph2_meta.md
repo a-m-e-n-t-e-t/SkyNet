@@ -25,6 +25,8 @@ graph TB
     script_migrate_aliases_py(("migrate_aliases.py"))
     script_migrate_dedup_materials_py(("migrate_dedup_materials.py"))
     script_migrate_material_form_py(("migrate_material_form.py"))
+    script_move_models_to_results_py(("move_models_to_results.py"))
+    script_move_work_ii_parts_py(("move_work_ii_parts.py"))
     script_organize_models_py(("organize_models.py"))
     script_pipeline_py(("pipeline.py"))
     script_pre-commit-hook_py(("pre-commit-hook.py"))
@@ -256,12 +258,12 @@ graph TB
     section_§11_3_7_антипаттернов_(уроки_из_прошлых_реализаций) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 202, рёбер: 228 (показано топ-50)._
+_Узлов: 204, рёбер: 228 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|
 | spec_section | 149 |
-| script | 32 |
+| script | 34 |
 | concept_doc | 18 |
 | catalog | 1 |
 | readme | 1 |

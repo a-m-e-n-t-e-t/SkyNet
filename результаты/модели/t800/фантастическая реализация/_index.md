@@ -1,72 +1,99 @@
 ---
 id: SkyNet-T800
 web_verification: terminator.fandom.com/wiki/T-800 + Reddit r/Terminator (2026-11-03)
-тактико_технические_характеристики: 
+тактико_технические_характеристики:
   мобильность:
-          максимальная_скорость_км_ч: 35
-          средняя_скорость_км_ч: 15
-          масса_kg: 140
-дочерние_части: 
-  - часть_t800_cpu
-  - часть_t800_топливная_ячейка_1
-  - часть_t800_эндоскелет_торс
-  - часть_t800_рука_левая
-  - часть_t800_нога_левая
-  - часть_t800_оптический_сенсор_1
-  - часть_t800_аудио_сенсор
-  - часть_t800_антенна
-  - часть_t800_гиро_навигация
-  - часть_t800_ткань_кожа
+    максимальная_скорость_км_ч: 35
+    средняя_скорость_км_ч: 15
+    масса_kg: 140
 тип: модель_SkyNet
 класс: гуманоидный
 категория: стандартный
 тип_модели: гуманоидный
 источник_происхождения: фильм
-функции: ["инфильтрация", " assassination", "штурм", "телохранитель"]
-канон_источник: 'The Terminator (1984), T2: Judgment Day (1991), T3, T: Salvation, T: Dark Fate'
-произведения: ["work_001", "work_002", "work_003", "work_006", "work_026", "work_027", "work_037", "work_038", "work_039", "work_040", "work_041", "work_042", "work_045", "work_047", "work_048", "work_049", "work_051"]
+функции:
+- инфильтрация
+- ' assassination'
+- штурм
+- телохранитель
+канон_источник: 'The Terminator (1984), T2: Judgment Day (1991), T3, T: Salvation,
+  T: Dark Fate'
+произведения:
+- work_001
+- work_002
+- work_003
+- work_006
+- work_026
+- work_027
+- work_037
+- work_038
+- work_039
+- work_040
+- work_041
+- work_042
+- work_045
+- work_047
+- work_048
+- work_049
+- work_051
 производитель: Cyberdyne Systems / Скайнет
 статус_реальности: canon
 подтип_модели: стандартный
 многослойная_броня:
   слои:
-    - номер: 1
-      материал: b4c  # B₄C керамика (внешний жертвенный)
-      толщина_мм: {min: 2, target: 10}
-    - номер: 2
-      материал: ti6al4v  # Ti-6Al-4V (кин. слой)
-      толщина_мм: {min: 2, target: 10}
-    - номер: 3
-      материал: uhmwpe_dyneema  # UHMWPE Dyneema (арамидный подслой)
-      толщина_мм: {min: 2, target: 10}
+  - номер: 1
+    материал: b4c
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 2
+    материал: ti6al4v
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 3
+    материал: uhmwpe_dyneema
+    толщина_мм:
+      min: 2
+      target: 10
   тип_брони: гуманоидный
-  соответствует_типу_модели: true  # F74, max_mass_percent: 30, min_layers: 3
+  соответствует_типу_модели: true
 доступность: фантастический
-expected_subsystems: ["вычислительная", "энергетическая", "каркас", "броня", "сенсоры", "приводная_система", "система_связи", "навигация", "система_питания", "система_передвижения"]
+expected_subsystems:
+- вычислительная
+- энергетическая
+- каркас
+- броня
+- сенсоры
+- приводная_система
+- система_связи
+- навигация
+- система_питания
+- система_передвижения
 relations:
   successor_of: SkyNet-T850
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: 
-  - izdelie_halve
-  - izdelie_kondensatory_keramicheskie
-  - izdelie_sic_mosfet
-  - izdelie_tverdooksidnyi_toplivnyi_element
-  - izdelie_nasa_asc-e_srsc
-  - izdelie_superkondensatory
-  - izdelie_SkyNet-HKAerial
-  - izdelie_SkyNet-Rev9
-  - izdelie_SkyNet-Cameron
-  - izdelie_metalinza
-  - izdelie_mwir_nbn_640
-  - izdelie_lidar_robosense_ac1
-  - izdelie_hasel
-  - izdelie_povorotnoe_uplotnenie
-  - izdelie_elektroflyuidnye_volokna_mit
-  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-  - izdelie_razryvnye_mufty_iso_16028
-  - izdelie_flat-face_couplings_iso_16028
+реализация_промышленная:
+- izdelie_halve
+- izdelie_kondensatory_keramicheskie
+- izdelie_sic_mosfet
+- izdelie_tverdooksidnyi_toplivnyi_element
+- izdelie_nasa_asc-e_srsc
+- izdelie_superkondensatory
+- izdelie_SkyNet-HKAerial
+- izdelie_SkyNet-Rev9
+- izdelie_SkyNet-Cameron
+- izdelie_metalinza
+- izdelie_mwir_nbn_640
+- izdelie_lidar_robosense_ac1
+- izdelie_hasel
+- izdelie_povorotnoe_uplotnenie
+- izdelie_elektroflyuidnye_volokna_mit
+- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+- izdelie_razryvnye_mufty_iso_16028
+- izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_разбора: канон
@@ -74,6 +101,7 @@ relations:
   статус: false
   верификация: []
 ---
+
 # v9.31: структурные поля §12.4.1-§12.4.X — добавлены как placeholder
 # Реальные значения будут заполнены через web_search для каждой модели.
 требования_выживаемости: 
