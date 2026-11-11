@@ -60,7 +60,7 @@ scaling_type: количественный
 источник_разбора: веб-верификация
 технологии_частей:
 - часть: часть_aesa_radar_core
-  технология: frezervanie_chpu
+  технология: gaas_t_r_module_assembly
   доля_использования: 1.0
   материалы_для_процесса:
   - материал: al_6061-t6
@@ -92,26 +92,38 @@ scaling_type: количественный
     единица: шт
   - имя: масса_единицы
     диапазон:
-    - 50.0
+    - 45.0
     - 200.0
     единица: kg
-  - имя: длина_единицы
+  - имя: дальность_обнаружения
     диапазон:
-    - 840
-    - 1260.0
-    единица: mm
+    - 150
+    - 200
+    единица: km
+  - имя: количество_t_r_modules
+    диапазон:
+    - 1000
+    - 1500
+    единица: шт
   пределы:
     max_единиц_в_системе: 100
-    min_массы: 50.0
+    min_массы: 45.0
     max_массы: 200.0
-  закон_масштабирования: нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
-    overhead на mounting+control unit)
+    min_дальности: 150
+    max_дальности: 200
+  закон_масштабирования: 'нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
+    overhead на mount+power supply); типовая установка: AN/APG-79 (Raytheon, F/A-18E/F
+    Super Hornet, ~200 kg, 150 km range, GaAs T/R modules); PhantomStrike compact
+    AESA (Raytheon 2021, 45 kg, 100% APG-79 capability)'
   ограничивающие_части:
-  - часть_aesa_radar_core (sensor core — критическая зависимость от supplier)
-  - часть_aesa_radar_housing (aluminum + anodizing MIL-A-8625 — стандартное производство)
-источник_url: https://www.raytheon.com/capabilities/products/apg-79
+  - часть_aesa_radar_core (GaAs/GaN T/R modules — критическая зависимость от Raytheon/RTX
+    поставок; GaN (V)4 variant for USMC F/A-18C/D)
+  - часть_aesa_radar_housing (al_6061-t6 + anodizing MIL-A-8625 — стандартное производство)
+источник_url: https://en.wikipedia.org/wiki/AN/APG-79
 источник_дата: '2026-11-11'
 ---
+
+
 
 # Изделие: AESA радар
 
