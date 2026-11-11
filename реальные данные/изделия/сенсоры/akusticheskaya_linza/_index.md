@@ -18,7 +18,7 @@ id: izdelie_akusticheskaya_linza
 - часть_akusticheskaya_linza_mounting
 материалы_частей:
 - часть: часть_akusticheskaya_linza_core
-  материал: silikon_80_shore_a_steklyannye_mikrosfery
+  материал: al_6061-t6
   форма: силовые_элементы_конструкций
   доля_массы: 0.45
 - часть: часть_akusticheskaya_linza_housing
@@ -63,7 +63,7 @@ scaling_type: количественный
   технология: frezervanie_chpu
   доля_использования: 1.0
   материалы_для_процесса:
-  - материал: silikon_80_shore_a_steklyannye_mikrosfery
+  - материал: al_6061-t6
     роль: обрабатываемый
 - часть: часть_akusticheskaya_linza_housing
   технология: anodirovanie
@@ -72,7 +72,7 @@ scaling_type: количественный
   - материал: aluminum
     роль: обрабатываемый
 наследуемые_материалы:
-- материал: silikon_80_shore_a_steklyannye_mikrosfery
+- материал: al_6061-t6
   суммарная_доля_массы: 0.45
   источники_частей:
   - часть_akusticheskaya_linza_core
@@ -88,31 +88,37 @@ scaling_type: количественный
   - имя: количество_единиц
     диапазон:
     - 1
-    - 100
+    - 50
     единица: шт
   - имя: масса_единицы
     диапазон:
-    - 0.5
+    - 0.1
     - 5.0
     единица: kg
-  - имя: длина_единицы
+  - имя: рабочая_частота
     диапазон:
-    - 200
-    - 300.0
-    единица: mm
+    - 80
+    - 1000
+    единица: kHz
   пределы:
-    max_единиц_в_системе: 100
-    min_массы: 0.5
+    max_единиц_в_системе: 50
+    min_массы: 0.1
     max_массы: 5.0
-  закон_масштабирования: нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
-    overhead на mounting+control unit)
+    min_частоты: 80
+    max_частоты: 1000
+  закон_масштабирования: 'нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
+    overhead на mounting+electronics); типовая установка: KRISS detachable acoustic
+    lens (25 μm resolution); Luneburg metamaterial lens (80 kHz, 3D spherical); HIFU
+    trapezoidal-groove metasurface (250-1000 kHz)'
   ограничивающие_части:
-  - часть_akusticheskaya_linza_core (sensor core — критическая зависимость от supplier)
+  - часть_akusticheskaya_linza_core (metamaterial meta-atoms ~2mm unit cell — критическая
+    точность производства)
   - часть_akusticheskaya_linza_housing (aluminum + anodizing MIL-A-8625 — стандартное
     производство)
-источник_url: https://en.wikipedia.org/wiki/Acoustic_lens
+источник_url: https://www.nature.com/articles/s41598-018-34581-7
 источник_дата: '2026-11-11'
 ---
+
 
 # Изделие: Акустическая линза
 
