@@ -7,16 +7,16 @@ id: часть_kaskadnyi_stirling-kriokuler_mounting
 подсистема: сенсоры
 подтип: крепёж
 стандарты:
-  - ISO 4762 (M6)
-  - Oxford Instruments Integration Note
+- ISO 4762 (M6)
+- Oxford Instruments Integration Note
 исследовательская_группа: null
 родитель: izdelie_kaskadnyi_stirling-kriokuler
 дочерние_части: []
 материалы_частей:
-  - часть: часть_kaskadnyi_stirling-kriokuler_mounting
-    материал: stal_st3
-    доля_массы: 1.0
-
+- часть: часть_kaskadnyi_stirling-kriokuler_mounting
+  материал: stal_st3
+  доля_массы: 1.0
+  форма: крепёж_и_монтажные_плиты
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -43,7 +43,29 @@ scaling_type: количественный
 источник_разбора: канон
 источник_url: https://oxcryo.com/products/two-stage-cryocoolers
 источник_дата: 2026-11-05
+технологии_частей:
+- часть: часть_kaskadnyi_stirling-kriokuler_mounting
+  технология: frezervanie_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: stal_st3
+    роль: обрабатываемый
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — деталь не масштабируется (leaf node в составе
+    родительского изделия)
+  ограничивающие_части: []
 ---
+
+
 # Часть: часть_kaskadnyi_stirling-kriokuler_mounting
 
 ## Описание

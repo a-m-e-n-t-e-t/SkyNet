@@ -36,9 +36,9 @@ scaling_type: количественный
   верификация: []
 основные:
   масса_kg:
-    min: 0.05
-    max: 5
-    nominal: 0.5
+    min: 1.0
+    max: 10.0
+    nominal: 4.0
   габариты_mm:
     l: 350
     w: 350
@@ -88,32 +88,42 @@ scaling_type: количественный
   - имя: количество_единиц
     диапазон:
     - 1
-    - 100
+    - 50
     единица: шт
   - имя: масса_единицы
     диапазон:
     - 1.0
     - 10.0
     единица: kg
-  - имя: длина_единицы
+  - имя: холодопроизводительность
     диапазон:
-    - 350
-    - 525.0
-    единица: mm
+    - 0.6
+    - 30
+    единица: W
+  - имя: температура_охлаждения
+    диапазон:
+    - 50
+    - 80
+    единица: K
   пределы:
-    max_единиц_в_системе: 100
+    max_единиц_в_системе: 50
     min_массы: 1.0
     max_массы: 10.0
-  закон_масштабирования: нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
-    overhead на mounting+control unit)
+    min_темп: 50
+    max_темп: 80
+  закон_масштабирования: 'нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
+    overhead на controller+power supply); типовая установка: Rigid Chill RS100+ cascade
+    (132×132×336 mm, 4 kg, 77K); Thales Cryogenics LSF9300 (5 mm cold finger, 600mW-9W
+    @ 80K); Stirling Cryogenics SPC-1 (550 kg, 1×0.7×1.65 m)'
   ограничивающие_части:
-  - часть_kaskadnyi_stirling-kriokuler_core (sensor core — критическая зависимость
-    от supplier)
+  - часть_kaskadnyi_stirling-kriokuler_core (helium compressor + cold head — критическая
+    точность производства, lifetime >50000h)
   - часть_kaskadnyi_stirling-kriokuler_housing (aluminum + anodizing MIL-A-8625 —
     стандартное производство)
-источник_url: https://en.wikipedia.org/wiki/Stirling_cryocooler
+источник_url: https://rigidchill.com/stirling-cryocooler-buying-guide-types-temperature-range-and-pricing
 источник_дата: '2026-11-11'
 ---
+
 
 
 
