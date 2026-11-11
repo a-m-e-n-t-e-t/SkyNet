@@ -1,112 +1,182 @@
 ---
 id: SkyNet-Hydrobot
 web_verification: Terminator Salvation (2009)
-тактико_технические_характеристики: 
+тактико_технические_характеристики:
   мобильность:
-          тип: водный змей
-          скорость_узлы: 15
+    тип: водный змей
+    скорость_узлы: 15
 тип: модель_SkyNet
 класс: водный_подводный
 категория: водный_HK
 тип_модели: водный_подводный
 источник_происхождения: фильм
-функции: ["патруль", "охрана водных путей", "штурм"]
+функции:
+- патруль
+- охрана водных путей
+- штурм
 канон_источник: 'Terminator: Salvation (2009)'
-произведения: ["work_004", "work_045"]
+произведения:
+- work_004
+- work_045
 производитель: Скайнет
 статус_реальности: canon
 подтип_модели: стандартный
 многослойная_броня:
   слои:
-    - номер: 1
-      материал: anticorrosive_steel  # Антикор. сталь
-      толщина_мм: {min: 2, target: 10}
-    - номер: 2
-      материал: rha_steel  # RHA
-      толщина_мм: {min: 2, target: 10}
-    - номер: 3
-      материал: uhmwpe_dyneema  # UHMWPE
-      толщина_мм: {min: 2, target: 10}
-    - номер: 4
-      материал: rubber  # Резина
-      толщина_мм: {min: 2, target: 10}
+  - номер: 1
+    материал: anticorrosive_steel
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 2
+    материал: rha_steel
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 3
+    материал: uhmwpe_dyneema
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 4
+    материал: rubber
+    толщина_мм:
+      min: 2
+      target: 10
   тип_брони: водный_подводный
-  соответствует_типу_модели: true  # F74, max_mass_percent: 35, min_layers: 4
+  соответствует_типу_модели: true
 доступность: фантастический
-expected_subsystems: ["вычислительная", "энергетическая", "каркас", "броня", "маскировка", "сенсоры", "приводная_система", "система_связи", "навигация", "система_охлаждения", "система_питания", "система_передвижения"]
+expected_subsystems:
+- вычислительная
+- энергетическая
+- каркас
+- броня
+- маскировка
+- сенсоры
+- приводная_система
+- система_связи
+- навигация
+- система_охлаждения
+- система_питания
+- система_передвижения
 relations:
   successor_of: null
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: 
-  - izdelie_tverdooksidnyi_toplivnyi_element
-  - izdelie_nasa_asc-e_srsc
-  - izdelie_superkondensatory
-  - izdelie_SkyNet-HKAerial
-  - izdelie_SkyNet-Rev9
-  - izdelie_SkyNet-Cameron
-  - izdelie_metalinza
-  - izdelie_mwir_nbn_640
-  - izdelie_lidar_robosense_ac1
-  - izdelie_hasel
-  - izdelie_povorotnoe_uplotnenie
-  - izdelie_elektroflyuidnye_volokna_mit
-  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-  - izdelie_razryvnye_mufty_iso_16028
-  - izdelie_flat-face_couplings_iso_16028
+реализация_промышленная:
+- izdelie_tverdooksidnyi_toplivnyi_element
+- izdelie_nasa_asc-e_srsc
+- izdelie_superkondensatory
+- izdelie_SkyNet-HKAerial
+- izdelie_SkyNet-Rev9
+- izdelie_SkyNet-Cameron
+- izdelie_metalinza
+- izdelie_mwir_nbn_640
+- izdelie_lidar_robosense_ac1
+- izdelie_hasel
+- izdelie_povorotnoe_uplotnenie
+- izdelie_elektroflyuidnye_volokna_mit
+- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+- izdelie_razryvnye_mufty_iso_16028
+- izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_разбора: канон
 ии_перепроектирован:
   статус: false
   верификация: []
+источник_url: https://terminator.fandom.com/wiki/Hydrobot
+источник_дата: '2026-11-11'
+уровень_иерархии: верхний
+уровень_номер: 1
+дочерние_части:
+- izdelie_tverdooksidnyi_topливnyi_element
+- izdelie_lidar_robosense_ac1
+- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+- izdelie_bldc_enkoder
+основные:
+  масса_kg:
+    min: 30.0
+    max: 100.0
+    nominal: 60.0
+  длина_m: 2.0
+масштабируемость:
+  режим: квантуемая
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 500
+    единица: шт
+  - имя: масса_единицы
+    диапазон:
+    - 30.0
+    - 100.0
+    единица: kg
+  - имя: скорость
+    диапазон:
+    - 10
+    - 30
+    единица: km/h
+  пределы:
+    max_единиц_в_системе: 500
+    min_массы: 30.0
+    max_массы: 100.0
+    min_скорости: 10
+    max_скорости: 30
+  закон_масштабирования: 'линейный — масса_парка = N × масса_единицы; canon: Hydrobot
+    (Terminator Salvation 2009), serpent-like water unit, 15 knots (28 km/h), claw
+    head, patrols water'
+  ограничивающие_части:
+  - izdelie_tverdooksidnyi_topливnyi_element (SOFC — критическая зависимость)
+  - izdelie_bldc_enkoder (BLDC motors for aquatic propulsion)
+наследуемые_материалы:
+- материал: ti-6al-4v
+  суммарная_доля_массы: 0.4
+  источники_частей:
+  - многослойная_броня_слой_2
+  - endoskeleton
+  форма: планер_и_космические_изделия
+- материал: uhmwpe
+  суммарная_доля_массы: 0.05
+  источники_частей:
+  - многослойная_броня_слой_3
+  форма: высоконагруженные_тонкие_шнуры
+дата_обновления: '2026-11-11'
 ---
-# v9.31: структурные поля §12.4.1-§12.4.X — добавлены как placeholder
-# Реальные значения будут заполнены через web_search для каждой модели.
-требования_выживаемости: 
-  эми_защита: hardened
-  термобарьер: морозостойкий
-  давление: до 30 атм (300 м глубина)
-маскировка_инфильтратора: n/a
-тактико_технические_характеристики: 
-  мобильность:
-          тип: водный змей
-          скорость_узлы: 15
-  вооружение: хватательные конечности
-защита_от_собственной_радиации: n/a
-кибербезопасность: 
-  аппаратные_меры:
-          HSM: true
-          secure_boot: true
-          TPM: true
-          anti_tamper: zeroization
-  iff: SkyNet IFF v3.1 (transponder 1090 MHz + crypto)
-  шифрование: AES-256 + SkyNet proprietary
-  skynet_protocol: Hive (collective consciousness) или Rogue (autonomous)
-эмс_внутренняя: sonar countermeasures
-компоновка_изделий: цилиндрический корпус
-трассировка_соединителей: []
-программное_обеспечение: 'Neural Net CPU + SkyNet OS (Hive mode по умолчанию, Rogue для автономных)'
-единая_эми_стратегия: SkyNet underwater supremacy
-единая_герметичность: IP68 (300м глубина)
-сертификация_модели_целого: 
-  тест_skyet: phase_5 (F70 metrics PASS)
-  канон_верификация: 'источник_разбора=канон'
-журнал_экземпляра: SkyNet underwater unit registry
-утилизация_после_120_лет: 'T-800: 120 лет на 1 топливной ячейке (canon); после истощения — замена ячеек или разборка на запчасти'
-экипаж_оператор: 0
-промышленная_база: Skynet automated factory (Cyberdyne Systems / CRS)
-alice_specs: ALICE sync protocol v9.31 (SkyNet hive-mind)
-original_improved: canon
-дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
----
-# SkyNet-Hydrobot
-
 ## Описание
 
 Hydrobot — змееобразный водный терминатор; плавающий; хватательные манипуляторы-«зубы»; патрулирует реки и каналы.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| масса | 30.0–100.0 (номинал 60.0) | kg | canon |
+| тип узла | модель_SkyNet | — | canon |
+| уровень_номер | 1 | — | canon |
+
+
+## Источники
+
+- Канон: Terminator: Salvation (2009)
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    SkyNet_Hydrobot["SkyNet-Hydrobot"]
+    izdelie_tverdooksidnyi_top___nyi_element["izdelie_tverdooksidnyi_topливnyi_element"]
+    SkyNet_Hydrobot --> izdelie_tverdooksidnyi_top___nyi_element
+    izdelie_lidar_robosense_ac1["izdelie_lidar_robosense_ac1"]
+    SkyNet_Hydrobot --> izdelie_lidar_robosense_ac1
+    izdelie_radiatsionno_stoikii_neiromorfnyi_tmr["izdelie_radiatsionno-stoikii_neiromorfnyi_tmr"]
+    SkyNet_Hydrobot --> izdelie_radiatsionno_stoikii_neiromorfnyi_tmr
+    izdelie_bldc_enkoder["izdelie_bldc_enkoder"]
+    SkyNet_Hydrobot --> izdelie_bldc_enkoder
+```
+
 
 ## Источник канон
 
@@ -153,7 +223,3 @@ Hydrobot — змееобразный водный терминатор; пла�
 
 - ✅ `work_004` — «Terminator Salvation» (2009) → [`work_004.md`](../произведения/work_004.md)
 - 📚 `work_045` — «Terminator: Salvation (game)» (2009) → [`work_045.md`](../произведения/work_045.md)
-
-## Источники
-
-- Канон: Terminator: Salvation (2009)
