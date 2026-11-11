@@ -36,12 +36,12 @@ scaling_type: количественный
   верификация: []
 основные:
   масса_kg:
-    min: 0.05
-    max: 5
-    nominal: 0.5
+    min: 0.5
+    max: 1.5
+    nominal: 0.87
   габариты_mm:
-    l: 100
-    w: 100
+    l: 150
+    w: 150
     h: 100
   выработка_энергии_W:
     min: 0
@@ -88,31 +88,42 @@ scaling_type: количественный
   - имя: количество_единиц
     диапазон:
     - 1
-    - 100
+    - 16
     единица: шт
   - имя: масса_единицы
     диапазон:
     - 0.5
-    - 2.0
+    - 1.5
     единица: kg
-  - имя: длина_единицы
+  - имя: дальность_обнаружения
     диапазон:
-    - 100
-    - 150.0
-    единица: mm
+    - 150
+    - 200
+    единица: m
+  - имя: количество_каналов
+    диапазон:
+    - 16
+    - 128
+    единица: шт
   пределы:
-    max_единиц_в_системе: 100
+    max_единиц_в_системе: 16
     min_массы: 0.5
-    max_массы: 2.0
-  закон_масштабирования: нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
-    overhead на mounting+control unit)
+    max_массы: 1.5
+    min_дальности: 150
+    max_дальности: 200
+  закон_масштабирования: 'нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
+    overhead на mounting+cables); типовая установка: RoboSense RS-LiDAR-16 (109 mm
+    dia × 80.7 mm, 0.87 kg, IP67, 905 nm, 150 m range, 16W); RS-Bpearl (111×100 mm,
+    90° FoV)'
   ограничивающие_части:
-  - часть_lidar_robosense_ac1_core (sensor core — критическая зависимость от supplier)
-  - часть_lidar_robosense_ac1_housing (aluminum + anodizing MIL-A-8625 — стандартное
+  - часть_lidar_robosense_ac1_core (905 nm laser diode + APD array — критическая зависимость
+    от RoboSense поставок)
+  - часть_lidar_robosense_ac1_housing (aluminum + anodizing MIL-A-8625, IP67 — стандартное
     производство)
-источник_url: https://www.robosense.ai/products/lidar/RS-LiDAR-AC1
+источник_url: https://www.robosense.ai/en/rslidar/16
 источник_дата: '2026-11-11'
 ---
+
 
 
 # Изделие: LIDAR RoboSense AC1
