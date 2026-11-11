@@ -7,16 +7,16 @@ id: часть_kapillyarnaya_teplovaya_trubka_mounting
 подсистема: система_охлаждения
 подтип: крепёж
 стандарты:
-  - ASTM B483
-  - Celsius Design Guide
+- ASTM B483
+- Celsius Design Guide
 исследовательская_группа: null
 родитель: izdelie_kapillyarnaya_teplovaya_trubka
 дочерние_части: []
 материалы_частей:
-  - часть: часть_kapillyarnaya_teplovaya_trubka_mounting
-    материал: al_6061-t6
-    доля_массы: 1.0
-
+- часть: часть_kapillyarnaya_teplovaya_trubka_mounting
+  материал: al_6061-t6
+  доля_массы: 1.0
+  форма: крепёж_и_монтажные_плиты
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -43,7 +43,27 @@ scaling_type: количественный
 источник_разбора: канон
 источник_url: https://celsiainc.com/heat-sink-blog/heat-pipe-design-guide
 источник_дата: 2026-11-05
+технологии_частей:
+- часть: часть_kapillyarnaya_teplovaya_trubka_mounting
+  технология: frezervanie_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: al_6061-t6
+    роль: обрабатываемый
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node (часть_kapillyarnaya_teplovaya_trubka_mounting)
+  ограничивающие_части: []
 ---
+
 # Часть: часть_kapillyarnaya_teplovaya_trubka_mounting
 
 ## Описание

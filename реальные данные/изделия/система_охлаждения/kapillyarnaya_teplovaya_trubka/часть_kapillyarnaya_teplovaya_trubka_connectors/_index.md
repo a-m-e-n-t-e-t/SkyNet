@@ -7,16 +7,16 @@ id: часть_kapillyarnaya_teplovaya_trubka_connectors
 подсистема: система_охлаждения
 подтип: разъёмы
 стандарты:
-  - IEC 60603
-  - MIL-DTL-38999
+- IEC 60603
+- MIL-DTL-38999
 исследовательская_группа: null
 родитель: izdelie_kapillyarnaya_teplovaya_trubka
 дочерние_части: []
 материалы_частей:
-  - часть: часть_kapillyarnaya_teplovaya_trubka_connectors
-    материал: latun_c36000
-    доля_массы: 1.0
-
+- часть: часть_kapillyarnaya_teplovaya_trubka_connectors
+  материал: latun_c36000
+  доля_массы: 1.0
+  форма: пруток_автоматный_ASTM_B16
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -37,16 +37,35 @@ scaling_type: количественный
   выработка_тепла_W: 0.1
 наследуемые: {}
 дополнительные:
-  тип: 'mixed signal + power'
+  тип: mixed signal + power
   pin_count: 4
-
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-07
 источник: web_search
 источник_разбора: веб-верификация
 источник_url: https://en.wikipedia.org/wiki/M12_connector
 источник_дата: 2026-11-05
+технологии_частей:
+- часть: часть_kapillyarnaya_teplovaya_trubka_connectors
+  технология: tokarnaya_obrabotka_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: latun_c36000
+    роль: обрабатываемый
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node (часть_kapillyarnaya_teplovaya_trubka_connectors)
+  ограничивающие_части: []
 ---
+
 
 # Часть: часть_kapillyarnaya_teplovaya_trubka_connectors
 

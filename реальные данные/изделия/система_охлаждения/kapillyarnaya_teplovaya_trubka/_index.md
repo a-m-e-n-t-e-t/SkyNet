@@ -6,22 +6,24 @@ id: izdelie_kapillyarnaya_teplovaya_trubka
 уровень_номер: 1
 подсистема: система_охлаждения
 подтип: прочее
-стандарты: 
-  - ASHRAE 15
+стандарты:
+- ASHRAE 15
 исследовательская_группа: boyd_corp
 родитель: null
 дочерние_части:
-  - часть_kapillyarnaya_teplovaya_trubka_core
-  - часть_kapillyarnaya_teplovaya_trubka_housing
-  - часть_kapillyarnaya_teplovaya_trubka_connectors
-  - часть_kapillyarnaya_teplovaya_trubka_mounting
+- часть_kapillyarnaya_teplovaya_trubka_core
+- часть_kapillyarnaya_teplovaya_trubka_housing
+- часть_kapillyarnaya_teplovaya_trubka_connectors
+- часть_kapillyarnaya_teplovaya_trubka_mounting
 материалы_частей:
-  - часть: часть_kapillyarnaya_teplovaya_trubka_core
-    материал: copper
-    доля_массы: 0.45
-  - часть: часть_kapillyarnaya_teplovaya_trubka_housing
-    материал: aluminum
-    доля_массы: 0.27
+- часть: часть_kapillyarnaya_teplovaya_trubka_core
+  материал: copper
+  доля_массы: 0.45
+  форма: шины_и_заземление
+- часть: часть_kapillyarnaya_teplovaya_trubka_housing
+  материал: aluminum
+  доля_массы: 0.27
+  форма: корпуса_электроники
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -31,31 +33,95 @@ scaling_type: количественный
 ии_перепроектирован:
   статус: false
   верификация: []
-основные: 
+основные:
   масса_kg:
-          min: 0.05
-          max: 5
-          nominal: 0.5
+    min: 0.05
+    max: 5
+    nominal: 0.5
   габариты_mm:
-          l: 60
-          w: 22
-          h: 230
+    l: 60
+    w: 22
+    h: 230
   выработка_энергии_W:
-          min: 0
-          max: 0
-          nominal: 0
+    min: 0
+    max: 0
+    nominal: 0
   выработка_тепла_W:
-          min: 0
-          max: 0.2
-          nominal: 0.1
+    min: 0
+    max: 0.2
+    nominal: 0.1
 наследуемые: {}
 дополнительные:
   цена_usd: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
-источник: user_input
-источник_разбора: пользовательский ввод
+дата_обновления: '2026-11-11'
+источник: web_search
+источник_разбора: веб-верификация
+технологии_частей:
+- часть: часть_kapillyarnaya_teplovaya_trubka_core
+  технология: tokarnaya_obrabotka_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: copper
+    роль: обрабатываемый
+- часть: часть_kapillyarnaya_teplovaya_trubka_housing
+  технология: anodirovanie
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: aluminum
+    роль: обрабатываемый
+наследуемые_материалы:
+- материал: copper
+  суммарная_доля_массы: 0.45
+  источники_частей:
+  - часть_kapillyarnaya_teplovaya_trubka_core
+  форма: шины_и_заземление
+- материал: al_6061-t6
+  суммарная_доля_массы: 0.27
+  источники_частей:
+  - часть_kapillyarnaya_teplovaya_trubka_housing
+  форма: крепёж_и_монтажные_плиты
+масштабируемость:
+  режим: масштабируемая
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1000
+    единица: шт
+  - имя: масса_единицы
+    диапазон:
+    - 0.01
+    - 0.5
+    единица: kg
+  - имя: диаметр
+    диапазон:
+    - 3
+    - 12
+    единица: mm
+  - имя: длина
+    диапазон:
+    - 80
+    - 600
+    единица: mm
+  пределы:
+    max_единиц_в_системе: 1000
+    min_массы: 0.01
+    max_массы: 0.5
+    min_диаметра: 3
+    max_диаметра: 12
+  закон_масштабирования: 'линейный — масса_системы = N × масса_единицы; типовая установка:
+    copper/water heat pipe (ACT/Boyd, 3-12mm OD, 80-600mm length, 20-150°C, sintered
+    wick)'
+  ограничивающие_части:
+  - часть_kapillyarnaya_teplovaya_trubka_core (copper tube + sintered wick + water
+    — критическая герметизация)
+  - часть_kapillyarnaya_teplovaya_trubka_housing (aluminum + anodizing — стандартное
+    производство)
+источник_url: https://www.1-act.com/thermal-solutions/passive/heat-pipes/heat-pipe-design-guide/
+источник_дата: '2026-11-11'
 ---
+
 # Изделие: капиллярная тепловая трубка
 
 ## Описание
