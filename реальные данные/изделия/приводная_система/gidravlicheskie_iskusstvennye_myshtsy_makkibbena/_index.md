@@ -6,49 +6,50 @@ id: izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena
 уровень_номер: 1
 подсистема: приводная_система
 подтип: прочее
-стандарты: 
-  - IEC 60034
-  - ISO 1940
+стандарты:
+- IEC 60034
+- ISO 1940
 исследовательская_группа: maxon_faulhaber
 родитель: null
 дочерние_части:
-  - часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
-  - часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
-  - часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors
-  - часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
+- часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
+- часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
+- часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors
+- часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
 материалы_частей:
-  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
-    материал: silicone-textile_composite
-    доля_массы: 0.45
-  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
-    материал: aluminum
-    доля_массы: 0.27
+- часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
+  материал: silicone-textile_composite
+  форма: протезная_кожа_силиконовая
+  доля_массы: 0.45
+- часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
+  материал: al_6061-t6
+  форма: корпуса_электроники
+  доля_массы: 0.27
 технологии_частей:
-  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
-    технология: pletenie_opletki
-    доля_использования: 1.0
-    материалы_для_процесса:
-      - материал: uhmwpe
-        роль: обрабатываемый
-  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
-    технология: frezervanie_chpu
-    доля_использования: 1.0
-    материалы_для_процесса:
-      - материал: al_6061-t6
-        роль: обрабатываемый
-  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors
-    технология: tokarnaya_obrabotka_chpu
-    доля_использования: 1.0
-    материалы_для_процесса:
-      - материал: al_6061-t6
-        роль: обрабатываемый
-  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
-    технология: frezervanie_chpu
-    доля_использования: 1.0
-    материалы_для_процесса:
-      - материал: al_6061-t6
-        роль: обрабатываемый
-
+- часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
+  технология: pletenie_opletki
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: uhmwpe
+    роль: обрабатываемый
+- часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
+  технология: frezervanie_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: al_6061-t6
+    роль: обрабатываемый
+- часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors
+  технология: tokarnaya_obrabotka_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: al_6061-t6
+    роль: обрабатываемый
+- часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
+  технология: frezervanie_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: al_6061-t6
+    роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -58,50 +59,74 @@ scaling_type: количественный
 ии_перепроектирован:
   статус: false
   верификация: []
-основные: 
+основные:
   масса_kg:
-          min: 0.05
-          max: 50
-          nominal: 1
+    min: 0.05
+    max: 50
+    nominal: 1
   габариты_mm:
-          l: 292
-          w: 36
-          h: 38
+    l: 292
+    w: 36
+    h: 38
   выработка_энергии_W:
-          min: 0
-          max: 0
-          nominal: 0
+    min: 0
+    max: 0
+    nominal: 0
   выработка_тепла_W:
-          min: 0.1
-          max: 50
-          nominal: 5
+    min: 0.1
+    max: 50
+    nominal: 5
 наследуемые: {}
 масштабируемость:
-  режим: квантуемая
-  параметры: [диаметр_внутренний_mm, длина_активная_mm]
+  режим: масштабируемая
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 100
+    единица: шт
+  - имя: масса_единицы
+    диапазон:
+    - 0.05
+    - 0.5
+    единица: kg
+  - имя: сила_привода
+    диапазон:
+    - 10
+    - 500
+    единица: N
   пределы:
-    min: {диаметр_внутренний_mm: 5,  длина_активная_mm: 30}
-    max: {диаметр_внутренний_mm: 40, длина_активная_mm: 900}
-  шаг:
-    диаметр_внутренний_mm: [5, 10, 20, 40]      # ряд Festo Fluidic Muscle DMSP
-    длина_активная_mm: null                      # непрерывно по CAD
-  закон_масштабирования:
-    масса: линейный                              # m ∝ d × l (трубка + оплётка)
-    сила: квадратичный                           # F = (π/4)·d²·p·η; Festo: 150/630/1500/6000 N при d=5/10/20/40, p=6 bar
-    contraction_pct: постоянный                  # ~20-25 % не зависит от масштаба
+    max_единиц_в_системе: 100
+    min_массы: 0.05
+    max_массы: 0.5
+    min_силы: 10
+    max_силы: 500
+  закон_масштабирования: 'линейный — масса_системы = N × масса_мышцы (soft actuator);
+    типовая установка: McKibben artificial muscle (silicone bladder + UHMWPE braid,
+    50-200g, contraction 20-30%, 10-500N force, hydraulic/pneumatic)'
   ограничивающие_части:
-    - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors
-      предел: гидропорт ISO 5599 / G1/8-G1/4 — квантуется под d_шланга → ограничивает расход Q = π·d²/4 × v
-    - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
-      предел: внутренний Ø обоймы = Ø мышцы + зазор 1-2 мм
+  - часть_..._core (silicone-textile_composite + UHMWPE braid — критическая точность
+    производства)
+  - часть_..._housing (aluminum + anodizing — стандартное производство)
 дополнительные:
   цена_usd: null
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-10
+дата_обновления: '2026-11-11'
 источник: web_search
 источник_разбора: веб-верификация
-источник_url: https://ftp.festo.com/public/PNEUMATIC/SOFTWARE_SERVICE/DataSheet/EN_GB/534202.pdf
-источник_дата: 2026-11-07
+источник_url: https://en.wikipedia.org/wiki/Pneumatic_artificial_muscle
+источник_дата: '2026-11-11'
+наследуемые_материалы:
+- материал: silicone-textile_composite
+  суммарная_доля_массы: 0.45
+  источники_частей:
+  - часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
+  форма: протезная_кожа_силиконовая
+- материал: al_6061-t6
+  суммарная_доля_массы: 0.27
+  источники_частей:
+  - часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing
+  форма: корпуса_электроники
 ---
 ## Описание
 
@@ -148,8 +173,8 @@ scaling_type: количественный
 
 ## Используемые материалы
 
-- `silicone-textile_composite` → [`silicone-textile_composite`](../../../материалы/silicone-textile_composite.md)
-- `aluminum` → [`aluminum`](../../../материалы/aluminum.md)
+- `silicone-textile_composite` (форма: протезная_кожа_силиконовая) → [`silicone-textile_composite`](../../../материалы/silicone-textile_composite.md)
+- `al_6061-t6` (форма: корпуса_электроники) → [`al_6061-t6`](../../../материалы/al_6061-t6.md)
 
 
 ## Источники

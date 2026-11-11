@@ -7,23 +7,22 @@ id: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
 подсистема: приводная_система
 подтип: основной_элемент
 стандарты:
-  - ISO 9001
+- ISO 9001
 исследовательская_группа: null
 родитель: izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena
 дочерние_части: []
 материалы_частей:
-  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
-    материал: silicone-textile_composite
-    доля_массы: 1.0
-
+- часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
+  материал: silicone-textile_composite
+  доля_массы: 1.0
+  форма: протезная_кожа_силиконовая
 технологии_частей:
-  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
-    технология: pletenie_opletki
-    доля_использования: 1.0
-    материалы_для_процесса:
-      - материал: uhmwpe
-        роль: обрабатываемый
-
+- часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core
+  технология: pletenie_opletki
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: uhmwpe
+    роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -50,7 +49,20 @@ scaling_type: количественный
 источник_разбора: веб-верификация
 источник_url: https://www.festo.com/media/pim/555/D15000100140555.pdf
 источник_дата: 2026-11-05
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node в составе McKibben muscle (часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core)
+  ограничивающие_части: []
 ---
+
 ## Описание
 
 Гидравлическая искусственная мышца Мак-Киббена — эластичная камера (bladder) в текстильной оплётке: при подаче давления сокращается до 20–30 % длины. Референсное исполнение — искусственная мышца Мак-Киббена (гидравлическая, 250 мм, текстильно-силиконовая). Габариты 250×15×15 мм, масса 0.06 кг — паспортные данные (искусственная мышца Мак-Киббена). Материал — silicone-textile_composite: текстильно-силиконовый композит.

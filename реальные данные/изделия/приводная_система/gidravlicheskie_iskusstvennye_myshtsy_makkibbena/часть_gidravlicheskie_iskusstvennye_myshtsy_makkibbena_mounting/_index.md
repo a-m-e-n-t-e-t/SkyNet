@@ -7,23 +7,22 @@ id: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
 подсистема: приводная_система
 подтип: крепёж
 стандарты:
-  - ASTM F136
+- ASTM F136
 исследовательская_группа: null
 родитель: izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena
 дочерние_части: []
 материалы_частей:
-  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
-    материал: al_6061-t6
-    доля_массы: 1.0
-
+- часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
+  материал: al_6061-t6
+  доля_массы: 1.0
+  форма: крепёж_и_монтажные_плиты
 технологии_частей:
-  - часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
-    технология: frezervanie_chpu
-    доля_использования: 1.0
-    материалы_для_процесса:
-      - материал: al_6061-t6
-        роль: обрабатываемый
-
+- часть: часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting
+  технология: frezervanie_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: al_6061-t6
+    роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -50,7 +49,20 @@ scaling_type: количественный
 источник_разбора: канон
 источник_url: https://www.researchgate.net/publication/220122552_Enhanced_Modelling_and_Performance_in_Braided_Pneumatic_Muscle_Actuators
 источник_дата: 2026-11-05
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node в составе McKibben muscle (часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting)
+  ограничивающие_части: []
 ---
+
 ## Описание
 
 Концевые фитинги гидравлической мышцы МакКиббена (2 шт): алюминиевые AL 6061-T6 цанговые узлы Ø12×25 мм зажимают эластичную камеру и оплётку (Kevlar braid) по обоим торцам мышцы; один фитинг несёт штуцер подачи рабочей жидкости (M5, уплотнение FKM), второй — проушину крепления нагрузки с осью Ø4. Масса пары фитингов ≈ 20 г.
