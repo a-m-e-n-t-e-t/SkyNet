@@ -7,24 +7,23 @@ id: часть_povorotnoe_uplotnenie_mounting
 подсистема: приводная_система
 подтип: крепёж
 стандарты:
-  - ISO 4762 (M6)
-  - Deublin Mounting Instructions
+- ISO 4762 (M6)
+- Deublin Mounting Instructions
 исследовательская_группа: null
 родитель: izdelie_povorotnoe_uplotnenie
 дочерние_части: []
 материалы_частей:
-  - часть: часть_povorotnoe_uplotnenie_mounting
-    материал: stal_st3
-    форма: строительные_конструкции_и_крепёж
-    доля_массы: 1.0
-
+- часть: часть_povorotnoe_uplotnenie_mounting
+  материал: stal_st3
+  форма: строительные_конструкции_и_крепёж
+  доля_массы: 1.0
 технологии_частей:
-  - часть: часть_povorotnoe_uplotnenie_mounting
-    технология: frezervanie_chpu
-    доля_использования: 1.0
-    материалы_для_процесса:
-      - материал: stal_st3
-        роль: обрабатываемый
+- часть: часть_povorotnoe_uplotnenie_mounting
+  технология: frezervanie_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: stal_st3
+    роль: обрабатываемый
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -51,7 +50,20 @@ scaling_type: количественный
 источник_разбора: канон
 источник_url: https://www.deublin.com/_Resources/Persistent/5/6/6/8/56683bfe9757615589678c9d6a347919abc3f6fd/SteelBrochure%20-%20ST252%20US_LowRes.pdf
 источник_дата: 2026-11-05
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node (часть_povorotnoe_uplotnenie_mounting)
+  ограничивающие_части: []
 ---
+
 # Часть: часть_povorotnoe_uplotnenie_mounting
 
 ## Описание
