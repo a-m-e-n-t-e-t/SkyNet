@@ -3655,6 +3655,9 @@ def check_F33(entries: list[tuple[Path, str, dict]] | None = None) -> dict:
         'parylene_c': 'вещество (полимер) vs CVD-процесс нанесения',
         # pcm: Phase-Change Material (вещество) vs Phase-Change Memory (изделие-ИС)
         'pcm': 'Phase-Change Material (вещество) vs Phase-Change Memory chip (изделие)',
+        # pcm_rt35: Phase-Change Material RT35 (вещество-парафин) vs изделие-обёртка
+        # для композитных термопрокладок в изделия/компоненты/композитные/
+        'pcm_rt35': 'Phase-Change Material RT35 (вещество) vs композитная термопрокладка (изделие)',
     }
 
     total = len(entries)

@@ -1,0 +1,161 @@
+---
+id: SkyNet-AerostatBomber
+тип: модель_SkyNet
+класс: воздушный
+категория: воздушный_HK
+тип_модели: воздушный
+источник_происхождения: фильм
+функции: ["разведка", "удар", "бомбардировщик"]
+канон_источник: 'Terminator: Salvation (2009)'
+произведения: ["work_004"]
+производитель: Скайнет
+статус_реальности: canon
+подтип_модели: стандартный
+многослойная_броня:
+  слои:
+    - номер: 1
+      материал: al_6061_t6  # Al 6061-T6 (лёгкий кин.)
+      толщина_мм: {min: 2, target: 10}
+    - номер: 2
+      материал: uhmwpe_dyneema  # UHMWPE (энергопоглощение)
+      толщина_мм: {min: 2, target: 10}
+  тип_брони: воздушный
+  соответствует_типу_модели: true  # F74, max_mass_percent: 15, min_layers: 2
+доступность: фантастический
+expected_subsystems: ["вычислительная", "энергетическая", "каркас", "броня", "маскировка", "сенсоры", "приводная_система", "система_связи", "навигация", "система_охлаждения", "система_питания", "система_передвижения"]
+relations:
+  successor_of: SkyNet-Aerostat
+  variation_of: null
+  hybrid_of: []
+  paradigm_shift_from: null
+реализация_промышленная: 
+  - izdelie_tverdooksidnyi_toplivnyi_element
+  - izdelie_nasa_asc-e_srsc
+  - izdelie_superkondensatory
+  - izdelie_SkyNet-HKAerial
+  - izdelie_SkyNet-Rev9
+  - izdelie_SkyNet-Cameron
+  - izdelie_metalinza
+  - izdelie_mwir_nbn_640
+  - izdelie_lidar_robosense_ac1
+  - izdelie_hasel
+  - izdelie_povorotnoe_uplotnenie
+  - izdelie_elektroflyuidnye_volokna_mit
+  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+  - izdelie_razryvnye_mufty_iso_16028
+  - izdelie_flat-face_couplings_iso_16028
+реализация_ии: []
+источник: web_search
+источник_url: 'https://terminator.fandom.com/wiki/Aerostat'
+источник_дата: 2026-11-06
+источник_разбора: канон
+ии_перепроектирован:
+  статус: false
+  верификация: []
+---
+# v9.31: структурные поля §12.4.1-§12.4.X — добавлены как placeholder
+# Реальные значения будут заполнены через web_search для каждой модели.
+требования_выживаемости: 
+  эми_защита:
+          уровень: hardened
+          порог_импульса_В_м:
+                      min: 50000
+                      target: 100000
+          экранирование: conformal (тонкое покрытие)
+  термобарьер:
+          высотный_диапазон_C:
+                      min: -60
+                      target: 50
+          самолётная_аэродинамика: true
+  противодействие_ракетам: flare + chaff + plasma cannon
+маскировка_инфильтратора: n/a (не инфильтратор; боевая машина)
+тактико_технические_характеристики: 
+  мобильность:
+          тип: aerostat bomber
+  вооружение: бомбы
+защита_от_собственной_радиации: n/a (если не ядерный двигатель)
+кибербезопасность: 
+  аппаратные_меры:
+          HSM: true
+          secure_boot: true
+          TPM: true
+          anti_tamper: zeroization
+  iff: SkyNet IFF v3.1 (transponder 1090 MHz + crypto)
+  шифрование: AES-256 + SkyNet proprietary
+  skynet_protocol: Hive (collective consciousness) или Rogue (autonomous)
+эмс_внутренняя: ECM + ECCM + IFF
+компоновка_изделий: 
+  fuselage: летающее крыло / дельта
+  engine_pods: по бокам фюзеляжа
+  plasma_cannon_ventral: true
+трассировка_соединителей: []
+программное_обеспечение: 'Neural Net CPU + SkyNet OS (Hive mode по умолчанию, Rogue для автономных)'
+единая_эми_стратегия: SkyNet air supremacy (jamming всех гражданских частот)
+единая_герметичность: IP66 (полёт в дождь)
+сертификация_модели_целого: 
+  тест_skyet: phase_5 (F70 metrics PASS)
+  канон_верификация: 'источник_разбора=канон'
+журнал_экземпляра: SkyNet aerial unit registry
+утилизация_после_120_лет: 'T-800: 120 лет на 1 топливной ячейке (canon); после истощения — замена ячеек или разборка на запчасти'
+экипаж_оператор: 0
+промышленная_база: Skynet automated factory (Cyberdyne Systems / CRS)
+alice_specs: ALICE sync protocol v9.31 (SkyNet hive-mind)
+original_improved: canon
+дата_создания: 2026-11-03
+дата_обновления: 2026-11-06
+---
+# SkyNet-AerostatBomber
+
+## Описание
+
+Aerostat Bomber — увеличенный Aerostat; несёт плазменные бомбы; групповая атака.
+
+Семейство Aerostat (прозвища «Flyer» / «Wasps») — неантропоморфные Hunter-Killer Skynet, серийно выпускавшиеся до 2018 года; базовая машина ведёт воздушную разведку местности и сил Сопротивления и способна передавать сигналы Harvester'ам для наведения на убежища людей (Terminator: Salvation, 2009 — фильм и игра Terminator Salvation). Бомбардировочный вариант увеличен относительно разведчика (размах 2 м против 1,2 м у базового Aerostat, масса 60 кг против 25 кг) и переведён из разведывательной роли в ударную: групповая атака плазменными бомбами по наземным целям.
+
+## Источник канон
+
+- **Произведение:** Terminator: Salvation (2009)
+- **Тип:** фильм
+- **Каноничность:** canon
+
+## Тактико-технические характеристики
+
+| Параметр | Значение |
+|---|---|
+| размах_крыльев_м | 2 |
+| масса_кг | 60 |
+| производитель | Скайнет |
+| класс | воздушный |
+| категория | воздушный_HK |
+| тип_модели | воздушный |
+
+## Подсистемы (по типу)
+
+- вычислительная
+- энергетическая
+- каркас
+- броня
+- маскировка
+- сенсоры
+- приводная_система
+- система_связи
+- навигация
+- система_охлаждения
+- система_питания
+- система_передвижения
+
+## Многослойная броня (§11.6)
+
+Минимум слоёв по типу: 2 (§11.6). Макс. доля массы брони: 15%.
+
+1. Al 6061-T6 (лёгкий кин.) (`al_6061_t6`)
+2. UHMWPE (энергопоглощение) (`uhmwpe_dyneema`)
+
+## Произведения, где появляется
+
+- ✅ `work_004` — «Terminator Salvation» (2009) → [`work_004.md`](../произведения/work_004.md)
+
+## Источники
+
+- Канон: Terminator: Salvation (2009)
+- [Aerostat | Terminator Wiki — Fandom](https://terminator.fandom.com/wiki/Aerostat)
