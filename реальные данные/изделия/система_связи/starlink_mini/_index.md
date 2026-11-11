@@ -36,12 +36,12 @@ scaling_type: количественный
   верификация: []
 основные:
   масса_kg:
-    min: 0.05
-    max: 5
-    nominal: 0.5
+    min: 0.5
+    max: 2.0
+    nominal: 1.16
   габариты_mm:
     l: 300
-    w: 200
+    w: 260
     h: 50
   выработка_энергии_W:
     min: 0
@@ -93,25 +93,29 @@ scaling_type: количественный
   - имя: масса_единицы
     диапазон:
     - 0.5
-    - 5.0
+    - 2.0
     единица: kg
-  - имя: длина_единицы
+  - имя: пропускная_способность
     диапазон:
-    - 300
-    - 450.0
-    единица: mm
+    - 50
+    - 250
+    единица: Mbps
   пределы:
     max_единиц_в_системе: 100
     min_массы: 0.5
-    max_массы: 5.0
-  закон_масштабирования: нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
-    overhead на mounting+control unit)
+    max_массы: 2.0
+  закон_масштабирования: 'нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
+    overhead на cables+mount); типовая установка: Starlink Mini (SpaceX, 298×259×40
+    mm, 1.16 kg, IP67, built-in Wi-Fi 6 router, 50-250 Mbps, ~3.8W power)'
   ограничивающие_части:
-  - часть_starlink_mini_core (sensor core — критическая зависимость от supplier)
-  - часть_starlink_mini_housing (aluminum + anodizing MIL-A-8625 — стандартное производство)
-источник_url: https://www.starlink.com/mini
+  - часть_starlink_mini_core (Ku-band phased-array antenna — критическая зависимость
+    от SpaceX поставок)
+  - часть_starlink_mini_housing (aluminum + anodizing + IP67 sealing — стандартное
+    производство)
+источник_url: https://starlink.com/specifications/5
 источник_дата: '2026-11-11'
 ---
+
 
 # Изделие: Starlink Mini
 
