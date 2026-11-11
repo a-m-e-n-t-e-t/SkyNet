@@ -1,112 +1,187 @@
 ---
 id: SkyNet-HKSubmarine
 web_verification: The Terminator (1984) — mentioned by Kyle Reese
-тактико_технические_характеристики: 
+тактико_технические_характеристики:
   мобильность:
-          скорость_узлы: 25
-          глубина_m: 300
+    скорость_узлы: 25
+    глубина_m: 300
 тип: модель_SkyNet
 класс: водный_подводный
 категория: водный_HK
 тип_модели: водный_подводный
 источник_происхождения: фильм
-функции: ["патруль", "охрана водных путей", "штурм"]
+функции:
+- патруль
+- охрана водных путей
+- штурм
 канон_источник: The Terminator (1984) [mentioned]
-произведения: ["work_001"]
+произведения:
+- work_001
 производитель: Скайнет
 статус_реальности: canon
 подтип_модели: стандартный
 многослойная_броня:
   слои:
-    - номер: 1
-      материал: anticorrosive_steel  # Антикор. сталь
-      толщина_мм: {min: 2, target: 10}
-    - номер: 2
-      материал: rha_steel  # RHA
-      толщина_мм: {min: 2, target: 10}
-    - номер: 3
-      материал: uhmwpe_dyneema  # UHMWPE
-      толщина_мм: {min: 2, target: 10}
-    - номер: 4
-      материал: rubber  # Резина
-      толщина_мм: {min: 2, target: 10}
+  - номер: 1
+    материал: anticorrosive_steel
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 2
+    материал: rha_steel
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 3
+    материал: uhmwpe_dyneema
+    толщина_мм:
+      min: 2
+      target: 10
+  - номер: 4
+    материал: rubber
+    толщина_мм:
+      min: 2
+      target: 10
   тип_брони: водный_подводный
-  соответствует_типу_модели: true  # F74, max_mass_percent: 35, min_layers: 4
+  соответствует_типу_модели: true
 доступность: фантастический
-expected_subsystems: ["вычислительная", "энергетическая", "каркас", "броня", "маскировка", "сенсоры", "приводная_система", "система_связи", "навигация", "система_охлаждения", "система_питания", "система_передвижения"]
+expected_subsystems:
+- вычислительная
+- энергетическая
+- каркас
+- броня
+- маскировка
+- сенсоры
+- приводная_система
+- система_связи
+- навигация
+- система_охлаждения
+- система_питания
+- система_передвижения
 relations:
   successor_of: null
   variation_of: null
   hybrid_of: []
   paradigm_shift_from: null
-реализация_промышленная: 
-  - izdelie_tverdooksidnyi_toplivnyi_element
-  - izdelie_nasa_asc-e_srsc
-  - izdelie_superkondensatory
-  - izdelie_SkyNet-HKAerial
-  - izdelie_SkyNet-Rev9
-  - izdelie_SkyNet-Cameron
-  - izdelie_metalinza
-  - izdelie_mwir_nbn_640
-  - izdelie_lidar_robosense_ac1
-  - izdelie_hasel
-  - izdelie_povorotnoe_uplotnenie
-  - izdelie_elektroflyuidnye_volokna_mit
-  - izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
-  - izdelie_razryvnye_mufty_iso_16028
-  - izdelie_flat-face_couplings_iso_16028
+реализация_промышленная:
+- izdelie_tverdooksidnyi_toplivnyi_element
+- izdelie_nasa_asc-e_srsc
+- izdelie_superkondensatory
+- izdelie_SkyNet-HKAerial
+- izdelie_SkyNet-Rev9
+- izdelie_SkyNet-Cameron
+- izdelie_metalinza
+- izdelie_mwir_nbn_640
+- izdelie_lidar_robosense_ac1
+- izdelie_hasel
+- izdelie_povorotnoe_uplotnenie
+- izdelie_elektroflyuidnye_volokna_mit
+- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+- izdelie_razryvnye_mufty_iso_16028
+- izdelie_flat-face_couplings_iso_16028
 реализация_ии: []
 источник: web_search
 источник_разбора: канон
 ии_перепроектирован:
   статус: false
   верификация: []
+источник_url: https://terminator.fandom.com/wiki/Hunter-Killer
+источник_дата: '2026-11-11'
+уровень_иерархии: верхний
+уровень_номер: 1
+дочерние_части:
+- izdelie_tverdooksidnyi_topливnyi_element
+- izdelie_lidar_robosense_ac1
+- izdelie_radiatsionno-stoikii_neiromorfnyi_tmr
+- izdelie_bldc_enkoder
+основные:
+  масса_kg:
+    min: 50000.0
+    max: 200000.0
+    nominal: 100000.0
+  длина_m: 30.0
+масштабируемость:
+  режим: квантуемая
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 50
+    единица: шт
+  - имя: масса_единицы
+    диапазон:
+    - 50000.0
+    - 200000.0
+    единица: kg
+  - имя: скорость
+    диапазон:
+    - 20
+    - 30
+    единица: knots
+  - имя: глубина_погружения
+    диапазон:
+    - 200
+    - 500
+    единица: m
+  пределы:
+    max_единиц_в_системе: 50
+    min_массы: 50000.0
+    max_массы: 200000.0
+    min_глубины: 200
+    max_глубины: 500
+  закон_масштабирования: 'линейный — масса_флота = N × масса_единицы; canon: HK-Submarine
+    (The Terminator 1984, mentioned by Kyle Reese), 25 knots, 300m depth, patrol water
+    routes'
+  ограничивающие_части:
+  - izdelie_tverdooksidnyi_topливnyi_element (SOFC for underwater power — критическая
+    зависимость)
+  - izdelie_bldc_enkoder (electric propulsion for stealth)
+наследуемые_материалы:
+- материал: ti-6al-4v
+  суммарная_доля_массы: 0.5
+  источники_частей:
+  - многослойная_броня_слой_2
+  - hull
+  форма: планер_и_космические_изделия
+- материал: uhmwpe
+  суммарная_доля_массы: 0.04
+  источники_частей:
+  - многослойная_броня_слой_3
+  форма: высоконагруженные_тонкие_шнуры
+дата_обновления: '2026-11-11'
 ---
-# v9.31: структурные поля §12.4.1-§12.4.X — добавлены как placeholder
-# Реальные значения будут заполнены через web_search для каждой модели.
-требования_выживаемости: 
-  эми_защита: hardened
-  термобарьер: морозостойкий
-  давление: до 30 атм (300 м глубина)
-маскировка_инфильтратора: n/a
-тактико_технические_характеристики: 
-  мобильность:
-          скорость_узлы: 25
-          глубина_m: 300
-  вооружение: торпеды
-защита_от_собственной_радиации: n/a
-кибербезопасность: 
-  аппаратные_меры:
-          HSM: true
-          secure_boot: true
-          TPM: true
-          anti_tamper: zeroization
-  iff: SkyNet IFF v3.1 (transponder 1090 MHz + crypto)
-  шифрование: AES-256 + SkyNet proprietary
-  skynet_protocol: Hive (collective consciousness) или Rogue (autonomous)
-эмс_внутренняя: sonar countermeasures
-компоновка_изделий: цилиндрический корпус
-трассировка_соединителей: []
-программное_обеспечение: 'Neural Net CPU + SkyNet OS (Hive mode по умолчанию, Rogue для автономных)'
-единая_эми_стратегия: SkyNet underwater supremacy
-единая_герметичность: IP68 (300м глубина)
-сертификация_модели_целого: 
-  тест_skyet: phase_5 (F70 metrics PASS)
-  канон_верификация: 'источник_разбора=канон'
-журнал_экземпляра: SkyNet underwater unit registry
-утилизация_после_120_лет: 'T-800: 120 лет на 1 топливной ячейке (canon); после истощения — замена ячеек или разборка на запчасти'
-экипаж_оператор: 0
-промышленная_база: Skynet automated factory (Cyberdyne Systems / CRS)
-alice_specs: ALICE sync protocol v9.31 (SkyNet hive-mind)
-original_improved: canon
-дата_создания: 2026-11-03
-дата_обновления: 2026-11-03
----
-# SkyNet-HKSubmarine
-
 ## Описание
 
 Hunter-Killer Submarine — подводный охотник; SONAR; ракетное вооружение; упоминается в каноне T1.
+
+## Технические характеристики
+
+| Параметр | Значение | Единица | Источник |
+|---|---|---|---|
+| масса | 50000.0–200000.0 (номинал 100000.0) | kg | canon |
+| тип узла | модель_SkyNet | — | canon |
+| уровень_номер | 1 | — | canon |
+
+
+## Источники
+
+- Канон: The Terminator (1984) [mentioned]
+
+## Декомпозиция
+
+```mermaid
+graph TD
+    SkyNet_HKSubmarine["SkyNet-HKSubmarine"]
+    izdelie_tverdooksidnyi_top___nyi_element["izdelie_tverdooksidnyi_topливnyi_element"]
+    SkyNet_HKSubmarine --> izdelie_tverdooksidnyi_top___nyi_element
+    izdelie_lidar_robosense_ac1["izdelie_lidar_robosense_ac1"]
+    SkyNet_HKSubmarine --> izdelie_lidar_robosense_ac1
+    izdelie_radiatsionno_stoikii_neiromorfnyi_tmr["izdelie_radiatsionno-stoikii_neiromorfnyi_tmr"]
+    SkyNet_HKSubmarine --> izdelie_radiatsionno_stoikii_neiromorfnyi_tmr
+    izdelie_bldc_enkoder["izdelie_bldc_enkoder"]
+    SkyNet_HKSubmarine --> izdelie_bldc_enkoder
+```
+
 
 ## Источник канон
 
@@ -152,7 +227,3 @@ Hunter-Killer Submarine — подводный охотник; SONAR; ракет
 ## Произведения, где появляется
 
 - ✅ `work_001` — «The Terminator» (1984) → [`work_001.md`](../произведения/work_001.md)
-
-## Источники
-
-- Канон: The Terminator (1984) [mentioned]
