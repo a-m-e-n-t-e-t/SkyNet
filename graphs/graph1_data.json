@@ -7747,18 +7747,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_povorotnoe_uplotnenie",
-      "dst": "material_ptfe",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_povorotnoe_uplotnenie",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_tsa",
       "dst": "часть_tsa_core",
       "type": "has_part",
@@ -7840,18 +7828,6 @@
       "src": "izdelie_pezoelektricheskii_gromkogovoritel",
       "dst": "часть_pezoelektricheskii_gromkogovoritel_mounting",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_pezoelektricheskii_gromkogovoritel",
-      "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_pezoelektricheskii_gromkogovoritel",
-      "dst": "material_aluminum",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8050,18 +8026,6 @@
       "src": "izdelie_fleksury_8_diskov_po_0_15_mm",
       "dst": "часть_fleksury_8_diskov_po_0_15_mm_mounting",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_fleksury_8_diskov_po_0_15_mm",
-      "dst": "material_becu",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_fleksury_8_diskov_po_0_15_mm",
-      "dst": "material_aluminum",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -8383,24 +8347,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_3d-pechatnye_dea",
-      "dst": "material_silikon_40_50_shore_a",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_3d-pechatnye_dea",
-      "dst": "material_neilon_6_66",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_3d-pechatnye_dea",
-      "dst": "material_becu",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_belleville_shaiby",
       "dst": "часть_belleville_shaiby_core",
       "type": "has_part",
@@ -8515,30 +8461,6 @@
       "meta": {}
     },
     {
-      "src": "часть_povorotnoe_uplotnenie_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_povorotnoe_uplotnenie_core",
-      "dst": "material_ptfe",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_povorotnoe_uplotnenie_mounting",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_povorotnoe_uplotnenie_connectors",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_tcp_mounting",
       "dst": "material_al_6061-t6",
       "type": "uses_material",
@@ -8559,30 +8481,6 @@
     {
       "src": "часть_tcp_housing",
       "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_pezoelektricheskii_gromkogovoritel_core",
-      "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_pezoelektricheskii_gromkogovoritel_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_pezoelektricheskii_gromkogovoritel_connectors",
-      "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_pezoelektricheskii_gromkogovoritel_mounting",
-      "dst": "material_latun_c36000",
       "type": "uses_material",
       "meta": {}
     },
@@ -8751,30 +8649,6 @@
     {
       "src": "часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_housing",
       "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_fleksury_8_diskov_po_0_15_mm_connectors",
-      "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_fleksury_8_diskov_po_0_15_mm_core",
-      "dst": "material_becu",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_fleksury_8_diskov_po_0_15_mm_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_fleksury_8_diskov_po_0_15_mm_mounting",
-      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -9021,30 +8895,6 @@
     {
       "src": "часть_zubchataya_mufta_connectors",
       "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_3d-pechatnye_dea_mounting",
-      "dst": "material_neilon_6_66",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_3d-pechatnye_dea_core",
-      "dst": "material_silikon_40_50_shore_a",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_3d-pechatnye_dea_housing",
-      "dst": "material_neilon_6_66",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_3d-pechatnye_dea_connectors",
-      "dst": "material_becu",
       "type": "uses_material",
       "meta": {}
     },
@@ -16365,7 +16215,7 @@
   },
   "stats": {
     "nodes": 1094,
-    "edges": 1336,
+    "edges": 1311,
     "dangling": {
       "complies_with": 542,
       "has_part": 4,

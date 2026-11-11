@@ -133,14 +133,11 @@ graph LR
     material_aluminum[Al ≥ 99.5 % (основа); …]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_si[Si (кремний); электрон…]
-    izdelie_povorotnoe_uplotnenie -->|материал| material_aluminum
     izdelie_tcp -->|материал| material_aluminum
-    izdelie_pezoelektricheskii_gromkogovoritel -->|материал| material_aluminum
     izdelie_apa -->|материал| material_aluminum
     izdelie_ipmc -->|материал| material_aluminum
     izdelie_gidrostaticheskie_gazovye_podshipniki_na_gelii -->|материал| material_stal_st3
     izdelie_gidrostaticheskie_gazovye_podshipniki_na_gelii -->|материал| material_aluminum
-    izdelie_fleksury_8_diskov_po_0_15_mm -->|материал| material_aluminum
     izdelie_elektroflyuidnye_volokna_mit -->|материал| material_aluminum
     izdelie_bldc -->|материал| material_al_6061_t6
     izdelie_bldc -->|материал| material_aluminum
@@ -151,12 +148,8 @@ graph LR
     izdelie_zubchataya_mufta -->|материал| material_al_6061_t6
     izdelie_hasel -->|материал| material_al_6061_t6
     izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist -->|материал| material_copper
-    часть_povorotnoe_uplotnenie_housing -->|материал| material_al_6061_t6
-    часть_povorotnoe_uplotnenie_mounting -->|материал| material_stal_st3
-    часть_povorotnoe_uplotnenie_connectors -->|материал| material_al_6061_t6
     часть_tcp_mounting -->|материал| material_al_6061_t6
     часть_tcp_housing -->|материал| material_al_6061_t6
-    часть_pezoelektricheskii_gromkogovoritel_housing -->|материал| material_al_6061_t6
     часть_apa_connectors -->|материал| material_al_6061_t6
     часть_apa_mounting -->|материал| material_al_6061_t6
     часть_apa_housing -->|материал| material_al_6061_t6
@@ -164,7 +157,6 @@ graph LR
     часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_core -->|материал| material_stal_st3
     часть_gidrostaticheskie_gazovye_podshipniki_na_gelii_housing -->|материал| material_al_6061_t6
     часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_housing -->|материал| material_al_6061_t6
-    часть_fleksury_8_diskov_po_0_15_mm_housing -->|материал| material_al_6061_t6
     часть_elektroflyuidnye_volokna_mit_housing -->|материал| material_al_6061_t6
     часть_vysokotemperaturnyi_sverhprovodyaschii_podshipnik_housing -->|материал| material_al_6061_t6
     часть_bldc_housing -->|материал| material_al_6061_t6
@@ -197,18 +189,18 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 28 |
-| `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 10 |
+| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 24 |
 | `Cu ≥99.9% (электролитическая медь C11000/ETP)` | 10 |
-| `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 9 |
-| `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 7 |
-| `Полиамид 6/6 (PA66, нейлон 6/6): продукт поликонденсации гексаметилендиамина (6 C) и адипиновой кислоты (6 C), повторяющееся звено –[NH–(CH₂)₆–NH–OC–(CH₂)₄–CO]ₙ–; промышленные марки: Zytel 101 (DuPont), Ultramid A3K (BASF), Durethan A (Lanxess)` | 6 |
+| `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 8 |
+| `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 7 |
 | `интерметаллид Nd₂Fe₁₄B (тетрагональная фаза); типовой спечённый магнит ≈ Fe 64–68 мас.%, Nd 29–32 мас.%, B ~1 мас.%, добавки Dy/Tb/Pr в термостабильных грейдах` | 5 |
 | `Ароматический полиимид PMDA-ODA (тип Kapton): повторяющееся звено C22H10N2O5 (M ≈ 382.2 г/моль) из пиромеллитового диангидрида (PMDA) и 4,4′-оксианилина (ODA); чередующиеся имидные циклы C(=O)–N–C(=O) и фениленовые/дифениловый эфирный сегменты` | 5 |
-| `нержавеющая сталь AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240)` | 5 |
-| `Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)` | 4 |
 | `100Cr6 (ISO 683-17) / AISI 52100 / ГОСТ ШХ15: C 0.95–1.10 %, Cr 1.35–1.65 %, Mn 0.25–0.45 %, Si 0.15–0.35 %` | 4 |
+| `нержавеющая сталь AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240)` | 4 |
+| `Полиамид 6/6 (PA66, нейлон 6/6): продукт поликонденсации гексаметилендиамина (6 C) и адипиновой кислоты (6 C), повторяющееся звено –[NH–(CH₂)₆–NH–OC–(CH₂)₄–CO]ₙ–; промышленные марки: Zytel 101 (DuPont), Ultramid A3K (BASF), Durethan A (Lanxess)` | 3 |
 | `BaTiO3 ≥98.5% (титанат бария, перовскит ABO3); для X5R/X7R-диэлектриков MLCC легируется Dy2O3, Ho2O3, Y2O3, Mg, Si, Mn (core-shell BME с Ni-электродами)` | 3 |
 | `перфторсульфоновая кислота (PFSA): PTFE-подобная основа с боковыми цепями –O–CF₂–CF(CF₃)–O–CF₂–CF₂–SO₃H, EW ≈1100 г/моль (Nafion 117, Chemours)` | 3 |
 | `Пружинная сталь ASTM A228 (music wire): C 0.70-1.00%, Mn 0.20-0.60%, Fe ост.` | 3 |
-| `(C₂F₄)ₙ — политетрафторэтилен (PTFE, Teflon), полностью фторированный парафиновый полимер (~76 масс.% фтора); virgin-сорт без наполнителей, CAS 9002-84-0` | 2 |
+| `Fe (основа), C 0.95–1.20 масс.%, Cr 16–18 масс.%, Mo ≤ 0.75 масс.%, Mn ≤ 1.0 масс.%, Si ≤ 1.0 масс.%, P/S ≤ 0.04/0.03 % (ASTM A276, UNS S44004)` | 2 |
+| `Ионная жидкость [EMIM][TFSI]` | 2 |
+| `Карбонильное железо CIP: Fe ≥ 99.5 % (карбонильный синтез Fe(CO)5 → Fe + 5CO)` | 2 |

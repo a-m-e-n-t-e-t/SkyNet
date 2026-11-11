@@ -334,6 +334,10 @@ def load_all_izdeliya() -> dict[str, dict]:
             continue
         # _index.md в поддиректориях (применимо ко всем базам)
         for f in izd_dir.rglob("_index.md"):
+            # v9.59: исключить 'реальная реализация' — это копии, не оригиналы
+            # (оригиналы в реальные данные/изделия/)
+            if 'реальная реализация' in str(f):
+                continue
             data, _, body = read_yaml_frontmatter(f)
             if data and 'id' in data:
                 # v9.61: принимаем 'изделие' (top-level + закупочные),
