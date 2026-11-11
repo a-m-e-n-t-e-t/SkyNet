@@ -48,6 +48,7 @@ scaling_type: количественный
 ---
 
 
+
 # Часть: часть_lidar_robosense_ac1_housing
 
 ## Описание
