@@ -7,16 +7,16 @@ id: часть_kaskadnyi_stirling-kriokuler_housing
 подсистема: сенсоры
 подтип: корпус
 стандарты:
-  - ASTM B348
-  - AMS 4928
+- ASTM B348
+- AMS 4928
 исследовательская_группа: null
 родитель: izdelie_kaskadnyi_stirling-kriokuler
 дочерние_части: []
 материалы_частей:
-  - часть: часть_kaskadnyi_stirling-kriokuler_housing
-    материал: stal_st3
-    доля_массы: 1.0
-
+- часть: часть_kaskadnyi_stirling-kriokuler_housing
+  материал: aluminum
+  форма: корпуса_электроники
+  доля_массы: 1.0
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -37,9 +37,8 @@ scaling_type: количественный
   выработка_тепла_W: 0
 наследуемые: {}
 дополнительные:
-  материал: 'Ti-6Al-4V (Grade 5)'
-  защита: 'radiation shielding'
-
+  материал: Ti-6Al-4V (Grade 5)
+  защита: radiation shielding
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-05
 источник: web_search
@@ -47,6 +46,7 @@ scaling_type: количественный
 источник_url: https://en.wikipedia.org/wiki/Cryocooler
 источник_дата: 2026-11-05
 ---
+
 
 # Часть: часть_kaskadnyi_stirling-kriokuler_housing
 
