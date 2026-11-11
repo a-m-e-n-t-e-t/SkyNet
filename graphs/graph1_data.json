@@ -6275,6 +6275,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_carbon_fiber_composite",
+      "type": "material",
+      "label": "углеродное волокно (T700S-12K, Toray, прочность на разрыв 4900 МПа, модуль упругости 230 ГПа) + эпоксидная матрица (bisphenol-A-epichlorohydrin, Huntsman Araldite LY 5052, Tg 130 °C); объёмная доля волокна 60% (Vf=0.60); слоистый композит с укладкой [0/90/±45]s для изотропии свойств",
+      "path": "реальные данные/материалы/carbon_fiber_composite.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_carbon_paper",
       "type": "material",
       "label": "Toray/Carbon Paper TGP-H-060 — газодиффузионный слой",
@@ -6653,6 +6660,13 @@
       "subsystem": ""
     },
     {
+      "id": "material_liquid_metal_polyalloy",
+      "type": "material",
+      "label": "жидкометаллический сплав галлия (Galinstan — 68.5% Ga, 21.5% In, 10% Sn, ρ=6.44 g/cm³) + нанесённый слоем 50-100 мкм на эластомерную полимерную подложку (silicone elastomer, Shore A 20-50); каталитически стабилизирован оксидной плёнкой Ga₂O₃ (3-5 нм) для смачиваемости и адгезии (IEEE Sensors 2023, Scientific Reports)",
+      "path": "реальные данные/материалы/liquid_metal_polyalloy.md",
+      "subsystem": ""
+    },
+    {
       "id": "material_lithium",
       "type": "material",
       "label": "Li ≥99.9% (металлический литий, марка ЛЭ-1/ЛЭ-2; примеси Na, K, Ca <0.1%)",
@@ -6909,6 +6923,13 @@
       "type": "material",
       "label": "Термоэлектрическая пара PbTe/TAGS-85: n-нога — легированный PbTe-сплав TE1010; p-нога — двухсегментная: PbSnTe-сплав TE2003 у горячего спая + TAGS-85 ((GeTe)0.85(AgSbTe2)0.15 — теллурид-антимонид-германий-серебро) у холодного спая",
       "path": "реальные данные/материалы/pbte_teg.md",
+      "subsystem": ""
+    },
+    {
+      "id": "material_pcm_rt35",
+      "type": "material",
+      "label": "парафин RT35 (n-октадекан C18H38, T_плав=28-36 °C, теплота плавления 240 кДж/кг) в матрице HDPE/EPDM; инкапсулированный композит (microencapsulated PCM)",
+      "path": "реальные данные/материалы/pcm_rt35.md",
       "subsystem": ""
     },
     {
@@ -8748,12 +8769,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_memristornye_matritsy",
-      "dst": "material_tio2_memristor",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_halve",
       "dst": "часть_halve_die",
       "type": "has_part",
@@ -9216,36 +9231,6 @@
       "meta": {}
     },
     {
-      "src": "часть_memristornye_matritsy_controller",
-      "dst": "material_si",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_memristornye_matritsy_adc",
-      "dst": "material_si",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_memristornye_matritsy_bit_sense",
-      "dst": "material_si",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_memristornye_matritsy_word_drivers",
-      "dst": "material_si",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_memristornye_matritsy_crossbar",
-      "dst": "material_hfo2",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_halve_die",
       "dst": "material_si",
       "type": "uses_material",
@@ -9408,12 +9393,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_aesa_radar",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_dielektricheskie_elastomernye_datchiki",
       "dst": "часть_dielektricheskie_elastomernye_datchiki_core",
       "type": "has_part",
@@ -9507,18 +9486,6 @@
       "src": "izdelie_lidar_robosense_ac1",
       "dst": "часть_lidar_robosense_ac1_mounting",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_lidar_robosense_ac1",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_lidar_robosense_ac1",
-      "dst": "material_aluminum",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -9726,18 +9693,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_cw-lazer",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_cw-lazer",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_lidar",
       "dst": "часть_lidar_core",
       "type": "has_part",
@@ -9759,18 +9714,6 @@
       "src": "izdelie_lidar",
       "dst": "часть_lidar_mounting",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_lidar",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_lidar",
-      "dst": "material_aluminum",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -9906,18 +9849,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_ultrakorotkoimpulsnye_lazery",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_ultrakorotkoimpulsnye_lazery",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_flir",
       "dst": "часть_flir_core",
       "type": "has_part",
@@ -10050,18 +9981,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_ipg_yls-eco",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_ipg_yls-eco",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_flir_lwir_2",
       "dst": "часть_flir_lwir_2_core",
       "type": "has_part",
@@ -10155,18 +10074,6 @@
       "src": "izdelie_eo_ir_kamera",
       "dst": "часть_eo_ir_kamera_mounting",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_eo_ir_kamera",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_eo_ir_kamera",
-      "dst": "material_aluminum",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -10266,18 +10173,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_kaskadnyi_stirling-kriokuler",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_kaskadnyi_stirling-kriokuler",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_multispektralnye_cmos-matritsy_s_ik-diapazonom",
       "dst": "часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_core",
       "type": "has_part",
@@ -10374,18 +10269,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_akusticheskaya_linza",
-      "dst": "material_silikon_80_shore_a_steklyannye_mikrosfery",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_akusticheskaya_linza",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_mwir_nbn_640",
       "dst": "часть_mwir_nbn_640_core",
       "type": "has_part",
@@ -10470,30 +10353,6 @@
       "meta": {}
     },
     {
-      "src": "часть_aesa_radar_mounting",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_aesa_radar_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_aesa_radar_core",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_aesa_radar_connectors",
-      "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_dielektricheskie_elastomernye_datchiki_connectors",
       "dst": "material_latun_c36000",
       "type": "uses_material",
@@ -10537,30 +10396,6 @@
     },
     {
       "src": "часть_mwir_2_core",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_lidar_robosense_ac1_mounting",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_lidar_robosense_ac1_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_lidar_robosense_ac1_connectors",
-      "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_lidar_robosense_ac1_core",
       "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
@@ -10686,49 +10521,13 @@
       "meta": {}
     },
     {
-      "src": "часть_cw-lazer_core",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_cw-lazer_mounting",
       "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
     {
-      "src": "часть_cw-lazer_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_cw-lazer_connectors",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_lidar_mounting",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_lidar_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_lidar_connectors",
-      "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_lidar_core",
       "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
@@ -10818,18 +10617,6 @@
       "meta": {}
     },
     {
-      "src": "часть_ultrakorotkoimpulsnye_lazery_core",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_ultrakorotkoimpulsnye_lazery_housing",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_flir_mounting",
       "dst": "material_al_6061-t6",
       "type": "uses_material",
@@ -10902,30 +10689,6 @@
       "meta": {}
     },
     {
-      "src": "часть_ipg_yls-eco_connectors",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_ipg_yls-eco_core",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_ipg_yls-eco_mounting",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_ipg_yls-eco_housing",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_flir_lwir_2_housing",
       "dst": "material_al_6061-t6",
       "type": "uses_material",
@@ -10980,20 +10743,8 @@
       "meta": {}
     },
     {
-      "src": "часть_eo_ir_kamera_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_eo_ir_kamera_connectors",
       "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_eo_ir_kamera_core",
-      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -11046,30 +10797,6 @@
       "meta": {}
     },
     {
-      "src": "часть_kaskadnyi_stirling-kriokuler_housing",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_kaskadnyi_stirling-kriokuler_mounting",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_kaskadnyi_stirling-kriokuler_core",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_kaskadnyi_stirling-kriokuler_connectors",
-      "dst": "material_becu",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_multispektralnye_cmos-matritsy_s_ik-diapazonom_mounting",
       "dst": "material_al_6061-t6",
       "type": "uses_material",
@@ -11114,30 +10841,6 @@
     {
       "src": "часть_lwir_boson_1024_connectors",
       "dst": "material_becu",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_akusticheskaya_linza_connectors",
-      "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_akusticheskaya_linza_mounting",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_akusticheskaya_linza_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_akusticheskaya_linza_core",
-      "dst": "material_silikon_80_shore_a_steklyannye_mikrosfery",
       "type": "uses_material",
       "meta": {}
     },
@@ -11436,12 +11139,6 @@
       "meta": {}
     },
     {
-      "src": "часть_minigun_m134_core",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_minigun_m134_mounting",
       "dst": "material_stal_st3",
       "type": "uses_material",
@@ -11454,26 +11151,8 @@
       "meta": {}
     },
     {
-      "src": "часть_minigun_m134_core_motor",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_minigun_m134_core_rotor",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_minigun_m134_connectors",
       "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_minigun_m134_core_barrels",
-      "dst": "material_stal_st3",
       "type": "uses_material",
       "meta": {}
     },
@@ -11497,24 +11176,6 @@
     },
     {
       "src": "часть_granatomet_m320_core",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_granatomet_m320_connectors",
-      "dst": "material_becu",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_granatomet_m320_mounting",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_granatomet_m320_housing",
       "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
@@ -13962,12 +13623,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_bldc_enkoder",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_dvoinaya_sshitaya_magnitnaya_myshtsa_unist",
       "dst": "часть_dvoinaya_sshitaya_magnitnaya_myshtsa_unist_magnets",
       "type": "has_part",
@@ -14070,18 +13725,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_dea",
-      "dst": "material_elastomernaya_matritsa",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_dea",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami",
       "dst": "часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_screw",
       "type": "has_part",
@@ -14145,18 +13788,6 @@
       "src": "izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena",
       "dst": "часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena",
-      "dst": "material_silicone-textile_composite",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_gidravlicheskie_iskusstvennye_myshtsy_makkibbena",
-      "dst": "material_aluminum",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -14268,18 +13899,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_tsa",
-      "dst": "material_uhmwpe",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_tsa",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_elektromagnitnye_poroshkovye_mufty_i_tormoza",
       "dst": "часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_coil",
       "type": "has_part",
@@ -14361,18 +13980,6 @@
       "src": "izdelie_belleville_shaiby",
       "dst": "часть_belleville_shaiby_mounting",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_belleville_shaiby",
-      "dst": "material_spring_steel",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_belleville_shaiby",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -14748,12 +14355,6 @@
       "meta": {}
     },
     {
-      "src": "часть_bldc_enkoder_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_bldc_enkoder_core",
       "dst": "часть_bldc_enkoder_core_stator",
       "type": "has_part",
@@ -14780,18 +14381,6 @@
     {
       "src": "часть_bldc_enkoder_core_stator",
       "dst": "material_copper",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_bldc_enkoder_connectors",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_bldc_enkoder_mounting",
-      "dst": "material_stal_st3",
       "type": "uses_material",
       "meta": {}
     },
@@ -14856,30 +14445,6 @@
       "meta": {}
     },
     {
-      "src": "часть_dea_mounting",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_dea_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_dea_connectors",
-      "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_dea_core",
-      "dst": "material_elastomernaya_matritsa",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_housing",
       "dst": "material_al_6061-t6",
       "type": "uses_material",
@@ -14912,30 +14477,6 @@
     {
       "src": "часть_planetarnye_rolikovintovye_elektroprivody_s_neodimovymi_magnitami_screw",
       "dst": "material_100cr6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_connectors",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_core",
-      "dst": "material_silicone-textile_composite",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_gidravlicheskie_iskusstvennye_myshtsy_makkibbena_mounting",
-      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -15030,30 +14571,6 @@
       "meta": {}
     },
     {
-      "src": "часть_tsa_core",
-      "dst": "material_uhmwpe",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_tsa_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_tsa_connectors",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_tsa_mounting",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_elektromagnitnye_poroshkovye_mufty_i_tormoza_bearings",
       "dst": "material_100cr6",
       "type": "uses_material",
@@ -15092,24 +14609,6 @@
     {
       "src": "часть_belleville_shaiby_core",
       "dst": "material_spring_steel",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_belleville_shaiby_mounting",
-      "dst": "material_100cr6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_belleville_shaiby_connectors",
-      "dst": "material_neilon_6_66",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_belleville_shaiby_housing",
-      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -15447,12 +14946,6 @@
       "src": "izdelie_copv",
       "dst": "часть_copv_mounting",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_copv",
-      "dst": "material_aluminum",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -15822,12 +15315,6 @@
       "meta": {}
     },
     {
-      "src": "часть_copv_housing",
-      "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_copv_mounting",
       "dst": "material_ti-6al-4v",
       "type": "uses_material",
@@ -15978,18 +15465,6 @@
       "meta": {}
     },
     {
-      "src": "часть_SkyNet-PowerBackpack_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-PowerBackpack_mounting",
-      "dst": "material_ss_aisi_304",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_SkyNet-PowerBackpack_cells",
       "dst": "часть_SkyNet-PowerBackpack_cells_ячейки",
       "type": "has_part",
@@ -16005,18 +15480,6 @@
       "src": "часть_SkyNet-PowerBackpack_cells",
       "dst": "часть_SkyNet-PowerBackpack_cells_термопрокладки",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-PowerBackpack_cells",
-      "dst": "material_nmc_graphite",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-PowerBackpack_cells",
-      "dst": "material_nickel",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16052,18 +15515,6 @@
     {
       "src": "часть_SkyNet-PowerBackpack_bms",
       "dst": "material_copper",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-PowerBackpack_cells_ячейки",
-      "dst": "material_nmc_graphite",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_SkyNet-PowerBackpack_cells_шины",
-      "dst": "material_nickel",
       "type": "uses_material",
       "meta": {}
     },
@@ -16380,18 +15831,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_starlink_mini",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_starlink_mini",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_flat-face_couplings_iso_16028",
       "dst": "часть_flat-face_couplings_iso_16028_core",
       "type": "has_part",
@@ -16452,18 +15891,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_optovolokonnaya_shina",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_optovolokonnaya_shina",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "izdelie_iridium_sbd",
       "dst": "часть_iridium_sbd_core",
       "type": "has_part",
@@ -16521,18 +15948,6 @@
       "src": "izdelie_radiatsionno-stoikii_neiromorfnyi_tmr",
       "dst": "часть_radiatsionno-stoikii_neiromorfnyi_tmr_mounting",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_radiatsionno-stoikii_neiromorfnyi_tmr",
-      "dst": "material_si",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_radiatsionno-stoikii_neiromorfnyi_tmr",
-      "dst": "material_aluminum",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -16632,42 +16047,6 @@
       "meta": {}
     },
     {
-      "src": "izdelie_usb-c",
-      "dst": "material_becu",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_usb-c",
-      "dst": "material_aluminum",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_starlink_mini_connectors",
-      "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_starlink_mini_core",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_starlink_mini_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_starlink_mini_mounting",
-      "dst": "material_ss_aisi_304",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_flat-face_couplings_iso_16028_mounting",
       "dst": "material_stal_st3",
       "type": "uses_material",
@@ -16688,30 +16067,6 @@
     {
       "src": "часть_flat-face_couplings_iso_16028_core",
       "dst": "material_stal_st3",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_optovolokonnaya_shina_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_optovolokonnaya_shina_core",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_optovolokonnaya_shina_mounting",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_optovolokonnaya_shina_connectors",
-      "dst": "material_poliimid",
       "type": "uses_material",
       "meta": {}
     },
@@ -16748,18 +16103,6 @@
     {
       "src": "часть_radiatsionno-stoikii_neiromorfnyi_tmr_mounting",
       "dst": "material_ss_aisi_304",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_radiatsionno-stoikii_neiromorfnyi_tmr_core",
-      "dst": "material_si",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_radiatsionno-stoikii_neiromorfnyi_tmr_housing",
-      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -16808,30 +16151,6 @@
     {
       "src": "часть_razryvnye_mufty_iso_16028_connectors",
       "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_usb-c_connectors",
-      "dst": "material_latun_c36000",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_usb-c_housing",
-      "dst": "material_al_6061-t6",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_usb-c_core",
-      "dst": "material_becu",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_usb-c_mounting",
-      "dst": "material_ss_aisi_304",
       "type": "uses_material",
       "meta": {}
     },
@@ -17127,24 +16446,6 @@
       "src": "izdelie_SkyNet-HKAerial",
       "dst": "часть_hk_aerial_крылья",
       "type": "has_part",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_SkyNet-HKAerial",
-      "dst": "material_titanium_alloy",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_SkyNet-HKAerial",
-      "dst": "material_inconel_718",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "izdelie_SkyNet-HKAerial",
-      "dst": "material_tungsten_alloy",
-      "type": "uses_material",
       "meta": {}
     },
     {
@@ -17502,20 +16803,8 @@
       "meta": {}
     },
     {
-      "src": "часть_marcus_человеческий_мозг",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_marcus_человеческая_кожа",
       "dst": "material_silikon_40_50_shore_a",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_marcus_эндоскелет",
-      "dst": "material_al_6061-t6",
       "type": "uses_material",
       "meta": {}
     },
@@ -17538,25 +16827,7 @@
       "meta": {}
     },
     {
-      "src": "часть_hk_aerial_двигатель_левый",
-      "dst": "material_inconel_718",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_hk_aerial_плазма_пушка",
-      "dst": "material_w-ni-fe",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_hk_aerial_крылья",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_hk_aerial_фюзеляж",
       "dst": "material_ti-6al-4v",
       "type": "uses_material",
       "meta": {}
@@ -17658,18 +16929,6 @@
       "meta": {}
     },
     {
-      "src": "часть_t850_эндоскелет",
-      "dst": "material_ti-6al-4v",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
-      "src": "часть_t850_ткань_кожа",
-      "dst": "material_si",
-      "type": "uses_material",
-      "meta": {}
-    },
-    {
       "src": "часть_t850_сенсоры",
       "dst": "material_ti-6al-4v",
       "type": "uses_material",
@@ -17713,7 +16972,13 @@
     },
     {
       "src": "часть_rev9_полисплав_оболочка",
-      "dst": "material_gallinstan",
+      "dst": "material_liquid_metal_polyalloy",
+      "type": "uses_material",
+      "meta": {}
+    },
+    {
+      "src": "часть_rev9_endoskeleton",
+      "dst": "material_carbon_fiber_composite",
       "type": "uses_material",
       "meta": {}
     },
@@ -18035,6 +17300,7 @@
       "standart_ASTM D3786 (разрывное давление Mullen burst)",
       "standart_ASTM D395 (остаточная деформация при сжатии)",
       "standart_ASTM D4018",
+      "standart_ASTM D4018 (углеродные волокна)",
       "standart_ASTM D4020",
       "standart_ASTM D412",
       "standart_ASTM D412 (растяжение вулканизованных резин и термопластичных эластомеров)",
@@ -18052,6 +17318,7 @@
       "standart_ASTM D695 (сжимающие свойства жёстких пластиков/пен)",
       "standart_ASTM D7219",
       "standart_ASTM D7219 (ядерный графит блоков HTGR)",
+      "standart_ASTM D7290 (структурные композиты)",
       "standart_ASTM D8202 (свойства ядерного графита)",
       "standart_ASTM D882",
       "standart_ASTM D882 (механика плёнок)",
@@ -18062,9 +17329,11 @@
       "standart_ASTM E1269 (удельная теплоёмкость, DSC)",
       "standart_ASTM E1289",
       "standart_ASTM E1461 (теплопроводность лазерной вспышкой)",
+      "standart_ASTM E2251 (жидкостные термометры)",
       "standart_ASTM E2653",
       "standart_ASTM E2653 (sodium technology)",
       "standart_ASTM E793 (энтальпия плавления/кристаллизации, DSC)",
+      "standart_ASTM E794 (DSC для phase transitions)",
       "standart_ASTM E8",
       "standart_ASTM E831/E228 (ТКЛР дилатометрией)",
       "standart_ASTM F136",
@@ -18202,6 +17471,7 @@
       "standart_IEEE 1159 (power quality monitoring)",
       "standart_IEEE 1625",
       "standart_IEEE 1625 (многоэлементные сборки)",
+      "standart_IEEE 2700-2018 (сенсоры)",
       "standart_IEEE C57.12.00",
       "standart_IEEE C57.16",
       "standart_IEEE SSCS 7nm SOT-MRAM",
@@ -18240,6 +17510,7 @@
       "standart_ISO 11359 (ТКЛР ТМА)",
       "standart_ISO 1179 (пневмопорты)",
       "standart_ISO 1183-1 A (плотность)",
+      "standart_ISO 14062 (CFRP для авиации)",
       "standart_ISO 14687",
       "standart_ISO 15241",
       "standart_ISO 16028",
@@ -18493,6 +17764,7 @@
       "group_George M. Grover и Ted Cotter (Los Alamos National Laboratory, 1963) — изобретение тепловых труб: первый патент и первые натриевые heat pipes (US3229759A «Evaporation-condensation heat transfer device»; J. Appl. Phys. 35, 1990 (1964)); параллельная линия жидкометаллического теплоносителя: EBR-I (INL, 20 декабря 1951 — первая выработка ядерного электричества, теплоноситель NaK) → EBR-II (ANL-Idaho, 1964 — первый натриевый реактор бассейнового типа, 62.5 МВтт)",
       "group_H. G. MacPherson и V. C. Hamister (National Carbon Company, Union Carbide, Кливленд, 1940–1942) — разработали термо- и газоэкстракционную очистку от бора, создав первый ядерный графит AGOT («the first true nuclear grade graphite»); первое применение — CP-1 Энрико Ферми (Met Lab, Чикаго, 2 декабря 1942: 385 т графита, 57 слоёв, включая 231 т AGOT от National Carbon, поставленной в ноябре 1942)",
       "group_HP Labs — оригинальный мемристор TiO₂ (Dmitri B. Strukov, Gregory S. Snider, Duncan R. Stewart, R. Stanley Williams, Nature 453, 2008, «The missing memristor found»); теория четвёртого пассивного элемента — Leon Chua (1971); фазы Magnéli — Arne Magnéli (1949–1953); упругие константы рутила — J. B. Wachtman Jr. et al. (NBS, 1962, метод резонанса)",
+      "group_IEEE Sensors Journal 23(11):11234-11245 (2023, Liu — Galinstan-embedded liquid metal elastomer composites); Scientific Reports 9:12473 (Li 2019, stretchable liquid metal electronics); MDPI Materials 17(6):1439 (Chan 2024, knitted powernet fabric + silicone); Geratherm Medical (Galinstan thermometer); ASTM E2251 (liquid-in-glass thermometers)",
       "group_INCO Alloys International (разработка, 1962) → Special Metals Corporation (владелец марки INCONEL®)",
       "group_INCO Alloys International (разработка, нач. 1960-х) → Special Metals Corporation (владелец марки INCONEL®)",
       "group_Intel + Micron (совместная разработка 3D XPoint/Optane 2015–2022; teardown TechInsights — подтверждение GST-основы); STMicroelectronics (ePCM в automotive MCU); IBM Research (PCM-нейроморфные синапсы); академические группы: R.E. Simpson (Exeter — iPCM, 90 пДж переключение), K. Konstantinou / C.R. Elliott (происхождение радиационной стойкости аморфного GST, 2018), D. Zhou (протонная имплантация GST-PCM, 2013), A.L. Serra (heavy-ion 4kb PCM, 2020), K. Aryana (граничные тепловые сопротивления GST/W-подогревателя, 2021), K. Jiang (микроструктура и фазовые переходы GST, Sci. Technol. Adv. Mater. 2023), O. Abou El Kheir (декомпозиция GST-сплавов, high-throughput, 2021)",
@@ -18509,11 +17781,13 @@
       "group_Pierre Bonhôte и соавт. (EPFL, Швейцария) — синтез гидрофобных EMIM-имидных комнатнотемпературных расплавов, Inorg. Chem. 1996, 35(5), 1168–1178",
       "group_R.J. Horning 1984 (NASA NTRS 19840025605 — совместимость SOCl2-электролитов со stainless steel резервуаров батарей, коррозия стекла); Cleveland-Cliffs (Product Data 304/304LSS May 2021 — полный datasheet субстанции, канон); MSR (datasheet Li-SOCl2 MSR175 — stainless steel container + hermetic glass-to-metal sealing, superior atmospheric corrosion resistance); Uniross (Complete Guide Li-SOCl2 2026 — герметичность стекло-металл, отсутствие утечек)",
       "group_Resonac (Showa Denko) — серия CEL для полупроводниковых корпусов leadframe-класса (DIP, SOP, TSOP, QFP, TQFP, LQFP); Sumitomo Bakelite — SUMIKON EME (канонический EMC той же субстанции, EME-G700LA); JLCPCB/PCB-индустрия — корпусные стандарты PQFP vs CQFP; академическая верификация encapsulant-требований — Othman A.H. et al. 2026 (Int. J. Adv. Manuf. Technol., цит. 9)",
+      "group_Rubitherm Technologies GmbH (RT35 datasheet); NREL PCM database; NREL/TP-540-44007 (2024, EPCM for Li-ion)",
       "group_SEMI International Standards — спецификации пластин SEMI M1 (полированные монокристаллические) и SEMI M59 (пластины 300 мм); метод Чохральского — Jan Czochralski (1916, рост металлических монокристаллов), адаптация к кремнию — Gordon Teal и Henry Theuerer (Bell Labs, 1952), первый германиевый/кремниевый транзистор на монокристалле — Gordon Teal (Texas Instruments, 1954); промышленный 300 мм — консорциум I300I/Intel/Samsung/TSMC (1995–2001)",
       "group_Scudamore Sellon (1881) — первый патент решёток из свинцово-сурьмянистого сплава (Sb упрочняет свинец); в тот же год Camille Alphonse Faure запатентовал решётчатую пластину с пастой PbO — вместе сделавшие АКБ пригодной для массового производства",
       "group_Sumitomo Bakelite Co., Ltd. — лидер рынка формовочных смол (SUMIKON EME, multi-aromatic resin system EME-G700LA Type L-A); Renesas Electronics — MSD-документация EME-G700LA (сырьё: аморфный плавленый кварц); академическая верификация — F. Wu (2018, EMC для высокотемпературных применений), S. Chao et al. (2021, влияние кварцевого наполнителя, цит. 32), W.-C. Chuang et al. (2023, EMC в fan-out WLP, цит. 43), Y. Lv et al. (2026, высокотеплопроводный EMC 2.0 Вт/(м·К))",
       "group_Tadiran/Saft — технические брошюры Li-SOCl₂ (liquid cathode/catholyte, суммарная реакция 4Li + 2SOCl₂ → 4LiCl + S + SO₂); M. Jain et al. 1999, Univ. of South Carolina (проводимость католита LiAlCl₄/SOCl₂ — сильная функция T и концентрации соли, цит. 42); R.E. White et al. 1989, NASA NTRS (термическая оптимизация Li/SOCl₂ — низкая теплопроводность электролита удерживает тепло); Patsnap eureka materials DB (термофизика безводного SOCl₂: cp 1.02 Дж/(г·К), k 0.15 Вт/(м·К), вязкость 0.58 сП, ΔHисп 31.7 кДж/моль); CAMEO Chemicals NOAA (UN 1836, класс 8, PG I, ERG 137); Wikipedia/PubChem (базовые свойства, CWC Schedule 3, гидролиз)",
       "group_Tadiran/Ultralife (white papers по пассивации Li-SOCl2 — саморазряд 0.7 %/год, voltage delay); MTI (tobmachine)/Sigma-Aldrich/MTI Corporation (спецификации battery-grade Li-фольги ≥99.9 %, 0.1–0.6 мм); Wu et al. 2023 Energy Storage Materials (Li-growth и SEI-инжиниринг anode-free); Qian et al. 2016 (anode-free концепция, 857 цитирований); S. Li 2025 sciopen Energy Material Advances (Li-metal progress/challenges)",
+      "group_Toray Industries (T700S datasheet D4018); Huntsman Advanced Materials (Araldite LY 5052 datasheet TDS-118); Boeing 787 composite fuselage (Boeing Frontiers 2011); Ottobock prosthetic endoskeletons; NIJ Standard 0101.06 (armor); Hexcel M21 aerospace prepreg",
       "group_Toray Industries (Torayca™ T300 — первое серийное высокопрочное PAN-волокно, выпущено в 1971 г.; >93 % C, Na+K следы)",
       "group_Wolfspeed, Infineon, ROHM/SiCrystal, STMicroelectronics — серийные SiC-MOSFET die (планы 650 В–3.3 кВ); Godignon P. et al. 2024 (Surfaces and Interfaces, цит. 29 — дрифт-параметры по классам напряжения); Wang P. et al. 2025 (дрифт 9 мкм / 7×10¹⁵); Shokri A. et al. 2025 (цит. 6 — 4H-SiC бета-вольтаика 5.5%); Zhao Q. et al. 2025 (цит. 15 — 4H-SiC Ni-63 элемент 2.8%); Liu, Lu (Semantic Scholar — 4H-SiC ⁶³Ni p-n батарея); AIP Advances 14, 115024 (2024 — p-n бета-вольтаик 10.6%); Chen F. et al. 2022 (all-ceramic thermal emitter)",
       "group_Wu, Ashburn, Torng, Hor, Meng, Gao, Huang, Chu (Университет Хьюстона / UAH, 1987, Tc 93 K); родоначальники купратных ВТСП Bednorz & Müller (IBM Zürich, 1986, Нобелевская премия 1987)",
@@ -18575,14 +17849,10 @@
       "material_al_bondwire",
       "material_aluminum_electrolytic",
       "material_bearing_steel_52100",
-      "material_biological_tissue",
       "material_bt_abf_substrate",
-      "material_carbon_fiber_endoskeleton",
       "material_carbon_ptfe",
       "material_ceramic_mlcc",
-      "material_cfrp_t1100g",
       "material_composite_material",
-      "material_cybernetic_alloy",
       "material_emc_underfill",
       "material_epoksid_epon_828_teta",
       "material_epotek_301-2",
@@ -18591,7 +17861,6 @@
       "material_gps_ins_an_vsn_8",
       "material_gst_chalcogenide",
       "material_hyperalloy_t800",
-      "material_hyperalloy_t850",
       "material_inconel_718_turbine",
       "material_ir_mosi2-tasi2_tab2_ii",
       "material_karbon",
@@ -18605,7 +17874,6 @@
       "material_nafion_117",
       "material_ni63_metal",
       "material_pcm",
-      "material_pcm_rt35",
       "material_plastic_qfp",
       "material_pp_membrane",
       "material_pt_carbon",
@@ -18626,19 +17894,19 @@
     ]
   },
   "stats": {
-    "nodes": 1177,
-    "edges": 1612,
+    "nodes": 1180,
+    "edges": 1486,
     "dangling": {
-      "complies_with": 550,
+      "complies_with": 556,
       "has_part": 4,
-      "researched_by": 93,
-      "uses_material": 52
+      "researched_by": 96,
+      "uses_material": 46
     },
     "by_type": {
       "chast": 664,
       "issledovatelskaya_gruppa": 10,
       "izdelie": 203,
-      "material": 198,
+      "material": 201,
       "standart": 8,
       "tekhnologia": 94
     }

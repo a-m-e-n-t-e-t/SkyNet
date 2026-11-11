@@ -73,14 +73,28 @@ def parse_yaml_frontmatter(filepath):
 
 
 def get_all_models():
-    """Возвращает список всех моделей из фантастические данные/модели/."""
-    models_dir = os.path.join(SKYNET_REPO, 'фантастические данные', 'модели')
-    if not os.path.exists(models_dir):
-        return []
+    """Возвращает список всех canon-моделей SkyNet.
+
+    v9.59: canon-модели перенесены из фантастические данные/модели/ в
+    результаты/модели/{name}/фантастическая реализация/_index.md.
+    """
+    # v9.59: новый путь — результаты/модели/{name}/фантастическая реализация/_index.md
+    results_dir = os.path.join(SKYNET_REPO, 'результаты', 'модели')
     models = []
-    for f in sorted(os.listdir(models_dir)):
-        if f.endswith('.md') and not f.startswith('_'):
-            models.append(os.path.join(models_dir, f))
+    if os.path.exists(results_dir):
+        for name in sorted(os.listdir(results_dir)):
+            model_dir = os.path.join(results_dir, name)
+            if not os.path.isdir(model_dir):
+                continue
+            canon_path = os.path.join(model_dir, 'фантастическая реализация', '_index.md')
+            if os.path.exists(canon_path):
+                models.append(canon_path)
+    # Fallback: legacy путь фантастические данные/модели/ (если остались .md)
+    legacy_dir = os.path.join(SKYNET_REPO, 'фантастические данные', 'модели')
+    if os.path.exists(legacy_dir):
+        for f in sorted(os.listdir(legacy_dir)):
+            if f.endswith('.md') and not f.startswith('_'):
+                models.append(os.path.join(legacy_dir, f))
     return models
 
 

@@ -173,16 +173,13 @@ graph LR
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
     material_aluminum[Al ≥ 99.5 % (основа); …]
     material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
-    material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     material_si[Si (кремний); электрон…]
+    material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
     izdelie_pmut -->|материал| material_aluminum
     izdelie_poristyi_gazovyi_podshipnik_iz_sic -->|материал| material_aluminum
-    izdelie_aesa_radar -->|материал| material_al_6061_t6
     izdelie_dielektricheskie_elastomernye_datchiki -->|материал| material_aluminum
     izdelie_mwir_2 -->|материал| material_al_6061_t6
     izdelie_mwir_2 -->|материал| material_aluminum
-    izdelie_lidar_robosense_ac1 -->|материал| material_al_6061_t6
-    izdelie_lidar_robosense_ac1 -->|материал| material_aluminum
     izdelie_dvs -->|материал| material_al_6061_t6
     izdelie_dvs -->|материал| material_aluminum
     izdelie_event_cameras -->|материал| material_al_6061_t6
@@ -191,55 +188,36 @@ graph LR
     izdelie_sensora_volnovogo_fronta -->|материал| material_al_6061_t6
     izdelie_sensora_volnovogo_fronta -->|материал| material_aluminum
     izdelie_pezo_mems -->|материал| material_aluminum
-    izdelie_cw_lazer -->|материал| material_al_6061_t6
-    izdelie_cw_lazer -->|материал| material_aluminum
-    izdelie_lidar -->|материал| material_al_6061_t6
-    izdelie_lidar -->|материал| material_aluminum
     izdelie_mems_mikrofonov -->|материал| material_si
     izdelie_mems_mikrofonov -->|материал| material_aluminum
     izdelie_pezoelektricheskie_mems -->|материал| material_aluminum
     izdelie_mems_imu -->|материал| material_si
     izdelie_mems_imu -->|материал| material_aluminum
-    izdelie_ultrakorotkoimpulsnye_lazery -->|материал| material_al_6061_t6
-    izdelie_ultrakorotkoimpulsnye_lazery -->|материал| material_aluminum
     izdelie_flir -->|материал| material_si
     izdelie_flir -->|материал| material_aluminum
     izdelie_flir_boson_640 -->|материал| material_al_6061_t6
     izdelie_flir_boson_640 -->|материал| material_aluminum
     izdelie_pezo_sensor -->|материал| material_aluminum
-    izdelie_ipg_yls_eco -->|материал| material_stal_st3
-    izdelie_ipg_yls_eco -->|материал| material_aluminum
     izdelie_flir_lwir_2 -->|материал| material_al_6061_t6
     izdelie_flir_lwir_2 -->|материал| material_aluminum
     izdelie_quantum_cascade_laser -->|материал| material_al_6061_t6
     izdelie_quantum_cascade_laser -->|материал| material_aluminum
-    izdelie_eo_ir_kamera -->|материал| material_al_6061_t6
-    izdelie_eo_ir_kamera -->|материал| material_aluminum
     izdelie_metalinza -->|материал| material_aluminum
     izdelie_tverdotelnyi_mmwave_radar -->|материал| material_al_6061_t6
     izdelie_tverdotelnyi_mmwave_radar -->|материал| material_aluminum
-    izdelie_kaskadnyi_stirling_kriokuler -->|материал| material_al_6061_t6
-    izdelie_kaskadnyi_stirling_kriokuler -->|материал| material_aluminum
     izdelie_multispektralnye_cmos_matritsy_s_ik_diapazonom -->|материал| material_al_6061_t6
     izdelie_multispektralnye_cmos_matritsy_s_ik_diapazonom -->|материал| material_aluminum
     izdelie_lwir_boson_1024 -->|материал| material_al_6061_t6
     izdelie_lwir_boson_1024 -->|материал| material_aluminum
-    izdelie_akusticheskaya_linza -->|материал| material_aluminum
     izdelie_mwir_nbn_640 -->|материал| material_al_6061_t6
     izdelie_mwir_nbn_640 -->|материал| material_aluminum
     часть_pmut_housing -->|материал| material_al_6061_t6
     часть_poristyi_gazovyi_podshipnik_iz_sic_connectors -->|материал| material_al_6061_t6
     часть_poristyi_gazovyi_podshipnik_iz_sic_housing -->|материал| material_al_6061_t6
-    часть_aesa_radar_mounting -->|материал| material_al_6061_t6
-    часть_aesa_radar_housing -->|материал| material_al_6061_t6
-    часть_aesa_radar_core -->|материал| material_al_6061_t6
     часть_dielektricheskie_elastomernye_datchiki_housing -->|материал| material_al_6061_t6
     часть_mwir_2_mounting -->|материал| material_ti_6al_4v
     часть_mwir_2_housing -->|материал| material_al_6061_t6
     часть_mwir_2_core -->|материал| material_al_6061_t6
-    часть_lidar_robosense_ac1_mounting -->|материал| material_al_6061_t6
-    часть_lidar_robosense_ac1_housing -->|материал| material_al_6061_t6
-    часть_lidar_robosense_ac1_core -->|материал| material_al_6061_t6
     часть_dvs_housing -->|материал| material_al_6061_t6
     часть_dvs_mounting -->|материал| material_al_6061_t6
     часть_dvs_core -->|материал| material_al_6061_t6
@@ -252,13 +230,8 @@ graph LR
     часть_sensora_volnovogo_fronta_mounting -->|материал| material_al_6061_t6
     часть_sensora_volnovogo_fronta_core -->|материал| material_al_6061_t6
     часть_pezo_mems_housing -->|материал| material_al_6061_t6
-    часть_cw_lazer_core -->|материал| material_al_6061_t6
     часть_cw_lazer_mounting -->|материал| material_al_6061_t6
-    часть_cw_lazer_housing -->|материал| material_al_6061_t6
     часть_cw_lazer_connectors -->|материал| material_al_6061_t6
-    часть_lidar_mounting -->|материал| material_al_6061_t6
-    часть_lidar_housing -->|материал| material_al_6061_t6
-    часть_lidar_core -->|материал| material_al_6061_t6
     часть_mems_mikrofonov_housing -->|материал| material_al_6061_t6
     часть_mems_mikrofonov_mounting -->|материал| material_al_6061_t6
     часть_mems_mikrofonov_core -->|материал| material_si
@@ -268,8 +241,6 @@ graph LR
     часть_mems_imu_housing -->|материал| material_al_6061_t6
     часть_mems_imu_core -->|материал| material_si
     часть_ultrakorotkoimpulsnye_lazery_mounting -->|материал| material_al_6061_t6
-    часть_ultrakorotkoimpulsnye_lazery_core -->|материал| material_al_6061_t6
-    часть_ultrakorotkoimpulsnye_lazery_housing -->|материал| material_stal_st3
     часть_flir_mounting -->|материал| material_al_6061_t6
     часть_flir_housing -->|материал| material_al_6061_t6
     часть_flir_core -->|материал| material_si
@@ -279,34 +250,23 @@ graph LR
     часть_pezo_sensor_mounting -->|материал| material_al_6061_t6
     часть_pezo_sensor_housing -->|материал| material_al_6061_t6
     часть_pezo_sensor_connectors -->|материал| material_stal_st3
-    часть_ipg_yls_eco_connectors -->|материал| material_al_6061_t6
-    часть_ipg_yls_eco_core -->|материал| material_stal_st3
-    часть_ipg_yls_eco_mounting -->|материал| material_stal_st3
-    часть_ipg_yls_eco_housing -->|материал| material_stal_st3
     часть_flir_lwir_2_housing -->|материал| material_al_6061_t6
     часть_flir_lwir_2_core -->|материал| material_al_6061_t6
     часть_flir_lwir_2_mounting -->|материал| material_al_6061_t6
     часть_quantum_cascade_laser_core -->|материал| material_al_6061_t6
     часть_quantum_cascade_laser_housing -->|материал| material_al_6061_t6
     часть_eo_ir_kamera_mounting -->|материал| material_al_6061_t6
-    часть_eo_ir_kamera_housing -->|материал| material_al_6061_t6
-    часть_eo_ir_kamera_core -->|материал| material_al_6061_t6
     часть_metalinza_housing -->|материал| material_al_6061_t6
     часть_metalinza_mounting -->|материал| material_al_6061_t6
     часть_tverdotelnyi_mmwave_radar_core -->|материал| material_al_6061_t6
     часть_tverdotelnyi_mmwave_radar_housing -->|материал| material_al_6061_t6
     часть_tverdotelnyi_mmwave_radar_mounting -->|материал| material_al_6061_t6
-    часть_kaskadnyi_stirling_kriokuler_housing -->|материал| material_stal_st3
-    часть_kaskadnyi_stirling_kriokuler_mounting -->|материал| material_stal_st3
-    часть_kaskadnyi_stirling_kriokuler_core -->|материал| material_al_6061_t6
     часть_multispektralnye_cmos_matritsy_s_ik_diapazonom_mounting -->|материал| material_al_6061_t6
     часть_multispektralnye_cmos_matritsy_s_ik_diapazonom_housing -->|материал| material_al_6061_t6
     часть_multispektralnye_cmos_matritsy_s_ik_diapazonom_core -->|материал| material_al_6061_t6
     часть_lwir_boson_1024_mounting -->|материал| material_ti_6al_4v
     часть_lwir_boson_1024_housing -->|материал| material_al_6061_t6
     часть_lwir_boson_1024_core -->|материал| material_al_6061_t6
-    часть_akusticheskaya_linza_mounting -->|материал| material_al_6061_t6
-    часть_akusticheskaya_linza_housing -->|материал| material_al_6061_t6
     часть_mwir_nbn_640_mounting -->|материал| material_al_6061_t6
     часть_mwir_nbn_640_housing -->|материал| material_al_6061_t6
     часть_mwir_nbn_640_core -->|материал| material_al_6061_t6
@@ -322,13 +282,12 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 89 |
-| `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 30 |
-| `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 15 |
+| `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 64 |
+| `Al ≥ 99.5 % (основа); Fe ≤ 0.40 %; Si ≤ 0.25 %; Cu ≤ 0.05 %; Mn ≤ 0.05 %; Mg ≤ 0.05 %; Zn ≤ 0.05–0.07 %; Ti ≤ 0.03–0.05 %; V ≤ 0.05 % — технически чистый алюминий 1050 (UNS A91050, EN AW-1050A)` | 22 |
+| `Cu 60–63% (основа), Zn баланс, Pb 2.5–3.5% (UNS C36000 / CuZn39Pb3, CW614N)` | 11 |
 | `Si (кремний); электронный сорт ≥99.9999999% (9N) для подложек ИС, солнечный ≥99.9999% (6N), металлургический ~98–99% (Si-Fe, Si-Ca примеси)` | 9 |
-| `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 9 |
 | `AlN` | 8 |
-| `Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)` | 8 |
+| `Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)` | 7 |
 | `Ароматический полиимид PMDA-ODA (тип Kapton): повторяющееся звено C22H10N2O5 (M ≈ 382.2 г/моль) из пиромеллитового диангидрида (PMDA) и 4,4′-оксианилина (ODA); чередующиеся имидные циклы C(=O)–N–C(=O) и фениленовые/дифениловый эфирный сегменты` | 7 |
 | `Ti-6Al-4V (Grade 5, UNS R56400): Al 5.5–6.75 %, V 3.5–4.5 %, Fe ≤0.30 %, O ≤0.20 %, C ≤0.08 %, N ≤0.05 %, H ≤0.015 %, Y ≤0.005 %, Ti — остальное (ASTM-спецификация, Wikipedia/ASM)` | 4 |
 | `нержавеющая сталь AISI 304 / EN 1.4301 (X5CrNi18-10): Cr 18.0–20.0 %, Ni 8.0–12.0 %, C ≤0.08 %, Mn ≤2.0 %, Si ≤0.75 %, P ≤0.045 %, S ≤0.030 %, N ≤0.10 %, Fe — остальное (Cleveland-Cliffs, ASTM A240)` | 3 |
@@ -336,4 +295,5 @@ _Показаны 5 наиболее часто используемых мат�
 | `Терполимер винилиденфторид–трифторэтилен–хлорфторэтилен P(VDF-TrFE-CFE): типично 58.5–72.2 мол.% VDF / 17.8–31.5 TrFE / 7–11.5 CFE (референс LIST/Arkema: 64.8/27.4/7.8 мол.%); Mw 400–600 кг/моль (Piezotech RT); полукристаллический, кристалличность 20–35%` | 2 |
 | `Fe₃O₄ (магнетит) 1–20 wt% + силиконовый каучук (Ecoflex/PDMS)` | 2 |
 | `метаповерхность` | 2 |
-| `Матрица — сшитый VMQ-силикон твёрдостью 80 Shore A (PDMS, –[Si(CH₃)₂–O]ₙ–, пероксидная/платиновая сшивка); наполнитель — полые стеклянные микросферы (содово-известково-боросиликатное стекло) 10–40 мас.% (~20–50 об.%): типовые марки 3M iM16K (ρ 0.46 г/см³, прочность смятия 110 МПа, d50 ~20 мкм), K25 (0.25 г/см³, 5.2 МПа), S-серия (до 0.60 г/см³)` | 2 |
+| `Ст3сп/Ст3пс (ГОСТ 380-2005): C 0.14–0.22 %, Si 0.15–0.30 %, Mn 0.40–0.65 %, Cr/Ni/Cu ≤0.30 %, Fe ост.` | 2 |
+| `SiO2 ≥99.99% (синтетический пьезокварц, гидротермальный автоклавный синтез; природный — α-кварц)` | 2 |

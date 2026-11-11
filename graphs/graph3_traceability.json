@@ -1755,6 +1755,12 @@
       "path": "scripts/fix_801.py"
     },
     {
+      "id": "script:fix_children_tech_scal.py",
+      "type": "script",
+      "label": "fix_children_tech_scal.py",
+      "path": "scripts/fix_children_tech_scal.py"
+    },
+    {
       "id": "script:fix_yaml_corruption.py",
       "type": "script",
       "label": "fix_yaml_corruption.py",
@@ -1807,6 +1813,12 @@
       "type": "script",
       "label": "migrate_material_form.py",
       "path": "scripts/migrate_material_form.py"
+    },
+    {
+      "id": "script:organize_models.py",
+      "type": "script",
+      "label": "organize_models.py",
+      "path": "scripts/organize_models.py"
     },
     {
       "id": "script:pipeline.py",
@@ -5226,13 +5238,13 @@
     }
   ],
   "stats": {
-    "nodes": 334,
+    "nodes": 336,
     "edges": 536,
     "by_type": {
       "field_contract": 8,
       "file_pattern": 8,
       "metric": 217,
-      "script": 30,
+      "script": 32,
       "spec_section": 58,
       "stub": 13
     }

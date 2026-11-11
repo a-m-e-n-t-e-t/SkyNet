@@ -305,29 +305,34 @@ def _read_yaml_frontmatter_uncached(filepath: Path) -> tuple[dict, str, str]:
 def load_all_izdeliya() -> dict[str, dict]:
     """Загрузить все .md изделий/моделей в dict {id: data, ...}.
 
-    v9.33: расширено на фантастические данные/модели/ — теперь обрабатывает
-    канон-модели (тип: модель_SkyNet) так же, как реальные изделия.
-    Это включает F12a/F14/F16/F18/F19/F22/F25/F27*/F29/F34/F-scal/F-ai-lineage
-    для 41 канон-модели (T-800, HK-Aerial, и т.д.).
+    v9.59: canon-модели и ИИ-обёртки перенесены в результаты/модели/:
+      - результаты/модели/{name}/фантастическая реализация/_index.md → canon-модель
+      - результаты/модели/{name}/доработанная ии реализация/_index.md → ИИ-обёртка izdelie_SkyNet-*
+    Реальные изделия остаются в реальные данные/изделия/.
+    Прочие изделия из работа и и/изделия/ (не SkyNet-обёртки) остаются там.
 
     Источники (по приоритету):
       1. реальные данные/изделия/ — промышленные шаблоны (тип: изделие)
-      2. работа и и/изделия/ — AI-улучшенные шаблоны (версия: ии-улучшенная)
-      3. фантастические данные/модели/ — канон-модели (тип: модель_SkyNet)
+      2. работа и и/изделия/ — AI-улучшенные шаблоны (кроме izdelie_SkyNet-* — перенесены)
+      3. результаты/модели/*/фантастическая реализация/_index.md — canon-модели (тип: модель_SkyNet)
+      4. результаты/модели/*/доработанная ии реализация/_index.md — ИИ-обёртки izdelie_SkyNet-*
+      5. результаты/модели/*/реальная реализация/*/_index.md — реальные изделия (копии)
 
     v9.36: сохраняем markdown body в data['_body'] для F19/F23.
-    v9.40: работа и и/изделия/ содержит izdelie_SkyNet-* обёртки.
+    v9.40: работа и и/изделия/ содержало izdelie_SkyNet-* обёртки.
+    v9.59: обёртки перенесены в результаты/модели/*/доработанная ии реализация/.
     """
     result = {}
     izd_dirs = [
         SKYNET_REPO / "реальные данные" / "изделия",
         SKYNET_REPO / "работа и и" / "изделия",
-        SKYNET_REPO / "фантастические данные" / "модели",  # v9.33 NEW
+        SKYNET_REPO / "фантастические данные" / "модели",  # legacy (если остались)
+        SKYNET_REPO / "результаты" / "модели",  # v9.59 NEW — canon + ИИ-обёртки
     ]
     for izd_dir in izd_dirs:
         if not izd_dir.is_dir():
             continue
-        # _index.md в поддиректориях (применимо ко всем 3 базам)
+        # _index.md в поддиректориях (применимо ко всем базам)
         for f in izd_dir.rglob("_index.md"):
             data, _, body = read_yaml_frontmatter(f)
             if data and 'id' in data:
@@ -1936,16 +1941,36 @@ def check_F21(models: dict[str, dict], izdeliya: dict[str, dict]) -> dict:
 # ============================================================================
 
 def load_all_models() -> dict[str, dict]:
-    """Загрузить все .md в фантастические данные/модели/."""
+    """Загрузить все canon-модели SkyNet.
+
+    v9.59: canon-модели перенесены из фантастические данные/модели/ в
+    результаты/модели/{name}/фантастическая реализация/_index.md.
+    """
     result = {}
-    mod_dir = SKYNET_REPO / "фантастические данные" / "модели"
-    for f in mod_dir.glob("*.md"):
-        if f.name.startswith('_'):
-            continue
-        data, _, _ = read_yaml_frontmatter(f)
-        if data and 'id' in data:
-            data['_path'] = str(f)
-            result[data['id']] = data
+    # v9.59: canon-модели теперь в результаты/модели/{name}/фантастическая реализация/
+    results_dir = SKYNET_REPO / "результаты" / "модели"
+    if results_dir.is_dir():
+        for model_dir in results_dir.iterdir():
+            if not model_dir.is_dir():
+                continue
+            canon_path = model_dir / "фантастическая реализация" / "_index.md"
+            if not canon_path.is_file():
+                continue
+            data, _, _ = read_yaml_frontmatter(canon_path)
+            if data and 'id' in data:
+                data['_path'] = str(canon_path)
+                result[data['id']] = data
+    # Fallback: legacy canon dir (если остались .md файлы)
+    legacy_dir = SKYNET_REPO / "фантастические данные" / "модели"
+    if legacy_dir.is_dir():
+        for f in legacy_dir.glob("*.md"):
+            if f.name.startswith('_'):
+                continue
+            data, _, _ = read_yaml_frontmatter(f)
+            if data and 'id' in data:
+                if data['id'] not in result:  # не перетираем новый путь
+                    data['_path'] = str(f)
+                    result[data['id']] = data
     return result
 
 

@@ -103,7 +103,7 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные:
   соответствующая_модель: SkyNet-TX
-  канон_источник: 'фантастические данные/модели/t_x.md'
+  канон_источник: 'результаты/модели/t_x/фантастическая реализация/_index.md'
 # F-ai-lineage §12.7: AI-улучшенная версия обязана ссылаться на real-предка
 предок: material_ti-6al-4v
 улучшения:
@@ -121,7 +121,7 @@ scaling_type: количественный
     источник: web_search
 real_check:
   статус: требует_проверки
-  метод: 'canon-спецификации T-X (Terminator 3: Rise of the Machines, 2003, фантастические данные/модели/t_x.md, terminator.fandom.com/wiki/T-X): Cyber Research Systems Model T-X — гуманоидный ассасин, рост 1.80 m, масса 150 kg, эндоскелет ti-6al-4v, mimetic polyalloy покрытие, plasma reactor + встроенное оружие (плазма-пушка, нанотех-инъектор); real-верификация: ti-6al-4v Grade 5 (Wikipedia/ASTM/AMS, удельная прочность 214 кН·м/кг), tungsten_alloy W-Ni-Fe ( ASTM B777, ρ=18.5 g/cm³), silicone-textile_composite (MDPI Materials 17/6:1439, 2024 — вязаная powernet-ткань + силикон RTV); реальный прототип Boston Dynamics Atlas (1.9 m, 90 kg, 28 DoF — bd.ai/atlas); плазма-реактор и mimetic polyalloy — canon-декларация, real_check помечает как требует_проверки'
+  метод: 'canon-спецификации T-X (Terminator 3: Rise of the Machines, 2003, результаты/модели/t_x/фантастическая реализация/_index.md, terminator.fandom.com/wiki/T-X): Cyber Research Systems Model T-X — гуманоидный ассасин, рост 1.80 m, масса 150 kg, эндоскелет ti-6al-4v, mimetic polyalloy покрытие, plasma reactor + встроенное оружие (плазма-пушка, нанотех-инъектор); real-верификация: ti-6al-4v Grade 5 (Wikipedia/ASTM/AMS, удельная прочность 214 кН·м/кг), tungsten_alloy W-Ni-Fe ( ASTM B777, ρ=18.5 g/cm³), silicone-textile_composite (MDPI Materials 17/6:1439, 2024 — вязаная powernet-ткань + силикон RTV); реальный прототип Boston Dynamics Atlas (1.9 m, 90 kg, 28 DoF — bd.ai/atlas); плазма-реактор и mimetic polyalloy — canon-декларация, real_check помечает как требует_проверки'
   физические_пределы_соблюдены:
     - 'Масса T-X 150 kg реалистична для антропометрии 1.80 m: эндоскелет ti-6al-4v 67.5 kg (45.0%) + плазма-пушка 10.5 kg (7.0%) + ткань-кожа 4.05 kg (2.7%) + остальные части 68 kg (45.3%)'
     - 'Удельная прочность ti-6al-4v (214 кН·м/кг) > Al 6061-T6 (~115 кН·м/кг, Atlas): эндоскелет T-X выдерживает баллистические нагрузки и аварийные падения (canon T3)'

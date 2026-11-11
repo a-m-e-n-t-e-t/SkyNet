@@ -45,7 +45,7 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные:
   соответствующая_модель: SkyNet-HKAerial
-  канон_источник: фантастические данные/модели/hk_aerial.md
+  канон_источник: результаты/модели/hk_aerial/фантастическая реализация/_index.md
 дата_создания: 2026-11-03
 дата_обновления: '2026-11-11'
 источник: web_search
@@ -139,7 +139,7 @@ scaling_type: количественный
   источник: web_search
 real_check:
   статус: требует_проверки
-  метод: 'canon-спецификации HK-Aerial (Terminator franchise, фантастические данные/модели/hk_aerial.md,
+  метод: 'canon-спецификации HK-Aerial (Terminator franchise, результаты/модели/hk_aerial/фантастическая реализация/_index.md,
     terminator.fandom.com/wiki/HK-Aerial): Hunter-Killer Aerial, тяжёлый боевой корабль
     Skynet, размах 25-30 m, масса 8-12 т, ti-6al-4v фюзеляж, inconel_718 двигатели,
     tungsten_alloy плазма-пушка; real-верификация: ti-6al-4v (Boeing 787 фюзеляж,

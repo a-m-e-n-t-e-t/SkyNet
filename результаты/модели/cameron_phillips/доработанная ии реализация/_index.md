@@ -114,7 +114,7 @@ id: izdelie_SkyNet-Cameron
 
 real_check:
   статус: требует_проверки
-  метод: 'canon-спецификации Cameron (Terminator: Sarah Connor Chronicles, 2008, фантастические данные/модели/cameron_phillips.md, terminator.fandom.com/wiki/Cameron): T-9001 гуманоидный инфильтратор, рост ~1.65 m, масса ~55 кг, эндоскелет ti-6al-4v, silicone-textile_composite кожа; real-верификация: ti-6al-4v Grade 5 (Wikipedia/ASTM/AMS, удельная прочность 214 кН·м/кг), silicone-textile_composite (MDPI Materials 17/6:1439, 2024 — вязаная powernet-ткань + силикон RTV), poliimid Kapton HN (DuPont, Tg 360–410 °C); реальный прототип Honda ASIMO (1.30 m, 48 kg, 57 DoF, Li-ion 51.8 V — Wikipedia, global.honda); композитная кожа + топливные ячейки — canon-декларация, real_check помечает как требует_проверки'
+  метод: 'canon-спецификации Cameron (Terminator: Sarah Connor Chronicles, 2008, результаты/модели/cameron_phillips/фантастическая реализация/_index.md, terminator.fandom.com/wiki/Cameron): T-9001 гуманоидный инфильтратор, рост ~1.65 m, масса ~55 кг, эндоскелет ti-6al-4v, silicone-textile_composite кожа; real-верификация: ti-6al-4v Grade 5 (Wikipedia/ASTM/AMS, удельная прочность 214 кН·м/кг), silicone-textile_composite (MDPI Materials 17/6:1439, 2024 — вязаная powernet-ткань + силикон RTV), poliimid Kapton HN (DuPont, Tg 360–410 °C); реальный прототип Honda ASIMO (1.30 m, 48 kg, 57 DoF, Li-ion 51.8 V — Wikipedia, global.honda); композитная кожа + топливные ячейки — canon-декларация, real_check помечает как требует_проверки'
   физические_пределы_соблюдены:
     - 'Масса Cameron 54.84 кг реалистична для антропометрии 1.65 м (Summer Glau): эндоскелет ti-6al-4v 52.5 кг (95.7%) + кожа 2.0 кг (3.65%) + cpu/сенсоры 0.34 кг (0.62%)'
     - 'Удельная прочность ti-6al-4v (214 кН·м/кг) > Al 6061-T6 (~115 кН·м/кг, ASIMO): эндоскелет Cameron выдерживает баллистические нагрузки и аварийные падения (canon TSCC S1)'
@@ -136,7 +136,7 @@ scaling_type: количественный
 наследуемые: {}
 дополнительные:
   соответствующая_модель: SkyNet-Cameron
-  канон_источник: 'фантастические данные/модели/cameron_phillips.md'
+  канон_источник: 'результаты/модели/cameron_phillips/фантастическая реализация/_index.md'
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-07
 источник: web_search

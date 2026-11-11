@@ -17,6 +17,7 @@ graph TB
     script_fix_1002_tcp_py(("fix_1002_tcp.py"))
     script_fix_1004_bldc_py(("fix_1004_bldc.py"))
     script_fix_801_py(("fix_801.py"))
+    script_fix_children_tech_scal_py(("fix_children_tech_scal.py"))
     script_fix_yaml_corruption_py(("fix_yaml_corruption.py"))
     script_generate_decomposition_py(("generate_decomposition.py"))
     script_generate_graphs_py(("generate_graphs.py"))
@@ -24,6 +25,7 @@ graph TB
     script_migrate_aliases_py(("migrate_aliases.py"))
     script_migrate_dedup_materials_py(("migrate_dedup_materials.py"))
     script_migrate_material_form_py(("migrate_material_form.py"))
+    script_organize_models_py(("organize_models.py"))
     script_pipeline_py(("pipeline.py"))
     script_pre-commit-hook_py(("pre-commit-hook.py"))
     script_real_decomposition_py(("real_decomposition.py"))
@@ -201,6 +203,7 @@ graph TB
     concept_требования_к_ии__шаблоны_изделий_md(("_шаблоны_изделий.md"('[', ']')
     concept_требования_к_ии__шаблоны_подсистем_md(("_шаблоны_подсистем.md"('[', ']')
     concept_диалог_CHANGELOG_md(("CHANGELOG.md"('[', ']')
+    concept_диалог_cron_log_md(("cron_log.md"('[', ']')
     script__metrics_py -.->|imports| script__metrics_py
     script_fix_yaml_corruption_py -.->|imports| script_migrate_aliases_py
     script_generate_decomposition_py -.->|imports| script_validate_decomposition_py
@@ -253,13 +256,13 @@ graph TB
     section_§11_3_7_антипаттернов_(уроки_из_прошлых_реализаций) -.->|part_of| spec_SkyNet_PROMPT_v9_31_md
 ```
 
-_Узлов: 199, рёбер: 227 (показано топ-50)._
+_Узлов: 202, рёбер: 228 (показано топ-50)._
 
 | Тип узла | Количество |
 |---|---:|
 | spec_section | 149 |
-| script | 30 |
-| concept_doc | 17 |
+| script | 32 |
+| concept_doc | 18 |
 | catalog | 1 |
 | readme | 1 |
 | spec | 1 |

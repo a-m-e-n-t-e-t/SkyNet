@@ -93,6 +93,12 @@
       "path": "scripts/fix_801.py"
     },
     {
+      "id": "script:fix_children_tech_scal.py",
+      "type": "script",
+      "label": "fix_children_tech_scal.py",
+      "path": "scripts/fix_children_tech_scal.py"
+    },
+    {
       "id": "script:fix_yaml_corruption.py",
       "type": "script",
       "label": "fix_yaml_corruption.py",
@@ -133,6 +139,12 @@
       "type": "script",
       "label": "migrate_material_form.py",
       "path": "scripts/migrate_material_form.py"
+    },
+    {
+      "id": "script:organize_models.py",
+      "type": "script",
+      "label": "organize_models.py",
+      "path": "scripts/organize_models.py"
     },
     {
       "id": "script:pipeline.py",
@@ -1195,6 +1207,12 @@
       "type": "concept_doc",
       "label": "CHANGELOG.md",
       "path": "диалог/CHANGELOG.md"
+    },
+    {
+      "id": "concept:диалог/cron_log.md",
+      "type": "concept_doc",
+      "label": "cron_log.md",
+      "path": "диалог/cron_log.md"
     }
   ],
   "edges": [
@@ -2393,6 +2411,12 @@
       "meta": {}
     },
     {
+      "src": "concept:диалог/cron_log.md",
+      "dst": "script:render_body.py",
+      "type": "describes",
+      "meta": {}
+    },
+    {
       "src": "script:_helpers.py",
       "dst": "section:§13.15 Метрики v9.24 F81-F87 (аудиты реализации, диалога, ca",
       "type": "implements",
@@ -2562,13 +2586,13 @@
     }
   ],
   "stats": {
-    "nodes": 199,
-    "edges": 227,
+    "nodes": 202,
+    "edges": 228,
     "by_type": {
       "catalog": 1,
-      "concept_doc": 17,
+      "concept_doc": 18,
       "readme": 1,
-      "script": 30,
+      "script": 32,
       "spec": 1,
       "spec_section": 149
     }

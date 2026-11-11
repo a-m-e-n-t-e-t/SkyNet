@@ -60,7 +60,7 @@ scaling_type: количественный
   форма: эластомерная_оболочка_для_инфильтрации
 дополнительные:
   соответствующая_модель: SkyNet-Rev9
-  канон_источник: фантастические данные/модели/rev9.md
+  канон_источник: результаты/модели/rev9/фантастическая реализация/_index.md
 дата_создания: 2026-11-03
 дата_обновления: '2026-11-11'
 источник: web_search
@@ -118,7 +118,7 @@ scaling_type: количественный
   источник: web_search
 real_check:
   статус: требует_проверки
-  метод: 'canon-спецификации Rev-9 (Terminator: Dark Fate, 2019, фантастические данные/модели/rev9.md,
+  метод: 'canon-спецификации Rev-9 (Terminator: Dark Fate, 2019, результаты/модели/rev9/фантастическая реализация/_index.md,
     terminator.fandom.com/wiki/Rev-9): гуманоидный ассасин-инфильтратор, рост 1.88
     m, масса 175 kg, эндоскелет carbon_fiber_composite (CFRP T700S), полисплавная
     оболочка (mimetic polyalloy canon → liquid_metal_polyalloy real Galinstan+silicone);

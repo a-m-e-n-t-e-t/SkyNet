@@ -111,11 +111,13 @@ graph LR
     часть_t800_cpu[neural_net_cpu]
     часть_t_x_cpu[neural_net_cpu_tx]
     material_al_6061_t6[Al основа; Si 0.4–0.8 …]
-    material_aluminum[Al ≥ 99.5 % (основа); …]
     material_copper[Cu ≥99.9% (электролити…]
-    material_ti_6al_4v[Ti-6Al-4V (Grade 5, UN…]
+    material_aluminum[Al ≥ 99.5 % (основа); …]
+    material_si[Si (кремний); электрон…]
     material_stal_st3[Ст3сп/Ст3пс (ГОСТ 380-…]
+    izdelie_stm32h743 -->|материал| material_si
     izdelie_stm32h743 -->|материал| material_aluminum
+    izdelie_stm32 -->|материал| material_si
     izdelie_stm32 -->|материал| material_aluminum
     izdelie_brainchip_akida_2 -->|материал| material_copper
     izdelie_intel_loihi_2 -->|материал| material_copper
@@ -125,21 +127,39 @@ graph LR
     izdelie_halve -->|материал| material_copper
     izdelie_nvidia_jetson_orin_nano -->|материал| material_aluminum
     izdelie_sic_mosfet -->|материал| material_aluminum
+    часть_stm32h743_core -->|материал| material_si
     часть_stm32h743_mounting -->|материал| material_al_6061_t6
     часть_stm32h743_housing -->|материал| material_al_6061_t6
+    часть_pcm_io_interface -->|материал| material_si
+    часть_pcm_controller -->|материал| material_si
+    часть_pcm_periphery -->|материал| material_si
     часть_stm32_connectors -->|материал| material_stal_st3
+    часть_stm32_core -->|материал| material_si
     часть_stm32_housing -->|материал| material_al_6061_t6
     часть_brainchip_akida_2_thermal_spreader -->|материал| material_copper
+    часть_brainchip_akida_2_die -->|материал| material_si
     часть_intel_loihi_2_thermal_spreader -->|материал| material_copper
+    часть_intel_loihi_2_die -->|материал| material_si
     часть_kondensatory_keramicheskie_outer_electrodes -->|материал| material_copper
     часть_kondensatory_keramicheskie_termination -->|материал| material_copper
+    часть_sot_mram_sense_amplifiers -->|материал| material_si
+    часть_sot_mram_row_decoders -->|материал| material_si
+    часть_sot_mram_periphery -->|материал| material_si
+    часть_sot_mram_io_interface -->|материал| material_si
+    часть_gr801_noel_v_risc_v_die -->|материал| material_si
+    часть_gr801_noel_v_risc_v_sram -->|материал| material_si
+    часть_gr801_noel_v_risc_v_flash -->|материал| material_si
     часть_ibm_northpole_thermal_spreader -->|материал| material_copper
+    часть_ibm_northpole_hbm -->|материал| material_si
+    часть_ibm_northpole_die -->|материал| material_si
     часть_polyimide_fpc_housing -->|материал| material_al_6061_t6
+    часть_halve_die -->|материал| material_si
     часть_halve_thermal_spreader -->|материал| material_copper
     часть_nvidia_jetson_orin_nano_enclosure -->|материал| material_al_6061_t6
     часть_sic_mosfet_lead_frame -->|материал| material_copper
-    часть_marcus_человеческий_мозг -->|материал| material_ti_6al_4v
+    часть_t600_cpu -->|материал| material_si
     часть_t850_cpu -->|материал| material_al_6061_t6
+    часть_t800_cpu -->|материал| material_si
     часть_t_x_cpu -->|материал| material_al_6061_t6
 ```
 
@@ -147,7 +167,7 @@ _Показаны 5 наиболее часто используемых мат�
 
 | Материал | Используется в частях |
 |---|---:|
-| `Si (кремний); электронный сорт ≥99.9999999% (9N) для подложек ИС, солнечный ≥99.9999% (6N), металлургический ~98–99% (Si-Fe, Si-Ca примеси)` | 25 |
+| `Si (кремний); электронный сорт ≥99.9999999% (9N) для подложек ИС, солнечный ≥99.9999% (6N), металлургический ~98–99% (Si-Fe, Si-Ca примеси)` | 21 |
 | `Cu ≥99.9% (электролитическая медь C11000/ETP)` | 12 |
 | `Al основа; Si 0.4–0.8 %; Mg 0.8–1.2 %; Cu 0.15–0.40 %; Cr 0.04–0.35 %; Fe ≤0.7 %; Mn ≤0.15 %; Zn ≤0.25 %; Ti ≤0.15 % — сплав 6061 (AlSi1MgCu, UNS A96061), состояние T6` | 8 |
 | `BaTiO3 ≥98.5% (титанат бария, перовскит ABO3); для X5R/X7R-диэлектриков MLCC легируется Dy2O3, Ho2O3, Y2O3, Mg, Si, Mn (core-shell BME с Ni-электродами)` | 7 |
@@ -160,5 +180,5 @@ _Показаны 5 наиболее часто используемых мат�
 | `Ni ≥99.0% (электролитический никель; для паст BME-электродов — мелкодисперсный Ni-порошок, напр. сферический 0.3–0.8 мкм)` | 2 |
 | `TiN — нитрид титана, стехиометрия TiN_x (x = 0.6–1.0; рабочая ~1.0); тонкие плёнки PVD/CVD, объёмный спечённый` | 2 |
 | `SiO2 ≥99.99% (синтетический пьезокварц, гидротермальный автоклавный синтез; природный — α-кварц)` | 2 |
-| `TiO₂ (диоксид титана, рутил как равновесная фаза); мемристорная форма — бислой TiO₂ (стехиометрический, высокоомный) / TiO₂₋ₓ (дефицит по кислороду, проводящий); вакансии кислорода V_O — мобильные двухзарядные доноры; проводящая предельная фаза — Magnéli TinO₂n−1 (Ti₄O₇ … Ti₁₀O₁₉)` | 1 |
 | `SAC305 (Sn-3.0Ag-0.5Cu, IPC J-STD-006 обозначение Sn96.5Ag3.0Cu0.5): Sn 96.5 ± 0.5 %, Ag 3.0 ± 0.2 %, Cu 0.5 ± 0.2 %, Pb ≤ 0.05 % (RoHS-лимит ≤ 0.1 %); примеси нормируются J-STD-006; свинец отсутствует — отличие от legacy Sn63Pb37 (файл material_splav_sn-pb): бессвинцовый припой не та субстанция, а самостоятельный сплав семейства Sn-Ag-Cu` | 1 |
+| `Cu основа; Be 1.90–2.15 %; Co 0.20–0.60 % (сумма Co+Ni ≥ 0.20 %) — термообрабатываемый сплав C17200 (Alloy 25, CuBe2, UNS C17200 / EN CW101C)` | 1 |
