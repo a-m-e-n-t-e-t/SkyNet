@@ -96,6 +96,52 @@ scaling_type: количественный
     Toray T700S)
   - часть_rev9_полисплав_оболочка (liquid_metal_polyalloy ~87.5 kg/ед — галлий-сплавы
     ограничены)
+предок: material_carbon_fiber_composite
+улучшения:
+- тип: замена_материала
+  что: 'серийный Toray T700S-12K (4900 МПа, эпоксид LY 5052) → гуманоидный эндоскелет
+    SkyNet-Rev9 (Rev-9, рост 1.88 m, масса 175 kg): 2 сегмента — эндоскелет (carbon_fiber_composite)
+    + полисплавная оболочка (liquid_metal_polyalloy)'
+  причина: 'canon: Rev-9 — AI-улучшенная версия Terminator (Terminator: Dark Fate,
+    2019); реальный прототип Boston Dynamics Atlas (1.9 m, 90 kg) — Rev-9 вдвое тяжелее,
+    требует CFRP (ρ=1.55 g/cm³, удельная прочность 2.5x > Ti-6Al-4V) для массы 87.5
+    kg эндоскелета; liquid_metal_polyalloy (Galinstan 6.44 g/cm³, IEEE Sensors 2023)
+    имитирует canon mimetic polyalloy'
+  источник: web_search
+- тип: добавление_технологии
+  что: 'полисплавная оболочка (часть_rev9_полисплав_оболочка, liquid_metal_polyalloy,
+    доля 0.5) — эластичная conductive кожа с эффектом шейпшифтинга; реальный аналог:
+    stretchable liquid metal electronics (IEEE Sensors 2023)'
+  причина: 'canon: Rev-9 имеет полисплавную оболочку над эндоскелетом для шейпшифтинга
+    (terminator.fandom.com/wiki/Rev-9); в реальности — Galinstan+silicone composite
+    (IEEE 2023) для soft robotics'
+  источник: web_search
+real_check:
+  статус: требует_проверки
+  метод: 'canon-спецификации Rev-9 (Terminator: Dark Fate, 2019, фантастические данные/модели/rev9.md,
+    terminator.fandom.com/wiki/Rev-9): гуманоидный ассасин-инфильтратор, рост 1.88
+    m, масса 175 kg, эндоскелет carbon_fiber_composite (CFRP T700S), полисплавная
+    оболочка (mimetic polyalloy canon → liquid_metal_polyalloy real Galinstan+silicone);
+    real-верификация: Toray T700S (ASTM D4018, 4900 МПа), Huntsman Araldite LY 5052
+    (Tg 130 °C, TDS-118), Galinstan 68.5% Ga (IEEE Sensors 2023, ρ=6.44 g/cm³); реальный
+    прототип Boston Dynamics Atlas (1.9 m, 90 kg, 28 DoF); mimetic polyalloy full
+    shapeshifting — canon-декларация, real_check требует_проверки'
+  физические_пределы_соблюдены:
+  - 'Масса Rev-9 175 kg реалистична для антропометрии 1.88 m: эндоскелет CFRP 87.5
+    kg (50.0%) + полисплавная оболочка 87.5 kg (50.0%) — оболочка тяжелая из-за плотности
+    Galinstan 6.44 g/cm³'
+  - 'Удельная прочность CFRP (3160 кН·м/кг для T700S, ρ=1.55) > Ti-6Al-4V (214 кН·м/кг):
+    эндоскелет Rev-9 в 14.7x эффективнее Ti по удельной прочности'
+  - Galinstan (T_плав -19 °C, T_кип 1300 °C, IEEE 2023) — реальная жидкометаллическая
+    основа для mimetic polyalloy; Galinstan+silicone composite деформируется до 200%
+    без потери проводимости
+  - 'Полный shapeshifting (canon T-1000/Rev-9) — real_check требует_проверки: текущий
+    state-of-art ограничен эластомерными композитами с проводящими жидкометаллическими
+    каналами'
+  - Mass distribution 50/50 между эндоскелетом и оболочкой — canon Rev-9 dual-layer
+    design (carbon endoskeleton + polyalloy sheath); Galinstan 87.5 kg = ~13.6 L объёма
+    при ρ=6.44 g/cm³ — физически реализуемо как тонкое покрытие 100-200 мкм + microchannel
+    structure
 ---
 ## Описание
 
