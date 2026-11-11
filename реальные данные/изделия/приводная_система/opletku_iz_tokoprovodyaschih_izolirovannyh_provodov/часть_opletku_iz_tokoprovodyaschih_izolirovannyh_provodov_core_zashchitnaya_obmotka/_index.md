@@ -7,24 +7,22 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchit
 подсистема: приводная_система
 подтип: изоляция
 стандарты:
-  - IEC 60684
+- IEC 60684
 исследовательская_группа: null
 родитель: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core
 дочерние_части: []
 материалы_частей:
-  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka
-    материал: tedlar_pet
-    форма: tpt_классическая_двусторонняя
-    доля_массы: 1.0
-
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka
+  материал: tedlar_pet
+  форма: tpt_классическая_двусторонняя
+  доля_массы: 1.0
 технологии_частей:
-  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka
-    технология: spiralnaya_navivka
-    доля_использования: 1.0
-    материалы_для_процесса:
-      - материал: pet
-        роль: лента_обмотки
-
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka
+  технология: spiralnaya_navivka
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: pet
+    роль: лента_обмотки
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -51,7 +49,20 @@ scaling_type: количественный
 источник_разбора: веб-верификация
 источник_url: https://supersmile-tech.com/products/braided-protection-harness
 источник_дата: 2026-11-07
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node (часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka)
+  ограничивающие_части: []
 ---
+
 
 # Часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka
 

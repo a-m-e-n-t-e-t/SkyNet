@@ -7,27 +7,25 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_
 подсистема: приводная_система
 подтип: силовые_цепи
 стандарты:
-  - IEC 60228
-  - UL 3239
+- IEC 60228
+- UL 3239
 исследовательская_группа: null
 родитель: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core
 дочерние_части: []
 материалы_частей:
-  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda
-    материал: copper
-    форма: шины_и_заземление
-    доля_массы: 1.0
-
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda
+  материал: copper
+  форма: шины_и_заземление
+  доля_массы: 1.0
 технологии_частей:
-  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda
-    технология: izolirovannye_emalyu
-    доля_использования: 1.0
-    материалы_для_процесса:
-      - материал: copper
-        роль: токоведущая_основа
-      - материал: ptfe
-        роль: изоляционный_слой
-
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda
+  технология: izolirovannye_emalyu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: copper
+    роль: токоведущая_основа
+  - материал: ptfe
+    роль: изоляционный_слой
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -54,7 +52,42 @@ scaling_type: количественный
 источник_разбора: веб-верификация
 источник_url: https://www.igus.com/cables/servo-power-cables
 источник_дата: 2026-11-07
+наследуемые_материалы:
+- материал: copper
+  суммарная_доля_массы: 0.53
+  источники_частей:
+  - часть_opletku_из_tokoprovodyaschih_изolirovannyh_provodов_core_silovye_provoda
+  форма: шины_и_заземление
+- материал: copper
+  суммарная_доля_массы: 0.2
+  источники_частей:
+  - часть_opletku_из_tokoprovodyaschih_изolirovannyh_provodов_core_signalnye_provoda
+  форма: шины_и_заземление
+- материал: copper
+  суммарная_доля_массы: 0.16
+  источники_частей:
+  - часть_opletku_из_tokoprovodyaschih_изolirovannyh_provodов_core_ekran
+  форма: теплосъём_и_экранирование
+- материал: tedlar_pet
+  суммарная_доля_массы: 0.11
+  источники_частей:
+  - часть_opletku_из_tokoprovodyaschih_изolirovannyh_provodов_core_zashchitnaya_obmotka
+  форма: tpt_классическая_двусторонняя
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node (часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda)
+  ограничивающие_части: []
 ---
+
+
 
 # Часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda
 

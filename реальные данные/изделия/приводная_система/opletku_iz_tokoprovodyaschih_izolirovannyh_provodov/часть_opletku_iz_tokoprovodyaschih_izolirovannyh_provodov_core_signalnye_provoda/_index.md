@@ -7,27 +7,25 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalny
 подсистема: приводная_система
 подтип: сигнальные_цепи
 стандарты:
-  - IEC 60228
-  - UL 2517
+- IEC 60228
+- UL 2517
 исследовательская_группа: null
 родитель: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core
 дочерние_части: []
 материалы_частей:
-  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda
-    материал: copper
-    форма: шины_и_заземление
-    доля_массы: 1.0
-
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda
+  материал: copper
+  форма: шины_и_заземление
+  доля_массы: 1.0
 технологии_частей:
-  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda
-    технология: izolirovannye_emalyu
-    доля_использования: 1.0
-    материалы_для_процесса:
-      - материал: copper
-        роль: токоведущая_основа
-      - материал: ptfe
-        роль: изоляционный_слой
-
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda
+  технология: izolirovannye_emalyu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: copper
+    роль: токоведущая_основа
+  - материал: ptfe
+    роль: изоляционный_слой
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -54,7 +52,20 @@ scaling_type: количественный
 источник_разбора: веб-верификация
 источник_url: https://www.igus.com/cables/servo-power-cables
 источник_дата: 2026-11-07
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node (часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda)
+  ограничивающие_части: []
 ---
+
 
 # Часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda
 

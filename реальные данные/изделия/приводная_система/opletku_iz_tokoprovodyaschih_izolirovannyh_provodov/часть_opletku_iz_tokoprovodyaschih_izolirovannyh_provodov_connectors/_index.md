@@ -69,6 +69,7 @@ scaling_type: количественный
 
 
 
+
 # Часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_connectors
 
 ## Описание

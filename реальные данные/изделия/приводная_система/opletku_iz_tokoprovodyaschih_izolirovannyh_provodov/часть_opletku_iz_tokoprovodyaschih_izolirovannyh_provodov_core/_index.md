@@ -65,21 +65,21 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core
     роль: лента_обмотки
 наследуемые_материалы:
 - материал: copper
-  форма: шины_и_заземление
   суммарная_доля_массы: 0.73
   источники_частей:
   - часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_silovye_provoda
   - часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_signalnye_provoda
+  форма: шины_и_заземление
 - материал: copper
-  форма: теплосъём_и_экранирование
   суммарная_доля_массы: 0.16
   источники_частей:
   - часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran
-- материал: pet
-  форма: tpt_классическая_двусторонняя
+  форма: теплосъём_и_экранирование
+- материал: tedlar_pet
   суммарная_доля_массы: 0.11
   источники_частей:
   - часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_zashchitnaya_obmotka
+  форма: tpt_классическая_двусторонняя
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -120,6 +120,8 @@ scaling_type: количественный
     родительского изделия)
   ограничивающие_части: []
 ---
+
+
 
 
 # Часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core

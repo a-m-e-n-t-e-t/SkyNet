@@ -16,6 +16,7 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting
 - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting
   материал: ss_aisi_304
   доля_массы: 1.0
+  форма: крепёж_пружины_холоднодеформ
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -63,6 +64,7 @@ scaling_type: количественный
     родительского изделия)
   ограничивающие_части: []
 ---
+
 
 # Часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_mounting
 

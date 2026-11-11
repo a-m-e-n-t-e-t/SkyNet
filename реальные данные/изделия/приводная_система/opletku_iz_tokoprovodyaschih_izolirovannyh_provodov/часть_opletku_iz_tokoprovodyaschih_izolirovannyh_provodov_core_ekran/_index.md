@@ -7,27 +7,25 @@ id: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran
 подсистема: приводная_система
 подтип: экранирование
 стандарты:
-  - MIL-DTL-17
-  - UL 2547
+- MIL-DTL-17
+- UL 2547
 исследовательская_группа: null
 родитель: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core
 дочерние_части: []
 материалы_частей:
-  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran
-    материал: copper
-    форма: теплосъём_и_экранирование
-    доля_массы: 1.0
-
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran
+  материал: copper
+  форма: теплосъём_и_экранирование
+  доля_массы: 1.0
 технологии_частей:
-  - часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran
-    технология: galvanika
-    доля_использования: 1.0
-    материалы_для_процесса:
-      - материал: copper
-        роль: обрабатываемая_основа_оплётки
-      - материал: tin
-        роль: гальваническое_покрытие_лужение
-
+- часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran
+  технология: galvanika
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: copper
+    роль: обрабатываемая_основа_оплётки
+  - материал: tin
+    роль: гальваническое_покрытие_лужение
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -54,7 +52,20 @@ scaling_type: количественный
 источник_разбора: веб-верификация
 источник_url: https://www.glenair.com/braided-shielding-and-sleeving
 источник_дата: 2026-11-07
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node (часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran)
+  ограничивающие_части: []
 ---
+
 
 # Часть: часть_opletku_iz_tokoprovodyaschih_izolirovannyh_provodov_core_ekran
 
