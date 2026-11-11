@@ -36,13 +36,13 @@ scaling_type: количественный
   верификация: []
 основные:
   масса_kg:
-    min: 0.05
-    max: 5
-    nominal: 0.5
+    min: 50.0
+    max: 500.0
+    nominal: 380.0
   габариты_mm:
-    l: 500
-    w: 500
-    h: 500
+    l: 860
+    w: 810
+    h: 1210
   выработка_энергии_W:
     min: 0
     max: 0
@@ -63,7 +63,7 @@ scaling_type: количественный
   технология: frezervanie_chpu
   доля_использования: 1.0
   материалы_для_процесса:
-  - материал: stal_st3
+  - материал: al_6061-t6
     роль: обрабатываемый
 - часть: часть_ipg_yls-eco_housing
   технология: anodirovanie
@@ -88,33 +88,36 @@ scaling_type: количественный
   - имя: количество_единиц
     диапазон:
     - 1
-    - 100
+    - 50
     единица: шт
   - имя: масса_единицы
     диапазон:
-    - 0.5
-    - 200.0
+    - 50.0
+    - 500.0
     единица: kg
-  - имя: длина_единицы
+  - имя: выходная_мощность
     диапазон:
-    - 500
-    - 750.0
-    единица: mm
+    - 1000
+    - 10000
+    единица: W
   пределы:
-    max_единиц_в_системе: 100
-    min_массы: 0.5
-    max_массы: 200.0
-  закон_масштабирования: нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
-    overhead на mounting+control unit)
+    max_единиц_в_системе: 50
+    min_мощности: 1000
+    max_мощности: 10000
+    min_массы: 50.0
+    max_массы: 500.0
+  закон_масштабирования: 'нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
+    overhead на chiller+power supply); типовая установка: IPG YLS-2000-ECO (856×806×1206
+    mm, 380 kg, 2 kW, 1070 nm, wall-plug efficiency >50%); YLS-10000-ECO (410-440
+    kg, 10 kW)'
   ограничивающие_части:
-  - часть_ipg_yls-eco_core (sensor core — критическая зависимость от supplier)
-  - часть_ipg_yls-eco_housing (aluminum + anodizing MIL-A-8625 — стандартное производство)
-источник_url: https://www.ipgphotonics.com/products/yls-eco
+  - часть_ipg_yls-eco_core (Yb-doped fiber + pump diodes — критическая зависимость
+    от IPG Photonics поставок)
+  - часть_ipg_yls-eco_housing (aluminum cabinet + air/water chiller — стандартное
+    производство)
+источник_url: https://www.ipgphotonics.com/products/lasers/industrial-cw-fiber-lasers/high-efficiency-fiber-lasers
 источник_дата: '2026-11-11'
 ---
-
-# Изделие: IPG YLS-ECO
-
 ## Описание
 
 IPG YLS-ECO — волоконный лазер
@@ -125,10 +128,19 @@ IPG YLS-ECO — волоконный лазер
 
 | Параметр | Значение | Единица | Источник |
 |---|---|---|---|
-| подсистема | сенсоры | — | classify_subsystem |
-| категория | прочее | — | — |
+| подсистема | сенсоры | — | canon |
+| подтип | прочее | — | canon |
+| масса | 50.0–500.0 (номинал 380.0) | kg | canon |
+| габариты (Д×Ш×В) | 860×810×1210 | mm | canon |
+| выработка энергии | 0 | W | canon |
+| выработка тепла | 0.1–10 | W | canon |
+| тип узла | изделие | — | canon |
+| уровень_номер | 1 | — | canon |
 
-(Параметры требуют уточнения через веб-поиск и вычислений; см. fc_изделие_масса, fc_изделие_стандарты в _field_contracts.yaml)
+
+## Принцип работы
+
+Требует описания на основе инженерного анализа.
 
 ## Состав
 
@@ -136,15 +148,15 @@ IPG YLS-ECO — волоконный лазер
 
 ## Используемые технологии
 
-(Ссылки на реальные_данные/технологии/ добавляются после связывания)
+- `frezervanie_chpu` (доля: 1.0)
+- `anodirovanie` (доля: 1.0)
+
 
 ## Используемые материалы
 
-(Ссылки на реальные_данные/материалы/ добавляются после связывания)
+- `stal_st3` (форма: силовые_элементы_конструкций) → [`stal_st3`](../../../материалы/stal_st3.md)
+- `aluminum` (форма: корпуса_электроники) → [`aluminum`](../../../материалы/aluminum.md)
 
-## Принцип работы
-
-Требует описания на основе инженерного анализа.
 
 ## Источники
 
@@ -152,18 +164,17 @@ IPG YLS-ECO — волоконный лазер
 
 ---
 
-
 ## Декомпозиция
 
 ```mermaid
 graph TD
-    ipg_yls-eco["izdelie_ipg_yls-eco"]
-    ipg_yls-eco_core["часть_ipg_yls-eco_core"]
-    ipg_yls-eco --> ipg_yls-eco_core
-    ipg_yls-eco_housing["часть_ipg_yls-eco_housing"]
-    ipg_yls-eco --> ipg_yls-eco_housing
-    ipg_yls-eco_connectors["часть_ipg_yls-eco_connectors"]
-    ipg_yls-eco --> ipg_yls-eco_connectors
-    ipg_yls-eco_mounting["часть_ipg_yls-eco_mounting"]
-    ipg_yls-eco --> ipg_yls-eco_mounting
+    izdelie_ipg_yls_eco["izdelie_ipg_yls-eco"]
+    ______ipg_yls_eco_core["часть_ipg_yls-eco_core"]
+    izdelie_ipg_yls_eco --> ______ipg_yls_eco_core
+    ______ipg_yls_eco_housing["часть_ipg_yls-eco_housing"]
+    izdelie_ipg_yls_eco --> ______ipg_yls_eco_housing
+    ______ipg_yls_eco_connectors["часть_ipg_yls-eco_connectors"]
+    izdelie_ipg_yls_eco --> ______ipg_yls_eco_connectors
+    ______ipg_yls_eco_mounting["часть_ipg_yls-eco_mounting"]
+    izdelie_ipg_yls_eco --> ______ipg_yls_eco_mounting
 ```
