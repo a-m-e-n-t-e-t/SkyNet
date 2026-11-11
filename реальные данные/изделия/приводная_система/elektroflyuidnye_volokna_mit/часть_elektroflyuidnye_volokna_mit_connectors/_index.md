@@ -7,16 +7,16 @@ id: часть_elektroflyuidnye_volokna_mit_connectors
 подсистема: приводная_система
 подтип: разъёмы
 стандарты:
-  - IEC 60603
-  - MIL-DTL-38999
+- IEC 60603
+- MIL-DTL-38999
 исследовательская_группа: null
 родитель: izdelie_elektroflyuidnye_volokna_mit
 дочерние_части: []
 материалы_частей:
-  - часть: часть_elektroflyuidnye_volokna_mit_connectors
-    материал: poliimid
-    доля_массы: 1.0
-
+- часть: часть_elektroflyuidnye_volokna_mit_connectors
+  материал: poliimid
+  доля_массы: 1.0
+  форма: подложка_fpc
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -37,16 +37,35 @@ scaling_type: количественный
   выработка_тепла_W: 0.1
 наследуемые: {}
 дополнительные:
-  тип: 'mixed signal + power'
+  тип: mixed signal + power
   pin_count: 24
-
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-05
 источник: web_search
 источник_разбора: веб-верификация
 источник_url: https://www.molex.com
 источник_дата: 2026-11-05
+технологии_частей:
+- часть: часть_elektroflyuidnye_volokna_mit_connectors
+  технология: lazer_abrazivnaya_rezka
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: poliimid
+    роль: обрабатываемый
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node (часть_elektroflyuidnye_volokna_mit_connectors)
+  ограничивающие_части: []
 ---
+
 
 # Часть: часть_elektroflyuidnye_volokna_mit_connectors
 

@@ -7,15 +7,15 @@ id: часть_elektroflyuidnye_volokna_mit_core
 подсистема: приводная_система
 подтип: основной_элемент
 стандарты:
-  - ISO 9001
+- ISO 9001
 исследовательская_группа: null
 родитель: izdelie_elektroflyuidnye_volokna_mit
 дочерние_части: []
 материалы_частей:
-  - часть: часть_elektroflyuidnye_volokna_mit_core
-    материал: ionnaya_zhidkost_emim_tfsi
-    доля_массы: 1.0
-
+- часть: часть_elektroflyuidnye_volokna_mit_core
+  материал: ionnaya_zhidkost_emim_tfsi
+  доля_массы: 1.0
+  форма: электролит_батарей_и_суперконденсаторов
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -42,7 +42,27 @@ scaling_type: количественный
 источник_разбора: веб-верификация
 источник_url: https://news.mit.edu
 источник_дата: 2026-11-05
+технологии_частей:
+- часть: часть_elektroflyuidnye_volokna_mit_core
+  технология: mikrovolokna_electrospinning
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: ionnaya_zhidkost_emim_tfsi
+    роль: обрабатываемый
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node (часть_elektroflyuidnye_volokna_mit_core)
+  ограничивающие_части: []
 ---
+
 
 # Часть: часть_elektroflyuidnye_volokna_mit_core
 

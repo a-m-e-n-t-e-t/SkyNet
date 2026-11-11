@@ -7,16 +7,16 @@ id: часть_elektroflyuidnye_volokna_mit_mounting
 подсистема: приводная_система
 подтип: крепёж
 стандарты:
-  - ISO 6149-1 (fluid ports)
-  - ASTM B633
+- ISO 6149-1 (fluid ports)
+- ASTM B633
 исследовательская_группа: null
 родитель: izdelie_elektroflyuidnye_volokna_mit
 дочерние_части: []
 материалы_частей:
-  - часть: часть_elektroflyuidnye_volokna_mit_mounting
-    материал: ss_aisi_304
-    доля_массы: 1.0
-
+- часть: часть_elektroflyuidnye_volokna_mit_mounting
+  материал: ss_aisi_304
+  доля_массы: 1.0
+  форма: крепёж_пружины_холоднодеформ
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -43,7 +43,27 @@ scaling_type: количественный
 источник_разбора: канон
 источник_url: https://www.science.org/doi/abs/10.1126/scirobotics.ady6438
 источник_дата: 2026-11-05
+технологии_частей:
+- часть: часть_elektroflyuidnye_volokna_mit_mounting
+  технология: shtampovka_listovaya
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: ss_aisi_304
+    роль: обрабатываемый
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — leaf node (часть_elektroflyuidnye_volokna_mit_mounting)
+  ограничивающие_части: []
 ---
+
 # Часть: часть_elektroflyuidnye_volokna_mit_mounting
 
 ## Описание
