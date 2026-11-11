@@ -7,15 +7,15 @@ id: часть_optovolokonnaya_shina_core
 подсистема: система_связи
 подтип: основной_элемент
 стандарты:
-  - ISO 9001
+- ISO 9001
 исследовательская_группа: null
 родитель: izdelie_optovolokonnaya_shina
 дочерние_части: []
 материалы_частей:
-  - часть: часть_optovolokonnaya_shina_core
-    материал: al_6061-t6
-    доля_массы: 1.0
-
+- часть: часть_optovolokonnaya_shina_core
+  материал: al_6061-t6
+  доля_массы: 1.0
+  форма: силовые_элементы_конструкций
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -36,7 +36,11 @@ scaling_type: количественный
   выработка_тепла_W: 1
 наследуемые: {}
 дополнительные:
-  обоснование_тепловыделения: "номинал 1 W — активная электроника коммутационного блока (оптические трансиверы): типовой оптический трансивер рассеивает <=1 W (LINK-PP 10GBASE-T SFP power/heat guide — optical transceivers typically consume less than 1 W; SFP+ Fiber Optic Transceiver Thermal and EMI Considerations, 2013 — SFP+ still dissipating 1 watt or less)"
+  обоснование_тепловыделения: 'номинал 1 W — активная электроника коммутационного
+    блока (оптические трансиверы): типовой оптический трансивер рассеивает <=1 W (LINK-PP
+    10GBASE-T SFP power/heat guide — optical transceivers typically consume less than
+    1 W; SFP+ Fiber Optic Transceiver Thermal and EMI Considerations, 2013 — SFP+
+    still dissipating 1 watt or less)'
   источник_url_тепла: https://www.link-pp.com/resources/technical-specs/10gbase-t-sfp-power-heat-management-guide
 дата_создания: 2026-11-03
 дата_обновления: 2026-11-08
@@ -44,7 +48,29 @@ scaling_type: количественный
 источник_разбора: веб-верификация
 источник_url: https://en.wikipedia.org/wiki/Fiber-optic_communication
 источник_дата: 2026-11-05
+технологии_частей:
+- часть: часть_optovolokonnaya_shina_core
+  технология: frezervanie_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: al_6061-t6
+    роль: обрабатываемый
+масштабируемость:
+  режим: фиксированная
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 1
+    единица: шт
+  пределы:
+    max_единиц_в_системе: 1
+  закон_масштабирования: фиксированный — деталь не масштабируется (leaf node в составе
+    родительского изделия)
+  ограничивающие_части: []
 ---
+
+
 
 # Часть: часть_optovolokonnaya_shina_core
 

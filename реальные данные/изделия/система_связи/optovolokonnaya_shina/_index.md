@@ -6,23 +6,25 @@ id: izdelie_optovolokonnaya_shina
 уровень_номер: 1
 подсистема: система_связи
 подтип: прочее
-стандарты: 
-  - FCC Part 15
-  - ETSI EN 301 489
+стандарты:
+- FCC Part 15
+- ETSI EN 301 489
 исследовательская_группа: harris_thales
 родитель: null
 дочерние_части:
-  - часть_optovolokonnaya_shina_core
-  - часть_optovolokonnaya_shina_housing
-  - часть_optovolokonnaya_shina_connectors
-  - часть_optovolokonnaya_shina_mounting
+- часть_optovolokonnaya_shina_core
+- часть_optovolokonnaya_shina_housing
+- часть_optovolokonnaya_shina_connectors
+- часть_optovolokonnaya_shina_mounting
 материалы_частей:
-  - часть: часть_optovolokonnaya_shina_core
-    материал: al_6061-t6
-    доля_массы: 0.45
-  - часть: часть_optovolokonnaya_shina_housing
-    материал: aluminum
-    доля_массы: 0.27
+- часть: часть_optovolokonnaya_shina_core
+  материал: al_6061-t6
+  форма: силовые_элементы_конструкций
+  доля_массы: 0.45
+- часть: часть_optovolokonnaya_shina_housing
+  материал: al_6061-t6
+  форма: корпуса_электроники
+  доля_массы: 0.27
 scaling_type: количественный
 соединители: []
 версия: реальная
@@ -32,36 +34,103 @@ scaling_type: количественный
 ии_перепроектирован:
   статус: false
   верификация: []
-основные: 
+основные:
   масса_kg:
-          min: 0.005
-          max: 5
-          nominal: 0.1
+    min: 0.1
+    max: 5.0
+    nominal: 0.5
   габариты_mm:
-          l: 50
-          w: 30
-          h: 5
+    l: 200
+    w: 117
+    h: 46
   выработка_энергии_W:
-          min: 0
-          max: 0
-          nominal: 0
+    min: 0
+    max: 0
+    nominal: 0
   выработка_тепла_W:
-          min: 0.01
-          max: 5
-          nominal: 1.2
+    min: 0.01
+    max: 5
+    nominal: 1.2
 наследуемые: {}
 дополнительные:
   цена_usd: null
-  обоснование_теплового_баланса: "номинал 1.2 W >= СУММ(дочерних) 1.10 W (core 1 W — активные трансиверы коммутационного блока; connectors 0.1 W; housing/mounting 0 W) + собственные пассивные потери волоконных трактов ~0.1 W (вставочные потери, микропоглощение). Оптические трансиверы рассеивают <=1 W (LINK-PP 10GBASE-T SFP power/heat guide; SFP+ Thermal and EMI Considerations 2013), максимум 5 W — верхняя граница многотерминальной конфигурации"
+  обоснование_теплового_баланса: номинал 1.2 W >= СУММ(дочерних) 1.10 W (core 1 W
+    — активные трансиверы коммутационного блока; connectors 0.1 W; housing/mounting
+    0 W) + собственные пассивные потери волоконных трактов ~0.1 W (вставочные потери,
+    микропоглощение). Оптические трансиверы рассеивают <=1 W (LINK-PP 10GBASE-T SFP
+    power/heat guide; SFP+ Thermal and EMI Considerations 2013), максимум 5 W — верхняя
+    граница многотерминальной конфигурации
   источник_url_тепла: https://www.link-pp.com/resources/technical-specs/10gbase-t-sfp-power-heat-management-guide
   источник_url_2_тепла: https://core.ac.uk/download/pdf/42812227.pdf
 дата_создания: 2026-11-03
-дата_обновления: 2026-11-08
-источник: user_input
-источник_разбора: пользовательский ввод
+дата_обновления: '2026-11-11'
+источник: web_search
+источник_разбора: веб-верификация
+технологии_частей:
+- часть: часть_optovolokonnaya_shina_core
+  технология: frezervanie_chpu
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: al_6061-t6
+    роль: обрабатываемый
+- часть: часть_optovolokonnaya_shina_housing
+  технология: anodirovanie
+  доля_использования: 1.0
+  материалы_для_процесса:
+  - материал: aluminum
+    роль: обрабатываемый
+наследуемые_материалы:
+- материал: al_6061-t6
+  суммарная_доля_массы: 0.45
+  источники_частей:
+  - часть_optovolokonnaya_shina_core
+  форма: силовые_элементы_конструкций
+- материал: al_6061-t6
+  суммарная_доля_массы: 0.27
+  источники_частей:
+  - часть_optovolokonnaya_shina_housing
+  форма: корпуса_электроники
+масштабируемость:
+  режим: масштабируемая
+  параметры:
+  - имя: количество_единиц
+    диапазон:
+    - 1
+    - 100
+    единица: шт
+  - имя: масса_единицы
+    диапазон:
+    - 0.1
+    - 5.0
+    единица: kg
+  - имя: скорость_передачи
+    диапазон:
+    - 1
+    - 1000
+    единица: Mbps
+  - имя: дальность
+    диапазон:
+    - 30
+    - 2000
+    единица: m
+  пределы:
+    max_единиц_в_системе: 100
+    min_массы: 0.1
+    max_массы: 5.0
+    min_дальности: 30
+    max_дальности: 2000
+  закон_масштабирования: 'нелинейный — масса_системы = N × масса_единицы × 1.10 (10%
+    overhead на terminators+couplers); типовая установка: MIL-STD-1553 FOE (fiber
+    optic extender, 200×100×30 mm, 0.5 kg, 1 Mbps, 1+ km range); FO-1553 1.0625 Gbps
+    (Avionics Interface Technologies, 1+ mile range)'
+  ограничивающие_части:
+  - часть_optovolokonnaya_shina_core (fiber optic transceiver + 1553 protocol chip
+    — критическая зависимость от avionics suppliers)
+  - часть_optovolokonnaya_shina_housing (aluminum + anodizing MIL-A-8625 — стандартное
+    производство)
+источник_url: https://en.wikipedia.org/wiki/MIL-STD-1553
+источник_дата: '2026-11-11'
 ---
-# Изделие: оптоволоконная шина
-
 ## Описание
 
 оптоволоконная шина
@@ -72,11 +141,19 @@ scaling_type: количественный
 
 | Параметр | Значение | Единица | Источник |
 |---|---|---|---|
-| подсистема | система_связи | — | classify_subsystem |
-| категория | прочее | — | — |
-| выработка тепла (nominal) | 1.2 | W | СУММ(детей) 1.10 (core 1 + connectors 0.1) + пассивные потери ~0.1; трансиверы <=1 W — LINK-PP / SFP+ Thermal 2013 |
+| подсистема | система_связи | — | canon |
+| подтип | прочее | — | canon |
+| масса | 0.1–5.0 (номинал 0.5) | kg | canon |
+| габариты (Д×Ш×В) | 200×117×46 | mm | canon |
+| выработка энергии | 0 | W | canon |
+| выработка тепла | 0.01–5 | W | canon |
+| тип узла | изделие | — | canon |
+| уровень_номер | 1 | — | canon |
 
-Тепловой баланс: номинал выработки тепла 1.2 W = СУММ(дочерних) 1.10 W (core 1 W — активные оптические трансиверы; connectors 0.1 W — терминаторы MPO/MTP) + собственные пассивные потери ~0.1 W; диапазон 0.01–5 W покрывает пассивные и многотерминальные конфигурации. См. fc_изделие_масса, fc_изделие_стандарты в _field_contracts.yaml.
+
+## Принцип работы
+
+Оптоволоконная шина — канал передачи данных по волоконно-оптическим линиям (авионика: MIL-STD-1773 — волоконная реализация протокола MIL-STD-1553B): терминалы BC/RT/BM обмениваются данными через пассивные волоконные ответвления; активная электроника терминалов (ядро, <=1 W на трансивер) генерирует тепло, пассивные волоконные тракты вносят только вставочные потери (~0.1 W), разъёмы MPO/MTP терминируют линии. Иммунитет к ЭМИ и гальваноразвязка — ключевые преимущества перед медной шиной.
 
 ## Состав
 
@@ -84,15 +161,15 @@ scaling_type: количественный
 
 ## Используемые технологии
 
-(Ссылки на реальные_данные/технологии/ добавляются после связывания)
+- `frezervanie_chpu` (доля: 1.0)
+- `anodirovanie` (доля: 1.0)
+
 
 ## Используемые материалы
 
-(Ссылки на реальные_данные/материалы/ добавляются после связывания)
+- `al_6061-t6` (форма: силовые_элементы_конструкций) → [`al_6061-t6`](../../../материалы/al_6061-t6.md)
+- `al_6061-t6` (форма: корпуса_электроники) → [`al_6061-t6`](../../../материалы/al_6061-t6.md)
 
-## Принцип работы
-
-Оптоволоконная шина — канал передачи данных по волоконно-оптическим линиям (авионика: MIL-STD-1773 — волоконная реализация протокола MIL-STD-1553B): терминалы BC/RT/BM обмениваются данными через пассивные волоконные ответвления; активная электроника терминалов (ядро, <=1 W на трансивер) генерирует тепло, пассивные волоконные тракты вносят только вставочные потери (~0.1 W), разъёмы MPO/MTP терминируют линии. Иммунитет к ЭМИ и гальваноразвязка — ключевые преимущества перед медной шиной.
 
 ## Источники
 
@@ -102,18 +179,17 @@ scaling_type: количественный
 
 ---
 
-
 ## Декомпозиция
 
 ```mermaid
 graph TD
-    optovolokonnaya_shin["izdelie_optovolokonnaya_shina"]
-    optovolokonnaya_shina_cor["часть_optovolokonnaya_shina_core"]
-    optovolokonnaya_shin --> optovolokonnaya_shina_cor
-    optovolokonnaya_shina_hou["часть_optovolokonnaya_shina_housing"]
-    optovolokonnaya_shin --> optovolokonnaya_shina_hou
-    optovolokonnaya_shina_con["часть_optovolokonnaya_shina_connectors"]
-    optovolokonnaya_shin --> optovolokonnaya_shina_con
-    optovolokonnaya_shina_mou["часть_optovolokonnaya_shina_mounting"]
-    optovolokonnaya_shin --> optovolokonnaya_shina_mou
+    izdelie_optovolokonnaya_shina["izdelie_optovolokonnaya_shina"]
+    ______optovolokonnaya_shina_core["часть_optovolokonnaya_shina_core"]
+    izdelie_optovolokonnaya_shina --> ______optovolokonnaya_shina_core
+    ______optovolokonnaya_shina_housing["часть_optovolokonnaya_shina_housing"]
+    izdelie_optovolokonnaya_shina --> ______optovolokonnaya_shina_housing
+    ______optovolokonnaya_shina_connectors["часть_optovolokonnaya_shina_connectors"]
+    izdelie_optovolokonnaya_shina --> ______optovolokonnaya_shina_connectors
+    ______optovolokonnaya_shina_mounting["часть_optovolokonnaya_shina_mounting"]
+    izdelie_optovolokonnaya_shina --> ______optovolokonnaya_shina_mounting
 ```
