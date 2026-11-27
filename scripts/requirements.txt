@@ -1,0 +1,4 @@
+# Зависимости скриптов SkyNet (scripts/).
+# Используется CI (.github/workflows/ci.yml, update-lists.yml) для установки
+# и кэширования pip (actions/setup-python → cache: pip).
+PyYAML>=6.0.1,<7
