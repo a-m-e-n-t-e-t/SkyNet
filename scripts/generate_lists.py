@@ -6,6 +6,9 @@
   python3 scripts/generate_lists.py [КОРЕНЬ]          # обновить списки в КОРНЕ базы знаний
   python3 scripts/generate_lists.py --check [КОРЕНЬ]  # CI-сверка списков с карточками (exit 1 при расхождении)
 
+В режиме --check даты «обновлено» (ISO ГГГГ-ММ-ДД) при сравнении нормализуются:
+ежедневный дрейф поля не считается расхождением (иначе CI падал бы каждые сутки).
+
 КОРЕНЬ по умолчанию — родитель папки scripts/ (клон базы знаний).
 Генерирует/сверяет 14 сводных файлов:
   реальные данные/материалы/_список_материалов.md    + зеркало работа и и/материалы/
@@ -107,6 +110,14 @@ def norm(s) -> str:
 def cell(v) -> str:
     """Значение ячейки Markdown-таблицы (экранирование «|», иначе ломается строка)."""
     return str(v).replace("|", "\\|")
+
+
+_RE_ISO_DATE = re.compile(r"\d{4}-\d{2}-\d{2}")
+
+
+def norm_dates(s: str) -> str:
+    """Сверка без учёта дат: ежедневный дрейф поля «обновлено» не должен валить CI."""
+    return _RE_ISO_DATE.sub("<ДАТА>", s)
 
 
 # ─────────────────────────── обход базы знаний ───────────────────────────
@@ -545,8 +556,9 @@ def build_models(cards, midx):
         for mid in as_list(rec["fm"].get("модели_в_произведении")):
             work_counts[str(mid)] = work_counts.get(str(mid), 0) + 1
     entries, dropped = [], []
+    by_stem = {r["path"].stem: r for r in cards["модель"]}   # O(1) вместо линейного поиска
     for stem, info in midx.items():
-        rec = next((r for r in cards["модель"] if r["path"].stem == stem), None)
+        rec = by_stem.get(stem)
         tip_val = info.get("тип")
         if rec is not None and not tip_val:
             tip_val = rec["fm"].get("тип_модели")
@@ -729,6 +741,9 @@ def process(name: str, rel: str, built, zone: list, root: pathlib.Path,
         if gen == GENERATOR:
             if text == content:
                 print(f"  = {name}: АКТУАЛЕН ({rel})")
+                return 0
+            if norm_dates(text) == norm_dates(content):
+                print(f"  = {name}: АКТУАЛЕН ({rel}; отличается только дата «обновлено»)")
                 return 0
             print(f"  ! {name}: ОТЛИЧАЕТСЯ от карточек ({rel}) — обновите генератором")
             return 1

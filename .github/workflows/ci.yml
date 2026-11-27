@@ -1,0 +1,88 @@
+name: CI — шаблоны и списки
+
+# Акционизирует оба скрипта scripts/ в режиме проверки:
+#   • validate_templates.py — валидация системы шаблонов (21 шаблон + README);
+#   • generate_lists.py --check — CI-сверка сводных списков с карточками,
+#     exit 1 при расхождении (§15a.2 базы знаний).
+# Оптимизации: path-фильтры (не тратим минуты на нерелевантные пушы),
+# отмена устаревших прогонов (concurrency), кэш pip, таймауты, read-only токен.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'шаблоны/**'
+      - 'scripts/**'
+      - 'реальные данные/**'
+      - 'фантастические данные/**'
+      - 'работа и и/**'
+      - 'результаты/**'
+      - '.github/workflows/ci.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'шаблоны/**'
+      - 'scripts/**'
+      - 'реальные данные/**'
+      - 'фантастические данные/**'
+      - 'работа и и/**'
+      - 'результаты/**'
+      - '.github/workflows/ci.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-templates:
+    name: Валидация шаблонов (21 + README)
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python 3.12 + кэш pip
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Установка зависимостей
+        run: pip install --requirement scripts/requirements.txt
+
+      - name: validate_templates.py
+        run: python3 scripts/validate_templates.py
+
+  check-lists:
+    name: Сверка списков с карточками
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python 3.12 + кэш pip
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: scripts/requirements.txt
+
+      - name: Установка зависимостей
+        run: pip install --requirement scripts/requirements.txt
+
+      - name: generate_lists.py --check
+        run: |
+          # Пока в репозитории нет папок базы знаний, сверять нечего:
+          # пропускаем с заметкой (актуально до появления первых карточек).
+          if [ ! -d "реальные данные" ] && [ ! -d "фантастические данные" ] && \
+             [ ! -d "работа и и" ] && [ ! -d "результаты" ]; then
+            echo "::notice::Папки базы знаний отсутствуют — сверка списков пропущена"
+            exit 0
+          fi
+          python3 scripts/generate_lists.py --check

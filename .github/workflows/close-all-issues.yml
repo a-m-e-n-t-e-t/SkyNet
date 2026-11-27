@@ -10,7 +10,7 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/close-all-issues-turbo.yml'
+      - '.github/workflows/close-all-issues.yml'
 
 permissions:
   issues: write
@@ -62,11 +62,11 @@ jobs:
             }'
 
             RESPONSE=$(jq -n \
+              --arg query "$QUERY" \
               --arg owner "$OWNER" \
               --arg name "$NAME" \
               --argjson after "$AFTER" \
               '{query:$query,variables:{owner:$owner,name:$name,after:$after}}' \
-              --arg query "$QUERY" \
               | curl -sS -X POST https://api.github.com/graphql \
                   -H "Authorization: bearer $GH_TOKEN" \
                   -H "Content-Type: application/json" \
@@ -125,8 +125,8 @@ jobs:
 
             # Считаем успешные закрытия в ответе.
             local ok_count fail_count
-            ok_count=$(jq -r '[.data | to_entries[] | select(.value.issue != null)] | length' "$out" 2>/dev/null || echo 0)
-            fail_count=$(jq -r '[.data | to_entries[] | select(.value.issue == null)] | length' "$out" 2>/dev/null || echo 0)
+            ok_count=$(jq -r '[.data | to_entries[]? | select(.value.issue != null)] | length' "$out" 2>/dev/null || echo 0)
+            fail_count=$(jq -r '[.data | to_entries[]? | select(.value.issue == null)] | length' "$out" 2>/dev/null || echo 0)
 
             # Логируем ошибки, если есть.
             if [ "$fail_count" != "0" ]; then
@@ -136,7 +136,6 @@ jobs:
             echo "$ok_count $fail_count" > "/tmp/results/summary_${idx}.txt"
           }
           export -f close_batch
-          export GH_TOKEN
 
           # Параллельный запуск по батчам. Имя файла чанка = уникальный ключ.
           close_batch_file() {
@@ -147,7 +146,6 @@ jobs:
             close_batch "$chunk" "$idx"
           }
           export -f close_batch_file
-          export -f close_batch
 
           # Параллельный запуск: каждый чанк получает свой индекс (по имени файла).
           ls /tmp/batches/chunk_* | \
@@ -173,13 +171,10 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
+          set -euo pipefail
           REMAINING=$(gh issue list \
             --repo "$REPO" \
             --state open \
-            --json number \
-            --limit 10000 \
-            -q 'length')
-          echo "==> Remaining open issues: $REMAINING"
             --json number \
             --limit 10000 \
             -q 'length')
