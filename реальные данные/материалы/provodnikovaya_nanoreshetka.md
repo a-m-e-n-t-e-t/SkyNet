@@ -1,6 +1,7 @@
 ---
-id: izdelie_provodnikovaya_nanoreshetka
+id: material_provodnikovaya_nanoreshetka
 тип: материал
+класс: прочее                    # нормализовано по enum §12.3 (не был указан)
 категория: прочее
 уровень_иерархии: верхний
 уровень_номер: 1
